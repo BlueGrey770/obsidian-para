@@ -5,6 +5,7 @@
 - [[Memo/development/devops/05-gong-cheng-hua-yu-bu-shu.md|05 工程化与部署]]
 - [[Memo/development/devops/obsidian-claudian-codex.md|Claudian 插件教程]]
 - [[Memo/development/devops/obsidian-image-host-toolkit.md|Obsidian 图床化与图片管理]]
+- [[Memo/development/devops/obsidian-mindmap-plugins.md|思维导图插件：Light Mindmap 与 Mindmap Mode]]
 - [[Memo/development/devops/obsidian-plugin-setup-guide.md|Obsidian插件安装与基础配置]]
 - [[Memo/development/devops/obsidian-theme-tech001.md|Tech001 主题]]
 - [[Memo/development/devops/obsidian-vtable.md|Vtable 表格增强插件]]

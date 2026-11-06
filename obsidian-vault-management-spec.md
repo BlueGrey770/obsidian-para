@@ -3,6 +3,7 @@
 建立日期：2026-11-02
 修订：2026-11-05 补充图片图床化流程；app.json 默认位置配置实际生效；登记已安装插件
 修订：2026-11-06 迁入飞书技术知识库（脱敏版）为 development 各主题正文，新建 Python 顶层分类；MOC/topics 建立分类索引；附件目录相应扩展
+修订：2026-11-07 确立双导图插件分工（Light Mindmap 渲染、Mindmap Mode 编辑），导图正文统一为普通段落；登记 light-mindmap、mindmap-mode、obsidian-quiet-outline 插件
 
 本规范只适用于当前独立库。以开发知识为主，支持阅读、生活、考证与语言学习；目录按领域与主题分类，项目只作为可选关联。规则不依赖另一笔记库、公司项目ID或本机绝对路径。
 
@@ -77,6 +78,8 @@ date: 2026-11-02
 - 可选样式键：`mindmap-layout`（balanced、right、left、tree、radial）、`mindmap-theme`（vibrant、classic、fresh、ocean 等 6 套）、`mindmap-line`（curve、straight、polyline、rounded 等）、`mindmap-node`（rounded、square、borderless、circle、doodle）。**四个键一次写全**，否则插件首次打开会自动回写 frontmatter，产生无意义的版本变更。
 - 普通笔记不要加 `type: mindmap`。一张导图一个文件，命名与普通笔记一致；新建时用 `_templates/mindmap-note.md`（QuickAdd 绑定后可一键生成）。
 
+导图笔记还可用 Mindmap Mode 打开成**可编辑导图**：标题成节点、正文段落显示为节点内容卡片、图片随卡片显示，所有修改直接回写原文件、不产生中间文件。它不要求 `type: mindmap`，对任意笔记均可切换。节点正文统一写**普通段落**；`: 文本` 前缀虽能在节点下显示注释，但会污染阅读视图，不采用。两插件的安装与详细用法见 [[Memo/development/devops/obsidian-mindmap-plugins.md|思维导图插件教程]]。
+
 ## 四 初始领域与扩展
 
 初始领域为 development、languages、life；具体范围见分类登记表。人文、健康、创作、个人财务等出现长期需求时再启用，不强塞入“学习”或“其他”大筐。
@@ -135,7 +138,7 @@ PDF、Word、Excel、音视频、完整JSON/CSV、完整脚本与HTML原件优�
 
 ## 九 基础设置与维护
 
-本库 `app.json` 已实际写入并核对生效（2026-11-05）：默认新建位置Inbox、附件接收位置Attachments、相对链接与自动更新内部链接；graph配置为白名单分色方案。已安装的第三方插件：image-upload-toolkit（阿里云OSS图床化，已配置）、quickadd、obsidian-git、BRAT、realclaudian；插件密钥与账号只存于 `.obsidian`，不入公开仓库。移动与重命名在本库运行中的Obsidian内完成。
+本库 `app.json` 已实际写入并核对生效（2026-11-05）：默认新建位置Inbox、附件接收位置Attachments、相对链接与自动更新内部链接；graph配置为白名单分色方案。已安装的第三方插件：image-upload-toolkit（阿里云OSS图床化，已配置）、quickadd、obsidian-git、BRAT、realclaudian、vtable、light-mindmap（导图渲染）、mindmap-mode（导图编辑）、obsidian-quiet-outline（大纲侧栏增强）；obsidian-mind-map 已下载但停用，避免导图插件互抢视图。插件密钥与账号只存于 `.obsidian`，不入公开仓库。移动与重命名在本库运行中的Obsidian内完成。
 
 每周清理Inbox、核对重要待办与断链、清点已图床化笔记的本地原图是否已归档，按需提炼知识、更新少数导航。先保证静态入口可用，再选择Bases或Dataview；查询先按领域路径，不能依赖未完整填写的可选字段。
 

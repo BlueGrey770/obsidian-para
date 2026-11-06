@@ -18,7 +18,7 @@
 - `.obsidian/app.json`：默认新建 Inbox、附件接收 Attachments、相对链接及自动更新内部链接（2026-11-05 已核对实际生效）。
 - 全新 `.obsidian/graph.json`：知识范围白名单，排除AI维护资料等，按初始领域路径分色，详见 [[MOC/graph-guide.md|图谱说明]]。
 
-已安装插件：image-upload-toolkit、quickadd、obsidian-git、BRAT、realclaudian、vtable、light-mindmap、obsidian-quiet-outline（大纲侧栏增强：搜索/正则过滤、Markdown 渲染、拖拽重排、记忆折叠状态）、mindmap-mode（可编辑导图视图，正文段落以卡片随节点显示，编辑直接回写原文）。QuickAdd 四个创建入口、同步账号与独立备份任务尚未配置，按教程在本库单独完成。模板中的占位符尚未执行是正常状态，不要把模板当成成品笔记。`type: mindmap` 的笔记由 Light Mindmap 直接按标题层级渲染，格式约定见管理规范「导图笔记」一节；obsidian-mind-map（Markmap）虽已下载但未启用，避免两个导图插件抢同一视图。
+已安装插件：image-upload-toolkit、quickadd、obsidian-git、BRAT、realclaudian、vtable、light-mindmap、mindmap-mode、obsidian-quiet-outline（大纲侧栏增强：搜索/正则过滤、Markdown 渲染、拖拽重排、记忆折叠状态）。QuickAdd 四个创建入口、同步账号与独立备份任务尚未配置，按教程在本库单独完成。模板中的占位符尚未执行是正常状态，不要把模板当成成品笔记。`type: mindmap` 的笔记由 Light Mindmap 直接按标题层级渲染，Mindmap Mode 可把任意笔记切成可编辑导图（正文段落显示为节点卡片），安装与用法见 [[Memo/development/devops/obsidian-mindmap-plugins.md|思维导图插件教程]]，格式约定见管理规范「导图笔记」一节；obsidian-mind-map（Markmap）虽已下载但未启用，避免两个导图插件抢同一视图。
 
 ## 第一次记录
 
