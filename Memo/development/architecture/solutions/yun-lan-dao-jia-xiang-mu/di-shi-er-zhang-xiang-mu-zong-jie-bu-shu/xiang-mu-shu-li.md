@@ -1,8 +1,12 @@
 ---
-type: memo
+type: mindmap
 date: 2026-11-06
 aliases:
   - "项目梳理"
+mindmap-layout: tree
+mindmap-theme: classic
+mindmap-line: polyline
+mindmap-node: rounded
 ---
 
 # 项目梳理

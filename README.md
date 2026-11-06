@@ -14,11 +14,11 @@
 - Inbox、Logs、Journal、Memo、Attachments、MOC、模板与归档目录。
 - 开发、语言、生活三个基础领域，英语目录以及阅读、考证专题入口。
 - Image Upload Toolkit 已安装并配置阿里云 OSS 图床化（公共读 bucket + RAM 密钥），教程与排查见 [[Memo/development/devops/obsidian-image-host-toolkit.md|图床化教程]]。
-- 四个 QuickAdd 模板，正式笔记只要求 type/date，不必选择项目。
+- 五个 QuickAdd 模板，正式笔记只要求 type/date，不必选择项目；其中 `mindmap-note.md` 用于新建导图笔记（`type: mindmap`）。
 - `.obsidian/app.json`：默认新建 Inbox、附件接收 Attachments、相对链接及自动更新内部链接（2026-11-05 已核对实际生效）。
 - 全新 `.obsidian/graph.json`：知识范围白名单，排除AI维护资料等，按初始领域路径分色，详见 [[MOC/graph-guide.md|图谱说明]]。
 
-已安装插件：image-upload-toolkit、quickadd、obsidian-git、BRAT、realclaudian。QuickAdd 四个创建入口、同步账号与独立备份任务尚未配置，按教程在本库单独完成。模板中的占位符尚未执行是正常状态，不要把模板当成成品笔记。
+已安装插件：image-upload-toolkit、quickadd、obsidian-git、BRAT、realclaudian、vtable、light-mindmap。QuickAdd 四个创建入口、同步账号与独立备份任务尚未配置，按教程在本库单独完成。模板中的占位符尚未执行是正常状态，不要把模板当成成品笔记。`type: mindmap` 的笔记由 Light Mindmap 直接按标题层级渲染，格式约定见管理规范「导图笔记」一节；obsidian-mind-map（Markmap）虽已下载但未启用，避免两个导图插件抢同一视图。
 
 ## 第一次记录
 
@@ -33,9 +33,9 @@
 1. **打开库**：Obsidian → “打开文件夹作为仓库”，选本目录。Obsidian 会自动生成全新的 `.obsidian`。
 2. **文件与链接**：默认附件位置 `Attachments`；新笔记默认位置 `Inbox`；内部链接类型「基于当前笔记的相对路径」；打开「始终更新内部链接」。
 3. **外观**：主题安装 **Tech001** 并启用。
-4. **第三方插件**：关闭安全模式，安装并启用 image-upload-toolkit、quickadd、obsidian-git、BRAT、realclaudian；vtable 经 BRAT 安装。
+4. **第三方插件**：关闭安全模式，安装并启用 image-upload-toolkit、quickadd、obsidian-git、BRAT、realclaudian、light-mindmap；vtable 经 BRAT 安装。导图笔记无需重建配置，装上 light-mindmap 后打开 `type: mindmap` 的文件即渲染。
 5. **image-upload-toolkit**：Image store = `ALIYUN_OSS`，Region = `oss-cn-hongkong`，填入 RAM 的 AK/SK，Bucket = `notes-images-para`，Target path = `/img`，打开 **Update original document**。AK/SK 从阿里云 RAM 控制台重新获取，不在任何仓库中。
-6. **QuickAdd**：按 [[Memo/development/devops/obsidian-plugin-setup-guide.md|插件安装与配置教程]] 重建 4 个模板绑定（Log / Journal / Memo / Draft），模板正文在 `_templates/` 已在版本库中。
+6. **QuickAdd**：按 [[Memo/development/devops/obsidian-plugin-setup-guide.md|插件安装与配置教程]] 重建 5 个模板绑定（Log / Journal / Memo / Draft / Mindmap），模板正文在 `_templates/` 已在版本库中。
 7. **图谱**：按 [[MOC/graph-guide.md|图谱说明]] 重设知识范围白名单与领域分色。
 8. **obsidian-git**：Vault backup interval 设 10~15 分钟；远程仓库必须为**私有仓库**。
 

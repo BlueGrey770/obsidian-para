@@ -24,7 +24,7 @@
 | Inbox | 尚未确定体裁或归属的草稿与输入 |
 | Attachments | PDF、Word、Excel、音视频、完整代码与数据等原格式资料 |
 | MOC | 首页、领域与专题导航；不是第二套正文仓库 |
-| _templates | 四套创建模板 |
+| _templates | 五套创建模板 |
 | _archive | 已被替代或退出日常使用的内容，含已图床化的本地图片原图 |
 
 已建立三种体裁下的 development、languages、life 基础领域；英语使用 languages/english。开发主题按内容新增，当前仅为本库工具教程建立 development/devops。不一次铺满体裁、领域、主题的所有组合。
@@ -53,12 +53,22 @@ date: 2026-11-02
 ---
 ```
 
-- type 为 log、journal、memo，与体裁目录一致。
+- type 为 log、journal、memo，与体裁目录一致。唯一例外是 `mindmap`（导图视图，见下节）：它是 memo 体裁的呈现方式，路径仍在 Memo 下。
 - date 是有依据的首次记录日期，不随普通编辑更新，不等于到期日或计划日期。
 - 领域以路径为准，不强制重复填 domain/topic。domain 若选填需与路径一致；未完整标注时不能以它声称覆盖全领域。
 - project 可省略或为null；明确属于一个个人项目时才填单值，不预置任何公司项目。
 - tags、aliases按需使用列表；标签保持简短。status仅在故障等确实需要跟进时使用open/solved，不把所有学习变成状态台账。
 - 草稿、MOC、规范、附件索引等辅助文档不强制套正式笔记字段。
+
+### 导图笔记
+
+`type: mindmap` 的文件由 Light Mindmap 插件渲染成思维导图（该值是插件的硬性判断，不能换成 memo 或别名）。插件按行切分正文、只认标题，不解析列表，因此这类文件**只写标题层级**：
+
+- H1 是根节点，H2~H6 逐级成枝，最深 6 级。超出部分并入父级标题，写成「父：子1；子2」，不丢内容。
+- 不用列表、表格、代码块承载结构——它们进不了导图，只在原文视图里能看见。需要说明性文字时另建普通笔记，由 MOC 链接。
+- 标题写成 `*文字*` 可让该分支默认折叠；标题内可用 `[[双链]]`。
+- 可选样式键：`mindmap-layout`（balanced、right、left、tree、radial）、`mindmap-theme`（vibrant、classic、fresh、ocean 等 6 套）、`mindmap-line`（curve、straight、polyline、rounded 等）、`mindmap-node`（rounded、square、borderless、circle、doodle）。**四个键一次写全**，否则插件首次打开会自动回写 frontmatter，产生无意义的版本变更。
+- 普通笔记不要加 `type: mindmap`。一张导图一个文件，命名与普通笔记一致；新建时用 `_templates/mindmap-note.md`（QuickAdd 绑定后可一键生成）。
 
 ## 四 初始领域与扩展
 
@@ -85,7 +95,7 @@ date: 2026-11-02
 
 ## 六 模板与创建
 
-本库提供 [[_templates/log-note.md|Log]]、[[_templates/journal-note.md|Journal]]、[[_templates/memo-card.md|Memo]]、[[_templates/inbox-draft.md|Draft]] 四模板，使用QuickAdd原生占位符。它们不是核心“模板”功能可直接解析的普通模板。
+本库提供 [[_templates/log-note.md|Log]]、[[_templates/journal-note.md|Journal]]、[[_templates/memo-card.md|Memo]]、[[_templates/inbox-draft.md|Draft]]、[[_templates/mindmap-note.md|Mindmap]] 五模板，使用QuickAdd原生占位符。Mindmap 模板预置 `type: mindmap` 与四个样式键，建完直接写标题即成分支。它们不是核心“模板”功能可直接解析的普通模板。
 
 QuickAdd安装配置后，初始创建位置为对应体裁根目录或Inbox，再通过Obsidian归入领域/主题。模板不自动识别领域，也不因移动而更新可选属性。维护模板使用源码模式。
 

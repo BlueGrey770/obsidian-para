@@ -33,7 +33,7 @@
 
 ## 第十二章 项目总结&部署
 - 导读：[[Memo/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/index.md|第十二章 项目总结&部署]]
-- [[Memo/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/xiang-mu-shu-li.md|项目梳理]]
+- [[Memo/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/xiang-mu-shu-li.md|项目梳理]]（导图）
 - [[Memo/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/yun-lan-dao-jia-xiang-mu-zong-jie.md|云岚到家项目总结]]
 
 ## 第五章 搜索模块
