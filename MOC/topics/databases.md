@@ -2,8 +2,6 @@
 
 MySQL、SQL、JDBC、MyBatis 与数据库进阶，覆盖从 SQL 编写到持久层框架的完整链路。
 
-
-## 
 - [[Memo/development/databases/02-shu-ju-ku-yu-chi-jiu-ceng.md|02 数据库与持久层]]
 
 ## MyBatis

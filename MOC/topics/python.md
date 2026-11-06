@@ -13,3 +13,5 @@
 7. [[python-data-containers|数据容器]] — list/tuple/str/set/dict 五类容器的方法清单、切片、遍历与选型对比。
 8. [[python-functions-advanced|函数进阶]] — 多返回值、位置/关键字/缺省/不定长四种传参，lambda 与闭包概念。
 9. [[python-case-student-manager|综合实战：学生管理系统]] — 增删改查菜单程序的需求拆解、结构设计与踩坑复盘。
+
+返回 [[MOC/domains/development.md|开发与技术]] ・ [[MOC/index.md|首页]]

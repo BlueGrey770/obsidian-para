@@ -348,7 +348,7 @@ Class<Student> stuClass1 = Student.class;
 Student student = new Student();
 Class<? extends Student> stuClass2 = student.getClass();
 //第三种方法 Class.forName(全限定类名)
-Class<?> stuClass3 = Class.forName("com.itheima.reflect.Student");
+Class<?> stuClass3 = Class.forName("com.example.reflect.Student");
 ```
 
 12.16面试题

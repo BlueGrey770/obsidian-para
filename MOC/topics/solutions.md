@@ -2,8 +2,6 @@
 
 从真实项目脱敏提炼的业务组件方案：认证、缓存、搜索、订单状态机、派单、支付、IoT 等。
 
-
-## 
 - [[Memo/development/architecture/solutions/07-ye-wu-zu-jian-fang-an-ji.md|07 业务组件方案集]]
 - [[Memo/development/architecture/solutions/ji-ke-ti-jian-tao-can-guan-li.md|即刻体检-套餐管理]]
 

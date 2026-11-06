@@ -2,8 +2,6 @@
 
 大模型基础、Spring AI、MCP、低代码智能体平台与 RAG 项目实战。
 
-
-## 
 - [[Memo/development/ai/06-ai-ying-yong-kai-fa.md|06 AI 应用开发]]
 
 ## AI 与大模型基础

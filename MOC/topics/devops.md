@@ -2,8 +2,6 @@
 
 开发环境与虚拟化、Jenkins CI/CD、禅道项目管理，以及本库 Obsidian 工具链教程。
 
-
-## 
 - [[Memo/development/devops/05-gong-cheng-hua-yu-bu-shu.md|05 工程化与部署]]
 - [[Memo/development/devops/obsidian-claudian-codex.md|Claudian 插件教程]]
 - [[Memo/development/devops/obsidian-image-host-toolkit.md|Obsidian 图床化与图片管理]]

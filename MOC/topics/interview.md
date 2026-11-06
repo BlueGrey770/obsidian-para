@@ -2,8 +2,6 @@
 
 八股文、项目面试题、微服务与 AI 面试题、求职方法论。
 
-
-## 
 - [[Memo/development/programming/interview/08-mian-shi-zhi-shi-ku.md|08 面试知识库]]
 - [[Memo/development/programming/interview/gong-gong-mian-shi-ti.md|公共面试题]]
 
@@ -13,8 +11,13 @@
 
 ## 八股文面试题
 - 导读：[[Memo/development/programming/interview/ba-gu-wen-mian-shi-ti/index.md|八股文面试题]]
+- [[Memo/development/programming/interview/ba-gu-wen-mian-shi-ti/bing-fa-jin-jie-mian-shi-ti.md|多线程并发进阶面试题（JMM、CAS、AQS、volatile）]]
+- [[Memo/development/programming/interview/ba-gu-wen-mian-shi-ti/jvm-jin-jie-mian-shi-ti.md|JVM 进阶面试题（引用类型与垃圾回收器）]]
+- [[Memo/development/programming/interview/ba-gu-wen-mian-shi-ti/kafka-mian-shi-ti.md|Kafka 面试题（可靠性、顺序性与高性能设计）]]
 - [[Memo/development/programming/interview/ba-gu-wen-mian-shi-ti/mei-ri-bei-song.md|每日背诵]]
 - [[Memo/development/programming/interview/ba-gu-wen-mian-shi-ti/mian-shi-ti-chao-xie.md|面试题抄写]]
+- [[Memo/development/programming/interview/ba-gu-wen-mian-shi-ti/mysql-man-cha-xun-yu-sql-you-hua-mian-shi-ti.md|MySQL 慢查询与 SQL 调优面试题]]
+- [[Memo/development/programming/interview/ba-gu-wen-mian-shi-ti/wei-fu-wu-rong-cuo-mian-shi-ti.md|微服务容错面试题（限流、熔断、降级与监控）]]
 
 ## 求职方法论
 - 导读：[[Memo/development/programming/interview/qiu-zhi-fang-fa-lun/index.md|求职方法论]]

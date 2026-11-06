@@ -2,8 +2,6 @@
 
 Redis、注册发现、服务保护、分布式事务、网关配置中心、消息队列与 Elasticsearch。
 
-
-## 
 - [[Memo/development/architecture/microservices/04-wei-fu-wu-yu-zhong-jian-jian.md|04 微服务与中间件]]
 
 ## Elasticsearch
