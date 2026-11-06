@@ -1,0 +1,894 @@
+/* 
+   ========================================================================== 
+   THEME: TECH001 (DARK & LIGHT SUPPORT)
+   STYLE: Deep Dark / Crisp Light, Pill Shapes, Minimalist
+   AUTHOR: Roman Volodin (Modified for Dual Mode)
+   ========================================================================== 
+*/
+
+
+
+/* --- 1a. FONTS --- */
+body {
+    --font-interface: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-text: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-family-code: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+}
+
+/* --- 1b. TYPE SCALE --- */
+body {
+    --body-font-size: 16px;
+    --body-line-height: 1.7;
+    --body-letter-spacing: -0.003em;
+
+    --h1-size: 2.1em;  --h1-weight: 300; --h1-letter-spacing: -0.02em;
+    --h2-size: 1.5em;  --h2-weight: 300; --h2-letter-spacing: -0.015em;
+    --h3-size: 1.18em; --h3-weight: 300; --h3-letter-spacing: -0.01em;
+    --h4-size: 1.02em; --h4-weight: 200;
+    --h5-h6-weight: 200;
+
+    --heading-line-height: 1.35;
+    --heading-margin-top: 1.6em;
+    --heading-margin-bottom: 0.55em;
+    --h1-rule-padding: 0.35em;
+
+    --strong-weight: 650;
+    --code-size: 0.88em;
+    --small-text-size: 0.9em;
+
+    line-height: var(--body-line-height);
+}
+
+/* --- 1c. SHAPES & SPACING --- */
+body {
+    --nav-indentation-guide-color: transparent !important;
+    --nav-indentation-guide-width: 0px !important;
+
+    /* Corner radius */
+    --radius-s: 6px;
+    --radius-m: 10px;
+    --radius-l: 16px;
+
+    /* Content column */
+    --content-top-padding: 56px;
+    --content-max-width: 1100px;
+    --content-side-padding: 24px;
+
+    /* Links */
+    --link-underline-offset: 3px;
+    --link-transition-speed: 0.12s;
+
+    /* Horizontal rule */
+    --hr-margin: 2.2em;
+
+    /* Tables */
+    --table-font-size: 0.95em;
+    --table-margin: 1.4em;
+    --table-cell-padding: 8px 14px;
+
+    /* Scrollbar */
+    --scrollbar-size: 10px;
+    --scrollbar-radius: 10px;
+    --scrollbar-border-width: 3px;
+
+    /* Floating-card layout: breathing room kept around every panel / editor
+       pane (sections 5b / 5c). The visible gap between two panels is 2x this. */
+    --panel-gap: 4px;
+
+    /* Sidebar nav items */
+    --nav-item-font-size: 0.93em;
+    --nav-item-padding: 5px 10px;
+    --nav-item-margin: 1px 8px;
+    --nav-item-active-weight: 400; /* kept normal on purpose: no bold flicker on hover */
+
+    /* Lists */
+    --list-item-spacing: 0.4em;
+
+    /* Blockquotes */
+    --blockquote-padding: 14px 20px;
+    --blockquote-margin: 1.4em;
+    --blockquote-border-width: 3px;
+
+    /* Callouts */
+    --callout-padding: 14px 18px;
+    --callout-margin: 1.4em;
+    --callout-title-gap: 8px;
+
+    /* Checkboxes */
+    --checkbox-size: 17px;
+    --checkbox-radius: 5px;
+    --checkbox-border-width: 1.5px;
+
+    /* Inline code / code blocks */
+    --inline-code-padding: 2px 5px;
+    --codeblock-padding: 18px 20px;
+    --codeblock-edge-padding: 5px;
+
+    /* File tree icon */
+    --file-icon-size: 13px;
+    --file-icon-gap: 4px;
+
+    /* Math */
+    --math-font-size: 1.15em;
+    --math-padding: 10px;
+}
+
+/* --- 1d. DARK PALETTE --- */
+body.theme-dark {
+    /* Backgrounds — sidebar darker than content (Minimal-style), low-glare for night reading */
+    --background-primary: #1c1c1c;
+    --background-secondary: #2c2c2c;
+    --background-secondary-alt: #141414;
+    --background-modifier-border: #333333;
+    --background-blockquote: #181818;
+
+    /* Text — muted, low-contrast for night reading */
+    --text-normal: #d1d1d1;
+    --text-muted: #868686;
+    --text-faint: #5c5c5c;
+    --text-navbar: #9a9a9a;
+    --text-bold: #e6e6e6;
+
+    /* Headers — softened gold, less glare */
+    --h1-color: #e6bb87;
+    --h2-color: #dcb27d;
+    --h3-color: #d1a873;
+    --h4-color: #d1a873;
+    --h5-color: #c69d69;
+    --h6-color: #c69d69;
+
+    /* Accents — cool blue, Gemini/Google-docs tone */
+    --text-accent: #8edbee;
+    --text-accent-hover: #aecbfa;
+    --interactive-accent: #2e5481;
+    --caret-color: #8ab4f8;
+
+    /* Code — VS Code Dark+ syntax palette */
+    --code-background: #1e1e1e;
+    --code-border-color: #3c3c3c;
+    --code-normal: #d4d4d4;
+    --code-comment: #6a9955;
+    --code-string: #ce9178;
+    --code-function: #8ab4f8;
+    --code-keyword: #569cd6;
+    --code-operator: #d4d4d4;
+    --code-property: #9cdcfe;
+    --code-value: #b5cea8;
+
+    /* UI Specific */
+    --scrollbar-thumb: #424242;
+    --tab-hover: rgba(255,255,255, 0.035);
+    --sidebar-hover: rgba(138, 180, 248, 0.10);
+    --sidebar-active: rgba(138, 180, 248, 0.16);
+    --callout-tint: 0.12;
+
+    /* Panel / tab surfaces (see sections 5b / 5c) */
+    --sidebar-panel-background: #242424;         /* left & right sidebar cards — a touch lighter than content (#1c1c1c) */
+    --editor-tab-background: #222222;            /* the bar behind the editor tabs */
+    --editor-tab-inactive-background: #2c2c2c;   /* inactive tab tile — sits proud of the bar */
+}
+
+/* --- 1e. LIGHT PALETTE --- */
+body.theme-light {
+    /* Backgrounds — neutral gray, VS Code Light+ style (no warm/beige cast) */
+    --background-primary: #faf9f5;
+    --background-secondary: #e1e0dd;
+    --background-secondary-alt: #eeeeee;
+    --background-modifier-border: #d1d1d1;
+    --background-blockquote: #f5f5f5;
+
+    /* Text */
+    --text-normal: #1e1e1e;
+    --text-muted: #6e6e6e;
+    --text-faint: #a0a0a0;
+    --text-navbar: #424242;
+    --text-bold: #000000;
+
+    /* Headers */
+    --h1-color: #111111;
+    --h2-color: #111111;
+    --h3-color: #111111;
+    --h4-color: #111111;
+    --h5-color: #111111;
+    --h6-color: #111111;
+
+    /* Accents — cool blue, Gemini/Google-docs tone */
+    --text-accent: #255594;
+    --text-accent-hover: #1557b0;
+    --interactive-accent: #4f658b;
+    --caret-color: #1a73e8;
+
+    /* Code — VS Code Light+ syntax palette */
+    --code-background: #faf9f5;
+    --code-border-color: #e0e0e0;
+    --code-normal: #1e1e1e;
+    --code-comment: #008000;
+    --code-string: #a31515;
+    --code-function: #1a73e8;
+    --code-keyword: #0000ff;
+    --code-operator: #383838;
+    --code-property: #001080;
+    --code-value: #098658;
+
+    /* UI Specific */
+    --scrollbar-thumb: #d4d4d4;
+    --tab-hover: rgba(0,0,0, 0.035);
+    --sidebar-hover: rgba(26, 115, 232, 0.08);
+    --sidebar-active: rgba(26, 115, 232, 0.12);
+    --callout-tint: 0.08;
+
+    /* Panel / tab surfaces (see sections 5b / 5c) */
+    --sidebar-panel-background: #f1f1ed;         /* left & right sidebar cards */
+    --editor-tab-background: #f1f1ed;            /* the bar behind the editor tabs */
+    --editor-tab-inactive-background: #ececec;   /* inactive tab tile — sits proud of the bar */
+}
+
+/* ==========================================================================
+   2. GLOBAL LAYOUT & TYPOGRAPHY
+   ========================================================================== */
+
+.markdown-source-view,
+.markdown-preview-view {
+    font-family: var(--font-text);
+    line-height: var(--body-line-height);
+    font-size: var(--body-font-size);
+    color: var(--text-normal);
+    letter-spacing: var(--body-letter-spacing);
+}
+
+/* --- HEADING HIERARCHY --- */
+h1, .cm-header-1 { font-size: var(--h1-size) !important; font-weight: var(--h1-weight) !important; letter-spacing: var(--h1-letter-spacing); color: var(--h1-color) !important; }
+h2, .cm-header-2 { font-size: var(--h2-size) !important; font-weight: var(--h2-weight) !important; letter-spacing: var(--h2-letter-spacing); color: var(--h2-color) !important; }
+h3, .cm-header-3 { font-size: var(--h3-size) !important; font-weight: var(--h3-weight) !important; letter-spacing: var(--h3-letter-spacing); color: var(--h3-color) !important; }
+h4, .cm-header-4 { font-size: var(--h4-size) !important; font-weight: var(--h4-weight) !important; color: var(--h4-color) !important; }
+h5, h6, .cm-header-5, .cm-header-6 { font-weight: var(--h5-h6-weight) !important; color: var(--h5-color) !important; }
+
+h1, h2, h3, h4, h5, h6, .cm-header {
+    line-height: var(--heading-line-height);
+    margin-top: var(--heading-margin-top);
+    margin-bottom: var(--heading-margin-bottom);
+}
+
+/* Thin bottom rule under H1/H2 to mimic a doc "section" break */
+h1:not(:first-child), .markdown-preview-view > h1 {
+    padding-bottom: var(--h1-rule-padding);
+    border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.cm-line, p, li, ul, ol {
+    color: var(--text-normal) !important;
+}
+
+strong, b, .cm-strong {
+    color: var(--text-bold) !important;
+    font-weight: var(--strong-weight) !important;
+}
+
+/* --- LINKS --- */
+a, .cm-link, .cm-hmd-internal-link {
+    color: var(--text-accent) !important;
+    text-decoration: none !important;
+    text-underline-offset: var(--link-underline-offset);
+    transition: color var(--link-transition-speed) ease;
+}
+a:hover, .cm-link:hover {
+    color: var(--text-accent-hover) !important;
+    text-decoration: underline !important;
+}
+
+/* --- HORIZONTAL RULE --- */
+hr {
+    border: none;
+    border-top: 1px solid var(--background-modifier-border);
+    margin: var(--hr-margin) 0;
+}
+
+/* --- TABLES --- */
+.markdown-preview-view table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: var(--table-margin) 0;
+    font-size: var(--table-font-size);
+}
+.markdown-preview-view th,
+.markdown-preview-view td {
+    border: none;
+    border-bottom: 1px solid var(--background-modifier-border);
+    padding: var(--table-cell-padding);
+    text-align: left;
+}
+.markdown-preview-view th {
+    color: var(--text-bold);
+    font-weight: 600;
+    background-color: var(--background-secondary);
+    border-bottom: 1px solid var(--background-modifier-border);
+}
+.markdown-preview-view tr:last-child td { border-bottom: none; }
+
+/* Minimalist Scrollbars */
+::-webkit-scrollbar {
+    width: var(--scrollbar-size); height: var(--scrollbar-size); background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: var(--scrollbar-radius);
+    border: var(--scrollbar-border-width) solid var(--background-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* ==========================================================================
+   3. CENTERED LAYOUT
+   ========================================================================== */
+
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view {
+    padding-top: var(--content-top-padding) !important;
+}
+
+.markdown-source-view.mod-cm6:not(.is-readable-line-width) .cm-sizer,
+.markdown-preview-view:not(.is-readable-line-width) .markdown-preview-sizer {
+    max-width: var(--content-max-width) !important;
+    width: 100% !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-inline: auto !important;
+
+    padding-left: var(--content-side-padding) !important;
+    padding-right: var(--content-side-padding) !important;
+    box-sizing: border-box !important;
+}
+
+.markdown-preview-view .markdown-preview-sizer hr,
+.markdown-preview-view .markdown-preview-sizer table {
+    max-width: 100% !important;
+}
+
+/* ==========================================================================
+   4. WINDOW TITLEBAR & MAIN TABS
+   ========================================================================== */
+
+.titlebar { background-color: transparent !important; z-index: 0; }
+
+.titlebar-button-container {
+    background-color: var(--background-secondary) !important;
+}
+.titlebar-button:hover {
+    background-color: var(--tab-hover) !important;
+}
+
+.workspace-tab-header-container {
+    background-color: var(--editor-tab-background) !important;
+    border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* --- Editor tabs: VS Code style ------------------------------------------------
+   Flat, square, flush against each other; inactive tab = the darker strip;
+   active tab is editor-coloured with an accent line on top and merges into the
+   note body (covers the container's bottom divider).
+   Scoped to .mod-root so the sidebar tab icons (styled in 5b) are untouched. */
+.mod-root .workspace-tab-header {
+    background-color: var(--editor-tab-inactive-background) !important;
+    color: var(--text-muted);
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-right: 1px solid var(--background-modifier-border) !important;
+    box-shadow: none !important;
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+/* leftmost tab gets a divider on its start edge too, so it reads as a tile */
+.mod-root .workspace-tab-header-container .workspace-tab-header:first-of-type {
+    border-left: 1px solid var(--background-modifier-border) !important;
+}
+
+/* Obsidian's decorative Chrome-style corner curves off */
+.mod-root .workspace-tab-header::before,
+.mod-root .workspace-tab-header::after {
+    display: none !important;
+}
+
+.mod-root .workspace-tab-header-inner {
+    border-radius: 0 !important;
+}
+
+.mod-root .workspace-tab-header.is-active {
+    background-color: var(--background-primary) !important;
+    color: var(--text-normal) !important;
+    font-weight: 500;
+    /* accent bar on top — inset shadow adds no height, so text stays aligned */
+    box-shadow: inset 0 1px 0 0 var(--text-faint) !important;
+    border-right: 1px solid var(--background-modifier-border) !important;
+    margin-bottom: -1px !important;   /* punch through the tab-bar divider */
+}
+
+.mod-root .workspace-tab-header:not(.is-active):hover {
+    color: var(--text-normal);
+    /* layer the hover tint over the tile colour instead of replacing it */
+    background-image: linear-gradient(var(--tab-hover), var(--tab-hover)) !important;
+}
+.mod-root .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+    background-color: transparent !important;
+}
+
+/* Hide the Obsidian Sync status-bar icon */
+.status-bar-item.plugin-sync,
+.status-bar .sync-status-icon {
+    display: none !important;
+}
+
+/* ==========================================================================
+   5. SIDEBAR & RIBBON
+   ========================================================================== */
+.sidebar-toggle-button {
+    background-color: var(--background-secondary) !important;
+    border-bottom: 1px solid var(--background-modifier-border) !important;
+    margin: 1px auto !important; padding: 0 !important;
+    display: flex !important; align-items: center; justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted) !important;
+}
+
+.sidebar-toggle-button:hover {
+    color: var(--text-accent) !important;
+    background-color: var(--background-secondary) !important;
+}
+
+.nav-folder-title, .nav-file-title {
+    font-size: var(--nav-item-font-size);
+    color: var(--text-navbar);
+    border-radius: var(--radius-s);
+    padding: var(--nav-item-padding);
+    margin: var(--nav-item-margin);
+    font-weight: var(--nav-item-active-weight);
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.nav-file-title:hover, .nav-folder-title:hover {
+    color: var(--text-normal);
+    background-color: var(--sidebar-hover);
+    font-weight: var(--nav-item-active-weight);
+}
+
+/* Active file: same weight at rest and on hover — no bold/thin flicker */
+.nav-file-title.is-active,
+.nav-file-title.is-active:hover {
+    color: var(--text-accent) !important;
+    background-color: var(--sidebar-active);
+    font-weight: var(--nav-item-active-weight) !important;
+}
+
+/* Right sidebar (Outline, Backlinks, Tags, etc.) — panel surface */
+.mod-right-split,
+.mod-right-split .workspace-tabs,
+.mod-right-split .workspace-tab-container,
+.mod-right-split .workspace-leaf,
+.mod-right-split .workspace-leaf-content,
+.mod-right-split .view-content {
+    background-color: var(--sidebar-panel-background) !important;
+}
+
+/* Side Panels Headers */
+.mod-left-split .workspace-tab-header,
+.mod-right-split .workspace-tab-header {
+    background-color: transparent !important; border: none !important;
+}
+
+.mod-left-split .workspace-tab-header.is-active,
+.mod-right-split .workspace-tab-header.is-active {
+    background-color: var(--sidebar-hover) !important;
+    color: var(--text-accent) !important;
+    border-top: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   5b. SIDEBAR PANELS AS FLOATING CARDS
+   Each stacked tab group in the left/right sidebar becomes a rounded "widget"
+   sitting on a recessed backdrop, instead of full-bleed panes divided by lines.
+   -------------------------------------------------------------------------- */
+
+/* Recessed backdrop the cards float on; padding + gap create the breathing room.
+   Higher specificity than the plain `.mod-right-split` rule above, so it wins. */
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+    background-color: var(--background-secondary) !important;
+    padding: var(--panel-gap);
+    gap: var(--panel-gap);
+}
+
+/* Don't leave a padding sliver when the sidebar is collapsed to width 0 */
+.workspace-split.mod-left-split.is-sidedock-collapsed,
+.workspace-split.mod-right-split.is-sidedock-collapsed {
+    padding: 0 !important;
+}
+
+/* Right sidebar: drop the whole panel one row down (past --header-height) so
+   the window's minimise / maximise / close buttons sit alone on the dark strip
+   instead of sharing that row with the panel's tab icons. */
+.workspace-split.mod-right-split {
+    padding-top: calc(var(--header-height) + var(--panel-gap));
+}
+
+/* Panel no longer sits under the window buttons, so drop the wide right-hand
+   padding Obsidian reserves for them and let the tab icons use the full width. */
+.mod-right-split .workspace-tabs.mod-top-right-space .workspace-tab-header-container,
+.mod-right-split .workspace-tab-header-container {
+    padding-right: var(--size-4-2) !important;
+}
+
+/* The card: one per stacked tab group (File explorer, Search, Outline, ...) */
+.mod-left-split .workspace-tabs,
+.mod-right-split .workspace-tabs {
+    background-color: var(--sidebar-panel-background) !important;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+}
+
+/* Interior surfaces follow the raised card background */
+.mod-left-split .workspace-tab-container,
+.mod-left-split .workspace-leaf,
+.mod-left-split .workspace-leaf-content,
+.mod-left-split .view-content {
+    background-color: var(--sidebar-panel-background) !important;
+}
+
+/* Tab-header strip blends into the card — no grey fill, no divider line */
+.mod-left-split .workspace-tab-header-container,
+.mod-right-split .workspace-tab-header-container {
+    background-color: transparent !important;
+    border-bottom: none !important;
+}
+
+/* Kill the faint 1px fade-line Obsidian draws under the header inside panes */
+.mod-left-split .workspace-tabs .nav-files-container,
+.mod-left-split .workspace-tabs .search-result-container,
+.mod-left-split .workspace-tabs .tag-container,
+.mod-left-split .workspace-tabs .bookmark-container,
+.mod-right-split .workspace-tabs .outgoing-link-pane,
+.mod-right-split .workspace-tabs .backlink-pane,
+.mod-right-split .workspace-tabs .tag-container {
+    background: none !important;
+}
+
+/* Remove the hairline on the resize handles between / beside the cards */
+.workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+.workspace-split.mod-right-split > .workspace-leaf-resize-handle,
+.mod-left-split .workspace-leaf-resize-handle,
+.mod-right-split .workspace-leaf-resize-handle {
+    border: none !important;
+}
+
+/* Collapse / sidebar-toggle button in the card header: it carried its own
+   solid --background-secondary fill + bottom border (see section 5 rule).
+   Inside a card that reads as a mismatched block, so blend it in. */
+.mod-left-split .sidebar-toggle-button,
+.mod-right-split .sidebar-toggle-button,
+.mod-left-split .workspace-tab-header-container .sidebar-toggle-button,
+.mod-right-split .workspace-tab-header-container .sidebar-toggle-button {
+    background-color: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+}
+
+/* Vault switcher row at the very bottom of the left sidebar → its own card,
+   matching the panels above (drop the grey fill + the top divider line).
+   Selector mirrors Obsidian core's specificity so the override lands. */
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+    background-color: var(--sidebar-panel-background) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    border-radius: var(--radius-m) !important;
+    padding: 4px 6px !important;
+}
+
+/* --------------------------------------------------------------------------
+   5c. MAIN EDITOR AS A FLOATING CARD
+   Same treatment as the sidebars: the note pane(s) become rounded widgets on
+   a recessed backdrop instead of meeting the sidebars at a bare edge.
+   -------------------------------------------------------------------------- */
+
+.workspace-split.mod-root {
+    background-color: var(--background-secondary) !important;
+    padding: var(--panel-gap);
+    gap: var(--panel-gap);
+}
+
+/* Gaps between split panes inside the editor area */
+.mod-root .workspace-split {
+    gap: var(--panel-gap);
+}
+
+/* Each tab group is a card */
+.mod-root .workspace-tabs {
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+}
+
+/* Fill the rounded card */
+.mod-root .workspace-leaf,
+.mod-root .workspace-leaf-content,
+.mod-root .view-content {
+    background-color: var(--background-primary) !important;
+}
+
+/* On Windows the right-sidebar collapse button is reparented into the editor's
+   rightmost tab-header (not the right split), so it kept the section-5 grey fill
+   and stood out on the darker tab strip. Match it to the tab strip. */
+.mod-root .sidebar-toggle-button {
+    background-color: var(--editor-tab-background) !important;
+    border: none !important;
+    margin: 0 !important;
+}
+.mod-root .sidebar-toggle-button:hover {
+    background-color: var(--tab-hover) !important;
+}
+
+/* ==========================================================================
+   6. EDITOR STYLES: LISTS, BLOCKQUOTES, CALLOUTS, CHECKBOXES
+   ========================================================================== */
+.markdown-source-view.is-live-preview .HyperMD-list-line {
+    padding-bottom: var(--list-item-spacing) !important; margin-bottom: 0 !important;
+}
+.markdown-preview-view li {
+    margin-bottom: var(--list-item-spacing) !important;
+}
+
+/* Plain blockquotes (no callout type) */
+blockquote {
+    border: none;
+    background-color: var(--background-blockquote);
+    border-radius: var(--radius-m);
+    padding: var(--blockquote-padding);
+    margin: var(--blockquote-margin) 0;
+    color: var(--text-normal);
+    font-style: normal;
+    border-left: var(--blockquote-border-width) solid var(--text-accent);
+}
+
+/* Native Obsidian callouts, styled like docs info/warning/tip boxes */
+.callout {
+    border-radius: var(--radius-m);
+    border: 1px solid var(--background-modifier-border);
+    background-color: rgba(var(--callout-color), var(--callout-tint));
+    padding: var(--callout-padding);
+    margin: var(--callout-margin) 0;
+}
+.callout-title {
+    font-weight: 600;
+    color: var(--text-bold);
+    gap: var(--callout-title-gap);
+}
+.callout-icon svg {
+    color: rgb(var(--callout-color));
+}
+.callout-content {
+    color: var(--text-normal);
+    padding-top: 4px;
+}
+
+/* Checkboxes */
+input[type=checkbox] {
+    -webkit-appearance: none; appearance: none;
+    border-radius: var(--checkbox-radius);
+    border: var(--checkbox-border-width) solid var(--text-muted);
+    width: var(--checkbox-size); height: var(--checkbox-size);
+    position: relative; top: 3px;
+    cursor: pointer;
+    background-color: transparent;
+}
+input[type=checkbox]:checked {
+    background-color: var(--text-accent);
+    border-color: var(--text-accent);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   7. CODE BLOCKS & INLINE CODE
+   ========================================================================== */
+
+/* Inline Code */
+.markdown-reading-view code {
+    color: var(--text-accent) !important;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    padding: var(--inline-code-padding);
+    border-radius: var(--radius-s);
+    font-family: var(--font-family-code);
+    font-size: var(--code-size) !important;
+}
+
+/* Resetting Inline Code Container to avoid conflicts */
+.markdown-source-view.is-live-preview .cm-inline-code {
+    display: inline !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Styling ONLY THE TEXT (excluding backticks) */
+.markdown-source-view.is-live-preview .cm-inline-code:not(.cm-formatting) {
+    color: var(--text-accent) !important;
+    background-color: var(--background-secondary) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    border-radius: var(--radius-s) !important;
+    padding: 1px 5px !important;
+    margin: 0 1px !important;
+    font-family: var(--font-family-code);
+    font-size: var(--code-size) !important;
+}
+
+/* Backticks Styling */
+.markdown-source-view.is-live-preview .cm-formatting-code {
+    color: var(--text-muted) !important;
+    font-size: var(--small-text-size);
+    opacity: 0.5;
+}
+
+/* Code Blocks Container */
+.markdown-reading-view pre,
+.markdown-source-view.is-live-preview .HyperMD-codeblock {
+    background-color: var(--code-background);
+    font-family: var(--font-family-code);
+    line-height: 1.5 !important;
+}
+
+.markdown-reading-view pre {
+    border: 1px solid var(--code-border-color);
+    border-radius: var(--radius-m);
+    padding: var(--codeblock-padding);
+}
+
+/* Live Preview Code Borders */
+.markdown-source-view.is-live-preview .HyperMD-codeblock-begin {
+    border-top: 1px solid var(--code-border-color);
+    border-left: 1px solid var(--code-border-color);
+    border-right: 1px solid var(--code-border-color);
+    border-top-left-radius: var(--radius-m);
+    border-top-right-radius: var(--radius-m);
+    padding-top: var(--codeblock-edge-padding);
+    background-color: var(--code-background);
+}
+.markdown-source-view.is-live-preview .HyperMD-codeblock {
+    border-left: 1px solid var(--code-border-color);
+    border-right: 1px solid var(--code-border-color);
+}
+.markdown-source-view.is-live-preview .HyperMD-codeblock-end {
+    border-bottom: 1px solid var(--code-border-color);
+    border-left: 1px solid var(--code-border-color);
+    border-right: 1px solid var(--code-border-color);
+    border-bottom-left-radius: var(--radius-m);
+    border-bottom-right-radius: var(--radius-m);
+    padding-bottom: var(--codeblock-edge-padding);
+    background-color: var(--code-background);
+}
+
+/* Syntax Highlighting */
+.cm-s-obsidian span.cm-comment { color: var(--code-comment) !important; }
+.cm-s-obsidian span.cm-string { color: var(--code-string) !important; }
+.cm-s-obsidian span.cm-keyword { color: var(--code-keyword) !important; }
+.cm-s-obsidian span.cm-def { color: var(--code-function) !important; }
+.cm-s-obsidian span.cm-property { color: var(--code-property) !important; }
+.cm-s-obsidian span.cm-number { color: var(--code-value) !important; }
+
+/* Code block language tag, cleaned up like a docs site */
+.markdown-reading-view .code-block-flair,
+.copy-code-button {
+    font-family: var(--font-interface);
+    font-size: 0.75em;
+    color: var(--text-muted) !important;
+    background-color: transparent !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    border-radius: var(--radius-s) !important;
+}
+.copy-code-button:hover {
+    color: var(--text-accent) !important;
+    border-color: var(--text-accent) !important;
+}
+
+/* ==========================================================================
+   8. CUSTOM FILE ICONS
+   ========================================================================== */
+
+.nav-folder-title-content,
+.nav-file-title-content {
+    display: flex !important;
+    align-items: center;
+    gap: var(--file-icon-gap) !important;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+}
+
+/* Align file rows with folder rows.*/
+.nav-file-title .nav-file-title-content {
+    margin-inline-start: calc(-1 * (var(--file-icon-size) + var(--file-icon-gap)));
+}
+
+/* Give the whole file tree a bit more breathing room from the card's left edge */
+.nav-files-container {
+    padding-left: 16px !important;
+}
+
+/* Row left padding must be >= 20px (--size-4-5): Obsidian positions the collapse
+   arrow at `padding-left - 20px` with position:absolute, so with the theme's old
+   10px the arrow landed OUTSIDE the row box and the hover/active highlight never
+   covered it. 22px pulls the arrow back inside, so the highlight now wraps the
+   whole row — arrow + icon + name. */
+.nav-files-container .nav-folder-title,
+.nav-files-container .nav-file-title {
+    padding-left: 22px;
+}
+
+.nav-file-title.is-active .nav-file-title-content::before {
+    background-color: var(--text-accent);
+    opacity: 1;
+}
+
+/* file */
+body:not(.remove-file-icons) .nav-file-title .nav-file-title-content:not(.mk-tree-text)::before {
+    content: "";
+    flex-shrink: 0;
+    width: var(--file-icon-size);
+    height: var(--file-icon-size);
+    background-color: var(--text-muted);
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>') no-repeat center;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/></svg>') no-repeat center;
+    mask-size: contain;
+    vertical-align: baseline;
+    position: static;
+}
+
+/* ==========================================================================
+   8b. OUTLINE TREE — collapse arrow sits outside the row highlight
+   Obsidian locks the outline row's padding-inline-start at 10px with an inline
+   !important style (so CSS can't widen it) and then hangs the collapse arrow
+   ~20px further left with a negative margin — landing it in the gutter, well
+   outside .tree-item-self where the hover / active highlight is painted.
+   Since the padding is untouchable, drop the arrow's negative margin instead:
+   it snaps back to the 10px padding edge (inside the highlight) and carries the
+   label across with it, so arrow + label shift inward together as one unit.
+   Per-level indentation still comes from each row's own inline padding, so the
+   tree shape is preserved.
+   ========================================================================== */
+.workspace-leaf-content[data-type="outline"] .tree-item-self > .tree-item-icon.collapse-icon {
+    position: static !important;
+    margin-inline-start: 0 !important;
+}
+
+/* Leaf headings have no arrow, so their label would stay pinned to the 10px
+   padding edge while collapsible siblings' labels moved right by the arrow's
+   width. Nudge leaf labels over by the same amount so every label in the tree
+   — at every depth — lines up. (:first-child ⇒ no .tree-item-icon precedes it.) */
+.workspace-leaf-content[data-type="outline"] .tree-item-self > .tree-item-inner:first-child {
+    margin-inline-start: 20px;
+}
+
+
+/* ==========================================================================
+   9. MATH & LATEX STYLING
+   ========================================================================== */
+
+.markdown-source-view .math-block,
+.markdown-preview-view .math-block,
+mjx-container[display="true"] {
+    font-size: var(--math-font-size) !important;
+    padding: var(--math-padding) 0 !important;
+}
+
+.markdown-source-view .cm-math,
+mjx-container:not([display="true"]) {
+    font-size: var(--math-font-size) !important;
+}
+
+/* ==========================================================================
+   10. KANBAN PLUGIN PATCH
+   ========================================================================== */
+.workspace-leaf-content[data-type="kanban"] .markdown-source-view.mod-cm6 .cm-scroller,
+.workspace-leaf-content[data-type="kanban"] .markdown-preview-view {
+    padding-top: 0px !important;
+}

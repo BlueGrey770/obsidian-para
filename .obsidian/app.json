@@ -1,0 +1,8 @@
+{
+  "promptDelete": false,
+  "attachmentFolderPath": "Attachments",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Inbox",
+  "newLinkFormat": "relative",
+  "alwaysUpdateLinks": true
+}

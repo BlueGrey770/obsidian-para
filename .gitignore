@@ -1,0 +1,56 @@
+# ============================================================
+# Obsidian 库 git 忽略规则  (E:\notes\PARA)
+# 原则：版本化「你亲手写的内容」+「可重建的配置」；
+#       不提交含密钥的文件、不提交插件二进制、不提交会话缓存。
+# 维护：改动分类目录或换插件时，回来复核本文件。
+# ============================================================
+
+# ---------- 1. 敏感凭据：绝对不提交 ----------
+# image-upload-toolkit 的 data.json 里存有阿里云 OSS 的
+# accessKeyId / accessKeySecret（明文）。一旦推到远程即等于泄露。
+# 代价：换机器后需在插件设置里重新填一次 AK/SK。
+.obsidian/plugins/image-upload-toolkit/data.json
+obsidian_askpass.sh
+.obsidian/plugins/*/obsidian_askpass.sh
+
+# ---------- 2. Obsidian 运行时状态（每次开关软件都会变）----------
+# 这类文件进版本库只会产生大量无意义 diff。
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data-local.json
+.trash/
+
+# ---------- 3. 插件/主题的二进制与打包代码（可重新下载）----------
+# main.js 单个就 0.8~2.4 MB，5 个插件合计约 9 MB。
+# 只保留各插件的 manifest.json 与 data.json（设置），
+# 换机器时插件市场/BRAT 重装即可，设置不丢。
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+
+# ---------- 4. AI 会话日志与本地上下文（隐私 + 无版本价值）----------
+# Claudian 的会话记录含完整对话内容与本地设备标识。
+.claudian/sessions/
+.claudian/*.log
+
+# ---------- 5. 系统垃圾 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.swp
+*~
+~$*
+*.bak
+
+# ---------- 6. 可选：附件原件 ----------
+# Attachments/ 目前 1.9 MB（6 张图 + 索引）。体积不大，默认建议提交，
+# 这样换机器能拿到原件。若将来放入大 PDF / 音视频，可取消下面注释，
+# 改为依赖 OSS 外链；注意取消后新克隆的库将缺失本地附件。
+# Attachments/
+
+# ---------- 7. 可选：AI 维护上下文目录 ----------
+# agent_memory/ 是本库的 AI 上下文（context/progress/bugs），
+# 结构上是框架的一部分，默认提交，保留它的演进记录。
+# 若你希望它只在本机存在，取消下面注释。
+# agent_memory/
