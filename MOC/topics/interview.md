@@ -50,4 +50,10 @@
 - 导读：[[Memo/development/programming/interview/xiang-mu-mian-shi-ti/ri-chang-zheng-li/ce-lve-mo-shi-xiang-jie/index.md|策略模式详解]]
 - [[Memo/development/programming/interview/xiang-mu-mian-shi-ti/ri-chang-zheng-li/ce-lve-mo-shi-xiang-jie/spring-ioc-rong-qi-di-ceng-shi-ru-he-yong-concurrenthashmap.md|Spring IoC容器底层是如何用ConcurrentHashMap存储Bean]]
 
+## zhuan-ti-jin-jie
+- [[Memo/development/programming/interview/zhuan-ti-jin-jie/01-jvm-zhuan-ti.md|面试专题：JVM 进阶]]
+- [[Memo/development/programming/interview/zhuan-ti-jin-jie/02-mysql-gao-ji-zhuan-ti.md|面试专题：MySQL 高级（索引、事务、MVCC 与锁）]]
+- [[Memo/development/programming/interview/zhuan-ti-jin-jie/03-mq-zhuan-ti.md|面试专题：MQ 可靠性与顺序性（RabbitMQ 与 Kafka）]]
+- [[Memo/development/programming/interview/zhuan-ti-jin-jie/04-chang-jing-she-ji-mo-shi-yu-gao-bing-fa.md|面试专题：设计模式与高并发场景题]]
+
 返回 [[MOC/domains/development.md|开发与技术]] ・ [[MOC/index.md|首页]]
