@@ -26,6 +26,19 @@
 
 具体主题随内容增加，不会预建所有分类。书籍与考试目录当前没有虚构条目；首次使用时按对应专题页说明添加。
 
+## 新机器恢复清单
+
+`.obsidian` 配置目录不进入版本库（决策日期 2026-11-06）。在别的机器 `git clone` 后，笔记、附件、模板、规范全部就位，只需按以下顺序重建配置，约 15~20 分钟：
+
+1. **打开库**：Obsidian → “打开文件夹作为仓库”，选本目录。Obsidian 会自动生成全新的 `.obsidian`。
+2. **文件与链接**：默认附件位置 `Attachments`；新笔记默认位置 `Inbox`；内部链接类型「基于当前笔记的相对路径」；打开「始终更新内部链接」。
+3. **外观**：主题安装 **Tech001** 并启用。
+4. **第三方插件**：关闭安全模式，安装并启用 image-upload-toolkit、quickadd、obsidian-git、BRAT、realclaudian；vtable 经 BRAT 安装。
+5. **image-upload-toolkit**：Image store = `ALIYUN_OSS`，Region = `oss-cn-hongkong`，填入 RAM 的 AK/SK，Bucket = `notes-images-para`，Target path = `/img`，打开 **Update original document**。AK/SK 从阿里云 RAM 控制台重新获取，不在任何仓库中。
+6. **QuickAdd**：按 [[Memo/development/devops/obsidian-plugin-setup-guide.md|插件安装与配置教程]] 重建 4 个模板绑定（Log / Journal / Memo / Draft），模板正文在 `_templates/` 已在版本库中。
+7. **图谱**：按 [[MOC/graph-guide.md|图谱说明]] 重设知识范围白名单与领域分色。
+8. **obsidian-git**：Vault backup interval 设 10~15 分钟；远程仓库必须为**私有仓库**。
+
 ## AI维护与安全
 
-`agent_memory` 是本库新初始化的AI上下文，不是知识内容，默认排除图谱，不建立知识关联。云同步、公司资料和个人敏感原件未迁入，不要为了移植便利而整包覆盖配置。`.obsidian` 插件配置目录含明文 OSS 密钥，同步或推送代码仓库时必须确认其为私有仓库。文件恢复不是独立备份，正式使用后应另做可恢复的备份。
+`agent_memory` 是本库新初始化的AI上下文，不是知识内容，默认排除图谱，不建立知识关联。云同步、公司资料和个人敏感原件未迁入，不要为了移植便利而整包覆盖配置。`.obsidian` 配置目录（含明文 OSS 密钥）整体不进入版本库，恢复时按上方《新机器恢复清单》重建；git 远程仓库仍建议设为私有，因为笔记正文与附件属个人内容。文件恢复不是独立备份，正式使用后应另做可恢复的备份。
