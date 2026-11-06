@@ -10,7 +10,22 @@
 | 思考 | `Journal/development/` | 需求分析、方案、选型与复盘 |
 | 知识 | `Memo/development/` | 原理、配置、命令与独立方法 |
 
-建议主题：programming、backend、frontend、databases、ai、devops、architecture、cad-cam。当前只按实际内容建devops主题，其他主题需要时再建。
+建议主题：programming、backend、frontend、databases、ai、devops、architecture、cad-cam。
+
+## 主题知识库（2026-11-06 迁入）
+
+技术知识库（脱敏版）已迁入并按主题建立索引，Python 为本地课程材料提炼的新分类：
+
+- [[MOC/topics/python.md|Python]] — 本地课程材料提炼（语法、容器、函数、综合实战）
+- [[MOC/topics/java-core.md|Java 语言核心]] — programming/java
+- [[MOC/topics/databases.md|数据库与持久层]] — databases
+- [[MOC/topics/web.md|Web 开发与框架]] — backend/web
+- [[MOC/topics/frontend.md|前端基础与工程化]] — frontend
+- [[MOC/topics/microservices.md|微服务与中间件]] — architecture/microservices
+- [[MOC/topics/devops.md|工程化与部署]] — devops
+- [[MOC/topics/ai.md|AI 应用开发]] — ai
+- [[MOC/topics/solutions.md|业务组件方案集]] — architecture/solutions
+- [[MOC/topics/interview.md|面试知识库]] — programming/interview
 
 ## 当前工具参考
 
