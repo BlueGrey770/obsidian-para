@@ -2,7 +2,7 @@
 type: mindmap
 date: 2026-11-06
 aliases:
-  - "Java 基础思维导图"
+  - Java 基础思维导图
 mindmap-layout: balanced
 mindmap-theme: vibrant
 mindmap-line: curve
