@@ -33,6 +33,7 @@
 
 ## 第十二章 项目总结&部署
 - 导读：[[Memo/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/index.md|第十二章 项目总结&部署]]
+- [[Memo/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/xiang-mu-shu-li.md|项目梳理]]
 - [[Memo/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/yun-lan-dao-jia-xiang-mu-zong-jie.md|云岚到家项目总结]]
 
 ## 第五章 搜索模块
@@ -86,6 +87,7 @@
 ## 第五章-分组实战
 - 导读：[[Memo/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-wu-zhang-fen-zu-shi-zhan/index.md|第五章-分组实战]]
 - [[Memo/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-wu-zhang-fen-zu-shi-zhan/jie-kou-wen-dang.md|接口文档]]
+- [[Memo/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-wu-zhang-fen-zu-shi-zhan/kai-fa-ji-hua.md|开发计划]]
 
 ## 第一章-若依+AI快速开发新项目
 - 导读：[[Memo/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/index.md|第一章-若依+AI快速开发新项目]]

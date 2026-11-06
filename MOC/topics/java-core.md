@@ -3,6 +3,7 @@
 Java 语言从入门语法到集合、IO、多线程、网络编程的系统知识，源自课程知识库整理与本地代码注释精讲。
 
 - [[Memo/development/programming/java/01-java-yu-yan-he-xin.md|01 Java 语言核心]]
+- [[Memo/development/programming/java/java-ji-chu-si-wei-dao-tu.md|Java 基础思维导图]]
 - [[Memo/development/programming/java/zong-he-fu-xi.md|综合复习]]
 
 ## 方法引用、异常与泛型
