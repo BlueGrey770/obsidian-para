@@ -4,12 +4,11 @@ date: 2026-11-06
 aliases:
   - "10 文件上传_会话"
 ---
+# 10 文件上传_会话
 
-<title>10 文件上传_会话</title>
+## 文件上传
 
-# 文件上传
-
-## 前端必须遵守的规则
+### 前端必须遵守的规则
 
 ```Java
 1. 将请求方法改成post
@@ -18,7 +17,7 @@ aliases:
 3.必须有上传项<input type = file name="和controller的参数名保持一致">
 ```
 
-## 后端
+### 后端
 
 ```Java
 1. MultipartFile：采用这个类型接收上传即可
@@ -31,9 +30,9 @@ aliases:
     2. 解决一个文件夹存放大量文件问题：采用hash算法，得到8级目录
 ```
 
-# 会话技术
+## 会话技术
 
-## cookie
+### cookie
 
 ```Java
 定义：客户端（浏览器）存储的小型文本文件，记录用户状态，由服务器下发，浏览器保存，请求时自动携带
@@ -48,7 +47,7 @@ aliases:
     (6）不支持移动端
 ```
 
-## SESSION
+### SESSION
 
 ```Java
 定义:服务端存储的用户会话数据，通过Cookie或者URL重写关联客户端，会话结束销毁
@@ -63,7 +62,7 @@ cookie的形式，键为JSESSIONID，值为session的id存储到客户端浏览�
     (2)不支持移动端
 ```
 
-## JWT（令牌）
+### JWT（令牌）
 
 ```Java
 定义：基于JSON的轻量级令牌，用于在客户端与服务端间安全传递身份/权限等声明信息，由头部，载荷，签名
@@ -118,7 +117,7 @@ cookie的形式，键为JSESSIONID，值为session的id存储到客户端浏览�
 加密是不可逆的,编码是可逆的
 </callout>
 
-### **制作令牌的步骤**
+#### **制作令牌的步骤**
 
 1. 在pom.xml文件中引入JWT的坐标
 
@@ -208,19 +207,19 @@ loginVO.setToken(token);
 发送令牌：每次请求都要携带令牌，需要写逻辑
 ```
 
-# 登录验证  
+## 登录验证
 
 <callout emoji="❤️">
 就是如果没有登录的话就拦截其对URI资源的请求，使其不能访问，只有登录之后才可以访问内部页面
 </callout>
 
-## 过滤器
+### 过滤器
 
 <callout emoji="🌰">
 介绍：web的三大组件之一，是服务器内置的技术，他是在请求达到servlet之前做的一些统一操作用的
 </callout>
 
-### 使用步骤
+#### 使用步骤
 
 > 1. 定义一个类去实现Filter接口，将其放入到ioc容器中即可
 > 2. 重写doFilter的方法
@@ -264,7 +263,7 @@ public void doFilter(ServletRequest servletRequest, ServletResponse servletRespo
     不仅请求过滤器，响应也会经过过滤器
 ```
 
-## 拦截器Intercepter
+### 拦截器Intercepter
 
 <callout emoji="💡">
 介绍：是SpringMVC技术，他是DishpatherServlet之后执行的Controller之前执行的
@@ -273,7 +272,7 @@ public void doFilter(ServletRequest servletRequest, ServletResponse servletRespo
                 3. 配置拦截器
 </callout>
 
-### 使用步骤
+#### 使用步骤
 
 1. 首先定义一个拦截器类
 

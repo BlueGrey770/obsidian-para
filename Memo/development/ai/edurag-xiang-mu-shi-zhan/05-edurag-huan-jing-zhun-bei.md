@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "05-EduRAG-环境准备"
 ---
+# 05-EduRAG-环境准备
 
-<title>05-EduRAG-环境准备</title>
-
-# 1 项目背景
+## 1 项目背景
 
 近年来，随着ChatGPT的广泛应用，基于大规模语言模型（LLM）的技术已成为人工智能领域的研究和应用热点
 
@@ -31,7 +30,7 @@ aliases:
 
 
 
-# 2 Milvus
+## 2 Milvus
 
 Milvus是一个向量数据库（2019年提出），能够处理**万亿级别**的向量索引
 
@@ -46,15 +45,15 @@ Milvus用于处理从非结构化数据转换而来的嵌入向量，能够通�
 - 云扩展性和高可靠性，即使出现故障也不会受到影响
 - **通过将标量过滤与向量相似度搜索配对，实现混合搜索**
 
-## 2.1 安装Milvus
+### 2.1 安装Milvus
 
-### 2.1.1 准备虚拟机
+#### 2.1.1 准备虚拟机
 
 1. 设置虚拟机的网络为192.168.100.x
 2. 将资料中提供的Centos镜像导入到虚拟机
 3. 启动完毕之后，登录服务器192.168.100.128。 输入用户名：root，密码：1234 
 
-### 2.1.2 安装服务
+#### 2.1.2 安装服务
 
 1. 将资料中提供好的软件镜像包上传到Linux中
 
@@ -158,7 +157,7 @@ Redis 服务
 
 ![图片展示的是在/root/ai/dev/milvus_redis目录下运行docker compose up -d命令的执行结果。命令成功运行，显示运行5/5，其中Network milvus-network、Container milvus-etcd、milvus-redis、milvus-minio、milvus-standalone等均处于Started状态，且有绿色对勾标识。该图片与文档中“2.1.1准备虚拟机”部分的后续操作相关，用于说明启动Milvus和Redis服务的执行情况。](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/VNQFbixplo7majxsykxc1YkFn9e.png)
 
-### 2.1.3 连接Milvus
+#### 2.1.3 连接Milvus
 
 1. 验证milvus是否安装成功，可以使用可视化工具连接即可，在当天的资料中找到对应的软件
 
@@ -174,23 +173,23 @@ Redis 服务
 
 
 
-## 2.2 核心概念
+### 2.2 核心概念
 
 Milvus本质上是一个数据库管理系统（软件）， 我们可以在其内部创建一个个的数据库，然后再向数据库中创建Collection（数据表）
 
-### 2.2.1 集合属性
+#### 2.2.1 集合属性
 
 collection schema 是集合的属性
 
 <sheet sheet-id="XrxOEG" token="AUdksW6dehsONMtrizkcvXJenGe"></sheet>
 
-### 2.2.2 字段属性
+#### 2.2.2 字段属性
 
 Field schema 是字段的属性
 
 <sheet sheet-id="TSKPgD" token="AUdksW6dehsONMtrizkcvXJenGe"></sheet>
 
-## 2.3 索引
+### 2.3 索引
 
 索引是建立在数据之上的附加结构，它可以加快搜索速度，在搜索或查询插入的实体之前，必须声明索引类型，如果未指定，则Milvus将默认使用暴力搜索
 
@@ -200,7 +199,7 @@ Field schema 是字段的属性
 
 <sheet sheet-id="JtCmiD" token="AUdksW6dehsONMtrizkcvXJenGe"></sheet>
 
-### 1.3.1 FLAT
+#### 1.3.1 FLAT
 
 FLAT：这是最简单的索引方式，进行暴力搜索，可以保证精确度，但效率低，尤其在数据量大时。**适合在小型、百万级数据集上寻求完全精确的搜索结果**
 
@@ -212,7 +211,7 @@ FLAT：这是最简单的索引方式，进行暴力搜索，可以保证精确�
 例子：如果你只有1000张图片，用 FLAT 找最相似的一张没问题。
 </callout>
 
-### 1.3.2 IVF_FLAT
+#### 1.3.2 IVF_FLAT
 
 IVF_FLAT是一种基于聚类和倒排索引来进行数据存储和检索的方法，广泛用于在**大规模数据集上实现高效的近似最近邻搜索**
 
@@ -239,7 +238,7 @@ IVF_FLAT是一种基于聚类和倒排索引来进行数据存储和检索的方
 参数nprobe：控制搜索几个组，越多越准但越慢，越少越快但可能漏掉一些
 </callout>
 
-### 1.2.3 IVF_SQ8
+#### 1.2.3 IVF_SQ8
 
 是在 IVF_FLAT 基础上增加了量化步骤的一种索引方法，其核心思想与 IVF_FLAT 类似
 
@@ -247,7 +246,7 @@ IVF_SQ8通过 **标量量化** （Scalar Quantization）将每个维度的 4 字
 
 ![图片展示了IVF_SQ8索引方法中标量量化过程。左侧是原始向量，如\[0.3, 0.8, 0.4, 0.2, 0.7\]等，右侧是量化后的向量，如(1, 4, 2, 1, 3)等。下方是量化范围，如\[0.0, 0.2) -> 0等。右侧还画有多个椭圆，椭圆内有方块，代表不同簇。该图与上下文紧密相关，直观呈现了IVF_SQ8通过标量量化将浮点数向量压缩为整数向量的过程。](https://feishu.cn/file/MgxEbNzNmoIy4CxEH1Tc7obTnLb)
 
-### 1.2.4 IVF_PQ
+#### 1.2.4 IVF_PQ
 
 IVF_PQ是一种高效的向量索引方式，结合了倒排文件索引和乘积量化（Product Quantization）技术，旨在加速大规模高维数据集的检索
 
@@ -268,7 +267,7 @@ IVF_PQ通过减少存储空间的占用，同时保持较高的查询速度和�
 - 缺点：精度损失比 IVF_SQ8 更大。
 </callout>
 
-### 1.2.5 HNSW
+#### 1.2.5 HNSW
 
 HNSW是基于图的索引，最适合对搜索效率有高要求的场景
 
@@ -283,11 +282,11 @@ HNSW是基于图的索引，最适合对搜索效率有高要求的场景
 
 请参阅[向量索引](https://www.milvus-io.com/reference/index)以了解更多详细信息。
 
-## 2.4 相似度度量
+### 2.4 相似度度量
 
 在Milvus中，相似度度量用于衡量向量之间的相似性。也就是两个向量在高维空间中的距离
 
-### 2.4.1 欧几里得距离
+#### 2.4.1 欧几里得距离
 
 欧几里得距离（L2，也称为欧式距离）：就是两点之间的直线距离，值越小越相似
 
@@ -296,7 +295,7 @@ HNSW是基于图的索引，最适合对搜索效率有高要求的场景
 
 ![图片展示了欧几里得距离的计算公式及示意图。公式为d(A, B) = √∑(A_i - B_i)^2，其中A和B表示两个比较的向量，n表示向量维度。示意图中，x1、x2、y1、y2分别对应坐标轴上的点，通过连接两点形成直角三角形，直观呈现了两点间欧几里得距离的计算。该图与上文介绍的欧几里得距离概念紧密相关，通过公式和示意图帮助理解其计算原理。](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/BzCEbmCNBokuzuxN6iRcL7RqnOb.png)
 
-### 2.4.2 余弦相似度
+#### 2.4.2 余弦相似度
 
 余弦距离 (COSINE)：计算两点之间夹角的余弦值，值越接近1越相似。它只关心向量的“方向”，不关心长度
 
@@ -305,7 +304,7 @@ HNSW是基于图的索引，最适合对搜索效率有高要求的场景
 
 ![该图片展示了两个向量夹角余弦值的相关内容，包含余弦相似度的计算公式，标注为$\\cos(\\theta) = \\frac{\\boldsymbol{A} \\cdot \\boldsymbol{B}}{|\\boldsymbol{A}||\\boldsymbol{B}|}$，还配有示意图，图中以原点出发的两条带有箭头的线段分别标注为a和b，二者的夹角标注为α。图片还说明了余弦相似度的特点，即对向量长度不敏感，仅关注向量方向，适用于高维向量的相似性计算，典型应用场景为语义搜索和文档分类，这与文档中关于Milvus相似度度量的内容相呼应，体现了余弦相似度的相关知识。](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/BcKNbTv6moafu5xi78HcYYXsnoQ.png)
 
-### 2.4.3 内积
+#### 2.4.3 内积
 
 内积（IP）：是衡量两个向量的“方向一致性”和“长度”，值越大越相似
 
@@ -316,7 +315,7 @@ HNSW是基于图的索引，最适合对搜索效率有高要求的场景
 
 
 
-## 2.5 Milvus操作
+### 2.5 Milvus操作
 
 1)  创建新的环境  
 conda create -n edu_rag python=3.10
@@ -329,7 +328,7 @@ conda create -n edu_rag python=3.10
 
 pip install --upgrade pymilvus==v2.6.3
 
-### 2.5.1 操作数据库
+#### 2.5.1 操作数据库
 
 Milvus数据库的操作主要就是创建和使用数据库
 
@@ -363,7 +362,7 @@ if __name__ == '__main__':
     operation_db()
 ```
 
-### 2.5.2 操作集合
+#### 2.5.2 操作集合
 
 在Milvus中，需要使用 Collections来存储向量及其相关元数据，可以把它想象成传统 SQL 数据库中的表格
 
@@ -400,7 +399,7 @@ if __name__ == '__main__':
     operation_collection()
 ```
 
-### 2.5.3 操作索引
+#### 2.5.3 操作索引
 
 ```Python
 from pymilvus import MilvusClient, DataType
@@ -463,7 +462,7 @@ if __name__ == '__main__':
     operation_index()
 ```
 
-### 2.5.4 增删改数据
+#### 2.5.4 增删改数据
 
 ```Python
 from pymilvus import MilvusClient, DataType
@@ -551,7 +550,7 @@ if __name__ == '__main__':
     operate_entity(client)
 ```
 
-### 2.5.5 简单查询
+#### 2.5.5 简单查询
 
 ```Python
 from pymilvus import MilvusClient
@@ -589,7 +588,7 @@ if __name__ == '__main__':
     query_operation(client)
 ```
 
-### 2.5.6 **混合**查询
+#### 2.5.6 **混合**查询
 
 如果在查询的过程中，一个collection中有多个向量字段（假设是两个）参与搜索，如果我们根据这两个条件分别查询
 
@@ -701,9 +700,9 @@ if __name__ == '__main__':
 
 
 
-# 3 环境搭建
+## 3 环境搭建
 
-## 3.1 创建项目并安装依赖库
+### 3.1 创建项目并安装依赖库
 
 使用pycharm创建一个新的项目，并在根目录中创建一个文件 `requirements.txt`
 
@@ -714,7 +713,7 @@ if __name__ == '__main__':
 
 <figure view-type="Preview"><source name="requirements.txt" mime="text/plain" size="3409" token="TpnJbUh9doJYv5xYuDSchP4bnNf"/></figure>
 
-## 3.2 代码目录结构
+### 3.2 代码目录结构
 
 ```Plain Text
 edu_rag_pro/

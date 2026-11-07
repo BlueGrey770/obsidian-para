@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "06 Elasticsearch入门"
 ---
+# 06 Elasticsearch入门
 
-<title>06 Elasticsearch入门</title>
-
-#  学习目标
+##  学习目标
 
 1. 能够说出什么是倒排索引
 2. 能够说出我们用的中文分词器是什么
@@ -22,15 +21,15 @@ aliases:
 
 
 
-# 1  Elasticsearch快速入门
+## 1  Elasticsearch快速入门
 
-## 1.1. 认识Elasticsearch
+### 1.1. 认识Elasticsearch
 
-### 1.1.1 搜索需求
+#### 1.1.1 搜索需求
 
 黑马商城作为一个电商项目，商品的搜索肯定是访问频率最高的页面之一。目前搜索功能是基于数据库的模糊搜索来实现的，存在很多问题。
 
-#### 查询效率较低
+##### 查询效率较低
 
 由于数据库模糊查询不走索引，在数据量较大的时候，查询性能很差。黑马商城的商品表中仅仅有不到9万条数据，基于数据库查询时，搜索接口的表现如图：
 
@@ -42,7 +41,7 @@ aliases:
 
 需要注意的是，数据库模糊查询随着表数据量的增多，查询性能的下降会非常明显，而搜索引擎的性能则不会随着数据增多而下降太多。目前仅10万不到的数据量差距就如此明显，如果数据量达到百万、千万、甚至上亿级别，这个性能差距会非常夸张。
 
-#### 功能单一
+##### 功能单一
 
 数据库的模糊搜索功能单一，匹配条件非常苛刻，必须恰好包含用户搜索的关键字。而在搜索引擎中，用户输入出现个别错字，或者用拼音搜索、同义词搜索都能正确匹配到数据。
 
@@ -121,13 +120,13 @@ Elasticsearch是一款非常强大的开源搜索引擎，支持的功能非常�
 
 
 
-### 1.1.2 倒排索引
+#### 1.1.2 倒排索引
 
 Elasticsearch之所以有如此高性能的搜索表现，正是得益于底层的倒排索引技术。那么什么是倒排索引呢？
 
 **倒排**索引的概念是基于**正向**索引而言的。
 
-#### 1.1.2.1 正向索引
+##### 1.1.2.1 正向索引
 
 我们先来回顾一下正向索引。
 
@@ -173,7 +172,7 @@ select * from tb_goods where title like '%手机%';
 
 而倒排索引恰好解决的就是根据部分词条模糊匹配的问题。
 
-#### 1.1.2.2 倒排索引
+##### 1.1.2.2 倒排索引
 
 倒排索引中有两个非常重要的概念：
 
@@ -234,7 +233,7 @@ select * from tb_goods where title like '%手机%';
 
 虽然要先查询倒排索引，再查询倒排索引，但是无论是词条、还是文档id都建立了索引，查询速度非常快！无需全表扫描。
 
-#### 1.1.2.3 面试题
+##### 1.1.2.3 面试题
 
 - 说下倒排索引？为什么叫倒排索引？
 
@@ -244,9 +243,9 @@ select * from tb_goods where title like '%手机%';
 
 
 
-## 1.2. 安装Elasticsearch
+### 1.2. 安装Elasticsearch
 
-### 1.2.1 介绍Elasticsearch
+#### 1.2.1 介绍Elasticsearch
 
 Elasticsearch是由elastic公司开发的一套搜索引擎技术，Elasticsearch的官方网站如下：
 
@@ -281,7 +280,7 @@ ELK 是指一套流行的技术栈，用于构建高级的日志收集、分析�
 - elasticsearch：存储、搜索和运算
 - kibana：图形化展示控制台
 
-### 1.2.2 安装Elasticsearch
+#### 1.2.2 安装Elasticsearch
 
 删除旧容器
 
@@ -331,7 +330,7 @@ elasticsearch:7.17.7
 }
 ```
 
-### 1.2.3 安装Kibana
+#### 1.2.3 安装Kibana
 
 删除旧容器
 
@@ -361,7 +360,7 @@ docker run --name kibana \
 
 
 
-### 1.2.4 小结
+#### 1.2.4 小结
 
 安装Elasticsearch和Kibana需要注意：Elasticsearch和Kibana的版本需要保持一致。
 
@@ -383,11 +382,11 @@ ELK用于构建日志收集分析系统，包括：
 
 
 
-## 1.3.基础概念
+### 1.3.基础概念
 
 elasticsearch中有很多独有的概念，与mysql中略有差别，但也有相似之处。
 
-### 1.3.1 文档和字段
+#### 1.3.1 文档和字段
 
 elasticsearch是面向**文档（Document）**存储的，可以是数据库中的一条商品数据，一个订单信息。文档数据会被序列化为`json`格式后存储在`elasticsearch`中：
 
@@ -426,7 +425,7 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 
 
 
-### 1.3.2 索引和映射
+#### 1.3.2 索引和映射
 
 随着业务发展，需要在es中存储的文档也会越来越多，比如有商品的文档、用户的文档、订单文档等等：
 
@@ -510,7 +509,7 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 
 
 
-### 1.3.3 总结
+#### 1.3.3 总结
 
 我们对mysql与elasticsearch的概念做一下对比：
 
@@ -547,9 +546,9 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 
 
 
-## 1.4. IK分词器
+### 1.4. IK分词器
 
-### 1.4.1 认识分词器
+#### 1.4.1 认识分词器
 
 Elasticsearch的底层是倒排索引，倒排索引中的词条来源于对文档内容的分词，分词器正是负责对文档内容进行分词。
 
@@ -842,9 +841,9 @@ POST /_analyze
 
 
 
-### 1.4.2 IK分词器
+#### 1.4.2 IK分词器
 
-#### 1.4.2.1 安装
+##### 1.4.2.1 安装
 
 IK 分词器是一种广泛应用于中文文本处理的分词工具，尤其在中文搜索引擎和文本分析领域非常常见。
 
@@ -890,7 +889,7 @@ docker restart es
 
 我们在安装ES时已经将此目录拷贝到了虚拟机，所以IK分词已经安装成功。
 
-#### 1.4.2.2 测试
+##### 1.4.2.2 测试
 
 下边测试IK分词器：
 
@@ -1020,7 +1019,7 @@ POST /_analyze
 
 
 
-### 1.4.3.拓展词典
+#### 1.4.3.拓展词典
 
 随着互联网的发展，“造词运动”也越发的频繁。出现了很多新的词语，在原有的词汇列表中并不存在。比如：“泰裤辣”，“传智播客”, "奥利给" 等。
 
@@ -1205,7 +1204,7 @@ POST /_analyze
 
 
 
-### 1.4.4总结
+#### 1.4.4总结
 
 分词器的作用是什么？
 
@@ -1226,9 +1225,9 @@ IK分词器如何拓展词条？
 - 利用config目录的`IkAnalyzer.cfg.xml`文件添加拓展词典和停用词典
 - 在词典中添加拓展词条或者停用词条
 
-## 1.5. 快速入门
+### 1.5. 快速入门
 
-### 1.5.1 创建索引
+#### 1.5.1 创建索引
 
 根据前边对倒排索引的理解，倒排索引就是根据词找文档，词就是索引，所以要想完成搜索功能开发第一步就是要创建索引，有了索引就可以搜索了。
 
@@ -1287,7 +1286,7 @@ successful: 插入成功1个文档。
 
 
 
-### 1.5.2 查询文档 
+#### 1.5.2 查询文档
 
 根据id查询文档：GET /my_index/\_doc/1
 
@@ -1303,7 +1302,7 @@ my_index：索引名
 
 
 
-### 1.5.3 搜索文档
+#### 1.5.3 搜索文档
 
 下边进行搜索：
 
@@ -1352,7 +1351,7 @@ GET /my_index/_search
 
 
 
-### 1.5.4 删除文档
+#### 1.5.4 删除文档
 
 执行下边的语句删除文档：
 
@@ -1381,7 +1380,7 @@ GET /my_index/_search
 
 
 
-### 1.5.5 总结
+#### 1.5.5 总结
 
 通过Elasticsearch提供的RESTful接口操作索引：
 
@@ -1418,11 +1417,11 @@ GET /my_index/_search
    - 字段是文档中的基本单元，用于存储数据。
    - 每个字段都有一个数据类型，例如 `text`、`keyword`、`integer`、`float` 等。
 
-# 2.索引操作
+## 2.索引操作
 
 Mapping映射就类似表的结构。我们要向es中存储数据，必须先创建Index和Mapping
 
-## 2.1 Mapping映射属性
+### 2.1 Mapping映射属性
 
 在MySQL中创建表结构时需要指定每个字段的类型，同样，创建索引的映射也需要指定每个字段的类型及其它属性。
 
@@ -1467,7 +1466,7 @@ index为false表示不分词也不能搜索。
 
 如果搜索时使用ik_smart模式，此时“中华人民共和国”分词为“中华人民共和国”，此时去搜索出的文档正是用户想要的。
 
-## 2.2 创建索引
+### 2.2 创建索引
 
 **基本语法**：
 
@@ -1622,7 +1621,7 @@ info字段说明：
 
 
 
-## 2.3 查询索引
+### 2.3 查询索引
 
 **基本语法**：
 
@@ -1648,7 +1647,7 @@ GET /heima
 
 
 
-## 2.4 修改索引
+### 2.4 修改索引
 
 倒排索引结构虽然不复杂，但是一旦数据结构改变（比如改变了分词器），就需要重新创建倒排索引，这简直是灾难。因此索引**一旦创建，无法修改mapping**。
 
@@ -1688,7 +1687,7 @@ PUT /heima/_mapping
 
 
 
-## 2.5 删除索引
+### 2.5 删除索引
 
 **语法：**
 
@@ -1714,7 +1713,7 @@ DELETE /heima
 
 
 
-## 2.6 总结
+### 2.6 总结
 
 索引操作有哪些？
 
@@ -1729,13 +1728,13 @@ DELETE /heima
 
 
 
-# 3.文档操作
+## 3.文档操作
 
 有了索引，接下来就可以向索引中添加数据了。
 
 Elasticsearch中的数据其实就是JSON风格的文档。操作文档自然保护`增`、`删`、`改`、`查`等几种常见操作，我们分别来学习。
 
-## 3.1 新增文档
+### 3.1 新增文档
 
 **语法：**
 
@@ -1775,7 +1774,7 @@ POST /heima/_doc/1
 
 
 
-## 3.2 查询文档
+### 3.2 查询文档
 
 根据rest风格，新增是post，查询应该是get，不过查询一般都需要条件，这里我们把文档id带上。
 
@@ -1799,7 +1798,7 @@ GET /heima/_doc/1
 
 ![图片展示的是Elasticsearch Dev Tools界面，处于Console标签下。左侧输入框中显示GET /heima/_doc/1命令，右侧为响应结果，展示了文档的index、type、id、version等信息，其中id为1，version为1，_source字段包含name、email、info等字段内容。该图片与文档中3.3.1全量修改部分内容相关，直观呈现了全量修改操作后文档在Elasticsearch中的存储情况。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Hb6IbM8t9o9yHRxLRGVcfhTqnAe.png)
 
-## 3.3 修改文档
+### 3.3 修改文档
 
 修改有两种方式：
 
@@ -1808,7 +1807,7 @@ GET /heima/_doc/1
 
 
 
-### 3.3.1 全量修改
+#### 3.3.1 全量修改
 
 全量修改是覆盖原来的文档，其本质是两步操作：
 
@@ -1858,7 +1857,7 @@ PUT /heima/_doc/1
 
 
 
-### 3.3.2 局部修改
+#### 3.3.2 局部修改
 
 局部修改是只修改指定id匹配的文档中的部分字段。
 
@@ -1892,7 +1891,7 @@ POST /heima/_update/1
 
 ![图片展示的是Elasticsearch控制台界面，左侧为请求输入区域，显示POST /heima/_update/1请求，更新文档内容为“email”字段值为“ZhaoYun@itcast.cn”；右侧为请求结果区域，显示“result”为“updated”，表明文档更新成功，还呈现了了“_index”“_type”“__id”](../../../../../Attachments/development/architecture/microservices/elasticsearch/XFgkb9pzIoQ2CgxALqCcd9jdnEC.png)
 
-## 3.4 删除文档
+### 3.4 删除文档
 
 删除使用DELETE请求，同样，需要根据id进行删除：
 
@@ -1916,7 +1915,7 @@ DELETE /heima/_doc/1
 
 ![这张图片展示的是Elasticsearch开发者工具Console界面，对应删除文档的操作场景。左侧输入区域显示了删除请求：DELETE /hetma/_doc/1，符合文档中介绍的根据文档id执行删除的语法要求；右侧响应结果中，被红色框突出标注的“result": "deleted”是核心信息，表明该删除操作已成功执行，契合文档中删除文档操作的相关示例与结果说明。](../../../../../Attachments/development/architecture/microservices/elasticsearch/CEh3bCvnRoyNruxIApFc3cTBnXc.png)
 
-## 3.5 批处理
+### 3.5 批处理
 
 批处理采用POST请求，基本语法如下：
 
@@ -1977,7 +1976,7 @@ POST /_bulk
 
 
 
-## 3.6 总结
+### 3.6 总结
 
 文档操作有哪些？
 
@@ -1994,9 +1993,9 @@ POST /_bulk
 
 
 
-# 4 Java Client 
+## 4 Java Client
 
-## 4.1. 配置Java client
+### 4.1. 配置Java client
 
 前边我们都是在Kibana中使用DSL语法直接请求Elasticsearch的HTTP 接口进行测试，DSL是Elasticsearch的领域特定语言（Domain Specific Language, DSL）是一种基于JSON的查询语言。
 
@@ -2132,7 +2131,7 @@ public class ESTest {
 
 
 
-## 4.2. 创建索引
+### 4.2. 创建索引
 
 下边我们以商城项目为例，使用Java Client维护索引数据。
 
@@ -2142,7 +2141,7 @@ public class ESTest {
 
 最终我们使用Elaticsearch实现搜索接口。
 
-### 4.2.1 分析索引的映射
+#### 4.2.1 分析索引的映射
 
 首先我们需要创建索引，配置映射，首先针对上图去分析映射结构，包括哪些字段以及字段的类型等属性。
 
@@ -2181,7 +2180,7 @@ public class ESTest {
 
 <table><colgroup><col/><col/><col/><col/><col/><col/><col/></colgroup><tbody><tr><td colspan="2" vertical-align="middle"><b>字段名</b></td><td vertical-align="middle"><b>字段类型</b></td><td vertical-align="middle"><b>类型说明</b></td><td vertical-align="middle"><b>是否</b><br/><b>参与搜索</b></td><td vertical-align="middle"><b>是否</b><br/><b>参与分词</b></td><td vertical-align="middle"><b>分词器</b></td></tr><tr><td colspan="2" vertical-align="middle">id</td><td vertical-align="middle"><code>long</code></td><td vertical-align="middle">长整数</td><td vertical-align="middle"><checkbox done="true"></checkbox></td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle">——</td></tr><tr><td colspan="2" vertical-align="middle">name</td><td vertical-align="middle"><code>text</code></td><td vertical-align="middle">字符串，参与分词搜索</td><td vertical-align="middle"><checkbox done="true"></checkbox></td><td vertical-align="middle"><checkbox done="true"></checkbox></td><td vertical-align="middle">IK</td></tr><tr><td colspan="2" vertical-align="middle">price</td><td vertical-align="middle"><code>integer</code></td><td vertical-align="middle">以分为单位，所以是整数</td><td vertical-align="middle"><checkbox done="true"></checkbox></td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle">——</td></tr><tr><td colspan="2" vertical-align="middle">stock</td><td vertical-align="middle"><code>integer</code></td><td vertical-align="middle">字符串，但是不分词</td><td vertical-align="middle"><checkbox done="true"></checkbox></td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle">——</td></tr><tr><td colspan="2" vertical-align="middle">image</td><td vertical-align="middle"><code>keyword</code></td><td vertical-align="middle">字符串，但是不分词</td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle">——</td></tr><tr><td colspan="2" vertical-align="middle">category</td><td vertical-align="middle"><code>keyword</code></td><td vertical-align="middle">字符串，但是不分词</td><td vertical-align="middle"><checkbox done="true"></checkbox></td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle">——</td></tr><tr><td colspan="2" vertical-align="middle">brand</td><td vertical-align="middle"><code>keyword</code></td><td vertical-align="middle">字符串，但是不分词</td><td vertical-align="middle"><checkbox done="true"></checkbox></td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle">——</td></tr><tr><td colspan="2" vertical-align="middle">sold</td><td vertical-align="middle"><code>integer</code></td><td vertical-align="middle">销量，整数</td><td vertical-align="middle"><checkbox done="true"></checkbox></td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle">——</td></tr><tr><td colspan="2" vertical-align="middle">commentCount</td><td vertical-align="middle"><code>integer</code></td><td vertical-align="middle">评价，整数</td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle">——</td></tr><tr><td colspan="2" vertical-align="middle">isAD</td><td vertical-align="middle"><code>boolean</code></td><td vertical-align="middle">布尔类型</td><td vertical-align="middle"><checkbox done="true"></checkbox></td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle">——</td></tr><tr><td colspan="2" vertical-align="middle">updateTime</td><td vertical-align="middle"><code>Date</code></td><td vertical-align="middle">更新时间</td><td vertical-align="middle"><checkbox done="true"></checkbox></td><td vertical-align="middle"><checkbox done="false"></checkbox></td><td vertical-align="middle">——</td></tr></tbody></table>
 
-### 4.2.2 创建索引
+#### 4.2.2 创建索引
 
 根据分析我们使用下边的语句创建items索引：
 
@@ -2246,7 +2245,7 @@ PUT /items
 
 
 
-## 4.3. 新增文档
+### 4.3. 新增文档
 
 接下来我们使用Java Client向索引中添加文档。
 
@@ -2254,7 +2253,7 @@ Java Client的使用方法可以参考文档学习：
 
 https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/7.17/indexing.html
 
-### 4.3.1 **创建模型类（ES文档的实体类）**
+#### 4.3.1 **创建模型类（ES文档的实体类）**
 
 就和使用MyBatis一样操作数据库需要一个模型对象，使用Elasticsearch向索引执行CRUD操作也需要模型类。
 
@@ -2322,7 +2321,7 @@ public class ItemDoc {
 }
 ```
 
-### 4.3.2 **编写客户端代码**
+#### 4.3.2 **编写客户端代码**
 
 下边参考ES文档编写客户端代码。
 
@@ -2361,7 +2360,7 @@ public class ItemDoc {
     }
 ```
 
-### 4.3.3 测试
+#### 4.3.3 测试
 
 下边进行运行测试方法。
 
@@ -2461,7 +2460,7 @@ GET /items/_search
 
 
 
-## 4.4. 批量导入
+### 4.4. 批量导入
 
 文档地址：
 
@@ -2558,7 +2557,7 @@ GET /item/_search
 }
 ```
 
-## 4.5 查询文档
+### 4.5 查询文档
 
 参考文档：https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/7.17/reading.html
 
@@ -2591,7 +2590,7 @@ GET /item/_search
 
 
 
-## 4.6 修改文档
+### 4.6 修改文档
 
 如果docAsUpsert没设置的话，表示更新文档，如果要更新的文档不存在会报错。
 
@@ -2629,7 +2628,7 @@ GET /item/_search
 
 
 
-## 4.7 删除文档
+### 4.7 删除文档
 
 通过两个API方法的学习：
 
@@ -2664,11 +2663,11 @@ GET /item/_search
 
 
 
-# 5 搜索
+## 5 搜索
 
-## 5.1 搜索入门
+### 5.1 搜索入门
 
-### 5.1.1 介绍
+#### 5.1.1 介绍
 
 最终我们使用Elasticsearch实现搜索功能，现在已经将文档添加到了索引中，接下来学习搜索的方法。
 
@@ -2710,7 +2709,7 @@ Elasticsearch的查询可以分为两大类：
 
 <bookmark name="www.elastic.co" href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/compound-queries.html"></bookmark>
 
-### 5.1.2 精确查询
+#### 5.1.2 精确查询
 
 精确查询，英文是`Term-level query`，顾名思义，词条级别的查询。也就是说不会对用户输入的搜索条件再分词，而是作为一个词条，与搜索的字段内容精确值匹配。因此推荐查找`keyword`、数值、日期、`boolean`类型的字段。例如：
 
@@ -2726,7 +2725,7 @@ Elasticsearch的查询可以分为两大类：
 
 <bookmark name="Elasticsearch Guide:" href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/term-level-queries.html"></bookmark>
 
-#### 5.1.2.1 term
+##### 5.1.2.1 term
 
 以`term`查询为例，其语法如下：
 
@@ -2757,7 +2756,7 @@ GET /{索引库名}/_search
 
 
 
-#### 5.1.2.2 range
+##### 5.1.2.2 range
 
 再来看下`range`查询，语法如下：
 
@@ -2786,13 +2785,13 @@ GET /{索引库名}/_search
 
 ![图片展示的是Elasticsearch的搜索界面。左侧Console区域显示了搜索请求的JSON代码，内容为GET请求至“/items/_search”，查询条件为“range”类型，包含“price”字段，其“gte”为100，“lte”为500。右侧Response区域呈现了搜索结果，包括总数量、相关性、最高分等信息，以及匹配的物品ID、名称、价格、库存、图片、类别、品牌、是否售出、评论数量、是否为广告、更新时间等详细数据。该图片直观呈现了使用Elasticsearch进行价格范围查询的操作及结果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/D8ZybzWcyoEKAOxzpTycjuKanId.png)
 
-### 5.1.3 全文检索
+#### 5.1.3 全文检索
 
 全文检索的种类也很多，详情可以参考官方文档：
 
 <bookmark name="Full text queries | Elasticsearch Guide [7.12] | Elastic" href="https://www.elastic.co/guide/en/elasticsearch/reference/7.12/full-text-queries.html"></bookmark>
 
-#### 5.1.3.1 match
+##### 5.1.3.1 match
 
 以全文检索中的`match`为例，语法如下：
 
@@ -2811,7 +2810,7 @@ GET /{索引库名}/_search
 
 ![这是Elasticsearch全文检索中`match`查询的操作界面截图，属于搜索入门模块里的内容。界面展示了Kibana的Console查询控制台，左侧是输入的`GET /items/_search`请求语句，其中`query`部分使用`match`查询匹配“华为荣耀”词条。右侧是返回的查询结果，显示符合条件的文档相关信息，包含`total`总数为7119，匹配项的`max_score`为9.623196，还有具体文档的`index`、`type`、`_source`等内容，`_source`中包含商品名称为“华为荣耀 荣耀V20 华为荣耀手机 幻夜黑 全网通(6G+128G)”的商品信息。](../../../../../Attachments/development/architecture/microservices/elasticsearch/TgOLbVCKBoR6OcxMSIWcvx8AnOc.png)
 
-#### 5.1.3.2 multi_match
+##### 5.1.3.2 multi_match
 
 与`match`类似的还有`multi_match`，区别在于可以同时对多个字段搜索，而且多个字段都要满足，语法示例：
 
@@ -2835,7 +2834,7 @@ GET /{索引库名}/_search
 
 
 
-### 5.1.4 排序
+#### 5.1.4 排序
 
 elasticsearch默认是根据相关度算分（`_score`）来排序，但是也支持自定义方式对搜索结果排序。不过分词字段无法排序，能参与排序字段类型有：`keyword`类型、数值类型、地理坐标类型、日期类型等。
 
@@ -2883,7 +2882,7 @@ GET /items/_search
 
 
 
-### 5.1.5 分页查询
+#### 5.1.5 分页查询
 
 elasticsearch 默认情况下只返回top10的数据。而如果要查询更多数据就需要修改分页参数了。
 
@@ -2920,9 +2919,9 @@ GET /items/_search
 
 
 
-## 5.2. Java Client实现搜索
+### 5.2. Java Client实现搜索
 
-### 5.2.1. Term查询
+#### 5.2.1. Term查询
 
 文档：
 
@@ -3134,7 +3133,7 @@ POST /items/_search?typed_keys=true
 
 
 
-### 5.2.2. 全文检索
+#### 5.2.2. 全文检索
 
 下边使用Java Client实现全文检索：
 
@@ -3226,7 +3225,7 @@ public void multiMatchQuery() throws IOException {
 }
 ```
 
-### 5.2.3 排序和分页
+#### 5.2.3 排序和分页
 
 DSL:
 
@@ -3283,7 +3282,7 @@ public void multiMatchQuery() throws IOException {
 
 
 
-## 5.3 复合查询
+### 5.3 复合查询
 
 第一类：基于逻辑运算组合叶子查询，实现组合条件，例如
 
@@ -3304,7 +3303,7 @@ public void multiMatchQuery() throws IOException {
 
 
 
-### 5.3.1.布尔查询
+#### 5.3.1.布尔查询
 
 bool查询，即布尔查询。就是利用逻辑运算来组合一个或多个查询子句的组合。bool查询支持的逻辑运算有：
 
@@ -3463,7 +3462,7 @@ minimum_should_match也可以指定百分比例，比如：minimum_should_match:
 
 
 
-### 5.3.2 尽量使用filter
+#### 5.3.2 尽量使用filter
 
 出于性能考虑，与搜索关键字无关的查询尽量采用must_not或filter逻辑运算，避免参与相关性算分。
 
@@ -3514,7 +3513,7 @@ GET /items/_search
 
 
 
-### 5.3.3. Java Client
+#### 5.3.3. Java Client
 
 对照dsl语句结合AI编写Java Client程序
 
@@ -3547,9 +3546,9 @@ public void boolQuery() throws IOException {
 
 
 
-## 5.4.高亮显示
+### 5.4.高亮显示
 
-### 5.4.1 高亮显示原理
+#### 5.4.1 高亮显示原理
 
 什么是高亮显示呢？
 
@@ -3578,7 +3577,7 @@ css样式肯定是前端实现页面的时候写好的，但是前端编写页�
 
 
 
-### 5.4.2 实现高亮
+#### 5.4.2 实现高亮
 
 事实上elasticsearch已经提供了给搜索关键字加标签的语法，无需我们自己编码。
 
@@ -3656,9 +3655,9 @@ public void higlightQuery() throws IOException {
 
 
 
-# 6 数据聚合
+## 6 数据聚合
 
-## 6.1 介绍
+### 6.1 介绍
 
 聚合（`aggregations`）可以让我们极其方便的实现对数据的统计、分析、运算。例如：
 
@@ -3703,9 +3702,9 @@ public void higlightQuery() throws IOException {
 
 
 
-## 6.2. Bucket聚合
+### 6.2. Bucket聚合
 
-### 6.2.1 语法
+#### 6.2.1 语法
 
 例如我们要统计所有商品中共有哪些商品分类，其实就是以分类（category）字段对数据分组。category值一样的放在同一组，属于`Bucket`聚合中的`Term`聚合。
 
@@ -3746,7 +3745,7 @@ GET /items/_search
 
 ![这张图片展示了Elasticsearch Bucket聚合的查询结果，返回的JSON数据中“hits”数组为空，仅聚合结果的bucket数组清晰可见，直观呈现了按分类聚合的结果。“hits”的为空状态对应上下文提到的设置size为0、不返回文档的要求，结果里的bucket数组包含分类为“休闲鞋”“牛仔裤”“老花镜”的桶，每个桶都标注了对应的doc_count数值，比如休闲鞋对应20612、牛仔裤对应19611、老花镜对应16222。图中红色箭头还明确标注了核心信息，包括“文档并没有返回”“对分类的聚合”“聚合结果的bucket数组”，与上下文的语法说明内容形成对应。](../../../../../Attachments/development/architecture/microservices/elasticsearch/FE6ubH4XXoqKUPxmuOkcm6PlnSf.png)
 
-### 6.2.2 多级聚合
+#### 6.2.2 多级聚合
 
 同时对品牌分组统计，此时需要按分类统计，按品牌统计，这时需要定义多个桶，如下：
 
@@ -3978,7 +3977,7 @@ GET /items/_search
         },
 ```
 
-### 6.2.3 思考
+#### 6.2.3 思考
 
 下边的语句中包含两个“brand_agg”，它们有什么不同？
 
@@ -4016,7 +4015,7 @@ GET /items/_search
 
 
 
-## 6.3 带条件聚合
+### 6.3 带条件聚合
 
 默认情况下，Bucket聚合是对索引库的所有文档做聚合，例如我们统计商品中所有的品牌，结果如下：
 
@@ -4113,7 +4112,7 @@ GET /items/_search
 
 可以看到，结果中只剩下3个品牌了。
 
-## 6.4 Metric聚合
+### 6.4 Metric聚合
 
 上节课，我们统计了价格高于3000的手机品牌，形成了一个个桶。现在我们需要对桶内的商品做运算，获取每个品牌价格的最小值、最大值、平均值。
 
@@ -4188,7 +4187,7 @@ GET /items/_search
 
 
 
-## 6.5. Java Client
+### 6.5. Java Client
 
 参考DSL语句编写Java Client代码。
 
@@ -4249,13 +4248,13 @@ public void aggTermAndMetricQuery() throws IOException {
 
 
 
-# 作业 
+## 作业
 
 
 
-## 新建搜索服务
+### 新建搜索服务
 
-### **需求**
+#### **需求**
 
 搜索业务并发压力可能会比较高，目前与商品服务在一起，不方便后期优化。
 
@@ -4271,7 +4270,7 @@ public void aggTermAndMetricQuery() throws IOException {
 
 ![图片展示的是黑马商城商品搜索页面。上方搜索框内输入“绿色拉杆箱”，下方筛选栏有品牌、分类、价格等筛选条件，当前筛选品牌为“小米”。页面显示搜索结果，商品包括RIMOWA 21寸拉杆箱、26寸拉杆箱等，每件商品有价格、评价、购买选项等信息。该图片与文档中新建搜索服务的需求相关，直观呈现了搜索功能支持的示例，即输入关键字进行全文检索，匹配商品名称、品牌、分类信息。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Rr55bvfc5oM3TVxuLPFcQDSwnZe.png)
 
-### 提示
+#### 提示
 
 修改原来的搜索接口，改为使用Elasticsearch实现，实现根据关键字搜索，实现分页、排序。
 

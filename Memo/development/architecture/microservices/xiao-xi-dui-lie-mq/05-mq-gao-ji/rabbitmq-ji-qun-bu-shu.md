@@ -4,14 +4,11 @@ date: 2026-11-06
 aliases:
   - "RabbitMQ集群部署"
 ---
+# RabbitMQ集群部署
 
-<title>RabbitMQ集群部署</title>
+## 1 部署准备
 
-
-
-# 1 部署准备
-
-## 1.1 需求
+### 1.1 需求
 
 我们先来看普通模式集群，我们的计划部署3节点的mq集群：
 
@@ -29,7 +26,7 @@ rabbit@mq3
 
 
 
-## 1.2.获取cookie
+### 1.2.获取cookie
 
 RabbitMQ底层依赖于Erlang，而Erlang虚拟机就是一个面向分布式的语言，默认就支持集群模式。集群模式中的每个RabbitMQ 节点使用 cookie 来确定它们是否被允许相互通信。
 
@@ -57,7 +54,7 @@ FXZMCVGLBIXZCDEMMVZQ
 
 
 
-## 1.3 准备配置文件
+### 1.3 准备配置文件
 
 在/root/mq目录新建一个配置文件 rabbitmq.conf：
 
@@ -155,9 +152,9 @@ cp .erlang.cookie mq3
 
 
 
-# 2 部署集群
+## 2 部署集群
 
-## 2.1 创建三个节点 
+### 2.1 创建三个节点
 
 
 
@@ -225,9 +222,9 @@ rabbitmq:3.8-management
 
 
 
-## 2.2 测试
+### 2.2 测试
 
-### 2.2.1 创建队列
+#### 2.2.1 创建队列
 
 登录任意一个节点都会显示三个节点的情况。
 
@@ -251,7 +248,7 @@ rabbitmq:3.8-management
 
 ![图片展示的是RabbitMQ集群部署中mq1节点上添加队列“simple.queue”的管理页面。页面显示该队列由rabbit@mq1节点管理，类型为classic，状态为idle，无Ready、Unacked、Total及incoming消息。该图片与上文“在mq1这个节点上添加一个队列”的内容对应，直观呈现了添加后的队列信息，为后续测试数据共享和可用性测试提供基础数据展示。](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/05-mq-gao-ji/PF0obs8ExoIH6sxNO2Xclr28nAb.png)
 
-### 2.2.2 数据共享
+#### 2.2.2 数据共享
 
 下边测试数据共享：
 
@@ -267,7 +264,7 @@ rabbitmq:3.8-management
 
 ![这张图片展示了RabbitMQ集群的管理控制台页面，当前访问的节点端口为8083，对应部署文档中的mq3节点。页面处于Queues（队列）管理板块，显示当前仅存在名为simple.queue的队列，该队列部署在mq1节点，类型为classic，状态为idle，Ready、Unacked、Total的消息数量分别为1、0、1，消息收发速率均为0。结合上下文，这张图对应的是测试RabbitMQ集群数据共享的环节，验证在mq1节点添加的队列，可在mq2、mq3节点的控制台中查看到。](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/05-mq-gao-ji/WPY0b9ZBVoA8YWx655JcTmZvnph.png)
 
-### 2.2.3 可用性测试
+#### 2.2.3 可用性测试
 
 我们让其中一台节点mq1宕机：
 
@@ -281,7 +278,7 @@ docker stop mq1
 
 
 
-### 2.2.4 注意Java连接参数
+#### 2.2.4 注意Java连接参数
 
 Spring Boot应用连接RabbitMQ集群需要更改为如下配置，收发消息的程序和单机版一样。
 
@@ -296,13 +293,13 @@ spring:
     password: 123 # 密码
 ```
 
-### 2.2.5 普通集群特点
+#### 2.2.5 普通集群特点
 
 - 节点之间能共享元数据
 - 可以通过任意节点访问数据，间接通过主节点访问
 - 节点之间是不能共享数据，队列所在的主节点如果宕机后，数据就丢失了
 
-# 3.镜像模式
+## 3.镜像模式
 
 在刚刚的案例中，一旦创建队列的主机宕机，队列就会不可用。不具备高可用能力。如果要解决这个问题，必须使用官方提供的镜像集群方案。
 
@@ -310,7 +307,7 @@ spring:
 
 
 
-## 3.1.镜像模式的特征
+### 3.1.镜像模式的特征
 
 默认情况下，队列只保存在创建该队列的节点上。而镜像模式下，创建队列的节点被称为该队列的**主节点**，队列还会拷贝到集群中的其它节点，也叫做该队列的**镜像**节点。
 
@@ -330,7 +327,7 @@ spring:
 
 
 
-## 3.2.镜像模式的配置
+### 3.2.镜像模式的配置
 
 镜像模式的配置有3种模式：
 
@@ -344,7 +341,7 @@ nodes：指定镜像节点
 
 
 
-### 3.2.1.exactly模式
+#### 3.2.1.exactly模式
 
 这里我们以rabbitmqctl命令作为案例来讲解配置语法。
 
@@ -364,7 +361,7 @@ rabbitmqctl set_policy -p / ha-two "^two\." '{"ha-mode":"exactly","ha-params":2,
   - `"ha-params":2`：策略参数，这里是2，就是副本数量为2，1主1镜像
   - `"ha-sync-mode":"automatic"`：同步策略，默认是manual，即新加入的镜像节点不会同步旧的消息。如果设置为automatic，则新加入的镜像节点会把主节点中所有消息都同步，会带来额外的网络开销
 
-### 3.2.2.all模式
+#### 3.2.2.all模式
 
 ```JavaScript
 rabbitmqctl set_policy ha-all "^all\." '{"ha-mode":"all"}'
@@ -376,7 +373,7 @@ rabbitmqctl set_policy ha-all "^all\." '{"ha-mode":"all"}'
 
   - `"ha-mode":"all"`：策略模式，此处是all模式，即所有节点都会称为镜像节点
 
-### 3.2.3.nodes模式
+#### 3.2.3.nodes模式
 
 ```JavaScript
 rabbitmqctl set_policy ha-nodes "^nodes\." '{"ha-mode":"nodes","ha-params":["rabbit@nodeA", "rabbit@nodeB"]}'
@@ -392,7 +389,7 @@ rabbitmqctl set_policy ha-nodes "^nodes\." '{"ha-mode":"nodes","ha-params":["rab
 
 
 
-## 3.3.测试
+### 3.3.测试
 
 我们使用exactly模式的镜像，因为集群节点数量为3，因此镜像数量就设置为2.
 
@@ -410,7 +407,7 @@ docker exec -it mq1 rabbitmqctl set_policy -p / ha-two "^two\." '{"ha-mode":"exa
 
 ![图片展示的是RabbitMQ集群部署中测试数据共享时，mq1节点的队列状态界面。界面显示了所有队列信息，其中“two.queue”队列的Node为rabbit@mq1，Type为classic，Features为Args，State为ha - two，Total为0，Message rates中incoming、deliver / get、ack均为0。该图片与上文“在mq1、mq2、mq3的任意控制台查看消息”内容对应，直观呈现了队列状态情况。](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/05-mq-gao-ji/CwWOb1RyOoSX93xlV7jcSogmntd.png)
 
-### 3.3.1.测试数据共享
+#### 3.3.1.测试数据共享
 
 给two.queue发送一条消息：
 
@@ -422,7 +419,7 @@ docker exec -it mq1 rabbitmqctl set_policy -p / ha-two "^two\." '{"ha-mode":"exa
 
 ![这张图片展示的是RabbitMQ的管理控制台界面，当前处于Queues标签页，地址栏显示访问的端口为3083，页面中明确标注创建的目标队列是two.queue。界面呈现该队列中的一条消息，消息内容为“hi, everyone!”，消息的Payload区域也对应显示了这条13字节的字符串，同时还能看到该消息的属性，例如交付模式为2，所属Exchange为AMQP默认类型，路由键为two.queue，这张图用于展示给two.queue发送的测试数据，对应了文档中“给two.queue发送一条消息”后查看消息的测试步骤。](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/05-mq-gao-ji/KzgBb9uKZo65YYxXgJ4cXeKpnEq.png)
 
-### 3.3.2.测试高可用
+#### 3.3.2.测试高可用
 
 现在，我们让two.queue的主节点mq1宕机：
 
@@ -440,11 +437,11 @@ docker exec -it mq1 rabbitmqctl set_policy -p / ha-two "^two\." '{"ha-mode":"exa
 
 
 
-# 4.仲裁队列
+## 4.仲裁队列
 
 从RabbitMQ 3.8版本开始，引入了新的仲裁队列，他具备与镜像队列类似的功能，但使用更加方便。
 
-## 4.1.添加仲裁队列
+### 4.1.添加仲裁队列
 
 在任意控制台添加一个队列，一定要选择队列类型为Quorum类型。
 
@@ -458,13 +455,13 @@ docker exec -it mq1 rabbitmqctl set_policy -p / ha-two "^two\." '{"ha-mode":"exa
 
 因为仲裁队列默认的镜像数为5。如果你的集群有7个节点，那么镜像数肯定是5；而我们集群只有3个节点，因此镜像数量就是2.
 
-## 4.2.测试
+### 4.2.测试
 
 可以参考对镜像集群的测试，效果是一样的。
 
 
 
-## 4.3 特征
+### 4.3 特征
 
 - 基于 Raft 共识算法的强一致性
 

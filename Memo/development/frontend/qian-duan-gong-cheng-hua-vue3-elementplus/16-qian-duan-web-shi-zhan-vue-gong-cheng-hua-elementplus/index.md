@@ -4,12 +4,9 @@ date: 2026-11-06
 aliases:
   - "16 前端Web实战(Vue工程化+ElementPlus)"
 ---
+# 16 前端Web实战(Vue工程化+ElementPlus)
 
-<title>16 前端Web实战(Vue工程化+ElementPlus)</title>
-
-
-
-# 创建vue项目
+## 创建vue项目
 
 创建一个工程化的Vue项目，执行命令：`npm create vue@3.16.4`
 
@@ -31,14 +28,14 @@ aliases:
 
 ![图片展示的是Vue App的默认主页界面。左侧有绿色的Vue标志及“Congratulations! You’ve successfully created a project with Vite + Vue 3.”的提示。右侧是关于Vue的文档、工具、生态系统、社区及支持Vue的相关信息。该图片与上文“在浏览器输入http://localhost:5173验证看看能不能进入到项目默认主页”的内容相呼应，直观呈现了项目创建成功后的主页样式。](../../../../../Attachments/development/frontend/qian-duan-gong-cheng-hua-vue3-elementplus/16-qian-duan-web-shi-zhan-vue-gong-cheng-hua-elementplus/HSFmbxVuao1MtfxTGXacBJshn5c.png)
 
-# 项目开发流程
+## 项目开发流程
 
 ```Java
 项目中的package.json文件就类似于我们在Java开发中的pom.xml文件是管理整个项目的架构的
 项目中文件的调用顺序：main.js-->App.vue-->Main.vue(这个也是我们自己定义的是用来显示程序主页的信息的)-->.....
 ```
 
-# 使用elementplus
+## 使用elementplus
 
 ```Java
 在使用elementplus时我们需要找到自己想要的组件，然后把template中的代码拷贝下来到项目中

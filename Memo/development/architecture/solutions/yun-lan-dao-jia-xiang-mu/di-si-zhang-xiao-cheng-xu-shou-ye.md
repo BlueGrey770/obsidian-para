@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "第四章 小程序首页"
 ---
+# 第四章 小程序首页
 
-<title>第四章 小程序首页</title>
-
-# 学习目标
+## 学习目标
 
 1. 能说出实现门户的常用技术方案
 2. 能说出小程序首页哪些信息要缓存
@@ -36,15 +35,15 @@ aliases:
 
 
 
-# 代码环境
+## 代码环境
 
 jzo2o-foundations：dev_02
 
 
 
-# 1 门户技术方案
+## 1 门户技术方案
 
-## 1）什么是门户
+### 1）什么是门户
 
 本节分析小程序首页的技术方案。
 
@@ -83,11 +82,11 @@ jzo2o-foundations：dev_02
 
 
 
-## 2）常用的技术方案
+### 2）常用的技术方案
 
 实现门户功能用到哪些技术呢？
 
-### **基于两个需求去分析**
+#### **基于两个需求去分析**
 
 **1.门户上的信息是动态的**
 
@@ -101,7 +100,7 @@ jzo2o-foundations：dev_02
 
 我们针对这两类门户分析技术方案。
 
-### **Web门户技术方案**
+#### **Web门户技术方案**
 
 web门户是最常见的门户类型，比如：新浪、百度新闻等，它们通过PC浏览器访问，用户可以通过桌面电脑、笔记本电脑、平板电脑和智能手机等设备访问。Web门户通常运行在Web浏览器上，用户可以通过输入网址或通过搜索引擎访问。
 
@@ -153,7 +152,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 
 
-### **移动应用门户技术方案**
+#### **移动应用门户技术方案**
 
 移动应用门户是专为移动设备（如智能手机和平板电脑）设计的应用程序，比如：小程序、APP等，用户可以通过应用商店下载并安装。这些应用程序提供了更好的用户体验，通常具有更高的性能和交互性，可以直接从设备主屏幕启动。
 
@@ -167,19 +166,19 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 
 
-## 3）小结
+### 3）小结
 
 根据上边的分析，对于Java程序员需要关注的是缓存服务的开发，主流的缓存服务器是Redis，所以我们接下来的工作重点是使用Redis为门户开发缓存服务接口。
 
 实现一个门户用到的技术方案有哪些? 
 
-# 2 缓存技术方案
+## 2 缓存技术方案
 
-## 2.1 需求分析
+### 2.1 需求分析
 
 目标：明确本项目门户有哪些信息需要缓存
 
-### 1）界面原型
+#### 1）界面原型
 
 了解了门户的技术方案，下边通过门户界面原型分析本项目门户包括哪些部分。
 
@@ -187,7 +186,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 ![图片展示了小程序门户首页界面。1为城市选择区域，显示“北京”；2为搜索框，输入“家电维修”；3为一级分类区域，有保洁清洗、日常保洁等分类；4为商品图区域，展示“空调清洗服务”及预约按钮。该图片与文档中介绍小程序门户首页的内容相关，直观呈现了首页包含的城市选择、搜索、一级分类及商品图等关键部分。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/HvtpbbhpOoSGxCxmbd8cFyM0nXb.png)
 
-#### **第1部分**：城市选择
+##### **第1部分**：城市选择
 
 用户允许微信授权后，自动获取当前定位，点击地址进入城市选择页面，如下图：
 
@@ -197,7 +196,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 
 
-#### **第2部分**：搜索
+##### **第2部分**：搜索
 
 触发搜索框进入搜索主页面，如下图：
 
@@ -205,7 +204,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 ![这是一张小程序界面的搜索功能示意图，界面顶部左侧为返回箭头，中间显示“搜索”字样，右侧有更多选项按钮与圆形的相机类功能图标。界面下方有一个搜索输入框，框内左侧带有放大镜图标及“搜索”提示文字，输入框右侧是红色的“取消”按钮，该界面应是供用户在小程序内进行内容检索的交互入口。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LKE8bPjIaohsdQxvtMoczpZunpt.png)
 
-#### **第3部分**：**首页服务列表**
+##### **第3部分**：**首页服务列表**
 
 默认展示前两个服务分类，每个服务分类下取前4个服务项（根据后台排序规则显示，如排序相同则按照更新时间倒序排列）
 
@@ -213,11 +212,11 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 
 
-#### **第4部分**：**热门服务列表**
+##### **第4部分**：**热门服务列表**
 
 这里显示在区域服务界面设置热门服务的服务项。
 
-#### **第5部分**：**全部服务**
+##### **第5部分**：**全部服务**
 
 点击首页服务列表的服务分类或直接点击“全部服务”进入全部服务界面，
 
@@ -229,7 +228,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 ![这是小程序全部服务界面的示意图，该界面会展示当前区域下的服务分类与对应服务项。左侧列出了服务分类，包含“保洁清”“家居服务”等类别；右侧展示具体服务项，其中“日常保洁”被红色框标注，下方有对应说明“服务分类下的服务项”；上方标注有“全部服务”字样，该界面的作用是供用户点击服务分类，查询对应分类下的服务内容，进入该界面可通过点击首页服务列表的服务分类或直接点击“全部服务”实现。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XJVVbDPiyob6U3xYZA2cfFZtnqn.png)
 
-#### 第6部分 服务详情
+##### 第6部分 服务详情
 
 点击服务名称进入服务详情页面：
 
@@ -237,7 +236,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 
 
-### 2）缓存需求
+#### 2）缓存需求
 
 根据门户的技术方案，为了提供效率门户显示的信息从缓存查询，根据上边的界面原型分析有哪些信息需要缓存？
 
@@ -271,7 +270,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 
 
-### 3）小结
+#### 3）小结
 
 经过分析要明确有哪些信息需要缓存。
 
@@ -287,13 +286,13 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 
 
-## 2.2 Spring Cache入门
+### 2.2 Spring Cache入门
 
-### 2.2.1 入门程序
+#### 2.2.1 入门程序
 
 目标：学会使用SpringCache查询缓存注解并理解它的原理
 
-#### 1）Redis访问工具
+##### 1）Redis访问工具
 
 本项目使用Redis存储缓存数据，如何通过Java去访问Redis？
 
@@ -317,7 +316,7 @@ RedisTemplate适用于灵活操作redis的场景，通过RedisTemplate的API灵�
 
 
 
-#### 2）Spring Cache基本介绍
+##### 2）Spring Cache基本介绍
 
 Spring Cache是Spring提供的一个缓存框架，基于AOP原理，实现了基于注解的缓存功能，只需要简单地加一个注解就能实现缓存功能，对业务代码的侵入性很小。
 
@@ -345,7 +344,7 @@ Spring Cache是Spring提供的一个缓存框架，基于AOP原理，实现了�
 @Caching：组合多个缓存注解；  
 @CacheConfig：统一配置@Cacheable中的value值
 
-#### 3）切换分支
+##### 3）切换分支
 
 本节使用jzo2o-foundations工程的dev_02分支，课程会下发dev_02分支的代码
 
@@ -372,7 +371,7 @@ jzo2o-foundations_dev02.zip，大家在开发前先在本地创建了一个新�
 
 
 
-#### 4）查询数据时缓存
+##### 4）查询数据时缓存
 
 下边使用Cacheable注解实现查询服务信息时对服务信息进行缓存，它的执行流程是：第一次查询服务信息缓存中没有该服务的信息此时去查询数据库，查询数据库拿到服务信息并进行缓存，第二次再去查询该服务信息发现缓存中有该服务的信息则直接查询缓存不再去数据库查询。
 
@@ -434,7 +433,7 @@ SpEL（Spring Expression Language）是一种在 Spring 框架中用于处理字
 
 
 
-#### 5）测试
+##### 5）测试
 
 对queryServeByIdCache方法进行测试，编写单元测试方法，如下：
 
@@ -522,7 +521,7 @@ public Serve queryServeByIdCache(Long id) {
 
 
 
-#### 6）工作原理 
+##### 6）工作原理
 
 Spring Cache是基于AOP原理，对添加注解@Cacheable的类生成代理对象，在方法执行前查看是否有缓存对应的数据，如果有直接返回数据，如果没有调用源方法获取数据返回，并缓存起来，下边跟踪Spring Cache的切面类CacheAspectSupport.java中的private Object execute(final CacheOperationInvoker invoker, Method method, CacheOperationContexts contexts)方法。
 
@@ -538,7 +537,7 @@ Spring Cache是基于AOP原理，对添加注解@Cacheable的类生成代理对�
 
 第一次查询（redis中没有缓存）时执行方法查询数据库，第二次命中缓存直接查询redis不再执行方法。
 
-#### 7）小结
+##### 7）小结
 
 Spring Cache 用在项目哪里了？怎么用的？
 
@@ -550,7 +549,7 @@ Spring Cache @Cacheable 注解的工作原理？
 
 
 
-### 2.2.2 测试Spring Cache
+#### 2.2.2 测试Spring Cache
 
 目标：学会使用@CacheEvict和@CachePut注解
 
@@ -563,7 +562,7 @@ Spring Cache @Cacheable 注解的工作原理？
 
 其它注解在项目开发中用到时再进行讲解，也可以自行查阅资料测试。
 
-#### 1）测试@CachePut
+##### 1）测试@CachePut
 
 CachePut注解实现的是将方法的返回值放到缓存中。
 
@@ -591,7 +590,7 @@ public Serve onSale(Long id){
 
 
 
-#### 2）测试@CacheEvict
+##### 2）测试@CacheEvict
 
 下边测试服务下架删除缓存。
 
@@ -613,7 +612,7 @@ public Serve offSale(Long id){
 
 
 
-#### 3）小结
+##### 3）小结
 
 Spring Cache有哪些常用的注解，都有什么用？
 
@@ -626,9 +625,9 @@ Spring Cache有哪些常用的注解，都有什么用？
 
 
 
-## 2.3 高并发项目缓存常见问题复习
+### 2.3 高并发项目缓存常见问题复习
 
-### 1）缓存穿透问题
+#### 1）缓存穿透问题
 
 什么是缓存穿透？如何解决缓存穿透？
 
@@ -638,13 +637,13 @@ Spring Cache有哪些常用的注解，都有什么用？
 
 
 
-### 2）缓存击穿问题
+#### 2）缓存击穿问题
 
 什么是缓存击穿？如何解决缓存击穿？
 
 本项目对热点数据定时预热，使用定时任务刷新缓存保证缓存永不过期，解决缓存穿透问题。
 
-### 3) 缓存雪崩问题
+#### 3) 缓存雪崩问题
 
 什么是缓存雪崩？如何解决缓存雪崩？
 
@@ -652,15 +651,15 @@ Spring Cache有哪些常用的注解，都有什么用？
 
 
 
-### 4）缓存不一致问题
+#### 4）缓存不一致问题
 
 如何保证缓存一致性？
 
 
 
-# 3 小程序首页缓存实现
+## 3 小程序首页缓存实现
 
-## 3.1 开通区域列表缓存实现
+### 3.1 开通区域列表缓存实现
 
 目标：
 
@@ -668,7 +667,7 @@ Spring Cache有哪些常用的注解，都有什么用？
 
 实现开通区域列表缓存（完成查询缓存、删除缓存）。
 
-### 1）缓存方案分析
+#### 1）缓存方案分析
 
 根据本项目门户的需求可知共有以下几块信息需要缓存，如下：
 
@@ -686,7 +685,7 @@ Spring Cache有哪些常用的注解，都有什么用？
 
 
 
-### 2）查询缓存实现
+#### 2）查询缓存实现
 
 下边我们先实现开通区域列表查询缓存。
 
@@ -797,7 +796,7 @@ cacheManager ：RedisConstants.CacheManager.FOREVER设置了缓存永不过期�
 
 ![图片展示的是Redis成功缓存的开通区域列表数据。界面显示服务器为192.168.101.68，键值为“IZ_CACHE:ACTIVE_REGIONS”，大小为280字节，TTL为-1。数据内容为两个RegionSimpleResDTO对象，分别对应北京和郑州，包含id、name和cityCode属性。该图片与上文介绍的在小程序首页开通区域列表缓存实现中，通过小程序访问定位界面观察redis成功缓存开通区域列表的内容相呼应，直观呈现了缓存数据。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FUnqbk6AbodUaExmD5pc9n4Pnab.png)
 
-### 3）启用区域
+#### 3）启用区域
 
 启用一个新区域已经开通区域列表需要变更，该如何实现呢？
 
@@ -838,7 +837,7 @@ public void active(Long id) {
 
 
 
-### 4）禁用区域
+#### 4）禁用区域
 
 如果是禁用一个区域则需要删除开通区域列表缓存。
 
@@ -865,7 +864,7 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 禁用区域除了删除开通区域列表还需要删除首页服务列表、热门服务列表等，所以这里使用@Caching注解。
 
-### 5）测试
+#### 5）测试
 
 下边进行测试：
 
@@ -895,7 +894,7 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 
 
-### 6）小结
+#### 6）小结
 
 项目哪里进行了缓存，缓存方案是什么？
 
@@ -903,15 +902,15 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 
 
-## 3.2 定时任务更新缓存
+### 3.2 定时任务更新缓存
 
-### 3.2.1 配置XXL-JOB环境
+#### 3.2.1 配置XXL-JOB环境
 
 对于开通区域列表的缓存数据需要由定时任务每天凌晨更新缓存，我们使用xxl-job实现。
 
 
 
-#### 1) **启动xxl-job**
+##### 1) **启动xxl-job**
 
 执行docker start xxl-job-admin 启动xxl-job
 
@@ -921,7 +920,7 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 
 
-#### 2) 执行器
+##### 2) 执行器
 
 **1.添加执行器依赖**
 
@@ -1014,11 +1013,11 @@ port：执行器端口号,通过xxl-job.port配置
 
 
 
-### 3.2.2 定义缓存更新任务
+#### 3.2.2 定义缓存更新任务
 
 根据本节的目标，使用xxl-job定时更新开通区域列表的缓存。
 
-#### 1）编写任务方法
+##### 1）编写任务方法
 
 下边编写更新开通区域列表缓存的任务方法：
 
@@ -1073,7 +1072,7 @@ public class SpringCacheSyncHandler {
 
 
 
-#### 2）配置任务
+##### 2）配置任务
 
 下边在调度中心配置任务。
 
@@ -1087,7 +1086,7 @@ public class SpringCacheSyncHandler {
 
 
 
-#### 3）启动任务并测试
+##### 3）启动任务并测试
 
 任务配置完成，下边启动任务
 
@@ -1103,21 +1102,21 @@ public class SpringCacheSyncHandler {
 
 尝试启用或禁用一个区域，观察redis中开通区域列表缓存是否更新。
 
-#### 4) 小结
+##### 4) 小结
 
 项目中哪里用了xxl-job？怎么用的？
 
 
 
-## 3.2 首页服务列表实现
+### 3.2 首页服务列表实现
 
 我们先实现从数据库查询"首页服务列表"，将整体功能调试通过，再实现查询缓存。
 
 下边我们先实现从数据库查询服务类型列表。
 
-### 3.2.1 首页服务列表实现
+#### 3.2.1 首页服务列表实现
 
-#### 1) 需求分析
+##### 1) 需求分析
 
 **1.界面原型**
 
@@ -1133,7 +1132,7 @@ public class SpringCacheSyncHandler {
 
 服务分类下的服务项内容：服务项图标，服务项名称。
 
-#### 2）**接口定义**
+##### 2）**接口定义**
 
 定义首页服务列表接口，查询2个一级服务分类，每个服务分类下查询4个服务项。
 
@@ -1207,7 +1206,7 @@ public List<ServeCategoryResDTO> serveCategory(@RequestParam("regionId") Long re
 ...
 ```
 
-#### 3）mapper
+##### 3）mapper
 
 数据来源于三张表：serve_type、serve_item、serve，区域id是非常重要的限制条件，因为要查询该区域显示在首页的服务列表。
 
@@ -1289,7 +1288,7 @@ List<ServeCategoryResDTO> findServeIconCategoryByRegionId(@Param("regionId")Long
 </resultMap>
 ```
 
-#### 4）service
+##### 4）service
 
 定义专门用于门户首页查询的service接口,用于实现查询缓存：
 
@@ -1372,7 +1371,7 @@ public List<ServeCategoryResDTO> queryServeIconCategoryByRegionIdCache(Long regi
 
 ```
 
-#### 5) controller
+##### 5) controller
 
 在controller中调用service查询首页服务列表。
 
@@ -1409,7 +1408,7 @@ public class FirstPageServeController {
 ...
 ```
 
-#### 6） 测试
+##### 6） 测试
 
 重启jzo2o-foundations服务、网关服务，打开小程序。
 
@@ -1441,9 +1440,9 @@ http://192.168.101.1:11500/foundations/customer/serve/firstPageServeList?regionI
 
 
 
-### 3.2.2 首页服务列表缓存
+#### 3.2.2 首页服务列表缓存
 
-#### 1） **缓存方案分析**
+##### 1） **缓存方案分析**
 
 下边是门户的缓存设计：
 
@@ -1459,7 +1458,7 @@ http://192.168.101.1:11500/foundations/customer/serve/firstPageServeList?regionI
 
 定时任务：每天凌晨缓存首页服务列表。
 
-#### 2）查询缓存
+##### 2）查询缓存
 
 下边在首页服务列表查询方法上添加Spring Cache注解实现查询缓存。
 
@@ -1549,7 +1548,7 @@ public class HomeServiceImpl implements HomeService {
 ...
 ```
 
-#### 3）查询缓存测试
+##### 3）查询缓存测试
 
 下边进行测试:
 
@@ -1563,7 +1562,7 @@ public class HomeServiceImpl implements HomeService {
 
 
 
-#### 4） 定时任务更新缓存
+##### 4） 定时任务更新缓存
 
 根据缓存方案的分析，对首页服务列表进行缓存。
 
@@ -1598,7 +1597,7 @@ public void activeRegionCacheSync() throws Exception {
 }
 ```
 
-#### 5）定时任务更新缓存测试
+##### 5）定时任务更新缓存测试
 
 下边测试定时任务更新缓存：
 
@@ -1626,7 +1625,7 @@ public void activeRegionCacheSync() throws Exception {
 
 首先实现业务接口的功能，测试通过后再去实现缓存。
 
-#### 6） 禁用区域时删除缓存 
+##### 6） 禁用区域时删除缓存
 
 找到禁用区域代码 ,添加删除首页服务列表缓存的代码，如下： 
 
@@ -1647,15 +1646,15 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 
 
-#### 7）小结 
+##### 7）小结
 
 项目中有做缓存吗？考虑缓存穿透问题了吗？怎么实现的？
 
 
 
-## 3.3 服务类型列表缓存（实战）
+### 3.3 服务类型列表缓存（实战）
 
-### 3.3.1 分析设计
+#### 3.3.1 分析设计
 
 **1.界面原型**
 
@@ -1703,7 +1702,7 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 
 
-### 3.3.2 设计提示
+#### 3.3.2 设计提示
 
 根据接口定义分析，需要根据区域id查询该区域下运营的服务项所属的分类，所以要分析数据来源于哪几张表？如果是一张表直接用MybatisPlus拼装SQL即可，如果是多张表则需要编写SQL语句。
 
@@ -1713,9 +1712,9 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 
 
-## 3.4 热门服务列表（实战）
+### 3.4 热门服务列表（实战）
 
-### 3.4.1 分析设计
+#### 3.4.1 分析设计
 
 **1.界面原型**
 
@@ -1784,7 +1783,7 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 定时任务：每天凌晨缓存热门服务列表。
 
-### 3.4.2 设计提示
+#### 3.4.2 设计提示
 
 根据接口定义分析，需要根据区域id查询该区域下运营的服务项所属的分类，所以要分析数据来源于哪几张表？如果是一张表直接用MybatisPlus拼装SQL即可，如果是多张表则需要编写SQL语句。
 
@@ -1792,9 +1791,9 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 
 
-## 3.5 服务详情（实战） 
+### 3.5 服务详情（实战）
 
-### 3.5.1 分析设计
+#### 3.5.1 分析设计
 
 **1.界面原型**
 
@@ -1838,7 +1837,7 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 
 
-### 3.5.2 设计提示
+#### 3.5.2 设计提示
 
 
 

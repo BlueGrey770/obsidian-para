@@ -4,8 +4,7 @@ date: 2026-11-06
 aliases:
   - "第十一章 派单调度"
 ---
-
-<title>第十一章 派单调度</title>
+# 第十一章 派单调度
 
 代码环境：
 
@@ -13,15 +12,15 @@ jzo2o-orders： dev_02分支
 
 
 
-# 学习目标：
+## 学习目标：
 
 
 
 
 
-# 1 需求分析
+## 1 需求分析
 
-## 1）派单调度流程
+### 1）派单调度流程
 
 在抢单业务中，用户下单成功由服务人员或机构进行抢单，抢单成功服务人员上门服务，除了抢单业务系统还设计了派单业务，由系统根据用户订单的特点自动派给合适的服务人员。
 
@@ -37,7 +36,7 @@ jzo2o-orders： dev_02分支
 
 
 
-## 2）调度系统的应用场景
+### 2）调度系统的应用场景
 
 调度系统的应用场景广泛（如下）：
 
@@ -61,7 +60,7 @@ jzo2o-orders： dev_02分支
 
 
 
-## 3) 小结
+### 3) 小结
 
 本项目派单调度的业务流程是什么？
 
@@ -75,11 +74,11 @@ jzo2o-orders： dev_02分支
 
 
 
-# 2 系统设计
+## 2 系统设计
 
-## 2.1 总体设计
+### 2.1 总体设计
 
-### 1）总体设计
+#### 1）总体设计
 
 根据需求分析，从以下几个问题出发进行设计。
 
@@ -107,7 +106,7 @@ jzo2o-orders： dev_02分支
 
 
 
-### 2）服务提供池索引结构
+#### 2）服务提供池索引结构
 
 根据设计，第一步需要向Elasticsearch中同步服务提供者的数据。
 
@@ -174,7 +173,7 @@ PUT /serve_provider_info
 
 
 
-### 3）Redis派单池
+#### 3）Redis派单池
 
 两种情况进入派单池：
 
@@ -206,7 +205,7 @@ Redis中派单池使用ZSet结构，value为是订单id、score为进入派单�
 
 <whiteboard token="L7wXwrJaShwz9SbHdPycAoO3nBc"></whiteboard>
 
-### 4) ZSet测试
+#### 4) ZSet测试
 
 下边测试向ZSet添加元素、查询元素的方法。
 
@@ -274,7 +273,7 @@ testSortedSet_rang方法：取出socre为0到当前时间的元素。
 
 
 
-### 5）小结
+#### 5）小结
 
 派单调度的整体交互是什么？
 
@@ -282,9 +281,9 @@ testSortedSet_rang方法：取出socre为0到当前时间的元素。
 
 
 
-## 2.2 责任链模式
+### 2.2 责任链模式
 
-### 1）什么是责任链模式
+#### 1）什么是责任链模式
 
 责任链模式是一种行为型设计模式，它允许你将请求沿着处理者链进行传递，直到有一个处理者处理请求为止。每个处理者都可以决定是否将请求传递给下一个处理者。
 
@@ -582,7 +581,7 @@ public class RuleHandlerTest {
 }
 ```
 
-### 2）责任链模式优化
+#### 2）责任链模式优化
 
 上边的代码每个规则中filter方法和next方法都是重复一样的，我们创建抽象类提取
 
@@ -692,15 +691,15 @@ public class DistanceRule extends AbstractProcessRule  {
 
 重新 进行测试。
 
-### 3）小结
+#### 3）小结
 
 责任链模式用在哪里？怎么使用？在开发中注意什么？
 
 
 
-## 2.3 定义派单策略
+### 2.3 定义派单策略
 
-### 1）技术方案
+#### 1）技术方案
 
 在前边我们测试责任链模式，如下代码怎么优化：
 
@@ -748,7 +747,7 @@ public interface IProcessStrategy {
 
 <whiteboard token="WmkswqDu5hrb5FbQWCxcnKX8nkd"></whiteboard>
 
-### 2) 编码实现
+#### 2) 编码实现
 
 每个策略类都需要实现getPrecedenceServeProvider(List<ServeProviderDTO> serveProviderDTOS)方法，其逻辑是一样的，每个策略类组装的责任链是不同的，我们定义抽象类将共同的方法写在抽象类中。
 
@@ -858,7 +857,7 @@ public class LeastAcceptOrderStrategyImpl extends AbstractStrategyImpl {
 
 
 
-### 3) 测试
+#### 3) 测试
 
 ```JSON
 package com.jzo2o.orders.dispatch.strategys;
@@ -902,17 +901,17 @@ public class StrategyTest {
 
 
 
-### 4）小结
+#### 4）小结
 
 基于策略模式如何灵活定义派单调度策略？
 
 
 
-# 3 系统开发
+## 3 系统开发
 
-## 3.1 同步服务提供者
+### 3.1 同步服务提供者
 
-### 1) 数据结构
+#### 1) 数据结构
 
 1. **ES中服务提供者**
 
@@ -975,7 +974,7 @@ PUT /serve_provider_info
 
 
 
-### 2）阅读代码
+#### 2）阅读代码
 
 同步服务提供者的代码有两处：
 
@@ -1144,7 +1143,7 @@ public class ServeProviderStateSyncHandler extends AbstractCanalRabbitMqMsgListe
 
 
 
-### 3）测试
+#### 3）测试
 
 测试流程：
 
@@ -1188,9 +1187,9 @@ DELETE /serve_provider_info/_doc/1696338624494202882
 
 
 
-## 3.2 同步派单池
+### 3.2 同步派单池
 
-### 1）数据结构
+#### 1）数据结构
 
 为了快速获取派单信息，使用redis的SortedSet存储派单信息。
 
@@ -1200,7 +1199,7 @@ DELETE /serve_provider_info/_doc/1696338624494202882
 
 
 
-### 2）阅读代码
+#### 2）阅读代码
 
 两种情况进入派单池表：
 
@@ -1371,7 +1370,7 @@ public class OrdersDispatchSyncHandler extends AbstractCanalRabbitMqMsgListener<
 
 
 
-### 3）测试
+#### 3）测试
 
 下边我们测试通过订单分流进入派单池的流程。
 
@@ -1445,9 +1444,9 @@ public class OrdersDispatchSyncHandler extends AbstractCanalRabbitMqMsgListener<
 
 
 
-## 3.3 派单
+### 3.3 派单
 
-### 1）阅读代码
+#### 1）阅读代码
 
 进入orders-diapatch工程。
 
@@ -1606,7 +1605,7 @@ public void dispatch(Long id) {
 
 
 
-### 2）测试
+#### 2）测试
 
 测试流程：
 

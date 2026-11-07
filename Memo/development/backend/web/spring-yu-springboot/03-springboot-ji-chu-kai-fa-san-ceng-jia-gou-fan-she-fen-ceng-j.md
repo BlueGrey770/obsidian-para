@@ -4,16 +4,15 @@ date: 2026-11-06
 aliases:
   - "03 SpringBoot基础开发_三层架构_反射分层解耦"
 ---
+# 03 SpringBoot基础开发_三层架构_反射分层解耦
 
-<title>03 SpringBoot基础开发_三层架构_反射分层解耦</title>
+## 一、SpringBoot基础
 
-# 一、SpringBoot基础
-
-## 初识Spring
+### 初识Spring
 
 后端开发中的 SpringBoot 基础、Web 入门程序、Web 案例、分层解耦等内容，旨在帮助开发者掌握 SpringBoot 开发及相关架构设计
 
-### **资源类型与架构模式**
+#### **资源类型与架构模式**
 
 介绍了静态资源（如 HTML、CSS、JS 等）和动态资源（如 Servlet、JSP 等，企业多基于 Spring 框架构建）
 
@@ -22,17 +21,17 @@ BS 架构（Browser/Server，维护方便但体验一般）
  CS 架构（Client/Server，体验不错但开发维护麻烦）。
 </callout>
 
-### **Spring 与 SpringBoot**：
+#### **Spring 与 SpringBoot**：
 
 Spring 形成了开发生态圈，由众多子项目组成“spring 全家桶”，核心是 SpringFramework，
 
 但直接开发存在配置繁琐和入门难度大的问题。SpringBoot 可简化配置、快速开发，是企业开发主流。
 
-# Web案例
+## Web案例
 
-## Web入门程序
+### Web入门程序
 
-#### SpringBoot开发步骤
+##### SpringBoot开发步骤
 
 第1步：创建SpringBoot工程，并勾选Web开发相关依赖
 
@@ -98,7 +97,7 @@ public class HelloController {
 
 ![这张图片展示的是一个浏览器页面，地址栏显示访问的网址为`localhost:8080/test/show`，页面主体内容显示“hello!”，该内容对应上下文里在浏览器输入指定地址后运行测试的结果。浏览器顶部还排列着多个标签页的快捷方式，包括Gmail、YouTube、哔哩哔哩、Maven Repository等应用及学习相关的标签入口。](../../../../../Attachments/development/backend/web/spring-yu-springboot/PlmkbBnQKoDVjWxk6RzcbvO6n6f.png)
 
-#### SpringBoot常见问题
+##### SpringBoot常见问题
 
 大伙儿在下来联系的时候，联网基于spring的脚手架创建SpringBoot项目，偶尔可能会因为网内网络的原因，链接不上SpringBoot的脚手架网站，此时会出现如下现象：
 
@@ -124,9 +123,9 @@ public class HelloController {
 
 ![图片展示了IntelliJ IDEA中导入模块的操作界面。左侧导航栏中“File”选项被红色框标出，点击后弹出下拉菜单，其中“Project Structure...”选项也被红色框标出。右侧“Project”标签页下，“Modules”选项被红色框标出，其下有“Add”选项，再下有“Import Module”选项。下方“Sources”区域中，“Path”输入框被红色框标出，其右侧“...”按钮也被红色框标出。该图片与文档中介绍在IntelliJ IDEA中导入模块的操作步骤相关，直观呈现了操作位置。](../../../../../Attachments/development/backend/web/spring-yu-springboot/OgVabOUgaobRqrxFwdbcSeVwnLe.png)
 
-## 依赖
+### 依赖
 
-### 依赖管理
+#### 依赖管理
 
 （1）从仓库下载jar包
 
@@ -154,7 +153,7 @@ B ==>DE
 如果我们引入一个坐标, 不想要的传递依赖的时候可以通过 **exclusions 标签** 排除
 </callout>
 
-### 一键构造
+#### 一键构造
 
 <callout emoji="🏝️">
 通过按钮的方式将编译，打包，测试，发布，安装..等功能按钮一键构建
@@ -162,7 +161,7 @@ B ==>DE
 
 ![这张图片展示的是Maven项目的界面，项目名称为day03_maven_test，在该项目的Lifecycle目录下，清晰列出了Maven的核心生命周期阶段，分别是clean、validate、compile、test、package、verify、install、site、deploy，这些是Maven编译打包等构建流程的关键步骤；界面右上角的“m”标识，对应文档中提到的“一键构造”功能，该功能可通过按钮完成编译、打包等操作，此界面正是Maven项目一键构造功能对应的操作区域，为该功能提供了可视化的操作入口。](../../../../../Attachments/development/backend/web/spring-yu-springboot/NS5wbq4Tjoizg7xQ9EJcTXNRnNe.png)
 
-### 统一项目目录
+#### 统一项目目录
 
 <whiteboard token="K1InwfCpehEu50bpehVcqtSnnNf"></whiteboard>
 
@@ -181,7 +180,7 @@ maven-project01
 
 ![这是一个SpringBoot项目的目录结构截图，标注了项目相关的核心目录与文件。最外层是名为“javaweb142”的项目根目录，其下包含多个模块，重点标注了“day04-spring-test”模块。在该模块内，标注了“src”目录下的“main”和“test”子目录：main目录下的“java”目录用于存放Java源码，“resources”目录用于存放配置文件；test目录下的“java”目录则用于存放测试文件。同时还展示了项目内的其他目录与文件，如target目录、pom.xml等。](../../../../../Attachments/development/backend/web/spring-yu-springboot/ODMlblKrToomhLx0kYbctQeYnze.png)
 
-## 三层架构
+### 三层架构
 
 
 
@@ -219,7 +218,7 @@ maven-project01
 3. 将数据库操作结果返回给 Service 层
 </callout>
 
-### 代码示例
+#### 代码示例
 
 ```Java
 package cn.itcast.controller;
@@ -276,16 +275,16 @@ public class ProductsDao {
 }
 ```
 
-## 反射
+### 反射
 
-### 反射的作用
+#### 反射的作用
 
 <callout emoji="🎉">
 在运行期间动态获取方法区的字节码对象，并且解剖字节码每一部分并操作的一种技术
 土话：操作类的另外一种方式
 </callout>
 
-### 普通方式操作类
+#### 普通方式操作类
 
 <callout emoji="📌">
 （1）创建对象
@@ -293,7 +292,7 @@ public class ProductsDao {
 （3）访问对象方法
 </callout>
 
-### 反射方式操作类
+#### 反射方式操作类
 
 前提
 
@@ -301,7 +300,7 @@ public class ProductsDao {
 **须先获取方法区才能反射**
 </callout>
 
-#### 获取字节码对象的三种方式
+##### 获取字节码对象的三种方式
 
 ```Java
 类名.class;
@@ -327,7 +326,7 @@ Class.forName("全限定类名");
     }
 ```
 
-#### *用反射创建对象*
+##### *用反射创建对象*
 
 ```Java
 创建对象的方式
@@ -384,7 +383,7 @@ Class.forName("全限定类名");
 }
 ```
 
-#### *采用反射操作成员变量*
+##### *采用反射操作成员变量*
 
 ```Java
 //采用反射操作成员变量
@@ -447,7 +446,7 @@ private static void demo03() throws Exception {
 
 ```
 
-#### **利用反射操作成员方法**
+##### **利用反射操作成员方法**
 
 <callout emoji="🎁">
 1. 第一步：获取字节码对象
@@ -489,17 +488,17 @@ private static void demo03() throws Exception {
 }
 ```
 
-## 分层解耦
+### 分层解耦
 
-### 层与层之间解耦合
+#### 层与层之间解耦合
 
-#### 业务层面向接口编程的好处
+##### 业务层面向接口编程的好处
 
 <callout emoji="📚">
 通过反射达到解耦合的目的
 </callout>
 
-### 问题分析
+#### 问题分析
 
 由于我们现在在程序中，需要什么对象，直接new一个对象 `new EmpDaoImpl()`  。
 
@@ -530,7 +529,7 @@ Controller中调用Service，也是类似的问题。这种呢，我们就称之
 
 ![图片展示了三层架构中层与层之间解耦合前后的对比。左侧为当前情况，controller依赖service，service依赖dao，用红色圈标注；右侧为理想状态，controller、service、dao之间无直接依赖，用绿色箭头表示。该图与上下文紧密相关，直观呈现了层与层之间耦合与解耦合的现状，为理解业务层面向接口编程的好处及后续解耦操作提供可视化参考。](../../../../../Attachments/development/backend/web/spring-yu-springboot/ASS3b6pGUo1IAUxN2x2cWGBInvf.png)
 
-### 解耦思路
+#### 解耦思路
 
 之前我们在编写代码时，需要什么对象，就直接new一个就可以了。 这种做法呢，层与层之间代码就耦合了，当Dao层的实现变了之后， 我们还需要修改Service层的代码。
 
@@ -572,7 +571,7 @@ Controller中调用Service，也是类似的问题。这种呢，我们就称之
 - **bean对象：**IOC容器中创建、管理的对象，称之为：bean对象。
 </callout>
 
-### IOC&DI入门
+#### IOC&DI入门
 
 IOC
 
@@ -695,7 +694,7 @@ public class EmpController{
 
 
 
-## 附录：常见状态码
+### 附录：常见状态码
 
 | **状态码** | **英文描述** | **解释** |
 |-|-|-|

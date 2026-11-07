@@ -4,16 +4,15 @@ date: 2026-11-06
 aliases:
   - "14 AOP"
 ---
+# 14 AOP
 
-<title>14 AOP</title>
-
-# Mybatis-Plus的原理
+## Mybatis-Plus的原理
 
 <callout emoji="🐵">
 增强IOC容器中的bean
 </callout>
 
-## 步骤
+### 步骤
 
 <callout emoji="👍">
 1.定义一个类是实现BeanPostProcessor接口
@@ -165,9 +164,9 @@ public class BaseMapperEnhance implements BeanPostProcessor {
 
 
 
-# AOP
+## AOP
 
-## 作用
+### 作用
 
 <callout emoji="🦄">
 不改变源码的情况下对IOC容器中的功能增强
@@ -184,9 +183,9 @@ AOP的优势主要体现在以下四个方面：
 AOP是一种思想，而在Spring框架中，对这种思想进行了实现
 </callout>
 
-## 使用步骤
+### 使用步骤
 
-### 导入aop的起步依赖
+#### 导入aop的起步依赖
 
 - 在 pom.xml 中引入AOP的依赖
 
@@ -197,7 +196,7 @@ AOP是一种思想，而在Spring框架中，对这种思想进行了实现
 </dependency>
 ```
 
-### 在启动类上面开启AOP自动代理
+#### 在启动类上面开启AOP自动代理
 
 在主程序启动类中开启AOP自动代理`@EnableAspectJAutoProxy`
 
@@ -211,7 +210,7 @@ public class Day14AopApplication {
 }
 ```
 
-### 编写切面类
+#### 编写切面类
 
 先在类名上注解`@Aspect` 标注是一个切面类 再添加@Component注解 加入IOC容器中
 
@@ -244,7 +243,7 @@ public class LoggingAspect {
 }
 ```
 
-#### 切入点表达式详解
+##### 切入点表达式详解
 
 表达式:
 
@@ -254,7 +253,7 @@ public class LoggingAspect {
 
 
 
-#### 通配符说明 
+##### 通配符说明
 
 ```Java
 *：匹配任意内容
@@ -294,13 +293,13 @@ public class LoggingAspect {
 "@annotation(注解的全类名)"
 ```
 
-#### 五种通知类型
+##### 五种通知类型
 
 在通知方法上加上了`@Around`注解，就代表当前通知是一个环绕通知。
 
 <table><colgroup><col/><col/></colgroup><thead><tr><th colspan="2"><b>Spring AOP 通知类型</b></th></tr></thead><tbody><tr><td>@Around</td><td>环绕通知，此注解标注的通知方法在目标方法前、后都被执行 (最常用)</td></tr><tr><td>@Before</td><td>前置通知，此注解标注的通知方法在目标方法前被执行</td></tr><tr><td>@After</td><td>后置通知，此注解标注的通知方法在目标方法后被执行，无论是否有异常都会执行</td></tr><tr><td>@AfterReturning</td><td>返回后通知，此注解标注的通知方法在目标方法后被执行，有异常不会执行</td></tr><tr><td>@AfterThrowing</td><td>异常后通知，此注解标注的通知方法发生异常后执行</td></tr></tbody></table>
 
-##### @Before - 前置通知
+###### @Before - 前置通知
 
 ```Java
 @Before("execution(* com.example.service.*.*(..))")
@@ -309,7 +308,7 @@ public void beforeAdvice(JoinPoint joinPoint) {
 }
 ```
 
-##### @After - 后置通知
+###### @After - 后置通知
 
 ```Java
 @After("execution(* com.example.service.*.*(..))")
@@ -318,7 +317,7 @@ public void afterAdvice(JoinPoint joinPoint) {
 }
 ```
 
-##### @AfterReturning - 返回通知
+###### @AfterReturning - 返回通知
 
 ```TypeScript
 @AfterReturning(pointcut = "execution(* com.example.service.*.*(..))", returning = "result")
@@ -327,7 +326,7 @@ public void afterReturning(JoinPoint joinPoint, Object result) {
 }
 ```
 
-##### @AfterThrowing - 异常通知
+###### @AfterThrowing - 异常通知
 
 ```Java
 @AfterThrowing(pointcut = "execution(* com.example.service.*.*(..))", throwing = "ex")
@@ -336,7 +335,7 @@ public void afterThrowing(JoinPoint joinPoint, Exception ex) {
 }
 ```
 
-##### @Around - 环绕通知（功能最全）
+###### @Around - 环绕通知（功能最全）
 
 ```Java
 @Around("execution(* com.example.service.*.*(..))")
@@ -434,7 +433,7 @@ public class MyAspect1 {
 }
 ```
 
-## 概念
+### 概念
 
 
 
@@ -448,9 +447,9 @@ public class MyAspect1 {
 
 
 
-## 案例
+### 案例
 
-### 案例1：自动填充时间字段
+#### 案例1：自动填充时间字段
 
 ```Java
 package cn.itcast.aop;
@@ -503,7 +502,7 @@ public class ParameterAspect {
 }
 ```
 
-### 案例2：操作日志记录
+#### 案例2：操作日志记录
 
 ```Java
 package cn.itcast.aop;
@@ -572,30 +571,30 @@ public class OperatorLogAspect {
 
 
 
-## 配置优先级
+### 配置优先级
 
-### 优先级顺序（从高到低） 
+#### 优先级顺序（从高到低）
 
-#### **命令行参数**（最高优先级）
+##### **命令行参数**（最高优先级）
 
 ```Java
 java -jar app.jar --server.port=8081 --spring.datasource.url=jdbc:mysql://localhost:3306/test
 ```
 
-#### JVM系统参数
+##### JVM系统参数
 
 ```Java
 java -Dserver.port=8082 -Dspring.profiles.active=prod -jar app.jar
 ```
 
-#### Properties文件
+##### Properties文件
 
 ```Java
 server.port=8083
 spring.datasource.url=jdbc:mysql://localhost:3306/prod
 ```
 
-#### **YAML/YML文件**（最低优先级）
+##### **YAML/YML文件**（最低优先级）
 
 ```Java
 server:
@@ -607,9 +606,9 @@ spring:
 
 
 
-## Maven打包部署
+### Maven打包部署
 
-### 打包命令流程
+#### 打包命令流程
 
 ```Java
 # 1. 编译项目
@@ -625,7 +624,7 @@ mvn clean package -DskipTests
 java -jar target/application.jar
 ```
 
-### Spring Boot打包配置
+#### Spring Boot打包配置
 
 父工程中设置主程序启动类
 

@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "04 测试用例_注解_SpringMVC"
 ---
+# 04 测试用例_注解_SpringMVC
 
-<title>04 测试用例_注解_SpringMVC</title>
-
-# spring处理冲突的bean的解决方案
+## spring处理冲突的bean的解决方案
 
 如何让这个类变成应用接口类
 
@@ -15,7 +14,7 @@ aliases:
 IOC/DI如何处理容器中冲突的bean
 </callout>
 
-## 第一种 @Autowired + @Qualifier
+### 第一种 @Autowired + @Qualifier
 
 可以结合@Qualifier解决，可以指定名字注入
 
@@ -56,7 +55,7 @@ public class TestController {
 `@Autowired` 负责找类型，`@Qualifier` 负责精确指定 Bean 名
 </callout>
 
-## 第二种 按名称注入
+### 第二种 按名称注入
 
 可以采用@Resource解决，可以通过name属性指定名字注入
 
@@ -95,7 +94,7 @@ public class TestController {
 `@Resource`：我指定名字，你就给我这个 Bean
 </callout>
 
-## 第三种 指定默认 Bean
+### 第三种 指定默认 Bean
 
 <callout emoji="✏️">
 可以采用@Primary解决，通过@Primary指定默认的bean,提高优先级
@@ -157,7 +156,7 @@ public class TestController {
 如果同时使用 `@Qualifier`，**以 @Qualifier 为准**
 </callout>
 
-# 测试
+## 测试
 
 原始测试代码的方式的弊端：
 
@@ -167,23 +166,23 @@ public class TestController {
 (3) 一个测试失败可能影响其他功能的测试
 </callout>
 
-## 测试方法
+### 测试方法
 
-### 黑盒测试（该岗位基本已经淘汰）：
+#### 黑盒测试（该岗位基本已经淘汰）：
 
 <callout emoji="🎼">
 只要给数据, 拿结果, 观察结果是否和预想一样即可, 不需要写任何代码!!!
 只关心代码的输入和输出，不关心内部实现。
 </callout>
 
-### 灰盒测试:
+#### 灰盒测试:
 
 <callout emoji="🎼">
 能够写部分代码, 压力测试循环测试..., 多个值测试....
 介于黑盒和白盒之间的测试方法
 </callout>
 
-### 白盒测试（目前主流岗位的测试方法）:
+#### 白盒测试（目前主流岗位的测试方法）:
 
 <callout emoji="🌟">
 自己能够写测试用例, 测试代码
@@ -192,16 +191,16 @@ public class TestController {
 
 
 
-## 定义测试用例
+### 定义测试用例
 
-### 测试类名的规则
+#### 测试类名的规则
 
 ```Java
 1.定义一个测试用例，这个测试用例的类名建议叫做被测试的类+Test
 2.
 ```
 
-### 测试方法的规则
+#### 测试方法的规则
 
 定义测试方法，来测试每一个功能，这个测试方法想要独立运行那么可以和测试框架交互，标注一下`@Test`
 
@@ -211,7 +210,7 @@ public class TestController {
 （3）方法不能有参数
 </callout>
 
-## 测试框架
+### 测试框架
 
 常用的注解：
 
@@ -223,7 +222,7 @@ public class TestController {
 @AfterALL：在所有测试方法之后执行，只执行一次，必须是静态方法
 ```
 
-## 参数化测试（重点）
+### 参数化测试（重点）
 
 ```Java
 必须采用@ParameterizedTest，这个和@Test是冲突的
@@ -403,14 +402,14 @@ public class MathUtilsTest {
 
 ```
 
-# *注解*
+## *注解*
 
 <callout emoji="🥛">
 *概念:JDK5出现的新特性,简化程序和(程序之间之间)(和框架)交互技术*
 *本质:原来注解本质上是一个臭接口,基于jdk1.5接口的升级*
 </callout>
 
-## *框架职责*
+### *框架职责*
 
  *(1)定义注解*
 
@@ -439,7 +438,7 @@ public interface Anno extends java.lang.annotation.Annotation{
 *或者以上类型的一维数组！！！！*
 </callout>
 
-### 定义注解
+#### 定义注解
 
 示例代码：
 
@@ -520,7 +519,7 @@ public @interface Meta {
 @Inherited:标注注解是否可以被继承
 ```
 
-### 解析注解
+#### 解析注解
 
 ```Java
 package demo.parse;
@@ -589,7 +588,7 @@ public class AnnoParser {
 
 
 
-### 继承演示
+#### 继承演示
 
 > 注意：`@Inherited` **只对“类上的注解”有效**，方法/字段上的注解不会被继承。
 
@@ -603,7 +602,7 @@ public class ChildService extends UserService {
 
 ```
 
-## *用户职责*
+### *用户职责*
 
 *(3)使用注解和框架交互数据即可*
 
@@ -616,7 +615,7 @@ public class ChildService extends UserService {
 @注解名(抽象方法名1=返回值1,抽象方法名2=返回值2...)
 ```
 
-### 使用注解
+#### 使用注解
 
 用注解与框架交互，示例代码：
 
@@ -661,7 +660,7 @@ public class UserService {
 *当返回值类型是一个一维数组,我们只赋值单个值的时候,可以省略*
 </callout>
 
-## IOC&DI
+### IOC&DI
 
 扫描了你所有的类，只要类有@RestController注解的类都会被ioc并放入ioc容器  
 解析这些类中所有的功能，这些功能中的短路径!！将其放入到map集合让和路径和功能绑定在一起
@@ -671,7 +670,7 @@ public class UserService {
 (2)service方法中，得到请求的uri路径，拿到请求的资源的"小路径"
 ```
 
-# servlet的来源
+## servlet的来源
 
 Servlet 的出现是为了解决 **Java 程序如何处理 HTTP 请求的问题**。
 
@@ -683,11 +682,11 @@ Servlet 是 **Java 处理 HTTP 请求的标准接口规范**
 
 👉 **Servlet = Java Web 程序与 HTTP 协议之间的桥梁**
 
-## http协议
+### http协议
 
-## HTTP 协议（Servlet 前提）
+### HTTP 协议（Servlet 前提）
 
-###  HTTP 是什么
+#### HTTP 是什么
 
 <callout emoji="👍">
 HTTP 是 **客户端（浏览器）和服务器之间通信的协议**
@@ -705,7 +704,7 @@ https://www.baidu.com
 
 
 
-### HTTP 请求
+#### HTTP 请求
 
 <callout emoji="🎹">
 请求行：`GET /test HTTP/1.1`（请求）
@@ -757,7 +756,7 @@ https://www.baidu.com
 | POST | 向服务器发送数据以创建新资源。常用于提交表单数据或上传文件。发送的数据包含在请求体中。 |
 | PUT | 向服务器发送数据以更新现有资源。如果资源不存在，则创建新的资源。与 POST 不同，PUT 通常是幂等的，即多次执行相同的 PUT 请求不会产生不同的结果。 |
 
-### HTTP 响应
+#### HTTP 响应
 
 <callout emoji="🥇">
 状态行：`HTTP/1.1 200 OK`（响应状态）
@@ -815,9 +814,9 @@ Content-Length: 1024
 
 > 接收 HTTP 请求 → 解析 → 调用 Java 代码 → 返回 HTTP 响应
 
-## servlet的编写流程
+### servlet的编写流程
 
-###  Servlet 本质
+#### Servlet 本质
 
 <callout emoji="🌟">
 Servlet 是一个 **Java 接口**
@@ -837,7 +836,7 @@ public class TestServlet extends HttpServlet {
 }
 ```
 
-## Servlet 执行流程
+### Servlet 执行流程
 
 ![这张图展示了Tomcat处理请求并通过DispatcherServlet调度的流程：左侧为浏览器，通过HTTP协议向Tomcat发送请求、接收响应。进入Tomcat后，DispatcherServlet会先解析所有带@RestController注解的类，将对应的方法存入映射集合以对接路径与方法；再从service中获取前端访问的资源，通过映射集合找到对应方法；最后反射执行该功能并将结果返回给浏览器。同时，DispatcherServlet会将Http协议分装成对应的请求对象与响应对象，调用Servlet的service方法将对象传入，右侧还关联了Controller模块，体现了请求在框架内的调度逻辑。](../../../../../Attachments/development/backend/web/spring-yu-springboot/WviXbsJm3oO0xtx3Dlpcy7EGnZf.png)
 
@@ -849,7 +848,7 @@ public class TestServlet extends HttpServlet {
 5. 返回响应
 </callout>
 
-## 一个请求一个 Servlet
+### 一个请求一个 Servlet
 
 最原始的 Servlet 开发阶段（没有 Controller）
 
@@ -878,9 +877,9 @@ Servlet 数量爆炸（Add / Delete / Update / Find）
 
 **👉** 此时还没有 Controller 的概念
 
-## 单个 Servlet 如何处理多个请求
+### 单个 Servlet 如何处理多个请求
 
-### 通过参数区分功能
+#### 通过参数区分功能
 
 Controller 雏形
 
@@ -909,7 +908,7 @@ Servlet 开始“控制请求走向”
 Controller 的雏形出现
 </callout>
 
-### 问题
+#### 问题
 
 如果一个 Servlet 只写一个功能：
 
@@ -923,7 +922,7 @@ UserUpdateServlet
 
 ---
 
-### 一个 Servlet + 多个功能
+#### 一个 Servlet + 多个功能
 
 解决方案，示例代码：
 
@@ -948,13 +947,13 @@ if-else 极多
 违反开闭原则
 </callout>
 
-## 通过反射简化分发方法
+### 通过反射简化分发方法
 
-###  核心思想
+#### 核心思想
 
 > **请求参数 = 方法名 → 通过反射调用方法**
 
-### BaseServlet
+#### BaseServlet
 
 示例代码：
 
@@ -993,16 +992,16 @@ public class BaseServlet extends HttpServlet {
 
 👉 **Servlet 正式转型为 Controller（控制器）**
 
-## 多个servlet如何抽取共性内容
+### 多个servlet如何抽取共性内容
 
-### 问题
+#### 问题
 
 <callout emoji="🏖️">
 每个 Servlet 都需要反射分发逻辑
 重复代码严重
 </callout>
 
-### 解决方案：抽取父类
+#### 解决方案：抽取父类
 
 示例代码：
 
@@ -1021,16 +1020,16 @@ public class UserServlet extends BaseServlet {
 子类负责业务
 </callout>
 
-## 前端控制器模式
+### 前端控制器模式
 
-### 问题升级 Controller 的质变
+#### 问题升级 Controller 的质变
 
 <callout emoji="🍞">
 Servlet 仍然很多
 URL 与 Servlet 强绑定
 </callout>
 
-### 前端控制器思想
+#### 前端控制器思想
 
 ```Java
    浏览器
@@ -1042,13 +1041,13 @@ URL 与 Servlet 强绑定
 
 👉 将**所有请求统一入口**
 
-## SpringMVC在这个基础上如何整合
+### SpringMVC在这个基础上如何整合
 
 SpringMVC = **Servlet + 反射 + 注解 + IOC**
 
-### 定义DispatherServlet
+#### 定义DispatherServlet
 
-#### 为什么要定义 DispatcherServlet
+##### 为什么要定义 DispatcherServlet
 
 在前面的阶段中（BaseServlet + 反射）已经存在几个明显问题：
 
@@ -1078,7 +1077,7 @@ springMVC定义DispatherServlet，这个前端控制器
 
 
 
-### DispatcherServlet 在整体架构中的位置
+#### DispatcherServlet 在整体架构中的位置
 
 > **所有请求都先到 DispatcherServlet**
 > 
@@ -1097,7 +1096,7 @@ springMVC定义DispatherServlet，这个前端控制器
       返回结果
 ```
 
-### springMVC定义DispatherServlet
+#### springMVC定义DispatherServlet
 
 这个前端控制器
 
@@ -1118,7 +1117,7 @@ Tomcat 只负责把请求交给 DispatcherServlet
 DispatcherServlet 负责真正的请求分发
 </callout>
 
-### 手搓 SpringMVC 原理 
+#### 手搓 SpringMVC 原理
 
 目录结构：
 
@@ -1423,9 +1422,9 @@ DispatcherServlet 在启动时扫描 @RestController，
 调用 Controller 方法
 </callout>
 
-### SpringMVC让使用者如何使用功能
+#### SpringMVC让使用者如何使用功能
 
-#####  框架内部做了什么
+###### 框架内部做了什么
 
 <callout emoji="📍">
 扫描 Controller
@@ -1436,7 +1435,7 @@ DispatcherServlet 在启动时扫描 @RestController，
 
 使用者直接定义Controller就可以使用SpringMVC
 
-##### 注解驱动 Controller
+###### 注解驱动 Controller
 
 <callout emoji="📍">
 Controller 的底层演进是 Servlet 逐步解耦的过程。
@@ -1449,7 +1448,7 @@ Controller 只负责业务处理，
 经过迭代 最后得到 Controller的最终形态
 </callout>
 
-###### 彻底脱离 Servlet API
+**彻底脱离 Servlet API**
 
 Controller 是 **普通 Java 类（POJO）**
 
@@ -1458,7 +1457,7 @@ Controller 是 **普通 Java 类（POJO）**
 不需要依赖 `HttpServletRequest / Response`
 </callout>
 
-###### 注解驱动映射
+**注解驱动映射**
 
 <callout emoji="🌟">
 使用 `@Controller / @RestController`
@@ -1466,7 +1465,7 @@ Controller 是 **普通 Java 类（POJO）**
 URL → 方法映射由 SpringMVC 完成
 </callout>
 
-###### 框架接管以往繁杂的工作
+**框架接管以往繁杂的工作**
 
 <callout emoji="⛱️">
 请求参数自动绑定
@@ -1475,7 +1474,7 @@ URL → 方法映射由 SpringMVC 完成
 编码、格式统一管理
 </callout>
 
-###### @RestController
+**@RestController**
 
 示例代码：
 
@@ -1492,7 +1491,7 @@ public class UserController {
 返回值直接写回响应体
 </callout>
 
-###### @RequestMapping
+**@RequestMapping**
 
 示例代码：
 
@@ -1509,9 +1508,9 @@ public String add() {
 建立请求路径与方法的映射关系
 </callout>
 
-# controller底层
+## controller底层
 
-## 发展历程
+### 发展历程
 
 1. **阶段一原始Servlet接口实现（功能单一，冗余度高）**
 
@@ -1565,7 +1564,7 @@ public String add() {
 | 代码耦合 | 依赖Servelt API(HttpServletRequest/ServletResponse) | Controller可脱离Servlet API(框架自动封装) |
 
 <callout emoji="❤️">
-## 核心脉络总结
+### 核心脉络总结
 1. **Tomcat 的角色演进**：从 “管理所有 Servlet 实例、解析所有业务映射”→“仅管理一个 DispatcherServlet、仅做基础请求转发”，逐步从 “业务参与方” 降级为 “底层基础设施”；
 2. **Controller 的核心变化**：从 “必须实现 Servlet 接口 / 继承 HttpServlet 的耦合类”→“无耦合的普通 Java 类”，从 “开发者手动处理所有请求细节”→“框架接管通用逻辑，仅聚焦业务”；
 3. **整体目标**：始终围绕 “减少冗余代码、降低类数量、解耦底层容器与业务逻辑”，最终实现 Spring MVC Controller“轻量化、注解化、框架化” 的设计形态，成为 Java Web 开发的标准模式
@@ -1573,9 +1572,9 @@ public String add() {
 
 
 
-## 踩坑：MyBatis 注解与方法名冲突
+### 踩坑：MyBatis 注解与方法名冲突
 
-## 注解与方法重复 冲突
+### 注解与方法重复 冲突
 
 xml和注解不能重复使用,否则mybatis将不知道使用哪个
 
@@ -1619,7 +1618,7 @@ Unconditional classes:
 
 ```
 
-## 缺少注解
+### 缺少注解
 
 接口文档中要求需要用到返回值类型为JSON类型 要在参数列表加入 @RequestBody注解来声明
 

@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "第八章 支付模块"
 ---
+# 第八章 支付模块
 
-<title>第八章 支付模块</title>
-
-# 学习目标
+## 学习目标
 
 1. 能够说出对接小程序支付接口的流程
 2. 能够测试通过支付服务的支付和退款接口
@@ -27,9 +26,9 @@ aliases:
 
 
 
-# 1 支付服务
+## 1 支付服务
 
-## 1.1 支付接口调研
+### 1.1 支付接口调研
 
 通常项目的支付业务会开发独立的支付服务，由支付服务对接第三方支付平台，如：微信、支付宝、聚合支付平台等。
 
@@ -37,7 +36,7 @@ aliases:
 
 目标：根据需求调研支付接口，确定本项目需要对接哪些接口。
 
-### 1）界面原型
+#### 1）界面原型
 
 用户下单成功提示用户支付，用户支付成功即下单成功，下单成功后家政服务人员才可以进行抢单，如下图：
 
@@ -45,7 +44,7 @@ aliases:
 
 用户使用的是微信小程序，所以支付过程是使用微信支付，点击确认支付即弹出微信支付界面，输入支付密码确认支付，支付成功后显示下单成功。
 
-### 2) 小程序支付调研
+#### 2) 小程序支付调研
 
 参考“微信支付调研 v1.0”文档。
 
@@ -65,13 +64,13 @@ aliases:
 
 针对这些限制我们尝试调研其它的接口。
 
-### 3) 扫码支付调研
+#### 3) 扫码支付调研
 
 下边调研扫码支付支付，此接口不存在小程序端调起支付的限制，**要注意：开发小程序一定要对接微信小程序的支付接口，在小程序上使用 的扫码支付是不符合小程序支付的用户需求的，这里仅是用于学习。**
 
 参考“微信支付调研 v1.0”文档。
 
-### 4）如何保证接口安全性？
+#### 4）如何保证接口安全性？
 
 第三方支付平台除了使用https协议进行加密传输以外，还通过接口签名以及敏感参数加密的方式保证接口的安全性。
 
@@ -79,7 +78,7 @@ aliases:
 
 详细参见：https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-generation.html
 
-#### **什么是签名和验签**
+##### **什么是签名和验签**
 
 **签名**是对原始数据通过签名算法生成的一段数据（签名串），用于证明数据的真实性和完整性。签名通常使用密钥进行生成，这个密钥可以是对称密钥或非对称密钥中的私钥。
 
@@ -179,7 +178,7 @@ Authorization: WECHATPAY2-SHA256-RSA2048 mchid="1900009191",nonce_str="593BEC0C9
 
 
 
-#### **加密与解密**
+##### **加密与解密**
 
 **加密**是将原始的、可读的数据（称为明文）通过某种算法和密钥转换成不可读的数据（称为密文）。加密的目的是防止未经授权的访问者能够理解或识别被加密的信息。加密算法通常基于密钥，有对称加密和非对称加密两种主要类型。
 
@@ -206,7 +205,7 @@ Authorization: WECHATPAY2-SHA256-RSA2048 mchid="1900009191",nonce_str="593BEC0C9
 
 
 
-### 5）小结
+#### 5）小结
 
 本节调用了小程序支付接口与扫码支付（Native支付接口）。
 
@@ -260,9 +259,9 @@ HTTPS协议巧妙地结合了对称加密和非对称加密的优点：
 
 
 
-## 1.2 测试支付接口
+### 1.2 测试支付接口
 
-### 1）认识支付服务
+#### 1）认识支付服务
 
 在我们项目中针对支付业务专门开发了支付服务，由支付服务与微信进行接口对接，家政平台的订单服务只需和支付服务对接即可。
 
@@ -280,7 +279,7 @@ HTTPS协议巧妙地结合了对称加密和非对称加密的优点：
 
 
 
-### 2）部署支付服务
+#### 2）部署支付服务
 
 课程提供支付服务jzo2o-trade的git仓库地址为： https://gitee.com/jzo2o-v2/jzo2o-trade.git
 
@@ -331,7 +330,7 @@ rabbit-mq:
 
 
 
-### 3）测试支付接口
+#### 3）测试支付接口
 
 1. **交互流程**
 
@@ -441,7 +440,7 @@ qrCode：二维码base64
 
 
 
-### 4）支付结果查询
+#### 4）支付结果查询
 
 支付成功，下边测试  “根据交易单号查询交易单的交易结果”接口
 
@@ -513,7 +512,7 @@ tradingState 交易状态 （4表示已付款）
 
 
 
-### 5）测试退款接口
+#### 5）测试退款接口
 
 退款接口定义：
 
@@ -545,7 +544,7 @@ tradingState 交易状态 （4表示已付款）
 
 
 
-### 6）小结
+#### 6）小结
 
 项目的支付服务有哪些接口？
 
@@ -553,9 +552,9 @@ tradingState 交易状态 （4表示已付款）
 
 
 
-## 1.3 理解支付服务的设计
+### 1.3 理解支付服务的设计
 
-### 1）表设计
+#### 1）表设计
 
 首先熟悉支付服务的数据库表
 
@@ -668,7 +667,7 @@ create table `jzo2o-trade`.refund_record
 
 ```
 
-### 2）数据流
+#### 2）数据流
 
 
 
@@ -706,11 +705,11 @@ create table `jzo2o-trade`.refund_record
 
 
 
-### 3）阅读代码
+#### 3）阅读代码
 
 下边阅读支付接口与退款接口的核心代码：
 
-#### 支付接口（生成二维码）
+##### 支付接口（生成二维码）
 
 ![这张图片展示的是支付模块相关代码，具体为NativePayController.java文件中的核心方法代码，该方法对应生成支付二维码的支付接口，作用是实现收银台或商户后台的扫码支付接口功能。代码中定义了createDownLineTrading方法，通过@PostMapping注解配置路径，接收NativePayReqDTO类型的参数，调用NativePayService的createDownLineTrading方法处理交易单相关逻辑，返回包含二维码路径的支付响应对象，相关参数注解标注了接口的用途和参数要求。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Q4ogbls4eoG4UHxkuhjcuKabncb.png)
 
@@ -736,7 +735,7 @@ create table `jzo2o-trade`.refund_record
 
 ![图片展示了NativePayServiceImpl.java文件中生成二维码的相关代码。关键部分是第106行，调用this.qrCodeService.generate方法生成二维码，参数为placeOrderMsg和payChannel。此代码与上下文紧密相关，上下文提到支付服务生成支付二维码，插入交易单记录，此图片正是生成支付二维码的代码实现，体现了支付服务生成支付二维码这一功能。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/CfK8bMF9JoniTCxC9sFc5MUJnVg.png)
 
-#### 退款接口
+##### 退款接口
 
 ![图片展示的是RefundRecordController.java文件中的refund方法代码。该方法为统一收单交易退款接口，接收交易单号、退款单号、退款金额等参数。关键部分是调用basicPayService的refundTrading方法，传入交易单号、退款单号、退款金额，返回结果转换为ExecutionResultResDTO类型。此图片与文档中介绍退款接口的内容相关，直观呈现了退款接口的代码实现。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/M86KbPUodo7l7Sx8hWYcyAgpnAf.png)
 
@@ -748,7 +747,7 @@ create table `jzo2o-trade`.refund_record
 
 ![这张图片展示了支付模块退款相关的Java代码实现，代码位于BasicPayServiceImpl.java文件中。代码通过分布式锁防止重复退款，指定了与退款单号绑定的Redis锁键，获取FairLock锁后按交易渠道调用不同的Handler类处理退款，当获取第三方返回的退款结果为真时，会更新退款记录。光标悬停的提示框显示，当前的退款处理类选择中包含了针对支付宝渠道的AliBasicPayHandler和针对微信渠道的WeChatBasicPayHandler两类实现，对应不同的第三方支付渠道退款请求逻辑。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/CtF8b2Fgao1joHxUEvSc8RgTnqc.png)
 
-#### 支付通知任务
+##### 支付通知任务
 
 
 
@@ -834,7 +833,7 @@ public void tradingJob() {
 
 
 
-### 4）小结
+#### 4）小结
 
 支付服务的核心表有哪些？
 
@@ -844,13 +843,13 @@ public void tradingJob() {
 
 
 
-# 2 家政订单支付功能
+## 2 家政订单支付功能
 
-## 2.1 对接支付接口
+### 2.1 对接支付接口
 
-### 2.1.1 支付接口定义
+#### 2.1.1 支付接口定义
 
-#### 1）交互流程
+##### 1）交互流程
 
 用户点击支付按钮，前端请求订单服务，订单服务请求支付服务，最后支付服务请求微信的下单接口。
 
@@ -866,7 +865,7 @@ public void tradingJob() {
 
 
 
-#### 2）支付接口分析
+##### 2）支付接口分析
 
 下边我们实现订单管理服务的发起支付接口，接口位置如下图：
 
@@ -961,7 +960,7 @@ qrCode：二维码base64
 
 
 
-#### 3) 接口定义如下
+##### 3) 接口定义如下
 
 下边定义订单管理服务提供的支付接口：
 
@@ -994,7 +993,7 @@ public class ConsumerOrdersController {
     }
 ```
 
-#### 4）小结
+##### 4）小结
 
 订单管理服务的支付接口是怎么定义的？
 
@@ -1022,11 +1021,11 @@ public class ConsumerOrdersController {
 
 
 
-### 2.1.2 支付接口实现
+#### 2.1.2 支付接口实现
 
 下边实现支付接口。
 
-#### 1）配置支付参数
+##### 1）配置支付参数
 
 根据支付接口的分析，首先在jzo2o-orders-manager.yaml中配置支付参数
 
@@ -1044,11 +1043,11 @@ jzo2o:
 
 ![图片展示的是jzo2o-orders-manager.yaml文件中配置支付参数的界面。界面中Data ID为jzo2o-orders-manager - yaml，Groups为DEFAULT_GROUP。配置模式下，rabbitmq - mq1的rabbitmq - mq1配置被突出显示，其中alipayEnterpriseId为2088241317544335，weChatEnterpriseId为1561414331。该图片与文档中“2.1.2支付接口实现”部分的“1）配置支付参数”内容对应，直观呈现了配置参数的具体位置和内容。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/SJGnbZ4p0o3iyqxX2PWcW2kknrg.png)
 
-#### 2）mapper
+##### 2）mapper
 
 根据接口分析，请求支付服务生成支付二维码成功将交易单号和支付渠道更新到订单表中。
 
-#### 3) service
+##### 3) service
 
 在service定义支付接口：
 
@@ -1157,7 +1156,7 @@ private NativePayResDTO generateQrCode(Orders orders, PayChannelEnum tradingChan
 }
 ```
 
-#### 4） controller
+##### 4） controller
 
 ```Java
 @PutMapping("/pay/{id}")
@@ -1171,7 +1170,7 @@ public OrdersPayResDTO pay(@PathVariable("id") Long id, @RequestBody OrdersPayRe
 }
 ```
 
-#### 5）接口测试
+##### 5）接口测试
 
 测试流程：
 
@@ -1209,17 +1208,17 @@ public OrdersPayResDTO pay(@PathVariable("id") Long id, @RequestBody OrdersPayRe
 
 
 
-#### 6）小结
+##### 6）小结
 
 支付接口是怎么开发的？
 
 
 
-## 2.2 对接查询支付结果
+### 2.2 对接查询支付结果
 
-### 2.2.1 接口定义
+#### 2.2.1 接口定义
 
-#### 1）交互流程
+##### 1）交互流程
 
 在用户支付后用户点击“完成支付”此时前端请求订单服务的查询支付结果接口，如果支付成功则跳转到支付成功界面。
 
@@ -1231,7 +1230,7 @@ public OrdersPayResDTO pay(@PathVariable("id") Long id, @RequestBody OrdersPayRe
 
 订单管理服务查询到支付结果后更新订单的支付状态。
 
-#### 2） 接口分析
+##### 2） 接口分析
 
 1. 传入参数 
 
@@ -1245,7 +1244,7 @@ public OrdersPayResDTO pay(@PathVariable("id") Long id, @RequestBody OrdersPayRe
 
 本接口的目的是查询支付结果，所以响应结果中要有支付结果，其它的参数就是订单号、交易单号等相关参数。
 
-#### 3）接口定义 
+##### 3）接口定义
 
 ![这张图展示了查询订单支付结果的接口定义，该接口为GET请求类型，接口路径为/orders-manager/consumer/orders/pay/{id}/result。其请求数据类型为application/x-www-form-urlencoded，响应数据类型为*/*。图中的请求参数区域清晰显示，请求所需的参数是id，该参数为订单id，请求类型为path，是必填项，对应的数据类型为integer(int64)。该接口对应文档中对接查询支付结果的接口定义部分，用于查询支付结果相关信息。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/YmK3beSmFo7TAFxeNtTc4BIdnnf.png)
 
@@ -1264,13 +1263,13 @@ public OrdersPayResDTO payResult(@PathVariable("id") Long id) {
 }
 ```
 
-### 2.2.2 接口实现
+#### 2.2.2 接口实现
 
-#### 1) mapper
+##### 1) mapper
 
 拿到支付结果更新订单表的支付结果。
 
-#### 2) service
+##### 2) service
 
 根据接口分析，查询支付结果需要做两部分的工作：
 
@@ -1395,7 +1394,7 @@ public void paySuccess(TradeStatusMsg tradeStatusMsg) {
 }
 ```
 
-#### 3) controller  
+##### 3) controller
 
 ```Java
 @GetMapping("/pay/{id}/result")
@@ -1412,7 +1411,7 @@ public OrdersPayResDTO payResult(@PathVariable("id") Long id) {
 
 
 
-#### 4）前后端联调
+##### 4）前后端联调
 
 测试流程如下：
 
@@ -1458,13 +1457,13 @@ public OrdersPayResDTO payResult(@PathVariable("id") Long id) {
 
 
 
-## 2.3 接收支付通知
+### 2.3 接收支付通知
 
-### 2.3.1 代码实现
+#### 2.3.1 代码实现
 
 用户支付成功后支付服务 获取支付结果后会通知业务系统，业务系统收到支付结果只处理属于自己的支付通知，根据支付结果更新订单表的支付状态，本节实现订单管理服务接收支付通知更新支付状态功能。
 
-#### 1）交互流程
+##### 1）交互流程
 
 订单管理服务接收支付通知的交互流程如下：
 
@@ -1500,7 +1499,7 @@ public OrdersPayResDTO payResult(@PathVariable("id") Long id) {
 
 
 
-#### 2) 编写代码
+##### 2) 编写代码
 
 编写代码监听MQ支付通知，首先需要知道支付服务发送到MQ的消息格式是什么，查看源代码：
 
@@ -1577,7 +1576,7 @@ public class TradeStatusListener {
 
 
 
-#### 3）小结
+##### 3）小结
 
 项目中有用到MQ吗？怎么用的？
 
@@ -1591,9 +1590,9 @@ public class TradeStatusListener {
 
 
 
-### 2.3.2 测试
+#### 2.3.2 测试
 
-#### 1）支付通知定时任务
+##### 1）支付通知定时任务
 
 在xxl-job中配置为支付服务配置支付通知的定时任务
 
@@ -1611,7 +1610,7 @@ public class TradeStatusListener {
 
 
 
-#### 2）前后端测试
+##### 2）前后端测试
 
 本次测试流程如下：
 
@@ -1663,9 +1662,9 @@ public class TradeStatusListener {
 
 
 
-# 3 家政项目取消订单 
+## 3 家政项目取消订单
 
-## 3.1 取消订单功能分析设计
+### 3.1 取消订单功能分析设计
 
 目标：
 
@@ -1675,7 +1674,7 @@ public class TradeStatusListener {
 
 
 
-### 1）需求分析
+#### 1）需求分析
 
 下边我们分析在订单的不同状态下去取消订单其执行的逻辑，如下图：
 
@@ -1717,7 +1716,7 @@ public class TradeStatusListener {
 
 取消订单后自动退款。
 
-### 2）退款流程设计
+#### 2）退款流程设计
 
 根据需求分析，当订单为已支付状态时，取消订单后进行自动退款，此时需要调用支付服务的申请退款接口。
 
@@ -1767,7 +1766,7 @@ public class TradeStatusListener {
 
 
 
-### 3) 表结构
+#### 3) 表结构
 
 订单取消记录表：
 
@@ -1803,21 +1802,21 @@ create table `jzo2o-orders`.orders_refund
 
 
 
-### 4）小结
+#### 4）小结
 
 项目的退款功能怎么实现的？
 
 
 
-## 3.2 取消派单中订单实现
+### 3.2 取消派单中订单实现
 
-### 1）分析
+#### 1）分析
 
 前边我们实现了取消待支付的订单方法，下边我们再定义取消派单中订单的方法。
 
 取消派单中的订单需要进行退款操作。
 
-### 2）定义取消派单中的订单service
+#### 2）定义取消派单中的订单service
 
 当订单状态为派单中，取消此类订单需要进行退款操作，根据退款流程，需要做以下操作：
 
@@ -1943,7 +1942,7 @@ public void cancelWithCoupon(OrderCancelDTO orderCancelDTO) {
 
 
 
-### 3）测试
+#### 3）测试
 
 测试流程：
 
@@ -1963,9 +1962,9 @@ public void cancelWithCoupon(OrderCancelDTO orderCancelDTO) {
 
 
 
-## 3.3 定时任务请求退款接口
+### 3.3 定时任务请求退款接口
 
-### 1）代码实现
+#### 1）代码实现
 
 取消派单中的订单进行自动退款，这里通过定时任务请求退款接口：
 
@@ -2055,7 +2054,7 @@ public class OrdersHandler {
     
 ```
 
-### 2) 测试
+#### 2) 测试
 
 配置xxl-job
 
@@ -2087,13 +2086,13 @@ public class OrdersHandler {
 
 
 
-## 3.4 取消订单优化
+### 3.4 取消订单优化
 
-### 3.4.1 策略模式入门
+#### 3.4.1 策略模式入门
 
 由于订单的状态非常多，不同订单状态下取消订单的逻辑也不相同，稍后我们使用策略模式实现取消订单的逻辑。
 
-#### 1）技术分析
+##### 1）技术分析
 
 1. **根据上边的需求，下边分析订单取消功能。**
 
@@ -2172,7 +2171,7 @@ public void cancel(OrderCancelDTO orderCancelDTO) {
 
 虽然这样写代码也能实现需求但是扩展性很差，任意状态下取消订单的需求有变更都需要更改此方法，或者用户取消订单的权限有变更也需要更改此方法。
 
-#### 2）策略模式入门
+##### 2）策略模式入门
 
 针对上边这种因为不同的场景执行取消订单的逻辑不同可以使用策略模式实现。
 
@@ -2301,9 +2300,9 @@ public class StrategyPatternExample {
 }
 ```
 
-### 3.4.2 编写取消订单策略类
+#### 3.4.2 编写取消订单策略类
 
-#### 1）类结构
+##### 1）类结构
 
 学习了策略模式我们可以将取消订单定义为策略接口，针对不同场景下取消订单的逻辑定义为一个一个的策略类，如果哪个场景下的策略有变化只需要修改该策略类即可，如果增加场景也只需要增加策略类。
 
@@ -2315,7 +2314,7 @@ public class StrategyPatternExample {
 
 
 
-#### 2) 定义取消订单策略接口
+##### 2) 定义取消订单策略接口
 
 取消策略接口需要指定用户类型、订单状态及取消信息，根据用户类型和订单状态决定取消订单的逻辑。
 
@@ -2342,7 +2341,7 @@ public interface OrderCancelStrategy {
 
 
 
-#### 3) 编写策略类
+##### 3) 编写策略类
 
 每个策略类定义的bean名称为“用户类型：订单状态”。
 
@@ -2506,7 +2505,7 @@ public class CommonUserDispatchingOrderCancelStrategy implements OrderCancelStra
 
 
 
-#### 4）编写策略的环境类
+##### 4）编写策略的环境类
 
 在环境类中管理了策略接口
 
@@ -2597,7 +2596,7 @@ public class OrderCancelStrategyManager{
 
 
 
-#### 5）了解其它策略类
+##### 5）了解其它策略类
 
 在课程资料中的源码目录中“取消订单策略类”里放在所有取消订单的策略。
 
@@ -2607,9 +2606,9 @@ public class OrderCancelStrategyManager{
 
 
 
-### 3.4.3 取消订单使用策略模式
+#### 3.4.3 取消订单使用策略模式
 
-#### 1) 修改取消订单方法
+##### 1) 修改取消订单方法
 
 由于取消优惠券核销需要使用分布式事务控制，分布式事务控制影响性能，这里将本地事务提交与分布式事务提交分开编写代码。
 
@@ -2665,7 +2664,7 @@ public void cancelWithoutCoupon(OrderCancelDTO orderCancelDTO) {
 ...
 ```
 
-#### 2）测试
+##### 2）测试
 
 启动网关
 
@@ -2701,7 +2700,7 @@ public void cancelWithoutCoupon(OrderCancelDTO orderCancelDTO) {
 
 
 
-#### 3 ) 小结
+##### 3 ) 小结
 
 项目中用到设计模式了吗，具体说说？
 

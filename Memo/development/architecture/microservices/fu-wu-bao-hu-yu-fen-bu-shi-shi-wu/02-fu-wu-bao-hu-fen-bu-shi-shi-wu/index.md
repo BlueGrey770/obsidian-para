@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "02 服务保护、分布式事务"
 ---
+# 02 服务保护、分布式事务
 
-<title>02 服务保护、分布式事务</title>
-
-# 学习目标
+## 学习目标
 
 1. 能够说出什么是微服务雪崩
 2. 能够说出常用的微服务保护方案和技术方案
@@ -21,13 +20,13 @@ aliases:
 10. 能够使用Seata实现分布式事务控制
 11. 能够说出Seata AT模式的工作原理
 
-# 1 微服务保护
+## 1 微服务保护
 
 保护服务的健康性和可用性！！！
 
-## 1.1.微服务保护方案
+### 1.1.微服务保护方案
 
-### 1.1.1 微服务雪崩问题
+#### 1.1.1 微服务雪崩问题
 
 上次课我们学习了微服务之间的远程调用，微服务通过远程调用进行协作完成业务流程，试想如果出现下边的现象会导致什么问题。
 
@@ -56,9 +55,9 @@ aliases:
 3. 实践落地的关键步骤：识别通用 / 核心问题 → 筛选优质开源轮子 → 优先集成 / 二次开发 → 避免过度复用误区；gfdg
 4. 开源生态的良性循环：「**复用 - 创新 - 开源 - 反哺**」，这也是「避免重复造轮子」思想的最终价值体现。
 
-### 1.1.2 微服务保护方案
+#### 1.1.2 微服务保护方案
 
-#### 1.1.2.1 方案介绍
+##### 1.1.2.1 方案介绍
 
 AI:Spring cloud微服务保护的方案
 
@@ -136,7 +135,7 @@ Spring Cloud微服务架构中的服务保护是非常重要的，它能够确�
 
 
 
-#### 1.1.2.2 实现工具
+##### 1.1.2.2 实现工具
 
 在Spring Cloud生态系统中，实现服务保护通常使用的工具包括：
 
@@ -152,9 +151,9 @@ Resilience4j: 是一个轻量级的库，提供了与Hystrix类似的功能，�
 
 
 
-## 1.2 熔断降级- Sentinel
+### 1.2 熔断降级- Sentinel
 
-### 1.2.1.    Sentinel原理介绍-**断路器**
+#### 1.2.1.    Sentinel原理介绍-**断路器**
 
 熔断降级是解决雪崩问题的重要手段，包括熔断和降级两个方案。
 
@@ -188,7 +187,7 @@ Resilience4j: 是一个轻量级的库，提供了与Hystrix类似的功能，�
 
 
 
-### 1.2.2. Sentinel安装与集成 
+#### 1.2.2. Sentinel安装与集成
 
 **关闭防火墙！！！**
 
@@ -206,7 +205,7 @@ Resilience4j: 是一个轻量级的库，提供了与Hystrix类似的功能，�
 3. 服务集成
 </callout>
 
-#### 1.2.2.1 切换分支
+##### 1.2.2.1 切换分支
 
 将hmall-micro代码环境切换到dev_02分支。
 
@@ -214,7 +213,7 @@ Resilience4j: 是一个轻量级的库，提供了与Hystrix类似的功能，�
 
 每位学生在dev_02分支练习完成后提交代码并切换回dev_01分支继续未完成的任务。
 
-#### 1.2.2.2 安装Sentinel
+##### 1.2.2.2 安装Sentinel
 
 实现服务保护的工具有很多，Spring Cloud Alibaba技术栈中Sentinel是实现服务保护的中间件。
 
@@ -281,7 +280,7 @@ docker run  --name sentinel-dashboard -d --restart=always -p 9090:8090 sentinel-
 
 ![图片展示的是Sentinel控制台1.8.6的首页界面。左侧导航栏有“首页”“实时监控”“限流规则”“熔断规则”等选项。右侧上方显示“sentinel - dashboard (1/1)”，下方有“IP 实时监控”图表，显示了22:10 - 22:14时间段的QPS数据。右侧还有一张表格，记录了22:14:52 - 22:15:42时间段的QPS、拒绝QPS、响应时间等信息。该图与上文介绍Sentinel安装与集成后访问控制台的内容相关，直观呈现了控制台界面。](../../../../../../Attachments/development/architecture/microservices/fu-wu-bao-hu-yu-fen-bu-shi-shi-wu/02-fu-wu-bao-hu-fen-bu-shi-shi-wu/JJ9gb6UIzoEhaAxsB75cr4UfnEe.png)
 
-##### 本地运行sentinel
+###### 本地运行sentinel
 
 如果在测试时发现虚拟中的sentinel不能用可以本地运行sentinel。
 
@@ -303,7 +302,7 @@ java -Dserver.port=8090 -Dcsp.sentinel.dashboard.server=localhost:8090 -Dproject
 
 
 
-#### 1.2.2.3 项目集成Sentinel
+##### 1.2.2.3 项目集成Sentinel
 
 <callout emoji="⛱️">
 1. 引入依赖
@@ -377,7 +376,7 @@ spring:
 
 
 
-### 1.2.3. 实现降级
+#### 1.2.3. 实现降级
 
 <callout emoji="🐵">
 1. 开启feign对sentinel的支持-修改配置文件
@@ -389,7 +388,7 @@ spring:
 4. 启动类加扫描api的包路径
 </callout>
 
-#### 1.2.3.1 开启sentinel
+##### 1.2.3.1 开启sentinel
 
 下边我们先编写降级逻辑，再实现服务熔断。
 
@@ -407,7 +406,7 @@ feign:
     enabled: true # 开启feign对sentinel的支持
 ```
 
-#### 1.2.3.2 实现`FallbackFactory`接口
+##### 1.2.3.2 实现`FallbackFactory`接口
 
 接下来给FeignClient编写失败后的降级逻辑有两种方式：
 
@@ -534,7 +533,7 @@ public class ItemClientFallbackFactory implements FallbackFactory<ItemClient> {
 }
 ```
 
-#### 1.2.3.3 配置fallbackFactory 
+##### 1.2.3.3 配置fallbackFactory
 
 **步骤二**：在`hm-api`模块中的`ItemClient`接口中使用`ItemClientFallbackFactory`：
 
@@ -564,13 +563,13 @@ public interface ItemClient {
 }
 ```
 
-#### 1.2.3.4 注入降级Bean
+##### 1.2.3.4 注入降级Bean
 
 **步骤三**：在cart-service启动类添加扫描包配置，扫描降级类并将bean注册到spring容器
 
 ![这张图片展示的是CartServiceApplication类的代码内容，对应文档中注入降级Bean的步骤三，为实现降级类的扫描注册做配置。代码里的@SpringBootApplication注解配置了scanBasePackages属性，指定扫描包范围，其中被红色框标注的"com.hmall.api"包是核心配置部分，需扫描该包来加载相关的Feign客户端等组件，结合上下文可知该配置是为了注册降级相关的Bean，确保Feign能正确调用对应的降级逻辑，配合后续的降级测试环节生效。](../../../../../../Attachments/development/architecture/microservices/fu-wu-bao-hu-yu-fen-bu-shi-shi-wu/02-fu-wu-bao-hu-fen-bu-shi-shi-wu/K6sKbNmGToE5q3xEZtkckHDynlt.png)
 
-#### 1.2.3.5 降级测试
+##### 1.2.3.5 降级测试
 
 最后测试降级效果。
 
@@ -588,7 +587,7 @@ public interface ItemClient {
 
 
 
-#### 1.2.3.6 小结
+##### 1.2.3.6 小结
 
 feign远程调用怎么实现降级？
 
@@ -600,7 +599,7 @@ feign远程调用怎么实现降级？
 
 <whiteboard token="SO4KwydSTh2Cqpbq0JAcytN6n4g"></whiteboard>
 
-### 1.2.4. 服务熔断
+#### 1.2.4. 服务熔断
 
 <callout emoji="🏕️">
 sentinel配置熔断策略：
@@ -609,7 +608,7 @@ sentinel配置熔断策略：
 3. 慢调用数
 </callout>
 
-#### 1.2.4.1 配置熔断策略
+##### 1.2.4.1 配置熔断策略
 
 根据熔断方案，sentinel会统计异常比例、慢请求比例、异常数等数据，达到阈值时断路器打开即发生熔断，熔断状态下会走降级路线保证快速响应。
 
@@ -623,7 +622,7 @@ sentinel配置熔断策略：
 
 2秒内最小请求数为2，异常数达到1发生熔断，熔断时长为20秒。
 
-#### 1.2.4.2 测试异常数
+##### 1.2.4.2 测试异常数
 
 下边进行测试，继续停止item-service商品服务。
 
@@ -643,7 +642,7 @@ feign.FeignException$ServiceUnavailable: [503] during [GET] to [http://item-serv
 
 熔断时间（20秒）过后断路器成半开状态，再次请求购物车接口， 会尝试请求item-service一次，如果成功此时断路器关闭，如果仍失败断路器打开，关闭item-service日志发现输出一次java.lang.RuntimeException: 测试异常，此时断路器打开继续熔断。
 
-#### 1.2.4.3 测试慢调用比例
+##### 1.2.4.3 测试慢调用比例
 
 下边测试另一种熔断策略：慢调用比例
 
@@ -673,7 +672,7 @@ feign.FeignException$ServiceUnavailable: [503] during [GET] to [http://item-serv
 
 参考测试“异常数”熔断策略去观察cart-service和item-service的日志来判断熔断发生的情况。
 
-#### 1.2.4.4 测试异常比例
+##### 1.2.4.4 测试异常比例
 
 请大家自行测试熔断策略： 异常比例
 
@@ -686,7 +685,7 @@ feign.FeignException$ServiceUnavailable: [503] during [GET] to [http://item-serv
 
 
 
-#### 1.2.4.5 面试题
+##### 1.2.4.5 面试题
 
 你的项目中熔断降级怎么实现的？
 
@@ -694,7 +693,7 @@ feign.FeignException$ServiceUnavailable: [503] during [GET] to [http://item-serv
 
 
 
-## 1.3.请求限流
+### 1.3.请求限流
 
 <callout emoji="❤️">
 配置限流策略
@@ -702,7 +701,7 @@ qps：每秒请求数
 并发线程数：最多多少个线程发起请求-线程隔离时再讲
 </callout>
 
-### 1.3.1 配置限流策略
+#### 1.3.1 配置限流策略
 
 下边我们对item-service的商品查询接口进行限流，找到商品查询的簇点链路，点击"流控"
 
@@ -730,7 +729,7 @@ qps=5
 
 压测 =10
 
-### 1.3.2 限流测试
+#### 1.3.2 限流测试
 
 首先去掉item-service服务中查询商品信息接口的休眠代码。
 
@@ -813,7 +812,7 @@ ntpdate pool.ntp.org
 
 
 
-### 1.3.3 小节
+#### 1.3.3 小节
 
 sentinel限流怎么实现？
 
@@ -825,9 +824,9 @@ sentinel限流怎么实现？
 
 
 
-## 1.4. sentinel降级
+### 1.4. sentinel降级
 
-### 1.4.1 问题描述
+#### 1.4.1 问题描述
 
 下边我们对/carts接口进行限流测试，找到GET/carts簇点
 
@@ -849,7 +848,7 @@ sentinel限流怎么实现？
 
 为什么访问item-service的商品查询接口走了降级方法，而访问/carts没有走咱们之前配置的降级方法呢？
 
-### 1.4.2 sentinel实现降级
+#### 1.4.2 sentinel实现降级
 
 这里我们需要重新梳理下：
 
@@ -923,9 +922,9 @@ public List<CartVO>  queryMyCartsBlockHandler( BlockException blockException){
 
 
 
-### 1.4.3 小节
+#### 1.4.3 小节
 
-#### 两个注解的核心区别
+##### 两个注解的核心区别
 
 <sheet sheet-id="dEv0iv" token="YSLTsSJDuh5Wy1tmAyOc6Odunpe"></sheet>
 
@@ -938,9 +937,9 @@ sentienl降级怎么实现？
 
 
 
-## 1.5. 线程隔离-作业
+### 1.5. 线程隔离-作业
 
-### 1.5.1 方案介绍
+#### 1.5.1 方案介绍
 
 首先我们来看下线程隔离功能。
 
@@ -961,7 +960,7 @@ Sentinel的线程隔离就是基于信号量隔离实现的。
 
 
 
-### 1.5.2 Sentinel线程隔离
+#### 1.5.2 Sentinel线程隔离
 
 下边我们使用Sentinel实现基于信号量的线程隔离。
 
@@ -1005,15 +1004,15 @@ cart-service调用商品查询控制在5个线程内，通过线程隔离即使�
 
 
 
-## 1.6 面试题
+### 1.6 面试题
 
 你们是怎么做微服务保护的？
 
-# 2 分布式事务
+## 2 分布式事务
 
-## 2.1. 什么是分布式事务
+### 2.1. 什么是分布式事务
 
-### 2.1.1 概念
+#### 2.1.1 概念
 
 首先我们看看项目中的下单业务整体流程：
 
@@ -1035,7 +1034,7 @@ cart-service调用商品查询控制在5个线程内，通过线程隔离即使�
 
 
 
-### 2.1.2 测试分布式事务
+#### 2.1.2 测试分布式事务
 
 > **测试下单接口：接口里、删除购物车和扣减库存成功，但是生成订单失败。**
 
@@ -1093,7 +1092,7 @@ cart-service调用商品查询控制在5个线程内，通过线程隔离即使�
 
 
 
-### 2.1.3 分布式事务的不同类型
+#### 2.1.3 分布式事务的不同类型
 
 下边为了简化分析过程 我们仍然以下单扣减库存为例说明：
 
@@ -1163,7 +1162,7 @@ cart-service调用商品查询控制在5个线程内，通过线程隔离即使�
 
 
 
-### 2.1.4 小结
+#### 2.1.4 小结
 
 什么是本地事务？
 
@@ -1185,7 +1184,7 @@ cart-service调用商品查询控制在5个线程内，通过线程隔离即使�
 
 
 
-## 2.2. CAP原理
+### 2.2. CAP原理
 
 遇到了分布式事务的场景我们该如何去进行**事务控制**呢，本节学习如何选型分布式事务的**控制方案**。
 
@@ -1263,9 +1262,9 @@ MySQL主从复制：支持AP，向主节点写数据，异步同步到的从节�
 
 
 
-## 2.4. 安装Seata
+### 2.4. 安装Seata
 
-### 2.4.1 认识Seata
+#### 2.4.1 认识Seata
 
 解决分布式事务的方案有很多，但实现起来都**比较复杂**，因此我们一般会使用开源的框架来解决分布式事务问题。在众多的开源分布式事务框架中，功能最完善、使用最多的就是阿里巴巴在2019年开源的Seata了。
 
@@ -1308,13 +1307,13 @@ Seata支持四种不同的分布式事务解决方案：
 
 根据Seata的结构首先需要安装TC事务协调器。
 
-### 2.4.2 准备数据库表
+#### 2.4.2 准备数据库表
 
 Seata支持多种存储模式，但考虑到持久化的需要，我们一般选择基于数据库存储。虚拟机中已经提供了seata所需要的数据库：
 
 ![这张图片展示了Seata所需的数据库表结构，显示存在一个名为“seata”的数据库，其下共有4张数据表，分别是branch_table、distributed_lock、global_table、lock_table，这些是部署Seata服务保护与分布式事务组件时，所需的核心数据库表，对应文档中准备Seata所需数据库的内容部分，这些表是支撑Seata分布式事务功能的基础。](../../../../../../Attachments/development/architecture/microservices/fu-wu-bao-hu-yu-fen-bu-shi-shi-wu/02-fu-wu-bao-hu-fen-bu-shi-shi-wu/XJDXbYpHJoPJeqxmw3sch2J7nZg.png)
 
-### 2.4.3 准备配置文件
+#### 2.4.3 准备配置文件
 
 课前资料准备了一个seata目录，其中包含了seata运行时所需要的配置文件：
 
@@ -1332,7 +1331,7 @@ Seata支持多种存储模式，但考虑到持久化的需要，我们一般选
 
 
 
-### 2.4.4 Docker部署
+#### 2.4.4 Docker部署
 
 删除旧容器
 
@@ -1368,7 +1367,7 @@ Seata控制台：http://192.168.101.68:7099/
 
 
 
-## 2.5. 微服务集成Seata
+### 2.5. 微服务集成Seata
 
 <callout emoji="🚅">
 交易服务、购物车、商品服务
@@ -1384,7 +1383,7 @@ Seata控制台：http://192.168.101.68:7099/
 
 
 
-### 2.5.1.引入依赖
+#### 2.5.1.引入依赖
 
 分别在交易服务、购物车、商品服务引入seata依赖。
 
@@ -1399,7 +1398,7 @@ Seata控制台：http://192.168.101.68:7099/
 
 
 
-### 2.5.2.Seata配置
+#### 2.5.2.Seata配置
 
 分别在交易服务、购物车、商品服务引入seata配置。
 
@@ -1430,7 +1429,7 @@ vgroup-mapping：事务组与tc集群的映射，配置事务组名称与seata T
 
 
 
-### 2.5.3.seata数据库表
+#### 2.5.3.seata数据库表
 
 seata的客户端在解决分布式事务的时候需要记录一些中间数据，保存在数据库中。因此我们要先准备一个undo_log这样的表，会面会用用到（虚拟机item和trade数据库中中已经提供这张表了）。
 
@@ -1440,7 +1439,7 @@ seata的客户端在解决分布式事务的时候需要记录一些中间数据
 
 
 
-### 2.5.4.实现分布式事务
+#### 2.5.4.实现分布式事务
 
 前边在没有使用Seata是无法控制分布式事务的，接下来我们用seata控制分布式事务。
 
@@ -1465,7 +1464,7 @@ seata的客户端在解决分布式事务的时候需要记录一些中间数据
 
 那么，Seata是如何解决分布式事务的呢？
 
-## 2.6. Seata 工作模式
+### 2.6. Seata 工作模式
 
 Seata支持四种不同的分布式事务解决方案，Seata默认使用的是AT模式。
 
@@ -1476,7 +1475,7 @@ Seata支持四种不同的分布式事务解决方案，Seata默认使用的是A
 
 这里我们以**`AT`模式**来给大家讲解其实现原理。
 
-### 2.6.1 AT模式-AP场景
+#### 2.6.1 AT模式-AP场景
 
 
 
@@ -1549,7 +1548,7 @@ AT模式下，当前分支事务执行流程如下：
 
 ![这张图是分布式事务中AT模式在AP场景下的核心流程图，分为两个阶段。阶段一的流程依次为注册分支事务、记录快照、执行业务SQL、提交并报告事务状态；阶段二以菱形“是否可以提交”为判断节点，若选择“是”则执行删除快照的操作，若选择“否”则执行读取快照、恢复数据的操作，最终流程结束。图中还展示了ID为1、金额为100的快照数据，与商品服务扣减库存的场景相关联，是AT模式断点调试演示中对应的事务快照逻辑，体现了AT模式通过快照处理事务提交或回滚的核心机制。](../../../../../../Attachments/development/architecture/microservices/fu-wu-bao-hu-yu-fen-bu-shi-shi-wu/02-fu-wu-bao-hu-fen-bu-shi-shi-wu/S1HAbvF12ofsDpxFSFtcDHVgnPb.png)
 
-##### 演示AT模式
+###### 演示AT模式
 
 下边通过断点调试演示AT模式的整体流程：
 
@@ -1575,7 +1574,7 @@ AT模式下，当前分支事务执行流程如下：
 
 
 
-### 2.6.2 XA模式
+#### 2.6.2 XA模式
 
 `XA` 规范 是` X/Open` 组织定义的分布式事务处理（DTP，Distributed Transaction Processing）标准，XA 规范 描述了全局的`TM`与局部的`RM`之间的接口，几乎所有主流的数据库都对 XA 规范 提供了支持。
 
@@ -1669,7 +1668,7 @@ Seata对原始的XA模式做了简单的封装和改造，以适应自己的事�
 
 
 
-### 2.6.3 TCC模式
+#### 2.6.3 TCC模式
 
 TCC模式与AT模式非常相似，每阶段都是独立事务，不同的是TCC通过人工编码来实现数据恢复。需要实现三个方法：
 
@@ -1731,17 +1730,17 @@ TCC的缺点是什么？
 
 
 
-### 2.6.4 面试题
+#### 2.6.4 面试题
 
 seata是怎么进行分布式事务控制的？/Seata的工作原理？
 
 
 
-# 作业
+## 作业
 
 
 
-## 对下单方法分布式事务控制
+### 对下单方法分布式事务控制
 
 实现完整的分布式事务控制并进行测试：
 
@@ -1759,7 +1758,7 @@ seata是怎么进行分布式事务控制的？/Seata的工作原理？
 
 
 
-## 对支付方法分布式事务控制
+### 对支付方法分布式事务控制
 
 除了下单业务以外，用户如果选择余额支付，前端会将请求发送到pay-service模块。而这个模块要做三件事情：
 
@@ -1832,7 +1831,7 @@ public void tryPayOrderByBalance(PayOrderDTO payOrderDTO) {
 
 
 
-# 汇总
+## 汇总
 
 <whiteboard token="SmJIwsgqvh12UBbnakvcoMTCn9g"></whiteboard>
 

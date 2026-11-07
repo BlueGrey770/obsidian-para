@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "MQ高级-简要"
 ---
+# MQ高级-简要
 
-<title>MQ高级-简要</title>
-
-# **如何确保MQ消息的可靠性**
+## **如何确保MQ消息的可靠性**
 
 消息从生产者到消费者的每一步都可能导致消息丢失，要解决消息丢失问题，保证MQ的可靠性，从3个方面解决：
 
@@ -29,7 +28,7 @@ aliases:
    - **消费者手动确认机制** ：确保消息被成功处理后才会从队列中删除
    - **消息幂等性处理** ：确保消息重复消费时不会产生副作用
 
-# **如何实现延迟消息**
+## **如何实现延迟消息**
 
 在RabbitMQ中实现延迟消息有两种方案：
 
@@ -60,7 +59,7 @@ aliases:
    ![图 3](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/mq-gao-ji/WY1lbZ0nxoou9mxUJLScMJ5lnnh.png)
 4. 发送消息时，通过x-delay属性设定延迟时间
 
-# **RabbitMQ有哪些集群，它们的特点是什么？**
+## **RabbitMQ有哪些集群，它们的特点是什么？**
 
 RabbitMQ主要有以下几种集群模式：
 

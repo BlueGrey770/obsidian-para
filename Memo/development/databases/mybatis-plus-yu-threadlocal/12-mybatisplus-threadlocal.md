@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "12 mybatisplus_ThreadLocal"
 ---
+# 12 mybatisplus_ThreadLocal
 
-<title>12 mybatisplus_ThreadLocal</title>
-
-# mybatis-plus
+## mybatis-plus
 
 ```Java
 作用：简化mybatis的操作，更擅长单表操作
@@ -15,7 +14,7 @@ aliases:
      2. 强大的crud操作
 ```
 
-## 使用步骤
+### 使用步骤
 
 1. 导入mybatisplus的起步依赖
 
@@ -59,7 +58,7 @@ public interface ActivityMapper extends BaseMapper<Activity> {}
 值得注意的是mybatis和mp并没有冲突在使用mp解决简单的单表操作的时候也可以使用mybatis的xml方式解决复杂的多表操作，也就是说在各个层中的接口中依然可以存在抽象类方法
 </callout>
 
-## 常见的注解
+### 常见的注解
 
 ```Java
 @TableName(""名字)：可以解决实体类和表明不一致问题
@@ -72,7 +71,7 @@ public interface ActivityMapper extends BaseMapper<Activity> {}
 @TableField(exist=false)：解决扩展列问题/
 ```
 
-## 条件构造器
+### 条件构造器
 
 1. 不支持lambda语法
 
@@ -140,7 +139,7 @@ public PageData<Activity> findActivityByCollection(ActivityDTO activityDTO) {
 }
 ```
 
-## IService相关功能
+### IService相关功能
 
 1. 步骤
 
@@ -159,7 +158,7 @@ public PageData<Activity> findActivityByCollection(ActivityDTO activityDTO) {
 5.page(IPage page,条件构建器)
 ```
 
-## 分页逻辑对比
+### 分页逻辑对比
 
 ```Java
 mp的分页逻辑
@@ -191,7 +190,7 @@ mybatis的PageHelper分页逻辑
 
 **注意：如果是需要使用mybaits的xml方式查询但是需要使用分页，需要使用mp的分页逻辑这个时候如果再使用PageHelper的分页逻辑的话会出现包冲突**
 
-# 原始MyBatis解决主表与从表冲突问题的方式
+## 原始MyBatis解决主表与从表冲突问题的方式
 
 使用情况:
 
@@ -238,15 +237,15 @@ mybatis的PageHelper分页逻辑
 
 ```
 
-# ThreadLocal
+## ThreadLocal
 
-## 本地线程ThreadLocal
+### 本地线程ThreadLocal
 
 <callout emoji="🚅">
 **ThreadLocal 的核心作用是：为【每个线程】提供一份「独立的、专属的变量副本」，让多线程并发访问时，线程之间的数据完全隔离、互不干扰，彻底解决多线程环境下的** ✅**线程安全问题**✅
 </callout>
 
-## 使用步骤
+### 使用步骤
 
 1. **在commen模块中定义一个类**
 

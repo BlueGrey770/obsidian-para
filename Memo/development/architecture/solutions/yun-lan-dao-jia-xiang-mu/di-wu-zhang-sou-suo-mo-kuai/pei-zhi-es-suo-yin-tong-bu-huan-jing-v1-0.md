@@ -4,16 +4,13 @@ date: 2026-11-06
 aliases:
   - "配置ES索引同步环境v1.0"
 ---
+# 配置ES索引同步环境v1.0
 
-<title>配置ES索引同步环境v1.0</title>
-
-
-
-# 1 配置Canal+MQ数据同步环境
+## 1 配置Canal+MQ数据同步环境
 
 
 
-## 1.1 配置Mysql主从同步
+### 1.1 配置Mysql主从同步
 
 根据Canal的工作原理，首先需要开启MySQL主从同步。
 
@@ -107,7 +104,7 @@ ON表示开启binlog模式。
 
 ![图片展示了MySQL中查看当前正在写入的binlog文件的执行结果。表格中显示了binlog文件的名称为“mysql-bin.000008”，位置为156。该图片与上文“查看当前正在写入的binlog文件”相关，通过执行`SHOW MASTER STATUS;`命令后，此结果可帮助确认MySQL当前正在写入的binlog文件，为后续配置Canal+MQ数据同步环境中的Mysql主从同步等操作提供关键信息。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/C0Hrbw2h8oqBDOxpWQNcJNbTn0g.png)
 
-## 1.2 安装Canal（**使用下发虚拟机无需安装**）
+### 1.2 安装Canal（**使用下发虚拟机无需安装**）
 
 获取canal镜像
 
@@ -390,7 +387,7 @@ docker run --name canal -p 11111:11111 -d -v /data/soft/canal/instance.propertie
 
 
 
-## 1.3 安装RabbitMQ（**使用下发虚拟机无需安装**）
+### 1.3 安装RabbitMQ（**使用下发虚拟机无需安装**）
 
 
 
@@ -471,7 +468,7 @@ xzb/xzb
 
 
 
-## 1.4 配置Canal+RabbitMQ
+### 1.4 配置Canal+RabbitMQ
 
 下边通过配置Canal与RabbitMQ，保证Canal收到binlog消息将数据发送至MQ。
 
@@ -560,7 +557,7 @@ canal.mq.dynamicTopic=canal-mq-jzo2o-foundations:jzo2o-foundations\\.serve_sync
 
 
 
-## 1.5 测试数据同步
+### 1.5 测试数据同步
 
 重启canal
 
@@ -657,7 +654,7 @@ canal.mq.dynamicTopic=canal-mq-jzo2o-foundations:jzo2o-foundations\\.serve_sync
 
 
 
-## 1.5 配置其它同步队列
+### 1.5 配置其它同步队列
 
 按上边的方法配置以下同步队列并与交换机绑定：
 
@@ -695,9 +692,9 @@ canal-mq-jzo2o-orders-serve-history
 
 
 
-# 常见问题
+## 常见问题
 
-## 数据不同步
+### 数据不同步
 
 当发现修改了数据库后修改的数据并没有发送到MQ，通过查看Canal的日志发现下边的错误。
 
@@ -752,7 +749,7 @@ docker start canal
 
 
 
-## MQ同步消息无法消费
+### MQ同步消息无法消费
 
 这里以Es和MySQL之间的同步举例：
 

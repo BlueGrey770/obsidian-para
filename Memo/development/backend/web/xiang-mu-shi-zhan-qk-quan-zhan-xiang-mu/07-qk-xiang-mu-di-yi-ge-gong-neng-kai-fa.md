@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "07 qk项目第一个功能开发"
 ---
+# 07 qk项目第一个功能开发
 
-<title>07 qk项目第一个功能开发</title>
-
-# 创建项目
+## 创建项目
 
 ```Java
 第一步：创建一个springboot项目作为父项目--->qk-parent
@@ -19,7 +18,7 @@ aliases:
         整个的项目业务的三层架构都要在这里面写
 ```
 
-## 模块之间的交流与沟通
+### 模块之间的交流与沟通
 
 <callout emoji="🌰">
 在开发中在业务层肯定会用到实体类和封装的数据类，这时候我们就要跨模块进行调用。
@@ -41,7 +40,7 @@ aliases:
 
 **注意：这里用到了maven的依赖继承所以看不到版本号，版本号在父项目的家规中**
 
-# 开发规范_三层架构
+## 开发规范_三层架构
 
 ```Java
 1. 第一层Controller（控制层）层
@@ -60,18 +59,18 @@ aliases:
     3.将结果返回给service层
 ```
 
-# 确定数据传输格式
+## 确定数据传输格式
 
 <callout emoji="🚅">
 **开发的需要根据接口文档进行开发，所以下面的所有动作都是基于接口文档进行开发的**
 **开发之前一定要仔细阅读接口文档！！！！**
 </callout>
 
-## springMVC对请求参数的封装
+### springMVC对请求参数的封装
 
-### 键值对参数的封装（Query String）
+#### 键值对参数的封装（Query String）
 
-#### 请求形式
+##### 请求形式
 
 ?key=value格式的参数
 
@@ -83,7 +82,7 @@ aliases:
     定义参数, 要求参数名和提交的键保持一致即可
 ```
 
-#### 基本原则
+##### 基本原则
 
 只需要在控制器方法中定义**参数名与前端 key 保持一致**，SpringMVC 就可以自动完成参数接收
 
@@ -97,7 +96,7 @@ public Result findRoleByIdAndCondition(RoleDTO roleDTO){
 }
 ```
 
-#### 注意事项
+##### 注意事项
 
 ```Python
 (1) 当参数名和前端提交的键不一致的时候怎么处理???
@@ -110,15 +109,15 @@ public Result findRoleByIdAndCondition(RoleDTO roleDTO){
     @DateTimeFormat 里面有pattern属性告知时间格式
 ```
 
-### 路径参数的封装（Path Variable）
+#### 路径参数的封装（Path Variable）
 
-#### 请求形式
+##### 请求形式
 
 ```SQL
 /参数1/参数2/...
 ```
 
-#### 基本用法
+##### 基本用法
 
 使用 `@PathVariable` 注解接收路径参数，并在路径中通过 `{}` 指定变量名：
 
@@ -129,7 +128,7 @@ public String findRoleById(@PathVariable Integer id) {
 }
 ```
 
-#### 注意事项
+##### 注意事项
 
 时间类型路径参数
 
@@ -139,15 +138,15 @@ public String findRoleById(@PathVariable Integer id) {
 @DateTimeFormat(pattern = "yyyy-MM-dd")
 ```
 
-###  JSON 格式参数的封装
+####  JSON 格式参数的封装
 
-#### **请求形式**
+##### **请求形式**
 
 <callout emoji="📍">
 请求体中携带 JSON 数据（常见于 POST / PUT 请求）
 </callout>
 
-#### 基本用法
+##### 基本用法
 
 使用 `@RequestBody` 注解，将 JSON 数据直接封装为 Java 对象：
 
@@ -157,7 +156,7 @@ public String save(@RequestBody User user) {return "success";
 
 ---
 
-#### 时间参数的处理
+##### 时间参数的处理
 
 使用 `@JsonFormat`时,`@RequestBody` 不仅可以封装 JSON 数据，还可结合 `@JsonFormat` 处理时间格式问题：
 
@@ -165,13 +164,13 @@ public String save(@RequestBody User user) {return "success";
 @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 ```
 
-#### 注意事项
+##### 注意事项
 
 若 JSON 对象中包含时间字段，推荐使用 `@JsonFormat`
 
 `@DateTimeFormat` 主要用于 **请求参数和路径参数**
 
-## 确定返回值格式
+### 确定返回值格式
 
 > ![该图片展示了对应项目接口返回数据的JSON格式样例的部分内容，是明确返回数据JSON格式阶段的关键内容，为封装返回数据给前端的规范提供了直观示例。样例中包含三个核心字段，分别为标识处理状态的“code”字段，取值为数字1、表示操作结果描述的“msg”字段，取值为字符串“success”，以及用于承载具体业务数据的“data”字段。](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/ZmcTb85VKoLlYnxNKhVcxhkCnvc.png)
 
@@ -217,7 +216,7 @@ DispatcherServlet: 前端控制器, 负责将我们的前端uri请求路径进�
     而@RestController 包含了@Controller和@ResponseBody, 默认返回值就是json
 ```
 
-## 确定前端传入的数据格式
+### 确定前端传入的数据格式
 
 <sheet sheet-id="poET8h" token="IkmSsI3chhDg74tU2wVc4cJ8n5f"></sheet>
 
@@ -250,7 +249,7 @@ public class RoleDTO {
 由于这个DTO类是每个表和对象以及业务都有不同的字段和需求，所以这个类放在entity中由于封装前端传入的数据
 </callout>
 
-## 确定返回数据的json格式
+### 确定返回数据的json格式
 
 响应数据样例：
 
@@ -315,7 +314,7 @@ public PageData<Dept> finddeptByCollection(DeptDTO deptDTO) { //获取controller
 }
 ```
 
-## 测试结果
+### 测试结果
 
 ![图片展示的是接口测试结果的响应数据样例。在Body部分，以JSON格式呈现，包含code、msg、data等字段。其中data下有total和rows两个子字段，total为1，rows中包含一个对象，id为1，name为“管理员”，label为“admin”，remark为“管理员，用于管理整个系统数据”，createTime和updateTime均为null。该图片与文档中“确定返回数据的json格式”内容相关，用于说明响应数据的结构和示例。](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/Y7GJbbxcAo1XflxGENQcgFCVn5c.png)
 
@@ -325,11 +324,11 @@ public PageData<Dept> finddeptByCollection(DeptDTO deptDTO) { //获取controller
 
 
 
-## 踩坑：常见写法错误汇总
+### 踩坑：常见写法错误汇总
 
-## 常见写法错误
+### 常见写法错误
 
-### 文档声明必须在第一行顶行顶头写！！！
+#### 文档声明必须在第一行顶行顶头写！！！
 
 2.xmL必须有根元素！！！
 
@@ -337,7 +336,7 @@ public PageData<Dept> finddeptByCollection(DeptDTO deptDTO) { //获取controller
 
 ![图片展示的是MyBatis配置文件中关于UserMapper的XML代码片段。上方红框内是XML文档类型声明，包含DTD配置信息；下方红框内是delete语句，用于删除user表中id在数组中的记录，使用foreach循环遍历数组。该图片与文档中“SQL插入参数顺序与数据库中顺序不一致”部分内容相关，用于说明在MyBatis中SQL语句的书写规范，强调SQL语句需与数据库表顺序保持一致，否则会报错。](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/ND6PbL857oSS3Lxd3GQc8IUGn5c.png)
 
-### SQL插入参数顺序与数据库中顺序不一致
+#### SQL插入参数顺序与数据库中顺序不一致
 
 在如下代码块中 要插入的参数顺序必须与数据库表顺序保持一致,否者将会报错
 
@@ -351,7 +350,7 @@ int addCourse(Course course);
 
 ![图片展示了数据库中“course”表的结构，包含8个字段。其中，“id”字段为int类型且自动递增；“subject”为tinyint类型；“name”为varchar类型；“price”为int类型；“target”为tinyint类型；“description”为varchar类型；“create_time”和“update_time”均为datetime类型。图片与上文“SQL插入参数顺序与数据库中顺序不一致”内容相关，强调在插入参数时需与数据库表字段顺序一致，否则会报错。](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/WqnPbpyLqovL3vx1quBcyZHCnwd.png)
 
-### Service层未校验补全数据
+#### Service层未校验补全数据
 
 在Service架构中添加修改数据,记得检查数据是否已经补全
 
@@ -367,7 +366,7 @@ public boolean addActivity(Activity activity) {
 }
 ```
 
-### 把时间字段当字符串判空了（最常见）
+#### 把时间字段当字符串判空了（最常见）
 
 ```XML
 <if test="startTime != null and startTime != ''">
@@ -412,7 +411,7 @@ Caused by: org.apache.ibatis.exceptions.PersistenceException:
 ### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
 ```
 
-### 用字符串去跟时间比较
+#### 用字符串去跟时间比较
 
 ```XML
 <if test="startTime &gt; '2025-01-01 00:00:00'">
@@ -424,7 +423,7 @@ OGNL 还是会做类型比较，LocalDateTime vs String => 报错。
 
 ✅ 修法：把比较值也变成 LocalDateTime（在 Java 层先算好传进来），或改成 SQL 里比较而不是 OGNL 比较。
 
-### DTO/VO 里时间字段类型不一致
+#### DTO/VO 里时间字段类型不一致
 
 比如前端传的是字符串，你在 VO 里用 `String startTime`，但实体/Mapper 参数里又是 `LocalDateTime`，MyBatis 在某些动态判断里就会出现混用。
 
@@ -446,7 +445,7 @@ private LocalDateTime startTime;
 private LocalDateTime startTime;
 ```
 
-### 因类型错误,输出异常
+#### 因类型错误,输出异常
 
 使用int类型 为变量定义类型 默认值是0 会被sql判定语句识别执行为0
 
@@ -488,7 +487,7 @@ public class UserDTO {
 
 ![这张是项目开发中SQL语句执行相关的日志截图，核心展示了异常的SQL查询情况：该SQL是对user、dept、role三张表进行关联的查询操作，参数部分标注有两个被红框突出的`0(Integer)`，对应了文档中提到的用int类型定义变量默认值为0的错误写法，这种写法会被SQL语句识别为参数值，最终查询得到1条结果但Row的数量为0，体现了int类型默认值0被SQL误识别后导致的逻辑异常问题，也呼应了文档中int类型易引发类型错误、输出异常的说明。](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/MjeHbDbNjo7DlLxrpdHcDaxQnoc.png)
 
-### 漏写@PathVariable
+#### 漏写@PathVariable
 
 路径参数写完要加`@PathVariable`才能生效,否则会在功能使用中报错
 
@@ -512,13 +511,13 @@ public Result findByDept(int deptId){
 }
 ```
 
-### endpoin 空指针异常
+#### endpoin 空指针异常
 
 漏写少写 引起的空指针异常
 
 ![这张图片展示的是一段Java代码，代码内容为定义一个配置属性类。该类添加了`@Component`和`@Data`注解，类名为`AliProperties`，内部声明了endpoint、bucketName、region、hobby四个私有属性。其中核心标注内容有两处，一是`@ConfigurationProperties`注解，二是该注解内用红色箭头和红框突出显示的`prefix = 'ali.oss'`，这部分用于指定配置属性的前缀，明确该类对应加载ali.oss开头的配置项。](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/FvXPbqPpVocjOWxsnOPc6PhcnOc.png)
 
-### 将对象放入容器中 也要从容器中取用对象
+#### 将对象放入容器中 也要从容器中取用对象
 
 ```Java
 @RestController

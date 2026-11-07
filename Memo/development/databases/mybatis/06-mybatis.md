@@ -4,12 +4,11 @@ date: 2026-11-06
 aliases:
   - "06 mybatis"
 ---
+# 06 mybatis
 
-<title>06 mybatis</title>
+## 抽取jdbc实现mybatis原理
 
-# 抽取jdbc实现mybatis原理
-
-## 动态代理
+### 动态代理
 
 ```XML
 作用：不改变源码的情况下对功能进行增强
@@ -19,7 +18,7 @@ aliases:
 如何创建代理：Proxy.newInstance(ClassLoader cl,Class[] interfaces,involvedHandler（臭接口))
 ```
 
-## 类加载器的分类
+### 类加载器的分类
 
 ```XML
 1. 启动类加载器
@@ -105,9 +104,9 @@ public class ProxyDemo01 {
 }
 ```
 
-# mybatis
+## mybatis
 
-## mybatis的基本使用步骤
+### mybatis的基本使用步骤
 
 
 
@@ -162,7 +161,7 @@ public class ProxyDemo01 {
                 }                      
 ```
 
-## mybatis的参数处理的解决方案
+### mybatis的参数处理的解决方案
 
 ```XML
 1. 单个简单参数：直接使用 #{任意值}
@@ -200,7 +199,7 @@ public class ProxyDemo01 {
 （4）当参数是多个的时候，我们需要通过#{参数名}获取，但是必须使用@Param（"给参数设置名字"）才行，默认的参数名默认是arg0，arg1...以此编号，建议大家都设置别名，统一风格
 </callout>
 
-## mybatis使用xml的使用步骤
+### mybatis使用xml的使用步骤
 
 ```XML
 1.第一步：创建一个和Mapper类相同的文件夹（要求层级一模一样，每一层名字一模一样），放在resources下面
@@ -245,7 +244,7 @@ public class ProxyDemo01 {
 3. 如果非要不把xml文件放在规范的位置的情况下需要在yml文件中配置 mapper-locations: classpath:mapper/\*.xml
 </callout>
 
-## mybatis的小配置
+### mybatis的小配置
 
 ```YAML
 mybatis:
@@ -258,7 +257,7 @@ mybatis:
     mapper-locations:classpath:*.xml
 ```
 
-## boot配置的优先级
+### boot配置的优先级
 
 ```XML
 properties > yml > yaml
@@ -282,16 +281,16 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 ```
 
-## maven项目的聚合继承
+### maven项目的聚合继承
 
-### 聚合
+#### 聚合
 
 ```XML
 为了聚合多个子功能，方便一件构建
 
 ```
 
-### 继承
+#### 继承
 
 ```XML
 1. 让子工程继承家产：家产定义在XXX

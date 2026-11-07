@@ -4,14 +4,13 @@ date: 2026-11-06
 aliases:
   - "每日背诵"
 ---
+# 每日背诵
 
-<title>每日背诵</title>
+## 一、基础
 
-# 一、基础
+### Day 01
 
-## Day 01 
-
-## String/StringBuffer/StringBuilder区别
+### String/StringBuffer/StringBuilder区别
 
 ```Java
 String是不可变字符串,每次修改都会创建新的对象,适用于不经常修改的字符串操作;
@@ -19,28 +18,28 @@ StringBuffer是可变字符串,线程安全, 适用于多线程环境;
 StringBuilder也是可变字符串,但不是线程安全的,适用于单线程频繁修改字符串的场景
 ```
 
-## 反射机制及主要用到的方法
+### 反射机制及主要用到的方法
 
 ```Java
 Java反射机制是指在运行时动态地获取类的信息并操作类或对象的能力. 
 通过反射, 我们可以在编译时无法确定的情况下,通过类名获取类的实例、获取类的字段、方法、构造函数等信息,并且可以在运行时调用这些方法或访问这些字段
 ```
 
-## JVM内存结构
+### JVM内存结构
 
 ```Java
 Java的内存结构主要包括方法区、堆、虚拟机栈、本地方法栈和程序计数器。
 方法区用于存储类信息，堆用于存储对象实例，虚拟机栈用于存储方法调用和局部变量，本地方法栈用于存储非Java方法信息，程序计数器用于记录当前线程执行的指令地址。
 ```
 
-## `==`与equals区别
+### `==`与equals区别
 
 ```Java
 "==" 用于比较对象的引用或基本类型的值是否相等,而equals方法用于比较对象的内容是否相等.
 换句话说,"=="比较的是身份,equals比较的是内容.
 ```
 
-## 接口和抽象类的区别
+### 接口和抽象类的区别
 
 ```Java
 接口是一种规范,它定义了一组方法的签名,而不包含具体实现. 
@@ -50,9 +49,9 @@ Java的内存结构主要包括方法区、堆、虚拟机栈、本地方法栈�
 简而言之,接口关注的是行为的规范,而抽象类关注的是共享的功能
 ```
 
-## Day 02
+### Day 02
 
-## 重写和重载的区别
+### 重写和重载的区别
 
 ```Java
 重写(override) 指的是子类重写父类中已有的方法, 子类的方法具有相同的名称、参数列表和返回类型兼容.
@@ -61,14 +60,14 @@ Java的内存结构主要包括方法区、堆、虚拟机栈、本地方法栈�
 简而言之, 重写是对已有方法的重新实现,而重载是创建具有相同名称但不同参数列表的多个方法.
 ```
 
-## sleep和wait的区别
+### sleep和wait的区别
 
 ```Java
 sleep是线程类(Thread) 的方法, 导致此线程暂停执行指定时间,给执行机会给其他线程,但是监控状态依然保持,到时后会自动恢复. 调用sleep不会释放对象锁.
 wait搜索Object类的方法,对此对象调用wait方法导致本线程放弃对象锁,进入等待此对象的等待锁定池,只有针对此对象发出notify方法(或notifyAll)后本线程才进入对象锁定池准备获得对象锁进入运行状态.
 ```
 
-## String类的常用方法
+### String类的常用方法
 
 ```Java
 length(): 返回字符串长度
@@ -82,7 +81,7 @@ toLowerCase(): 将字符串转换为小写
 toUpperCase(): 将字符串转换为大写
 ```
 
-## 类加载器加载过程
+### 类加载器加载过程
 
 ```Java
 Java类加载器的加载过程可以分为以下几个步骤:
@@ -93,9 +92,9 @@ Java类加载器的加载过程可以分为以下几个步骤:
 5. 初始化: 执行类的初始化代码,包括静态变量赋值和静态代码块的执行
 ```
 
-## Day03
+### Day03
 
-## 双亲委派机制
+### 双亲委派机制
 
 ```Java
 双亲委派机制是指类加载器在加载类时, 首先将加载请求委托给父类加载器,只有当父类加载器无法加载时,才自己尝试加载.从而确保类的加载安全和防止类的重复加载.
@@ -103,13 +102,13 @@ Java类加载器的加载过程可以分为以下几个步骤:
 
 Day03
 
-## JVM的GC垃圾回收机制
+### JVM的GC垃圾回收机制
 
 ```Java
 GC垃圾回收机制是指Java虚拟机自动管理内存的机制, 通过自动识别和回收不再使用的对象,释放对应的内存资源,以避免内存泄露和提高程序性能
 ```
 
-## JVM调优参数
+### JVM调优参数
 
 ```Java
 一般调优, 通常优先对堆内存空间进行调整, -Xms表示初始堆内存大小(默认为物理内存的1/64),-Xmx表示最大分配对内存大小(默认为物理内存的1/4)
@@ -125,7 +124,7 @@ GC垃圾回收机制是指Java虚拟机自动管理内存的机制, 通过自动
 java -Xmx3.2g -Xms1g -jar xxx.jar
 ```
 
-## OOM问题排查
+### OOM问题排查
 
 ```Java
 如何排查OOM问题
@@ -149,7 +148,7 @@ java -Xmx3.2g -Xms1g -jar xxx.jar
     内存泄漏: 指应用程序中存在无用的对象占用内存,并且这些对象无法被垃圾回收器回收. 随着时间的推移,内存资源逐渐耗尽,最终导致内存溢出.
 ```
 
-## JDK1.8的新特性
+### JDK1.8的新特性
 
 ```Java
 Lambda表达式:
@@ -162,7 +161,7 @@ Stream API:
     方法引用允许通过方法的名称来引用已存在的方法. 这种方式常用于Lambda表达式,使代码更简洁、易读.
 ```
 
-## Error和Exception的区别
+### Error和Exception的区别
 
 ```Java
 Error 是由系统和JVM引起的严重问题,通常无法通过代码处理,程序应该终止.
@@ -172,11 +171,11 @@ Error继承自java.lang.Error类,而Exception继承自java.lang.Exception类
 
 
 
-# 二、集合
+## 二、集合
 
-## Day04
+### Day04
 
-## Java常用的集合
+### Java常用的集合
 
 ![这张图片是一张对比表格，展示了Java常用集合框架中List、Set、Map、Queue这四大集合的核心特性。表格从定义、存储、可重复性、实现类、遍历、查找、应用场景七个维度展开对比：List是允许重复元素的有序集合，典型实现类为ArrayList、LinkedList等，可按索引操作；Set不允许重复元素且为无序集合，代表实现有HashSet等；Map是由键值对组成的集合，键不允许重复，实现类包含HashMap、TreeMap等；Queue则是一种按特定规则进行元素插入和删除的特殊集合，如LinkedList、PriorityQueue。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/WRLmbyz58okC6Vx7OElczHRdnNf.png)
 
@@ -194,7 +193,7 @@ Iterator接口:迭代器,可以通过迭代器遍历集合中的数据
     Iterator接口是Java集合框架提供的一种用于遍历集合元素的通用方式. 它定义了一系列用于访问集合元素的方法,包括判断是否有下一个元素、获取下一个元素、删除当前元素等操作.
 ```
 
-## HashMap底层原理
+### HashMap底层原理
 
 ```Bash
 JDK1.8及以后底层结构为:数组 + 链表 + 红黑树
@@ -225,7 +224,7 @@ HashMap是Java集合框架中一种基于哈希表实现的Map接口,它存储�
         
 ```
 
-## HashMap为什么用红黑树
+### HashMap为什么用红黑树
 
 
 
@@ -233,20 +232,20 @@ HashMap是Java集合框架中一种基于哈希表实现的Map接口,它存储�
 HashMap使用红黑树而不是用B树,是因为红黑树相对于B树在插入、删除和查找等操作上的平衡性更好,且红黑树的节点比B树的节点更小,占用的内存更少,适合存储在内存中的数据结构.
 ```
 
-## HashMap什么时候扩容
+### HashMap什么时候扩容
 
 - 在JDK1.7中,当HashMap中元素数量操作当前容量与负载因子(默认0.75)的乘积时,会触发扩容操作,扩容后的容量为当前容量的二倍.例如,初始容量为16,当元素数量达到12时会触发扩容,扩容后的容量为32
 - 在JDK1.8中,HashMap的扩容和红黑树的转化是两个独立的操作,且顺序是先扩容,然后再进行红黑树的转换.当HashMap中的元素数量超过负载因子(默认0.75)与数组容量的乘积时,会触发扩容操作.扩容会重新计算调整数组的大小,并将原来数组中的元素重新分配到新的数组位置上. 扩容操作会导致原本哈希冲突较多的链表长度变长,因此当链表长度超过阈值(默认为8) 时,会将链表转化为红黑树. 综上所述,在JDK1.8中,HashMap的操作顺序是先扩容,然后再进行红黑树的转换. 扩容是为了减少哈希冲突,提高HashMap的性能和效率,而链表转红黑树的操作则是为了在特定情况下提供更好的查找、插入和删除元素的性能.
 
-## HashMap的长度为什么是2的 N 次方
+### HashMap的长度为什么是2的 N 次方
 
 ```Java
 HashMap的长度选择为2 的N次方是为了 提高散列算法的效率和分布均匀性,通过使用2的幂次方作为长度,可以确保哈希码的高位和低位可以均匀参与到散列算法中,减少哈希冲突的发生,并提高散列算法的效率和性能.
 ```
 
-## Day05
+### Day05
 
-## HashMap和Hash Table区别
+### HashMap和Hash Table区别
 
 ```Java
 线程安全:
@@ -260,7 +259,7 @@ Null值的处理:
     HashTable: 由于同步,性能通常低于HashMap
 ```
 
-## ConcurrentHashMap和HashMap的区别
+### ConcurrentHashMap和HashMap的区别
 
 ConcurrentHashMap 和 HashMap 是Java 中常用的两种 Map 实现，它们之间有以下几个区别:
 
@@ -276,14 +275,14 @@ ConcurrentHashMap 和 HashMap 是Java 中常用的两种 Map 实现，它们之�
 ConcurrcentHashMap是线程安全的并发哈希表, 支持高效地并发访问,而HashMap是非线程安全的哈希表,适用于单线程环境下的使用.
 ```
 
-## ConcurrentHashMap和HashTable区别
+### ConcurrentHashMap和HashTable区别
 
 ```Java
 ConcurrentHashMap和HashTable的区别在于并发性和线程安全性,
 ConcurrentHashMap利用分段锁(Segment)实现高效的并发访问和更新,而HashTable使用全局锁(synchronized)来保证线程安全.
 ```
 
-## ArrayList与LinkedList区别
+### ArrayList与LinkedList区别
 
 ```Java
 数据结构:
@@ -297,7 +296,7 @@ ConcurrentHashMap利用分段锁(Segment)实现高效的并发访问和更新,�
     LinkedList: 每个元素除了存储数据外,还需要额外存储两个指针(指向前一个和后一个元素的引用).
 ```
 
-## 遍历LIST有哪些方式
+### 遍历LIST有哪些方式
 
 ```Java
 普通遍历: for(int = 0;i < arrays.size(); i++)
@@ -307,9 +306,9 @@ forEach遍历: list.forEach((Str) -> xxxx)
 java 8 的 Stream遍历
 ```
 
-## Day06
+### Day06
 
-## 数组 (Array) 和列表 (ArrayList) 区别
+### 数组 (Array) 和列表 (ArrayList) 区别
 
 ```Java
 Array可以包含基本类型和对象类型,ArrayList只能包含对象类型.
@@ -317,7 +316,7 @@ Array大小是固定的,ArrayList的大小是动态变化的.
 ArrayList处理固定大小的基本数据类型的时候,这种方式相对比较慢.
 ```
 
-## 线程安全和有序的集合类
+### 线程安全和有序的集合类
 
 有序的集合类名包括:
 
@@ -359,15 +358,15 @@ List的例子: CopyOnWriteArrayList
 
 Set的例子: ConcurrentSkipListSet
 
-# 三、线程和锁
+## 三、线程和锁
 
-## 线程的状态
+### 线程的状态
 
 ```Java
 线程的状态包括: 新建(new)、就绪(Runnable)、运行(Running)、阻塞(Blocked) 、等待(Waiting)、超时等待(Timed Waiting)、终止(Terminated)
 ```
 
-## 创建线程的方式
+### 创建线程的方式
 
 ```Java
 在Java中,创建线程有以下几种方式:
@@ -378,7 +377,7 @@ Set的例子: ConcurrentSkipListSet
 这些都是Java中创建线程的常见方式,你可以根据具体需求选择适合的方式来创建线程.
 ```
 
-## 线程池核心参数
+### 线程池核心参数
 
 ```Java
 corePoolSize => 线程池核心线程数量
@@ -390,9 +389,9 @@ threadFactory => 线程工厂, 用于创建线程,一般用默认的即可
 handler => 拒绝策略,当任务太多来不及处理,如何拒绝任务
 ```
 
-## Day07
+### Day07
 
-## 如何创建线程池
+### 如何创建线程池
 
 在企业中: 不要使用Executors直接创建线程池,会容易出现OOM问题,要使用ThreadPoolExcutor构造方法创建,引用自《阿里巴巴开发手册》
 
@@ -419,7 +418,7 @@ Executors返回的线程池对象的弊端如下:
 
 总之, 自定义线程池需要合理配置线程池的大小、选择适当的任务队列和拒绝策略, 正确管理线程池的生命周期, 并考虑线程安全性. 这些注意事项可以帮助我们设计高效、可靠的线程池.
 
-## 线程池工作原理
+### 线程池工作原理
 
 ![图片展示了线程池执行任务的流程。当提交任务时，先判断核心线程是否已满，若未满则创建线程执行任务；若已满则判断队列是否已满，若未满则任务入队列等待；若队列已满且线程池未满，则创建线程执行任务；若队列和线程池均已满，则按照拒绝策略处理无法执行的任务。该图与文档中线程池工作原理的内容相关，直观呈现了任务执行的判断流程。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/OiJpbPtmzoMZvMxtWuUcaE9cnsf.png)
 
@@ -435,13 +434,13 @@ Executors返回的线程池对象的弊端如下:
 
 当一个线程无事可做,超过一定的时间(keepAliveTime)时,线程池会判断,如果当前运行的线程数大于 corePoolSize,那么这个线程就被停掉. 所以线程池的所有任务完成后,它最终会收缩到corePoolSize的大小.
 
-## 线程池大小如何设定
+### 线程池大小如何设定
 
 ```Java
 生产环境中,Java线程池大小的设定与硬件资源和并发请求需求密切相关.通常可以考虑CPU核心数、内存容量、网络带宽等硬件资源, 并结合预估的并发请求量来确定线程池大小,可以充分利用资源并保持合理的并发处理能力. 较多的硬件资源和高并发通常需要更大的线程池来提高并发处理效率.
 ```
 
-## 线程池的拒绝策略有哪些
+### 线程池的拒绝策略有哪些
 
 ![图片是一张表格，对比了线程池的5种拒绝策略。从左至右依次为默认（AbortPolicy）、丢弃任务、丢弃最早的任务、抛出异常、调用者运行。每种策略对应特点、适用场景、示例代码等内容。如默认策略适用于大多数情况，示例代码为ThreadPoolExecutor.AbortPolicy；丢弃任务适用于不关心无法处理任务的情况，示例代码为ThreadPoolExecutor.DiscardPolicy等。该表与文档中介绍线程池拒绝策略的内容相关，直观呈现了各策略特点及适用场景。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/VYKDbB1BcoTEZVxWGFNcNqPunFF.png)
 
@@ -451,21 +450,21 @@ AbortPolicy(默认方式，中止并抛出RejectedExecutionException 异常）�
 如果希望快速失败并将异常传递给调用者，则选择AbortPolicy。如果希望尽可能保证任务的执行而不堆积在队列中，则选择 CallerRunsPolicy。如果对任务的丢失情况不敏感，则选择 DiscardPolicy。而如果希望尽可能保留最新的任务而不是旧的任务，则选择DiscardOldestPolicy.
 ```
 
-## 是否所有微服务都使用同一个线程池
+### 是否所有微服务都使用同一个线程池
 
 ```Java
 每个微服务用一个线程池,避免不通过业务模块的线程池彼此间的相互影响. 不至于出现某个服务的线程池出现的问题导致其他服务的线程池不可用.
 ```
 
-## Day08
+### Day08
 
-## synchronized 和 lock 的区别？
+### synchronized 和 lock 的区别？
 
 ```Java
 synchronized 和Lock的区别是: synchronized是Java关键字,是内置的同步机制,能修饰方法或代码块,锁的获取是隐式的,底层实现原理是基于JVM内置监视器锁; 而Lock是一个接口,提供更灵活的同步机制,可以手动控制锁的获取和释放,底层实现可以是ReentrantLock等,性能在高竞争环境下通常较好.
 ```
 
-## synchronized的锁种类
+### synchronized的锁种类
 
 ```Java
 synchronized的锁种类,主要分类锁和对象锁,具体是那种锁,分为以下这些情况:
@@ -473,7 +472,7 @@ synchronized的锁种类,主要分类锁和对象锁,具体是那种锁,分为�
     对象锁- 当synchronized用在这些地方时: 非静态方法、非静态代码块、this
 ```
 
-## 什么情况下会产生死锁，如何解决
+### 什么情况下会产生死锁，如何解决
 
 ```Java
 产生死锁的情况是在多线程程序中, 每个线程都持有一些资源,并且等待其他线程释放它所需的资源. 解决死锁可以采用以下方法: 
@@ -482,13 +481,13 @@ synchronized的锁种类,主要分类锁和对象锁,具体是那种锁,分为�
 恢复死锁,即进行资源的强制抢占或进行回滚操作,将进程回退到安全状态以解除死锁.
 ```
 
-## ThreadLocal是一个什么样的技术
+### ThreadLocal是一个什么样的技术
 
 ```Java
 ThreadLocal是一种Java技术，它允许在多线程环境中维护线程私有的变量副本。底层实现会使用一个类似于 Map的结构来存储每个线程的变量副本。ThreadLocal并不是强引I用或弱引I用，它使用弱引1用作为键来维护各个线程的变量副本，但变量本身由线程强引l用。在使用ThreadLocal时，可能会出现内存泄漏的问题。如果线程结束了，但ThreadLocal中的变量没有被手动清理，那么该变量会一直存在于ThreadLocal 的 Map 中，导致内存泄漏。解决这个问题的常见方式是在使用完ThreadLocal后调用removeO方法将变量从ThreadLocal中移除，或者使用Java 8中的ThreadLocal的InitiaIValue方法来提供默认值。另外，也可以使用ThreadLocal的弱引I用方式来解决内存泄漏问题，例如使用InheritableThreadLocal.
 ```
 
-## 悲观锁和乐观锁的区别
+### 悲观锁和乐观锁的区别
 
 悲观锁：认为自己在使用数据的时候一定有别的线程来修改数据，在获取数据的时候会先加锁，确保数据不会被别的线程修改。
 
@@ -502,11 +501,11 @@ ThreadLocal是一种Java技术，它允许在多线程环境中维护线程私�
 
 锁实现 2：版本号控制：数据表中加上版本号字段version，表示数据被修改的次数。当数据被修改时，这个字段值会加1，提交必须满足＂提交版本必须大于记录当前版本才能执行更新＂的乐观锁策略适用场景：读操作较多，不加锁的特点能够使其读操作的性能大幅提升
 
-# 四、Web
+## 四、Web
 
-## Day09
+### Day09
 
-## TCP和UDP的区别
+### TCP和UDP的区别
 
 ![这张图片展示了TCP与UDP协议的对比表格，以“特征”为表头分为左右两栏，分别对应TCP和UDP的各项参数。表格涵盖连接、可靠性、顺序性等共8项关键特征：TCP为面向连接的协议，提供可靠数据传输，而UDP是无连接协议，不保证传输可靠性；在适用性方面，TCP适用于对可靠性要求高的文件传输、网页访问场景，UDP则多用于对传输速度要求高、可靠性要求低的实时音视频传输、在线游戏场景；此外两者在连接性、头部开销等细节上也有明显差异，清晰呈现了两种传输协议的核心区别。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/Yicab6gFOoe4A8xGzekcSlMUnvg.png)
 
@@ -514,7 +513,7 @@ ThreadLocal是一种Java技术，它允许在多线程环境中维护线程私�
 TCP是一种面向连接的、可靠的协议,它保证数据的顺序和完整性,适用于要求数据传输可靠性的场景.UDP是一种无法连接的、不可靠的协议,传输速度快,适用于对传输速度要求较高,对可靠性要求较低的场景.
 ```
 
-## 常见的HTP响应状态码
+### 常见的HTP响应状态码
 
 | 状态码 | 类别 | 描述 |
 |-|-|-|
@@ -524,7 +523,7 @@ TCP是一种面向连接的、可靠的协议,它保证数据的顺序和完整�
 | 4xx | 客户端错误状态码 | 服务器无法处理请求,客户端出现错误,比如:401-请求需要认证,403-请求的对应资源禁止被访问,404-服务器无法找到对应资源 |
 | 5xx | 服务器错误状态码 | 服务器处理请求时发生错误,比如:500-服务器内部错误,502-错误的网关,503-服务不可用 |
 
-## GET和POST的区别
+### GET和POST的区别
 
 | 特征 | GET | POST |
 |-|-|-|
@@ -541,7 +540,7 @@ GET用于从服务器获取数据,将数据附加在URL上发送,对数据长度
 POST用于服务器提交数据,将数据放在请求体中发送,数据长度没有限制.
 ```
 
-## Cookie和Session的区别
+### Cookie和Session的区别
 
 | 特征 | Cookie | Session |
 |-|-|-|
@@ -556,7 +555,7 @@ POST用于服务器提交数据,将数据放在请求体中发送,数据长度�
 Cookie是储存在客户端的数据,可以被客户端修改,有大小限制,且可以设置过期时间. Session是储存在服务器端的数据,通过会话id进行传输,更安全,且通常没有大小限制,过期时间由服务器控制.
 ```
 
-## 过滤器和拦截器的区别
+### 过滤器和拦截器的区别
 
 | 区别 | 过滤器 | 拦截器 |
 |-|-|-|
@@ -572,11 +571,11 @@ Cookie是储存在客户端的数据,可以被客户端修改,有大小限制,�
 过滤器是在请求到达目标资源之前进行预处理和后处理,通常用于过滤请求和响应,适合对请求和响应进行统一处理的场景,比如过滤请求中无效参数,安全校验;拦截器是在请求到达目标资源之后进行处理,可以用于权限检查、日志记录、异常处理等,适合需要更灵活的业务逻辑处理的场景
 ```
 
-# 五、设计模式
+## 五、设计模式
 
-## Day10
+### Day10
 
-## 单例模式的几种写法
+### 单例模式的几种写法
 
 ```Java
 单例模式的核心定义
@@ -654,7 +653,7 @@ public enum Singleton{
 
 
 
-## Spring中的设计模式有哪些 
+### Spring中的设计模式有哪些
 
 ```Java
 工厂模式: Spring 使用工厂模式通过BeanFactory和ApplicationContext创建bean对象.
@@ -662,7 +661,7 @@ public enum Singleton{
 代理模式: Spring 的AOP功能用到了 JDK的动态代理和CGLIB字节码生成技术
 ```
 
-## MyBatis中有哪些设计模式
+### MyBatis中有哪些设计模式
 
 ```Java
 工厂模式: 例如SqlSessionFactory、ObjectFactory、MapperProxyFactory;
@@ -670,9 +669,9 @@ public enum Singleton{
 代理模式: Mybatis实现的核心,比如MapperProxy、ConnectionLogger,用的jdk的动态代理; 还有executor.loader包使用了cglib或者javassist达到延迟加载的效果;
 ```
 
-# 六、Mysql
+## 六、Mysql
 
-## 数据库的ACID特性
+### 数据库的ACID特性
 
 ```Java
 原子性(Atomicity): 事务中的操作要么全部成功,要么全部失败.事务是一个不可分割的单元,要么全部执行,要么全部回滚.如果事务中的任何操作失败,所有的操作都会被回滚到事务开始之前的状态,可以保证数据的一致性.
@@ -683,7 +682,7 @@ public enum Singleton{
 
 > 最简回答: ACID特性是指原子性(Atomicity)、一致性(Consistrncy)、隔离性(Isolation)和持久性(Durability), 用于保证数据库事务的可靠性和一致性
 
-## MySQL存储引擎
+### MySQL存储引擎
 
 ![图片是一张关于MySQL存储引擎InnoDB和MyISAM特性的对比表格。表格分为事务、并发、外键、备份、崩溃恢复、其他六个类别。InnoDB在事务上为事务型，支持行级锁和外键，有在线热备，崩溃恢复概率低，其他有聚簇索引、MVCC特性；MyISAM为非事务型，支持表级锁，不支持外键和备份，崩溃恢复慢且易丢失，其他有压缩表、空间数据索引。此图与文档中介绍MySQL存储引擎的内容相关，直观呈现了两者特性差异。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/Z6X0bTUpEo5Tvjx04vacSzVMnNg.png)
 
@@ -697,9 +696,9 @@ Mysql默认是Innodb存储引擎,适合比较庞大的应用场景
 
 
 
-# Day11
+## Day11
 
-## 数据库的事务隔离级别
+### 数据库的事务隔离级别
 
 **SQL标准定义了四个隔离级别:**
 
@@ -722,7 +721,7 @@ Mysql默认是Innodb存储引擎,适合比较庞大的应用场景
 
 > 最简回答: 数据库事务隔离级别是指多个并发事务同时执行时,各个事务之间的隔离程序,常见的隔离级别有读未提交(Read Uncommitted)、读以提交(Read Committed)、可重复读(Repeatable Read)和串行化(Serializable).
 
-## 索引的种类
+### 索引的种类
 
 ```Java
 从数据结构角度
@@ -738,7 +737,7 @@ Mysql默认是Innodb存储引擎,适合比较庞大的应用场景
     联合索引
 ```
 
-## 索引会失效的情况有哪些
+### 索引会失效的情况有哪些
 
 ```Java
 索引参数表达式计算
@@ -750,7 +749,7 @@ Mysql默认是Innodb存储引擎,适合比较庞大的应用场景
     以 ^ 开头的前缀匹配，能利用 B + 树的有序性，从根节点定位前缀范围,反之任意在其他位置破坏了索引 “有序性” 正则会失效
 ```
 
-## MySQL索引底层原理 
+### MySQL索引底层原理
 
 MySQL的索引底层结构是B+树.
 
@@ -780,7 +779,7 @@ B+ 树是一种平衡多路搜索树,具有以下特点:
 
 >  最简回答: MySQL索引底层原理使用了B+树数据结构,它是一种平衡树,能够快速定位和检索数据;B+树的叶子节点储存实际数据,中间节点储存索引,通过减少磁盘I/O来提高查询效率;索引按照值的大小顺序排列,使得范围查询效率更高.
 
-## 聚集索引与非聚集索引
+### 聚集索引与非聚集索引
 
 InnoDB聚集索引的叶子节点存储行记录,因此,InnoDB必须要有,且只有一个聚集索引:
 
@@ -838,9 +837,9 @@ InnoDB储存引擎中的主键默认就会创建一个聚集索引,每张表只�
 
 
 
-# Day12
+## Day12
 
-## MySQL回表查询
+### MySQL回表查询
 
 既然从普通索引无法直接定位行记录,那么普通索引的查询过程是怎么样呢?
 
@@ -871,7 +870,7 @@ select * from t where name = 'list';
 select id,name from user where name = 'shenjian';
 ```
 
-## MySQL最左匹配原则
+### MySQL最左匹配原则
 
 MySQL联合索引遵循最左前缀匹配原则,即最左优先,查询的时候会优先匹配最左边的索引.
 
@@ -895,7 +894,7 @@ select * from table_name where b = ? and c = ?;
 
 > 如果查询的条件包含(a,c),也会用到索引,相当于用到了(a)索引.
 
-## count(\*)、count(1)和count(列)
+### count(\*)、count(1)和count(列)
 
 ```SQL
 count(*)是直接统计所有记录的行数,无需对任何列进行计算,因此最快.
@@ -908,7 +907,7 @@ count(字段)在实际情况中却经常比count(*)和count(1)慢,因为还需�
     c.count(字段)慢
 ```
 
-##  MySQL优化方案
+###  MySQL优化方案
 
 ```SQL
 服务器优化(增加 CPU、内存、网络、更换高性能磁盘)。
@@ -919,7 +918,7 @@ SQL 优化 (避免 SQL 命中不到索引I的情况)
 编码优化实现读写分离
 ```
 
-## SQL优化方案
+### SQL优化方案
 
 1. 优化查询条件
 
@@ -978,9 +977,9 @@ explain select * from table where column = 'value';
 select column1,column2 from table;
 ```
 
-# Day13
+## Day13
 
-## 如何设计数据库表
+### 如何设计数据库表
 
 ```SQL
 数据库设计规范
@@ -995,7 +994,7 @@ select column1,column2 from table;
     规划分表(单表超500万行或容量超2G才分表)
 ```
 
-## MySQL常用函数
+### MySQL常用函数
 
 ```SQL
 数字函数
@@ -1013,7 +1012,7 @@ select column1,column2 from table;
     替换字符串: REPLACE(s,s1,s2)
 ```
 
-## MySQL三大日志文件
+### MySQL三大日志文件
 
 ```SQL
 Redo log(重做日志) 用于保证事务的持久性,它在事务提交前将数据写入磁盘,以防止数据丢失
@@ -1022,15 +1021,15 @@ Binlog(二进制日志) 记录了数据库的所有修改操作,包括对数据�
 Redo log和Undo log是InnoDB存储引擎特有的日志,而Binlog是MySQL服务器层的日志
 ```
 
-# 七、Redis
+## 七、Redis
 
-## Redis为什么快
+### Redis为什么快
 
 ```SQL
 Redis 之所以快是因为它采用了内存存储和非阻塞的I/O模型,避免了磁盘IO的延迟;同时,Redis使用了IO多路复用技术,通过一个线程同时处理多个客户端请求,减少了线程切换的开销,提高了并发处理能力
 ```
 
-## Redis可以用来做什么
+### Redis可以用来做什么
 
 ```SQL
 缓存
@@ -1042,9 +1041,9 @@ Redis 之所以快是因为它采用了内存存储和非阻塞的I/O模型,避�
 限流
 ```
 
-# Day14
+## Day14
 
-## Redis的持久化机制
+### Redis的持久化机制
 
 ![这张图是Redis持久化方式对比表，展示了RDB与AOF两种持久化方式在多个维度的差异。具体来看，在占用存储空间上，RDB小（为数据级压缩），AOF大（为指令级重写）；存储速度方面，RDB慢，AOF快；恢复速度上，RDB快，AOF慢；数据安全性上，RDB会丢失数据，AOF则依据策略决定；资源消耗方面，RDB为高/重量级，AOF为低/轻量级；启动优先级上，RDB低，AOF高，这份对比表能帮助用户结合业务需求选择适合的持久化方式，和文档中介绍的选择RDB或AOF的内容相呼应。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/Ly55bfSG7o6YPMxG2ficxKdBnOe.png)
 
@@ -1060,7 +1059,7 @@ Redis 之所以快是因为它采用了内存存储和非阻塞的I/O模型,避�
 RDB是Redis的快照持久化方式，通过周期性的快照将数据保存到硬盘，占用更少的磁盘空间和CPU资源，适用于数据备份和恢复，但可能存在数据丢失的风险。AOF是追加日志持久化方式，将每个写操作以追加的方式记录到日志文件中，确保了更高的数据完整性和持久性，但相对于RDB消耗更多的磁盘空间和写入性能，适用于数据持久化和灾难恢复，且可以通过配置实现不同的同步频率。
 ```
 
-## Redis常用的数据类型
+### Redis常用的数据类型
 
 ![这张图片是一张表格，对应“Redis常用的数据类型”相关内容，清晰呈现了Redis常见的五种数据类型信息，每一行对应一种数据类型。表格的列包含数据类型、特征、适用场景、常用命令四项，其中数据类型包括String、List、Set、Hash、Sorted Set，每类数据都标注了明确的特性，如String用于存储单个值、Sorted Set是关联分数的有序集合，也明确了各自适用的场景及对应常用命令，和文档中介绍String、List、Set类型的上下文内容相呼应，补充了另外两种Redis常用数据类型的相关信息。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/HbI8b3uG5oB7WFx9HC7cWGOInle.png)
 
@@ -1070,7 +1069,7 @@ RDB是Redis的快照持久化方式，通过周期性的快照将数据保存到
 - **Hash**：字段-值对的无序散列，适用于存储对象、缓存和计数器，常用命令：HSET用于设置字段值， HGETALL 用于获取散列的所有字段和值。
 - **Sorted Set**：有序的字符串集合，每个成员关联一个分数，适用于排行榜和按分数范围获取成员，常用命令：ZADD用于添加成员及其分数，ZRANGE用于获取指定范围的成员。
 
-## Redis的缓存雪崩、缓存穿透、缓存击穿
+### Redis的缓存雪崩、缓存穿透、缓存击穿
 
 **缓存穿透**
 
@@ -1100,7 +1099,7 @@ RDB是Redis的快照持久化方式，通过周期性的快照将数据保存到
 缓存雪崩可以通过合理设置缓存的失效时间，使用热点数据预热来减少对缓存的依赖，从而避免整个缓存层的崩溃。
 ```
 
-## Redis的哨兵集群
+### Redis的哨兵集群
 
 Redis 的哨兵（Sentinel） 机制是一种用于监控和管理 Redis 实例的高可用性解决方案。它由一组独立运行的Redis哨兵节点组成，用于监控主节点和从节点的状态，并在主节点故障或其他变化时进行自动切换和故障恢复。
 
@@ -1128,7 +1127,7 @@ Redis 的哨兵（Sentinel） 机制是一种用于监控和管理 Redis 实例�
 Redis 的哨兵集群主要用于实现高可用性，监控Redis 主、从节点的状态变化，并在主节点失效时自动将从节点升级为主节点。哨兵集群由多个哨兵节点组成，工作原理是哨兵节点通过相互通信，监测主节点的健康状态，当主节点失效时，选举新的主节点，并通知其他从节点进行切换，确保系统的可用性。
 ```
 
-## Redis的分片集群
+### Redis的分片集群
 
 Redis分片集群是一种将数据分布到多个节点的解决方案，用于实现数据的水平扩展和提高系统的吞吐量。
 
@@ -1170,9 +1169,9 @@ CRC16算法（循环冗余校验算法）是一种广泛应用于网络通信和
 Redis的分片集群主要用于实现数据的横向扩展，将数据分散存储在多个节点上，提高系统的并发能力和存储能力。分片集群由多个节点组成，根据Key经过哈希算法映射到不同的节点上，每个节点负责存储和处理一部分数据，工作原理是通过一致性哈希算法将数据按照一定规则分配到不同的节点上，实现数据的均衡存储和查询。
 ```
 
-# Day15
+## Day15
 
-## Redis分布式锁命令使用
+### Redis分布式锁命令使用
 
 用过，使用的是Redis分布式锁。可以使用分布式锁来实现多个客户端之间的协调和同步，以避免并发操作引起的数据冲突。下面是使用Redis 实现分布式锁的一般步骤：
 
@@ -1200,7 +1199,7 @@ Redis的分片集群主要用于实现数据的横向扩展，将数据分散存
 
 当然Redis 分布式锁还存在锁重入、主从一致、锁误删问题，可通过 Redisson 锁解决
 
-## Redis（或ElasticSearch）和MySQL如何保持数据一致性
+### Redis（或ElasticSearch）和MySQL如何保持数据一致性
 
 Redis（或 ElasticSearch）和 MySQL如何保持数据一致性，以及它们的具体实现和优缺点如下:
 
@@ -1230,7 +1229,7 @@ Elasticsearch和MySQL的数据一致性可以通过以下三种方案实现
 3. Canal方案：使用 Canal 工具订阅 MySQL 的 binlog 日志，实时将数据同步到 Elasticsearch，实现数据的实时增量同步，但需要额外的工具和配置
 ```
 
-## Redisson是什么，怎么用
+### Redisson是什么，怎么用
 
 Redisson是一个用于Java 的简单易用的Redis客户端，它封装了常见的分布式操作和并发控制的功能，提供了丰富的API和功能，使得开发人员可以轻松地与Redis进行交互。
 
@@ -1249,7 +1248,7 @@ Redisson是一个Java的Redis客户端，提供丰富的APl和功能，用于封
 最后，利用RedissonClient对象可以使用各种功能，如分布式锁、分布式集合等，与Redis 进行交互。
 ```
 
-## Redisson看门狗机制的原理
+### Redisson看门狗机制的原理
 
 Redisson 的看门狗机制是为了解决分布式环境下使用分布式锁时的问题。它通过周期性地对锁进行心跳续期，保证在业务执行期间锁不会被自动释放，防止因执行时间过长或节点宕机而导致锁提前释放的情况发生。
 
@@ -1265,9 +1264,9 @@ Redisson 的看门狗机制是为了解决分布式环境下使用分布式锁�
 Redisson 的看门狗机制通过定时续期锁的过期时间，保证在业务执行期间锁不会被自动释放。它解决了分布式环境下锁过期导致的资源竞争问题，确保业务能够完成。续期是看门狗机制的核心，它通过定时更新锁的过期时间来实现锁的持久性，以防止锁过期并被其他实例获得。
 ```
 
-# 八、服务框架
+## 八、服务框架
 
-## MyBatis里#和\$区别
+### MyBatis里#和\$区别
 
 在 MyBatis 中，`#`和`$`在SQL 语句中的使用具有以下区别:
 
@@ -1290,9 +1289,9 @@ Redisson 的看门狗机制通过定时续期锁的过期时间，保证在业�
 在 MyBatis 中，# 用于参数的替换，并会进行预编译处理，以防止 SQL 注入；而 $ 则直接将参数值替换进SQL语句有SQL注入风险。
 ```
 
-# Day16
+## Day16
 
-## MyBatis动态SQL
+### MyBatis动态SQL
 
 ```SQL
 MyBatis动态SQL可以让我们在XML映射文件内，以标签的形式编写动态SQL，完成逻辑判断和动态拼接SQL的功能：
@@ -1300,14 +1299,14 @@ MyBatis提供了9种动态SQL标签：trim、where、set、foreach、choose、wh
 执行原理：使用OGNL从SQL参数对象中计算表达式的值，根据表达式的值动态拼接SQL，以此来完成动态SQL的功能
 ```
 
-## ResultType和 ResultMap的区别
+### ResultType和 ResultMap的区别
 
 ```SQL
 如果数据库结果集中1列名和要封装实体的属性名完全一致的话用resultType属性
 如果数据库结果集中的列名和要封装的实体的属性名有不一致的情况用resultMap属性，通过resultMap手动创建对象映射，resultMap要配置一下表和类的一一对应关系，所以说就算你的字段名和你的实体类的属性名不一样也没关系，都会给你映射出来
 ```
 
-## 为什么要用MyBatisPlus
+### 为什么要用MyBatisPlus
 
 MyBatis-Plus（简称MP）是一个Mybatis的增强工具，在Mybatis的基础上只做增强不做改变，为简化开发、提高效率
 
@@ -1325,7 +1324,7 @@ MyBatis-Plus（简称MP）是一个Mybatis的增强工具，在Mybatis的基础�
 - 内置性能分析插件：可输出SQL语句以及其执行时间，建议开发测试时启用该功能，能快速揪出慢查询
 - 内置全局拦截器：提供全表Delete、update操作智能分析阻断，也可自定义拦截规则，预防误操作
 
-## MyBatisPlus的常用注解
+### MyBatisPlus的常用注解
 
 ```Java
 @TableName：用于指定实体类对应的数据库表名。该注解可以在实体类上添加，表示该类映射到指定的数据库表。例如：@TableName（"user"）。
@@ -1334,7 +1333,7 @@ MyBatis-Plus（简称MP）是一个Mybatis的增强工具，在Mybatis的基础�
 @Version：用于指定实体类的字段作为乐观锁的版本字段。乐观锁是一种并发控制机制，通过版本号的变化来判断数据是否被秀才。该注解可以在实体类的字段上添加，表示该字段作为乐观锁的版本字段。例如：@Version
 ```
 
-## Spring里IOC是什么
+### Spring里IOC是什么
 
 IOC （lnversion Of Controll， 控制反转） 是一种设计思想，就是将原本在程序中手动创建对 象的控制权，交由给 Spring 框架来管理。IOC 在其他语言中也有应用，并非Spring 特有。IOC 容器是Spring 用来实现IOC 的载体，IOC 容器实际上就是一个 Map(key, value)， Map 中存放 的是各种对象。
 
@@ -1344,9 +1343,9 @@ IOC （lnversion Of Controll， 控制反转） 是一种设计思想，就是�
 在Spring中，IOC（Inversion of Control，控制反转）是一种设计模式。通过它，对象的创建和依赖关系的管理被交由容器负责，从而实现对象之间的解耦和灵活性的提升。简单说，就是由容器来控制对象的生命周期和依赖关系
 ```
 
-# Day17
+## Day17
 
-## Spring中Bean的注入方式有几种
+### Spring中Bean的注入方式有几种
 
 构造器依赖注入：构造器依赖注入通过容器触发一个类的构造器来实现的，该类有一系列参数，每个参数代表一个对其他类的依赖。
 
@@ -1358,7 +1357,7 @@ Setter方法注入：Setter方法注入是容器通过调用无参构造器或�
 在Spring中，Bean的注入方式有三种：构造器注入、Setter方法注入和注解注入
 ```
 
-## Spring中Bean的作用域有几种
+### Spring中Bean的作用域有几种
 
 Spring框架支持以下五种bean的作用域：
 
@@ -1368,7 +1367,7 @@ Spring框架支持以下五种bean的作用域：
 - Session：每一次HTTP请求都会产生一个新的bean，该bean仅当前HTTP session内有效
 - global-session：全局session作用域，仅仅在基于Portlet的Web应用中才会有意义，Spring5中已经没有了Portlet
 
-## Spring里AOP是什么
+### Spring里AOP是什么
 
 AOP： 全称 Aspect Oriented Programming， 即： **面向切面编程**。
 
@@ -1380,7 +1379,7 @@ Spring AOP 是基于动态代理的，如果要代理的对象实现了某个接
 在Sping中，AOP（Aspect-Oriented Programming，面向切面编程）是一种编程范式，通过在不修改原有代码的情况下，将横切关注点（如事务管理、日志记录等）从核心业务逻辑中解耦出来，并在需要的地方进行统一的切面逻辑处理。
 ```
 
-## AOP主要用在哪些场景中
+### AOP主要用在哪些场景中
 
 事务管理
 
@@ -1398,7 +1397,7 @@ Spring AOP 是基于动态代理的，如果要代理的对象实现了某个接
 
 我们的项目中，事务管理、公共字段填充、全局异常处理都用到了
 
-## Spring的常用注解
+### Spring的常用注解
 
 ```Java
 @Autowrid：用于有值设值方法、非设值方法、构造方法和变量
@@ -1412,9 +1411,9 @@ Spring AOP 是基于动态代理的，如果要代理的对象实现了某个接
 @Transactional：事务管理
 ```
 
-# Day18
+## Day18
 
-## @Resources和@Autowired的区别
+### @Resources和@Autowired的区别
 
 ```Java
 都是用来自动装配的，都可以放在属性的字段上
@@ -1422,7 +1421,7 @@ Spring AOP 是基于动态代理的，如果要代理的对象实现了某个接
 @Resource默认通过byName的方式实现，如果找不到名字，则通过byType实现！如果两个都找不到的情况下，就会报错！
 ```
 
-## SpringMVC执行流程
+### SpringMVC执行流程
 
 MVC 是 Model 一View 一 Controler 的简称，它是一种架构模式，它分离了表现与交互。它被分为三个核心部件：模型、视图、控制器。
 
@@ -1447,7 +1446,7 @@ MVC 是 Model 一View 一 Controler 的简称，它是一种架构模式，它�
 Spring MVC的工作原理是基于Servlet容器的前端控制器模式，首先DispatchServlet接收并分发请求，然后根据HandlerMapping找到对应的Controller进行业务处理，最后通过ViewResolver渲染视图并返回响应给客户端。
 ```
 
-## SpringMVC的常用注解
+### SpringMVC的常用注解
 
 类上的注解：
 
@@ -1472,7 +1471,7 @@ Spring MVC的工作原理是基于Servlet容器的前端控制器模式，首先
 - ModelAttribute：用于获取请求参数
 - RequestBody：用于获取请求JSON参数。
 
-## 为什么用SpringBoot
+### 为什么用SpringBoot
 
 - 独立运行 Spring Boot 而且内嵌了各种 servlet 容器，Tomcat、Jetty 等，现在不再需要打成war 包部署到容器中，Spring Boot 只要打成一个可执行的jar 包就能独立运行，所有的依赖包都在一个 jar 包内。
 - 简化配置 spring-boot-starter-web 启动器自动依赖其他组件，减少了 maven 的配置。自动配置 Spring Boot 能根据当前类路径下的类、jar 包来自动配置 bean，如添加一个 spring-boot-starter-web 启动器就能拥有web的功能，无需其他配置。
@@ -1484,7 +1483,7 @@ Spring MVC的工作原理是基于Servlet容器的前端控制器模式，首先
 使用Spring Boot可以简化编码、减少配置、简化部署、简化监控、简化坐标依赖导入、简化整合其他技术，并提供强大的微服务支持，减少开发人员在搭建和配置项目上的工作量，使开发者能够更专注于业务逻辑的实现，快速构建可靠的、可扩展的应用程序。
 ```
 
-## SpringBoot自动配置原理
+### SpringBoot自动配置原理
 
 SpringBoot的自动配置原理基于条件化配置和约定优于配置的机制。它通过扫描类路径下的依赖、配置文件和注解等信息，结合 Spring Boot提供的自动配置类和条件注解，根据条件判断自动配置哪些组件,然后将它们注入到Spring 容器中。这种方式使得开发者能够快速搭建应用程序，并根据自己的需求进行个性化的配置和扩展。
 
@@ -1503,9 +1502,9 @@ Spring Boot的自动配置原理是基于条件注解和配置文件的机制。
 @ConfigurationProperties注解与配置类进行绑定，实现属性的自动注入。最终，这些自动配置类会被注册到Spring容器中，完成自动配置的过程。
 ```
 
-# Day19
+## Day19
 
-## SpringBoot启动时都做了什么
+### SpringBoot启动时都做了什么
 
 Spring Boot 启动主要经历以下几个步骤：
 
@@ -1522,7 +1521,7 @@ Spring Boot 启动主要经历以下几个步骤：
 Spring Boot启动时会加载配置文件（如application.properties）并扫描自动配置类（通过spring.factories），根据条件判断（如@ConditionalOnClass、@ConditionalOnProperty）自动配置各个组件，将它们注册到Spring容器中。最后，启动应用程序，处理请求，响应用户。简而言之，Spring Boot启动时负责配置加载、自动装配和应用程序的启动。
 ```
 
-## SpringBoot的核心注解
+### SpringBoot的核心注解
 
 ```Java
 SpringBootApplication，由3个注解组成：
@@ -1531,7 +1530,7 @@ SpringBootApplication，由3个注解组成：
     @ComponentScan：Spring组件扫描
 ```
 
-## SpringCloud和SpringBoot的区别
+### SpringCloud和SpringBoot的区别
 
 - Spring Boot专注于快速方便的开发单个个体微服务
 - Spring Cloud是关注全局的微服务协调调整治理框架以及一整套的落地解决方案，它将Spring Boot开发的一个个单体微服务整合并管理起来，为各个微服务之间提供：配置管理，服务发现，断路器，路由，微代理，事件总线等的集成服务
@@ -1541,7 +1540,7 @@ SpringBootApplication，由3个注解组成：
 Spring Boot是用于简化Spring应用的开发和部署的框架，而Spring Cloud是构建分布式系统的解决方案，它基于Spring Boot并提供了分布式系统开发所需的组件与工具。简而言之，Spring Boot是单体应用的生产力工具，Spring Cloud是构建分布式系统的工具集
 ```
 
-## SpringCloud五大组件
+### SpringCloud五大组件
 
 Spring Cloud是一个用于构建分布式系统的开发工具包，它提供了一系列组件来简化分布式系统的开发和管理。以下是Spring Cloud中的五个核心组件：
 
@@ -1553,11 +1552,11 @@ Spring Cloud是一个用于构建分布式系统的开发工具包，它提供�
 
 这五个组件是Spring Cloud中常用的核心组件，它们提供了一系列功能来简化构建分布式系统的工作，实现了服务注册与发现、负载均衡、服务调用、熔断和容错、网关等关键功能，极大提高了分布式系统的可靠性和可用性。
 
-## SpringCloud组件分类
+### SpringCloud组件分类
 
 ![图片展示了Spring Cloud组件分类，分为官方贡献者Pivotal（官方原生组件）和第三方贡献者（第三方组件）两类。官方贡献者有Spring Cloud Gateway、Spring Cloud Sleuth、Spring Cloud Config、Spring Cloud Bus等。第三方贡献者中，Netflix贡献了Feign、Ribbon、Hystrix、Eureka、Zuul等，Alibaba贡献了Nacos、Sentinel、Seata等。该图与上文介绍的Spring Cloud五大组件相关，直观呈现了各组件所属类别及具体名称。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/ZO3RbG4tDo2qzQxJ2BpcnA6cngg.png)
 
-## Eureka工作原理
+### Eureka工作原理
 
 Eureka 是 Spring Cloud 中的服务注册与发现组件，其工作原理可以简述为以下几个步骤:
 
@@ -1573,9 +1572,9 @@ Eureka 是 Spring Cloud 中的服务注册与发现组件，其工作原理可�
 Eureka是Spring Cloud中的服务注册与发现组件。它通过服务注册，在启动时将服务实例信息注册到Eureka注册中心；通过心跳检测与续约，实现服务实例的健康状态监测；通过服务发现，让消费者能够从注册中心获取可用的服务列表；最后，通过负载均衡和容错处理，实现服务调用的负载均衡和容错能力
 ```
 
-# Day20
+## Day20
 
-## Gateway网关的特性
+### Gateway网关的特性
 
 Gateway（网关）是一种在微服务架构中起到请求转发、路由和过滤的作用的组件。他作为系统的入口点，接收所有的客户端请求，并将他们转发到相应的服务上进行处理。以下是Gateway网关的作用和使用方式的说明：
 
@@ -1592,7 +1591,7 @@ Gateway（网关）是一种在微服务架构中起到请求转发、路由和�
 Gateway网关是一种API网关，具有路由、负载均衡、安全认证、限流熔断等特性，用于统一管理和分发请求，提高系统的可用性、安全性和扩展性。网关可以根据请求的路由规则将请求转发到不同的服务实例，并提供过滤机制来实现请求的加解密、鉴权、限流等功能。通过Gateway的配置，可以有效管理和保护微服务中的各个服务。
 ```
 
-## Gateway的路由断言工厂
+### Gateway的路由断言工厂
 
 ![这是一张展示Spring Cloud Gateway相关配置代码的图片，内容为网关的路由相关配置示例。图片中呈现的代码属于Gateway配置的routes部分，包含路由唯一标识为user、路由目的地为lb://eadnews-user的配置；predicates（路由断言）配置了Path=/user/**，用于判断请求是否符合以/user开头的规则，符合则转发到对应目的地；filters（路由过滤器）配置了StripPrefix=1，用于处理请求。此外，配置中还包含全局跨域（cors）相关设置，允许所有请求头、跨域源及GET、POST等常见请求方法，同时提及了add-to-simple-url-handler-mapping相关配置，该图对应文档中关于Gateway路由断言工厂的内容，直观展示了路由断言与过滤器的具体配置形式。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/DV6ebOJWpon2V4x3FIec7Q8jnhg.png)
 
@@ -1606,7 +1605,7 @@ SpringCloud Gateway中一共提供了11种基本的路由断言工厂，分别�
 
 ![图片展示了SpringCloud Gateway中11种基本的路由断言工厂的名称、说明及示例。包括After、Before、Between、Cookie、Header、Host、Method、Path、Query、RemoteAddr、Weight等。如After断言是某个时间点后的请求，示例为-After=2037-01-20T17:42:47.789-07:00\[America/Denver\]；Before断言是某个时间点之前的请求，示例为-Before=2031-04-13T15:14:47.433+08:00\[Asia/Shanghai\]等。该图与上文介绍Gateway路由断言工厂的内容相关，直观呈现了断言工厂的类型及示例。](https://feishu.cn/file/JRdobc3d8oxoqXxCbspccYxXnGe)
 
-## 事务失效的场景有哪些
+### 事务失效的场景有哪些
 
 - 非public方法上加了事务注解
 - 非事务方法调用了事务方法
@@ -1614,7 +1613,7 @@ SpringCloud Gateway中一共提供了11种基本的路由断言工厂，分别�
 - 类上未加上@Service注解，spring不会管理此组件
 - 方法上未加@Transactional注解
 
-## RabbitMQ工作模式
+### RabbitMQ工作模式
 
 RabbitMQ是一个广泛使用的开源消息代理，它支持多种工作模式。以下是RabbitMQ的几种常见的工作模式以及它们的特点和应用场景：
 
@@ -1647,7 +1646,7 @@ RabbitMQ是一个广泛使用的开源消息代理，它支持多种工作模式
 RabbitMQ工作模式包括简单模式、工作队列、广播模式、路由模式、主题模式和RPC模式，分别适用于不同的消息传递和处理需求。
 ```
 
-## RabbitMQ消息可靠性保证
+### RabbitMQ消息可靠性保证
 
 RabbitMQ 提供的消息可靠性保证措施措施可以从生产端、服务端和消费端的角度来说明：
 
@@ -1675,9 +1674,9 @@ RabbitMQ 提供的消息可靠性保证措施措施可以从生产端、服务�
 RabbitMQ消息可靠性保证措施包括发布者确认、消费者确认、持久化队列和交换机、事务机制以及手动确认消息等
 ```
 
-# Day21
+## Day21
 
-## RabbitMQ死信队列
+### RabbitMQ死信队列
 
 RabbitMQ的死信队列（Dead Letter Queue） 是用来处理无法被正常消费或处理的消息的特殊队列。产生死信队列的情况有以下几种：
 
@@ -1691,7 +1690,7 @@ RabbitMQ的死信队列（Dead Letter Queue） 是用来处理无法被正常消
 RabbitMQ死信队列用于处理未能被消费者处理的消息，主要发生在消息被拒绝、消息过期和队列达到最大长度时。
 ```
 
-## RabbitMQ消息重复消费问题
+### RabbitMQ消息重复消费问题
 
 RabbitMQ 消息重复消费问题通常由以下原因导致的：
 
@@ -1709,7 +1708,7 @@ RabbitMQ 消息重复消费问题通常由以下原因导致的：
 - 加锁：消费者在处理消息前，使用Redis（更好的是使用Redisson框架，可以自动续期锁）的set命令添加nx选项设置分布式锁，key为消息id，值是任意值。如果设置分布式锁失败，则忽略重复消息，拒绝处理。如果设置分布式锁成功，则处理业务
 - 消息确认：消费者应及时地发送消息确认（ACK）给RabbitMq，表示已经成功处理了消息。这样RabbitMq就不会将消息重新分发其他消费者
 
-## 为什么使用Xxl-Job而不是SpringTask
+### 为什么使用Xxl-Job而不是SpringTask
 
 
 
@@ -1717,13 +1716,13 @@ RabbitMQ 消息重复消费问题通常由以下原因导致的：
 xxl-job是一个分布式任务调度框架，用于解决大规模分布式系统中的定时调度和任务管理问题。使用xxl-job可以实现任务的分片、路由和可视化管理，同时提供处理异常和报警功能。相比于springTask，xxl-job具有更强的分布式支持和扩展性，适用于复杂的分布式系统和大规模任务管理场景，而springTask更适合于简单的任务调度和单机环境。
 ```
 
-## Xxl-Job在项目中的使用步骤
+### Xxl-Job在项目中的使用步骤
 
 ```Java
 xxl-job集成到Spring Boot工程中的使用步骤包括：添加xxl-job的依赖到构建文件中、配置xxl-job的参数，如调度中心地址和执行器名称，创建执行器类并注册为Spring的Bean，编写定时任务类并在项目启动时初始化任务调度器。
 ```
 
-## ElasticSearch倒排索引
+### ElasticSearch倒排索引
 
 
 
@@ -1731,27 +1730,27 @@ xxl-job集成到Spring Boot工程中的使用步骤包括：添加xxl-job的依�
 ElasticSearch的倒排索引是一种将词条和文档id之间的对应关系反转储存的结构，通过快速定位包含特定词条的文档来提高搜索效率。倒排索引的储存方式避免了全文扫描，通过将关键词与文档ID建立映射关系，使得搜索引擎能够快速检索出包含关键词的文档，从而提高了搜索效率。
 ```
 
-# Day22
+## Day22
 
-## Seata分布式事务框架
+### Seata分布式事务框架
 
 ```Java
 Seata分布式事务框架的使用步骤为：引入依赖、配置事务切面和数据源代理、添加@GlobalTransactional注解。AT模式：效率高、回滚机制通过发送回滚请求和Undo Log实现、通过两阶段提交协议实现最终一致性，一阶段提交请求 阶段收集执行结果和Undo Log，二阶段提交确认/回滚阶段执行最终操作。
 ```
 
-## 为什么用MongoDB
+### 为什么用MongoDB
 
 ```Java
 MongoDB的使用能够带来非结构化数据存储、高扩展性和性能、灵活的开发过程、高可用性和容错性、强大的查询功能以及活跃的社区支持和生态系统，适用于许多大规模数据处理和非结构化数据存储的应用场景。
 ```
 
-## 为什么MongoDB比MySQL快
+### 为什么MongoDB比MySQL快
 
 ```Java
 MongoDB比MySQL快的原因在于它使用了内存映射的技术提高数据访问速度、支持多类型索引优化查询、具备分布式存储和查询能力，并且不需要复杂的关系模型，适用于大规模数据处理和非结构化数据存储场景。
 ```
 
-## MongoDB和Redis的区别
+### MongoDB和Redis的区别
 
 ![图片是一张对比表，展示了MongoDB和Redis在数据类型、存储方式、查询能力、内存管理、数据持久性、可扩展性、数据一致性及主要应用场景等方面的区别。如MongoDB支持复杂数据类型和非结构化数据，而Redis主要支持键值对数据；MongoDB可通过持久化机制将数据持久化在磁盘上，Redis可将数据保存在内存中作为缓存；MongoDB提供丰富查询表达式和聚合框架，Redis仅提供基本查询功能；MongoDB不以内存为中心，Redis以内存为中心；MongoDB支持数据持久化，Redis可通过持久化机制实现；MongoDB支持分片和复制集，Redis支持分布式集群；MongoDB提供强一致性，Redis提供最终一致性；MongoDB适用于大规模数据存储和复杂查询，Redis适用于高速读写的缓存、消息队列等。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/WZO0brQByoOjLRxjJEOceyiTnXg.png)
 
@@ -1759,7 +1758,7 @@ MongoDB比MySQL快的原因在于它使用了内存映射的技术提高数据�
 MongoDB和Redis在几个关键方面有明显区别。首先，数据模型不同，MongoDB支持复杂数据类型和非结构化数据，而Redis主要支持键值对。其次，存储方式不同，MongoDB将数据持久化在磁盘上，而Redis可以将数据保存在内存中作为缓存，最后，应用场景不同，MongoDB适用于大规模数据存储和复杂查询，而Redis适用于高性能的键值对缓存和消息队列等场景。根据具体需求，选择适合的数据库方案
 ```
 
-## Nginx的作用
+### Nginx的作用
 
 ```Java
 反向代理：将多台服务器代理成一台服务器
@@ -1767,9 +1766,9 @@ MongoDB和Redis在几个关键方面有明显区别。首先，数据模型不�
 动静分离：nginx可以用作静态文件的缓存服务器，提高访问速度。
 ```
 
-# Day23
+## Day23
 
-## Linux常用命令
+### Linux常用命令
 
 系统类的：
 
@@ -1809,7 +1808,7 @@ MongoDB和Redis在几个关键方面有明显区别。首先，数据模型不�
 
   - cat file.txt（显示名为"file.txt"的文件的内容）
 
-## Jenkins自动部署原理
+### Jenkins自动部署原理
 
 ![图片展示了Jenkins自动部署的流程。开发人员提交代码至Gitlab代码仓库，Jenkins从仓库拉取代码，进行编译、代码审查、打包等操作，再将项目部署到测试服务器和生产服务器，由测试人员和用户进行测试和访问使用。图中还标注了JDK、Git、Maven等关键组件，以及Tomcat服务器等部署环境，直观呈现了Jenkins在项目构建、部署中的作用。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/EJAPbtSUboQhTtxcu3ycCfrLnYf.png)
 
@@ -1832,13 +1831,13 @@ MongoDB和Redis在几个关键方面有明显区别。首先，数据模型不�
 
 Jenkins通过提供一个可定制的、持续集成和交互的自动化流程，结合不同的插件和工具，实现了Java项目的自动化部署。它可以自动化执行构建、测试和部署等任务，减少人工操作，提高交付速度和质量。同时，Jenkins还支持日志记录、通知、报告生成等记录，方便开发团队进行监控和跟踪。
 
-## 你公司的性质
+### 你公司的性质
 
 ```Java
 我们是小型项目外包制公司，主要业务是接项目做，我们技术团队负责开发客户的项目并交付给客户使用。我们可以实现任何客户的需求（小程序、APP、官方网站、管理系统）
 ```
 
-## 技术团队组成
+### 技术团队组成
 
 ```Java
 公司总人差不多二三十人，技术团队（技术部）总共12人，1个技术经理、4个Java、其他各一个，包括产品经理、UI、前端、IOS、安卓、运维、测试。（注意小公司是没有架构师和项目经理）。我认为自己在团队中属于中等偏上水平，能独立按时保质的完成领导交代的任务。
@@ -1846,67 +1845,67 @@ Jenkins通过提供一个可定制的、持续集成和交互的自动化流程�
 
 
 
-# Day24
+## Day24
 
-## 软件开发流程
+### 软件开发流程
 
 ```Java
 
 ```
 
-## 项目开发为什么需要这么久
+### 项目开发为什么需要这么久
 
-## 项目做了这么久怎么挣钱
+### 项目做了这么久怎么挣钱
 
-## 为什么用微服务而不是单体项目
+### 为什么用微服务而不是单体项目
 
-## 为什么你们用的是这个RabbitMQ而不是Kafka？
+### 为什么你们用的是这个RabbitMQ而不是Kafka？
 
 
 
-# Day25
+## Day25
 
-## 软件开发流程
+### 软件开发流程
 
-## 项目开发为什么需要这么久
+### 项目开发为什么需要这么久
 
-## 项目做了这么久怎么挣钱
+### 项目做了这么久怎么挣钱
 
-## 为什么用微服务而不是单体项目
+### 为什么用微服务而不是单体项目
 
-## 为什么你们用的是这个RabbitMQ而不是Kafka？
+### 为什么你们用的是这个RabbitMQ而不是Kafka？
 
-## 第一个项目的甲方公司是哪家
+### 第一个项目的甲方公司是哪家
 
-## 技术选型由谁决定
+### 技术选型由谁决定
 
-# Day26
+## Day26
 
-## 你的工作是谁安排的
+### 你的工作是谁安排的
 
-## 写过技术文档吗
+### 写过技术文档吗
 
-## 设计过接口文档吗
+### 设计过接口文档吗
 
-## 接口文档规范你知道吗
+### 接口文档规范你知道吗
 
-## 接口文档是由谁负责的，文档里有什么
+### 接口文档是由谁负责的，文档里有什么
 
-## 在项目中设计过表吗，具体是哪些表？
+### 在项目中设计过表吗，具体是哪些表？
 
-# Day27
+## Day27
 
-## 写过前端页面吗，前端水平如何
+### 写过前端页面吗，前端水平如何
 
-## 怎么判断代码写的好不好
+### 怎么判断代码写的好不好
 
-## 接口健壮性如何保障
+### 接口健壮性如何保障
 
-## 接口幂等性是啥
+### 接口幂等性是啥
 
-## API接口很慢如何解决
+### API接口很慢如何解决
 
-# Day28
+## Day28
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 08 面试知识库 / 八股文面试题 / 每日背诵 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/EVTQwyGJIiJ0Y2kKKlFccfbNngg)

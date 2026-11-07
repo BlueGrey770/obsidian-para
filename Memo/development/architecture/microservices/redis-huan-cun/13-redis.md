@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "13 redis"
 ---
+# 13 redis
 
-<title>13 redis</title>
-
-# redis的基本数据类型
+## redis的基本数据类型
 
 | **数据类型** | **介绍** | **描述** |
 |-|-|-|
@@ -17,37 +16,37 @@ aliases:
 | set | 集合 | 无序集合，没有重复元素，类似于java中的HashSet |
 | zset / sorted-set | 有序集合 | 集合中每个元素关联一个分数（score），根据分数排序，没有重复元素 |
 
-## String
+### String
 
 <sheet sheet-id="fZwlwK" token="TpUdsY56HhyjMCtljJqch742nje"></sheet>
 
-## hash
+### hash
 
 <sheet sheet-id="mNBx2b" token="TpUdsY56HhyjMCtljJqch742nje"></sheet>
 
-## List
+### List
 
 <sheet sheet-id="d1oGfL" token="TpUdsY56HhyjMCtljJqch742nje"></sheet>
 
-## Set
+### Set
 
 <sheet sheet-id="y1i2kM" token="TpUdsY56HhyjMCtljJqch742nje"></sheet>
 
-## ZSet
+### ZSet
 
 <sheet sheet-id="dFgFqD" token="TpUdsY56HhyjMCtljJqch742nje"></sheet>
 
-## 通用命令
+### 通用命令
 
 > 所谓的通用命令就是指部分数据类型的通用命令
 
 <sheet sheet-id="zCuUcV" token="TpUdsY56HhyjMCtljJqch742nje"></sheet>
 
-# 在Java程序中使用redis
+## 在Java程序中使用redis
 
 > 现在我们使用springboot框架写项目所以使用spring data redis
 
-## 引入依赖
+### 引入依赖
 
 <callout emoji="📌">
 在项目的pom.xml文件中引入redis的起步依赖  
@@ -61,7 +60,7 @@ aliases:
 </dependency>
 ```
 
-## 设置缓存
+### 设置缓存
 
 <callout emoji="🍰">
 在出现热点数据的地方设置redis缓存来减轻数据库的压力  

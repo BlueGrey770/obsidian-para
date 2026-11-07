@@ -4,12 +4,9 @@ date: 2026-11-06
 aliases:
   - "04 数据库连接 sql语句"
 ---
+# 04 数据库连接 sql语句
 
-<title>04 数据库连接 sql语句</title>
-
-
-
-# idea连接数据库
+## idea连接数据库
 
 打开ide在右侧找到下图中的MySQL图标 依次点击操作
 
@@ -27,9 +24,9 @@ aliases:
 
 ![这张图展示了数据库相关的操作界面，左侧是test01.sql文件的代码区域，其中用红框标注了两条创建数据库的SQL命令，分别为“create database db01;”和“create database db02;”，旁侧标注有“通过命令创建数据库”的提示；右侧是数据库连接界面，标注为“Database”区域，界面上方显示有“2 of 6”的内容，右侧的数据库列表区域用红框勾选了db01和db02选项，同时标注有“选择创建的数据库 显示”的提示，整体对应文档中创建数据库并连接查看的操作内容。](../../../../Attachments/development/databases/mysql-ji-chu-yu-sql/RxiWbBZMMoClbqxtqo4crbHenBd.png)
 
-# Mysql_DDL语句
+## Mysql_DDL语句
 
-## 操作库的crud
+### 操作库的crud
 
 ```SQL
 -- 创建一个库 名字itheima142001
@@ -48,7 +45,7 @@ use itheima142002;
 show create database itheima142002;
 ```
 
-## 操作表的crud
+### 操作表的crud
 
 1. **Java与sql数据类型比对**
 

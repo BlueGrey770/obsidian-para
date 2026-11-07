@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "第二章 运营服务管理模块"
 ---
+# 第二章 运营服务管理模块
 
-<title>第二章 运营服务管理模块</title>
-
-# 学习目标
+## 学习目标
 
 运营服务管理模块是我们在本项目学习的第一个模块，运营服务管理模块相当于商品管理，商品管理功能很通用，最典型的就是电商项目中的商品管理，家政项目中的家政服务项目相当于商品，凡是涉及消费用户的项目都包括商品管理模块，通过本章节的学习掌握商品管理模块的设计、开发细节。
 
@@ -59,17 +58,17 @@ aliases:
 
 
 
-# 代码环境
+## 代码环境
 
 jzo2o-foundations：dev_01
 
 
 
-# 1 前置知识
+## 1 前置知识
 
-## 1.1 如何进行需求分析
+### 1.1 如何进行需求分析
 
-### 1）如何进行需求分析？
+#### 1）如何进行需求分析？
 
 在系统设计之前需要进行需求分析，需求分析就是根据用户所提的需求进行理解，它是软件开发周期中的关键环节，它直接影响到后续的设计、开发和测试阶段。需求分析阶段做好了能够减少后期修改的成本，提高系统的质量和用户的满意度。因此，在需求分析阶段投入足够的时间和资源是非常必要的。
 
@@ -84,7 +83,7 @@ jzo2o-foundations：dev_01
 - 分析对象属性：根据业务流程分析涉及到的对象有哪些及对象属性。
 - 分析非功能性需求：比如性能要求、安全性、可维护性等。
 
-### 2）产品原型
+#### 2）产品原型
 
 与客户沟通最好的方式就是通过界面原型进行沟通，因为界面原型客户看的懂，它是需求阶段最接近软件成品产物。
 
@@ -96,7 +95,7 @@ jzo2o-foundations：dev_01
 
 
 
-### 3）**分析功能列表**
+#### 3）**分析功能列表**
 
 通常按不同的端进行分析，例如下表是云岚到家项目消费端的功能列表（部分功能）：
 
@@ -104,7 +103,7 @@ jzo2o-foundations：dev_01
 
 
 
-### 4）**模块化设计**
+#### 4）**模块化设计**
 
 模块化设计是在需求分析阶段对功能需求划分模块：
 
@@ -126,9 +125,9 @@ jzo2o-foundations：dev_01
 
 
 
-### 5）细化需求
+#### 5）细化需求
 
-#### 完善界面原型
+##### 完善界面原型
 
 和用户确定了项目范围，下一步就正式进入需求分析阶段，产品经理对界面原型进行完善，细化原型中的参数说明、对象属性、规则、约束、分析用户操作流程等。
 
@@ -140,7 +139,7 @@ jzo2o-foundations：dev_01
 
 ![图片为服务管理模块中服务详情的规则说明表。表中列出了服务名、服务类型、参考服务单价、单位、排序、图标、服务图片、服务描述、服务详情长图等字段的必填/选填、唯一、限制要求及提示内容。如服务名必填且唯一，限制要求为字数2 - 5个汉字，超出无法输入，提示内容为字段名称格式错误，需重新输入。该表与上文提到的对界面原型进行完善，细化原型中的参数说明等内容相呼应，是对服务详情规则的详细说明。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WWvubMCzoo2KSyxeQg4chL8ZnYb.png)
 
-#### 用户操作流程
+##### 用户操作流程
 
 还需要细化用户的操作流程。
 
@@ -148,7 +147,7 @@ jzo2o-foundations：dev_01
 
 
 
-### 6）非功能性需求
+#### 6）非功能性需求
 
 除了功能需求还有非功能需求，比如性能要求、安全性、可维护性等这些也需要在需求阶段进行分析。
 
@@ -160,7 +159,7 @@ app首页为了提高动态数据的加载速度，保证首页3秒内加载完�
 
 
 
-### 7）需求阶段产物
+#### 7）需求阶段产物
 
 需求分析阶段的产物：
 
@@ -174,7 +173,7 @@ AI: 给我一份需求规格说明书的例子，内容要足够详细
 
 
 
-### 8）实战
+#### 8）实战
 
 阅读“运营服务管理模块用户需求文档v1.0”，进行区域服务管理子模块进行需求分析，要求如下：
 
@@ -230,7 +229,7 @@ AI: 给我一份需求规格说明书的例子，内容要足够详细
 
 
 
-### 9) 小结
+#### 9) 小结
 
 你参与需求分析了吗？如何进行需求分析？
 
@@ -238,9 +237,9 @@ AI: 给我一份需求规格说明书的例子，内容要足够详细
 
 
 
-## 1.2 如何进行系统设计
+### 1.2 如何进行系统设计
 
-### 1) 如何进行系统设计？
+#### 1) 如何进行系统设计？
 
 需求分析阶段完成是系统设计阶段，系统设计分为概要设计和详细设计。
 
@@ -288,7 +287,7 @@ AI:
 
 
 
-### 2) **系统架构设计**
+#### 2) **系统架构设计**
 
 系统的业务模块划分好后就可以根据业务模块的划分进行系统架构设计：
 
@@ -309,7 +308,7 @@ AI:
 
 
 
-### 3) **数据库设计**
+#### 3) **数据库设计**
 
 根据需求分析及模块设计进行数据库设计：
 
@@ -346,7 +345,7 @@ region与serve_item是什么关系？
 
 
 
-### 4) **接口设计**
+#### 4) **接口设计**
 
 根据需求分析梳理功能列表、分析用户操作流程，然后再去设计外部接口及功能接口。
 
@@ -378,7 +377,7 @@ region与serve_item是什么关系？
 
 
 
-### 5) 小结
+#### 5) 小结
 
 你在进行设计时都设计哪些内容？
 
@@ -388,7 +387,7 @@ region与serve_item是什么关系？
 
 
 
-# 2 运营服务管理
+## 2 运营服务管理
 
 通过本模块的学习掌握家政项目运营服务管理模块的数据库、接口等设计内容，以及基于本项目架构进行开发的流程。
 
@@ -396,9 +395,9 @@ region与serve_item是什么关系？
 
 
 
-## 2.1 区域服务管理子模块设计
+### 2.1 区域服务管理子模块设计
 
-### 1）模块定位
+#### 1）模块定位
 
 区域服务管理模块是运营服务管理的子模块，它是以城市区域为单位，对本区域运营的服务项进行管理。
 
@@ -406,7 +405,7 @@ region与serve_item是什么关系？
 
 
 
-### 2）数据表
+#### 2）数据表
 
 区域服务管理模块最基本的是区域表和服务项表，然后是区域与服务项的关系表，此关系表存储了区域内所运营家政服务项目的信息。
 
@@ -432,7 +431,7 @@ region与serve_item是什么关系？
 
 
 
-### 3）生成模型类
+#### 3）生成模型类
 
 数据库表设计完成就可以使用工具生成模型类、mapper接口、mapper映射文件等。
 
@@ -515,13 +514,13 @@ public enum IdType {
 
 
 
-### 4)  外部接口
+#### 4)  外部接口
 
 在上传服务项图片时涉及外部接口，下图上传图片功能如果将图片保存到云平台则需要调用云平台的上传图片接口。
 
 ![这张图片展示的是添加服务项的界面，对应文档中“在添加服务项界面中，上传服务项的图片会通过通用模块jzo2o-publics上传到OSS”的相关内容。界面内包含多项需填写或选择的内容：标有*的必填项有服务名称、服务类型、参考服务单价、服务单位、排序、服务图标、服务图片；其中服务图标上传按钮旁标注需上传jpg/png格式文件，大小在200K以内，服务图片上传按钮旁标注需上传jpg/png格式文件，大小在5M以内。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/NIEbbawdMokVxVx39HJchUR2nrh.png)
 
-### 5）内部接口
+#### 5）内部接口
 
 根据本模块的定位，本模块去管理区域下运营的服务项目，那么本模块就要提供以下接口供其它模块调用：
 
@@ -545,7 +544,7 @@ public enum IdType {
 
 
 
-### 6）功能接口
+#### 6）功能接口
 
 根据用户的操作流程分析功能列表，区域服务管理子模块功能列表如下：
 
@@ -562,17 +561,17 @@ public enum IdType {
 
 
 
-### 7）小结
+#### 7）小结
 
 用自己的话介绍一下区域服务管理模块的设计内容？
 
 
 
-## 1.2 查询区域服务
+### 1.2 查询区域服务
 
 下边我们根据模块功能列表进行开发，首先进行接口设计，然后进行开发。
 
-### 1.2.1 梳理接口
+#### 1.2.1 梳理接口
 
 设计接口前先梳理本模块涉及哪些接口，根据梳理出的接口制定工作计划。
 
@@ -589,7 +588,7 @@ public enum IdType {
 
 
 
-### 1.2.1 接口设计
+#### 1.2.1 接口设计
 
 下边设计区域服务分页查询接口，企业中前后分离开发通常由java程序员设计接口，设计完成提供接口文档给前端工程师。
 
@@ -607,7 +606,7 @@ public enum IdType {
 
 所以我们设计接口需要设计这些内容。
 
-##### **HTTP请求方法**
+###### **HTTP请求方法**
 
 根据RESTful规范:
 
@@ -665,7 +664,7 @@ public class ServeController {
 
 
 
-##### **接口路径**
+###### **接口路径**
 
 定义为RESTful风格的路径。
 
@@ -720,7 +719,7 @@ public class ServeController {
 
 
 
-##### **请求参数类型**
+###### **请求参数类型**
 
 常用的有：
 
@@ -738,7 +737,7 @@ application/x-www-form-urlencoded，传递key/value串，就是在url后通过�
 
 
 
-##### **请求参数内容**
+###### **请求参数内容**
 
 请求参数的内容根据需求文档和界面原型去识别。
 
@@ -844,7 +843,7 @@ public class ServeController {
 
 
 
-##### **响应结果类型**
+###### **响应结果类型**
 
 常见的类型有：text/html、text/plain、application/json等。
 
@@ -868,7 +867,7 @@ HTTP状态码是服务器返回给客户端的数字代码（三位数字），�
 
 
 
-##### **响应结果内容**
+###### **响应结果内容**
 
 分页查询通用的响应内容有：数据列表、总页数、总记录数
 
@@ -1010,7 +1009,7 @@ public class ServeResDTO {
 
 
 
-##### 接口设计完成
+###### 接口设计完成
 
 将Controller类中对应接口的方法编写完成就代表接口设计完成。
 
@@ -1053,7 +1052,7 @@ public class ServeController {
 
 
 
-##### 生成接口文档
+###### 生成接口文档
 
 我们通过swagger根据controller类最终生成接口文档，接口设计信息如下：
 
@@ -1106,19 +1105,19 @@ Java程序员可以使用接口文档测试接口，下边说明测试方法。
 
 
 
-#### 3) 小结
+##### 3) 小结
 
 如何设计一个RESTful接口？
 
 
 
-### 1.1.2 Mapper开发
+#### 1.1.2 Mapper开发
 
 目标：掌握开发持久层接口的过程。
 
 
 
-#### 1）生成基础代码
+##### 1）生成基础代码
 
 通常一个接口需求明确后从持久层开始开发。
 
@@ -1128,7 +1127,7 @@ Java程序员可以使用接口文档测试接口，下边说明测试方法。
 
 
 
-#### 2）mapper开发
+##### 2）mapper开发
 
 持久层基础代码生成完毕下边开发mapper接口，对于通用的CRUD接口由MybatisPlus提供。
 
@@ -1203,7 +1202,7 @@ public interface ServeMapper extends BaseMapper<Serve> {
 </mapper>
 ```
 
-#### 3）单元测试
+##### 3）单元测试
 
 对mapper接口进行测试
 
@@ -1240,7 +1239,7 @@ class ServeMapperTest {
 
 
 
-#### 4）小结
+##### 4）小结
 
 Mybatis-Plus有几种主键生成策略？
 
@@ -1254,9 +1253,9 @@ Mybatis-Plus有几种主键生成策略？
 
 
 
-### 1.1.3 Service开发
+#### 1.1.3 Service开发
 
-#### **1) 定义service接口**
+##### **1) 定义service接口**
 
 service接口是提供controller调用，service接口的参数由controller传入通常controller方法将它的形参直接传入service方法，对于通用的service方法则需要定义更通用的参数，service方法的返回值类型通常可以直接定义为controller方法的返回值类型。
 
@@ -1290,7 +1289,7 @@ public interface IServeService extends IService<Serve> {
 }
 ```
 
-#### 2）定义service实现类
+##### 2）定义service实现类
 
 这里我们使用的Mybatis-Plus提供的ServiceImpl类，如下代码，在此类中有baseMapper，baseMapper即是ServeMapper实例。
 
@@ -1335,7 +1334,7 @@ public class ServeServiceImpl extends ServiceImpl<ServeMapper, Serve> implements
 }
 ```
 
-#### 3）实现分页查询
+##### 3）实现分页查询
 
 如何实现分页查询？
 
@@ -1395,7 +1394,7 @@ public PageResult<ServeResDTO> page(ServePageQueryReqDTO servePageQueryReqDTO) {
 
 
 
-#### 4）单元测试
+##### 4）单元测试
 
 ```Java
 package com.jzo2o.foundations.service;
@@ -1432,7 +1431,7 @@ class IServeServiceTest {
 }
 ```
 
-#### 5）分页原理
+##### 5）分页原理
 
 使用com.github.pagehelper分页插件实现分页功能，下边介绍它的执行原理。
 
@@ -1452,15 +1451,15 @@ PageHelperUtils是项目封装的一个工具类，进入selectPage方法，调�
 
 
 
-#### 5）小结
+##### 5）小结
 
 项目的分页查询是怎么实现的？
 
 
 
-### 1.1.4 Controller开发
+#### 1.1.4 Controller开发
 
-#### 1）完善controller方法
+##### 1）完善controller方法
 
 在controller方法中调用service方法进行业务处理。
 
@@ -1507,7 +1506,7 @@ public class ServeController {
 }
 ```
 
-#### 2）接口测试
+##### 2）接口测试
 
 重启服务，通过接口文档工具进行测试。
 
@@ -1537,7 +1536,7 @@ public class ServeController {
 
 
 
-#### 3）单元测试
+##### 3）单元测试
 
 有些公司要求需要对三层bean进行单元测试，针对controller方法如何单元测试？
 
@@ -1590,17 +1589,17 @@ public class ServeControllerTest {
 
 
 
-#### 4）小结
+##### 4）小结
 
 如何开发conroller方法？
 
 
 
-### 1.1.5 前后端联调
+#### 1.1.5 前后端联调
 
 前后端联调是一种类似生产环境的测试，通过前端请求后端接口测试业务功能。
 
-#### 1）启动前后端
+##### 1）启动前后端
 
 启动foundations服务。
 
@@ -1610,7 +1609,7 @@ public class ServeControllerTest {
 
 ![图片展示的是Windows PowerShell界面，显示了vite v2.9.15开发服务器运行信息。界面上方有“Windows PowerShell”标题，下方内容以绿色字体呈现，显示开发服务器运行在多个网络地址，包括http://172.16.43.194:3000/、http://192.168.27.1:3000/、http://192.168.101.1:3000/等，以及http://localhost:3000/的本地地址，最后以“ready in 1184ms.”结束。该图片与文档中前后端联调内容相关，用于说明前后端测试时可从浏览器网络记录跟踪请求参数和响应结果。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Yg44bjp9BoYpLNx2Kgkc98finQg.png)
 
-#### 2）前后端联调
+##### 2）前后端联调
 
 根据业务操作流程进行测试。
 
@@ -1638,17 +1637,17 @@ public class ServeControllerTest {
 
 
 
-#### 3) 小结
+##### 3) 小结
 
 前后端联调都调些什么，怎么进行前后端联调？
 
 
 
-## 1.2 添加区域服务
+### 1.2 添加区域服务
 
-### 1.2.1 接口设计
+#### 1.2.1 接口设计
 
-#### 1）接口分析
+##### 1）接口分析
 
 下边设计添加区域服务接口，重点设计：传入参数类型、参数内容、响应结果内容。
 
@@ -1722,7 +1721,7 @@ serve表存储了区域中开通的服务，根据字段信息思考数据来源
 
 
 
-#### 2）接口定义
+##### 2）接口定义
 
 1. 首先定义接收传入参数的模型类ServeUpsertReqDTO
 
@@ -1782,7 +1781,7 @@ public class ServeController {
 
 ![图片展示的是家政服务 - 运营基础服务接口文档中“区域服务批量新增”的接口定义。HTTP方法为POST，请求数据类型为application/json，响应数据类型为“*” 。请求示例为JSON格式，包含serveItemId、regionId、price三个字段。请求参数中，serveUserReqDTOList为必填的body类型数组，包含serveitemid、regionid、price字段，serveitemid、regionid、price均为必填的参数。该图片与上文介绍的添加区域服务接口设计相关，直观呈现了接口的请求示例和参数信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Nk0xb8eKIoqNWTxPidhcXLx2nnf.png)
 
-#### 3）小结
+##### 3）小结
 
 如何设计添加接口？
 
@@ -1790,13 +1789,13 @@ public class ServeController {
 
 
 
-### 1.2.2 接口开发
+#### 1.2.2 接口开发
 
-#### 1）mapper
+##### 1）mapper
 
 添加接口只向serve表添加数据所以使用mybatisplus提供的单表CRUD方法即可无需自定义mapper接口。
 
-#### 2）service
+##### 2）service
 
 定义service接口：
 
@@ -1860,7 +1859,7 @@ public void batchAdd(List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 
 
-#### 3) controller
+##### 3) controller
 
 在controller方法中调用service接口添加区域服务。
 
@@ -1872,7 +1871,7 @@ public void add(@RequestBody List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 }
 ```
 
-#### 4）小结
+##### 4）小结
 
 如何开发一个添加接口？
 
@@ -1884,11 +1883,11 @@ public void add(@RequestBody List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 
 
-### 1.2.3 测试
+#### 1.2.3 测试
 
 我们通过前后端联调测试添加区域服务接口。
 
-#### 1）启动前后端
+##### 1）启动前后端
 
 启动foundations服务。
 
@@ -1898,7 +1897,7 @@ public void add(@RequestBody List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 ![这是一张显示Windows PowerShell窗口的截图，内容为vite开发服务器的运行信息。页面显示v2.9.15版本的开发服务器已启动，当前处于就绪状态，就绪耗时1184毫秒。窗口中列出了多个可访问地址，包含对应Network、Local的访问路径，涵盖局域网内不同IP地址的访问链接及本地localhost访问链接，所有链接的端口号均为3000，这些链接用于提供当前开发环境下的服务访问入口。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/PkOdbGfmboFKLaxvzsxcE8ibngc.png)
 
-#### 2）前后端联调
+##### 2）前后端联调
 
 因为代码是我们写的，我们在前后端联调时除了测试成功结果还要测试失败结果。
 
@@ -1944,11 +1943,11 @@ public void add(@RequestBody List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 
 
-## 1.3 修改价格
+### 1.3 修改价格
 
-### 1.3.1 接口设计
+#### 1.3.1 接口设计
 
-#### 1) 接口分析
+##### 1) 接口分析
 
 根据界面原型设计传入参数类型、参数内容、响应结果内容。
 
@@ -1980,7 +1979,7 @@ public void add(@RequestBody List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 
 
-#### 2) 接口定义
+##### 2) 接口定义
 
 编写controller方法，HTTP方法使用PUT方式，代码如下：
 
@@ -2005,11 +2004,11 @@ public void update( @PathVariable("id") Long id,
 
 ![图片展示的是家政服务 - 运营基础服务接口文档中“区域服务价格修改”的接口定义。HTTP方法为PUT，接口路径为/foundations/operation/serve/{id}，请求数据类型为application/x-www-form-urlencoded，响应数据类型为“*/*”。请求参数包括id（服务id，path类型，必填，数据类型为integer(int64)）、price（价格，query类型，必填，数据类型为number(double)）。该图片与上文接口设计中接口定义部分对应，直观呈现了接口相关参数信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/F4g9bheKXofUx9xw00Vc8ocZn9e.png)
 
-#### 3）mapper
+##### 3）mapper
 
 修改接口只向serve表更新数据所以使用mybatisplus提供的单表CRUD方法即可无需自定义mapper接口。
 
-#### 4）service
+##### 4）service
 
 定义service接口：
 
@@ -2047,7 +2046,7 @@ public Serve update(Long id, BigDecimal price) {
 
 
 
-#### 5) controller
+##### 5) controller
 
 在controller方法中调用service接口价格修改。
 
@@ -2064,13 +2063,13 @@ public void update(@PathVariable("id") Long id,
 }
 ```
 
-#### 6）测试
+##### 6）测试
 
 略
 
 
 
-#### 7) 小结
+##### 7) 小结
 
 如何设计修改接口？
 
@@ -2082,11 +2081,11 @@ public void update(@PathVariable("id") Long id,
 
 
 
-## 1.4 服务上架
+### 1.4 服务上架
 
-### 1.4.1 接口设计
+#### 1.4.1 接口设计
 
-#### 1）接口分析
+##### 1）接口分析
 
 根据业务流程、界面原型进行设计。
 
@@ -2124,7 +2123,7 @@ public void update(@PathVariable("id") Long id,
 
 
 
-#### 2) 接口定义
+##### 2) 接口定义
 
 编写controller方法，HTTP方法使用PUT方式，代码如下：
 
@@ -2147,13 +2146,13 @@ public void onSale(@PathVariable("id") Long id) {
 
 
 
-### 1.4.2 接口开发
+#### 1.4.2 接口开发
 
-#### 1）mapper
+##### 1）mapper
 
 服务上架最终修改serve表的状态，所以使用mybatisplus提供的单表CRUD方法即可无需自定义mapper接口。
 
-#### 2）service
+##### 2）service
 
 定义service接口： 
 
@@ -2214,7 +2213,7 @@ public Serve onSale(Long id){
 
 
 
-#### 3) controller
+##### 3) controller
 
 在controller方法中调用service接口上架区域服务。
 
@@ -2229,15 +2228,15 @@ public void onSale(@PathVariable("id") Long id) {
 }
 ```
 
-#### 4）测试
+##### 4）测试
 
 略
 
 
 
-## 1.5 运营服务管理模块其它接口
+### 1.5 运营服务管理模块其它接口
 
-### 1.5.1 删除区域服务开发
+#### 1.5.1 删除区域服务开发
 
 参考需求文档开发区域服务删除接口。
 
@@ -2247,7 +2246,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 
 
-### 1.5.2 服务下架开发
+#### 1.5.2 服务下架开发
 
 参考需求文档开发服务下架接口。
 
@@ -2255,7 +2254,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 
 
-### 1.5.3 设置热门服务开发
+#### 1.5.3 设置热门服务开发
 
 要求：实现更新serve表的是否热门字段。
 
@@ -2265,7 +2264,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 
 
-### 1.5.4 取消热门服务开发
+#### 1.5.4 取消热门服务开发
 
 要求：实现更新serve表的是否热门字段。
 
@@ -2273,7 +2272,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 ![这张图是“区域服务取消热门”的接口文档内容，属于第二章运营服务管理模块下的删除区域服务开发相关接口。图中明确了该接口的请求方式为PUT，接口路径为/foundations-operation/server-offici/{id}，请求数据类型为application/x-www-form-urlencoded；请求参数包含路径参数id，其为服务id，请求类型为path，是必填项，数据类型为integer(int64)。同时还展示了响应状态，包括状态码200对应OK、201对应Created，以及401、403、404等异常状态，也列明了响应参数，包含返回消息msg（string类型）和返回码code（integer(int32)类型），code为200代表成功，其他值代表失败。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ECnvbhV48olaOTxzdCbcgeyonMe.png)
 
-### 1.5.5 启用区域功能完善
+#### 1.5.5 启用区域功能完善
 
 参考业务流程图进行功能完善，如下图：
 
@@ -2283,7 +2282,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 
 
-### 1.5.6 禁用区域功能完善
+#### 1.5.6 禁用区域功能完善
 
 参考业务流程图进行功能完善，如下图：
 
@@ -2293,7 +2292,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 
 
-### 1.5.7 禁用服务项功能完善
+#### 1.5.7 禁用服务项功能完善
 
 参考业务流程图进行功能完善，如下图：
 

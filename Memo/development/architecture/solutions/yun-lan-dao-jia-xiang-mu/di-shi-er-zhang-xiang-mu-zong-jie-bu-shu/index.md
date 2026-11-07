@@ -4,20 +4,19 @@ date: 2026-11-06
 aliases:
   - "第十二章 项目总结&部署"
 ---
+# 第十二章 项目总结&部署
 
-<title>第十二章 项目总结&amp;部署</title>
-
-# 1 项目总结
+## 1 项目总结
 
 参考：项目梳理思维导图。
 
 
 
-# 2 项目部署
+## 2 项目部署
 
-## 2.1 名词解释
+### 2.1 名词解释
 
-### 什么是DevOps
+#### 什么是DevOps
 
 一个软件的生命周期包括：需求分析阶、设计、开发、测试、上线、维护、升级、废弃。
 
@@ -77,7 +76,7 @@ DevOps是一种思想理念，它涵盖开发、测试、运维的整个过程�
 
 ![图片展示了DevOps理念下的开发与运维流程。左侧以“Dev”命名，包含build（构建）、code（代码）、plan（计划）、test（测试）；右侧以“Ops”命名，包含deploy（部署）、operate（运维）、monitor（监控）。箭头从build指向code，再指向plan，最后指向test，形成开发流程；从deploy指向operate，再指向monitor，形成运维流程。箭头间有“release（发布）”连接，表明开发与运维的紧密协作。此图直观呈现了DevOps中开发与运维的循环与交互关系。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/UAYAb7KqJocayfxmiq0caTwOnAf.png)
 
-### 什么是CI/CD
+#### 什么是CI/CD
 
 如何来落地实现DevOps呢？
 
@@ -117,11 +116,11 @@ CD持续部署：
 
 ![这张图是完整的CI/CD方案架构图，展示了开发人员、测试人员与项目经理三类角色在CI/CD流程中的参与及环境分工。开发人员通过SVN/Git拉取代码，经由Jenkins pipeline的编译集成，包含编译服务器、Docker打包镜像发布，再通过Kubernetes API完成开发测试环境的部署，同时进行监控。测试人员则参与环境部署的Jenkins pipeline，可拉取Harbor镜像仓库中的镜像，通过Kubernetes API滚动部署，对测试环境做监控及日志分析。项目经理可审核部署流程，最终完成生产环境的相关部署环节，清晰呈现了CI/CD从代码拉取到多环境部署的完整链路。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/KlEhbNR8OoaeTPx1SPKc7Q7Qnlc.png)
 
-## 2.2 使用Kubernetes部署
+### 2.2 使用Kubernetes部署
 
-### 2.2.1 K8s介绍
+#### 2.2.1 K8s介绍
 
-#### K8s介绍
+##### K8s介绍
 
 [Kubernetes](https://kubernetes.io/zh-cn/docs/concepts/overview/) 也称为 K8s（k和s中间有8个字母），**是用于自动部署、扩缩和管理容器化应用程序的开源系统**。它将组成应用程序的容器组合成逻辑单元，以便于管理和服务发现。Kubernetes 源自[Google 15 年生产环境的运维经验](http://queue.acm.org/detail.cfm?id=2898444)，同时凝聚了社区的最佳创意和实践。
 
@@ -131,7 +130,7 @@ CD持续部署：
 
 
 
-#### 组成结构
+##### 组成结构
 
 k8s是主从结构，`master`管理节点，与`node`工作节点相对。node干活master管理。
 
@@ -175,9 +174,9 @@ k8s是主从结构，`master`管理节点，与`node`工作节点相对。node�
 
 
 
-### 2.2.2 K8s部署流程
+#### 2.2.2 K8s部署流程
 
-#### 选型
+##### 选型
 
 [KubeSphere](https://kubesphere.io/) 是在 [Kubernetes](https://kubernetes.io/) 之上构建的面向云原生应用的**分布式操作系统**，完全开源，支持多云与多集群管理，提供全栈的 IT 自动化运维能力，简化企业的 DevOps 工作流。它的架构可以非常方便地使第三方应用与云原生生态组件进行即插即用 (plug-and-play) 的集成。https://kubesphere.io/zh/ 
 
@@ -189,11 +188,11 @@ KubeSphere 提供了基于 Jenkins 的可视化 CI/CD 流水线编辑，无需�
 
 ![图片展示了KubeSphere Container Platform的部署流程。从外部工具JIRA + Confluence开始，开发者通过Source Code进入流程。流程包含Code Plan、Code Build、Code Test、Code Release、Code Monitor等环节，涉及静态代码分析、单元测试等。最终，Build and Push Image、Deploy to Kubernetes、Monitor and Operate等步骤完成部署，生成Build Report、Artifact等。图片与上下文紧密相关，直观呈现了KubeSphere部署过程中各环节及工具的关联。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/GaPGbaG4ZoqxHrxGRd6ciwK4nUh.png)
 
-#### 简图
+##### 简图
 
 ![图片展示了Kubernetes部署流程。左侧为Maven流程，从Dockerfile构建镜像，再推送镜像。右侧是Kubernetes部署流程，YAML文件创建deployment并暴露service，Docker推送镜像至节点，节点运行pod APP。该图与文档中K8s部署流程的选型部分相关，直观呈现了基于Jenkins的可视化CI/CD流水线编辑流程，以及将源代码或二进制文件打包到容器映像中的B2I和S2I插件应用示例。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/VYdxbVvViopTDWxGeWcc7QngnAd.png)
 
-#### 部署KubeSphere 
+##### 部署KubeSphere
 
 每个节点(最少三个节点，一主两从)安装Docker
 
@@ -203,7 +202,7 @@ KubeSphere 提供了基于 Jenkins 的可视化 CI/CD 流水线编辑，无需�
 
 
 
-#### 创建项目
+##### 创建项目
 
 **首先创建企业空间**
 
@@ -225,7 +224,7 @@ KubeSphere 中的项目与 Kubernetes 中的命名空间相同，为资源提供
 
 
 
-#### 启用devops
+##### 启用devops
 
 KubeSphere DevOps 系统
 
@@ -241,15 +240,15 @@ DevOps 系统为用户提供了一个自动化的环境，应用可以自动发�
 
 
 
-### 2.2.3 准备工作
+#### 2.2.3 准备工作
 
-#### Git仓库
+##### Git仓库
 
 使用gitee
 
 
 
-#### 阿里云maven仓库
+##### 阿里云maven仓库
 
 开启阿里云“云效”
 
@@ -261,7 +260,7 @@ DevOps 系统为用户提供了一个自动化的环境，应用可以自动发�
 
 
 
-#### 开启阿里docker镜像服务
+##### 开启阿里docker镜像服务
 
 ![图片展示的是阿里云容器镜像服务中创建镜像仓库的界面。左侧为导航栏，有数据、仓库管理等选项。右侧上方有“创建镜像仓库”按钮，下方有仓库名称输入框及仓库名称提示。中间弹出“创建镜像仓库”窗口，第一步为仓库信息，可选择Codeup、GitHub等代码仓库，当前选中“本地仓库”，下方有“创建镜像仓库”和“取消”按钮。该图片与文档中开启阿里云“云效”、将项目中的共享库发布到阿里云maven仓库等内容相关，用于说明创建镜像仓库的操作步骤。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/FJo3bJ7t0o7Ypoxp7DtcrVMRn1b.png)
 
@@ -271,9 +270,9 @@ k8s在进行CI/CD时将镜像发布到阿里镜像服务中
 
 
 
-### 2.2.3 项目配置
+#### 2.2.3 项目配置
 
-#### 打包配置
+##### 打包配置
 
 在pom.xml添加：
 
@@ -299,17 +298,17 @@ k8s在进行CI/CD时将镜像发布到阿里镜像服务中
 </build>
 ```
 
-#### 生产环境配置
+##### 生产环境配置
 
 每个服务通过容器部署，容器内部为8080端口，容器暴露的端口由k8s自动生成。
 
 ![这张图片展示的是名为bootstrap-prod.yml的配置文件内容，该文件是Spring项目的生产环境配置文件，用于结合Nacos完成相关服务配置。文件中明确设置了server的端口为8080，同时在spring.cloud.nacos模块中，配置了Nacos服务的地址为${NACOS_ADDR}:nacos.jzo2o，还指定了命名空间为${NACOS_NAMESPACE}:ff0d1911-6b96-4eb3-9a6b-275508ddbbe6，配置文件类型为yaml，日志级别设置com.jzo2o为debug，这一配置是项目部署中生产环境配置的一部分，与文档中每个服务容器内部为8080端口、结合Kubernetes部署的内容相匹配。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/NZPRbwaguoZjXPxV0e9cskJPnOf.png)
 
-#### 配置Dockerfile
+##### 配置Dockerfile
 
 ![图片展示的是Dockerfile代码内容。从上至下依次为FROM openjdk:11-jdk、LABEL maintainer等指令，ARG PACKAGE_PATH指令，ADD指令，EXPOSE 8080指令，ENTRYPOINT指令。其中，ENTRYPOINT指令部分被蓝色高亮突出显示，内容为“\[“sh”,“-c”,“java -jar $JAVA_OPTS app.jar”\]”。该图片与文档中“配置Dockerfile”部分内容相关，是配置Docker镜像时Dockerfile代码示例的一部分。](https://feishu.cn/file/Vubqbmeo9oCpe0xgE3bcGAIAnhN)
 
-#### 配置deploy.yml
+##### 配置deploy.yml
 
 kubersphere通过deploy.yml自动创建部署、服务。
 
@@ -390,7 +389,7 @@ spec:
 
 
 
-#### 修改数据库地址
+##### 修改数据库地址
 
 将数据库地址、redis地址改为k8s服务的域名，举例：
 
@@ -400,7 +399,7 @@ spec:
 
 
 
-### 2.2.4 创建流水线
+#### 2.2.4 创建流水线
 
 在Devops中创建流水线：
 
@@ -412,7 +411,7 @@ spec:
 
 ![图片展示的是Kubernetes部署完成后YJY-PIP-KBs项目的应用列表界面。左侧为导航栏，有名称空间、应用列表等选项。右侧显示了多个应用名称及状态，如canal、elasticsearch、jzo2o-counter-service等，部分应用状态为“当前版本1”，计划版本1，且显示了创建时间，如canal大约1年，elasticsearch大约1年等。该图与文档中部署完成后的效果部分对应，直观呈现了部署后的应用情况。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/WFfkbw9YIoAct1xeabIcE8M5nRd.png)
 
-### 2.2.5 运维
+#### 2.2.5 运维
 
 运维人员通过监控工具（Prometheus （普罗米修斯）+ Grafana）监控项目
 

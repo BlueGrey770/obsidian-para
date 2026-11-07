@@ -4,8 +4,7 @@ date: 2026-11-06
 aliases:
   - "开发环境"
 ---
-
-<title>开发环境</title>
+# 开发环境
 
 工欲善其事必先利其器。
 
@@ -18,13 +17,13 @@ aliases:
 --来自百度网盘超级会员v5的分享
 </callout>
 
-# 1 导入虚拟机
+## 1 导入虚拟机
 
 黑马商成项目中用到的一些服务端软件如：Nacos配置中心、Redis、RabbitMQ消息队列等通常会安装在企业局域网的服务器中，开发人员去远程连接它们。在教学中我们在自己的电脑上安装虚拟机，虚拟机代表了企业局域网中的服务器。
 
 服务器操作系统使用Centos7，导入下发的镜像文件。
 
-## 1.1 **导入虚拟机**
+### 1.1 **导入虚拟机**
 
 首先安装VMware-workstation 16.x 或 VMware-workstation 17.x 虚拟机软件（**已安装vmware软件的同学不需要重新安装**），可从课程资料获取安装程序（VMwareworkstation16.rar）。
 
@@ -88,7 +87,7 @@ aliases:
 
 
 
-### 1.1.1 **可能遇到的问题**
+#### 1.1.1 **可能遇到的问题**
 
 win11打开.vmx文件报错：“未能启动虚拟机”
 
@@ -100,11 +99,11 @@ win11打开.vmx文件报错：“未能启动虚拟机”
 
 
 
-## 1.2 苹果电脑用户（windows电脑同学无需操作）
+### 1.2 苹果电脑用户（windows电脑同学无需操作）
 
 使用苹果电脑的学生需要自行安装docker并安装MySQL8，已安装MySQL8的不必重新安装。
 
-### 1.2.1 安装MySQL
+#### 1.2.1 安装MySQL
 
 拉取镜像：
 
@@ -196,7 +195,7 @@ windows下mysql是否启动
 
 ![这张图片展示了苹果电脑的Docker工具界面，结合上下文可知其为用于验证MySQL容器运行状态的操作界面。界面中“docker ps”命令的执行结果被红色框标注，其中包含名为“mysql”的容器信息，该容器基于“docker-entrypoint”镜像，运行时间为2周，端口映射为0.0.0.0的13066与13060端口，状态为运行中。这一结果对应文档中“创建启动容器”的操作，用于确认MySQL服务已成功后台启动并完成端口映射的配置。](../../../../Attachments/development/devops/kai-fa-huan-jing-yu-xu-ni-hua/By2EbZFQnoobq3xje3Fcmg7Fngg.png)
 
-## 1.3 **远程连接虚拟机**
+### 1.3 **远程连接虚拟机**
 
 虚拟机启动成功，下边使用ssh客户端工具（FinalShell）远程 连接 虚拟机。
 
@@ -240,7 +239,7 @@ IP地址：192.168.101.68
 
 
 
-## 1.4 修改IP
+### 1.4 修改IP
 
 ```Plain Text
 ip addr | grep 192.168.101
@@ -306,7 +305,7 @@ DNS1=8.8.8.8
 
 
 
-## 1.5 特别注意
+### 1.5 特别注意
 
 使用虚拟机要特别小心，如果没有正常点击虚拟机关闭或者挂起虚拟机，可能会导致网卡文件损坏，因此要每次关闭电脑前，要确保虚拟机正常关闭后，再对电脑关机。咱们每次结束前就尽量选择挂起客户机就行，如下图：
 
@@ -330,28 +329,28 @@ DNS1=8.8.8.8
 
 ![这是VMware Workstation的操作界面截图，显示“虚拟机”菜单展开后，已选中“快照”选项，快照的下拉菜单中高亮标注了“恢复到快照(R):快照2”选项，右侧配有红色文字说明：“这是刚拍好的快照，万一将来虚拟机没法正常用，点击这个按钮即可恢复正常”，该图用于辅助说明文档中虚拟机快照的恢复操作步骤。](../../../../Attachments/development/devops/kai-fa-huan-jing-yu-xu-ni-hua/KYZ6b7RIZoUhvXxVwNYcIR8cnIe.png)
 
-# 2 **IDEA环境配置**
+## 2 **IDEA环境配置**
 
 安装IDEA，根据下边的步骤进行配置。如果已经配置过则忽略。
 
-## **2.1 编码配置**
+### **2.1 编码配置**
 
 ![图片展示了IntelliJ IDEA中“File Encodings”设置界面。左侧导航栏选中“File Encodings”。界面中“Global Encoding”和“Project Encoding”均设置为“UTF-8”（①②处红色框标注）。下方“Properties Files (*.properties)”部分，“Default encoding for properties files”也设置为“UTF-8”（③处红色框标注），并勾选了“Transparent native-to-ascii conversion”。该图片与文档中“IDEA环境配置”下的“2.1编码配置”内容相关，用于指导用户进行编码配置设置。](../../../../Attachments/development/devops/kai-fa-huan-jing-yu-xu-ni-hua/UZECbVFP4o36kpxFu1qcKs29nyc.png)
 
-## 2.2 **自动导包设置**
+### 2.2 **自动导包设置**
 
 IDEA可以自动优化导入包，**但是有多个同名的类调用不同的包，必须自己手动Alt+Enter设置**，  
 下面可以通过设置来进行导包优化。
 
 ![图片展示的是IntelliJ IDEA中“Settings”下的“Editor”>“General”>“Auto Import”设置界面。关键内容有：在“Java”选项下，选中“Add unambiguous imports on the fly”（①）和“Optimize imports on the fly (for current project)”（②）两项。该图片与文档中“IDEA环境配置”部分相关，用于指导开发者配置IDEA环境，确保代码提示和导入优化等功能正常工作。](../../../../Attachments/development/devops/kai-fa-huan-jing-yu-xu-ni-hua/Tag6baLsZoXes7x8A1DccVmLnhh.png)
 
-## 2.3 **提示忽略大小写**
+### 2.3 **提示忽略大小写**
 
 IDEA代码提示默认是区分大小写的，设置为提示忽略大小写，编译我们后期的开发
 
 ![这张图片是IDEA的设置界面，左侧菜单栏的Editor分类下选中了Code Completion选项，对应开发环境配置里“提示忽略大小写”的内容。界面里“Match case”选项当前选中的是“All letters”，这一设置用于实现代码提示忽略大小写，让代码提示更贴合开发需求，是IDEA环境配置中调整代码提示规则的关键操作设置项。](../../../../Attachments/development/devops/kai-fa-huan-jing-yu-xu-ni-hua/QDNGbIoqFoT45jxn2UXcUO7YnIg.png)
 
-## 2.4 **设置 Java 编译级别**
+### 2.4 **设置 Java 编译级别**
 
 工程创建成功，点击Project Structure:
 
@@ -361,9 +360,9 @@ IDEA代码提示默认是区分大小写的，设置为提示忽略大小写，�
 
 ![这张图片是IntelliJ IDEA的Project Structure设置窗口，对应工程创建后配置Java编译级别的操作界面。窗口的Project设置页中，Name参数为“evaluation”；需重点设置的SDK选项已选中为“11 Oracle OpenJDK version 11.0.15”；Language level下拉菜单已展开，当前选中的项为“SDK default (11 - Local variable syntax for lambda parameters)”，该界面用于完成文档中要求的SDK及Project language level的配置。](../../../../Attachments/development/devops/kai-fa-huan-jing-yu-xu-ni-hua/EsIzbMZW0o5OpvxU4Ehc8TQNnQb.png)
 
-# 3 Maven环境
+## 3 Maven环境
 
-## 3.1 安装Maven
+### 3.1 安装Maven
 
 下载maven3.8.6版本，下载链接如下：
 
@@ -373,7 +372,7 @@ https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
 
 **已安装maven的不用重复安装。**
 
-## 3.2 **配置仓库**
+### 3.2 **配置仓库**
 
 配置中央仓库位置：
 
@@ -381,7 +380,7 @@ https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
 
 ![这张图片展示的是Maven配置文件（settings.xml）中的镜像配置代码片段，核心内容被红色框标注出来，是一个名为aliyun maven的镜像配置。该镜像的唯一标识id为alimaven，对应的仓库地址为http://maven.aliyun.com/nexus/content/groups/public/，其镜像指向的是中央仓库（central）。这段配置的作用是将Maven的默认仓库替换为阿里云镜像，可加快依赖包的下载速度，这与前文文档中提及的配置Maven的内容相关，是Maven配置过程中关键的镜像配置部分。](../../../../Attachments/development/devops/kai-fa-huan-jing-yu-xu-ni-hua/FdzsbMoh2ozotRx1p7TcYA8unrb.png)
 
-## **3.3 IDEA中配置maven**
+### **3.3 IDEA中配置maven**
 
 在IDEA中配置maven：进入 File --> Settings --> Build --> Build Tools --> Maven
 
@@ -391,7 +390,7 @@ https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
 
 ![图片展示了IDEA中配置Maven的设置界面。左侧为设置菜单，选中“Build Tools”下的“Maven”。右侧是Maven相关设置，包括是否离线工作、是否使用插件仓库等选项，以及Maven home path、User settings file和Local repository的路径设置，其中Maven home path为D:\\soft\\apache-maven-3.8.6-bin，User settings file为D:\\soft\\apache-maven-3.8.6-bin\\conf\\settings.xml，Local repository为D:\\develop\\repository。该图片与文档中“在IDEA中配置maven”内容对应，直观呈现了配置步骤中设置界面的样式和关键路径信息。](../../../../Attachments/development/devops/kai-fa-huan-jing-yu-xu-ni-hua/KrmDb5MLeoMaQhxa4j0c254jnhg.png)
 
-# 4 配置Git环境 
+## 4 配置Git环境
 
 
 
@@ -418,9 +417,9 @@ git config --global user.email "你的邮箱"
 
 
 
-# 5 导入商城项目
+## 5 导入商城项目
 
-## 5.1 拉取项目
+### 5.1 拉取项目
 
 首先，我们需要熟悉黑马商城项目的基本结构：
 
@@ -444,7 +443,7 @@ git config --global user.email "你的邮箱"
 
 
 
-## 5.2 连接数据库
+### 5.2 连接数据库
 
 首先创建数据库连接
 
@@ -469,7 +468,7 @@ hm:
     pw: mysql # 修改为docker中的MySQL密码
 ```
 
-## 5.3 启动项目
+### 5.3 启动项目
 
 启动项目：
 
@@ -479,7 +478,7 @@ hm:
 
 ![图片展示的是HmallApplication启动成功后的控制台日志信息。日志显示了系统时间、应用程序版本、接口映射、Tomcat启动、文档插件初始化、自定义文档插件发现、API列表扫描等信息，最后以“Started HmallApplication in 6.445 seconds (JVM running for 8.533)”结束。该图片与文档中“5.3启动项目”部分对应，直观呈现了项目启动成功后的运行状态，帮助开发者确认项目运行情况。](../../../../Attachments/development/devops/kai-fa-huan-jing-yu-xu-ni-hua/RLw8bCFAwordkex9fd6crDHVnhd.png)
 
-## 5.4 运行前端
+### 5.4 运行前端
 
 接下来运行前端，前端工程通过nginx运行，找到课程资料下“hmall-nginx”目录将其拷贝到代码目录下（将其复制到一个非中文、不包含特殊字符的目录下）：
 
@@ -529,7 +528,7 @@ nginx.exe 不要双击启动，而是打开cmd窗口，通过命令行启动。�
 
 
 
-# 6.问题汇总
+## 6.问题汇总
 
 <callout emoji="🏆">
 如果问题不在下面，那就从头、一步一步的再搭建下环境！！！
@@ -537,15 +536,15 @@ nginx.exe 不要双击启动，而是打开cmd窗口，通过命令行启动。�
 如果问题不在下面，那就从头、一步一步的再搭建下环境！！！
 </callout>
 
-## 1.docker启动失败
+### 1.docker启动失败
 
 重新解压下镜像文件
 
-## 2.数据库连接失败
+### 2.数据库连接失败
 
 mysql是否正常启动
 
-## 3.FinalShell等连接虚拟机失败
+### 3.FinalShell等连接虚拟机失败
 
 检查下网络配置
 

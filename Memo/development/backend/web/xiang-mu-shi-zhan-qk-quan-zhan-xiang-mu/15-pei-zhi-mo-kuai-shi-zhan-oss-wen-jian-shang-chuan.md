@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "15 配置模块实战（OSS文件上传）"
 ---
+# 15 配置模块实战（OSS文件上传）
 
-<title>15 配置模块实战（OSS文件上传）</title>
-
-# 做一个配置模块
+## 做一个配置模块
 
 以aliyunOSS文件上传为案例：
 
@@ -15,7 +14,7 @@ aliases:
 
 ![这张图片展示的是配置模块实战（OSS文件上传）案例中的项目目录结构，属于该实战步骤里目录结构对应的实际工程层级。该目录从src目录展开，main目录下分为java和resources两个子目录；java目录下按包路径com.itheima划分，包含AliOssConfigure、AliProperties等多个功能相关的类文件。resources目录下存在META-INF/spring子目录，该子目录内有一个名为org.springframework.boot.autoconfigure.AutoConfiguration.imports的配置文件，与文档中配置文件编写的要求相对应。](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/VssxbQFLhoDl3CxjE24chIXNnld.png)
 
-## 将功能类写好
+### 将功能类写好
 
 ```Java
 /**
@@ -193,7 +192,7 @@ public class AliOssConfigure {
 }
 ```
 
-## 写一个配置文件
+### 写一个配置文件
 
 在resource下面创建一个文件夹 MATE-INF/spring
 
@@ -205,7 +204,7 @@ com.itheima.AliOssConfigure
 这里的内容就是前面写的配置类的全限定类名
 ```
 
-# 做一个起步依赖模块
+## 做一个起步依赖模块
 
 > 要按照命名规范 xxx-spring-boot-starter
 
@@ -224,7 +223,7 @@ com.itheima.AliOssConfigure
     </dependencies>
 ```
 
-# 使用起步依赖
+## 使用起步依赖
 
 <callout emoji="❤️">
 如果想要在其他的模块中使用到aliyunOSS的的文件上传功能，只需要引入起步依赖的GAV就可以在业务中通过@Autowired注入需要的功能直接开箱即用了

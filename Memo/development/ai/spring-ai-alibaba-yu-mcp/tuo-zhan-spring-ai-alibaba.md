@@ -4,8 +4,7 @@ date: 2026-11-06
 aliases:
   - "拓展-Spring AI Alibaba"
 ---
-
-<title>拓展-Spring AI Alibaba</title>
+# 拓展-Spring AI Alibaba
 
 之前我们对接阿里云百炼平台一直都是用SpringAI中的OpenAI模块，不过由于阿里云百炼与OpenAI之间并不是完全兼容，所以还存在许多问题。
 
@@ -21,13 +20,13 @@ aliases:
 
 
 
-# 快速入门
+## 快速入门
 
 接下来我们通过一个快速入门案例，学习如何对接Spring AI Alibaba.
 
 
 
-## 创建工程
+### 创建工程
 
 首先，我们创建一个SpringBoot工程：
 
@@ -43,7 +42,7 @@ aliases:
 
 
 
-## 引入依赖
+### 引入依赖
 
 接下来，我们用alibaba的依赖取代OpenAI：
 
@@ -64,7 +63,7 @@ aliases:
 
 
 
-## 配置文件
+### 配置文件
 
 接下来，理论上说，我们同样需要配置模型的关键信息：
 
@@ -98,7 +97,7 @@ logging:
 
 
 
-## 配置ChatClient
+### 配置ChatClient
 
 接下来，同样是配置ChatClient，我们在`com.itheima.ai.config`包下新建一个`CommonConfiguration`类，代码如下：
 
@@ -145,7 +144,7 @@ public class CommonConfiguration {
 
 
 
-## 对话接口
+### 对话接口
 
 接下来，我们来定义对话接口。
 
@@ -181,7 +180,7 @@ public class ChatController {
 
 
 
-## 测试
+### 测试
 
 启动项目，打开浏览器，访问：http://localhost:8080/ai/chat
 
@@ -189,7 +188,7 @@ public class ChatController {
 
 
 
-# 推理模型
+## 推理模型
 
 像DeepSeek-R1这样的模型具备深度思考能力，并且在输出结果中包含模型本身的推理、思考流程。我们称这样的模型为**推理模型** (**Reasoning Model**) 。
 
@@ -201,7 +200,7 @@ public class ChatController {
 
 
 
-## 模型响应格式
+### 模型响应格式
 
 推理模型由于返回结果中包含两部分内容：
 
@@ -246,7 +245,7 @@ public class ChatController {
 
 
 
-## 自定义Advisor处理思考过程
+### 自定义Advisor处理思考过程
 
 SpringAI的当前版本还不支持推理模型，或者换句话说，不处理响应结果中的思考过程（reasoning_content）。所以默认是看不到思考内容的。
 
@@ -339,7 +338,7 @@ Spring AI Alibaba提供了对思考过程的处理，同时把**reasoning_conten
 
 
 
-### 官方版本
+#### 官方版本
 
 
 
@@ -420,7 +419,7 @@ public class ReasoningContentAdvisor implements BaseAdvisor {
 
 
 
-### 自定义版本
+#### 自定义版本
 
 如果要使用自定义版本，请先删除官方版本的`ReasoningContentAdvisor`。
 
@@ -536,7 +535,7 @@ public class ReasoningContentAdvisor implements BaseAdvisor {
 
 
 
-## 配置Advisor
+### 配置Advisor
 
 接下来，我们配置Advisor到ChatClient.
 
@@ -562,7 +561,7 @@ public ChatClient chatClient(DashScopeChatModel chatModel, ChatMemory chatMemory
 
 
 
-## 2.4.测试
+### 2.4.测试
 
 重启测试，可以看到响应结果的变化.
 
@@ -582,7 +581,7 @@ public ChatClient chatClient(DashScopeChatModel chatModel, ChatMemory chatMemory
 
 
 
-# 其它模型
+## 其它模型
 
 如果大家想要使用阿里云百炼的其它模型，可以参考官方的示例代码：
 

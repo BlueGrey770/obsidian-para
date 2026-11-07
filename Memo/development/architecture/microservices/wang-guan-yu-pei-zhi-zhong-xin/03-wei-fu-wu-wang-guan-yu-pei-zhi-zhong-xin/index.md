@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "03 微服务网关与配置中心"
 ---
+# 03 微服务网关与配置中心
 
-<title>03 微服务网关与配置中心</title>
-
-# 学习目标
+## 学习目标
 
 1. 能够说出用什么实现的网关以及实现了哪些功能
 2. 能够创建网关工程实现路由功能
@@ -24,20 +23,20 @@ aliases:
 
 
 
-# 1 网关路由
+## 1 网关路由
 
 <callout emoji="🥖">
 1. 很多的微服务,存在很多地址，对客户端不友好，新增或者修改ip后，都要前端去适配
 2. 用户校验逻辑该放在哪里，如果每个服务都做校验又存在代码冗余，有没有一个统一的地方
 </callout>
 
-## 1.1.认识网关
+### 1.1.认识网关
 
-### 1.1.1 问题分析
+#### 1.1.1 问题分析
 
 到目前为止我们已经将黑马商城单体项目重构为微服务架构，今天的目标是进行**前后端联调**，下边思考几个问题：
 
-#### 1.1.1.1 **前端面对多个后端入口**
+##### 1.1.1.1 **前端面对多个后端入口**
 
 项目采用单体架构时前端通过nginx负载均衡访问后端服务，如下图：
 
@@ -84,7 +83,7 @@ http {
 
 
 
-#### 1.1.1.2 用户身份校验放在哪？密钥安全性呢？
+##### 1.1.1.2 用户身份校验放在哪？密钥安全性呢？
 
 单体架构时我们只需要完成一次用户登录、身份校验，就可以在所有业务中获取到用户信息。而微服务拆分后，每个微服务都独立部署，这就存在一些问题：每个微服务都需要编写身份校验、用户信息获取的接口，非常麻烦。
 
@@ -96,7 +95,7 @@ http {
 
 **3.用户身份鉴权**，校验用户身份及用户的权限。
 
-### 1.1.2 认识网关
+#### 1.1.2 认识网关
 
 nginx的身份就是网关，什么是网关？
 
@@ -140,7 +139,7 @@ Nginx 和 Spring Cloud Gateway 在微服务架构中是**分层协作的核心�
 4. **设计价值**：双层网关设计实现了**运维与开发的职责分离**、**网络层与应用层的架构隔离**、**分层扩缩容的弹性支撑**，是企业级微服务架构的**生产标准配置**。
 </callout>
 
-### 1.1.3. 面试题
+#### 1.1.3. 面试题
 
 说说Spring Cloud五大组件？
 
@@ -148,7 +147,7 @@ Nginx 和 Spring Cloud Gateway 在微服务架构中是**分层协作的核心�
 
 
 
-## 1.2. 实现网关路由
+### 1.2. 实现网关路由
 
 接下来，我们先看下如何利用**网关实现请求路由、统一身份鉴权**。由于网关本身也是一个**独立的微服务**，因此也需要创建一个模块，大概步骤如下：
 
@@ -161,13 +160,13 @@ AI:Spring Cloud Gateway实现路由
 
 
 
-### 1.2.1. 创建网关工程
+#### 1.2.1. 创建网关工程
 
 首先，我们要在hmall下创建一个新的module，命名为hm-gateway，作为网关微服务
 
 
 
-### 1.2.2 引入依赖
+#### 1.2.2 引入依赖
 
 在`hm-gateway`模块的`pom.xml`文件中引入依赖：
 
@@ -226,7 +225,7 @@ AI:Spring Cloud Gateway实现路由
 
 
 
-### 1.2.3 启动类
+#### 1.2.3 启动类
 
 在`hm-gateway`模块的`com.hmall.gateway`包下新建一个启动类：
 
@@ -251,7 +250,7 @@ public class GatewayApplication {
 
 
 
-### 1.2.4 配置路由
+#### 1.2.4 配置路由
 
 接下来，在`hm-gateway`模块的`resources`目录新建一个`application.yaml`文件，内容如下：
 
@@ -323,7 +322,7 @@ spring:
 
 
 
-### 1.2.5 测试
+#### 1.2.5 测试
 
 启动GatewayApplication，通过网关请求微服务， http://localhost:8080是网关的根路径，根据网关路由的配置请求具体的URL。
 
@@ -341,7 +340,7 @@ spring:
 
 
 
-### 1.2.6.路由断言
+#### 1.2.6.路由断言
 
 路由规则的定义语法如下：
 
@@ -408,7 +407,7 @@ Header中包括X-Request-Id才可正常访问，`X-Request-Id` 并不是HTTP标�
 
 
 
-## 1.3. 小结
+### 1.3. 小结
 
 我们使用Spring Cloud Gateway创建网关实现了路由、负载均衡的功能。
 
@@ -440,9 +439,9 @@ filters: 网关过滤器(稍后讲解)
 
 
 
-# 2 网关鉴权-通过自定义过滤器实现
+## 2 网关鉴权-通过自定义过滤器实现
 
-## 2.1.认识网关鉴权
+### 2.1.认识网关鉴权
 
 单体架构时我们只需要完成一次用户登录、身份校验，就可以在所有业务中获取到用户信息。而微服务拆分后，每个微服务都独立部署，不再共享数据。也就意味着每个微服务都需要做身份校验，这显然不可取。
 
@@ -492,9 +491,9 @@ AI:@PreAuthorize("hasRole('ADMIN')") 除了hasRole还有哪些
 
 
 
-## 2.2.网关内置过滤器  -学习全局过滤器和路由过滤器
+### 2.2.网关内置过滤器  -学习全局过滤器和路由过滤器
 
-### 2.2.1 认识网关过滤器-**过滤、拦截请求**
+#### 2.2.1 认识网关过滤器-**过滤、拦截请求**
 
 网关鉴权必须在请求转发到微服务之前做，否则就失去了意义。而网关的请求转发是`Gateway`内部代码实现的，要想在请求转发之前做身份校验，就必须了解`Gateway`内部工作的基本原理。
 
@@ -534,7 +533,7 @@ AI:@PreAuthorize("hasRole('ADMIN')") 除了hasRole还有哪些
 
 
 
-## 核心区别总览（表格更清晰）
+### 核心区别总览（表格更清晰）
 
 <sheet sheet-id="OK2RCW" token="Vs6ksxBbmhTb8etzZkMc2AkNnne"></sheet>
 
@@ -554,7 +553,7 @@ Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain);
 
 `FilteringWebHandler`在处理请求时，会将`GlobalFilter`装饰为`GatewayFilter`，然后放到过滤器链中，排序以后依次执行。
 
-### 2.2.2 **内置过滤器**
+#### 2.2.2 **内置过滤器**
 
 `Gateway`中内置了很多的`GatewayFilter`，详情可以参考官方文档：
 
@@ -620,7 +619,7 @@ StripPrefix=1表示去除一级路径前缀
 
 
 
-## 2.3. 自定义过滤器
+### 2.3. 自定义过滤器
 
 无论是`GatewayFilter`还是`GlobalFilter`都支持自定义，只不过**编码**方式、**使用**方式略有差别。
 
@@ -630,9 +629,9 @@ StripPrefix=1表示去除一级路径前缀
 实现路由过滤器-演示效果
 </callout>
 
-### 2.3.1 自定义GlobalFilter
+#### 2.3.1 自定义GlobalFilter
 
-#### 2.3.2.1 编码实现
+##### 2.3.2.1 编码实现
 
 自定义GlobalFilter简单很多，直接实现GlobalFilter即可，而且也无法设置动态参数：
 
@@ -685,9 +684,9 @@ public class PrintAnyGlobalFilter implements GlobalFilter, Ordered {
 
 
 
-### 2.3.2 自定义GatewayFilter(自学)
+#### 2.3.2 自定义GatewayFilter(自学)
 
-#### 2.3.2.1 定义GatewayFilter
+##### 2.3.2.1 定义GatewayFilter
 
 自定义`GatewayFilter`不是直接实现`GatewayFilter`，而是继承`AbstractGatewayFilterFactory`。最简单的方式是这样的：
 
@@ -742,7 +741,7 @@ public class FirstFilterGatewayFilterFactory extends AbstractGatewayFilterFactor
 
 
 
-#### 2.3.2.2 配置过滤器
+##### 2.3.2.2 配置过滤器
 
 下边的配置仅在product路由中有效
 
@@ -774,7 +773,7 @@ spring:
 
 
 
-### 2.3.3 小结
+#### 2.3.3 小结
 
 
 
@@ -788,7 +787,7 @@ spring:
 
 
 
-## 2.4.身份校验过滤器
+### 2.4.身份校验过滤器
 
 接下来，我们就利用自定义`GlobalFilter`来完成身份校验。
 
@@ -801,7 +800,7 @@ spring:
 4. 启动网关服务、购物车服务、用户服务验证
 </callout>
 
-### 2.4.1 JWT工具类
+#### 2.4.1 JWT工具类
 
 身份校验需要用到JWT，而且JWT的加密需要秘钥和加密工具。这些在`hm-service`中已经有了，我们直接拷贝过来：
 
@@ -815,7 +814,7 @@ spring:
 - `JwtTool`：JWT工具，其中包含了校验和解析`token`的功能
 - `hmall.jks`：秘钥文件
 
-### 2.4.2 配置白名单
+#### 2.4.2 配置白名单
 
 其中`AuthProperties`和`JwtProperties`所需的属性要在`application.yaml`中配置。
 
@@ -837,7 +836,7 @@ excludePaths配置白名单地址，即无需身份校验的路径。
 
 
 
-### 2.4.3 身份校验过滤器
+#### 2.4.3 身份校验过滤器
 
 接下来，我们定义一个身份校验的过滤器：
 
@@ -935,7 +934,7 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 
 
-### 2.4.4 测试
+#### 2.4.4 测试
 
 
 
@@ -963,7 +962,7 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 
 
-### 2.4.5 小结
+#### 2.4.5 小结
 
 网关身份校验过滤器怎么实现？
 
@@ -980,9 +979,9 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 
 
-## 2.5 网关传递用户信息
+### 2.5 网关传递用户信息
 
-### 2.5.1. 思路分析
+#### 2.5.1. 思路分析
 
 现在，网关已经可以完成身份校验并获取登录用户身份信息。但是当网关将请求转发到微服务时，微服务又该如何获取用户身份呢？
 
@@ -1003,7 +1002,7 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 
 
-### 2.5.2. 网关解析用户信息并保存
+#### 2.5.2. 网关解析用户信息并保存
 
 首先，我们修改身份校验拦截器的处理逻辑，保存用户信息到请求头中：
 
@@ -1011,9 +1010,9 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 
 
-### 2.5.3. 微服务获取用户信息
+#### 2.5.3. 微服务获取用户信息
 
-#### 2.5.3.1 ThreadLocal工具类
+##### 2.5.3.1 ThreadLocal工具类
 
 在hm-common中已经有一个用于保存登录用户的ThreadLocal工具：
 
@@ -1025,7 +1024,7 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 
 
-#### 2.5.3.2 编写拦截器
+##### 2.5.3.2 编写拦截器
 
 接下来，我们只需要编写拦截器，获取用户信息并保存到`UserContext`，然后放行即可。
 
@@ -1080,7 +1079,7 @@ public class UserInfoInterceptor implements HandlerInterceptor {
 }
 ```
 
-##### 注意ThreadLocal内存泄漏问题
+###### 注意ThreadLocal内存泄漏问题
 
 AI: ThreadLocal数据用完一定要移除，可以避免内存泄漏
 
@@ -1090,7 +1089,7 @@ AI: ThreadLocal数据用完一定要移除，可以避免内存泄漏
 
 
 
-#### 2.5.3.3 配置拦截器
+##### 2.5.3.3 配置拦截器
 
 接着在`hm-common`模块下编写`SpringMVC`的配置类，配置登录拦截器：
 
@@ -1137,7 +1136,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 
 
 
-#### 2.5.3.4 测试
+##### 2.5.3.4 测试
 
 重启购物车服务。
 
@@ -1149,9 +1148,9 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 
 
 
-### 2.5.4. 购物车获取用户信息
+#### 2.5.4. 购物车获取用户信息
 
-#### 2.5.4.1 编码实现
+##### 2.5.4.1 编码实现
 
 之前我们无法获取登录用户，所以把购物车服务的登录用户写死了，现在需要恢复到原来的样子。
 
@@ -1163,7 +1162,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 
 ![图片展示了`CartServiceImpl`类中`queryMyCarts`方法的代码。关键部分是第68行，使用`UserContext.getUser()`获取用户信息，将其作为条件查询购物车列表。该图片与上文提到的修改`queryMyCarts`方法内容相呼应，直观呈现了代码实现，是通过自定义过滤器实现网关传递用户信息步骤中的代码示例，帮助理解网关如何将用户信息传入下游服务。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Nrz1bMmQ5o0Q3WxhQH2ch8dsnGd.png)
 
-#### 2.5.4.2 测试
+##### 2.5.4.2 测试
 
 使用httpclient测试通过网关访问查询购物车接口，并且在请求头中带上token
 
@@ -1181,11 +1180,11 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 
 
 
-## 2.6. Feign接口传递用户
+### 2.6. Feign接口传递用户
 
-### 2.6.1. 解决方案
+#### 2.6.1. 解决方案
 
-#### 2.6.1.1 问题描述
+##### 2.6.1.1 问题描述
 
 前端发起的请求都会经过网关再到微服务，由于我们之前编写的过滤器和拦截器功能，微服务可以轻松获取登录用户信息。
 
@@ -1195,7 +1194,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 
 下单的过程中，需要调用商品服务扣减库存，调用购物车服务清理用户购物车。而**清理购物车**时必须知道当前登录的用户身份。但是，**订单服务调用购物车时并没有传递用户信息**，购物车服务无法知道当前用户是谁！
 
-#### 2.6.1.2 方案1：OpenFeign拦截器
+##### 2.6.1.2 方案1：OpenFeign拦截器
 
 微服务之间调用是基于OpenFeign来实现的，在进行OpenFeign调用时可以将用户信息放在http头中传递，如下图：
 
@@ -1261,7 +1260,7 @@ public class FeignInterceptorConfig {
 
 通过代码可知：方案1就是在feign远程调用前在http头中添加用户信息，请求到达微服务由微服务拦截器解析出http头中的user-info放入ThreadLocal。
 
-#### 2.6.1.3 方案2: 单独编写清理购物车接口
+##### 2.6.1.3 方案2: 单独编写清理购物车接口
 
 现在我们讨论的是如何在接口中传递用户信息，这需要先了解有状态接口和无状态接口的区别。
 
@@ -1349,13 +1348,13 @@ public class FeignInterceptorConfig {
 
 所以，我们需要再编写一个清理购物车的无状态接口供其它微服务调用。
 
-### 2.6.2. 清理购物车无状态接口
+#### 2.6.2. 清理购物车无状态接口
 
 <whiteboard token="QCSxwpDxwhtraLbxOVGcWX0cnNb"></whiteboard>
 
 开发无状态接口无需依赖用户会话信息，清理购物车接口需要知道清理哪个用户的购物车即可，接口参数传入用户id即可。
 
-#### 2.6.2.1 定义service
+##### 2.6.2.1 定义service
 
 定义新接口：
 
@@ -1365,7 +1364,7 @@ public class FeignInterceptorConfig {
 
 ![图片展示了Feign接口中清理购物车相关代码。上方代码中，`removeByItemIds`方法通过`UserContext.getUser()`获取用户ID，调用`removeByItemIds`方法。下方代码中，`removeByItemIds`方法首先构建删除条件，使用`QueryWrapper`设置`userId`和`itemId`的查询条件，然后调用`remove`方法删除符合条件的数据。该图片与上下文紧密相关，是对上下文提到的将原有清理购物车feign接口修改为新开发的无状态接口的代码示例呈现。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/V0A3bcKfEoEfA8xQr23ctFlQngh.png)
 
-#### 2.6.2.2 定义接口
+##### 2.6.2.2 定义接口
 
 单独定义inner包存放内部接口。
 
@@ -1411,7 +1410,7 @@ public class CartControllerInner {
 }
 ```
 
-#### 2.6.2.3 定义feign接口
+##### 2.6.2.3 定义feign接口
 
 将原有的清理购物车feign接口修改为新开发的无状态接口。
 
@@ -1437,7 +1436,7 @@ public interface CartClient {
 
 
 
-### 2.6.3. 测试
+#### 2.6.3. 测试
 
 下边我们测试下单流程，下单成功清理购物车。
 
@@ -1484,13 +1483,13 @@ Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE3Mjk1
 
 
 
-## 2.7. 面试题
+### 2.7. 面试题
 
 网关鉴权怎么实现的？
 
 <whiteboard token="VHW3wAOANh6EX2bW1bRcB5AXnxg"></whiteboard>
 
-# 3. 商城微服务前后端联调-作业
+## 3. 商城微服务前后端联调-作业
 
 到目前为止我们将商城项目使用Spring Cloud Alibaba微服务框架开发完成了以下成果：
 
@@ -1629,9 +1628,9 @@ public class SearchController {
 
 
 
-# 4 配置管理
+## 4 配置管理
 
-## 4.1. 认识配置中心
+### 4.1. 认识配置中心
 
 到目前为止我们已经解决了微服务相关的几个问题：
 
@@ -1690,11 +1689,11 @@ Nacos 提供web管理控制台如下图，方便进行配置管理，还提供�
 
 
 
-## 4.2 快速入门
+### 4.2 快速入门
 
-### 4.2.1. 发布配置
+#### 4.2.1. 发布配置
 
-#### 4.2.1.1 创建命名空间
+##### 4.2.1.1 创建命名空间
 
 首先创建命名空间。
 
@@ -1718,7 +1717,7 @@ Nacos 提供web管理控制台如下图，方便进行配置管理，还提供�
 
 ![图片展示的是Nacos 2.4.0配置管理中命名空间页面。页面上方有Nacos标志及导航栏。左侧有“命名空间”等选项。右侧显示命名空间列表，包含“public(保留空间)”和“hmallV1.0”两个命名空间，后者描述为“hmallV1.0商城项目环境”，配置数为7。页面提示当前集群没有开启权限，需参考文档开启权限。该图与上下文关系紧密，是发布配置前切换命名空间的页面展示。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/TpzMbWy9IoaPSCxhQqMcajNFnOh.png)
 
-#### 4.2.1.2 发布配置
+##### 4.2.1.2 发布配置
 
 下一步我们在nacos上发布购物车服务的配置。
 
@@ -1754,11 +1753,11 @@ Nacos 提供web管理控制台如下图，方便进行配置管理，还提供�
 
 
 
-### 4.2.2. 拉取配置
+#### 4.2.2. 拉取配置
 
 配置文件在nacos发布后下一步微服务就可以从nacos拉取配置。
 
-#### 4.2.2.1 引入依赖
+##### 4.2.2.1 引入依赖
 
 1）引入依赖：
 
@@ -1780,7 +1779,7 @@ Nacos 提供web管理控制台如下图，方便进行配置管理，还提供�
   </dependency>
 ```
 
-#### 4.2.2.2 创建bootstrap.yaml
+##### 4.2.2.2 创建bootstrap.yaml
 
 nacos客户端从nacos拉取配置信息需要在微服务提前配置nacos的地址。
 
@@ -1855,7 +1854,7 @@ cart-service-dev.yaml
 
 
 
-#### 4.2.2.3 测试
+##### 4.2.2.3 测试
 
 下边启动购物车服务，启动成功，访问查询购物车接口，我们直接使用Swagger进行测试。
 
@@ -1933,7 +1932,7 @@ nacos并没有和网关在同一个命令空间。
 
 
 
-## 4.3. nacos数据模型
+### 4.3. nacos数据模型
 
 目前我们实现了nacos注册中心、nacos配置中心，在注册中心nacos去管理各个微服务实例的信息，在配置中心nacos去管理各个微服务的配置文件，nacos是如何去管理这些数据呢？它是如何做到多用户使用且数据隔离呢？本节讲解nacos的领域模型。
 
@@ -1971,7 +1970,7 @@ Nacos 中的一组配置集，是组织配置的维度之一。通过一个有�
 
 
 
-## 4.4. 配置文件加载顺序
+### 4.4. 配置文件加载顺序
 
 我们引入nacos之后微服务的配置文件可以在nacos上统一管理，并且也引入了bootstrap.yml文件，此时不同的配置文件它们的优先级不同，配置文件的优先级如下:
 
@@ -2010,17 +2009,17 @@ cart-service-dev.yaml
 
 
 
-### 4.4.1 面试题
+#### 4.4.1 面试题
 
 说一下你项目配置文件的加载顺序？
 
 
 
-## 4.5. 共享配置
+### 4.5. 共享配置
 
 我们可以把微服务共享的配置抽取到Nacos中统一管理，这样就不需要每个微服务都重复配置了。
 
-### 4.5.1 分析
+#### 4.5.1 分析
 
 配置文件中的一些配置可以抽取出来作为共享配置文件。
 
@@ -2038,7 +2037,7 @@ cart-service-dev.yaml
 
 ![图片展示了cart-service项目中application.yaml配置文件的部分内容。其中，knife4j配置部分显示enable为true，openapi的title为购物车服务接口文档，description为“信息”，email为zhanghuiyi@itcast.cn，concat为虎哥，url为https://www.itcast.cn，version为v1.0.0，group下的default组group-name为default，api-rule为package，api-rule-resources为com.hmall.cart.controller。feign配置部分显示okhttp的enabled为true，开启OKHttp连接池支持。该图片与上下文介绍的以cart-service为例抽取重复配置的内容相关，展示了可抽取的配置示例。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/CFHwbPXoJotwJexAANKcZcqDnZe.png)
 
-### 4.5.2 数据库配置
+#### 4.5.2 数据库配置
 
 我们在nacos控制台分别添加这些配置。
 
@@ -2078,7 +2077,7 @@ mybatis-plus:
 
 
 
-### 4.5.3 日志配置
+#### 4.5.3 日志配置
 
 然后是统一的日志配置，命名为`shared-log.yaml`，配置内容如下：
 
@@ -2092,7 +2091,7 @@ logging:
     path: "logs/${spring.application.name}"
 ```
 
-### 4.5.4 swagger配置
+#### 4.5.4 swagger配置
 
 然后是统一的swagger配置，命名为`shared-swagger.yaml`，配置内容如下：
 
@@ -2117,7 +2116,7 @@ knife4j:
 - `title`：接口文档标题，我们用了`${hm.swagger.title}`来代替，将来可以有用户手动指定
 - `email`：联系人邮箱，我们用了`${hm.swagger.email:``zhanghuyi@itcast.cn``}`，默认值是`zhanghuyi@itcast.cn`，同时允许用户利用`${hm.swagger.email}`来覆盖。
 
-### 4.5.5 feign配置
+#### 4.5.5 feign配置
 
 然后是统一的feign配置，命名为shared-feign`.yaml`，配置内容如下：
 
@@ -2129,7 +2128,7 @@ feign:
     enabled: true # 开启feign对sentinel的支持
 ```
 
-### 4.5.6 seata配置
+#### 4.5.6 seata配置
 
 统一配置seata，命名为shared-seata.yaml,内容如下：
 
@@ -2150,7 +2149,7 @@ seata:
 
 
 
-### 4.5.7 Sentinel配置
+#### 4.5.7 Sentinel配置
 
 统一配置sentinel，命名为shared-sentinel.yaml,内容如下：
 
@@ -2163,7 +2162,7 @@ spring:
       http-method-specify: true # 开启请求方式前缀可根据http请求方法区分簇点链路
 ```
 
-### 4.5.7 引用共享配置
+#### 4.5.7 引用共享配置
 
 在bootstrap.yml中编写如下内容：
 
@@ -2197,7 +2196,7 @@ spring:
 
 
 
-### 4.5.8 修改应用配置
+#### 4.5.8 修改应用配置
 
 抽取共享配置后nacos上cart-service-dev.yaml内容如下：
 
@@ -2260,13 +2259,13 @@ nacos上的配置文件如下：
 
 
 
-### 4.5.9 测试
+#### 4.5.9 测试
 
 下边重启购物车服务 进行测试，测试购物车接口是否可以正常访问。
 
 ![这张图片是购物车服务接口文档的测试页面，展示了针对/carts接口的调试请求配置，请求方式为GET。页面左侧有调试相关的选项，如Open、Script等；中间的请求配置区域，已选择x-www-form-urlencoded格式，并已设置好各请求参数，包含id、num、name、price等字段；页面下方展示了该接口的响应内容，呈现了对应购物车的各项信息，包括购物车条目id、商品名称、数量、价格、创建时间等，同时还标注了响应状态为200，耗时27ms，可用于验证该购物车接口是否正常工作。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AVj2bwC7Voh9l7x618qcsZwwn0d.png)
 
-## 4.6. 网关配置管理
+### 4.6. 网关配置管理
 
 接下来把网关的配置也在nacos管理。
 
@@ -2373,13 +2372,13 @@ server:
 
 ![这是一张展示HTTP请求与响应结果的界面截图，上方是地址为http://localhost:8080/carts的GET请求，请求头标注了Authorization字段，红色箭头指向该请求；下方是返回的响应信息，状态为HTTP/1.1 200 OK，内容类型为application/json，响应体里包含id、itemId、num、商品名称、规格、价格、库存等购物车相关数据，该截图与文档中重启网关后测试查询购物车接口是否正常的内容直接相关，可用于验证配置后的网关是否能正常提供接口服务。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/FZlGb8CzCoMf5uxb9CMcieE9nyc.png)
 
-## 4.7.配置热更新
+### 4.7.配置热更新
 
 
 
 <whiteboard token="FSKPwolJehc8vXbjfAzcpchFndb"></whiteboard>
 
-### 4.7.1 配置热更新方案
+#### 4.7.1 配置热更新方案
 
 有很多的业务相关参数，将来可能会根据实际情况临时调整。例如购物车业务，购物车数量有一个上限，默认是10，对应代码如下：
 
@@ -2399,7 +2398,7 @@ AI: Spring Boot 集成 nacos后如何实现配置热更新
 
 
 
-### 4.7.2 添加配置到Nacos
+#### 4.7.2 添加配置到Nacos
 
 在nacos上`cart-service-dev.yaml`增加以下内容：
 
@@ -2413,7 +2412,7 @@ hm:
 
 ![图片展示的是在nacos上配置`cart-service-dev.yaml`的内容界面。界面中显示了命名空间、Data ID、Group等信息，其中Group为DEFAULT_GROUP。配置内容部分，以YAML格式呈现，包括数据库相关信息及购物车商品数量上限设置，其中“cart: maxAmount: 1 # 购物车商品数量上限”被红色框突出显示。该图片与文档中“4.7.2添加配置到Nacos”部分内容对应，用于说明在nacos上增加配置的操作。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/UNi2b3K1roQUbXxgwjpcZZZgnXe.png)
 
-### 4.7.3 配置热更新
+#### 4.7.3 配置热更新
 
 接着，我们在微服务中读取配置，实现配置热更新。
 
@@ -2445,7 +2444,7 @@ public class CartProperties {
 
 ![图片展示了`CartServiceImpl`类的部分代码。关键部分是`cartProperties`属性，其类型为`CartProperties`，被红色框突出显示。此外，代码中还涉及商品数量上限检查，当商品数量超过`cartProperties.getMaxAmount()`时，会抛出`BizIllegalException`异常。该图片与上下文紧密相关，上下文提到在`cart-service`中新建属性读取类，并在业务中使用该属性加载类，此图片正是业务中使用属性加载类的代码示例，体现了配置热更新的实现。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/InZTbG9hco7kl4xaO09cO5WinKc.png)
 
-### 4.7.4 测试
+#### 4.7.4 测试
 
 测试流程：
 
@@ -2481,13 +2480,13 @@ public class CartProperties {
 
 
 
-### 4.7.5 面试题
+#### 4.7.5 面试题
 
 nacos配置可以热更新吗？怎么实现？
 
-# 作业
+## 作业
 
-## 完成前后端联调
+### 完成前后端联调
 
 要求：
 
@@ -2497,7 +2496,7 @@ nacos配置可以热更新吗？怎么实现？
 
 支付功能：支付服务调用用户服务扣减余额，这里要将用户服务扣减余额接口定义为内部接口供支付服务调用。
 
-## Nacos配置
+### Nacos配置
 
 要求：
 

@@ -4,14 +4,11 @@ date: 2026-11-06
 aliases:
   - "微信支付调研 v1.0"
 ---
-
-<title>微信支付调研 v1.0</title>
-
-
+# 微信支付调研 v1.0
 
  
 
-# 1 **查阅微信的产品文档** 
+## 1 **查阅微信的产品文档**
 
 如何使用小程序进行支付？
 
@@ -21,9 +18,9 @@ aliases:
 
 ![图片展示的是微信支付商户平台的产品介绍页面。页面左侧有产品文档、API字典、通用规则、SDK及开发工具等分类，其中“小程序支付”分类下有产品介绍、接入前准备、开发指引、API列表等选项，其中“产品介绍”被红色框突出显示。右侧是产品介绍内容，提到商户已有微信小程序，用户通过好友分享或扫描二维码在微信内打开小程序时，可调用微信支付完成下单购买流程，还标注了小程序支付的注意事项。该图片与文档中前期准备中注册商户部分内容相关，辅助说明小程序支付的背景信息。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/FprYbpZeFocUIUxjhPGcliacnIb.png)
 
-# 2 **前期准备**
+## 2 **前期准备**
 
-## 2.1 注册商户
+### 2.1 注册商户
 
 首先参照接入前的准备进行申请：
 
@@ -55,7 +52,7 @@ AppID和mchid全部申请完毕后，需要建立两者之间的绑定关系。
 
 
 
-## 2.2 开通微信支付
+### 2.2 开通微信支付
 
 - 申请小程序开发者账号，进行微信认证，获取AppID登录[《微信公众平台》 (opens new window)](https://mp.weixin.qq.com/)，注册一个小程序的开发者账号。[小程序账号申请指引(opens new window)](https://developers.weixin.qq.com/miniprogram/introduction/)
 - 小程序开通微信支付，即申请或复用微信支付商户号，申请完小程序后，登录[小程序后台 (opens new window)](https://mp.weixin.qq.com/)。点击左侧导航栏的微信支付，在页面中进行开通。
@@ -66,9 +63,9 @@ AppID和mchid全部申请完毕后，需要建立两者之间的绑定关系。
 
 
 
-# 3 **小程序支付接口**
+## 3 **小程序支付接口**
 
-## 3.1 总体流程
+### 3.1 总体流程
 
 前期准备工作完毕下边调研小程序支付接口。
 
@@ -90,7 +87,7 @@ AppID和mchid全部申请完毕后，需要建立两者之间的绑定关系。
 
 
 
-## 3.2 **小程序下单**
+### 3.2 **小程序下单**
 
 当点击支付时，业务系统向微信发起下单请求。
 
@@ -100,7 +97,7 @@ AppID和mchid全部申请完毕后，需要建立两者之间的绑定关系。
 
 **请求方向**：业务系统--->微信
 
-### **请求参数**
+#### **请求参数**
 
 除了appid、mchid商户id等必要参数以外，与业务相关的最重要的就是**out_trade_no和amount，**它是业务系统中的订单号及订单金额。
 
@@ -148,7 +145,7 @@ AppID和mchid全部申请完毕后，需要建立两者之间的绑定关系。
 
 .....
 
-### **应答参数**
+#### **应答参数**
 
 200OK
 
@@ -158,7 +155,7 @@ AppID和mchid全部申请完毕后，需要建立两者之间的绑定关系。
 
 
 
-### 签名认证
+#### 签名认证
 
 在head参数中有一个**Authorization，**它表示请求接口的签名认证信息，是按照微信要求生成的加密串和一些基本信息。
 
@@ -210,7 +207,7 @@ AppID和mchid全部申请完毕后，需要建立两者之间的绑定关系。
 
 
 
-## 3.3 **小程序调起支付**
+### 3.3 **小程序调起支付**
 
 小程序下单成功后微信返回一个prepay_id即预支付会话标识，小程序使用微信支付提供的api方法调起小程序支付。
 
@@ -234,7 +231,7 @@ Object请求参数说明：
 
 
 
-## 3.4 **支付通知**
+### 3.4 **支付通知**
 
 微信支付通过支付通知接口将用户支付成功消息通知给商户的业务系统。
 
@@ -353,7 +350,7 @@ PAYERROR：支付失败(其他原因，如银行返回失败)
 
 
 
-## 3.5 **商户通过订单号查询订单**
+### 3.5 **商户通过订单号查询订单**
 
 商户可以通过查询订单接口主动查询订单状态
 
@@ -367,7 +364,7 @@ PAYERROR：支付失败(其他原因，如银行返回失败)
 
 **请求方向**：业务系统--->微信
 
-### **请求参数**
+#### **请求参数**
 
 Header**HTTP头参数**
 
@@ -391,7 +388,7 @@ Query**查询参数**
 
 **【直连商户号】** 直连商户的商户号，由微信支付生成并下发。
 
-### **应答参数**
+#### **应答参数**
 
 在应答参数中有一个**out_trade_no，**正是业务系统的订单号**，trade_state**是支付结果**，**我们可以根据这两个参数去更新订单的支付结果。
 
@@ -440,7 +437,7 @@ Query**查询参数**
 
 
 
-# 4 **Native**支付接口
+## 4 **Native**支付接口
 
 打开**Native下单接口：** 
 
@@ -448,7 +445,7 @@ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/direct-jsons/native-
 
 ![图片展示的是微信支付API字典中Native下单的页面。页面上方有微信支付标志及“商户平台”等导航栏。左侧有支付产品分类，其中Native支付下的“native下单”被选中。右侧是Native下单的介绍，说明通过本接口生成支付链接参数code_url，用户在微信客户端扫描二维码后可完成支付。下方有接口说明，支持商户为普通商户，还列出了Header和Body的必填参数，如appid、mchid、description等。该图片与文档中Native支付接口下单部分上下文对应，直观呈现了Native下单的相关信息。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/VaiQb3sKbo3b5Jxnajdc1Rgxnlb.png)
 
-## 4.1 总体流程
+### 4.1 总体流程
 
 扫码支付的流程与小程序支付基本类似，只是小程序支付改为了用户扫码支付，流程如下：
 
@@ -456,7 +453,7 @@ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/direct-jsons/native-
 
 
 
-## 4.2 下单
+### 4.2 下单
 
 **支持商户：**【普通商户】
 
@@ -466,7 +463,7 @@ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/direct-jsons/native-
 
 **请求方向**：业务系统--->微信
 
-### **请求参数**
+#### **请求参数**
 
 Header**HTTP头参数**
 
@@ -504,7 +501,7 @@ Body**包体参数**
 
 **【订单金额】** 订单金额
 
-### **应答参数**
+#### **应答参数**
 
 200OK
 
@@ -516,11 +513,11 @@ Body**包体参数**
 
 
 
-## 4.3 支付通知
+### 4.3 支付通知
 
 同小程序支付通知。
 
-## 4.4 **商户订单号查询订单**
+### 4.4 **商户订单号查询订单**
 
 除了接口地址不同其它与小程序支付相同。
 
@@ -532,7 +529,7 @@ Body**包体参数**
 
 **请求方向：业务系统--->微信**
 
-### **请求参数**
+#### **请求参数**
 
 Header**HTTP头参数**
 
@@ -556,7 +553,7 @@ Query**查询参数**
 
 **【直连商户号】** 直连商户的商户号，由微信支付生成并下发。
 
-### **应答参数**
+#### **应答参数**
 
 200OK
 
@@ -603,9 +600,9 @@ Query**查询参数**
 
 
 
-# 5 SDK调研
+## 5 SDK调研
 
-## 介绍
+### 介绍
 
 为了方便进行支付接口对接，可通过SDK程序快速进行开发。
 
@@ -619,9 +616,9 @@ SDK介绍地址：https://pay.wechatpay.cn/wiki/doc/apiv3/wechatpay/wechatpay6_0
 
 本项目使用[wechatpay-apache-httpclient](https://github.com/wechatpay-apiv3/wechatpay-apache-httpclient)
 
-## 使用示例
+### 使用示例
 
-### 加入以下依赖
+#### 加入以下依赖
 
 ```Java
 <dependency>
@@ -631,7 +628,7 @@ SDK介绍地址：https://pay.wechatpay.cn/wiki/doc/apiv3/wechatpay/wechatpay6_0
 </dependency>
 ```
 
-### 名词解释
+#### 名词解释
 
 - 商户API证书，是用来证实商户身份的。证书中包含商户号、证书序列号、证书有效期等信息，由证书授权机构(Certificate Authority ，简称CA)签发，以防证书被伪造或篡改。如何获取请见[商户API证书](https://wechatpay-api.gitbook.io/wechatpay-api-v3/ren-zheng/zheng-shu#shang-hu-api-zheng-shu)。
 - 商户API私钥。商户申请商户API证书时，会生成商户私钥，并保存在本地证书文件夹的文件apiclient_key.pem中。注：不要把私钥文件暴露在公共场合，如上传到Github，写在客户端代码等。
@@ -639,7 +636,7 @@ SDK介绍地址：https://pay.wechatpay.cn/wiki/doc/apiv3/wechatpay/wechatpay6_0
 - 证书序列号。每个证书都有一个由CA颁发的唯一编号，即证书序列号。如何查看证书序列号请看[这里](https://wechatpay-api.gitbook.io/wechatpay-api-v3/chang-jian-wen-ti/zheng-shu-xiang-guan#ru-he-cha-kan-zheng-shu-xu-lie-hao)。
 - API v3密钥。为了保证安全性，微信支付在回调通知和平台证书下载接口中，对关键信息进行了AES-256-GCM加密。API v3密钥是加密时使用的对称密钥。商户可以在【商户平台】->【API安全】的页面设置该密钥。
 
-### 开始
+#### 开始
 
 如果你使用的是`HttpClientBuilder`或者`HttpClients#custom()`来构造`HttpClient`，你可以直接替换为`WechatPayHttpClientBuilder`。
 
@@ -666,7 +663,7 @@ CloseableHttpResponse response = httpClient.execute(...);
 - `merchantPrivateKey`商户API私钥，如何加载商户API私钥请看[常见问题](https://github.com/wechatpay-apiv3/wechatpay-apache-httpclient#%E5%A6%82%E4%BD%95%E5%8A%A0%E8%BD%BD%E5%95%86%E6%88%B7%E7%A7%81%E9%92%A5)。
 - `wechatPayCertificates`微信支付平台证书列表。你也可以使用后面章节提到的“[定时更新平台证书功能](https://github.com/wechatpay-apiv3/wechatpay-apache-httpclient#%E5%AE%9A%E6%97%B6%E6%9B%B4%E6%96%B0%E5%B9%B3%E5%8F%B0%E8%AF%81%E4%B9%A6%E5%8A%9F%E8%83%BD)”，而不需要关心平台证书的来龙去脉。
 
-### 示例：**获取平台证书**
+#### 示例：**获取平台证书**
 
 你可以使用`WechatPayHttpClientBuilder`构造的`HttpClient`发送请求和应答了。
 
@@ -681,7 +678,7 @@ String bodyAsString = EntityUtils.toString(response.getEntity());
 System.out.println(bodyAsString);
 ```
 
-### [**示例：JSAPI下单**](https://github.com/wechatpay-apiv3/wechatpay-apache-httpclient#%E7%A4%BA%E4%BE%8Bjsapi%E4%B8%8B%E5%8D%95)
+#### [**示例：JSAPI下单**](https://github.com/wechatpay-apiv3/wechatpay-apache-httpclient#%E7%A4%BA%E4%BE%8Bjsapi%E4%B8%8B%E5%8D%95)
 
 注：
 
@@ -716,7 +713,7 @@ String bodyAsString = EntityUtils.toString(response.getEntity());
 System.out.println(bodyAsString);
 ```
 
-### [**示例：查单**](https://github.com/wechatpay-apiv3/wechatpay-apache-httpclient#%E7%A4%BA%E4%BE%8B%E6%9F%A5%E5%8D%95)
+#### [**示例：查单**](https://github.com/wechatpay-apiv3/wechatpay-apache-httpclient#%E7%A4%BA%E4%BE%8B%E6%9F%A5%E5%8D%95)
 
 ```Java
 URIBuilder uriBuilder = new URIBuilder("https://api.mch.weixin.qq.com/v3/pay/transactions/id/4200000889202103303311396384?mchid=1230000109");
@@ -729,7 +726,7 @@ String bodyAsString = EntityUtils.toString(response.getEntity());
 System.out.println(bodyAsString);
 ```
 
-### [**示例：关单**](https://github.com/wechatpay-apiv3/wechatpay-apache-httpclient#%E7%A4%BA%E4%BE%8B%E5%85%B3%E5%8D%95)    
+#### [**示例：关单**](https://github.com/wechatpay-apiv3/wechatpay-apache-httpclient#%E7%A4%BA%E4%BE%8B%E5%85%B3%E5%8D%95)
 
 ```Java
 HttpPost httpPost = new HttpPost("https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/1217752501201407033233368018/close");

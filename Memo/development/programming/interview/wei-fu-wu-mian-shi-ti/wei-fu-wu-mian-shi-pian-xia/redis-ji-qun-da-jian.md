@@ -4,16 +4,13 @@ date: 2026-11-06
 aliases:
   - "Redis集群搭建"
 ---
+# Redis集群搭建
 
-<title>Redis集群搭建</title>
-
-
-
-# 1.Redis主从
+## 1.Redis主从
 
 单节点Redis的并发能力是有上限的，要进一步提高Redis的并发能力，这里讲一种方案就是搭建主从集群，实现读写分离。
 
-## 1.1.主从集群结构
+### 1.1.主从集群结构
 
 下图就是一个简单的Redis主从集群结构：
 
@@ -26,7 +23,7 @@ aliases:
 
 
 
-## 1.2.搭建主从集群
+### 1.2.搭建主从集群
 
 我们会在同一个虚拟机中利用3个Docker容器来搭建主从集群，容器信息如下：
 
@@ -34,7 +31,7 @@ aliases:
 
 
 
-### 1.2.1.启动多个Redis实例
+#### 1.2.1.启动多个Redis实例
 
 我们利用课前资料提供的docker-compose文件来构建主从集群：
 
@@ -88,7 +85,7 @@ docker-compose up -d
 
 
 
-### 1.2.2.建立集群
+#### 1.2.2.建立集群
 
 虽然我们启动了3个Redis实例，但是它们并没有形成主从关系。我们需要通过命令来配置主从关系：
 
@@ -166,7 +163,7 @@ repl_backlog_histlen:140
 
 
 
-### 1.2.3.测试
+#### 1.2.3.测试
 
 依次在`r1`、`r2`、`r3`节点上执行下面命令：
 
@@ -190,13 +187,13 @@ get num
 
 
 
-# 2.Redis哨兵
+## 2.Redis哨兵
 
 主从结构中master节点的作用非常重要，一旦故障就会导致集群不可用。那么有什么办法能保证主从集群的高可用性呢？
 
 
 
-## 2.1.哨兵集群介绍
+### 2.1.哨兵集群介绍
 
 Redis提供了`哨兵`（`Sentinel`）机制来监控主从集群监控状态，确保集群的高可用性。
 
@@ -212,7 +209,7 @@ Redis提供了`哨兵`（`Sentinel`）机制来监控主从集群监控状态，
 
 
 
-## 2.2.搭建哨兵集群
+### 2.2.搭建哨兵集群
 
 首先，我们停掉之前的redis集群：
 
@@ -337,7 +334,7 @@ docker-compose up -d
 
 
 
-## 2.3.演示failover
+### 2.3.演示failover
 
 接下来，我们演示一下当主节点故障时，哨兵是如何完成集群故障恢复（failover）的。
 
@@ -360,7 +357,7 @@ docker stop r1
 
 ![这张图片展示了执行`info replication`命令后的输出内容，是在哨兵完成故障切换后查看集群状态的结果。图片中红框突出显示了关键信息“role:master”，表明当前节点（对应端口7002的Redis节点）已成为新的主节点，符合文档中哨兵完成故障恢复后将r2设为主节点的演示内容。输出还显示该主节点已连接1个从节点，从节点的IP、端口、运行状态、偏移量和同步滞后等信息，可验证Redis集群故障切换后的主从复制状态。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/IUIwbj7u3otdRkxLWpjc3JOqnWf.png)
 
-# 3.Redis分片集群
+## 3.Redis分片集群
 
 主从模式可以解决高可用、高并发读的问题。但依然有两个问题没有解决：
 
@@ -386,7 +383,7 @@ Redis分片集群的结构如图：
 
 
 
-## 3.1.搭建分片集群
+### 3.1.搭建分片集群
 
 Redis分片集群最少也需要3个master节点，由于我们的机器性能有限，我们只给每个master配置1个slave，形成最小的分片集群：
 
@@ -400,7 +397,7 @@ Redis分片集群最少也需要3个master节点，由于我们的机器性能�
 
 
 
-### 3.1.1.集群配置
+#### 3.1.1.集群配置
 
 分片集群中的Redis节点必须开启集群模式，一般在配置文件中添加下面参数：
 
@@ -468,7 +465,7 @@ services:
 
 
 
-### 3.1.2.启动集群
+#### 3.1.2.启动集群
 
 进入`/root/redis-cluster`目录，使用命令启动redis：
 
@@ -545,7 +542,7 @@ redis-cli -p 7001 cluster nodes
 
 ![图片展示了在Redis集群搭建中，通过`redis-cli -p 7001 cluster nodes`命令查看集群状态的结果。命令执行后，输出了各节点信息，包括节点ID、IP地址、端口号、角色（master或slave）、主节点ID、连接状态等。其中，`7001`节点为`master`，`7002`和`7003`节点为`master`，`7004`和`7005`节点为`slave`，各节点间状态均为`connected`。该图片与上文通过命令查看集群状态的内容对应，直观呈现了集群节点信息。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/CtdEbd7vcom0FjxaECCcmWX7ngf.png)
 
-## 3.2.Java客户端连接分片集群
+### 3.2.Java客户端连接分片集群
 
 RedisTemplate底层同样基于lettuce实现了分片集群的支持，而使用的步骤与哨兵模式基本一致，参考`2.5节`：
 

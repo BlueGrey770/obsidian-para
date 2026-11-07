@@ -4,12 +4,11 @@ date: 2026-11-06
 aliases:
   - "MQ基础"
 ---
-
-<title>MQ基础</title>
+# MQ基础
 
 ![这张图展示了RabbitMQ Server Broker的工作流程结构，核心模块包含Publisher（消息生产者）、VirtualHost（虚拟主机）、exchange（交换机）、queue（队列）与consumer（消息消费者）。图中清晰呈现了信息传递的逻辑：Publisher作为生产者，将消息传输给VirtualHost内的两台exchange交换机，交换机再将消息分发至对应的queue队列，最终队列里的消息会被对应的consumer消费者处理。该图对应文档中MQ工作模型的相关内容，直观呈现了MQ核心组成部分的运行逻辑。](../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/JSYnbgcXWomOVPxbVhOcmTggnRh.png)
 
-# MQ有什么应用场景
+## MQ有什么应用场景
 
 ```Java
 1. 简单任务分发场景：使用于消息数序不重要的简单任务，采用单个生产者对应单个消费者的模式完成任务传递。
@@ -21,7 +20,7 @@ aliases:
 7. IOT设备数据传输场景：在IOT设备数据阐述中使用MQTT协议（MQ的一种），实现华为云IOT平台于设备之间    的信息获取，同时可使用AMQP协议，完成IOT平台数据向Java应用程序的传输。
 ```
 
-# 为什么要用mq
+## 为什么要用mq
 
 ```Plain Text
 1. 因为项目比较大，做了分布式系统，所有远程服务调用请求都是同步执行经常出问题，所以引入了mq
@@ -30,9 +29,9 @@ aliases:
 4. 削峰：请求达到峰值后，后端service还可以保持固定速率消费，不会被压垮。
 ```
 
-# mq工作模型
+## mq工作模型
 
-## 普通模型
+### 普通模型
 
 ![这张图展示了MQ的普通工作模型，是文档中“普通模型”对应的示意图。图中有三个核心组成部分：蓝色的消息发布方Publisher、橙色的队列Queue、绿色的消息消费方Consumer，箭头标注了流程为Publisher向Queue发送消息，Queue再向Consumer接收消息。该模型的特点是每个队列仅绑定一个消费者，文档提及此模型下消费者处理能力较弱，若生产者消息量远超消费者处理速度，就容易发生消息堆积，这张图直观呈现了普通模型的基础消息流转逻辑。](../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/QJpObLkt1o6SHJxk7fmcrLE3ncd.png)
 
@@ -48,7 +47,7 @@ aliases:
 
 
 
-## 工作队列（work queue）
+### 工作队列（work queue）
 
 ![这张图展示的是MQ的工作队列（work queue）模型，图中P代表消息生产者，其箭头指向名为Queue的队列，表明生产者向该队列发送消息。队列的消息分别输出箭头，连接到两个消费者C₁和C₂，体现了该模型中多个消费者绑定到同一个队列的设计，同一条消息只会被一个消费者处理，也对应了“能者多劳”的消息处理思路，还可通过设置prefetch控制消费者预取消息数量，以此解决普通模型中消费者处理能力不足、易造成消息堆积的问题。](../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/T5wxbcxHeorLvSxiu7fcBU9Kn3g.png)
 
@@ -61,7 +60,7 @@ aliases:
 解决方式：能者多劳，通过设置prefetch来控制消费者预取得消息数量。
 </callout>
 
-## 发布订阅模型(Publish/Subscribe)
+### 发布订阅模型(Publish/Subscribe)
 
 ![图片展示了MQ发布订阅模型中消息传递的流程。左侧有一个蓝色圆圈标记的P，代表生产者，向中间的X（交换机）发送消息。X将消息分别路由到右侧的Q1和Q2两个队列，再由C1和C2两个消费者分别从对应的队列获取消息。该图直观呈现了生产者、交换机、队列及消费者之间的消息传递关系，与文档中对发布订阅模型的介绍相契合，帮助理解消息在系统中的流转过程。](../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/R0mibOBCKoy2yFxFsmrclq1rnqg.png)
 
@@ -74,7 +73,7 @@ aliases:
 注意：exchange(交换机)：只负责转发消息，不具备存储消息的能力，因此如果没有任何队列于exchange绑定，或者没有符合路由规则的队列，那么消息会丢失。
 ```
 
-## 交换机类型
+### 交换机类型
 
 ```Plain Text
 1. fanout:广播类型，将消息交给所有绑定到交换机的队列。
@@ -83,7 +82,7 @@ aliases:
 4. headers:头匹配类型，基于mq的消息头匹配用的较少（知道名字就行）
 ```
 
-### fanout类型（广播模式）
+#### fanout类型（广播模式）
 
 ![这张图展示的是MQ中Fanout类型交换机的工作流程，图中带有“publisher”的蓝色矩形代表消息发布者，它将消息发送给标注为“Fanout exchange”的紫色圆形交换机。该交换机按照广播模式，把接收到的消息同时路由绑定的两个队列，分别是“queue1”和“queue2”，随后两个队列又分别将消息传递给对应的消费者“consumer1”和“consumer2”，清晰对应了文档中Fanout类型交换机将消息路由到所有绑定队列的特性，直观解释了该广播模式的运行逻辑。](../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/TeCgbGCuGo0rRsxmlbpcf41Jnwf.png)
 
@@ -110,7 +109,7 @@ aliases:
 4. fanoutexchange则会将消息路由到每个绑定的队列
 </callout>
 
-### Direct类型
+#### Direct类型
 
 ![图片展示了Direct类型交换机的工作流程。publisher向Direct exchange发送消息，消息根据routingKey“red”被路由到queue1和queue2，queue1的bindingKey为“blue”，queue2的bindingKey为“yellow”。consumer1从queue1接收消息，consumer2从queue2接收消息，consumer1接收的消息key有“blue”和“red”，consumer2接收的消息key有“yellow”和“red”。该图直观呈现了Direct交换机根据routingKey判断路由给哪个队列的机制。](../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/AFfSbW53boSEDTxw97jcxEQPnmf.png)
 
@@ -130,7 +129,7 @@ Direct交换机与Fanout交换机的差异？
 
 
 
-### Topic交换机
+#### Topic交换机
 
 ![这张图展示了RabbitMQ中Topic交换机的消息路由模型，对应文档中Topic交换机的相关内容。图中的核心组件包括发布者publisher、名称为hmall.topic的交换机exchange，两个绑定在该交换机上的队列topic.queue1和topic.queue2，以及两个消费者consumer1和consumer2。topic.queue1的绑定键为china.#，topic.queue2的绑定键为#.news，发布者发送的消息会根据路由规则，转发给匹配绑定键的队列，再由对应的消费者进行接收处理，直观呈现了Topic交换机根据通配符形式的绑定键实现消息路由的功能。](../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/OrDEb7lSQoUNXbxeJhucsAmoncd.png)
 
@@ -207,9 +206,9 @@ public class MesaageConfig {
 我们可以知道不论生产者发送什么样的样式的消息最终spring都会帮我们转换成Message类型的消息
 </callout>
 
-# 面试题：
+## 面试题：
 
-## RabitMQ的工作模型有哪些
+### RabitMQ的工作模型有哪些
 
 ```Java
 1. 普通模型：一对一消息发送和接收，这样会出现问题：当生产者生产的消息速度远远大于消费者消费速度时，    会造成消息堆积
@@ -219,7 +218,7 @@ public class MesaageConfig {
 5. Topic（通配符路由键）：和Direct一样只不过这个是多了两个通配符可以更加灵活
 ```
 
-## 如何解决MQ消息堆积问题？
+### 如何解决MQ消息堆积问题？
 
 ```Plain Text
 使用工作队列（work queue）模型：多个消费者绑定到同一个队列，同一条消息只会被一个消费者处理。通过设置 prefetch 控制消费者预取的消息数量，实现“能者多劳”，提升消费者整体处理速度，解决生产者发送消息速度远大于消费者处理速度导致的消息堆积问题。

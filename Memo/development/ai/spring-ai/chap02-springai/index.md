@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "Chap02. SpringAI"
 ---
+# Chap02. SpringAI
 
-<title>Chap02. SpringAI</title>
-
-# 0.前言
+## 0.前言
 
 SpringAI整合了全球（主要是国外）的大多数大模型，而且对于大模型开发的三种技术架构都有比较好的封装和支持，开发起来非常方便。
 
@@ -54,13 +53,13 @@ SpringAI整合了全球（主要是国外）的大多数大模型，而且对于
 
 
 
-# 1.SpringAI入门（对话机器人）
+## 1.SpringAI入门（对话机器人）
 
 接下来，我们就利用SpringAI发起与大模型的第一次对话。
 
-## 1.1.快速入门
+### 1.1.快速入门
 
-### 1.1.1.创建工程
+#### 1.1.1.创建工程
 
 创建一个新的SpringBoot工程，勾选Web、MySQL驱动即可：
 
@@ -136,7 +135,7 @@ SpringAI整合了全球（主要是国外）的大多数大模型，而且对于
 
 
 
-### 1.1.2.引入依赖
+#### 1.1.2.引入依赖
 
 SpringAI完全适配了SpringBoot的自动装配功能，而且给不同的大模型提供了不同的starter，比如：
 
@@ -284,7 +283,7 @@ SpringAI完全适配了SpringBoot的自动装配功能，而且给不同的大�
 
 
 
-### 1.1.3.配置模型信息
+#### 1.1.3.配置模型信息
 
 接下来，我们还要在配置文件中配置模型的参数信息。
 
@@ -307,7 +306,7 @@ spring:
 
 
 
-### 1.1.4.ChatClient
+#### 1.1.4.ChatClient
 
 `ChatClient`中封装了与AI大模型对话的各种API，同时支持同步式或响应式交互。
 
@@ -354,7 +353,7 @@ public class CommonConfiguration {
 
 
 
-### 1.1.5.同步调用
+#### 1.1.5.同步调用
 
 接下来，我们定义一个Controller，在其中接收用户发送的提示词，然后把提示词发送给大模型，交给大模型处理，拿到结果后返回。
 
@@ -404,7 +403,7 @@ public class ChatController {
 
 
 
-### 1.1.6.流式调用
+#### 1.1.6.流式调用
 
 同步调用需要等待很长时间页面才能看到结果，用户体验不好。为了解决这个问题，我们可以改进调用方式为流式调用。
 
@@ -435,7 +434,7 @@ public Flux<String> chat(@RequestParam(defaultValue = "讲个笑话") String pro
 
 
 
-### 1.1.7.System设定
+#### 1.1.7.System设定
 
 可以发现，当我们询问AI你是谁的时候，它回答自己是DeepSeek-R1，这是大模型底层的设定。如果我们希望AI按照新的设定工作，就需要给它设置System背景信息。
 
@@ -470,13 +469,13 @@ public ChatClient chatClient(OllamaChatModel model) {
 
 
 
-## 1.2.日志功能
+### 1.2.日志功能
 
 默认情况下，应用于AI的交互时不记录日志的，我们无法得知SpringAI组织的提示词到底长什么样，有没有问题。这样不方便我们调试。
 
 
 
-### 1.2.1.Advisor
+#### 1.2.1.Advisor
 
 SpringAI基于AOP机制实现与大模型对话过程的增强、拦截、修改等功能。所有的增强通知都需要实现Advisor接口。
 
@@ -496,7 +495,7 @@ Spring提供了一些Advisor的默认实现，来实现一些基本的增强功�
 
 
 
-### 1.2.2.添加日志Advisor
+#### 1.2.2.添加日志Advisor
 
 首先，我们需要修改`CommonConfiguration`，给`ChatClient`添加日志Advisor：
 
@@ -513,7 +512,7 @@ public ChatClient chatClient(OllamaChatModel model) {
 
 
 
-### 1.2.3.修改日志级别
+#### 1.2.3.修改日志级别
 
 接下来，我们在`application.yaml`中添加日志配置，更新日志级别：
 
@@ -532,7 +531,7 @@ logging:
 
 
 
-## 1.3.对接前端
+### 1.3.对接前端
 
 在浏览器通过地址访问，非常麻烦，也不够优雅。如果能有一个优美的前端页面就好了。
 
@@ -540,7 +539,7 @@ logging:
 
 别着急，我提前给大家准备了一个前端页面。而且有两种不同的运行方式。
 
-### 1.3.1.npm运行
+#### 1.3.1.npm运行
 
 在资料中给大家提供了前端的源代码：
 
@@ -563,7 +562,7 @@ npm run dev
 
 
 
-### 1.3.2.Nginx运行
+#### 1.3.2.Nginx运行
 
 如果你不关心源码，我也给大家提供了构建好的Nginx程序：
 
@@ -593,7 +592,7 @@ nginx.exe -s stop
 
 
 
-### 1.3.3.解决CORS问题
+#### 1.3.3.解决CORS问题
 
 前后端在不同域名，存在跨域问题，因此我们需要在服务端解决cors问题。在`com.itheima.ai.config`包中添加一个`MvcConfiguration`类：
 
@@ -635,7 +634,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
 
 
-### 1.3.4.测试
+#### 1.3.4.测试
 
 启动前端后，访问 http://localhost:5173即可看到页面：
 
@@ -653,7 +652,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
 
 
-## 1.4.会话记忆功能
+### 1.4.会话记忆功能
 
 现在，我们的AI聊天机器人是没有记忆功能的，上一次聊天的内容，下一次就忘掉了。
 
@@ -667,7 +666,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
 
 
-### 1.4.1.ChatMemory
+#### 1.4.1.ChatMemory
 
 会话记忆功能同样是基于AOP实现，Spring提供了一个`MessageChatMemoryAdvisor`的通知，我们可以像之前添加日志通知一样添加到`ChatClient`即可。
 
@@ -713,7 +712,7 @@ public interface ChatMemory {
 
 
 
-### 1.4.2.添加会话记忆Advisor
+#### 1.4.2.添加会话记忆Advisor
 
 在`CommonConfiguration`中注册`ChatMemory`对象：
 
@@ -743,7 +742,7 @@ OK，现在聊天会话已经有记忆功能了，不过**现在的会话记忆�
 
 
 
-## 1.5.会话历史
+### 1.5.会话历史
 
 会话历史与会话记忆是两个不同的事情：
 
@@ -775,7 +774,7 @@ OK，现在聊天会话已经有记忆功能了，不过**现在的会话记忆�
 
 
 
-### 1.5.1.管理会话id（会话历史）
+#### 1.5.1.管理会话id（会话历史）
 
 由于会话记忆是以`conversationId`来管理的，也就是**会话id（**以后简称为chatId**）。**将来要查询会话历史，其实就是查询历史中有哪些chatId.
 
@@ -859,7 +858,7 @@ public class InMemoryChatHistoryRepository implements ChatHistoryRepository {
 
 
 
-### 1.5.2.保存会话id
+#### 1.5.2.保存会话id
 
 接下来，修改ChatController中的chat方法，做到3点：
 
@@ -907,7 +906,7 @@ chatClient.advisors(a -> a.param(CHAT_MEMORY_CONVERSATION_ID_KEY, chatId))
 
 
 
-### 1.5.3.查询会话历史
+#### 1.5.3.查询会话历史
 
 接着，我们定义一个新的Controller，专门实现会话历史的查询。包含两个接口：
 
@@ -1010,7 +1009,7 @@ OK，重启服务，现在AI聊天机器人就具备会话记忆和会话历史�
 
 
 
-# 2.纯Prompt开发（哄哄模拟器）
+## 2.纯Prompt开发（哄哄模拟器）
 
 之前说过，开发有四种模式，其中第一种就是纯Prompt模式，只要我们设定好System提示词，就能让大模型实现很强大的功能。
 
@@ -1020,7 +1019,7 @@ OK，重启服务，现在AI聊天机器人就具备会话记忆和会话历史�
 
 
 
-## 2.1.提示词工程
+### 2.1.提示词工程
 
 在OpenAI的官方文档中，对于写提示词专门有一篇文档，还给出了大量的例子，大家可以看看：
 
@@ -1032,7 +1031,7 @@ OK，重启服务，现在AI聊天机器人就具备会话记忆和会话历史�
 
 以下是对OpenAI官方Prompt Engineering指南的简洁总结，包含关键策略及详细示例：
 
-### 2.1.1.**核心策略**
+#### 2.1.1.**核心策略**
 
 1. **清晰明确的指令**  
 
@@ -1113,7 +1112,7 @@ OK，重启服务，现在AI聊天机器人就具备会话记忆和会话历史�
 
 
 
-### 2.1.2.**减少模型“幻觉”的技巧**
+#### 2.1.2.**减少模型“幻觉”的技巧**
 
 - **引用原文**：要求答案基于提供的数据（如“根据以下文章...”）。  
 - **限制编造**：添加指令如“若不确定，回答‘无相关信息’”。
@@ -1126,13 +1125,13 @@ OK，重启服务，现在AI聊天机器人就具备会话记忆和会话历史�
 
 
 
-## 2.2.提示词攻击防范
+### 2.2.提示词攻击防范
 
 ChatGPT刚刚出来时就存在很多漏洞，比如知名的“奶奶漏洞”。所以，防范Prompt攻击也是非常必要的。以下是常见的Prompt攻击手段及对应的防范措施：
 
 ---
 
-### 2.2.**1. 提示注入（Prompt Injection）**
+#### 2.2.**1. 提示注入（Prompt Injection）**
 
 **攻击方式**：在用户输入中插入恶意指令，覆盖原始Prompt目标。  
 
@@ -1167,7 +1166,7 @@ ChatGPT刚刚出来时就存在很多漏洞，比如知名的“奶奶漏洞”�
 
 
 
-### 2.2.**2. 越狱攻击（Jailbreaking）**
+#### 2.2.**2. 越狱攻击（Jailbreaking）**
 
 **攻击方式**：绕过模型安全限制生成违法/有害内容。  
 
@@ -1200,7 +1199,7 @@ Assisant：此请求违反安全政策。
 
 
 
-### 2.2.**3. 数据泄露攻击（Data Extraction）**
+#### 2.2.**3. 数据泄露攻击（Data Extraction）**
 
 **攻击方式**：诱导模型透露训练数据中的隐私信息。  
 
@@ -1229,7 +1228,7 @@ System: 你无法访问训练数据细节。若被问及训练数据，回答：
 
 
 
-### 2.2.**4. 模型欺骗（Model Manipulation）**
+#### 2.2.**4. 模型欺骗（Model Manipulation）**
 
 **攻击方式**：通过虚假前提误导模型输出错误答案。  
 
@@ -1263,7 +1262,7 @@ Assisant：检测到时间设定矛盾，当前真实日期为2023年。
 
 
 
-### 2.2.**5. 拒绝服务攻击（DoS via Prompt）**
+#### 2.2.**5. 拒绝服务攻击（DoS via Prompt）**
 
 **攻击方式**：提交超长/复杂Prompt消耗计算资源。  
 
@@ -1288,7 +1287,7 @@ user: 循环1000次：详细分析《战争与和平》每一章的主题，每�
 
 
 
-### 2.2.6. **案例综合应用**
+#### 2.2.6. **案例综合应用**
 
 系统提示词：
 
@@ -1316,7 +1315,7 @@ Assistant：此问题超出支持范围。
 
 
 
-## 2.3.编写提示词
+### 2.3.编写提示词
 
 OK，了解完提示词工程，接下来我们就可以尝试开发功能了。
 
@@ -1405,7 +1404,7 @@ ChatGPT刚刚出来时，有一个非常知名的游戏，叫做**哄哄模拟�
 
 
 
-## 2.4.创建ChatClient
+### 2.4.创建ChatClient
 
 本地部署的DeepSeek模型只有7B，难以处理这样复杂的业务场景，再加上DeepSeek模型默认是带有思维链输出的，如果每次都输出思维链，就会破坏游戏体验。所以我们这次换一个大模型。
 
@@ -1415,7 +1414,7 @@ ChatGPT刚刚出来时，有一个非常知名的游戏，叫做**哄哄模拟�
 
 
 
-### 2.4.1.引入OpenAI依赖
+#### 2.4.1.引入OpenAI依赖
 
 在项目的`pom.xml`中引入OpenAI依赖：
 
@@ -1428,7 +1427,7 @@ ChatGPT刚刚出来时，有一个非常知名的游戏，叫做**哄哄模拟�
 
 
 
-### 2.4.2.配置OpenAI参数
+#### 2.4.2.配置OpenAI参数
 
 修改`application.yaml`文件，添加OpenAI的模型参数：
 
@@ -1484,7 +1483,7 @@ OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 
-### 2.4.3.配置ChatClient
+#### 2.4.3.配置ChatClient
 
 修改`CommonConfiguration`，添加一个新的`ChatClient`：
 
@@ -1591,7 +1590,7 @@ public class SystemConstants {
 
 
 
-## 2.5.编写Controller
+### 2.5.编写Controller
 
 接下来，我们在`com.itheima.ai.controller`定义一个`GameController`，作为哄哄模拟器的聊天接口：
 
@@ -1634,7 +1633,7 @@ public class GameController {
 
 
 
-## 2.7.测试
+### 2.7.测试
 
 与之前类似，我们也提供了前端页面，现在一起去试试吧：
 
@@ -1658,7 +1657,7 @@ OK，基于纯Prompt模式开发的一款小游戏就完成了。
 
 
 
-# 3.Function Calling（智能客服）
+## 3.Function Calling（智能客服）
 
 由于AI擅长的是非结构化数据的分析，如果需求中包含严格的逻辑校验或需要读写数据库，纯Prompt模式就难以实现了。
 
@@ -1666,7 +1665,7 @@ OK，基于纯Prompt模式开发的一款小游戏就完成了。
 
 
 
-## 3.1.思路分析
+### 3.1.思路分析
 
 假如我要开发一个24小时在线的AI智能客服，可以给用户提供黑马的培训课程咨询服务，帮用户预约线下课程试听。
 
@@ -1788,11 +1787,11 @@ Function Calling就是起到这样的作用。
 
 
 
-## 3.1.基础CRUD
+### 3.1.基础CRUD
 
 下面，我们先实现课程、校区、预约单的CRUD功能
 
-### 3.1.1.数据库表
+#### 3.1.1.数据库表
 
 首先，我们来准备几张数据库表：
 
@@ -1867,7 +1866,7 @@ INSERT INTO `school` (`id`, `name`, `city`) VALUES
 
 
 
-### 3.1.2.引入依赖
+#### 3.1.2.引入依赖
 
 接下来，我们在项目引入MybatisPlus的依赖：
 
@@ -1881,7 +1880,7 @@ INSERT INTO `school` (`id`, `name`, `city`) VALUES
 
 
 
-### 3.1.3.配置数据库
+#### 3.1.3.配置数据库
 
 然后，修改`application.yaml`，添加数据库配置：
 
@@ -1916,13 +1915,13 @@ logging:
 
 
 
-### 3.1.4.基础代码
+#### 3.1.4.基础代码
 
 接下来就是CRUD的基础代码了。
 
 
 
-#### 3.1.4.1.实体类
+##### 3.1.4.1.实体类
 
 在`com.itheima.ai.entity`包下添加一个`po`包，向其中添加三张表对应的实体类：
 
@@ -2082,7 +2081,7 @@ public class CourseReservation implements Serializable {
 
 
 
-#### 3.1.4.2.Mapper接口
+##### 3.1.4.2.Mapper接口
 
 然后是Mapper接口，创建一个`com.itheima.ai.mapper`包，然后在其中写三个Mapper：
 
@@ -2129,7 +2128,7 @@ public interface CourseReservationMapper extends BaseMapper<CourseReservation> {
 
 
 
-#### 3.1.4.3.Service
+##### 3.1.4.3.Service
 
 创建`com.itheima.ai.service`包，添加3个接口：
 
@@ -2236,7 +2235,7 @@ public class CourseReservationServiceImpl extends ServiceImpl<CourseReservationM
 
 
 
-## 3.2.定义Function
+### 3.2.定义Function
 
 接下来，我们来定义AI要用到的Function，在SpringAI中叫做Tool
 
@@ -2250,7 +2249,7 @@ public class CourseReservationServiceImpl extends ServiceImpl<CourseReservationM
 
 
 
-### 3.2.1.查询条件分析
+#### 3.2.1.查询条件分析
 
 先来看下课程表的字段：
 
@@ -2313,7 +2312,7 @@ public class CourseQuery {
 
 
 
-### 3.2.2.定义Function
+#### 3.2.2.定义Function
 
 所谓的Function，就是一个个的函数，SpringAI提供了一个`@Tool`注解来标记这些特殊的函数。我们可以任意定义一个Spring的Bean，然后将其中的方法用`@Tool`标记即可：
 
@@ -2404,7 +2403,7 @@ public class CourseTools {
 
 
 
-## 3.3.System提示词
+### 3.3.System提示词
 
 同样，我们也需要给AI设定一个System背景，告诉它需要调用工具来实现复杂功能。
 
@@ -2466,7 +2465,7 @@ AI怎么知道要调用哪些工具呢？
 
 
 
-## 3.4.配置ChatClient
+### 3.4.配置ChatClient
 
 接下来，我们需要为智能客服定制一个ChatClient，同样具备会话记忆、日志记录等功能。
 
@@ -2508,7 +2507,7 @@ SpringAI依然是基于AOP的能力，在请求大模型时会把我们定义的
 
 
 
-## 3.5.编写Controller
+### 3.5.编写Controller
 
 接下来，就可以编写与前端对接的接口了。
 
@@ -2561,7 +2560,7 @@ public class CustomerServiceController {
 
 
 
-## 3.6.总结测试
+### 3.6.总结测试
 
 最终，完整项目结构如图：
 
@@ -2628,7 +2627,7 @@ AI客服可以智能的自己查询数据库、查询校区，给学生推荐课
 
 
 
-# 4.RAG（知识库 ChatPDF）
+## 4.RAG（知识库 ChatPDF）
 
 由于训练大模型非常耗时，再加上训练语料本身比较滞后，所以大模型存在**知识限制**问题：
 
@@ -2641,7 +2640,7 @@ AI客服可以智能的自己查询数据库、查询校区，给学生推荐课
 
 
 
-## 4.1.RAG原理
+### 4.1.RAG原理
 
 要解决大模型的知识限制问题，其实并不复杂。
 
@@ -2681,7 +2680,7 @@ AI客服可以智能的自己查询数据库、查询校区，给学生推荐课
 
 
 
-### 4.1.1.向量模型
+#### 4.1.1.向量模型
 
 先说说向量，向量是空间中有方向和长度的量，空间可以是二维，也可以是多维。
 
@@ -2753,7 +2752,7 @@ spring:
 
 
 
-### 4.1.2.向量模型测试
+#### 4.1.2.向量模型测试
 
 前面说过，文本向量化以后，可以通过向量之间的距离来判断文本相似度。
 
@@ -2982,7 +2981,7 @@ OK，有了比较文本相似度的办法，知识库的问题就可以解决了
 
 
 
-### 4.1.3.向量数据库
+#### 4.1.3.向量数据库
 
 向量数据库的主要作用有两个：
 
@@ -3027,7 +3026,7 @@ SpringAI支持很多向量数据库，并且都进行了封装，可以用统一
 
 
 
-#### 4.1.3.1.SimpleVectorStore
+##### 4.1.3.1.SimpleVectorStore
 
 最后一个`SimpleVectorStore`向量库是基于内存实现，是一个专门用来测试、教学用的库，非常适合我们。
 
@@ -3050,7 +3049,7 @@ public class CommonConfiguration {
 
 
 
-#### 4.1.3.2.VectorStore接口
+##### 4.1.3.2.VectorStore接口
 
 
 
@@ -3095,7 +3094,7 @@ public interface VectorStore extends DocumentWriter {
 
 
 
-### 4.1.4.文件读取和转换
+#### 4.1.4.文件读取和转换
 
 前面说过，知识库太大，是需要拆分成文档片段，然后再做向量化的。而且SpringAI中向量库接收的是Document类型的文档，也就是说，我们处理文档还要转成Document格式。
 
@@ -3175,7 +3174,7 @@ public void testVectorStore(){
 
 
 
-### 4.1.5.RAG原理总结
+#### 4.1.5.RAG原理总结
 
 OK，现在我们有了这些工具：
 
@@ -3224,7 +3223,7 @@ OK，现在我们有了这些工具：
 
 
 
-### 4.1.6.目标
+#### 4.1.6.目标
 
 好了，现在RAG所需要的基本工具都有了。
 
@@ -3248,7 +3247,7 @@ OK，现在我们有了这些工具：
 
 
 
-## 4.2.PDF上传下载、向量化
+### 4.2.PDF上传下载、向量化
 
 既然是ChatPDF，也就是说所有知识库都是PDF形式的，由用户提交给我们。所以，我们需要先实现一个上传PDF的接口，在接口中实现下列功能：
 
@@ -3268,7 +3267,7 @@ OK，现在我们有了这些工具：
 
 
 
-### 4.2.1.PDF文件管理
+#### 4.2.1.PDF文件管理
 
 由于将来要实现PDF下载功能，我们需要记住每一个chatId对应的PDF文件名称。
 
@@ -3398,7 +3397,7 @@ public class LocalPdfFileRepository implements FileRepository {
 
 
 
-### 4.2.2.上传文件响应结果
+#### 4.2.2.上传文件响应结果
 
 由于前端文件上传需要返回响应结果，我们先在`com.itheima.ai.entity.vo`中定义一个`Result`类：
 
@@ -3431,7 +3430,7 @@ public class Result {
 
 
 
-### 4.2.3.文件上传、下载
+#### 4.2.3.文件上传、下载
 
 接下来，我们实现上传和下载文件接口。
 
@@ -3534,7 +3533,7 @@ public class PdfController {
 
 
 
-### 4.2.4.上传大小限制
+#### 4.2.4.上传大小限制
 
 SpringMVC有默认的文件大小限制，只有10M，很多知识库文件都会超过这个值，所以我们需要修改配置，增加文件上传允许的上限。
 
@@ -3550,7 +3549,7 @@ spring:
 
 
 
-### 4.2.5.暴露响应头
+#### 4.2.5.暴露响应头
 
 默认情况下跨域请求的响应头是不暴露的，这样前端就拿不到下载的文件名，我们需要修改CORS配置，暴露响应头：
 
@@ -3579,7 +3578,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
 
 
-## 4.3.配置ChatClient
+### 4.3.配置ChatClient
 
 接下来就是最后的环节了，实现RAG的对话流程。
 
@@ -3629,7 +3628,7 @@ public ChatClient pdfChatClient(
 
 
 
-## 4.4.对话接口
+### 4.4.对话接口
 
 最后，就是对接前端，然后与大模型对话了。修改`PdfController`，添加一个接口：
 
@@ -3651,7 +3650,7 @@ public Flux<String> chat(String prompt, String chatId) {
 
 
 
-## 4.5.总结测试
+### 4.5.总结测试
 
 最终，项目结构如下：
 
@@ -3671,7 +3670,7 @@ public Flux<String> chat(String prompt, String chatId) {
 
 
 
-# 5.多模态
+## 5.多模态
 
 多模态是指不同类型的数据输入，如文本、图像、声音、视频等。目前为止，我们与大模型交互都是基于普通文本输入，这跟我们选择的大模型有关。
 
@@ -3709,7 +3708,7 @@ deepseek、qwen-max等模型都是纯文本模型，在ollama和百炼平台，�
 
 
 
-## 5.1.切换模型
+### 5.1.切换模型
 
 首先，我们需要修改`CommonConfiguration`中用于AI对话的`ChatClient`，将模型修改为`OpenAIChatModel`，不仅如此，由于其它业务使用的是`qwen-max`模型，不能改变。所以这里我们还需添加自定义配置，将模型改为`qwen-omni-turbo`:
 
@@ -3728,7 +3727,7 @@ public ChatClient chatClient(OpenAiChatModel model, ChatMemory chatMemory) {
 
 
 
-## 5.2.多模态对话
+### 5.2.多模态对话
 
 接下来，我们需要修改原来的`/ai/chat`接口，让它支持文件上传和多模态对话。
 
@@ -3811,7 +3810,7 @@ public class ChatController {
 
 
 
-## 5.3.测试
+### 5.3.测试
 
 访问页面中的AI聊天卡片：
 
@@ -3829,13 +3828,13 @@ public class ChatController {
 
 
 
-# 6.拓展（选学）
+## 6.拓展（选学）
 
 最好一章是拓展部分，大家可以选择性学习。
 
 
 
-## 6.1.兼容百炼平台
+### 6.1.兼容百炼平台
 
 截止SpringAI的1.0.0-M6版本为止，SpringAI的OpenAiModel和阿里云百炼的部分接口存在兼容性问题，包括但不限于以下两个问题：
 
@@ -3855,7 +3854,7 @@ public class ChatController {
 
 
 
-### 6.1.1.AlibabaOpenAIChatModel
+#### 6.1.1.AlibabaOpenAIChatModel
 
 首先，我们自己写一个遵循阿里巴巴百炼平台接口规范的`ChatModel`，其中大部分代码来自SpringAI的`OpenAiChatModel`，只需要重写接口协议不匹配的地方即可，重写部分会以黄色高亮显示。
 
@@ -4654,7 +4653,7 @@ public class AlibabaOpenAiChatModel extends AbstractToolCallSupport implements C
 
 
 
-### 6.1.2.配置ChatModel
+#### 6.1.2.配置ChatModel
 
 接下来，我们要把`AliababaOpenAiChatModel`配置到Spring容器。
 
@@ -4689,7 +4688,7 @@ public AlibabaOpenAiChatModel alibabaOpenAiChatModel(OpenAiConnectionProperties 
 
 
 
-### 6.1.3.修改ChatClient
+#### 6.1.3.修改ChatClient
 
 最后，让之前的`ChatClient`都使用自定义的`AlibabaOpenAiChatModel`.
 
@@ -4726,13 +4725,13 @@ public ChatClient serviceChatClient(
 
 
 
-### 6.1.4.重启测试
+#### 6.1.4.重启测试
 
 OK，现在我们的应用能支持stream版本的FunctionCalling和音频识别了。
 
 
 
-## 6.2.完善会话记忆（选学）
+### 6.2.完善会话记忆（选学）
 
 目前，会话记忆是基于内存，重启就没了。
 
@@ -4746,7 +4745,7 @@ OK，现在我们的应用能支持stream版本的FunctionCalling和音频识别
 
 
 
-### 6.2.1.定义可序列化的Message
+#### 6.2.1.定义可序列化的Message
 
 前面的两种方案，都面临一个问题，SpringAI中的Message类未实现Serializable接口，也没提供public的构造方法，因此无法基于任何形式做序列化。
 
@@ -4801,7 +4800,7 @@ OK，准备工作就绪，接下来我们就用两种方案分别实现持久化
 
 
 
-### 6.2.2.方案一（定期持久化）
+#### 6.2.2.方案一（定期持久化）
 
 接下来，我会将SpringAI提供的`InMemoryChatMemory`中的数据持久化到本地磁盘，并且在项目启动时加载。
 
@@ -4958,7 +4957,7 @@ public class InMemoryChatHistoryRepository implements ChatHistoryRepository {
 
 
 
-### 6.2.3.方案二（自定义ChatMemory）
+#### 6.2.3.方案二（自定义ChatMemory）
 
 接下来，我们基于Redis来实现自定义ChatMemory.
 
@@ -5089,7 +5088,7 @@ public class RedisChatHistory implements ChatHistoryRepository{
 
 
 
-### 6.2.4.方案三（Cassandra）
+#### 6.2.4.方案三（Cassandra）
 
 SpringAI官方提供了CassandraChatMemory，但是是跟CassandraVectorStore绑定的，不太灵活。
 
@@ -5138,7 +5137,7 @@ OK，基于Cassandra的ChatMemory已经实现了，其它不变。
 
 
 
-## 6.3.持久化VectorStore（选学）
+### 6.3.持久化VectorStore（选学）
 
 SpringAI提供了很多持久化的VectorStore，我们以其中两个为例来介绍：
 
@@ -5147,7 +5146,7 @@ SpringAI提供了很多持久化的VectorStore，我们以其中两个为例来�
 
 
 
-### 6.3.1.RedisVectorStore
+#### 6.3.1.RedisVectorStore
 
 首先，你需要安装一个Redis Stack，这是Redis官方提供的拓展版本，其中有向量库的功能。
 
@@ -5197,7 +5196,7 @@ spring:
 
 
 
-### 6.3.2.CassandraVectorStore
+#### 6.3.2.CassandraVectorStore
 
 首先，需要安装一个Cassandra访问。
 

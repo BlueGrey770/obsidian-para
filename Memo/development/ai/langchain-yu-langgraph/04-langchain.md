@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "04-LangChain"
 ---
+# 04-LangChain
 
-<title>04-LangChain</title>
-
-# 1 LangChain概述
+## 1 LangChain概述
 
 LangChain由Harrison Chase创建于2022年10月，它是围绕LLMs（大语言模型）建立的一个框架
 
@@ -21,21 +20,21 @@ LangChain目前有三个语言的实现：**python**、nodejs、Java(LangChain4J
 
 ![这张图片是LangChain的官方标识，整体以白色为背景，左侧是一只黄绿相间、喙为黑色的鹦鹉图案，其旁是两枚银色的互扣式链条图案，右侧配有黑色的英文名称“LangChain”。该标识与上下文介绍的LangChain这一围绕大语言模型构建的框架内容相呼应，直观呈现了项目的视觉形象。](../../../../Attachments/development/ai/langchain-yu-langgraph/I5wlbrWb6o7UVBxClyEcy9SCnVf.png)
 
-## 1.1 核心功能
+### 1.1 核心功能
 
 - **API集成：**LangChain支持与多种大模型API的集成，包括OpenAI、Azure、Google等，方便用户快速接入并使用这些模型
 - **上下文管理：**LangChain通过内置的上下文管理工具，能够在对话中保留上下文信息，使得与用户的互动更加智能、自然
 - **多模态支持：**LangChain支持文本、图像、视频等多种模式的数据输入与处理，进一步拓宽了应用场景
 - **定制化：**LangChain提供了灵活的定制接口，允许开发者根据具体需求调整模型的行为、输出格式等，打造专属的智能应用
 
-## 1.2 应用场景
+### 1.2 应用场景
 
 - **对话式AI助手：**借助LangChain的上下文管理功能，可以构建更加自然、连贯的对话系统，用于智能客服、虚拟助手等
 - **智能搜索与推荐：**通过集成大模型API，LangChain可以为网站或应用添加智能搜索与推荐功能，提升用户体验
 - **内容生成与优化：**使用LangChain，开发者可以构建自动生成内容的工具，包括文章写作、代码生成等，大幅提升效率
 - **中大型RAG系统：**使用LangChain各个组件配合使用，构建企业级知识库检索系统
 
-## 1.3 架构
+### 1.3 架构
 
 LangChain简化了LLM应用程序生命周期的每个阶段：
 
@@ -55,7 +54,7 @@ LangChain简化了LLM应用程序生命周期的每个阶段：
 - [**LangServe**](https://www.langchain.com.cn/docs/langserve/): 将LangChain链部署为REST AP。
 - [**LangSmith**](https://docs.smith.langchain.com/): 一个开发者平台，让您调试、测试、评估和监控LLM应用程序
 
-## 1.4 常见组件
+### 1.4 常见组件
 
 一个LangChain的应用是需要多个组件共同实现的，常见的组件如下：
 
@@ -66,7 +65,7 @@ LangChain简化了LLM应用程序生命周期的每个阶段：
 - **Chains**：链，一系列对各种组件的调用
 - **Agents**：代理，决定模型采取哪些行动，执行并且观察流程，直到完成为止
 
-## 1.5 快速入门
+### 1.5 快速入门
 
 需求：我们使用LangChain来调用本地ollama的qwen2.5:0.5b模型，实现简单对话
 
@@ -111,7 +110,7 @@ print(result.content)
 
 
 
-# 2 Models组件
+## 2 Models组件
 
 现在市面上的模型多如牛毛，各种各样的模型不断出现，LangChain模型组件提供了与各种模型的集成，并为所有模型提供了一个精简的统一接口
 
@@ -125,7 +124,7 @@ LangChain目前支持三种类型的模型：LLMs（大模型）、Chat Models�
 
 在这里我们主要使用的是**聊天模型**，下面也以它为样例给大家做介绍
 
-## 2.1 消息类型
+### 2.1 消息类型
 
 聊天消息包含下面几种类型，使用时需要按照约定传入合适的值
 
@@ -156,7 +155,7 @@ message_list = [
 print(message_list)
 ```
 
-## 2.2 调用大模型（Ollama）
+### 2.2 调用大模型（Ollama）
 
 接下来使用Chat模型调用Ollama平台，注意：Langchain提供了ChatOllama来完成跟Ollama平台的对接
 
@@ -185,7 +184,7 @@ result = model.invoke(messages)
 print(result.content)
 ```
 
-## 2.3 调用大模型（百炼）
+### 2.3 调用大模型（百炼）
 
 接下来使用Chat模型调用百炼平台，注意：Langchain提供了ChatOpenAI来完成跟实现了OpenAI规范的平台对接
 
@@ -230,13 +229,13 @@ for chunk in chunks:
 # print(result.content)
 ```
 
-# 3 Prompts组件
+## 3 Prompts组件
 
 Prompts组件主要用于构建提示词，可以方便提示词的动态书写
 
 官方文档：https://python.langchain.com/docs/concepts/prompt_templates/
 
-## 3.1 字符串提示模板
+### 3.1 字符串提示模板
 
 字符串模版适用于简单提示词中含有一些变量的情况，例如：我的邻居姓**{lastname}，**他生了个儿子，给他儿子起个名字
 
@@ -274,7 +273,7 @@ result = model.invoke(prompt)
 print(result.content)
 ```
 
-## 3.2 ChatPrompt模板
+### 3.2 ChatPrompt模板
 
 ChatPrompt主要应用在跟大模型聊天对话的场景下。 构造和使用ChatPromptTemplate的常用方法如下：
 
@@ -324,7 +323,7 @@ result = model.invoke(prompt)
 print(result.content)
 ```
 
-## 3.3 few-shot模版
+### 3.3 few-shot模版
 
 在构建提示词的过程中，引入少量示例是一种简单而高效的引导生成方式，能够有效提升模型的表现。
 
@@ -381,7 +380,7 @@ result = model.invoke(prompt)
 print(result.content)
 ```
 
-# 4 Chains组件
+## 4 Chains组件
 
 Chain（链）是构建大模型应用的核心编排机制，其价值在于处理那些需要多步骤协作的复杂任务
 
@@ -408,7 +407,7 @@ Chain（链）是构建大模型应用的核心编排机制，其价值在于处
    - **描述**：将任务拆解成多个由不同LLM负责的子步骤，前一个LLM的输出结果，经过处理后，作为下一个LLM的输入
    - **场景**：先让一个LLM分析用户需求并生成数据分析大纲，再让另一个擅长代码的LLM根据大纲编写具体的SQL查询语句
 
-## 4.1 提示词 | 大模型
+### 4.1 提示词 | 大模型
 
 针对上一小节的提示模版例子，字符串提示模板里面，我们可以用链来连接提示模版组件和模型，进而可以实现代码的更改：
 
@@ -444,7 +443,7 @@ result = chain.invoke({"lastname": "孙"})
 print(result)
 ```
 
-## 4.2 大模型 | 大模型
+### 4.2 大模型 | 大模型
 
 如果你想将第一个模型输出的结果，直接作为第二个模型的输入，还可以使用LangChain的SimpleSequentialChain, 代码如下：
 
@@ -493,7 +492,7 @@ nickname = nickname_chain.invoke({"child_name": child_name})
 print(f"   小名生成: {nickname}")
 ```
 
-# 5 Agents组件
+## 5 Agents组件
 
 LangChain框架中的Agent组件是其最强大且灵活的功能之一，它使语言模型能够动态决定任务执行流程，通过与工具(Tools)的交互完成复杂任务
 
@@ -511,7 +510,7 @@ Tools就是一个python函数，这个函数可以是任意的需求（比如查
 
 <sheet sheet-id="9HhOyR" token="Sg55sCDENh2z3KtGeaAcpRNBn4g"></sheet>
 
-## 5.1 定义工具
+### 5.1 定义工具
 
 使用@tool装饰器来定义声明工具，重要的参数两个：name_or_callable（具体名称） 和  description（描述）
 
@@ -547,7 +546,7 @@ print(calculator_tool.name, calculator_tool.description)
 print(calculator_tool.invoke("2 * 8"))
 ```
 
-## 5.2 调用工具
+### 5.2 调用工具
 
 为了测试自定义函数，我们可以模拟一个函数按照城市名称查询天气，代码如下：
 
@@ -596,7 +595,7 @@ result = agent.invoke({"messages": [{"role": "user", "content": "查询北京和
 print(result['messages'])
 ```
 
-## 5.3 调用多个工具
+### 5.3 调用多个工具
 
 我们定义多个自定义tool工具，让agent自己选择使用哪个工具(什么顺序)进行调用
 
@@ -655,7 +654,7 @@ print(result['messages'])
 
 
 
-# 6 Memory组件
+## 6 Memory组件
 
 大模型本身不具备上下文的概念，它并不保存上次交互的内容，ChatGPT之所以能够和人正常沟通对话，因为它进行了一层封装，将历史记录回传给了模型。
 
@@ -664,9 +663,9 @@ print(result['messages'])
 - 短期记忆：用于维护对话流畅性，避免上下文丢失。
 - 长期记忆：存储用户个性化数据和重要历史信息。
 
-## 6.1 短期记忆
+### 6.1 短期记忆
 
-### 6.1.1 基于ConversationChain实现
+#### 6.1.1 基于ConversationChain实现
 
 ConversationChain记录单会话的上下文，实现短期记忆
 
@@ -702,7 +701,7 @@ res3 = chain.predict(input="小明和小刚一共有几只宠物")
 print(res3)
 ```
 
-### 6.1.2 基于Short-term memory组件实现
+#### 6.1.2 基于Short-term memory组件实现
 
 官方文档：https://docs.langchain.com/oss/python/langchain/short-term-memory
 
@@ -724,7 +723,7 @@ agent.invoke(
 )
 ```
 
-## 6.2 长期记忆
+### 6.2 长期记忆
 
 官方文档：https://docs.langchain.com/oss/python/langchain/long-term-memory
 
@@ -732,7 +731,7 @@ LangChain代理使用LangGraph持久性来实现长期记忆。这是一个更�
 
 
 
-# 7 Index组件
+## 7 Index组件
 
 大模型处理用户问题是可能存在**幻觉**的，大模型幻觉指的是大型语言模型生成的内容看似流畅、合理，但实际上与输入信息不符、违背事实或纯粹是编造的现象
 
@@ -775,7 +774,7 @@ Indexs组件的主要组成部分有：文档加载器、文本分割器、文�
 
 
 
-## 7.1 文档加载器
+### 7.1 文档加载器
 
 LangChain中提供了多种文件格式的加载器，常见有：txt、pdf、csv、markdown、json、html等等，常见的加载器API:
 
@@ -807,7 +806,7 @@ docs 为一个list列表，里面装入的是Document对象，其中Document对�
 - metadata   文档的元数据，包含了文件的来源和文件名
 - page_content  文件中的内容  字符串类型
 
-### 7.1.1 txt格式
+#### 7.1.1 txt格式
 
 ```Python
 """
@@ -830,7 +829,7 @@ for doc in docs:
     print("=============================")
 ```
 
-### 7.1.2 pdf格式
+#### 7.1.2 pdf格式
 
 处理pdf需要先安装依赖：pip install pypdf==6.1.0
 
@@ -855,7 +854,7 @@ for doc in docs:
     print("=============================")
 ```
 
-### 7.1.3 markdown格式
+#### 7.1.3 markdown格式
 
 处理pdf需要先安装依赖
 
@@ -896,7 +895,7 @@ UnstructuredMarkdownLoader中的参数说明：
   - hi_res: (高分辨率解析) 解析精准（速度慢一些）
   - ocr_only 强制使用ocr提取文本，仅仅适用于图像（对md无效）
 
-### 7.1.4 csv格式
+#### 7.1.4 csv格式
 
 代码执行完成后会自动拆分，每一行生成一个Document对象
 
@@ -923,7 +922,7 @@ for doc in docs:
 
 
 
-## 7.2 文档拆分器
+### 7.2 文档拆分器
 
 文档拆分是构建RAG系统的关键步骤，主要解决以下问题：
 
@@ -944,7 +943,7 @@ LangChain提供了很多的文档分割器，这里展示一部分：
 
 更多分割器，请查看官网：https://python.langchain.com/docs/concepts/text_splitters/
 
-### 7.2.1 字符拆分器
+#### 7.2.1 字符拆分器
 
 CharacterTextSplitter是最基础的文本拆分器，按照固定的字符数量进行拆分，支持添加重叠部分来保持上下文连贯性
 
@@ -992,7 +991,7 @@ for chunk in chunks:
     print("*"*60)
 ```
 
-### 7.2.2 递归拆分器
+#### 7.2.2 递归拆分器
 
 RecursiveCharacterTextSplitter是更智能的拆分器，采用递归的方式，按照分隔符优先级逐步拆分文本，直到达到合适的块大小
 
@@ -1041,13 +1040,13 @@ for chunk in chunks:
     print("*"*60)
 ```
 
-## 7.3 文档向量化
+### 7.3 文档向量化
 
 文档拆分之后，需要把小的文本块使用嵌入模型（向量化模型）存储到向量数据库中
 
 langchain支持的嵌入模型有很多，我们可以给大家演示两个
 
-### 7.3.1 阿里/text-embedding-v4
+#### 7.3.1 阿里/text-embedding-v4
 
 继续采用百炼平台中提供好的嵌入模型(兼容了openai)
 
@@ -1107,7 +1106,7 @@ for embedding in embeddings:
 
 参考：[百炼平台中的说明](https://help.aliyun.com/zh/model-studio/use-bailian-in-langchain#e43d66bb40rpq)
 
-### **7.3.2 BAAI/bge-m3**
+#### **7.3.2 BAAI/bge-m3**
 
 在模型开放平台中，**huggingface**和**魔搭**中开源了很多的优秀的模型，有一些嵌入模型，比三方平台提供的模型还要优秀，我们以魔搭中的**BAAI/bge-m3**模型为例
 
@@ -1180,9 +1179,9 @@ print(embeddings_2)
 
 安装指定版本：pip install transformers==4.45.0
 
-## 7.4 向量存储和检索
+### 7.4 向量存储和检索
 
-### 7.4.1 向量存储
+#### 7.4.1 向量存储
 
 VectorStores是一种特殊类型的数据库，它的作用是存储由嵌入创建的向量，提供相似查询等功能
 
@@ -1243,7 +1242,7 @@ documents = [Document(chunk) for chunk in chunks]
 Chroma.from_documents(documents, embeddings_model, persist_directory='./chroma_vsdb')
 ```
 
-### 7.4.2 检索
+#### 7.4.2 检索
 
 当我们把文档存储到向量数据库中，目前是本地文件(实际应该是向量数据库)，现在可以从向量数据库中检索数据
 
@@ -1275,9 +1274,9 @@ for doc in docs:
 - similarity_search_with_score  分值越小越相关
 - similarity_search_with_relevance_scores   分值越接近于1越相关
 
-# 8 综合案例
+## 8 综合案例
 
-## 8.1 背景说明
+### 8.1 背景说明
 
 保险行业知识复杂，客户咨询量大，传统客服成本高、响应慢、易出错
 
@@ -1292,7 +1291,7 @@ for doc in docs:
 
 在当天的资料中已提供了4个文档，供大家测试使用
 
-## 8.2 环境说明
+### 8.2 环境说明
 
 **技术栈**
 
@@ -1316,7 +1315,7 @@ insurance-qa-assistant
 ├── requirements.txt         # 依赖文件
 ```
 
-## 8.3 构建向量库
+### 8.3 构建向量库
 
 实现思路：
 
@@ -1407,7 +1406,7 @@ if __name__ == '__main__':
     #     print(doc)
 ```
 
-## 8.4 知识检索
+### 8.4 知识检索
 
 - 初始化向量模型、向量数据库、对话模型
 - 对话函数，接收用户的问题
@@ -1472,7 +1471,7 @@ if __name__ == '__main__':
     print(InsuranceQA().ask_question("如何购买保险？"))
 ```
 
-## 8.5 流式输出
+### 8.5 流式输出
 
 由刚刚写完的`app.py`为基础，让deepseek进行改造，改造为支持流式输出，以及使用fastapi对外提供接口
 

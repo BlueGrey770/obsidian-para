@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "第十章 秒杀抢购"
 ---
+# 第十章 秒杀抢购
 
-<title>第十章 秒杀抢购</title>
-
-# 学习目标：
+## 学习目标：
 
 能够说出秒杀抢购业务常用的技术
 
@@ -37,9 +36,9 @@ aliases:
 
 
 
-# 1 秒杀抢购业务介绍
+## 1 秒杀抢购业务介绍
 
-## 1）秒杀抢购业务特点
+### 1）秒杀抢购业务特点
 
 秒杀抢购是电商平台的一种业务模式，它可以聚焦流量和吸引注意力，通过秒杀活动长时间吸引人群，最终吸引用户下单。
 
@@ -57,7 +56,7 @@ aliases:
 
 如今秒杀抢购不仅应用在电商平台，随着互联网用户的增加在餐饮、旅游、娱乐等很多领域都有应用，比如：12306抢票、抢优惠券、骑手抢单、酒店预定等。
 
-## 2）常用技术方案
+### 2）常用技术方案
 
 实现秒杀抢购业务会用到哪些技术呢？可以参考行业上一些成熟的解决方案。
 
@@ -101,23 +100,23 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 确保系统的安全性，防止SQL注入、XSS攻击（跨站脚本攻击）等，同时在后端实现防刷、验证码等安全措施，保护系统免受恶意攻击。
 
-## 3）本章目标
+### 3）本章目标
 
 通过抢券、抢单两个模块的学习掌握秒杀抢购业务的技术方案。
 
-## 4）小结
+### 4）小结
 
 秒杀抢购常用的技术方案有哪些？
 
 
 
-# 2 抢券
+## 2 抢券
 
-## 2.1 需求分析
+### 2.1 需求分析
 
 用户进行抢券经过三个过程：
 
-### 1）**抢券界面**
+#### 1）**抢券界面**
 
 用户进入抢券界面如下图。
 
@@ -153,7 +152,7 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 
 
-### 2）**进行抢券**
+#### 2）**进行抢券**
 
 优惠券到达发放时间后，用户点击“立即领取”进行抢券。
 
@@ -163,7 +162,7 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 
 
-### 3）**我的优惠券列表**
+#### 3）**我的优惠券列表**
 
 用户抢券成功在我的优惠券列表查看。
 
@@ -187,7 +186,7 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 已过期：未使用且已过有效期的优惠券，已过期的优惠券将无法使用。
 
-### 4）**小结**
+#### 4）**小结**
 
 根据需求分析抢券模块包括三部分的内容：
 
@@ -207,11 +206,11 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 
 
-## 2.2 活动查询
+### 2.2 活动查询
 
-### 2.2.1 系统设计
+#### 2.2.1 系统设计
 
-#### 1）活动查询分析
+##### 1）活动查询分析
 
 下边根据需求分析对抢券界面的活动查询功能进行分析与设计，如下图：
 
@@ -256,7 +255,7 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 
 
-#### 2）**数据流**
+##### 2）**数据流**
 
 根据以上分析设计数据流如下：
 
@@ -272,7 +271,7 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 
 
-#### 3）**Redis数据结构设计**
+##### 3）**Redis数据结构设计**
 
 活动预热任务定时查询活动表信息存入Redis，下边设计活动信息的缓存结构：
 
@@ -292,7 +291,7 @@ value: 符合条件的优惠券活动列表JSON数据。
 
 
 
-#### 4）如何保证活动状态自动改变
+##### 4）如何保证活动状态自动改变
 
 在活动查询界面如何保证活动状态实时改变，当到达活动开始时间活动状态变为“进行中”，在“疯抢中”界面显示，当活动结束在“疯抢中”界面将无法查询到。
 
@@ -369,7 +368,7 @@ public void updateActivitySatus(){
 
 
 
-#### 5）小结
+##### 5）小结
 
 抢券查询的缓存是怎么做的？
 
@@ -394,15 +393,15 @@ public void updateActivitySatus(){
 
 
 
-### 2.2.2 定时预热程序
+#### 2.2.2 定时预热程序
 
-#### 1）搭建环境
+##### 1）搭建环境
 
 进入jzo2o-market工程，创建dev_03分支，使用下发的jzo2o-market-dev03.zip代码作为dev_03分钟的基础代码。
 
 
 
-#### 2）明确需求
+##### 2）明确需求
 
 根据需求，预热的活动信息包括两个部分：
 
@@ -412,7 +411,7 @@ public void updateActivitySatus(){
 
 
 
-#### 3) 编写Service方法
+##### 3) 编写Service方法
 
 下边定义Service接口从数据库查询要预热的活动信息，存入redis。
 
@@ -484,7 +483,7 @@ public void preHeat() {
 
 
 
-#### 4) **定义XXL-Job调度方法**
+##### 4) **定义XXL-Job调度方法**
 
 下边定义定时任务方法，执行定时预热程序。每小时执行一次。
 
@@ -530,7 +529,7 @@ public class XxlJobHandler {
 
 
 
-#### 5) 配置定时任务
+##### 5) 配置定时任务
 
 下边在XXL-JOB中配置调度方法进行测试：
 
@@ -540,7 +539,7 @@ public class XxlJobHandler {
 
 
 
-#### 6) 预热程序测试
+##### 6) 预热程序测试
 
 测试流程如下：
 
@@ -576,7 +575,7 @@ public class XxlJobHandler {
 
 
 
-#### 7）小结 
+##### 7）小结
 
 活动定时预热程序是怎么做的？
 
@@ -585,9 +584,9 @@ public class XxlJobHandler {
 
 
 
-### 2.2.3 活动查询接口
+#### 2.2.3 活动查询接口
 
-#### 1）接口分析
+##### 1）接口分析
 
 根据界面原型分析接口：
 
@@ -630,7 +629,7 @@ public class XxlJobHandler {
 
 
 
-#### 2）接口定义
+##### 2）接口定义
 
 接口名称：用户端抢券列表分页接口
 
@@ -687,7 +686,7 @@ public class ActivityController {
 
 
 
-#### 3）接口实现
+##### 3）接口实现
 
 1. service接口
 
@@ -766,7 +765,7 @@ public List<SeizeCouponInfoResDTO> queryForPage(@RequestParam(value = "tabType",
 }
 ```
 
-#### 4）活动查询测试
+##### 4）活动查询测试
 
 测试流程如下：
 
@@ -811,7 +810,7 @@ public List<SeizeCouponInfoResDTO> queryForPage(@RequestParam(value = "tabType",
 
 ![图片展示的是抢券页面，上方显示“抢券”标题，右侧有三个点和一个放大镜图标。页面中部有“已抢光”和“即将开始”两个选项卡，当前选中“已抢光”。下方展示了两个活动信息，分别是“双12大促”和“平台二周年庆”，均显示为“已抢光”，活动时间为2023 - 12 - 15 - 2023 - 12 - 24。该图片与上文测试效果示例相关，直观呈现了修改数据库中库存为0后，活动在界面上显示“已抢光”的情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/AcDMbbIJMocXElxmw4aczxQMnrg.png)
 
-#### 5) 小结
+##### 5) 小结
 
 通过定时任务更新活动状态，如何解决活动状态实时更新的问题？
 
@@ -821,11 +820,11 @@ public List<SeizeCouponInfoResDTO> queryForPage(@RequestParam(value = "tabType",
 
 
 
-## 2.3 抢券
+### 2.3 抢券
 
-### 2.3.1 **解决超卖问题**
+#### 2.3.1 **解决超卖问题**
 
-#### 1）系统需求
+##### 1）系统需求
 
 在抢券模块中需要实现下边两个需求：
 
@@ -867,7 +866,7 @@ TPS指标通常会涉及业务处理及数据库存储，在测试时也需要�
 
 下边先分析超卖问题的解决方案。
 
-#### 2）**什么是超卖问题**
+##### 2）**什么是超卖问题**
 
 超卖是最终下单购买数量大于库存数量，比如：库存１00个用户最终购买成功了101个，多出这一个就是超卖了，结合抢券业务，用户最终抢到的优惠券总数大于优惠券库存数就出现了超卖问题。
 
@@ -891,7 +890,7 @@ TPS指标通常会涉及业务处理及数据库存储，在测试时也需要�
 
 
 
-#### 3）悲观锁与乐观锁
+##### 3）悲观锁与乐观锁
 
 提到解决线程安全问题大家想到了锁，下边复习下关于锁的基本概念。
 
@@ -947,7 +946,7 @@ Java提供的CAS机制可以实现乐观锁，CAS即Compare And Swap 比较并�
 
 
 
-#### 4）**数据库行锁控制方案**
+##### 4）**数据库行锁控制方案**
 
 数据库的行级锁可以实现悲观锁也可以实现乐观锁。
 
@@ -1007,7 +1006,7 @@ update 库存表 set 库存=库存-2 where 库存>=2 and id =?
 
 
 
-#### 5)   **Redis分布式锁方案**
+##### 5)   **Redis分布式锁方案**
 
 数据库乐观锁不适用高并发场景，我们能否将库存数据放在Redis，并且通过JVM锁去控制扣减库存呢？
 
@@ -1037,7 +1036,7 @@ update 库存表 set 库存=库存-2 where 库存>=2 and id =?
 
 
 
-#### 6）**Redis原子操作方案**
+##### 6）**Redis原子操作方案**
 
 上边使用分布式锁的方案每次操作需要远程与分布式锁服务交互获取锁、释放锁，有没有优化的方法避免申请锁与释放锁的交互呢？
 
@@ -1057,7 +1056,7 @@ Redis Decr 命令将 key 中储存的数字值减一，并且具有原子性，R
 
 本项目使用Redis原子操作控制超卖问题。
 
-#### 7）**小结**
+##### 7）**小结**
 
 解决超卖问题有哪些方案？
 
@@ -1069,7 +1068,7 @@ Redis Decr 命令将 key 中储存的数字值减一，并且具有原子性，R
 
 
 
-### 2.3.2 Redis原子操作方案
+#### 2.3.2 Redis原子操作方案
 
 在Redis原子操作方案中扣减库存使用decr命令实现，decr命令具有原子性，如果在扣减库存操作中有多个操作 ，那么整体还是原子性吗？如下图：
 
@@ -1089,7 +1088,7 @@ Redis Decr 命令将 key 中储存的数字值减一，并且具有原子性，R
 
 如何保证多个Redis命令具有原子性呢？本节介绍两个保证Redis多个命令具有原子性的方法。
 
-#### 1）**通过  MULTI 事务命令实现**
+##### 1）**通过  MULTI 事务命令实现**
 
 对于redis单个命令都是原子操作，现在要求扣减库存、写入抢券成功队列及写入同步队列保证原子性，多个redis命令如何保证原子性呢？
 
@@ -1124,7 +1123,7 @@ EXEC
 
 ![图片展示的是Redis操作界面中关于键值对的显示结果。上方“STRING:”后显示键名为“test_key02”，下方“键值: 大小: 1 字节”后显示值为“1”。该图片与上下文紧密相关，上下文提到将“HSET key1 field1 value2 field2 value2”命令放入队列，表示向key1中写入两个hashkey，而此图片正是展示了key1写入后的值为1，体现了Redis键值对操作的结果呈现。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CRlKbXLVQovTknxN5GFc29MNn2e.png)
 
-#### 2）了解Pipeline与**MULTI 的区别**
+##### 2）了解Pipeline与**MULTI 的区别**
 
 学习过Redis的同学听说过pipline管道命令，pipline也可实现批量执行多个 redis命令，pipline与multi的区别是：
 
@@ -1132,7 +1131,7 @@ pipeline 是把多个redis指令一起发出去，redis并没有保证这些命�
 
 如果仅是执行多个命令不保证原子性那么使用pipeline 的性能要比multi要高，但是针对本项目要保证多个命令实现原子性的需求那么pipeline 不符合要求。
 
-#### 3）Redis+Lua实现
+##### 3）Redis+Lua实现
 
 Lua 是一种强大、高效、轻量级、可嵌入的脚本语言，Lua体积小、启动速度快，从而适合嵌入在别的程序里，Lua可以用于web开发、游戏开发、嵌入式开发等领域。
 
@@ -1299,7 +1298,7 @@ public class RedisLuaTest {
 
 执行test_Luafirst() 测试方法。
 
-#### 4）选择方案
+##### 4）选择方案
 
 上边学习了Multi和Redis+Lua两种实现Redis原子操作的方案，在本项目你会选择哪一种方案？
 
@@ -1353,7 +1352,7 @@ return "-5"
 
 
 
-#### 5）**使用Lua脚本注意点**
+##### 5）**使用Lua脚本注意点**
 
 Lua脚本在redis集群上执行需要注意什么？
 
@@ -1388,15 +1387,15 @@ public void test_Luafirst2() {
 
 
 
-#### 6）**小结**
+##### 6）**小结**
 
 项目中保证Redis原子操作用什么方案？
 
 
 
-### 2.3.3 抢券整体方案
+#### 2.3.3 抢券整体方案
 
-#### 1）抢券方案分析
+##### 1）抢券方案分析
 
 抢券的架构设计思想同抢券查询，将库存保存在Redis，避免抢券操作请求数据库，通过异步任务将Redis中的抢券结果同步到数据库。
 
@@ -1430,7 +1429,7 @@ Redis中两个队列的作用如下：
 
 
 
-#### 2）数据流
+##### 2）数据流
 
 根据交互流程分析数据流如下：
 
@@ -1438,7 +1437,7 @@ Redis中两个队列的作用如下：
 
 
 
-#### 3）Redis数据结构
+##### 3）Redis数据结构
 
 1. **活动信息**
 
@@ -1512,7 +1511,7 @@ HashValue:活动id
 
 
 
-#### 4）小结
+##### 4）小结
 
 抢券是怎么做的？或方案是什么？
 
@@ -1534,9 +1533,9 @@ HashValue:活动id
 8. **数据库优化：**对于秒杀系统，数据库通常是瓶颈之一。通过优化数据库结构、建立索引、使用缓存等手段来提高数据库的读写性能。 
 9. 
 
-### 2.3.4 库存同步
+#### 2.3.4 库存同步
 
-#### 1）系统设计
+##### 1）系统设计
 
 库存同步包括两部分：
 
@@ -1559,7 +1558,7 @@ HashValue:活动id
 
 <whiteboard token="TLJdwUtethGI4ibSjJ8cjkkxn1b"></whiteboard>
 
-#### 2）预热程序中同步库存
+##### 2）预热程序中同步库存
 
 下边实现在预热程序中同步库存。
 
@@ -1593,7 +1592,7 @@ COUPON:RESOURCE:STOCK:{活动id%10}。
 
 
 
-#### 3）测试
+##### 3）测试
 
 测试流程：
 
@@ -1607,7 +1606,7 @@ COUPON:RESOURCE:STOCK:{活动id%10}。
 
 
 
-#### 4）小结
+##### 4）小结
 
 库存怎么同步到redis？
 
@@ -1619,9 +1618,9 @@ COUPON:RESOURCE:STOCK:{活动id%10}。
 
 
 
-### 2.3.5 抢券Lua脚本
+#### 2.3.5 抢券Lua脚本
 
-#### 1）抢券Lua脚本
+##### 1）抢券Lua脚本
 
 本节对抢券Lua脚本进行阅读并测试，理解抢券的过程。
 
@@ -1681,7 +1680,7 @@ return "-5"
 
 
 
-#### 2）**测试**
+##### 2）**测试**
 
 编写测试方法，准备好调用抢券Lua脚本需要传入的key和参数。
 
@@ -1763,7 +1762,7 @@ void test_seizeCouponScriptLua() {
 
 ![这张图片展示了抢券场景下Redis哈希（HASH）类型的存储记录，哈希的键为“QUEUE:COUPON:SEIZE:SYNC:{6}”。该哈希结构包含两条核心数据，序号为1的key是“1694250327664218113”，对应的value为“1706183021040336896”，这正是测试抢券Lua脚本时，需要检查的抢券同步队列的相关记录，是验证Lua脚本执行是否成功的关键观测项之一。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/POKmbu1ZKoqvU4xiWiAcdqZ1nof.png)
 
-#### 3) 小结
+##### 3) 小结
 
 抢券的Lua脚本做的什么工作？
 
@@ -1775,9 +1774,9 @@ void test_seizeCouponScriptLua() {
 
 
 
-### 2.3.6 抢券接口开发
+#### 2.3.6 抢券接口开发
 
-#### 1）接口定义
+##### 1）接口定义
 
 下边进行接口分析，定义抢券接口。
 
@@ -1822,7 +1821,7 @@ public void seizeCoupon(@RequestBody SeizeCouponReqDTO seizeCouponReqDTO) {
 ．．．
 ```
 
-#### 2）校验活动有效性
+##### 2）校验活动有效性
 
 下边定义service方法，在service方法中需要做哪些事？
 
@@ -1909,7 +1908,7 @@ public ActivityInfoResDTO getActivityInfoByIdFromCache(Long id) {
 }
 ```
 
-#### 3）抢券service方法
+##### 3）抢券service方法
 
 下边编写抢券的service方法
 
@@ -1963,7 +1962,7 @@ public ActivityInfoResDTO getActivityInfoByIdFromCache(Long id) {
     }
 ```
 
-#### 4）抢券controller方法
+##### 4）抢券controller方法
 
 ```JSON
 @ApiOperation("抢券接口")
@@ -1975,7 +1974,7 @@ public void seizeCoupon(@RequestBody SeizeCouponReqDTO seizeCouponReqDTO) {
 
 
 
-#### 5) 抢券测试
+##### 5) 抢券测试
 
 
 
@@ -2015,7 +2014,7 @@ public void seizeCoupon(@RequestBody SeizeCouponReqDTO seizeCouponReqDTO) {
 
 
 
-#### 6）小结
+##### 6）小结
 
 项目是怎么实现抢券功能的？
 
@@ -2039,13 +2038,13 @@ public void seizeCoupon(@RequestBody SeizeCouponReqDTO seizeCouponReqDTO) {
 
 
 
-## 2.4 抢券结果同步
+### 2.4 抢券结果同步
 
-### 2.4.1 Redis到MySQL同步方案分析
+#### 2.4.1 Redis到MySQL同步方案分析
 
 如何将Redis中的抢券结果同步到MySQL的优惠券表（coupon）呢？
 
-#### 1） **整体思路**
+##### 1） **整体思路**
 
 基本思路: 遍历Redis中的抢券结果同步队列，拿到一个元素就向数据库的优惠券表插入记录，插入完成后删除Redis中的这条记录。
 
@@ -2071,7 +2070,7 @@ public void seizeCoupon(@RequestBody SeizeCouponReqDTO seizeCouponReqDTO) {
 
 
 
-#### 2）**如何从Redis 批量取数据？**
+##### 2）**如何从Redis 批量取数据？**
 
 我们使用redisTemplate.opsForHash().scan(H key, ScanOptions options)方法，scan方法通过游标的方式实现从hash中批量获取数据。
 
@@ -2120,7 +2119,7 @@ void batchGet() {
 
 
 
-#### 3）小结
+##### 3）小结
 
 本节我们分析了从Redis到MySQL同步方案：
 
@@ -2136,9 +2135,9 @@ void batchGet() {
 
 
 
-### 2.4.2 抢券结果同步开发
+#### 2.4.2 抢券结果同步开发
 
-#### 1）编写扣减库存方法
+##### 1）编写扣减库存方法
 
 项目使用数据同步组件完成数据从Redis的Hash结构同步到MySQL中。
 
@@ -2189,7 +2188,7 @@ public boolean updateStockNum(Long id,Integer num) {
 ...
 ```
 
-#### 2) **编写数据同步方法**
+##### 2) **编写数据同步方法**
 
 每从hash中获取一条数据则向coupon表插入记录。
 
@@ -2246,7 +2245,7 @@ public void seizeCouponSync(Long activityId, Long userId){
 
 
 
-#### 3) 编写线程任务类
+##### 3) 编写线程任务类
 
 ```Java
 package com.jzo2o.market.handler;
@@ -2376,7 +2375,7 @@ public class SeizeCouponHandler implements Runnable {
 
 
 
-#### 4）编写多线程任务方法
+##### 4）编写多线程任务方法
 
 ```Java
 package com.jzo2o.market.handler;
@@ -2449,7 +2448,7 @@ public class SeizeCouponHandlerJob {
 
 
 
-#### 5）抢券结果同步测试
+##### 5）抢券结果同步测试
 
 编写定时任务
 
@@ -2531,7 +2530,7 @@ public class XxlJobHandler {
 
 
 
-#### 6）小结
+##### 6）小结
 
 秒杀异步处理怎么实现的？
 
@@ -2560,15 +2559,15 @@ public class XxlJobHandler {
     - 更新活动表的库存
   - 删除redis同步队列数据
 
-# 3 抢单
+## 3 抢单
 
-## 3.1 需求分析
+### 3.1 需求分析
 
 完成了预约下单、支付业务的开发，接下来进入抢单模块。
 
 首先我们对抢单模块进行需求分析。
 
-### 1）核心业务流程
+#### 1）核心业务流程
 
 首先明确本模块在核心业务流程的位置，下图是项目的核心业务流程：
 
@@ -2576,7 +2575,7 @@ public class XxlJobHandler {
 
 <whiteboard token="BRHcwlFoYhXv2Abise5cLKjvn5c"></whiteboard>
 
-### 2）服务端抢单原型
+#### 2）服务端抢单原型
 
 服务人员在平台注册后需要进行实名认证、服务技能设置、服务范围设置、开启接单，这四项准备工作完成后方可在平台接单。
 
@@ -2622,7 +2621,7 @@ public class XxlJobHandler {
 
 
 
-### 3) 机构端抢单原型
+#### 3) 机构端抢单原型
 
 机构端抢单与服务端抢单的区别是：
 
@@ -2660,7 +2659,7 @@ public class XxlJobHandler {
 
 
 
-### 4）服务单状态
+#### 4）服务单状态
 
 服务人员抢单成功或系统派单成功将生成订单对应的服务单，服务单状态如下：
 
@@ -2699,7 +2698,7 @@ public class XxlJobHandler {
 
 
 
-### 5) 小结
+#### 5) 小结
 
 通过需求分析，抢单模块分如下子模块：
 
@@ -2721,13 +2720,13 @@ public class XxlJobHandler {
 
 
 
-## 3.2 系统整体设计
+### 3.2 系统整体设计
 
-### 1）整体分析
+#### 1）整体分析
 
 根据抢单需求，抢单的流程和抢券的流程很相似，核心内容也包括三部分：
 
-#### **抢单查询**
+##### **抢单查询**
 
 **抢单查询对应到抢券查询**
 
@@ -2751,7 +2750,7 @@ public class XxlJobHandler {
 
 
 
-#### **抢单**
+##### **抢单**
 
 抢单**技术方案同抢券**
 
@@ -2771,7 +2770,7 @@ public class XxlJobHandler {
 
 
 
-#### **抢单结果异步处理**
+##### **抢单结果异步处理**
 
 **技术方案同抢券**
 
@@ -2823,7 +2822,7 @@ public class XxlJobHandler {
 
 
 
-### 2)  数据流
+#### 2)  数据流
 
 下边分析整体的数据流：
 
@@ -2869,7 +2868,7 @@ public class XxlJobHandler {
 
 
 
-### 3）小结
+#### 3）小结
 
 能够说出本项目抢单的实现方案？
 
@@ -2881,7 +2880,7 @@ public class XxlJobHandler {
 
 
 
-## 3.3 抢单设置
+### 3.3 抢单设置
 
 根据需求，机构和服务人员都需要做抢单前的准备工作方可抢单。
 
@@ -2889,7 +2888,7 @@ public class XxlJobHandler {
 
 下边以服务端为例说明。
 
-### 1）需求分析
+#### 1）需求分析
 
 1. **服务技能设置**
 
@@ -2919,7 +2918,7 @@ public class XxlJobHandler {
 
 
 
-### 2）准备环境
+#### 2）准备环境
 
 抢单章节的代码环境：
 
@@ -2935,7 +2934,7 @@ jzo2o-orders
 
 
 
-### 3) 表设计
+#### 3) 表设计
 
 服务技能表：存储服务提供者的技能信息。
 
@@ -3014,7 +3013,7 @@ create table `jzo2o-customer`.serve_provider
     comment '服务人员/机构表' charset = utf8mb4;
 ```
 
-### 4）代码阅读
+#### 4）代码阅读
 
 这些操作的接口在客户中心工程（jzo2o-customer）定义。
 
@@ -3136,7 +3135,7 @@ public class ServeProviderSettingsController {
 
 
 
-### 5）测试
+#### 5）测试
 
 请大家自行从接口入口开始阅读代码，找到服务技能设置、服务范围设置、接单设置存储的表及存储方式。
 
@@ -3188,7 +3187,7 @@ citycode从数据库的city_directory获取。
 
 
 
-### 6）小结
+#### 6）小结
 
 抢单设置包括哪些表？
 
@@ -3200,15 +3199,15 @@ citycode从数据库的city_directory获取。
 
 
 
-## 3.4 订单分流
+### 3.4 订单分流
 
-### 1）需求分析
+#### 1）需求分析
 
 订单分流的流程如下：
 
 <whiteboard token="AD9Dw7NTMhWLssbbIlhc8JPonzd"></whiteboard>
 
-### 2）表设计
+#### 2）表设计
 
 根据数据流分析需要设计抢单池表。
 
@@ -3244,7 +3243,7 @@ create index sort_by_index
     on orders_seize (sort_by);
 ```
 
-### 3）阅读代码
+#### 3）阅读代码
 
 下边阅读订单分流相关的代码。
 
@@ -3370,7 +3369,7 @@ public class OrdersDiversionCommonServiceImpl implements IOrdersDiversionCommonS
 }
 ```
 
-### 4）实现订单分流
+#### 4）实现订单分流
 
 根据需求，订单支付成功进行订单分流，在支付成功的方法添加订单分流的代码：
 
@@ -3407,7 +3406,7 @@ public void paySuccess(TradeStatusMsg tradeStatusMsg) {
 
 
 
-### 5）调度配置
+#### 5）调度配置
 
 登录运营端，进入区域配置，针对运营区域进行调度配置
 
@@ -3421,7 +3420,7 @@ public void paySuccess(TradeStatusMsg tradeStatusMsg) {
 
 
 
-### 5）测试
+#### 5）测试
 
 测试流程：
 
@@ -3520,7 +3519,7 @@ public PlaceOrderResDTO placeOrder(Long userId, PlaceOrderReqDTO placeOrderReqDT
 
 
 
-### 6）小结
+#### 6）小结
 
 订单分流的业务流程是什么？
 
@@ -3530,11 +3529,11 @@ public PlaceOrderResDTO placeOrder(Long userId, PlaceOrderReqDTO placeOrderReqDT
 
 
 
-## 3.5 抢单查询
+### 3.5 抢单查询
 
-### 3.5.1 抢单池同步
+#### 3.5.1 抢单池同步
 
-#### 1）同步方案
+##### 1）同步方案
 
 根据系统设计方案，抢单池的信息需要同步到Elasticsearch，使用Canal加RabbitMQ完成同步，如下：
 
@@ -3542,7 +3541,7 @@ public PlaceOrderResDTO placeOrder(Long userId, PlaceOrderReqDTO placeOrderReqDT
 
 
 
-#### 2) 索引结构设计
+##### 2) 索引结构设计
 
 在ES中创建索引结构orders_seize，抢单池的信息将同步到orders_seize中。
 
@@ -3636,7 +3635,7 @@ GET orders_seize
 GET /orders_seize/_mapping
 ```
 
-#### 3) **抢单池库存结构**
+##### 3) **抢单池库存结构**
 
 抢单池库存信息存储在Redis，在抢单时通过Redis扣减库存。
 
@@ -3656,7 +3655,7 @@ HashValue: 库存，为1
 
 <whiteboard token="FIqQwZ2fFhSPO0b1Jcbcmd8LnQd"></whiteboard>
 
-#### 4）阅读代码
+##### 4）阅读代码
 
 
 
@@ -3875,7 +3874,7 @@ hashvalue：库存数量
 
 
 
-#### 5）小结
+##### 5）小结
 
 抢单池是怎么设计的？
 
@@ -3892,9 +3891,9 @@ hashvalue：库存数量
 
 
 
-### 3.5.2 抢单查询
+#### 3.5.2 抢单查询
 
-#### 1）接口定义
+##### 1）接口定义
 
 接口名称：抢单查询列表
 
@@ -3929,7 +3928,7 @@ public OrdersSeizeListResDTO queryForList(OrdersSerizeListReqDTO ordersSerizeLis
 
 
 
-#### 2）接口开发
+##### 2）接口开发
 
 1. 首先在Kibana中测试查询抢单语句 
 
@@ -4185,7 +4184,7 @@ public OrdersSeizeListResDTO queryForList(OrdersSerizeListReqDTO ordersSerizeLis
 
 
 
-#### 3) 测试
+##### 3) 测试
 
 首先修改抢单服务的配置文件，使用shardingsphere的驱动
 
@@ -4237,7 +4236,7 @@ public OrdersSeizeListResDTO queryForList(OrdersSerizeListReqDTO ordersSerizeLis
 
 
 
-#### 4）小结
+##### 4）小结
 
 搜索附近怎么实现？
 
@@ -4264,9 +4263,9 @@ public OrdersSeizeListResDTO queryForList(OrdersSerizeListReqDTO ordersSerizeLis
 
 
 
-## 3.6 抢单
+### 3.6 抢单
 
-### 1) 抢单流程
+#### 1) 抢单流程
 
 <whiteboard token="Qpp1wKXqvhu1labWGfecKucenuh"></whiteboard>
 
@@ -4280,7 +4279,7 @@ public OrdersSeizeListResDTO queryForList(OrdersSerizeListReqDTO ordersSerizeLis
 
 
 
-### 2) Redis数据结构设计
+#### 2) Redis数据结构设计
 
 1. **抢单同步队列**
 
@@ -4312,7 +4311,7 @@ HashValue: 库存，为1
 
 <whiteboard token="QiI6wUN1Vht0n5b0CnJcuLwAngd"></whiteboard>
 
-### 3）阅读代码
+#### 3）阅读代码
 
 1. 接口定义
 
@@ -4443,7 +4442,7 @@ public void seize(Long id, Long serveProviderId, Integer serveProviderType, Bool
 
 
 
-### 4）测试
+#### 4）测试
 
 测试流程：
 
@@ -4499,15 +4498,15 @@ public void seize(Long id, Long serveProviderId, Integer serveProviderType, Bool
 
 
 
-### 4）小结
+#### 4）小结
 
 抢单是如何防止超卖的？
 
 
 
-## 3.7 抢单结果异步处理
+### 3.7 抢单结果异步处理
 
-### 1）异步处理方案
+#### 1）异步处理方案
 
 抢单成功根据抢单结果进行异步处理：
 
@@ -4541,7 +4540,7 @@ public void seize(Long id, Long serveProviderId, Integer serveProviderType, Bool
 
 
 
-### 2) 表设计
+#### 2) 表设计
 
 **服务单表设计**
 
@@ -4589,7 +4588,7 @@ create table orders_serve_0
 
 分表策略：orders_serve\_\${(int)Math.floor(id % 10000000000 / 15000000)}
 
-### 3）阅读代码
+#### 3）阅读代码
 
 ```JSON
 package com.jzo2o.orders.seize.handler;
@@ -4727,7 +4726,7 @@ public void seizeSyncJob() {
 
 
 
-### 4) 测试
+#### 4) 测试
 
 1. 在xxl-job中添加 seizeSyncJob任务
 
@@ -4830,7 +4829,7 @@ orders_serve服务单数据添加成功，状态为1（待服务）
 
 
 
-### 5）小结
+#### 5）小结
 
 抢单结果如何从redis同步到MySQL？
 
@@ -4862,7 +4861,7 @@ orders_serve服务单数据添加成功，状态为1（待服务）
 
 
 
-## 3.8 整体测试
+### 3.8 整体测试
 
 抢单功能开发完成对抢单流程进行测试。
 
@@ -4874,11 +4873,11 @@ orders_serve服务单数据添加成功，状态为1（待服务）
 
 
 
-# 4 电商限时抢购
+## 4 电商限时抢购
 
-## 4.1 业务流程
+### 4.1 业务流程
 
-### 1）运营端创建秒杀活动
+#### 1）运营端创建秒杀活动
 
 设置一周的秒杀活动
 
@@ -4888,7 +4887,7 @@ orders_serve服务单数据添加成功，状态为1（待服务）
 
 ![这是电商限时抢购业务中运营端设置秒杀活动时的界面，页面顶部设有“秒杀活动列表”“秒杀活动设置”两个选项卡，当前处于“秒杀活动设置”界面。界面核心区域为每日场次设置，以橙色方块标识可选的秒杀时段，覆盖0:00至23:00的整点钟点时段。页面下方设有“秒杀规则”输入框，底部还有“返回”和“提交”按钮，右上角则有“创建一周秒杀活动”的操作按钮，该界面用于完成前文所述的运营端秒杀活动的时段配置等设置工作。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/D1a4beUyKoXN5cxexYXc35oInUf.png)
 
-### 2）店铺端添加秒杀商品
+#### 2）店铺端添加秒杀商品
 
 ![这张图片是电商秒杀抢购业务中运营端的秒杀活动管理页面，页面顶部有活动名称搜索框、活动状态下拉选择框、活动时间选择区域，还有橙色的“搜索”按钮和“重置”按钮。页面下方展示了两条秒杀活动信息，分别为2024-11-23秒杀活动、2024-11-22秒杀活动，两条活动的状态均为“未开始”，每条活动信息对应列有活动名称、活动开始时间、报名截止时间，还有时间场次明细，每条信息后配有蓝色的“管理”操作按钮。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/W8OjbUOdhoRuncxxWnWcfmORnVk.png)
 
@@ -4906,7 +4905,7 @@ orders_serve服务单数据添加成功，状态为1（待服务）
 
 ![这张图是电商秒杀系统的后台操作界面，对应店铺端添加秒杀商品流程的提交申请环节。界面上方显示活动名称为“2024-11-23 秒杀活动”，活动开始时间与报名截止时间均为2024年11月23日00:00:00，右侧列有当日可设置的时间场次；中间区域显示了四款待添加为秒杀商品的信息，包括商品名称、原价格、库存，以及对应的活动价格，当前选中了时间场次中的11:00档；所有商品的活动状态均标注为“通过”，每个商品右侧设有删除按钮，界面左下角设有“返回”与“提交”按钮，完成设置后提交即可完成秒杀商品的申请，系统将自动审核通过。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/C3GTbAdIZo7DGSxxuUrcihXzndf.png)
 
-### 3）用户端进行秒杀
+#### 3）用户端进行秒杀
 
 进入小程序首页，
 
@@ -4930,9 +4929,9 @@ orders_serve服务单数据添加成功，状态为1（待服务）
 
 
 
-## 4.2 系统设计
+### 4.2 系统设计
 
-### 1）表结构
+#### 1）表结构
 
 ![图片展示了电商限时抢购系统中商品秒杀活动申请表、商品秒杀活动表、秒杀商品信息表的表结构。商品秒杀活动申请表包含id、create by、create time、delete flag、update by、update time、promotion apply status、promotion id、promotion name、promotion type、quantity、sales num、sku id、store id、store name、start time、end time、seckill rule、goods num、scope id、scope type等字段。商品秒杀活动表有id、create by、create time、delete flag、update by、update time、promotion name、store id、store name、start time、end time、seckill rule、goods num、scope type等字段。秒杀商品信息表包含id、create by、create time、delete flag、update by、update time、promotion id、promotion type、store id、store name、sku id、start time、thumbnail、title、category_path、goods type、limit num、num、promotion、point、goods id等字段。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ZoksbeIm7oBM8kxDKVpcUOuknsb.png)
 
@@ -4944,7 +4943,7 @@ orders_serve服务单数据添加成功，状态为1（待服务）
 
 
 
-### 2）Redis
+#### 2）Redis
 
 1. **秒杀商品活动信息**
 
@@ -5650,7 +5649,7 @@ Value: 17975285667655743
 
 
 
-### 3）交互流程
+#### 3）交互流程
 
 1. 通过定时任务将秒杀商品的库存同步到Redis、将秒杀活动及活动的商品信息同步到Redis
 2. 用户通过redis查询秒杀活动及秒杀活动中的商品

@@ -4,14 +4,13 @@ date: 2026-11-06
 aliases:
   - "03-python基础"
 ---
+# 03-python基础
 
-<title>03-python基础</title>
+## 1 web开发
 
-# 1 web开发
+### 1.1 FastAPI
 
-## 1.1 FastAPI
-
-### 1.1.1 介绍
+#### 1.1.1 介绍
 
 FastAPI是一个用于构建 API 的现代、快速（高性能）的 web 框架
 
@@ -30,7 +29,7 @@ FastAPI是一个用于构建 API 的现代、快速（高性能）的 web 框架
 - **健壮**：生产可用级别的代码。还有自动生成的交互式文档。
 - **标准化**：基于（并完全兼容）API 的相关开放标准：[OpenAPI](https://github.com/OAI/OpenAPI-Specification) (以前被称为 Swagger) 和 [JSON Schema](https://json-schema.org/)。
 
-### 1.1.2 依赖安装
+#### 1.1.2 依赖安装
 
 ```Bash
 # 类似于SpringMVC的web框架
@@ -40,7 +39,7 @@ pip install fastapi
 pip install "uvicorn[standard]"
 ```
 
-### 1.1.3 入门代码
+#### 1.1.3 入门代码
 
 ```Python
 # 导入了Union(web服务器)和FastAPI(web框架)
@@ -67,7 +66,7 @@ async def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 ```
 
-### 1.1.4 运行服务
+#### 1.1.4 运行服务
 
 运行服务有两种主要方式：
 
@@ -87,7 +86,7 @@ async def read_item(item_id: int, q: Union[str, None] = None):
 {"item_id": 5, "q": "somequery"}
 ```
 
-### 1.1.5 接收参数
+#### 1.1.5 接收参数
 
 pydantic是一个基于Python类型注解的数据验证与解析库，支持自动校验、类型转换、嵌套模型、导入导出、配置管理等功能
 
@@ -131,7 +130,7 @@ if __name__ == "__main__":
 
 
 
-## 1.2 web案例
+### 1.2 web案例
 
 使用FastAPI和PyMySQL来完成博客系统的**增删改查**
 
@@ -139,7 +138,7 @@ if __name__ == "__main__":
 
 ![图片展示的是一个博客系统的界面，标题为“我的博客系统”。左侧有“新建博客”选项。右侧列表显示了多篇博客信息，每篇博客有标题、作者、发布时间及操作按钮，如“查看”“编辑”“删除”等。其中“Python编程入门指南”等多篇博客的发布时间均为2024年10月15日，作者均为“张三”。该图片与文档中介绍使用FastAPI和PyMySQL完成博客系统增删改查功能的内容相关，展示了系统界面效果。](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/VViyb8PhGoavnfxcHorcCnlBnSc.png)
 
-### 1.2.1 创建项目
+#### 1.2.1 创建项目
 
 根据下面说明创建一个项目，并准备创建对应的文件
 
@@ -318,7 +317,7 @@ load_dotenv() 会从项目根目录的 .env 文件（默认路径）中读取键
 
 ![图片展示了`blog_dao.py`文件的部分代码。其中，`load_dotenv()`函数用于加载.env文件中的配置到环境变量，以避免在代码中硬编码敏感信息。在`create_client`方法中，通过`pymysql.connect()`函数创建数据库连接，参数分别为`host`、`port`、`user`、`password`、`database`和`charset`，这些参数均通过`os.getenv()`函数获取环境变量值，如`MySQL_HOST`、`MySQL_PORT`等，确保数据库连接信息的安全性。](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/ZYUubooUwoPWbSxiDXgczcAgnlg.png)
 
-### 1.2.2 实现代码
+#### 1.2.2 实现代码
 
 定义`main.py`中新增查询所有博客的接口
 
@@ -408,9 +407,9 @@ if __name__ == "__main__":
 
 
 
-# 2 提示词工程
+## 2 提示词工程
 
-## 2.1 介绍
+### 2.1 介绍
 
 提示词工程（Prompt Engineering）是一种通过给大模型发送精心设计的提示词来引导大模型做出更符合人类预期操作的技术
 
@@ -422,7 +421,7 @@ if __name__ == "__main__":
 - 指令学习法 Instruction-Tuning：构建任务指令集，促使模型根据任务指令做出反馈
 - 思维链法 Chain-of-Thought：给予或激发模型具有推理和解释的信息，通过线性链式的模式指导模型生成合理的结果
 
-### 2.1.1 上下文学习法
+#### 2.1.1 上下文学习法
 
 上下文学习法是直接在提供给模型的输入文本中，嵌入少量任务相关的输入-输出示例，但不包含任何明确的指令告诉模型“现在要做这个任务”
 
@@ -436,7 +435,7 @@ if __name__ == "__main__":
 
 ![图片展示了上下文学习法中零样本、一样本、多样本三种情况下的示例。零样本（Zero-shot）仅给出任务描述“Translate English to French:”，不提供示例；一样本（One-shot）在任务描述后给出一个示例“sea otter => loutre de mer”；多样本（Few-shot）在任务描述后给出多个示例“sea otter => loutre de mer”“peppermint => menthe poivrée”“plush girafe => girafe peluche”，最后是任务提示“cheese =>”。该图与上下文紧密相关，直观呈现了上下文学习法中不同示例数量情况下的输入示例结构。](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/FpRwbEMEKoILbExyKZdcoUDangb.png)
 
-### 2.1.2 指令学习法
+#### 2.1.2 指令学习法
 
 指令学习法本质上是对下游任务的指令，简单的来说：就是告诉模型需要做什么任务，输出什么内容
 
@@ -444,7 +443,7 @@ if __name__ == "__main__":
 
 
 
-### 2.1.3 思维链法
+#### 2.1.3 思维链法
 
 思维链 (Chain-of-thought，CoT) 是一种改进的提示策略，用于提高 LLM 在复杂推理任务中的性能，如算术推理、常识推理和符号推理.
 
@@ -454,13 +453,13 @@ if __name__ == "__main__":
 
 ![这张图片展示了标准Prompting与CoT Prompting（思维链提示）的效果对比案例。左侧为标准Prompting，对“罗杰的网球数量”和“食堂的苹果数量”两个问题，仅给出最终答案，其中“食堂的苹果数量”问题的答案标注红色叉号，代表回答错误；右侧为CoT Prompting，针对两个问题先给出详细的分步推理过程，再给出正确最终答案，“食堂的苹果数量”问题的答案标注绿色对勾，代表回答正确。该图片直观呈现了思维链提示通过拆解推理步骤，能提升复杂问题解答的准确性，与上下文介绍的思维链法的作用相呼应。](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/HXvlbaOeZozSDNxtEFqcuVlnnHF.png)
 
-### 2.1.4 总结对比
+#### 2.1.4 总结对比
 
 <sheet sheet-id="5oC9UR" token="Tj1esjdlEhbQFstSGZ8cJKiunXc"></sheet>
 
 三种方法可结合使用（如用ICL提供示例，CoT引导推理，Instruction约束输出格式），形成更强大的Prompt-Tuning策略
 
-## 2.2 案例
+### 2.2 案例
 
 当前金融领域数据大量激增, 如何从繁杂的数据中获取有效的信息, 进而帮助投资者或者研究者减少决策失误带来的损失，成为金融数据分析方法研究的热门话题
 
@@ -470,7 +469,7 @@ if __name__ == "__main__":
 - 投资决策：通过AI技术对历史数据、财务报表等信息分析，为投资者提供精准的投资决策支持
 - 客户服务：通过AI技术，实现智能客服等功能，进而为客户提供便捷而又准确的答案
 
-### 2.2.1 金融文本分类
+#### 2.2.1 金融文本分类
 
 本任务是帮助机构识别和评估不同类型的风险，包括信用风险、市场风险、操作风险等
 
@@ -683,7 +682,7 @@ if __name__ == '__main__':
     text_classification()
 ```
 
-### 2.2.2 金融文本匹配
+#### 2.2.2 金融文本匹配
 
 本任务用于信息检索和过滤，匹配相关的金融信息文本，提供准确的搜索结果
 
@@ -796,7 +795,7 @@ if __name__ == '__main__':
     text_matching()
 ```
 
-### 2.2.3 金融文本信息抽取
+#### 2.2.3 金融文本信息抽取
 
 本功能用于自动识别和提取金融文本中的关键信息，如实体名称、日期、金额等，可以大大提高数据处理的效率，减少人工处理的工作量
 
@@ -911,7 +910,7 @@ if __name__ == '__main__':
     information_extraction()
 ```
 
-# 补充
+## 补充
 
 **python调用百炼模型**
 

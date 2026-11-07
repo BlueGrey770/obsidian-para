@@ -4,12 +4,9 @@ date: 2026-11-06
 aliases:
   - "开发环境配置"
 ---
+# 开发环境配置
 
-<title>开发环境配置</title>
-
-
-
-# 配置要求
+## 配置要求
 
 工欲善其事必先利其器。
 
@@ -27,7 +24,7 @@ aliases:
 
 
 
-# **1 开发工具版本**
+## **1 开发工具版本**
 
 开发工具列表：
 
@@ -35,28 +32,28 @@ aliases:
 
 
 
-# 2 **IDEA环境配置**
+## 2 **IDEA环境配置**
 
 安装IDEA，根据下边的步骤进行配置。
 
-## **2.1 编码配置**
+### **2.1 编码配置**
 
 ![这是IDEA开发环境的编码配置设置界面截图，左侧选中“File Encodings”选项，右侧为当前项目的编码设置区域。界面中重点突出两处设置：一是“Global Encoding”和“Project Encoding”均设置为UTF-8，配有红色箭头标注；二是“Default encoding for properties files”设置为UTF-8，同时勾选了“Transparent native-to-ascii conversion”选项，下方显示“Encodings are not configured”的提示文字，可用于修改IDEA中项目全局、项目本身及属性文件的编码格式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OfubbukbYox2CbxWkjGcHrAznsf.png)
 
-## 2.2 **自动导包设置**
+### 2.2 **自动导包设置**
 
 IDEA可以自动优化导入包，**但是有多个同名的类调用不同的包，必须自己手动Alt+Enter设置**，  
 下面可以通过设置来进行导包优化。
 
 ![图片展示的是IntelliJ IDEA中“Settings”窗口下的“Editor”设置界面，具体在“Auto Import”选项卡下。界面中有多个设置项，其中“Add unambiguous imports on the fly”（①）和“Optimize imports on the fly (for current project)”（②）两个选项被红色框突出显示。该图片与文档中“IDEA环境配置”部分内容相关，用于说明在IDEA中设置代码提示忽略大小写及优化导入代码的操作步骤，是配置IDEA环境时的参考设置界面。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/HMXXbjZEfoDxAex7nh6cDe6tnWb.png)
 
-## 2.3 **提示忽略大小写**
+### 2.3 **提示忽略大小写**
 
 IDEA代码提示默认是区分大小写的，设置为提示忽略大小写，编译我们后期的开发
 
 ![这张图片展示的是IDEA设置里的“Editor > General > Code Completion”界面，用于设置代码提示的忽略大小写相关配置。左侧菜单栏选中了“Code Completion”选项，右侧设置区域里，“Automaticaly insert single suggestions for”下方，“Match case”选项已取消勾选，同时“First letter only”和“All letters”选项被选中，实现了代码提示忽略大小写的功能，这与文档中2.3节“设置提示忽略大小写”的内容对应，可帮助开发者更便捷地进行代码输入。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DKs3bw0ocow5WexMdpRcG4qgnwf.png)
 
-## 2.4 **设置 Java 编译级别**
+### 2.4 **设置 Java 编译级别**
 
 工程创建成功，点击Project Structure:
 
@@ -66,9 +63,9 @@ IDEA代码提示默认是区分大小写的，设置为提示忽略大小写，�
 
 ![图片展示的是IDEA中Project Structure的设置界面。在“Project Settings”下，选中“Project”，界面中“SDK”处显示为“11 Oracle OpenJDK version 11.0.15”，右侧有“Edit”按钮；“Language level”下拉菜单被红色框突出显示，当前选中“SDK default (11 - Local variable syntax for lambda parameters)”。该图片与文档中“设置Java编译级别”部分内容相关，用于指导用户在IDEA中设置项目SDK和语言级别。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/YevnbFRw9oU6YlxPwAQclUNInTf.png)
 
-# 3 Maven环境
+## 3 Maven环境
 
-## 3.1 安装Maven
+### 3.1 安装Maven
 
 下载maven3.8.6版本，下载链接如下：
 
@@ -76,7 +73,7 @@ https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
 
 解压apache-maven-3.8.6-bin.zip到没有中文的目录下。
 
-## 3.2 **配置仓库**
+### 3.2 **配置仓库**
 
 1、解压课程资料中的maven仓库下的repository.zip到本地硬盘
 
@@ -90,7 +87,7 @@ https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
 
 ![这张图片展示了Maven的setting.xml配置文件中的mirrors节点代码片段，核心内容为配置阿里云中央仓库的相关信息。其中红色方框标注的部分，id设为alimaven，名称为aliyun maven，URL指向阿里云的镜像仓库地址，同时设置mirrorOf属性为central，以此将Maven的中央仓库镜像配置为阿里云的镜像，这一配置是为了提升Maven依赖下载的速度，符合文档中关于配置中央仓库位置的操作要求。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UUULbtTKpoPdsDxLQQ8cPDVOnQf.png)
 
-## **3.3 IDEA中配置maven**
+### **3.3 IDEA中配置maven**
 
 在IDEA中配置maven：进入 File --> Settings --> Build --> Build Tools --> Maven
 
@@ -102,9 +99,9 @@ https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
 
 
 
-# 4 配置虚拟机
+## 4 配置虚拟机
 
-## 4.1 导入虚拟机
+### 4.1 导入虚拟机
 
 项目中用到的一些服务端软件如：Nacos配置中心、Redis、RabbitMQ消息队列等通常会安装在企业局域网的服务器中，开发人员去远程连接它们。在教学中我们在自己的电脑上安装虚拟机，虚拟机代表了企业局域网中的服务器。
 
@@ -198,7 +195,7 @@ IP地址：192.168.101.68
 
 
 
-## 4.2 问题
+### 4.2 问题
 
 win11打开.vmx文件报错：“未能启动虚拟机”
 
@@ -210,9 +207,9 @@ win11打开.vmx文件报错：“未能启动虚拟机”
 
 
 
-# 5 配置数据库环境
+## 5 配置数据库环境
 
-## 5.1 **启动mysql容器**
+### 5.1 **启动mysql容器**
 
 首先确保Docker容器中的MySQL8已经启动。
 
@@ -220,7 +217,7 @@ win11打开.vmx文件报错：“未能启动虚拟机”
 
 ![这是执行`docker ps`命令后得到的容器运行状态信息，显示当前处于运行状态的容器为MySQL，其镜像版本为mysql:8.0.26，容器ID为fb02620c15cc。该容器的端口映射为0.0.0.0:3306->3306/tcp，同时还开放了33060/tcp端口，此容器已运行10小时。该内容用于在配置数据库环境时，验证MySQL容器是否成功启动，是启动mysql容器步骤后的关键查看结果，为后续使用MySQL客户端连接数据库提供了运行状态的依据。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/AqNPbJQaJo5TLVxC9RqcG4lNnPl.png)
 
-## 5.2 **使用MySQL客户端连接数据库。**
+### 5.2 **使用MySQL客户端连接数据库。**
 
 下边使用DataGrip 客户端连接数据库。
 
@@ -254,7 +251,7 @@ win11打开.vmx文件报错：“未能启动虚拟机”
 
 
 
-## 5.3 **创建 jzo2o-foundations数据库**
+### 5.3 **创建 jzo2o-foundations数据库**
 
 如果没有使用下发的虚拟机则需要自行创建 jzo2o-foundations数据库。
 
@@ -280,9 +277,9 @@ jzo2o-foundations数据库共8张表。
 
 
 
-# 6 配置Redis环境
+## 6 配置Redis环境
 
-## 6.1 **启动redis容器**
+### 6.1 **启动redis容器**
 
 首先确保Docker容器中的redis已经启动，没有启动运行docker start redis启动redis。
 
@@ -290,7 +287,7 @@ jzo2o-foundations数据库共8张表。
 
 ![该图片是运行docker ps命令后查看的结果内容，呈现的是Redis容器的相关信息，包含容器ID为0cd92422093d，对应的Redis版本为6.2.7，端口映射关系为0.0.0.0:6379->6379/tcp，容器启动命令为redis-server /etc/r...，该内容对应文档中“运行docker ps命令进行查看”的操作结果，用于确认Redis容器的启动运行状态。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/P3IAb1adZokqvux2Rk1cQ2yBnrg.png)
 
-## 6.2 **使用客户端连接Redis**
+### 6.2 **使用客户端连接Redis**
 
 使用redis客户端程序 resp-2022.4.2.0.0.exe 连接redis。
 
@@ -316,9 +313,9 @@ jzo2o-foundations数据库共8张表。
 
 
 
-# 7 配置Nacos
+## 7 配置Nacos
 
-## 7.1 检查配置
+### 7.1 检查配置
 
 导入下发的虚拟机且成功启动nacos容器，如下图：
 
@@ -338,7 +335,7 @@ docker restart nacos
 
 
 
-## 7.2 自行安装
+### 7.2 自行安装
 
 如果无法正常导入下发的虚拟机下边说明安装并配置nacos的步骤。
 
@@ -372,9 +369,9 @@ ES配置文件：shared-es.yaml
 
 
 
-# 8 配置Git环境 
+## 8 配置Git环境
 
-## 8.1 安装Git
+### 8.1 安装Git
 
 在个人电脑安装Git，使用常用软件工具目录中的Git-2.37.3-64-bit.exe。
 
@@ -399,7 +396,7 @@ git config --global user.email "你的邮箱"
 
 
 
-## 8.2 注册Git平台账号
+### 8.2 注册Git平台账号
 
 git仓库我们使用的是https://gitee.com/ 平台，首先需要注册gitee账号
 
@@ -409,11 +406,11 @@ git仓库我们使用的是https://gitee.com/ 平台，首先需要注册gitee�
 
 
 
-# 9 创建后端工程
+## 9 创建后端工程
 
-## 9.1 创建**jzo2o-framework**
+### 9.1 创建**jzo2o-framework**
 
-### 9.1.1 **拉取jzo2o-framework工程**
+#### 9.1.1 **拉取jzo2o-framework工程**
 
 首先从git拉取项目的基础工程jzo2o-framework工程，本工程封装了项目所需要的一些基础组件，如：通用的工具类库、持久层MyBatis-Plus的通用功能抽取等。
 
@@ -469,7 +466,7 @@ git仓库我们使用的是https://gitee.com/ 平台，首先需要注册gitee�
 
 
 
-### 9.1.2 **打包上传到maven仓库**
+#### 9.1.2 **打包上传到maven仓库**
 
 在开发中一些公共组件会打包jar上传到公司的maven私服上，其它团队从私服下载jar包。
 
@@ -487,9 +484,9 @@ jzo2o-framework工程中包括了项目中用到一些封装组件，最后会�
 
 
 
-## 9.2 创建jzo2o-gateway
+### 9.2 创建jzo2o-gateway
 
-### 9.2.1 拉取网关工程
+#### 9.2.1 拉取网关工程
 
 jzo2o-gateway工程是项目的网关工程，使用Spring Cloud gateway实现，负责请求拦截、请求路由与负载均衡。
 
@@ -503,7 +500,7 @@ jzo2o-gateway创建完成需要注意nacos的ip地址：
 
 
 
-### 9.2.2 运行网关工程
+#### 9.2.2 运行网关工程
 
 下边使用IDEA启动网关工程。
 
@@ -515,7 +512,7 @@ jzo2o-gateway创建完成需要注意nacos的ip地址：
 
 
 
-## 9.3 创建jzo2o-foundations
+### 9.3 创建jzo2o-foundations
 
 运营基础服务工程jzo2o-foundations提供了运营端的接口支持，由于运营基础服务工程在课堂上我们需要开发维护，使用Git管理代码。
 
@@ -525,7 +522,7 @@ jzo2o-gateway创建完成需要注意nacos的ip地址：
 
 ![该图片展示了拉取完成后的jzo2o-foundations工程的目录结构，从根目录“jzo2o-foundations”往下，包含.idea、src、.gitignore、Dockerfile、jzo2o-foundations-startup.bat、pom.xml等文件与目录；其中src目录下又分为main和test子目录，main目录下包含java目录与resources目录，java目录下以层级结构展开了com.jzo2o.foundations包，该包内包含config、constants、controller等多个子包，还有启动类FoundationsApplication。该图片用于展示按照步骤完成Fork操作后创建成功的网关工程（jzo2o-foundations工程）的目录情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/R4nibR8MFo4MmIxN8VJcMpZ3nnb.png)
 
-### 9.3.1 切换分支
+#### 9.3.1 切换分支
 
 接下来切换分支到“dev_01”，右键“dev_01”分支，点击Checkout
 
@@ -537,7 +534,7 @@ jzo2o-gateway创建完成需要注意nacos的ip地址：
 
 
 
-## 9.4 创建jzo2o-api
+### 9.4 创建jzo2o-api
 
 jzo2o-api工程提供了微服务内部接口的维护，用于微服务之间的远程调用。
 
@@ -567,9 +564,9 @@ jzo2o-api工程提供了微服务内部接口的维护，用于微服务之间�
 
 
 
-## 9.5 运行jzo2o-foundations
+### 9.5 运行jzo2o-foundations
 
-### 9.5.1 配置jzo2o-foundations
+#### 9.5.1 配置jzo2o-foundations
 
 运行前配置nacos地址：
 
@@ -603,7 +600,7 @@ jzo2o-api工程提供了微服务内部接口的维护，用于微服务之间�
 
 
 
-### 9.5.2 运行jzo2o-foundations
+#### 9.5.2 运行jzo2o-foundations
 
 开发中我们需要以debug方式启动：
 
@@ -615,9 +612,9 @@ jzo2o-api工程提供了微服务内部接口的维护，用于微服务之间�
 
 
 
-## 9.6 创建jzo2o-publics
+### 9.6 创建jzo2o-publics
 
-### 9.6.1 拉取jzo2o-publics
+#### 9.6.1 拉取jzo2o-publics
 
 公共服务工程jzo2o-publics提供了地图定位、上传图片、验证码等公用服务，本课程提供的git仓库地址为：https://gitee.com/jzo2o-v2/jzo2o-publics.git  ，操作步骤同jzo2o-framework工程，登录自己的gitee账号，Fork该仓库到自己的空间。
 
@@ -625,7 +622,7 @@ jzo2o-api工程提供了微服务内部接口的维护，用于微服务之间�
 
 ![图片展示了jzo2o-publics工程的文件结构。在src目录下，有main文件夹，其中包含java和resources子文件夹，resources文件夹内有bootstrap.yml等配置文件。此外，还有target文件夹，其中包含.gitignore、Dockerfile等文件。该图片与上文“9.6.1拉取jzo2o-publics”内容相关，直观呈现了拉取成功后的工程文件布局，帮助开发者了解工程结构。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/B505bNkjmo7O0HxJLZYcLESUnIf.png)
 
-### 9.6.2 配置OSS
+#### 9.6.2 配置OSS
 
 jzo2o-publics提供通用的上传图片接口，图片服务器使用阿里的OSS存储。
 
@@ -633,7 +630,7 @@ jzo2o-publics提供通用的上传图片接口，图片服务器使用阿里的O
 
 
 
-### 9.6.3 配置高德地图
+#### 9.6.3 配置高德地图
 
 jzo2o-publics提供通用的地图定位接口，地图定位服务使用高德地图。
 
@@ -641,7 +638,7 @@ jzo2o-publics提供通用的地图定位接口，地图定位服务使用高德�
 
 
 
-### 9.6.4 启动jzo2o-publics
+#### 9.6.4 启动jzo2o-publics
 
 启动前配置nacos地址：
 
@@ -657,11 +654,11 @@ jzo2o-publics提供通用的地图定位接口，地图定位服务使用高德�
 
 
 
-# 10 配置前端环境
+## 10 配置前端环境
 
-## 10.1 编译前端工程
+### 10.1 编译前端工程
 
-### 10.1.1 安装nvm
+#### 10.1.1 安装nvm
 
 我们面对的前端项目很多，比如A，B两个并行开发项目，nodejs依赖版本不一致。A项目需要v14.19.1老版本，B项目需要v16.15.0新版本，需要随时切换。
 
@@ -677,7 +674,7 @@ nvm全英文也叫node.js version management，是一个nodejs的版本管理工
 
 请大家自行上网查找nvm安装方法并自行安装。
 
-### 10.1.2 编译前端工程
+#### 10.1.2 编译前端工程
 
 node版本切换到14.19.1，如下图：
 
@@ -706,9 +703,9 @@ cnpm install || yarn
 
 ![这张图片是编译前端工程时，在命令提示符（cmd）中执行依赖包下载命令后的运行结果截图。界面的命令行路径为"D:\\course\\jzo2o\\code\\project-xzb-pc-admin-vue3-java"，执行的是安装依赖的命令（可使用cnpm install或yarn），最终显示所有 packages 已成功安装，该过程耗时290ms，其中网络耗时36ms，各类文件缓存命中率为0，还标注了相关依赖安装的完成状态，是前端工程配置中下载依赖包步骤的执行反馈界面。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/NmkkbTXuyoxcrFxi90bcJQMjn8g.png)
 
-## 10.2 运行前端工程
+### 10.2 运行前端工程
 
-### 10.2.1 运行前端工程
+#### 10.2.1 运行前端工程
 
 编译完成现在运行前端工程，运行前端工程之前需要启动以下后端服务：
 
@@ -744,7 +741,7 @@ jzo2o-foundations
 
 ![图片展示的是运营管理端的界面。左侧有工作台、订单管理、评价管理等导航栏。右侧上方显示“工作台 - 概览仪表盘”，并有“刷新”按钮。中间部分有“经营分析”区域，可选择时间范围，下方有订单分析和营业分析数据展示。下方是“订单数趋势”图表。该界面是文档中配置前端环境后，运行前端工程并成功进入运营管理端后的展示，用于验证服务管理功能是否搭建成功。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/K434bcMsvon7sfxrD9Fc8i2rn2b.png)
 
-### 10.2.2 服务管理功能验证
+#### 10.2.2 服务管理功能验证
 
 通过下边的功能验证判断开发环境是否搭建成功。
 
@@ -792,7 +789,7 @@ jzo2o-foundations
 
 
 
-### 10.2.3 上传图片功能验证  
+#### 10.2.3 上传图片功能验证
 
 通过下边的功能验证判断jzo2o-publics服务及OSS配置是否正确。
 
@@ -806,7 +803,7 @@ jzo2o-foundations
 
 
 
-# 11 注意点
+## 11 注意点
 
 1、maven本地仓库地址一定要配置正确
 

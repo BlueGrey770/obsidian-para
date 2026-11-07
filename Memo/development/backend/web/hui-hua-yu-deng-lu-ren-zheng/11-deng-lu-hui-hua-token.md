@@ -4,8 +4,7 @@ date: 2026-11-06
 aliases:
   - "11 登录_会话_token"
 ---
-
-<title>11 登录_会话_token</title>
+# 11 登录_会话_token
 
 <callout emoji="📚">
 登录的本质：就是一个查询
@@ -35,13 +34,13 @@ if(loginUser.getStatus() ==0){
 }
 ```
 
-# 如何将登录的信息保存
+## 如何将登录的信息保存
 
-## 会话技术
+### 会话技术
 
 1. **什么是会话技术：解决一次会话多次请求中数据共享的问题**
 
-### COOKIE
+#### COOKIE
 
 ```Java
 原理：将数据存储到浏览器中了，浏览器每次请求都会携带cookie，这样服务器就可以得到携带的数据了
@@ -55,7 +54,7 @@ if(loginUser.getStatus() ==0){
      6. 不支持移动端
 ```
 
-### SESSION
+#### SESSION
 
 ```Java
 原理：在服务器中创建session对象存储，但是如果第一次请求session，会检查是否携带了JSESSIONID
@@ -69,7 +68,7 @@ if(loginUser.getStatus() ==0){
      不支持移动端
 ```
 
-### token
+#### token
 
 ```Java
 令牌：身份识别的一种机制，而且可以携带数据
@@ -171,19 +170,19 @@ loginVO.setToken(token);
 发送令牌：每次请求都要携带令牌，需要写逻辑
 ```
 
-# 登录验证  
+## 登录验证
 
 <callout emoji="❤️">
 就是如果没有登录的话就拦截其对URI资源的请求，使其不能访问，只有登录之后才可以访问内部页面
 </callout>
 
-## 过滤器
+### 过滤器
 
 <callout emoji="🌰">
 介绍：web的三大组件之一，是服务器内置的技术，他是在请求达到servlet之前做的一些统一操作用的
 </callout>
 
-### 使用步骤
+#### 使用步骤
 
 > 1. 定义一个类去实现Filter接口，将其放入到ioc容器中即可
 > 2. 重写doFilter的方法
@@ -227,7 +226,7 @@ public void doFilter(ServletRequest servletRequest, ServletResponse servletRespo
 不仅请求过滤器，响应也会经过过滤器
 ```
 
-## 拦截器Intercepter
+### 拦截器Intercepter
 
 <callout emoji="💡">
 介绍：是SpringMVC技术，他是DishpatherServlet之后执行的Controller之前执行的
@@ -236,7 +235,7 @@ public void doFilter(ServletRequest servletRequest, ServletResponse servletRespo
                 3. 配置拦截器
 </callout>
 
-### 使用步骤
+#### 使用步骤
 
 1. 首先定义一个拦截器类
 

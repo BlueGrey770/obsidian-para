@@ -4,12 +4,11 @@ date: 2026-11-06
 aliases:
   - "日常整理"
 ---
+# 日常整理
 
-<title>日常整理</title>
+## Spring 核心设计模式及使用场景
 
-# Spring 核心设计模式及使用场景
-
-#### 单例模式（Singleton）
+##### 单例模式（Singleton）
 
 - **核心思想**：确保一个类只有一个实例，并提供全局访问点。
 - **Spring 中的使用场景**：Spring 容器中的**默认 Bean 作用域（singleton）** 就是单例模式的典型应用。Spring 通过 `DefaultSingletonBeanRegistry` 类管理所有单例 Bean 的创建和缓存，保证每个 Bean 名称对应唯一的实例。
@@ -42,7 +41,7 @@ public class DefaultSingletonBeanRegistry {
 
 - **使用场景补充**：Spring 上下文（`ApplicationContext`）本身也是单例，IOC 容器启动后只会创建一个上下文实例。
 
-#### 工厂模式（Factory）
+##### 工厂模式（Factory）
 
 Spring 中主要用到**简单工厂**和**工厂方法**，核心是 “解耦对象创建和使用”。
 
@@ -98,7 +97,7 @@ public class Test {
 }
 ```
 
-#### 代理模式（Proxy）
+##### 代理模式（Proxy）
 
 Spring 核心的 AOP 功能完全基于代理模式实现，分为**JDK 动态代理**（基于接口）和**CGLIB 动态代理**（基于子类）。
 
@@ -147,7 +146,7 @@ class UserServiceImpl implements UserService {
 }
 ```
 
-#### 模板方法模式（Template Method）
+##### 模板方法模式（Template Method）
 
 - **核心思想**：定义一个算法的骨架，将可变的步骤延迟到子类实现，固定通用流程。
 - **Spring 中的使用场景**：
@@ -202,7 +201,7 @@ User user = jdbcTemplate.query("SELECT * FROM user WHERE id=1", (rs, rowNum) -> 
 });
 ```
 
-#### 观察者模式（Observer）
+##### 观察者模式（Observer）
 
 - **核心思想**：定义对象间的一对多依赖，当一个对象状态变化时，所有依赖它的对象都会收到通知并自动更新。
 - **Spring 中的使用场景**：
@@ -251,7 +250,7 @@ public class UserCreatedListener {
 }
 ```
 
-#### 适配器模式（Adapter）
+##### 适配器模式（Adapter）
 
 - **核心思想**：将一个类的接口转换成客户希望的另一个接口，使原本因接口不兼容而无法一起工作的类能协同工作。
 - **Spring 中的使用场景**：
@@ -259,7 +258,7 @@ public class UserCreatedListener {
   - **HandlerAdapter（MVC 适配器）**：Spring MVC 中，不同的处理器（`Controller`、`HttpRequestHandler`、`Servlet`）有不同的执行方法，`HandlerAdapter` 适配这些处理器，统一通过 `handle()` 方法执行，让 DispatcherServlet 无需关心处理器的具体类型。
   - **AOP 中的 AdvisorAdapter**：适配不同类型的通知（Advice），统一处理前置、后置、环绕通知等。
 
-#### 策略模式（Strategy）
+##### 策略模式（Strategy）
 
 - **核心思想**：定义一系列算法，将每个算法封装起来，使它们可互相替换，算法的变化独立于使用算法的客户。
 - **Spring 中的使用场景**：
@@ -267,7 +266,7 @@ public class UserCreatedListener {
   - **Resource 加载策略**：Spring 的 `Resource` 接口封装了不同的资源类型（文件、类路径、URL、网络资源），`ResourceLoader` 根据不同的资源路径前缀（`classpath:`、`file:`、`http:`）选择不同的策略加载资源。
   - **事务管理策略**：`PlatformTransactionManager` 是核心接口，不同的实现（`DataSourceTransactionManager`、`JtaTransactionManager`、`HibernateTransactionManager`）对应不同的事务管理策略，可根据持久化技术切换。
 
-### 总结
+#### 总结
 
 1. **单例模式**：Spring 默认 Bean 作用域，通过 `DefaultSingletonBeanRegistry` 管理唯一实例；
 2. **工厂模式**：`BeanFactory`/`FactoryBean` 封装 Bean 创建逻辑，解耦对象创建和使用；
@@ -283,29 +282,29 @@ public class UserCreatedListener {
 
 
 
-# `@Resource` 和 `@Autowired`核心区别详解
+## `@Resource` 和 `@Autowired`核心区别详解
 
  Spring 框架中 `@Resource` 和 `@Autowired` 这两个依赖注入注解的核心区别，是 Spring 开发中非常基础且高频的知识点。
 
-#### 来源与归属
+##### 来源与归属
 
 - **@Autowired**：是 **Spring 框架原生注解**（`org.springframework.beans.factory.annotation.Autowired`），属于 Spring 专属。
 - **@Resource**：是 **Java EE 标准注解**（`javax.annotation.Resource`，JDK9+ 需要手动引入依赖），属于 JSR-250 规范，不依赖 Spring，其他支持该规范的框架也能使用。
 
-#### 注入匹配规则（核心差异）
+##### 注入匹配规则（核心差异）
 
 这是两者最关键的区别，直接决定了注入的逻辑：
 
 - **@Autowired**：优先按 **类型（Type）** 匹配（即 `byType`），如果找到多个同类型的 Bean，再按 **名称（Name）** 匹配（`byName`）；如果匹配不到会抛出 `NoSuchBeanDefinitionException`。可配合 `@Qualifier` 注解指定 Bean 名称，解决多实例冲突。
 - **@Resource**：优先按 **名称（Name）** 匹配（即 `byName`），如果按名称找不到，再按 **类型（Type）** 匹配；如果仍匹配不到才会报错。可通过 `name` 属性显式指定 Bean 名称，`type` 属性指定类型（指定后只会按类型匹配）。
 
-#### 支持的参数
+##### 支持的参数
 
 <sheet sheet-id="iqSQ4k" token="BrDusz4TthiWXDtuSd8cB6gInc5"></sheet>
 
-#### 代码示例对比
+##### 代码示例对比
 
-##### （1）@Autowired 用法
+###### （1）@Autowired 用法
 
 java运行示例
 
@@ -331,7 +330,7 @@ public class UserService {
 }
 ```
 
-##### （2）@Resource 用法
+###### （2）@Resource 用法
 
 java运行示例
 
@@ -355,12 +354,12 @@ public class UserService {
 }
 ```
 
-#### 适用场景
+##### 适用场景
 
 - 优先用 `@Autowired`：如果你项目完全基于 Spring 生态，且习惯按类型注入，配合 `@Qualifier` 解决多实例问题，是 Spring 推荐的方式。
 - 优先用 `@Resource`：如果你需要跨框架兼容（如同时用 Spring 和其他 J2EE 框架），或更习惯按名称注入，无需额外注解（如 `@Qualifier`）即可指定名称。
 
-#### 总结
+##### 总结
 
 1. **核心差异**：`@Autowired` 优先按类型注入（需 `@Qualifier` 指定名称），`@Resource` 优先按名称注入（可直接通过 `name` 属性指定）。
 2. **归属不同**：`@Autowired` 是 Spring 专属，`@Resource` 是 Java EE 标准注解。
@@ -372,11 +371,11 @@ public class UserService {
 
 
 
-#  **ShardingSphere（Sharding-JDBC）分库分表业务讲解**
+##  **ShardingSphere（Sharding-JDBC）分库分表业务讲解**
 
 ---
 
-### 一、ShardingSphere 到底是个啥？
+#### 一、ShardingSphere 到底是个啥？
 
 一句话：
 
@@ -398,11 +397,11 @@ select * from jzo2o-orders-1.orders_2 where user_id = 1001
 
 ---
 
-### 二、项目里 ShardingSphere 到底在干什么？
+#### 二、项目里 ShardingSphere 到底在干什么？
 
 对照项目配置讲：
 
-#### 1. 项目有 3 个库
+##### 1. 项目有 3 个库
 
 ```Plain Text
 jzo2o-orders-0
@@ -410,7 +409,7 @@ jzo2o-orders-1
 jzo2o-orders-2
 ```
 
-#### 2. 每张表又分 3 张表
+##### 2. 每张表又分 3 张表
 
 ```Plain Text
 orders_0、orders_1、orders_2
@@ -418,7 +417,7 @@ orders_serve_0、orders_1、orders_2
 biz_snapshot_0、1、2
 ```
 
-#### 3. ShardingSphere 做 3 件事
+##### 3. ShardingSphere 做 3 件事
 
 1. **分库（路由到哪个库？0/1/2）**
 2. **分表（路由到哪个表？\_0/\_1/\_2）**
@@ -426,11 +425,11 @@ biz_snapshot_0、1、2
 
 ---
 
-### 三、项目的分片规则（最重要！）
+#### 三、项目的分片规则（最重要！）
 
 配置里的规则：
 
-#### 1）orders 表（订单主表）
+##### 1）orders 表（订单主表）
 
 ```YAML
 orders:
@@ -443,7 +442,7 @@ orders:
     shardingAlgorithmName: orders_table_inline
 ```
 
-##### ① 分库规则：按 user_id % 3
+###### ① 分库规则：按 user_id % 3
 
 ```Plain Text
 algorithm-expression: jzo2o-orders-${user_id % 3}
@@ -452,7 +451,7 @@ algorithm-expression: jzo2o-orders-${user_id % 3}
 - user_id = 1001 → 1001 % 3 = 2 → 走 **jzo2o-orders-2**
 - user_id = 1002 → 1002 % 3 = 0 → 走 **jzo2o-orders-0**
 
-##### ② 分表规则：按 id 取模
+###### ② 分表规则：按 id 取模
 
 原来的：
 
@@ -470,7 +469,7 @@ orders_${id % 3}
 
 ---
 
-#### 2）orders_serve 表（服务单）
+##### 2）orders_serve 表（服务单）
 
 ```YAML
 databaseStrategy:
@@ -482,7 +481,7 @@ databaseStrategy:
 
 ---
 
-#### 3）biz_snapshot 表
+##### 3）biz_snapshot 表
 
 ```YAML
 databaseStrategy:
@@ -493,7 +492,7 @@ databaseStrategy:
 
 ---
 
-### 四、ShardingSphere 工作流程（重要）
+#### 四、ShardingSphere 工作流程（重要）
 
 项目执行：
 
@@ -503,11 +502,11 @@ orderMapper.insert(order);
 
 ShardingSphere 内部偷偷做：
 
-#### 1. 解析 SQL
+##### 1. 解析 SQL
 
 知道要操作 `orders` 表。
 
-#### 2. 取分库字段 → user_id
+##### 2. 取分库字段 → user_id
 
 ```Plain Text
 user_id = 1001
@@ -515,7 +514,7 @@ user_id = 1001
 → 库：jzo2o-orders-2
 ```
 
-#### 3. 取分表字段 → id
+##### 3. 取分表字段 → id
 
 ```Plain Text
 id = 2311011000000000001
@@ -523,17 +522,17 @@ id % 3 = ？
 → 表：orders_2
 ```
 
-#### 4. 改写 SQL
+##### 4. 改写 SQL
 
 ```SQL
 INSERT INTO jzo2o-orders-2.orders_2 (...)
 ```
 
-#### 5. 执行、返回结果
+##### 5. 执行、返回结果
 
 ---
 
-### 五、项目的历史订单表怎么接入？（按 id 分表）
+#### 五、项目的历史订单表怎么接入？（按 id 分表）
 
 你现在要加：
 
@@ -544,16 +543,16 @@ history_orders_serve_2024
 history_orders_serve_2025
 ```
 
-#### 规则：
+##### 规则：
 
 **按 id中前两位的 年份分表**
 
-#### ShardingSphere 做的事：
+##### ShardingSphere 做的事：
 
 - id = 24-xx-xx → 路由到 `history_orders_2024`
 - id = 25-xx-xx → 路由到 `history_orders_2025`
 
-#### 配置写法（直接加在项目现有 yml 里）
+##### 配置写法（直接加在项目现有 yml 里）
 
 ```YAML
 history_orders:
@@ -571,17 +570,17 @@ history_orders_serve:
       shardingAlgorithmName: history_orders_year_inline  # 年份分表算法
 ```
 
-#### 算法：
+##### 算法：
 
 从 id 提取年份 → 拼表名。
 
 ---
 
-### 六、为什么项目代码里看不到任何“指向”？
+#### 六、为什么项目代码里看不到任何“指向”？
 
 因为：
 
-#### ShardingSphere 代理了数据源
+##### ShardingSphere 代理了数据源
 
 在项目里的 `DataSource` 被替换成：
 
@@ -599,9 +598,9 @@ history_orders_serve:
 
 ---
 
-### 七、最常见的 4 个问题
+#### 七、最常见的 4 个问题
 
-#### 1. 对业务代码有没有影响？
+##### 1. 对业务代码有没有影响？
 
 **99% 没有影响。**
 
@@ -616,7 +615,7 @@ history_orders_serve:
 
 ---
 
-#### 2. 配置怎么被发现的？
+##### 2. 配置怎么被发现的？
 
 1. 项目引入了 starter
 
@@ -631,7 +630,7 @@ shardingsphere-jdbc-core-spring-boot-starter
 
 ---
 
-#### 3. 怎么判断它生效了？
+##### 3. 怎么判断它生效了？
 
 打开：
 
@@ -650,7 +649,7 @@ INSERT INTO jzo2o-orders-1.orders_2 ...
 
 ---
 
-#### 4. 项目原来的 id 生成规则兼容吗？
+##### 4. 项目原来的 id 生成规则兼容吗？
 
 兼容！
 
@@ -666,7 +665,7 @@ ShardingSphere 不管 id 是什么，
 
 ---
 
-### 八、总结
+#### 八、总结
 
 1. **ShardingSphere = 自动分库 + 分表 + SQL 路由**
 2. **写逻辑表，它帮你找真实库表**
@@ -678,9 +677,9 @@ ShardingSphere 不管 id 是什么，
 
 
 
-# Redis五种数据结构命令
+## Redis五种数据结构命令
 
-### **Redis 五种核心数据结构命令对比表**
+#### **Redis 五种核心数据结构命令对比表**
 
 Redis 支持五种主要数据结构，每种结构都有其独特的特性和适用场景。下表对其进行了详细对比：
 
@@ -694,11 +693,11 @@ Redis 支持五种主要数据结构，每种结构都有其独特的特性和�
 
 ---
 
-### **各数据结构命令详解**
+#### **各数据结构命令详解**
 
 以下是对每种数据结构的常用命令进行更详细的展开，便于您查阅。
 
-#### **1. String (字符串)**
+##### **1. String (字符串)**
 
 字符串是 Redis 最基本的数据类型，也是其他所有数据结构的基础。
 
@@ -773,7 +772,7 @@ Redis 支持五种主要数据结构，每种结构都有其独特的特性和�
 
 ---
 
-### **通用命令**
+#### **通用命令**
 
 Redis 还提供了一些对所有数据类型都适用的通用命令，例如：
 
@@ -795,13 +794,13 @@ Redis 还提供了一些对所有数据类型都适用的通用命令，例如�
 
 
 
-# **Elasticsearch查询相关操作**
+## **Elasticsearch查询相关操作**
 
 ---
 
-### **一、基础查询类型**
+#### **一、基础查询类型**
 
-####  **1. 精确查询（Term-level query）**
+#####  **1. 精确查询（Term-level query）**
 
 针对 `keyword`、数值、日期、 `boolean` 类型字段，不对搜索条件分词，直接精确匹配：
 
@@ -841,7 +840,7 @@ GET /items/_search
 
   ![图 2](../../../../../../Attachments/development/programming/interview/xiang-mu-mian-shi-ti/ri-chang-zheng-li/PaCLbvyN4o5XbDxIvMccf6lPnrd.png)
 
-#### **2. 全文检索（Full text query）**
+##### **2. 全文检索（Full text query）**
 
 针对 `text` 类型字段，会对搜索条件分词后匹配：
 
@@ -881,9 +880,9 @@ GET /items/_search
 
 ---
 
-### **二、排序与分页** 
+#### **二、排序与分页**
 
-#### **1. 排序**
+##### **1. 排序**
 
 支持按 `keyword`、数值、日期等类型字段排序，默认按相关度算分 `_score` 排序：
 
@@ -901,7 +900,7 @@ GET /items/_search
 }
 ```
 
-#### **2. 分页**
+##### **2. 分页**
 
 - **普通分页** ：通过 `from`（起始位置）和 `size`（每页数量）控制，默认限制 `from+size≤10000`
 
@@ -942,9 +941,9 @@ GET /items/_search
 
 ---
 
-### **三、复合查询** 
+#### **三、复合查询**
 
-#### **1. bool查询（常用）**
+##### **1. bool查询（常用）**
 
 通过逻辑组合多个查询条件，支持4种逻辑：
 
@@ -979,7 +978,7 @@ GET /items/_search
 }
 ```
 
-#### **2. function_score查询**
+##### **2. function_score查询**
 
 用于自定义算分，实现竞价排名等需求，流程为：
 
@@ -1008,9 +1007,9 @@ GET /items/_search
 
 ---
 
-### **四、高级查询场景** 
+#### **四、高级查询场景**
 
-#### **1. 地理坐标查询**
+##### **1. 地理坐标查询**
 
 - **矩形范围查询（geo_bounding_box）** ：查询落在指定矩形内的坐标点
 
@@ -1042,7 +1041,7 @@ GET /items/_search
 }
 ```
 
-#### **2. 自动补全查询**
+##### **2. 自动补全查询**
 
 使用 `completion` 类型字段实现高效前缀补全：
 
@@ -1090,7 +1089,7 @@ GET /test_index2/_search
 
 ---
 
-### **五、Java Client实现查询**
+#### **五、Java Client实现查询**
 
 以term查询为例，Java代码示例：
 
@@ -1131,20 +1130,20 @@ private void handleResponse(SearchResponse<ItemDoc> response) {
 
 
 
-# volatile类型
+## volatile类型
 
 `volatile` 是 Java 中的一个**关键字**，专门用于修饰变量，核心作用是解决多线程环境下变量的**可见性**和**有序性**问题（注意：它不保证原子性）。对于单例模式（DCL）来说，`volatile` 是实现线程安全的关键.
 
-### 一、先理解：为什么需要 volatile？
+#### 一、先理解：为什么需要 volatile？
 
 在多线程环境下，每个线程都有自己的“工作内存”（缓存），线程操作变量时，会先从主内存读取变量到工作内存，修改后再写回主内存。
 
 - 不加 `volatile`：线程A修改了变量，但可能只更新了自己的工作内存，线程B还读取的是旧值（可见性问题）；JVM 还可能对指令重排序，导致逻辑错乱（有序性问题）。
 - 加 `volatile`：强制线程读写变量时直接操作**主内存**，且禁止JVM对该变量相关的指令重排序。
 
-### 二、volatile 的核心特性
+#### 二、volatile 的核心特性
 
-#### 1. 特性1：保证变量的**可见性**
+##### 1. 特性1：保证变量的**可见性**
 
 - **定义**：一个线程修改了 `volatile` 变量的值，其他线程能立刻看到这个修改（变量的读写直接操作主内存，跳过工作内存缓存）。
 - **对比（无 volatile）**：
@@ -1177,7 +1176,7 @@ private void handleResponse(SearchResponse<ItemDoc> response) {
   // 线程B会立刻看到flag的修改，循环终止
   ```
 
-#### 2. 特性2：禁止指令重排序（有序性）
+##### 2. 特性2：禁止指令重排序（有序性）
 
 - **定义**：JVM 为了优化性能，可能会调整代码的执行顺序（指令重排序），但 `volatile` 会禁止这种重排序，保证代码按编写顺序执行。
 - **核心场景（单例DCL）**：
@@ -1191,7 +1190,7 @@ private void handleResponse(SearchResponse<ItemDoc> response) {
 - 线程A执行到 `3`（instance非null，但实例还没初始化），线程B第一次检查 `instance != null`，直接返回这个“半初始化”的实例，调用方法会报错。
 - 加 `volatile` 后，强制按 `1→2→3` 执行，避免上述问题。
 
-#### 3. 特性3：不保证原子性（重要）
+##### 3. 特性3：不保证原子性（重要）
 
 - `volatile` 只能保证可见性和有序性，**不能保证复合操作的原子性**。
 - 示例（错误用法）：
@@ -1207,7 +1206,7 @@ private void handleResponse(SearchResponse<ItemDoc> response) {
 
   - 解决：需要用 `synchronized` 或 `AtomicInteger` 保证原子性。
 
-### 三、volatile 在单例DCL中的核心作用（强调）
+#### 三、volatile 在单例DCL中的核心作用（强调）
 
 你之前的单例代码中，`volatile` 不是“可选的”，而是“必须的”：
 
@@ -1219,13 +1218,13 @@ private volatile static Singleton instance;
 - 没有 `volatile`：双重检查锁定会失效，可能返回未初始化的实例。
 - 有 `volatile`：保证实例创建的指令不重排序，且修改对其他线程可见。
 
-### 四、volatile 的使用场景
+#### 四、volatile 的使用场景
 
 1. **状态标记位**：如开关（`flag`、`running`），确保线程间状态同步。
 2. **双重检查锁定（DCL）**：单例模式中修饰实例变量。
 3. **多线程环境下的简单变量读写**：如配置参数、计数器（仅单线程修改时）。
 
-### 五、总结
+#### 五、总结
 
 1. `volatile` 是Java多线程的基础关键字，核心解决**可见性**和**有序性**问题，**不保证原子性**。
 2. 在懒汉模式（DCL）的单例中，`volatile` 是必加的，目的是禁止实例创建的指令重排序，避免返回“半初始化”实例。
@@ -1235,19 +1234,19 @@ private volatile static Singleton instance;
 
 
 
-# JDK动态代理与CGLIB字节码生成技术
+## JDK动态代理与CGLIB字节码生成技术
 
 这两种技术都是Java中实现**代理模式**的核心手段，目的是在不修改目标类代码的前提下，为目标类添加额外功能（如日志、事务、权限校验），是Spring AOP等框架的底层实现基础。下面从概念、原理、使用场景等方面由浅入深讲解：
 
 ---
 
-## 一、JDK动态代理
+### 一、JDK动态代理
 
-### 1. 核心定义
+#### 1. 核心定义
 
 JDK动态代理是JDK自带的代理机制（无需额外依赖），**基于接口**生成代理类，代理类和目标类实现同一个接口，通过反射调用目标类的方法。
 
-### 2. 核心原理
+#### 2. 核心原理
 
 - 要求：目标类必须**实现至少一个接口**，否则无法使用。
 - 底层：JDK通过`java.lang.reflect.Proxy`类和`InvocationHandler`接口动态生成代理类的字节码，运行时加载到JVM中。
@@ -1257,7 +1256,7 @@ JDK动态代理是JDK自带的代理机制（无需额外依赖），**基于接
   2. 通过`Proxy.newProxyInstance()`方法生成代理对象；
   3. 调用代理对象的方法时，会自动触发`invoke`方法，再由`invoke`方法调用目标类的原始方法。
 
-### 3. 代码示例
+#### 3. 代码示例
 
 ```Java
 import java.lang.reflect.InvocationHandler;
@@ -1323,7 +1322,7 @@ public class JdkProxyTest {
 }
 ```
 
-### 4. 输出结果
+#### 4. 输出结果
 
 ```Plain Text
 JDK代理 - 调用方法前：记录日志
@@ -1331,20 +1330,20 @@ JDK代理 - 调用方法前：记录日志
 JDK代理 - 调用方法后：完成日志记录
 ```
 
-### 5. 特点
+#### 5. 特点
 
 - 优点：JDK自带，无需引入第三方依赖；轻量、原生。
 - 缺点：必须实现接口，限制较大；基于反射，性能略低（JDK8后反射优化，差距缩小）。
 
 ---
 
-## 二、CGLIB字节码生成技术
+### 二、CGLIB字节码生成技术
 
-### 1. 核心定义
+#### 1. 核心定义
 
 CGLIB（Code Generation Library）是一个第三方字节码生成库，**基于继承**生成目标类的子类作为代理类，无需目标类实现接口。
 
-### 2. 核心原理
+#### 2. 核心原理
 
 - 要求：目标类不能是`final`（否则无法继承），目标方法不能是`final`（否则无法重写）。
 - 底层：通过ASM框架直接操作字节码，生成目标类的子类，重写目标方法，在重写的方法中添加额外逻辑。
@@ -1354,9 +1353,9 @@ CGLIB（Code Generation Library）是一个第三方字节码生成库，**基�
   2. 通过`Enhancer`类设置父类（目标类）和回调方法，生成代理对象；
   3. 调用代理对象的方法时，会触发`intercept`方法，再调用目标类的原始方法。
 
-### 3. 代码示例
+#### 3. 代码示例
 
-#### 前置条件
+##### 前置条件
 
 需引入CGLIB依赖（Maven）：
 
@@ -1368,7 +1367,7 @@ CGLIB（Code Generation Library）是一个第三方字节码生成库，**基�
 </dependency>
 ```
 
-#### 核心代码
+##### 核心代码
 
 ```Java
 import net.sf.cglib.proxy.Enhancer;
@@ -1432,7 +1431,7 @@ public class CglibProxyTest {
 }
 ```
 
-### 4. 输出结果
+#### 4. 输出结果
 
 ```Plain Text
 CGLIB代理 - 调用方法前：校验权限
@@ -1440,14 +1439,14 @@ CGLIB代理 - 调用方法前：校验权限
 CGLIB代理 - 调用方法后：记录订单日志
 ```
 
-### 5. 特点
+#### 5. 特点
 
 - 优点：无需实现接口，适用范围更广；基于字节码直接生成，性能略高于JDK动态代理（JDK8前明显，JDK8后差距很小）。
 - 缺点：需要引入第三方依赖；不能代理final类/方法；由于是继承，目标类的构造方法会被调用两次（生成子类时）。
 
 ---
 
-## 三、核心对比
+### 三、核心对比
 
 | 特性 | JDK动态代理 | CGLIB代理 |
 |-|-|-|
@@ -1465,13 +1464,13 @@ CGLIB代理 - 调用方法后：记录订单日志
 
 
 
-# MySQL索引的三大分类角度
+## MySQL索引的三大分类角度
 
-## 一、从 **数据结构** 角度
+### 一、从 **数据结构** 角度
 
 索引本质是一种**加速查找的数据结构**，不同结构决定了查询性能、适用场景。
 
-### 1. 树索引（B+ 树索引）
+#### 1. 树索引（B+ 树索引）
 
 **MySQL 默认、最常用、最重要的索引**
 
@@ -1487,7 +1486,7 @@ CGLIB代理 - 调用方法后：记录订单日志
   - 绝大多数业务查询
   - where、order by、group by、join
 
-### 2. Hash 索引（哈希索引）
+#### 2. Hash 索引（哈希索引）
 
 - 结构：**哈希表**
 - 时间复杂度：**O(1)**
@@ -1503,11 +1502,11 @@ CGLIB代理 - 调用方法后：记录订单日志
 
 ---
 
-## 二、从 **物理存储** 角度
+### 二、从 **物理存储** 角度
 
 决定**数据在磁盘上的真实存储顺序**。
 
-### 1. 聚集索引（Clustered Index）
+#### 1. 聚集索引（Clustered Index）
 
 - **叶子节点 = 完整的行数据**
 - 表的物理顺序 = 索引顺序
@@ -1522,7 +1521,7 @@ CGLIB代理 - 调用方法后：记录订单日志
 - 按主键范围查询极快
 - 回表少（直接拿到整行）
 
-### 2. 非聚集索引（Non-Clustered Index）
+#### 2. 非聚集索引（Non-Clustered Index）
 
 也叫**二级索引 / 普通索引**
 
@@ -1538,11 +1537,11 @@ CGLIB代理 - 调用方法后：记录订单日志
 
 ---
 
-## 三、从 **逻辑功能** 角度
+### 三、从 **逻辑功能** 角度
 
 按业务约束和使用方式划分。
 
-### 1. 普通索引
+#### 1. 普通索引
 
 - 无任何约束
 - 仅加速查询
@@ -1552,7 +1551,7 @@ CGLIB代理 - 调用方法后：记录订单日志
 create index idx_name on t(name);
 ```
 
-### 2. 唯一索引（Unique Index）
+#### 2. 唯一索引（Unique Index）
 
 - 列值 **必须唯一**，允许 NULL
 - 加速查询 + 唯一性约束
@@ -1561,7 +1560,7 @@ create index idx_name on t(name);
 create unique index idx_phone on t(phone);
 ```
 
-### 3. 主键索引（Primary Key）
+#### 3. 主键索引（Primary Key）
 
 - 特殊的唯一索引
 - **不允许 NULL**
@@ -1572,7 +1571,7 @@ create unique index idx_phone on t(phone);
 primary key(id)
 ```
 
-### 4. 联合索引（复合索引）
+#### 4. 联合索引（复合索引）
 
 - **多个字段组合成一个索引**
 - 遵循 **最左前缀原则**
@@ -1596,7 +1595,7 @@ create index idx_a_b_c on t(a,b,c);
 
 ---
 
-## 四、总结
+### 四、总结
 
 | 分类角度 | 索引类型 | 核心特点 |
 |-|-|-|
@@ -1613,17 +1612,17 @@ create index idx_a_b_c on t(a,b,c);
 
 
 
-# 联合索引「最左前缀原理」
+## 联合索引「最左前缀原理」
 
-## 一、先明确核心概念
+### 一、先明确核心概念
 
 联合索引（比如 `idx_a_b_c (a,b,c)`）在B+树中是按 **“先排a、再排b、最后排c”** 的层级顺序存储的，就像查字典先按首字母、再按第二个字母、最后按第三个字母找单词一样。
 
 **最左前缀原理**：只有查询条件匹配索引的「最左侧连续字段」时，才能触发索引的快速查找；跳过左侧字段直接查右侧字段，索引会完全失效。
 
-## 二、B+树结构可视化图解（以 `idx_a_b_c (a,b,c)` 为例）
+### 二、B+树结构可视化图解（以 `idx_a_b_c (a,b,c)` 为例）
 
-### 1. 联合索引的B+树底层结构
+#### 1. 联合索引的B+树底层结构
 
 ![图片展示了联合索引`idx_a_b_c(a,b,c)`的B+树底层结构。根节点为`a:1,3`，有分支节点1和分支节点2。分支节点1存储`a:1`和`b:2,5`，其下有叶子节点1和叶子节点2，分别对应`a:1 b:2 c:7`和`a:1 b:5 c:3`，主键分别为101和102。分支节点2存储`a:3`和`b:1,4`，其下有叶子节点3和叶子节点4，分别对应`a:3 b:1 c:9`和`a:3 b:4 c:6`，主键分别为103和104。该图直观呈现了联合索引B+树的结构。](../../../../../../Attachments/development/programming/interview/xiang-mu-mian-shi-ti/ri-chang-zheng-li/NiN0bXAMho6zvSx4hTHcHC80nie.png)
 
@@ -1631,7 +1630,7 @@ create index idx_a_b_c on t(a,b,c);
 - **分支/根节点**：只存“上层排序字段”的分界值，用于快速定位叶子节点；
 - 整个树的排序逻辑：先按 `a` 从小到大排，`a` 相同则按 `b` 排，`b` 相同再按 `c` 排。
 
-### 2. 不同查询条件的匹配效果
+#### 2. 不同查询条件的匹配效果
 
 | 查询条件 | 是否命中索引 | 匹配逻辑 |
 |-|-|-|
@@ -1642,16 +1641,16 @@ create index idx_a_b_c on t(a,b,c);
 | `where a=1 and c=7` | ⚠️ 部分命中 | 先定位 `a=1`，但无法通过 `c` 筛选，需遍历所有 `a=1` 的叶子节点再过滤 `c=7` |
 | `where b=2 and c=7` | ❌ 完全失效 | 无 `a`，无法触发索引查找 |
 
-## 三、关键补充规则（避坑）
+### 三、关键补充规则（避坑）
 
-### 1. “最左前缀”是「连续」的，不是「位置」
+#### 1. “最左前缀”是「连续」的，不是「位置」
 
 比如索引 `idx_a_b_c`：
 
 - ✅ 有效：`a`、`a+b`、`a+b+c`（连续左前缀）；
 - ❌ 无效：`a+c`（跳过b，不连续）、`b+c`（无a）。
 
-### 2. 字段顺序不影响（只要逻辑包含左前缀）
+#### 2. 字段顺序不影响（只要逻辑包含左前缀）
 
 SQL中条件的书写顺序不影响索引命中，MySQL会优化条件顺序：
 
@@ -1661,7 +1660,7 @@ where b=2 and a=1;  -- MySQL会调整为 a=1 and b=2
 where a=1 and b=2;
 ```
 
-### 3. 范围查询会截断后续索引
+#### 3. 范围查询会截断后续索引
 
 如果左前缀中某字段用了 `>`、`<`、`between` 等范围查询，后续字段无法命中索引：
 
@@ -1671,7 +1670,7 @@ where a=1 and b>2 and c=7;
 -- 仅 a+ b 命中，c 失效（因为 b>2 是范围，无法精准定位 c）
 ```
 
-### 4. 覆盖索引可规避“部分命中”的性能问题
+#### 4. 覆盖索引可规避“部分命中”的性能问题
 
 如果查询的字段都在索引中（覆盖索引），即使部分字段失效，也无需回表，性能仍优：
 
@@ -1681,7 +1680,7 @@ select a,b,c from t where a=1 and c=7;
 -- 虽然 c 失效，但只需遍历 a=1 的叶子节点，无需查整行数据
 ```
 
-## 四、总结
+### 四、总结
 
 ```Plain Text
 flowchart LR
@@ -1703,7 +1702,7 @@ flowchart LR
 
 
 
-# 泛型擦除是什么？
+## 泛型擦除是什么？
 
 泛型擦除（Type Erasure）是 Java 为了兼容早期无泛型的代码，在编译阶段对泛型信息进行**擦除**的机制——简单说，Java 的泛型只存在于编译期，运行时 JVM 并不知道泛型的具体类型，会把泛型参数替换成其上限类型（默认是 `Object`）。
 
@@ -1711,9 +1710,9 @@ flowchart LR
 
 ---
 
-### 一、例子：泛型擦除的效果
+#### 一、例子：泛型擦除的效果
 
-#### 1. 基础示例
+##### 1. 基础示例
 
 ```Java
 public class TypeErasureDemo {
@@ -1743,7 +1742,7 @@ public class TypeErasureDemo {
 - 编译时：`ArrayList<String>` 限制只能加 `String`，加 `Integer` 会报错；
 - 运行时：通过反射能给 `strList` 加 `Integer`，说明 JVM 根本不知道 `strList` 原本是 `ArrayList<String>`。
 
-#### 2. 泛型类的擦除
+##### 2. 泛型类的擦除
 
 ```Java
 // 定义带泛型的类
@@ -1772,7 +1771,7 @@ public class BoxErasure {
 
 **核心结论**：`Box<String>` 和 `Box<Integer>` 在运行时是同一个类型 `Box`，泛型参数 `<T>` 被擦除成了 `Object`。
 
-#### 3. 有上限的泛型擦除
+##### 3. 有上限的泛型擦除
 
 如果泛型指定了上限，擦除后会替换为上限类型，而非 `Object`：
 
@@ -1793,7 +1792,7 @@ class NumericBox<T extends Number> {
 
 ---
 
-### 二、泛型擦除带来的常见问题
+#### 二、泛型擦除带来的常见问题
 
 1. **不能用泛型类型创建对象**
 
@@ -1819,7 +1818,7 @@ class NumericBox<T extends Number> {
 
 ---
 
-### 三、总结
+#### 三、总结
 
 1. **核心本质**：Java 泛型是“编译期语法糖”，运行时泛型信息被擦除，替换为上限类型（默认 `Object`）。
 2. **主要影响**：运行时无法获取泛型的具体类型，导致不能用泛型创建对象、不能用 `instanceof` 判断泛型类型。
@@ -1829,13 +1828,13 @@ class NumericBox<T extends Number> {
 
 
 
-# MySQL 日志详解（二进制日志/重做日志/慢查询日志/回滚日志）
+## MySQL 日志详解（二进制日志/重做日志/慢查询日志/回滚日志）
 
 MySQL 的各类日志是保障数据库可靠性、可恢复性、并发性能和性能优化的核心组件，其中二进制日志、重做日志、慢查询日志被称为“三大核心日志”，回滚日志（Undo Log）则与重做日志紧密配合支撑事务特性。
 
-## 一、四大日志的作用与特点
+### 一、四大日志的作用与特点
 
-### 1. 二进制日志（Binary Log，binlog）
+#### 1. 二进制日志（Binary Log，binlog）
 
 **定位**：记录数据库的所有变更操作（增删改、建表等），是**逻辑日志**（记录“做了什么”），而非物理日志。
 
@@ -1851,7 +1850,7 @@ MySQL 的各类日志是保障数据库可靠性、可恢复性、并发性能�
   - 有三种格式：`STATEMENT`（记录SQL语句）、`ROW`（记录行的变更，推荐）、`MIXED`（混合模式）；
   - 日志文件按大小/时间自动轮转，可通过 `purge binary logs` 清理旧日志。
 
-### 2. 重做日志（Redo Log）
+#### 2. 重做日志（Redo Log）
 
 **定位**：保障数据库的崩溃恢复（Crash Recovery），是**物理日志**（记录“数据页怎么变”），InnoDB 存储引擎独有。
 
@@ -1865,7 +1864,7 @@ MySQL 的各类日志是保障数据库可靠性、可恢复性、并发性能�
   - 默认开启，无需手动配置；
   - 固定大小的循环文件（默认 `ib_logfile0`、`ib_logfile1`），写满后覆盖已刷盘的旧日志。
 
-### 3. 慢查询日志（Slow Query Log）
+#### 3. 慢查询日志（Slow Query Log）
 
 **定位**：记录执行时间超过阈值的 SQL 语句，是性能优化的核心工具。
 
@@ -1880,7 +1879,7 @@ MySQL 的各类日志是保障数据库可靠性、可恢复性、并发性能�
   - 可配置记录“未使用索引的 SQL”（`log_queries_not_using_indexes=ON`）；
   - 文本格式日志，可直接查看或通过 `mysqldumpslow` 工具分析。
 
-### 4. 回滚日志（Undo Log）
+#### 4. 回滚日志（Undo Log）
 
 **定位**：InnoDB 独有，记录事务执行前的数据状态（“数据的旧版本”），是**逻辑日志**，支撑事务回滚和 MVCC。
 
@@ -1895,7 +1894,7 @@ MySQL 的各类日志是保障数据库可靠性、可恢复性、并发性能�
   - 事务提交后不会立即删除，保留至“无事务需要读取该旧版本”时，由 purge 线程清理；
   - 事务执行时先于数据修改写入。
 
-## 二、四大日志区别对比表
+### 二、四大日志区别对比表
 
 | 特性 | 二进制日志（binlog） | 重做日志（Redo Log） | 慢查询日志（Slow Log） | 回滚日志（Undo Log） |
 |-|-|-|-|-|
@@ -1906,7 +1905,7 @@ MySQL 的各类日志是保障数据库可靠性、可恢复性、并发性能�
 | 生命周期 | 长期保存（可轮转/清理） | 循环写（刷盘后覆盖） | 长期保存（可清理） | 事务提交后暂存，按需清理 |
 | 写入时机 | 事务提交时写入 | 事务执行中实时写入 | SQL执行完成后写入 | 事务执行时先于数据修改写入 |
 
-## 三、日志协作流程（以 UPDATE 事务为例）
+### 三、日志协作流程（以 UPDATE 事务为例）
 
 ```SQL
 BEGIN; -- 开启事务
@@ -1923,7 +1922,7 @@ COMMIT; -- 提交事务
    - Undo Log 暂存（供后续 MVCC 读取），等待 purge 线程清理；
 4. 若执行 `ROLLBACK`：从 Undo Log 读取旧值，恢复数据到修改前状态。
 
-## 四、实战配置示例（快速启用日志）
+### 四、实战配置示例（快速启用日志）
 
 ```SQL
 -- 1. 启用二进制日志（临时生效，重启失效；永久生效需改my.cnf）
@@ -1941,7 +1940,7 @@ SHOW VARIABLES LIKE 'innodb_log%'; -- Redo Log相关
 SHOW VARIABLES LIKE 'innodb_undo%'; -- Undo Log相关
 ```
 
-## 五、总结
+### 五、总结
 
 1. **二进制日志**：核心是“记录所有变更”，面向数据恢复和主从复制，保障全局数据一致性；
 2. **重做日志**：核心是“保障崩溃恢复”，面向数据持久性，是 InnoDB 高性能写入的基础；
@@ -1952,7 +1951,7 @@ SHOW VARIABLES LIKE 'innodb_undo%'; -- Undo Log相关
 
 ---
 
-# Spring Cache 构建**多级缓存**讲解
+## Spring Cache 构建**多级缓存**讲解
 
 多级缓存 = **本地缓存（Caffeine）+ 分布式缓存（Redis）**
 
@@ -1960,7 +1959,7 @@ SHOW VARIABLES LIKE 'innodb_undo%'; -- Undo Log相关
 - 二级缓存：Redis（分布式，跨应用共享，防止缓存击穿）
 - 顶层：Spring Cache 统一管理（注解驱动：@Cacheable、@CacheEvict 等）
 
-## 一、核心原理
+### 一、核心原理
 
 1. **查询顺序**：先查一级 Caffeine → 未命中查二级 Redis → 未命中查数据库
 2. **写入顺序**：更新/删除时，同时失效 Caffeine + Redis（保证一致性）
@@ -1969,7 +1968,7 @@ SHOW VARIABLES LIKE 'innodb_undo%'; -- Undo Log相关
 
 ---
 
-## 二、环境准备（Maven 依赖）
+### 二、环境准备（Maven 依赖）
 
 ```XML
 <!-- Spring Cache 核心 -->
@@ -1989,11 +1988,11 @@ SHOW VARIABLES LIKE 'innodb_undo%'; -- Undo Log相关
 </dependency>
 ```
 
-## 三、核心配置：自定义**多级缓存管理器**
+### 三、核心配置：自定义**多级缓存管理器**
 
 Spring Cache 默认不支持多级，需要**自定义 CacheManager**，实现多级查询/失效逻辑。
 
-### 1. 配置文件（application.yml）
+#### 1. 配置文件（application.yml）
 
 ```YAML
 spring:
@@ -2014,7 +2013,7 @@ spring:
       cache-null-values: false # 不缓存null
 ```
 
-### 2. 多级缓存管理器实现（核心代码）
+#### 2. 多级缓存管理器实现（核心代码）
 
 ```Java
 import com.github.benmanes.caffeine.cache.Caffeine;
@@ -2144,7 +2143,7 @@ public class MultiLevelCacheManager extends AbstractCacheManager {
 }
 ```
 
-### 3. 启动类开启缓存
+#### 3. 启动类开启缓存
 
 ```Java
 import org.springframework.boot.SpringApplication;
@@ -2160,7 +2159,7 @@ public class CacheApplication {
 }
 ```
 
-## 四、业务使用：注解驱动（零侵入）
+### 四、业务使用：注解驱动（零侵入）
 
 直接使用 Spring Cache 标准注解，**完全不用关心多级缓存细节**。
 
@@ -2194,9 +2193,9 @@ public class UserService {
 }
 ```
 
-## 五、执行流程
+### 五、执行流程
 
-### 1. 查询流程
+#### 1. 查询流程
 
 1. 第一次请求 → 两级都无缓存 → 查询数据库
 2. 自动写入 **Caffeine + Redis**
@@ -2204,19 +2203,19 @@ public class UserService {
 4. Caffeine 过期后 → 命中 **Redis**，并回写 Caffeine
 5. Redis 也过期 → 重新查库
 
-### 2. 更新/删除流程
+#### 2. 更新/删除流程
 
 - `@CacheEvict` 同时删除 **Caffeine + Redis**
 - 保证缓存与数据库一致
 
-## 六、关键优化与最佳实践
+### 六、关键优化与最佳实践
 
-### 1. 过期时间配置（重点）
+#### 1. 过期时间配置（重点）
 
 - **一级 Caffeine**：短过期（30s \~ 1min），避免内存占用 + 保证数据新鲜度
 - **二级 Redis**：长过期（5min \~ 30min），防止缓存击穿、减轻DB压力
 
-### 2. 防止缓存穿透
+#### 2. 防止缓存穿透
 
 ```Java
 @Cacheable(value = "userCache", key = "#userId", cacheNullValues = "false")
@@ -2224,7 +2223,7 @@ public class UserService {
 
 不缓存 `null`，避免无效key穿透缓存。
 
-### 3. 防止缓存击穿
+#### 3. 防止缓存击穿
 
 使用 `@Cacheable(sync = true)`，**同一key并发只查一次库**。
 
@@ -2232,11 +2231,11 @@ public class UserService {
 @Cacheable(value = "userCache", key = "#userId", sync = true)
 ```
 
-### 4. 缓存预热
+#### 4. 缓存预热
 
 项目启动时，把热点数据提前加载到两级缓存。
 
-### 5. 监控（可选）
+#### 5. 监控（可选）
 
 对接 Prometheus + Grafana 监控：
 
@@ -2244,7 +2243,7 @@ public class UserService {
 - Redis 命中率
 - 缓存降级、回写次数
 
-## 七、总结
+### 七、总结
 
 1. **多级缓存架构**：Caffeine（一级）+ Redis（二级）+ Spring Cache（顶层管理）
 2. **查询**：本地优先 → 分布式 → DB

@@ -4,16 +4,15 @@ date: 2026-11-06
 aliases:
   - "08 qk功能补充_日志框架_全局异常处理"
 ---
+# 08 qk功能补充_日志框架_全局异常处理
 
-<title>08 qk功能补充_日志框架_全局异常处理</title>
-
-# 日志框架-Logback
+## 日志框架-Logback
 
 <callout emoji="🎹">
 Logback基于Log4j升级而来，提供了更多的功能和配置选项，性能优于Log4j。
 </callout>
 
-## 依赖部署
+### 依赖部署
 
 引入logback的依赖（springboot中无需引入，在springboot中已经传递了此依赖）
 
@@ -25,7 +24,7 @@ Logback基于Log4j升级而来，提供了更多的功能和配置选项，性�
 </dependency>
 ```
 
-## 使用步骤
+### 使用步骤
 
 ```Java
 第一步：加入@Slf4j注解
@@ -37,7 +36,7 @@ Logback基于Log4j升级而来，提供了更多的功能和配置选项，性�
         4.error
 ```
 
-## 使用原理
+### 使用原理
 
 ```Java
 就是通过动态代理的方式创建一个slf4j的Logger接口的实现类，只要执行方法，都会比当前方法的级别
@@ -143,7 +142,7 @@ lombok中提供的@Slf4j注解，可以简化定义日志记录器这步操作�
 `private static Logger log = LoggerFactory. getLogger(Xxx. class);`
 </callout>
 
-## 好处
+### 好处
 
 日志用于记录程序运行信息，Logback 基于 Log4j 升级，功能多、性能好，可配置输出格式、位置和日志开关。
 
@@ -154,12 +153,12 @@ lombok中提供的@Slf4j注解，可以简化定义日志记录器这步操作�
 4.拼接参数的特殊处理，采用`{}`占位即可，底层采用`StringBuilder`的方式拼接，相较于手动 `+` 效率高
 </callout>
 
-# 全局异常处理
+## 全局异常处理
 
 在项目中未做异常处理时，异常会逐层上抛，最终由框架返回默认错误页面/默认 JSON，**不符合我们统一响应结果规范**（例如 `Result.error(...)`）。  
  所以通常会使用 **全局异常处理器**，集中捕获异常并统一返回规范的响应。
 
-## 部署依赖
+### 部署依赖
 
 **Spring Boot Web 项目默认已具备全局异常处理所需能力**（基于 SpringMVC），无需额外引入“异常处理”专门依赖。
 
@@ -177,7 +176,7 @@ lombok中提供的@Slf4j注解，可以简化定义日志记录器这步操作�
 
 
 
-## 使用步骤
+### 使用步骤
 
 **第一步：定义统一返回对象 Result（已有的话可忽略）**  
  全局异常最终要返回统一格式：例如 `Result.success()` / `Result.error(msg)`。
@@ -304,7 +303,7 @@ Logback.xml配置模版:
 </configuration>
 ```
 
-## 使用原理
+### 使用原理
 
 全局异常处理本质是 SpringMVC 的异常解析机制：
 
@@ -320,7 +319,7 @@ Logback.xml配置模版:
    </callout>
 6. 因为是 `@RestControllerAdvice`，返回对象会被当成 JSON 写回响应体（不会跳转页面）
 
-## 好处
+### 好处
 
 ```Java
 1.统一返回格式：所有异常都能返回 Result.error(...)，前端好处理、接口规范统一

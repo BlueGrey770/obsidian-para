@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "第九章 系统优化"
 ---
+# 第九章 系统优化
 
-<title>第九章 系统优化</title>
-
-# 学习目标：
+## 学习目标：
 
 能说出什么是状态机
 
@@ -57,13 +56,13 @@ aliases:
 
 
 
-# 1 状态机
+## 1 状态机
 
-## 1.1 什么是状态机
+### 1.1 什么是状态机
 
 目标：能说出什么是状态机
 
-### 1）**当前存在的问题**
+#### 1）**当前存在的问题**
 
 在预约下单模块设计订单状态共有7种，如下图：
 
@@ -106,7 +105,7 @@ if(订单状态==服务中){
 
 **另外对订单状态的管理是散落在很多地方不方便对订单状态进行统一管理和维护。**
 
-### 2) **使用状态机解决问题**
+#### 2) **使用状态机解决问题**
 
 针对以上问题如何解决呢？
 
@@ -174,7 +173,7 @@ orderStateMachine.changeStatus(id,订单完成时取消订单事件);
 
 
 
-### 3）**小结**
+#### 3）**小结**
 
 什么是状态机，它解决了什么问题？
 
@@ -186,9 +185,9 @@ orderStateMachine.changeStatus(id,订单完成时取消订单事件);
 
 
 
-## 1.2 实现订单状态机
+### 1.2 实现订单状态机
 
-### 1.2.1 编写订单状态机
+#### 1.2.1 编写订单状态机
 
 目标：
 
@@ -196,7 +195,7 @@ orderStateMachine.changeStatus(id,订单完成时取消订单事件);
 
 
 
-#### 1) 添加状态机组件依赖
+##### 1) 添加状态机组件依赖
 
 本项目基于状态机设计模式开发了状态机组件，代码在jzo2o-framework中，如果在订单管理服务中实现订单状态机需要添加状态机的依赖。
 
@@ -214,7 +213,7 @@ orderStateMachine.changeStatus(id,订单完成时取消订单事件);
 
 下边使用状态机组件管理订单状态。
 
-#### 2）**订单状态枚举类**
+##### 2）**订单状态枚举类**
 
 阅读订单状态枚举类，它实现了StatusDefine 状态接口，不论是现态还是次态都需要实现状态接口。
 
@@ -264,7 +263,7 @@ public enum OrderStatusEnum implements StatusDefine {
 }
 ```
 
-#### 3）**状态变更事件枚举类**
+##### 3）**状态变更事件枚举类**
 
 所有状态之间存在的变更都需要定义状态变更事件，它实现了StatusChangeEvent 状态变更事件接口，事件对应状态机四要素的事件
 
@@ -319,7 +318,7 @@ public enum OrderStatusChangeEventEnum implements StatusChangeEvent {
 }
 ```
 
-#### 4）**定义订单快照类**
+##### 4）**定义订单快照类**
 
 快照是订单变化瞬间的状态及相关信息。
 
@@ -585,7 +584,7 @@ public void setSnapshotStatus(Integer snapshotStatus) {
 
 
 
-#### 5）定义事件变更动作类
+##### 5）定义事件变更动作类
 
 当执行状态变更事件会伴随着执行具体的动作，此部分对应状态机四要素中的动作。
 
@@ -655,7 +654,7 @@ public class OrderPayedHandler implements StatusChangeHandler<OrderSnapshotDTO> 
 
 
 
-#### 6）**定义订单状态机类**
+##### 6）**定义订单状态机类**
 
 AbstractStateMachine状态机抽象类是状态机的核心类，是具体的状态机要继承的抽象类，比如我们实现订单状态机就需要继承AbstractStateMachine抽象类。
 
@@ -732,7 +731,7 @@ public class OrderStateMachine extends AbstractStateMachine<OrderSnapshotDTO> {
 }
 ```
 
-#### 7）**状态机表设计**
+##### 7）**状态机表设计**
 
 状态机使用MySQL对状态进行持久化，涉及到如下表：
 
@@ -796,7 +795,7 @@ create table `jzo2o-orders`.biz_snapshot
 
 
 
-#### 8）**小结**
+##### 8）**小结**
 
 如何实现一个订单状态机？
 
@@ -804,7 +803,7 @@ create table `jzo2o-orders`.biz_snapshot
 
 
 
-### 1.2.2 测试订单状态机
+#### 1.2.2 测试订单状态机
 
 目标：
 
@@ -814,13 +813,13 @@ create table `jzo2o-orders`.biz_snapshot
 
 
 
-#### 1) 加载订单状态机
+##### 1) 加载订单状态机
 
 在orders-base工程的AutoImportConfiguration类中配置导入订单状态机。
 
 ![这张图片展示的是Java代码文件AutoImportConfiguration.java的编辑界面，对应文档中加载订单状态机的操作内容。文件的第14行用红框突出标注了核心代码，内容为@Import({OrderStateMachine.class})，这行代码的作用是将订单状态机导入到当前配置类中；该文件的位置在com.jzo2o.orders.base.config包下，类上还标注了@Configuration、@ComponentScan等用于项目配置的注解，和文档中“在orders-base工程的AutoImportConfiguration类中配置导入订单状态机”的要求完全对应。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/Ew3JbedN6o75C8xXQKgcSkkenle.png)
 
-#### 2）**测试启动状态机**
+##### 2）**测试启动状态机**
 
 下边在jzo2o-orders-manager下编写测试代码。
 
@@ -869,7 +868,7 @@ public class OrderStateMachineTest {
 
 
 
-#### 3）**测试状态变更方法**
+##### 3）**测试状态变更方法**
 
 根据状态变更事件定义可知，执行测试方法后101订单的状态由NO_PAY（待支付）变更为DISPATCHING（派单中）。
 
@@ -921,7 +920,7 @@ public void test_orderStatMmachine() {
 
 
 
-#### 4）阅读源码
+##### 4）阅读源码
 
 进入jzo2o-framework下的jzo2o-statemachine工程，阅读AbstractStateMachine类的源码，通过阅读代码理解状态机组件的运行过程。
 
@@ -1055,7 +1054,7 @@ public void changeStatus(Long dbShardId, String bizId, StatusChangeEvent statusC
 
 
 
-#### 5）**小结**
+##### 5）**小结**
 
 本节测试了状态机的两个方法：
 
@@ -1073,7 +1072,7 @@ public void changeStatus(Long dbShardId, String bizId, StatusChangeEvent statusC
 
 
 
-### 1.2.3 使用订单状态机
+#### 1.2.3 使用订单状态机
 
 目标：
 
@@ -1083,7 +1082,7 @@ public void changeStatus(Long dbShardId, String bizId, StatusChangeEvent statusC
 
 
 
-#### 1）**下单时启动状态机**
+##### 1）**下单时启动状态机**
 
 下单后创建一个新订单，使用状态机的启动方法表示用状态机对该订单的状态开始进行管理。
 
@@ -1114,7 +1113,7 @@ public void add(Orders orders) {
 
 
 
-#### 2）**支付成功使用状态机**
+##### 2）**支付成功使用状态机**
 
 支付成功通过状态机将订单状态由待支付更新派单中。
 
@@ -1227,7 +1226,7 @@ public void paySuccess(TradeStatusMsg tradeStatusMsg) {
 
 
 
-#### 3）**测试**
+##### 3）**测试**
 
 测试流程：
 
@@ -1411,15 +1410,15 @@ public void paySuccess(TradeStatusMsg tradeStatusMsg) {
 
 
 
-#### 4）小结
+##### 4）小结
 
 项目使用状态机实现什么功能？为什么这样做？
 
 
 
-### 1.2.4 取消订单使用状态机 
+#### 1.2.4 取消订单使用状态机
 
-#### 1）修改策略类
+##### 1）修改策略类
 
 下边在取消订单策略类中使用状态机修改订单状态。
 
@@ -1501,7 +1500,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 }
 ```
 
-#### 2）复制策略类
+##### 2）复制策略类
 
 其它策略类实现方法类似，在通过状态机更新订单状态时需要指定事件名称。
 
@@ -1511,7 +1510,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 
 
 
-#### 2）测试
+##### 2）测试
 
 测试流程：
 
@@ -1539,17 +1538,17 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 
 
 
-# 2 分库分表
+## 2 分库分表
 
-## 2.1 什么是分库分表
+### 2.1 什么是分库分表
 
-### 1）**当前遇到的问题**
+#### 1）**当前遇到的问题**
 
 随着订单数据的增加，当MySQL单表存储数据达到一定量时其存储及查询性能会下降，在阿里的《Java 开发手册》中提到MySQL单表行数超过 500 万行或者单表容量超过 2GB时建议进行分库分表，分库分表可以简单理解为原来一个表存储数据现在改为通过多个数据库及多个表去存储，这就相当于原来一台服务器提供服务现在改成多台服务器组成集群共同提供服务，从而增加了服务能力。
 
 这里说的500 万行或单表容量超过 2GB并不是定律，只是根据生产经验而言，为什么MySQL单表当达到一定数量时性能会下降呢？我们知道为了提高表的查询性能会增加索引，MySQL在使用索引时会将索引加入内存，如果数据量非常大内存肯定装不下，此时就会从磁盘去查询索引就会产生很多的磁盘IO，从而影响性能，这些和表的设计及服务器的硬件配置都有关，所以如果当表的数据量达到一定程度并且还在不断的增加就需要考虑进行分库分表了。
 
-### 2）**什么是分库分表**
+#### 2）**什么是分库分表**
 
 下边通过一个例子来说明什么是分库分表。
 
@@ -1573,11 +1572,11 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 
 的。
 
-### 3）**分库分表的四种方式** 
+#### 3）**分库分表的四种方式**
 
 分库分表包括分库和分表两个部分，在生产中通常包括：垂直分库、水平分库、垂直分表、水平分表四种方式。
 
-#### **垂直分表**
+##### **垂直分表**
 
 下图是商品查询列表：
 
@@ -1609,7 +1608,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 
 
 
-#### **垂直分库**
+##### **垂直分库**
 
 通过垂直分表性能得到了一定程度的提升，但是还没有达到要求，并且磁盘空间也快不够了，因为数据还是始终限制在一台服务器，库内垂直分表只解决了单一表数据量过大的问题，但没有将表分布到不同的服务器上，因此每个 表还是竞争同一个物理机的CPU、内存、网络IO、磁盘。 
 
@@ -1635,7 +1634,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 
 
 
-#### **水平分库** 
+##### **水平分库**
 
 经过**垂直分库**后，数据库性能问题得到一定程度的解决，但是随着业务量的增长，PRODUCT_DB(商品库)单库存储数据已经超出预估。粗略估计，目前有8w店铺，每个店铺平均150个不同规格的商品，再算上增长，那商品数量得 往1500w+上预估，并且PRODUCT_DB(商品库)属于访问非常频繁的资源，单台服务器已经无法支撑。此时该如何 优化？
 
@@ -1661,7 +1660,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 
 
 
-#### **水平分表**
+##### **水平分表**
 
 按照水平分库的思路把PRODUCT_DB_X(商品库)内的表也可以进行水平拆分，其目的也是为解决单表数据量大 的问题，如下图：
 
@@ -1675,7 +1674,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 
 一般来说，在系统设计阶段就应该根据业务耦合松紧来确定垂直分库，垂直分表方案，在数据量及访问压力不是特 别大的情况，首先考虑缓存、读写分离、索引技术等方案。若数据量极大，且持续增长，再考虑水平分库水平分表方案。 
 
-### 4）小结
+#### 4）小结
 
 项目为什么进行分库分表？
 
@@ -1683,13 +1682,13 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 
 分库分表有哪些形式？
 
-## 2.2 分库分表带来的问题
+### 2.2 分库分表带来的问题
 
-### 1）**事务一致性问题** 
+#### 1）**事务一致性问题**
 
 由于分库分表把数据分布在不同库甚至不同服务器，不可避免会带来**分布式事务**问题。
 
-### 2）**跨节点关联查询** 
+#### 2）**跨节点关联查询**
 
 在没有分库前，我们检索商品时可以通过以下SQL对店铺信息进行关联查询： 
 
@@ -1705,7 +1704,7 @@ WHERE...ORDER BY...LIMIT...
 
 可将原关联查询分为两次查询，第一次查询的结果集中找出关联数据id，然后根据id发起第二次请求得到关联数据，最后将获得到的数据进行拼装。 
 
-### 3) **跨节点分页、排序函数**
+#### 3) **跨节点分页、排序函数**
 
 跨节点多库进行查询时，limit分页、order by排序等问题，就变得比较复杂了。需要先在不同的分片节点中将数据进行排序并返回，然后将不同分片返回的结果集进行汇总和再次排序。 
 
@@ -1719,13 +1718,13 @@ WHERE...ORDER BY...LIMIT...
 
 
 
-### 4）**主键避重** 
+#### 4）**主键避重**
 
 在分库分表环境中，由于表中数据同时存在不同数据库中，主键值平时使用的自增长将无用武之地，某个分区数据库生成的ID无法保证全局唯一。因此需要单独设计全局主键，以避免跨库主键重复问题。
 
 ![图片展示了分库分表环境下商品信息表的结构。上方是DB1的商品信息表，包含ID、数据项1等字段，ID有1等值；下方是DB2的商品信息表，同样包含ID、数据项1等字段，ID也有1等值。图片中ID冲突，无法保证唯一，用蓝色箭头和文字标注突出显示，直观呈现了在分库分表中主键避重问题，即主键值在不同数据库中可能重复，无法保证全局唯一，需单独设计全局主键以避免跨库主键重复问题。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/L0cvbG7u3oIrmwxQHwCcdv32nbe.png)
 
-### 5）**公共表** 
+#### 5）**公共表**
 
 实际的应用场景中，参数表、数据字典表等都是数据量较小，变动少，而且属于高频联合查询的依赖表。例子中**地理区域表**也属于此类型。 
 
@@ -1733,11 +1732,11 @@ WHERE...ORDER BY...LIMIT...
 
  
 
-## 2.2 分库分表解决方案
+### 2.2 分库分表解决方案
 
 由于分库分表之后，数据被分散在不同的数据库、服务器。因此，对数据的操作也就无法通过常规方式完成，并且 它还带来了一系列的问题。好在，这些问题不是所有都需要我们在应用层面上解决，市面上有很多中间件可供我们 选择。
 
-### 1）技术方案
+#### 1）技术方案
 
 AI: java中分库分表解决方案有哪些
 
@@ -1789,7 +1788,7 @@ AI: java中分库分表解决方案有哪些
 
 
 
-### 2) **ShardingSphere介绍**
+#### 2) **ShardingSphere介绍**
 
 Apache ShardingSphere 是一款分布式的数据库生态系统， 可以将任意数据库转换为分布式数据库，并通过数据分片、弹性伸缩、加密等能力对原有数据库进行增强。
 
@@ -1799,7 +1798,7 @@ Apache ShardingSphere 设计哲学为 Database Plus，旨在构建异构数据�
 
 Apache ShardingSphere 由 ShardingSphere-JDBC 和 ShardingSphere-Proxy组成。
 
-#### **ShardingSphere-JDBC**
+##### **ShardingSphere-JDBC**
 
 ShardingSphere-JDBC 定位为轻量级 Java 框架，在 Java 的 JDBC 层提供的额外服务。 它使用客户端直连数据库，以 jar 包形式提供服务，无需额外部署和依赖，可理解为增强版的 JDBC 驱动，完全兼容 JDBC 和各种 ORM 框架。
 
@@ -1817,7 +1816,7 @@ Governance Center的作用有点类似于微服务架构中的配置中心
 
 
 
-#### **ShardingSphere-Proxy**
+##### **ShardingSphere-Proxy**
 
 ShardingSphere-Proxy 定位为透明化的数据库代理端，通过实现数据库二进制协议，对异构语言提供支持。 目前提供 MySQL 和 PostgreSQL 协议，透明化数据库操作，对 DBA 更加友好。
 
@@ -1835,7 +1834,7 @@ ShardingSphere-Proxy和MyCat的作用一样，是一个数据库代理，应用�
 
 
 
-#### **哪个应用得更多？**
+##### **哪个应用得更多？**
 
 ShardingSphere-JDBC 和 ShardingSphere-Proxy哪个应用的更多？
 
@@ -1847,11 +1846,11 @@ ShardingSphere-JDBC 和 ShardingSphere-Proxy哪个应用的更多？
 
 
 
-## 2.3 ShardingSphere-JDBC入门
+### 2.3 ShardingSphere-JDBC入门
 
-### 2.3.1 搭建SpringBoot工程
+#### 2.3.1 搭建SpringBoot工程
 
-#### 1）入门程序说明
+##### 1）入门程序说明
 
 本节我们对订单库进行分库分表，通过快速入门程序的开发，快速体验ShardingSphere-JDBC的使用 
 
@@ -1863,7 +1862,7 @@ ShardingSphere-JDBC 和 ShardingSphere-Proxy哪个应用的更多？
 
 再改造为使用ShardingSphere-JDBC对数据库分库分表。
 
-#### 2）创建数据库
+##### 2）创建数据库
 
 创建数据库：shardingsphere-test-01、shardingsphere-test-02
 
@@ -1917,7 +1916,7 @@ CREATE TABLE `t_order`
 
 
 
-#### 3）创建SpringBoot工程
+##### 3）创建SpringBoot工程
 
 创建一个普通的SpringBoot工程shardingsphere-test：
 
@@ -1925,7 +1924,7 @@ CREATE TABLE `t_order`
 
 
 
-##### pom.xml
+###### pom.xml
 
 springboot和mybatis-plus的版本使用和项目一样的版本，如下：
 
@@ -2037,7 +2036,7 @@ pom.xml内容如下：
 
 
 
-##### 生成mapper和模型类
+###### 生成mapper和模型类
 
 使用工具基于表生成模型类和mapper
 
@@ -2045,7 +2044,7 @@ pom.xml内容如下：
 
 ![图片展示了shardingsphere-test项目的目录结构。在main目录下的java文件夹中，有cn、itcast和shardingsphere三个子文件夹。其中，shardingsphere文件夹下包含mapper、model、service和impl四个子文件夹，分别对应TOrderMapper、TOrder、TOrderServiceImpl和ITOrderService等类。该图片与上文“生成mapper和模型类”内容相关，直观呈现了生成成功后模型类和mapper在项目中的存放位置。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/EkOFbcmWNomKCTxZi9UcjPqAnMv.png)
 
-##### 配置application.yaml
+###### 配置application.yaml
 
 ```Java
 server:
@@ -2072,7 +2071,7 @@ spring:
       pool-name: HikariCP
 ```
 
-##### 启动类
+###### 启动类
 
 ```Java
 package cn.itcast.shardingsphere;
@@ -2092,7 +2091,7 @@ public class ShardingsphereTestApplication {
 }
 ```
 
-##### 测试
+###### 测试
 
 编写测试方法，向t_order表插入数据
 
@@ -2126,9 +2125,9 @@ class TOrderMapperTest {
 
 
 
-### 2.3.2 实现分库分表
+#### 2.3.2 实现分库分表
 
-#### 1）添加ShardingSphere-JDBC依赖
+##### 1）添加ShardingSphere-JDBC依赖
 
 下边集成 ShardingSphere-JDBC实现分库分表。
 
@@ -2160,7 +2159,7 @@ shardingsphere-jdbc用5.4.0版本
 
 org.yaml:用于解析ShardingSphere-JDBC的配置文件语法。
 
-#### 2）配置专属JDBC驱动
+##### 2）配置专属JDBC驱动
 
 原来我们在application.yaml中配置的JDBC驱动如下：
 
@@ -2184,11 +2183,11 @@ org.yaml:用于解析ShardingSphere-JDBC的配置文件语法。
     url: jdbc:shardingsphere:classpath:shardingsphere-jdbc-dev.yml
 ```
 
-#### 3）配置分库分表策略(重要)
+##### 3）配置分库分表策略(重要)
 
 下边配置shardingsphere-jdbc-dev.yml文件，在此文件配置分库分表的策略。
 
-##### 配置数据源
+###### 配置数据源
 
 首先配置数据源，因为目标是分两个数据库，所以配置两个数据源。
 
@@ -2208,7 +2207,7 @@ dataSources:
     password: mysql
 ```
 
-##### 配置数据分片规则
+###### 配置数据分片规则
 
 下边配置数据分片规则，非常重要。
 
@@ -2216,7 +2215,7 @@ dataSources:
 
 首先配置逻辑表，在逻辑表中配置数据结点、分表策略和分库策略。
 
-###### 配置逻辑表
+**配置逻辑表**
 
 参考此文档查看配置项的意义：https://shardingsphere.apache.org/document/current/cn/user-manual/shardingsphere-jdbc/yaml-config/rules/sharding/
 
@@ -2259,7 +2258,7 @@ shardingColumn：指定分片键，这里指定分片键为user_id表示根据us
 
 
 
-###### 配置分库分表算法
+**配置分库分表算法**
 
 与tables平级，配置shardingAlgorithms。
 
@@ -2374,7 +2373,7 @@ props:
   sql-show: true
 ```
 
-#### 4) 插入测试
+##### 4) 插入测试
 
 首先向订单表插入10条数据，将user_id固定为1，根据分库策略数据将写入db-orders-1数据库。
 
@@ -2409,7 +2408,7 @@ status )  VALUES  (?, ?, ?, ?) ::: [1839184587743883266, 2, 5.0, WAIT_PAY]
 
 请自行进行测试并观察结果是否符合预期。
 
-#### 5）查询测试
+##### 5）查询测试
 
 编写测试方法：
 
@@ -2470,7 +2469,7 @@ public void testSelect(){
 
 
 
-#### 6）小结
+##### 6）小结
 
 如何使用ShardingSphere-JDBC实现分表分表？
 
@@ -2478,11 +2477,11 @@ public void testSelect(){
 
 
 
-## 2.2 家政项目实现订单分库分表
+### 2.2 家政项目实现订单分库分表
 
-### 2.2.1 搭建分库分表环境
+#### 2.2.1 搭建分库分表环境
 
-#### 1）分库分表方案
+##### 1）分库分表方案
 
 对订单数据进行分表分表。
 
@@ -2520,7 +2519,7 @@ public void testSelect(){
 
 <readonly-block type="diagram"></readonly-block>
 
-#### 2）**创建数据库**
+##### 2）**创建数据库**
 
 订单数据库分为三个库 :jzo2o-orders-0、jzo2o-orders-1、jzo2o-orders-2
 
@@ -2538,7 +2537,7 @@ public void testSelect(){
 
 
 
-#### 3）**添加依赖**
+##### 3）**添加依赖**
 
 在jzo2o-framework下的jzo2o-shardingsphere-jdbc中添加了具体shardingsphere的依赖，所以我们只需要在orders-base工程引入jzo2o-shardingsphere-jdbc的依赖即可，如下：
 
@@ -2551,7 +2550,7 @@ public void testSelect(){
 
 
 
-#### 4) **配置分片规则**
+##### 4) **配置分片规则**
 
 在orders-base工程的resources下配置shardingsphere-jdbc-dev.yml（直接从项目源码目录下拷贝shardingsphere-jdbc-dev.yml）。
 
@@ -2743,15 +2742,15 @@ jzo2o-orders-x：与actualDataNodes对应。
 
 
 
-#### 5) 小结
+##### 5) 小结
 
 项目的分库分表是怎么做的？
 
 
 
-### 2.2.2 测试分库分表
+#### 2.2.2 测试分库分表
 
-#### 1）配置数据源
+##### 1）配置数据源
 
 进入nacos在jzo2o-orders-manager.yaml中配置数据源使用ShardingSphereDriver：
 
@@ -2806,7 +2805,7 @@ jzo2o:
 
 
 
-#### 2）状态机分库分表
+##### 2）状态机分库分表
 
 由于对状态机进行了分库分表，需要修改创建订单方法中启动状态机代码：
 
@@ -2838,7 +2837,7 @@ public void paySuccess(TradeStatusMsg tradeStatusMsg) {
 
 
 
-#### 3）测试
+##### 3）测试
 
 测试流程：
 
@@ -2856,11 +2855,11 @@ orders_canceled表为广播表不进行分表在三个数据库数据一致。
 
 
 
-# 3 订单查询优化
+## 3 订单查询优化
 
-## 3.1 订单查询优化方案
+### 3.1 订单查询优化方案
 
-### 1) **为什么要优化订单查询？**
+#### 1) **为什么要优化订单查询？**
 
 1）订单查询是一个高频接口，并且订单表数据量大。
 
@@ -2868,7 +2867,7 @@ orders_canceled表为广播表不进行分表在三个数据库数据一致。
 
 3）对于运营端的订单查询接口虽然访问量不大但由于订单数据较多也需要进行优化，提高查询性能。
 
-### 2) 订单详情优化方案
+#### 2) 订单详情优化方案
 
 针对单条订单信息查询接口可以使用缓存进行优化。
 
@@ -2882,7 +2881,7 @@ orders_canceled表为广播表不进行分表在三个数据库数据一致。
 
 <whiteboard token="KxxXw5mOIh9s8RbS0WAc4j4GnUe"></whiteboard>
 
-### 3) **用户端订单列表优化方案**
+#### 3) **用户端订单列表优化方案**
 
 用户端通过小程序查询订单列表，界面上没有分页查询的按钮，用户端查询订单列表可采用滚动查询的方法。
 
@@ -2940,7 +2939,7 @@ select \*  from  user where name=? and age =?
 
 
 
-### 4）**运营端订单列表优化方案**
+#### 4）**运营端订单列表优化方案**
 
 运营端订单列表由于访问量不大这里无需使用缓存，实现方案是首先通过覆盖索引查询符合条件的订单ID，再根据订单ID查询聚集索引拿到数据。
 
@@ -2948,15 +2947,15 @@ select \*  from  user where name=? and age =?
 
 
 
-### 6) 小结
+#### 6) 小结
 
 订单查询是如何优化的？
 
 
 
-## 3.2 优化订单详情接口
+### 3.2 优化订单详情接口
 
-### 1）阅读状态机快照查询代码
+#### 1）阅读状态机快照查询代码
 
 在jzo2o-framework的状态机工程jzo2o-statemachine中提供了查询快照缓存的方法，具体在状态机抽象类AbstractStateMachine中，如下图：
 
@@ -2995,7 +2994,7 @@ public void saveSnapshot(Long dbShardId, String bizId, StatusDefine statusDefine
 public void changeStatus(Long dbShardId, String bizId, StatusChangeEvent statusChangeEventEnum, T bizSnapshot) 
 ```
 
-### 2） 订单详情查询优化
+#### 2） 订单详情查询优化
 
 找到“根据订单id查询”接口，找到调用的查询订单详情的service方法：
 
@@ -3053,7 +3052,7 @@ private OrderSnapshotDTO canalIfPayOvertime(OrderSnapshotDTO orderSnapshotDTO){
     }
 ```
 
-### 3）测试
+#### 3）测试
 
 测试流程：
 
@@ -3073,17 +3072,17 @@ private OrderSnapshotDTO canalIfPayOvertime(OrderSnapshotDTO orderSnapshotDTO){
 
 
 
-### 4）小结
+#### 4）小结
 
 订单快照是怎么实现的？
 
 
 
-## 3.2 优化**用户端订单列表**
+### 3.2 优化**用户端订单列表**
 
-### 3.2.1 创建索引
+#### 3.2.1 创建索引
 
-#### 1）**理解滚动ID**
+##### 1）**理解滚动ID**
 
 滚动ID在用户端订单列表查询中至关重要，由于需要按服务预约时间降序排列且滚动ID具有唯一性，滚动ID的规则是：服务预约时间+订单号后5位
 
@@ -3104,7 +3103,7 @@ orders.setSortBy(sortBy);
 
 
 
-#### 2） **创建联合索引**
+##### 2） **创建联合索引**
 
 在创建索引之前需要明确最终执行的SQL语句，如下：
 
@@ -3146,7 +3145,7 @@ create index query_index_1
 
 
 
-#### 3）执行计划
+##### 3）执行计划
 
 1. **什么是执行计划**
 
@@ -3334,7 +3333,7 @@ key和key_len为null
 
 
 
-#### 4）创建索引
+##### 4）创建索引
 
 在三个数据库中对三个订单表创建query_index_0索引，执行下边的脚本：
 
@@ -3415,7 +3414,7 @@ mysql>在mysql命令提示符下粘贴上边的创建索引命令。
 
 
 
-#### 5) 小结
+##### 5) 小结
 
 什么是聚集索引和非聚集索引？
 
@@ -3429,9 +3428,9 @@ mysql>在mysql命令提示符下粘贴上边的创建索引命令。
 
 
 
-### 3.2.2 查询订单ID列表
+#### 3.2.2 查询订单ID列表
 
-#### 1）优化Service方法
+##### 1）优化Service方法
 
 下边根据优化方案优化原来的订单查询方法。
 
@@ -3508,7 +3507,7 @@ public List<OrderSimpleResDTO> consumerQueryList(Long currentUserId, Integer ord
 }
 ```
 
-#### 2）**测试**
+##### 2）**测试**
 
 
 
@@ -3682,19 +3681,19 @@ WHERE (id IN (2311030000000000029, 2311020000000000028, 2311020000000000027))
 
 
 
-#### 3）小结
+##### 3）小结
 
 如何知道一个SQL有没有使用索引？
 
 
 
-# 4 冷热分离
+## 4 冷热分离
 
-## 4.1 冷热分离方案
+### 4.1 冷热分离方案
 
 目标：理解冷热分离的方案。
 
-### 1）冷热分离需求
+#### 1）冷热分离需求
 
 随着时间的推移，订单数据会逐渐增加，虽然对订单数据库进行分库分表，但是考虑用户对已完成的历史订单的操作热度远远低于未完成订单，为了提高系统的性能我们对订单数据进行冷热分离。
 
@@ -3706,7 +3705,7 @@ WHERE (id IN (2311030000000000029, 2311020000000000028, 2311020000000000027))
 
 <whiteboard token="Kc6lwLaEYhKDH2bYTegcbOuBnZf"></whiteboard>
 
-### 2）历史数据库选型
+#### 2）历史数据库选型
 
 历史订单（冷数据）存储到哪里呢？
 
@@ -3795,7 +3794,7 @@ AI: 我们的电商项目有50万用户规模，请估算出订单数据量的�
 
 **所以，根据本项目的实际需求我们选用对MySQL分库分表存储历史订单数据。**
 
-### 3）分库分表方案
+#### 3）分库分表方案
 
 要确定历史订单数据库的分库分表方案需要先明确统计的需求。
 
@@ -3825,7 +3824,7 @@ AI: 我们的电商项目有50万用户规模，请估算出订单数据量的�
 
 ![图片展示的是订单分析界面。上方显示取消订单数5笔、关闭订单数400笔、实付单均价125元、有效订单总额1,190,625元。订单趋势图呈现2023年9月1日至9月30日每天的下单总数，以折线图形式显示。用户分析部分，用户转化漏斗图显示用户数2000人，下单转化率32%，付费转化率72%；用户平均支付笔数图以折线图形式呈现2022年1月到2023年9月的用户平均支付笔数。该图与上下文介绍的订单趋势图需求对应，直观呈现相关数据。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/CfHvbfWxWoSGVLxB6FGcRah8nXb.png)
 
-#### 分库分表方案
+##### 分库分表方案
 
 对于统计分析的需求清楚后当前需要做的是分析存储统计原始数据的问题，暂时不考虑统计实现问题，先把要统计的原始数据存储到历史订单库。
 
@@ -3837,9 +3836,9 @@ AI: 我们的电商项目有50万用户规模，请估算出订单数据量的�
 
 
 
-### 3）冷热分离方案
+#### 3）冷热分离方案
 
-#### 冷热分离流程
+##### 冷热分离流程
 
 如何进行冷热分离？
 
@@ -3869,13 +3868,13 @@ AI: 我们的电商项目有50万用户规模，请估算出订单数据量的�
 
 
 
-#### 数据流
+##### 数据流
 
 <whiteboard token="UUWNwDgRNhzPc8bL3nccab0rnjc"></whiteboard>
 
 
 
-### 4）小结
+#### 4）小结
 
 订单的冷热分离是怎么做的？
 
@@ -3883,17 +3882,17 @@ AI: 我们的电商项目有50万用户规模，请估算出订单数据量的�
 
 
 
-## 4.2 订单数据冷热分离
+### 4.2 订单数据冷热分离
 
 
 
-### 4.2.1 订单同步
+#### 4.2.1 订单同步
 
 根据冷热分离方案，首先将完成、取消、关闭的订单同步到历史订单库。
 
 本节目标：将完成、取消、关闭的订单同步到历史订单数据库。
 
-#### 1）创建历史订单数据库
+##### 1）创建历史订单数据库
 
 创建jzo2o-orders-history数据库，导入jzo2o-orders-history.sql脚本：
 
@@ -3913,7 +3912,7 @@ stat_hour：存储按小时统计数据，统计分析模块使用
 
 
 
-#### 2）订单同步
+##### 2）订单同步
 
 根据冷热分离方案，当订单完成，取消、关闭时将订单信息写入订单数据库的同步表，再通过Canal+MQ同步到历史订单数据库的同步表，Canal+MQ同步的代码我们之前做过，这里我们阅读代码理解订单同步的过程。
 
@@ -4049,7 +4048,7 @@ public class HistoryOrdersSyncHandler extends AbstractCanalRabbitMqMsgListener<H
 
 
 
-#### 3）测试订单同步
+##### 3）测试订单同步
 
 目前我们还没有开发派单功能所以无法完成一个订单，我们只能通过取消订单功能将订单取消后添加到同步表中。
 
@@ -4118,7 +4117,7 @@ canal.mq.dynamicTopic=canal-mq-jzo2o-orders-dispatch:jzo2o-orders-1\\.orders_dis
 
 
 
-#### 4) 小结
+##### 4) 小结
 
 本节将完成、取消、关闭的订单使用Canal+MQ同步到历史订单数据库，流程如下：
 
@@ -4128,7 +4127,7 @@ canal.mq.dynamicTopic=canal-mq-jzo2o-orders-dispatch:jzo2o-orders-1\\.orders_dis
 
 
 
-### 4.2.2 订单冷热分离
+#### 4.2.2 订单冷热分离
 
 
 
@@ -4136,7 +4135,7 @@ canal.mq.dynamicTopic=canal-mq-jzo2o-orders-dispatch:jzo2o-orders-1\\.orders_dis
 
 
 
-####  1）定义mapper
+##### 1）定义mapper
 
 1. 首先编写SQL查询出未迁移的记录，即查询昨天到达订单完成15天的且未迁移的数据。
 
@@ -4200,7 +4199,7 @@ public interface HistoryOrdersMapper extends BaseMapper<HistoryOrders> {
 
 
 
-#### 2）定义service
+##### 2）定义service
 
 ```JSON
 package com.jzo2o.orders.history.service;
@@ -4295,7 +4294,7 @@ public void deleteMigrated() {
 }
 ```
 
-#### 3）定时任务
+##### 3）定时任务
 
 阅读下边的代码：
 
@@ -4336,7 +4335,7 @@ public class XxlJobHandler {
 
 
 
-#### 4）测试订单冷热分离
+##### 4）测试订单冷热分离
 
 
 
@@ -4362,11 +4361,11 @@ public class XxlJobHandler {
 
 
 
-# 5 统计模块
+## 5 统计模块
 
-## 5.1 订单统计方案
+### 5.1 订单统计方案
 
-### 1) 经营看板
+#### 1) 经营看板
 
 本项目在运营端工作台页面展示系统经营看板，内容包括订单分析、用户分析等，如下图：
 
@@ -4386,7 +4385,7 @@ public class XxlJobHandler {
 
 通过学习本节的内容掌握看板功能 的开发方法。
 
-### 2）需求分析
+#### 2）需求分析
 
 下边梳理本项目运营端经营看板的功能。
 
@@ -4415,7 +4414,7 @@ public class XxlJobHandler {
 
 
 
-### 3）技术方案
+#### 3）技术方案
 
 根据需求，我们要统计一个时间区间的订单总数、订单均价等指标。统计出结果后通过接口将数据返回给前端，前端在界面展示即可。
 
@@ -4485,17 +4484,17 @@ Java程序根据看板的需求提供查询接口，从统计结果表查询数�
 
 <whiteboard token="JLJLwvpiehYl8jboAkKcPqCYnwd"></whiteboard>
 
-### 4）小结
+#### 4）小结
 
 订单统计分析是怎么实现的？
 
 
 
-## 5.2 开发订单统计
+### 5.2 开发订单统计
 
 下边实现按天统计订单。
 
-### 1）定义mapper
+#### 1）定义mapper
 
 首先编写SQL：
 
@@ -4558,7 +4557,7 @@ List<StatDay> statForDay(@Param("queryDay") Integer queryDay);
 ...
 ```
 
-### 2) 定义service
+#### 2) 定义service
 
 ```JSON
 package com.jzo2o.orders.history.service;
@@ -4606,7 +4605,7 @@ public List<StatDay> statForDay(Integer statDay) {
 
 
 
-### 3) 定时任务
+#### 3) 定时任务
 
 定义service：
 
@@ -4694,7 +4693,7 @@ public class XxlJobHandler {
 
 
 
-### 4）测试
+#### 4）测试
 
 添加订单统计任务
 
@@ -4704,13 +4703,13 @@ public class XxlJobHandler {
 
 统计完成写入stat_day和stat_hour两张表，stat_day存储按天统计数据，stat_hour存储按小时统计数据。
 
-### 5) 按小时统计
+#### 5) 按小时统计
 
 自行阅读按小时统计代码。
 
 
 
-### 6）小结
+#### 6）小结
 
 订单统计分析是怎么实现的？
 
@@ -4718,9 +4717,9 @@ public class XxlJobHandler {
 
 
 
-## 5.3 开发经营看板
+### 5.3 开发经营看板
 
-### 1）需求分析
+#### 1）需求分析
 
 目前我们完成对订单数据按天、按小时分层聚合，下边根据经营看板的需求进行二次统计，提供查询接口给前端，前端获取数据后在看板界面展示。
 
@@ -4754,7 +4753,7 @@ public class XxlJobHandler {
 
 
 
-### 2）阅读代码
+#### 2）阅读代码
 
 1. 接口
 
@@ -4974,7 +4973,7 @@ private OperationHomePageResDTO getHourOrdersStatistics(LocalDateTime minTime) {
 
 
 
-### 3）测试
+#### 3）测试
 
 首先完成订单按天、按小时统计测试。
 
@@ -4986,7 +4985,7 @@ private OperationHomePageResDTO getHourOrdersStatistics(LocalDateTime minTime) {
 
 
 
-### 4）小结
+#### 4）小结
 
 经营看板功能怎么实现？
 
@@ -4994,9 +4993,9 @@ private OperationHomePageResDTO getHourOrdersStatistics(LocalDateTime minTime) {
 
 
 
-## 5.4 订单统计结果导出
+### 5.4 订单统计结果导出
 
-### 1) 需求分析
+#### 1) 需求分析
 
 在经营看板界面可将订单趋势图的数据导出Excel
 
@@ -5016,7 +5015,7 @@ private OperationHomePageResDTO getHourOrdersStatistics(LocalDateTime minTime) {
 
 
 
-### 2) 接口设计
+#### 2) 接口设计
 
 ```JSON
 package com.jzo2o.orders.history.controller.operation;
@@ -5071,7 +5070,7 @@ public class OrdersStatisticsController {
 
 
 
-### 3）统计结果导出
+#### 3）统计结果导出
 
 理解需求并完成订单统计结果导出功能。
 
@@ -5087,7 +5086,7 @@ public class OrdersStatisticsController {
 
 
 
-### 4）小结
+#### 4）小结
 
 数据导出功能如何实现？
 
@@ -5097,17 +5096,17 @@ public class OrdersStatisticsController {
 
 
 
-# 作业
+## 作业
 
-## 订单查询优化bug修复
+### 订单查询优化bug修复
 
 用户端订单列表采用滚动查询，向下滚动屏幕查询出现重复记录，可通过前端跟踪。
 
 请大家修复这个问题，先重现这个问题，再排查问题，并进行修复。
 
-## 历史订单实现按年分表。
+### 历史订单实现按年分表。
 
-### 提示
+#### 提示
 
 首先在历史订单微服务添加依赖：
 

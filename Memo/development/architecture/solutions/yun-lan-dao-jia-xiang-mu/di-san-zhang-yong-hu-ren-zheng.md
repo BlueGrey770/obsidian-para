@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "第三章 用户认证"
 ---
+# 第三章 用户认证
 
-<title>第三章 用户认证</title>
-
-# 学习目标
+## 学习目标
 
 1. 能说出家政项目认证模块有哪些认证方式
 2. 能够说出对接微信进行小程序认证的流程
@@ -35,7 +34,7 @@ aliases:
 
 
 
-# 代码环境
+## 代码环境
 
 
 
@@ -45,11 +44,11 @@ mall-plus: dev_01
 
 
 
-# 1 认证模块
+## 1 认证模块
 
-## 1.1 需求分析
+### 1.1 需求分析
 
-### 1）基础概念
+#### 1）基础概念
 
 一般情况有用户交互的项目都有认证授权功能，首先我们要搞清楚两个概念：认证和授权。
 
@@ -57,7 +56,7 @@ mall-plus: dev_01
 
 **授权**:则是该用户登录系统成功后当用户去点击菜单或操作数据时系统判断该用户是否有权限，有权限则允许继续操作，没有权限则拒绝访问。
 
-### 2) 小程序认证流程
+#### 2) 小程序认证流程
 
 了解了认证和授权的概念，本节对小程序认证功能进行需求分析。
 
@@ -91,7 +90,7 @@ mall-plus: dev_01
 
 
 
-### 3）OpenID与UnionID
+#### 3）OpenID与UnionID
 
 在上边认证流程中提到OpenID，它是什么呢？
 
@@ -122,7 +121,7 @@ AI:项目对接微信登录中unionid和openid的区别是什么
 
 
 
-### 4) 手机验证码认证
+#### 4) 手机验证码认证
 
 服务人员通过app登录采用手机验证码认证方式，输入手机号、发送验证码，验证码校验通过则认证通过，初次认证通过将自动注册服务人员信息。
 
@@ -138,7 +137,7 @@ AI:项目对接微信登录中unionid和openid的区别是什么
 
 
 
-### 5) 账号密码认证
+#### 5) 账号密码认证
 
 机构端认证方式是账号密码认证方式，通过pc浏览器进入登录界面输入账号和密码登录系统，如下图：
 
@@ -156,17 +155,17 @@ AI:项目对接微信登录中unionid和openid的区别是什么
 
 
 
-### 5）小结
+#### 5）小结
 
 本项目的认证方式有哪些？
 
 
 
-## 1.2 小程序认证
+### 1.2 小程序认证
 
-### 1.2.1 测试小程序认证
+#### 1.2.1 测试小程序认证
 
-#### 1）参考官方流程
+##### 1）参考官方流程
 
 下边测试用户端小程序的认证流程，我们先参考微信官方提供的小程序登录流程先大概知道小程序认证流程需要几部分，如下图：
 
@@ -194,7 +193,7 @@ AI:项目对接微信登录中unionid和openid的区别是什么
 
 
 
-#### 2）申请小程序账号
+##### 2）申请小程序账号
 
 开发小程序首先要申请小程序账号，参考官方文档：https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html#%E7%94%B3%E8%AF%B7%E8%B4%A6%E5%8F%B7
 
@@ -262,7 +261,7 @@ AI:项目对接微信登录中unionid和openid的区别是什么
 
 
 
-#### 3）创建jzo2o-customer
+##### 3）创建jzo2o-customer
 
 小程序账号申请成功，下边部署配置后端程序。
 
@@ -304,7 +303,7 @@ jzo2o-customer通过jzo2o-publics请求微信获取openid。（jzo2o-publics在�
 
 启动这三个微服务成功，下边开始部署前端。
 
-#### 4) 部署前端
+##### 4) 部署前端
 
 本部分内容可参考微信开发文档：https://developers.weixin.qq.com/ebook?action=get_post_info&docid=000e8842960070ab0086d162c5b80a 
 
@@ -378,7 +377,7 @@ AppID：填写申请小程序号获取的AppID。
 
 
 
-#### 5) 编译运行
+##### 5) 编译运行
 
 小程序认证需要启动的微服务包括：网关jzo2o-gateway、客户管理jzo2o-customer、公共服务jzo2o-publics，保证这三个服务全部启动。
 
@@ -410,7 +409,7 @@ AppID：填写申请小程序号获取的AppID。
 
 ![图片展示的是云岚到家小程序的界面。上方显示“河南省”和“日常保洁”搜索框，右上角有三个点和相机图标。中间有新人优惠活动广告，下方提示当前城市暂未开通服务，需切换其他城市进行下单，有“手动选择服务城市”按钮。底部有“首页”“全部服务”“消息”“我的”四个导航栏。该图与上文测试小程序认证流程中编译运行后进入的登录界面相关，展示了认证通过后的界面情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/BGLxbbAWuokEZfxTKO6c38CDnUh.png)
 
-#### 6）真机调试(了解)
+##### 6）真机调试(了解)
 
 在开发环境还可以通过手机打开小程序进行测试，下边介绍具体的配置方法，注意此部分内容作为了解，正常开发使用上边介绍的通过微信开发工具进行测试，方便跟踪接口交互数据。
 
@@ -440,7 +439,7 @@ AppID：填写申请小程序号获取的AppID。
 
 
 
-#### 7)  小结
+##### 7)  小结
 
 从配置环境到测试整个过程稍微繁琐，需要按文档的步骤逐个操作，每一步操作成功再进入下一步。
 
@@ -452,11 +451,11 @@ AppID：填写申请小程序号获取的AppID。
 
 测试过程可进入调试界面跟踪前后端的交互数据。
 
-### 1.2.2 阅读代码
+#### 1.2.2 阅读代码
 
 下边通过阅读代码理解小程序认证的流程。
 
-#### 1）小程序认证流程
+##### 1）小程序认证流程
 
 我们去开发整个小程序认证流程还先参考官方流程，如下图：
 
@@ -490,11 +489,11 @@ customer工程提供认证接口，publics工程作为一个公共服务提供�
 
 <whiteboard token="AhLGwOeHdhzsD3b4SuMc0EUWnkf"></whiteboard>
 
-#### 2）阅读代码
+##### 2）阅读代码
 
 下边根据认证流程阅读代码，我们以断点调试的方式跟踪接口交互过程。
 
-##### **提供的小程序认证接口**
+###### **提供的小程序认证接口**
 
 在jzo2o-customer服务中提供小程序认证接口。
 
@@ -504,7 +503,7 @@ customer工程提供认证接口，publics工程作为一个公共服务提供�
 
 ![这是一段后端Java代码，对应小程序认证流程中普通用户登录接口的实现部分。接口使用@PostMapping注解配置路径为"/common/user"，标注为“c端用户登录接口”，方法为loginForCommonUser，接收LoginForCustomerReqDTO类型的请求体参数，返回LoginResDTO类型结果，方法内调用loginService.loginForCommonUser方法。右侧显示的是loginForCustomerReqDTO的实例信息，其code值为“0b3AYjGaltduVF0qNyFa1teUE62AYjGf”，nickname为“微信用户”，avatar是对应的第三方资源链接，该参数用于后续微信相关的用户认证流程。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ZoxtbsbIQo83zrxRRCOcj1Gqnub.png)
 
-##### **请求publics获取openid**
+###### **请求publics获取openid**
 
 jzo2o-customer服务会请求publics服务申请openid，publics服务与微信进行对接。
 
@@ -516,7 +515,7 @@ publics服务中提供获取openid接口如下：
 
 ![图片展示的是publics服务中获取openid接口的代码。接口为@GetMapping("/getOpenId")，@ApiOperation注解说明为获取openid，@ApiImplicitParams标注了必填参数code。代码中，通过@RequestParam("code")接收code参数，调用wechatService.getOpenId方法获取openId，最后返回OpenIdResDTO对象。该图片与上文介绍的publics请求微信获取openid接口内容相关，直观呈现了接口实现代码。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/JxJTbf6kWohdPKx75ZPcEoj9nAh.png)
 
-##### **publics请求微信获取openid**
+###### **publics请求微信获取openid**
 
 publics请求微信获取获取openid 接口如下:
 
@@ -524,7 +523,7 @@ publics请求微信获取获取openid 接口如下:
 
 ![图片展示的是WechatServiceImpl.class文件中的getOpenid方法代码。该方法接收code参数，通过HTTP工具获取微信jscode2session接口的result，若result中JSONObject的getInt("errcode")不为空，抛出新服务器异常；否则返回JSONObject的getString("openid")。此代码与上文介绍的publics请求微信获取openid接口相关，是接口实现的一部分。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LqIdbMuhSoeXqAxZ8ZucOzyBn5c.png)
 
-##### **生成token**
+###### **生成token**
 
 **customer收到openid后查询数据库获取用户信息并生成token.**
 
@@ -568,7 +567,7 @@ token令牌的格式我们使用的是JWT格式，JWT是一种常用的令牌格
 
 
 
-##### **网关对token统一校验**
+###### **网关对token统一校验**
 
 登录成功后，用户访问小程序会携带token，所有请求到网关，如果是白名单则不校验token，否则需要校验token。
 
@@ -624,7 +623,7 @@ token令牌的格式我们使用的是JWT格式，JWT是一种常用的令牌格
 
 
 
-#### 3）小结
+##### 3）小结
 
 小程序认证流程是什么？
 
@@ -634,15 +633,15 @@ token令牌的格式我们使用的是JWT格式，JWT是一种常用的令牌格
 
 
 
-## 1.3 手机验证码认证
+### 1.3 手机验证码认证
 
-### 1.3.1 测试手机验证码认证
+#### 1.3.1 测试手机验证码认证
 
 服务人员使用APP登录平台使用的是手机验证码认证方式，整个认证流程也需要部署前端、后端。
 
 客户管理工程jzo2o-customer与公共服务jzo2o-publics提供手机验证码的接口，这两个服务在小程序认证时已经部署这里不再部署，我们只需要部署前端工程即可。
 
-#### 1）部署前端
+##### 1）部署前端
 
 服务端的前端工程需要使用 HBuilder 3.8.7 X 软件编译运行，从课程资料下的软件工具目录获取安装包HBuilderX.3.8.7.20230703.zip，也可以自行下载（https://www.dcloud.io/hbuilderx.html）。
 
@@ -702,7 +701,7 @@ token令牌的格式我们使用的是JWT格式，JWT是一种常用的令牌格
 
 ![图片展示了HBuilderX控制台右键菜单中的“重新运行”选项。该选项以蓝色高亮显示，其快捷键为Ctrl+F5。上下文提到，如果修改了文件需要重新编译运行，在HBuilderX控制台右键选择此选项即可，这与文档中调试模式操作步骤相关，是调试过程中重新运行代码的快捷操作指引。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Qo5QbMdQIoHQhVxH5FjcLg7mn3f.png)
 
-#### 2）认证测试
+##### 2）认证测试
 
 下边测试手机验证码认证流程。
 
@@ -734,9 +733,9 @@ token令牌的格式我们使用的是JWT格式，JWT是一种常用的令牌格
 
 
 
-### 1.3.2 阅读代码
+#### 1.3.2 阅读代码
 
-#### 1）手机验证码认证流程
+##### 1）手机验证码认证流程
 
 customer工程提供认证接口，publics工程作为一个公共服务提供与发送验证码接口。
 
@@ -744,9 +743,9 @@ customer工程提供认证接口，publics工程作为一个公共服务提供�
 
 
 
-#### 2)  阅读代码
+##### 2)  阅读代码
 
-##### **找到具体的接口**
+###### **找到具体的接口**
 
 前端请求publics服务发送验证码接口：publics/sms-code/send
 
@@ -780,7 +779,7 @@ publics服务提供校验验证码接口，如下图：
 
 ![这张图片是代码编辑界面截图，展示了项目中与校验短信验证码相关的代码内容，左侧的项目结构里，“jzo2o-publics”项目下的“controller.inner”目录中选中了“InnerSmsCodeController.java”文件，右侧该文件的代码区域里，有红色箭头指向名为“verify”的方法，此方法带有“@GetMapping("/verify")”的注解，该方法属于publics服务的校验短信验证码接口，用于处理验证码校验相关请求，和文档中提到的publics服务提供的校验验证码接口内容对应。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Nc4tbKPr2o1t26xS1dwcG1QmnSh.png)
 
-##### **验证码证码逻辑**
+###### **验证码证码逻辑**
 
 具体的验证码校验逻辑是先查询redis中的正确的验证码，再和用户输入的进行对比，如果不一致则说明输入错误，输入正确删除验证码。如下代码：
 
@@ -807,7 +806,7 @@ publics服务提供校验验证码接口，如下图：
 
 
 
-##### **自动注册**
+###### **自动注册**
 
 校验验证码完成customer服务根据手机号查询数据库，如果用户冻结则认证失败，如果用户不存在则自动注册。
 
@@ -851,7 +850,7 @@ create table `jzo2o-customer`.serve_provider
 
 
 
-#### 3）小结
+##### 3）小结
 
 手机验证码服务的实现方案？
 
@@ -865,9 +864,9 @@ create table `jzo2o-customer`.serve_provider
 
 
 
-# 2 用户端定位
+## 2 用户端定位
 
-## **1) 用户端首页定位**
+### **1) 用户端首页定位**
 
 用户端在小程序认证通过后会自动进行定位，也可以在首页手动定位，**定位成功后用户进入首页会根据定位的城市查询该城市有哪些服务项目**。
 
@@ -885,7 +884,7 @@ create table `jzo2o-customer`.serve_provider
 
 ![该图片是云岚到家小程序的用户端首页，页面顶部为“云岚到家”的小程序名称，下方的定位栏处，红色箭头指向的“郑州市”是当前显示的用户位置；定位栏内还标注了“日常保洁”，其下方是新人优惠广告区域，展示了全屋除菌保洁3次低至459元的优惠信息，还有“立即抢购”按钮；页面底部则标注了平台“给您贴心的专业的上门服务”“标准定价 售后无忧”的服务相关说明。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/MoAmbAuepoj8e8xfTizcoEAwn8d.png)
 
-## 2）高德地图配置
+### 2）高德地图配置
 
 小程序端的定位是通过手机的定位模块进行定位，定位成功获取经纬度坐标，平台根据经纬度坐标请求地图服务获取经纬度坐标对应的具体位置。
 
@@ -899,7 +898,7 @@ create table `jzo2o-customer`.serve_provider
 
 ![图片展示的是nacos配置界面中jzo2o - publics.yml的配置内容。其中，配置格式选择了YAML。在配置内容部分，有“amap”配置项，其下“enable”值为true，“key”值被红框突出显示，为0547c66c48a1e589f945e2554dc...。该图片与文档中“小程序端的定位是通过手机的定位模块进行定位，定位成功获取经纬度坐标，平台根据经纬度坐标请求地图服务获取经纬度坐标对应的具体位置”等内容相关，用于说明小程序端获取高德地图key的配置位置。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CCFEbZ6gEoBXSNx5A4ackmSwnph.png)
 
-## 3) 测试定位
+### 3) 测试定位
 
 启动jzo2o-publics服务。
 
@@ -957,7 +956,7 @@ create table `jzo2o-customer`.serve_provider
 
 
 
-## 4）用户端定位交互流程
+### 4）用户端定位交互流程
 
 <whiteboard token="GaWRwwlf4hvTG5bBMZ4cqN4fnFg"></whiteboard>
 
@@ -968,7 +967,7 @@ create table `jzo2o-customer`.serve_provider
 
 
 
-## 5) 阅读代码
+### 5) 阅读代码
 
 定位过程中小程序请求publics服务的接口查询经纬度对应的位置信息，调用/publics/map/regeo接口，下边阅读/publics/map/regeo接口。
 
@@ -1000,7 +999,7 @@ create table `jzo2o-customer`.serve_provider
 
 小程序拿到的是经纬度坐标，通过调用此接口就可以根据经纬度得到city_code从而关联到平台具体的区域。
 
-### **region表的city_code从哪来？**
+#### **region表的city_code从哪来？**
 
 先从从高德地图下载拿到全国的区域信息，包括了city_code（https://lbs.amap.com/api/webservice/download）
 
@@ -1016,7 +1015,7 @@ create table `jzo2o-customer`.serve_provider
 
 
 
-## 6）小结
+### 6）小结
 
 如何开发小程序定位功能？
 
@@ -1032,9 +1031,9 @@ create table `jzo2o-customer`.serve_provider
   - 省、市、区、、、
 - 根据区域id查询当前城市的服务
 
-# 3 机构端(实战)
+## 3 机构端(实战)
 
-## 3.1 机构端账号密码认证测试
+### 3.1 机构端账号密码认证测试
 
 机构和管理端的认证方式都是账号密码认证方式，本作业限定为机构端账号密码认证，具体要求如下：
 
@@ -1080,7 +1079,7 @@ cmd进入project-xzb-PC-vue3-java目录运行 ：npm install || yarn  或 cnpm i
 
 
 
-## 3.2 **完成机构注册功能开发**
+### 3.2 **完成机构注册功能开发**
 
 界面原型：
 
@@ -1104,7 +1103,7 @@ cmd进入project-xzb-PC-vue3-java目录运行 ：npm install || yarn  或 cnpm i
 
 
 
-### 设计须知
+#### 设计须知
 
 参考服务端自动注册的代码实现。
 
@@ -1157,7 +1156,7 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 
 
-## 3.3 **完成忘记密码功能开发**
+### 3.3 **完成忘记密码功能开发**
 
 界面原型：
 
@@ -1187,15 +1186,15 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 
 
-# 4 实名认证(实战)
+## 4 实名认证(实战)
 
-## 4.1 需求分析
+### 4.1 需求分析
 
-### 4.1.1 业务流程
+#### 4.1.1 业务流程
 
 <whiteboard token="MG8nwSycLh8OYObveAWcHgXwnoc"></whiteboard>
 
-### 4.1.2 服务端**提交认证**
+#### 4.1.2 服务端**提交认证**
 
 使用一个新的手机号登录，登录成功自动进入下边的界面：
 
@@ -1229,7 +1228,7 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 
 
-### 4.1.3 机构端提交认证
+#### 4.1.3 机构端提交认证
 
 首先登录点击认证进入上传资质界面
 
@@ -1263,9 +1262,9 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 
 
-### 4.1.4 运营端审核认证
+#### 4.1.4 运营端审核认证
 
-#### 4.1.4.1 审核服务人员
+##### 4.1.4.1 审核服务人员
 
 审核服务人员认证列表：
 
@@ -1311,7 +1310,7 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 
 
-#### 4.1.4.2 审核机构
+##### 4.1.4.2 审核机构
 
 
 
@@ -1341,11 +1340,11 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 
 
-## 4.2 接口设计
+### 4.2 接口设计
 
-### 4.2.1 服务端提交认证接口设计
+#### 4.2.1 服务端提交认证接口设计
 
-#### 4.2.1.1 服务端提交认证申请
+##### 4.2.1.1 服务端提交认证申请
 
 接口路径：**POST**/customer/worker/worker-certification-audit
 
@@ -1372,7 +1371,7 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 ![图片展示了服务端提交认证申请接口的响应参数。包含两个参数：msg，类型为string，参数说明为响应消息；code，类型为integer(int32)，参数说明为状态码，200表示成功，其它表示失败。该图片与文档中“4.2.1.1服务端提交认证申请”接口设计内容相关，是对该接口响应参数的说明，帮助开发者了解接口返回数据的结构。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LEo9bvxvMotk81xyfWBcrEwlnPg.png)
 
-#### 4.2.1.2 查询最新的驳回原因
+##### 4.2.1.2 查询最新的驳回原因
 
 接口路径：**GET**/customer/worker/worker-certification-audit/rejectReason
 
@@ -1398,9 +1397,9 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 }
 ```
 
-### 4.2.2 机构端提交认证接口设计
+#### 4.2.2 机构端提交认证接口设计
 
-#### 4.2.2.1 机构提交认证申请
+##### 4.2.2.1 机构提交认证申请
 
 接口路径：**POST**/customer/agency/agency-certification-audit
 
@@ -1427,7 +1426,7 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 ![图片展示了服务端提交认证申请接口的响应参数。包含两个参数：msg，类型为string，参数说明为响应消息；code，类型为integer(int32)，参数说明为状态码，200表示成功，其它表示失败。该图片与上文介绍的服务端提交认证申请接口响应参数内容对应，直观呈现了响应参数的具体信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RGnhbWO3ao4bCHxuwcqcaTion5g.png)
 
-#### 4.2.2.2 查询最新的驳回原因
+##### 4.2.2.2 查询最新的驳回原因
 
 接口路径：**GET**/customer/agency/agency-certification-audit/rejectReason
 
@@ -1453,9 +1452,9 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 }
 ```
 
-### 4.2.3 运营端审核认证接口设计
+#### 4.2.3 运营端审核认证接口设计
 
-#### 4.2.3.1 审核服务人员认证分页查询
+##### 4.2.3.1 审核服务人员认证分页查询
 
 接口路径：**GET**/customer/operation/worker-certification-audit/page
 
@@ -1497,7 +1496,7 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 }
 ```
 
-#### 4.2.3.2 审核服务人员认证信息
+##### 4.2.3.2 审核服务人员认证信息
 
 接口路径：**PUT**/customer/operation/worker-certification-audit/audit/{id}
 
@@ -1505,7 +1504,7 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 ![这是一张接口设计相关的响应参数说明表，展示的是接口返回的响应参数信息。表格分为参数名称、参数说明、类型、schema四列，其中包含两个响应参数：名称为msg的参数，参数说明为响应消息，类型为string；名称为code的参数，参数说明为状态码，200代表成功，其他值代表失败，类型为integer(int32)，schema也对应为integer(int32)。该表对应文档中接口设计内容里的响应参数部分，用于明确接口返回的参数规范。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/G8PPboM2ZoMoVvxjVxkcQKxrnsd.png)
 
-#### 4.2.3.3 审核机构认证分页查询
+##### 4.2.3.3 审核机构认证分页查询
 
 接口路径：**GET**/customer/operation/agency-certification-audit/page
 
@@ -1549,7 +1548,7 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 
 
-#### 4.2.3.4 审核机构认证信息
+##### 4.2.3.4 审核机构认证信息
 
 接口路径：**PUT**/customer/operation/agency-certification-audit/audit/{id}
 
@@ -1561,7 +1560,7 @@ passwordEncoder.matches("用户输入的密码", "从数据库查询的密码哈
 
 
 
-## 4.3 设计须知
+### 4.3 设计须知
 
 系统已经存在以下认证相关的表：
 
@@ -1573,9 +1572,9 @@ worker_certification：服务人员认证状态表
 
 
 
-# 5 我的账户设置(实战)
+## 5 我的账户设置(实战)
 
-## 5.1 配置OSS
+### 5.1 配置OSS
 
 本模块在维护银行账户信息时需要上传银行卡照片，本项目的图片服务器使用阿里的OSS存储。
 
@@ -1583,9 +1582,9 @@ worker_certification：服务人员认证状态表
 
 **如果已配置则无需重复配置。**
 
-## 5.2 需求分析
+### 5.2 需求分析
 
-### 5.2.1 服务端设置银行账户
+#### 5.2.1 服务端设置银行账户
 
 服务端设置银行卡账户，每个服务人员设置一个银行卡账户。
 
@@ -1611,7 +1610,7 @@ worker_certification：服务人员认证状态表
 
 
 
-### 5.2.2 机构端设置银行账户
+#### 5.2.2 机构端设置银行账户
 
 机构端登录进入首页，点击“账户设置”
 
@@ -1633,9 +1632,9 @@ worker_certification：服务人员认证状态表
 
 
 
-## 5.3 服务端设置银行账户接口设计
+### 5.3 服务端设置银行账户接口设计
 
-### 5.3.1 新增或更新银行账号信息接口
+#### 5.3.1 新增或更新银行账号信息接口
 
 接口名称: 新增或更新银行账号信息
 
@@ -1649,7 +1648,7 @@ worker_certification：服务人员认证状态表
 
 ![图片展示了新增或更新银行账号信息接口的响应参数。包含参数名称、参数说明、类型和schema四列。参数名称有msg和code，msg为响应消息，类型为string；code为状态码，200表示成功，其它表示失败，类型为integer(int32)。该图片与上文介绍的新增或更新银行账号信息接口相关，是对接口响应参数的说明，帮助理解接口返回数据的结构。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ISEBbXxiloS7Z6xEtZtcErlonJh.png)
 
-### 5.3.2 获取当前用户银行账号接口
+#### 5.3.2 获取当前用户银行账号接口
 
 接口名称：获取当前用户银行账号
 
@@ -1665,9 +1664,9 @@ worker_certification：服务人员认证状态表
 
 
 
-## 5.4 机构端设置银行账户接口设计
+### 5.4 机构端设置银行账户接口设计
 
-### 5.4.1 新增或更新银行账号信息接口
+#### 5.4.1 新增或更新银行账号信息接口
 
 接口名称: 新增或更新银行账号信息
 
@@ -1681,7 +1680,7 @@ worker_certification：服务人员认证状态表
 
 ![图片展示了新增或更新银行账号信息接口的参数信息。包含四个参数：district（区，string类型）、name（名称，string类型）、id（服务人员/机构id，integer(int64)类型）、account（银行账号，string类型）。该图片与上文介绍的新增或更新银行账号信息接口相关，是对接口参数的具体说明，帮助开发者了解接口所需传递的参数类型及内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/YznxbnDaioxwguxtJ96cln1Kncg.png)
 
-### 5.4.2 获取当前用户银行账号接口
+#### 5.4.2 获取当前用户银行账号接口
 
 接口名称：获取当前用户银行账号
 
@@ -1699,7 +1698,7 @@ worker_certification：服务人员认证状态表
 
 
 
-# 作业
+## 作业
 
 实战完成要能针对以下问题进行流畅口述：
 

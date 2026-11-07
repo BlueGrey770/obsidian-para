@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "第七章 订单模块"
 ---
+# 第七章 订单模块
 
-<title>第七章 订单模块</title>
-
-# 学习目标
+## 学习目标
 
 
 
@@ -27,7 +26,7 @@ aliases:
 
 
 
-# 代码环境
+## 代码环境
 
 jzo2o-foundations：dev_03
 
@@ -39,9 +38,9 @@ jzo2o-orders：dev_01
 
 
 
-# 1 需求调研
+## 1 需求调研
 
-## 1）订单管理管什么？
+### 1）订单管理管什么？
 
 AI：订单模块管什么？
 
@@ -81,7 +80,7 @@ AI：订单模块管什么？
 
 
 
-## 2）创建订单需求分析
+### 2）创建订单需求分析
 
 AI: 电商项目中创建订单需要考虑哪些因素
 
@@ -159,7 +158,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 
 
-## 3）小结
+### 3）小结
 
 能够说出订单模块的功能列表？
 
@@ -167,9 +166,9 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 
 
-# 2 家政项目服务预约
+## 2 家政项目服务预约
 
-## 1.1 需求分析
+### 1.1 需求分析
 
 完成了后台服务管理、服务上架的开发，接下来进入预约下单模块，用户通过小程序进行服务预约。
 
@@ -177,7 +176,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 首先分析预约下单模块的需求。
 
-### 1）核心业务流程
+#### 1）核心业务流程
 
 首先明确本模块在核心业务流程的位置，下图是项目的核心业务流程：
 
@@ -185,7 +184,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 <whiteboard token="UW3EwMC4nhdYEkbpQUwce6QSndh"></whiteboard>
 
-### 2) 界面原型
+#### 2) 界面原型
 
 在首页服务列表区域、热门服务列表区域以及全部服务界面，点击服务项名称进入服务详情页面，如下图：
 
@@ -193,7 +192,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 ![图片展示的是家政项目服务预约的界面原型。上方标题为“标准化服务流程”，下方列出4个步骤：1. 在线预约支付费用；2. 服务人员快速接单；3. 电话沟通上门服务；4. 服务完成线上确认。下方有用户评价，显示56条评价，其中一条评价显示为“年黛家”，并有其头像、评价时间及评分。图片底部有一个红色的“立即预约”按钮，箭头指向该按钮。此图与文档中“填写预约信息”部分对应，用于展示预约操作流程中的界面样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ESL9bbqunob3uCxD9P8cdCQTn3g.png)
 
-#### 填写预约信息
+##### 填写预约信息
 
 点击立即预约填写预约信息：
 
@@ -221,7 +220,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 
 
-#### 结算页面
+##### 结算页面
 
 进入支付页面（结算页面）：
 
@@ -239,7 +238,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 
 
-#### 下单成功
+##### 下单成功
 
 支付成功下单完成。
 
@@ -249,7 +248,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 
 
-### 3）订单状态
+#### 3）订单状态
 
 订单数据中有一个属性关系到订单的整个流程，就是订单状态。  
 
@@ -273,7 +272,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 已关闭：订单已支付状态下取消订单后订单状态变为已关闭。
 
-### 4）小结
+#### 4）小结
 
 下单业务流程是什么？
 
@@ -283,15 +282,15 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 
 
-## 1.2 系统设计
+### 1.2 系统设计
 
-### 1.2.1 订单表设计
+#### 1.2.1 订单表设计
 
 目标：能说出订单表的设计方法
 
 
 
-#### 1）订单表设计方案
+##### 1）订单表设计方案
 
 在设计订单表时通常采用的结构是订单主表与订单明细表一对多关系结构，比如：在电商系统中，一个订单购买的多件不同的商品，设计订单表和订单明细表：
 
@@ -307,7 +306,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 下边根据需求设计本项目的订单表，本项目用户购买服务没有购物车，选择一个服务开始下单，所以本项目不设计订单明细表只设计订单表。
 
-#### 2）表结构设计
+##### 2）表结构设计
 
 下边设计本项目订单表的表结构。
 
@@ -434,19 +433,19 @@ create table `jzo2o-orders`.orders
 | create_time       | 创建时间 | 数据库控制，默认当前时间 |
 | update_time       | 更新时间 | 数据库控制，更新时默认当前时间 |
 
-#### 3）小结
+##### 3）小结
 
 订单表是怎么设计的？
 
 
 
-### 1.2.2 搭建订单工程
+#### 1.2.2 搭建订单工程
 
 目标：搭建订单工程。
 
 
 
-#### 1）搭建订单工程
+##### 1）搭建订单工程
 
 1. **搭建订单工程**
 
@@ -496,7 +495,7 @@ jzo2o-orders-base作为其它四个工程的公共工程，提供订单模块基
 
 
 
-#### 2) 切换分支
+##### 2) 切换分支
 
 基于jzo2o-customer工程的dev_01分支创建dev_02分支，然后使用下发的jzo2o-customer_dev02.zip覆盖dev_02下的代码。
 
@@ -512,7 +511,7 @@ jzo2o-orders-base作为其它四个工程的公共工程，提供订单模块基
 
 
 
-#### 3) 小结
+##### 3) 小结
 
 整个订单工程包括哪几部分？
 
@@ -520,11 +519,11 @@ jzo2o-orders-base作为其它四个工程的公共工程，提供订单模块基
 
 
 
-### 1.2.3 接口设计
+#### 1.2.3 接口设计
 
 目标：设计下单接口。
 
-#### 1）设计接口
+##### 1）设计接口
 
 根据需求分析及订单表的设计进行接口分析：
 
@@ -608,7 +607,7 @@ public class ConsumerOrdersController {
 
 ```
 
-#### 2) service实现思路
+##### 2) service实现思路
 
 下边分析service实现思路，首先在IOrdersCreateService中定义下单方法
 
@@ -668,7 +667,7 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
 
 
 
-#### 3）小结
+##### 3）小结
 
 
 
@@ -676,9 +675,9 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
 
 
 
-### 1.2.4 订单号生成规则
+#### 1.2.4 订单号生成规则
 
-#### 1）常见的订单号生成规则
+##### 1）常见的订单号生成规则
 
 1. **自增数字序列**
 
@@ -706,7 +705,7 @@ Snowflake 算法对系统时钟的依赖性较强，如果系统时钟发生回�
 
 
 
-#### 2）本项目订单号生成规则
+##### 2）本项目订单号生成规则
 
 19位：2位年+2位月+2位日+13位序号
 
@@ -724,7 +723,7 @@ INCR key
 INCRBY key increment
 ```
 
-#### 3）代码实现
+##### 3）代码实现
 
 定义订单管理的接口
 
@@ -752,25 +751,25 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
 
 
 
-#### 4) 小结
+##### 4) 小结
 
 常见的订单号生成规则有哪些？
 
 
 
-## 1.3 系统开发
+### 1.3 系统开发
 
 
 
-### 1.3.1 下单接口实现
+#### 1.3.1 下单接口实现
 
-#### 1) Mapper实现
+##### 1) Mapper实现
 
 下单接口向orders表插入一条记录，使用Mybatis-Plus生成的Service类或Mapper接口即可实现，不用单独定义Mapper接口。
 
-#### 2）熟悉远程接口
+##### 2）熟悉远程接口
 
-##### 查询地址簿远程接口
+###### 查询地址簿远程接口
 
 微服务之间远程调用的接口统一定义在jzo2o-api工程。
 
@@ -820,7 +819,7 @@ public interface AddressBookApi {
 
 
 
-##### 查询服务信息远程接口
+###### 查询服务信息远程接口
 
 查询服务信息的Feign接口如下：
 
@@ -844,7 +843,7 @@ public interface ServeApi {
 }
 ```
 
-#### 2）Service实现
+##### 2）Service实现
 
 ```Java
 package com.jzo2o.orders.manager.service.impl;
@@ -1001,7 +1000,7 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
 
 
 
-#### 3) Controller实现
+##### 3) Controller实现
 
 ```Java
 package com.jzo2o.orders.manager.controller.consumer;
@@ -1038,7 +1037,7 @@ public class ConsumerOrdersController {
 }
 ```
 
-#### 4) 测试
+##### 4) 测试
 
 测试流程：
 
@@ -1060,9 +1059,9 @@ public class ConsumerOrdersController {
 
 
 
-### 1.3.3 下单代码优化
+#### 1.3.3 下单代码优化
 
-#### 1)  事务方法优化
+##### 1)  事务方法优化
 
 在事务方法中存在远程调用是否有问题？
 
@@ -1241,7 +1240,7 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
 
 
 
-#### 2）事务失效问题
+##### 2）事务失效问题
 
 1. **测试事务失效问题**
 
@@ -1344,7 +1343,7 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
 
 
 
-#### 3)  循环依赖问题
+##### 3)  循环依赖问题
 
 通过将自己注入自己，使用代理对象调用add方法解决了事务失效问题，但是有些同学有疑问，这样不会产生循环依赖吗？
 
@@ -1446,7 +1445,7 @@ public C(@Lazy D d){
 
 
 
-#### 4) 小结
+##### 4) 小结
 
 下单代码怎么优化的？
 
@@ -1464,9 +1463,9 @@ Spring 如何解决循环依赖？
 
 
 
-### 1.3.4 防止重复提交订单
+#### 1.3.4 防止重复提交订单
 
-#### 1）什么情况下会重复提交订单？
+##### 1）什么情况下会重复提交订单？
 
 以下情况会导致重复提交相同的订单：
 
@@ -1476,13 +1475,13 @@ Spring 如何解决循环依赖？
 
 页面刷新后的再次提交： 用户在订单提交后，如果刷新页面，浏览器可能会重新发送上一次的表单提交请求，导致订单的重复提交。
 
-#### 2）如何防止重复提交相同的订单？
+##### 2）如何防止重复提交相同的订单？
 
 防止重复提交相同的订单就是保证创建订单方法的幂等性。
 
 通常需要在前端和后端共同去完成：
 
-##### **前端防重复提交**
+###### **前端防重复提交**
 
 **禁用提交按钮：** 在用户点击提交按钮后，立即将按钮禁用，防止用户多次点击。
 
@@ -1492,7 +1491,7 @@ Spring 如何解决循环依赖？
 
 1. **后端防重复提交**
 
-##### 利用Token机制
+###### 利用Token机制
 
 - 生成Token：用户每次进入下单页面，前端会向服务器请求一个唯一的Token。
 - 验证Token：用户提交订单时，需要携带这个Token一起发送。服务器接收到订单请求后，验证Token的有效性和唯一性，一旦Token被使用过就失效。
@@ -1500,7 +1499,7 @@ Spring 如何解决循环依赖？
 
 <whiteboard token="Kc6dwMXJzh7KsqbMdTScghQ6n4b"></whiteboard>
 
-##### **使用分布式锁**
+###### **使用分布式锁**
 
 以用户id+服务id作为分布式锁锁定下单接口10秒，10秒内该用户不能再次下同一个服务的订单。
 
@@ -1510,7 +1509,7 @@ Spring 如何解决循环依赖？
 
 
 
-#### 3）使用分布锁实现
+##### 3）使用分布锁实现
 
 下边用分布式锁实现，修改下单方法，执行下单方法前获取分布式锁，锁的过期时间设置为30秒，30秒内同一个用户不允许重复购买同一个服务。
 
@@ -1727,7 +1726,7 @@ public Object handleLock(ProceedingJoinPoint pjp, Lock lock) throws Throwable {
     }
 ```
 
-#### 4) 测试
+##### 4) 测试
 
 使用小程序针对同一个服务提交两次订单，两次提交的时间间隔小于30秒。
 
@@ -1739,7 +1738,7 @@ public Object handleLock(ProceedingJoinPoint pjp, Lock lock) throws Throwable {
 
 ![这张图呈现了家政服务预约小程序的界面，为日常保洁服务的下单页面，页面上方展示服务名称“日常保洁”及“日常上门保洁”标签。页面包含预约信息，显示服务地址为北京市北京市昌平区回龙观街道文恒（文化传播相关内容存在截断），联系人是苗先生及手机号，需选择上门时间（当前显示为2024-11-05 20:30），优惠券暂无可用，底部标注订单价格为58元，还有“立即预约”按钮。页面中间有突出的深色提示框，标注箭头指向该区域，显示文字“操作频繁,请稍后重试”，对应了测试场景中30秒内针对同一个服务再次下单时的系统提示效果，符合防止重复提交订单的功能测试内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/U64sbYqh5oyyGAxkbgEcKEoCnYb.png)
 
-#### 5）小结
+##### 5）小结
 
 如何防止重复订单提交？
 
@@ -1752,11 +1751,11 @@ AOP在项目中有用吗？怎么用的？
 - 事务
 - 分布式锁
 
-### 1.3.5 优惠券核销
+#### 1.3.5 优惠券核销
 
-#### 1.3.5.1 查询可用优惠券接口
+##### 1.3.5.1 查询可用优惠券接口
 
-##### 1) 交互流程
+###### 1) 交互流程
 
 用户在下单界面可以选择可用的优惠券，订单管理服务调用优惠券服务查询可用的优惠券列表。
 
@@ -1766,7 +1765,7 @@ AOP在项目中有用吗？怎么用的？
 
 <whiteboard token="ANeUwRgVXhtjP5bQ32vclV6Bnug"></whiteboard>
 
-##### 2）接口定义
+###### 2）接口定义
 
 订单管理需要调用优惠券服务，传入订单金额。
 
@@ -1816,7 +1815,7 @@ public List<AvailableCouponsResDTO> getCoupons(@RequestParam(value = "serveId", 
 
 
 
-##### 3）**定义service接口** 
+###### 3）**定义service接口**
 
 ```Java
 package com.jzo2o.orders.manager.service;
@@ -1894,7 +1893,7 @@ public List<AvailableCouponsResDTO> getAvailableCoupons(Long serveId, Integer pu
 
 
 
-##### 4) **定义controller方法**
+###### 4) **定义controller方法**
 
 ```Java
 package com.jzo2o.orders.manager.controller.consumer;
@@ -1944,7 +1943,7 @@ public class ConsumerOrdersController {
     ...
 ```
 
-##### 5）接口测试
+###### 5）接口测试
 
 测试流程：
 
@@ -1998,9 +1997,9 @@ public class ConsumerOrdersController {
 
 
 
-#### 1.3.5.2 优惠券核销 
+##### 1.3.5.2 优惠券核销
 
-##### 1）交互流程
+###### 1）交互流程
 
 下单时核销优惠券，创建订单和核销优惠券需要保证事务一致性，要么两者都成功，要么两者都失败。
 
@@ -2012,7 +2011,7 @@ public class ConsumerOrdersController {
 
 
 
-##### 2）启动seata 的事务协调器
+###### 2）启动seata 的事务协调器
 
 启动seata容器(TC)： docker start seata-server 
 
@@ -2022,7 +2021,7 @@ public class ConsumerOrdersController {
 
 
 
-##### 3) 配置seata环境
+###### 3) 配置seata环境
 
 修改订单管理服务的bootstrap.yml，添加seata配置文件
 
@@ -2062,7 +2061,7 @@ create table `数据库名`.undo_log
 
 
 
-##### 2) 修改下单方法
+###### 2) 修改下单方法
 
 根据需求，下边在下单接口中调用优惠券核销接口，在核销优惠券方法中开启全局事务。
 
@@ -2132,7 +2131,7 @@ public PlaceOrderResDTO placeOrder(PlaceOrderReqDTO placeOrderReqDTO) {
 
 
 
-##### 4) 测试
+###### 4) 测试
 
 首先保证用户当前有未使用的优惠券。
 
@@ -2198,7 +2197,7 @@ use_time：使用优惠券时间
 
 
 
-##### 5) 分布式事务控制测试
+###### 5) 分布式事务控制测试
 
 修改下单方法，在核销优惠券方法中模拟异常的代码：
 
@@ -2252,13 +2251,13 @@ public void addWithCoupon(Orders orders, Long couponId) {
 
 
 
-# 3 取消未支付订单
+## 3 取消未支付订单
 
-## 3.1 技术方案
+### 3.1 技术方案
 
 通常未支付订单在一定时间内如果不支付将会自动取消，这做的原因是为了释放资源，比如：库存资源。
 
-### 1）MQ延迟消息
+#### 1）MQ延迟消息
 
 创建订单并发送延迟消息，收到延迟时间判断订单是否支付，如果未支付则取消订单。
 
@@ -2267,7 +2266,7 @@ public void addWithCoupon(Orders orders, Long couponId) {
 - 死信交换机(DLX)+过期时间(TTL)
 - 延迟插件
 
-### 2）定时任务加懒加载方式
+#### 2）定时任务加懒加载方式
 
 **定时任务方式**：
 
@@ -2283,7 +2282,7 @@ public void addWithCoupon(Orders orders, Long couponId) {
 
 
 
-### 3）用户支付成功订单却自动取消怎么办？
+#### 3）用户支付成功订单却自动取消怎么办？
 
 举例说明：
 
@@ -2299,19 +2298,19 @@ public void addWithCoupon(Orders orders, Long couponId) {
 
 
 
-### 4）取消订单退回优惠券
+#### 4）取消订单退回优惠券
 
 订单取消后需要调用优惠券退回接口退回优惠券，这里需要进行分布式事务控制。
 
 
 
-### 5）本项目方案
+#### 5）本项目方案
 
 前边我们使用了延迟消息取消订单的方案，本项目使用定时任务加懒加载的方式自动取消支付超时的订单。
 
-## 3.2 定义取消订单方法
+### 3.2 定义取消订单方法
 
-### 1）需求分析
+#### 1）需求分析
 
 我们先实现手动取消订单，再由定时任务调用取消订单的方法。
 
@@ -2350,7 +2349,7 @@ create table `jzo2o-orders`.orders_canceled
     comment '订单取消表' charset = utf8mb4;
 ```
 
-### 2）service方法
+#### 2）service方法
 
 代码如下：
 
@@ -2460,7 +2459,7 @@ public void cancelByNoPay(OrderCancelDTO orderCancelDTO) {
 
 
 
-### 3）controller方法
+#### 3）controller方法
 
 ```Java
 @RestController("consumerOrdersController")
@@ -2483,7 +2482,7 @@ public class ConsumerOrdersController {
 
 
 
-### 4）测试
+#### 4）测试
 
 测试流程：
 
@@ -2509,9 +2508,9 @@ public class ConsumerOrdersController {
 
 
 
-## 3.3 实现定时任务取消订单
+### 3.3 实现定时任务取消订单
 
-### 1）查询超时订单
+#### 1）查询超时订单
 
 1. 定义service查询支付超时订单
 
@@ -2554,7 +2553,7 @@ public List<Orders> queryOverTimePayOrdersListByCount(Integer count) {
 
 
 
-### 2）定义定时任务
+#### 2）定义定时任务
 
 ```Java
 package com.jzo2o.orders.manager.handler;
@@ -2595,7 +2594,7 @@ public void cancelOverTimePayOrder() {
 }
 ```
 
-### 3）测试
+#### 3）测试
 
 定时测试流程：
 
@@ -2609,7 +2608,7 @@ public void cancelOverTimePayOrder() {
 
 订单到达未支付超时时间由定时任务进行取消。
 
-### 4) 小结
+#### 4) 小结
 
 自动取消支付超时订单怎么实现的？
 
@@ -2620,9 +2619,9 @@ public void cancelOverTimePayOrder() {
 
 
 
-## 3.4 懒加载方式取消订单
+### 3.4 懒加载方式取消订单
 
-### 1）定义懒加载方法
+#### 1）定义懒加载方法
 
 在订单详情service中添加
 
@@ -2673,7 +2672,7 @@ private Orders canalIfPayOvertime(Orders orders){
 }
 ```
 
-### 2）测试
+#### 2）测试
 
 
 
@@ -2705,9 +2704,9 @@ private Orders canalIfPayOvertime(Orders orders){
 
 
 
-# 4 删除订单(自学)
+## 4 删除订单(自学)
 
-## 1）需求分析
+### 1）需求分析
 
 删除订单和取消订单不同，取消订单的目的是终止订单，删除订单是不希望订单信息出现订单列表中。
 
@@ -2717,7 +2716,7 @@ private Orders canalIfPayOvertime(Orders orders){
 
 也有平台提供订单回收站查询功能，即查询已经删除的订单。
 
-## 2）技术方案分析
+### 2）技术方案分析
 
 根据需求，我们在订单表添加逻辑删除标记，删除订单相当于隐藏订单。
 
@@ -2727,7 +2726,7 @@ private Orders canalIfPayOvertime(Orders orders){
 
 在订单列表中只查询display 为1的订单信息。
 
-## 3）阅读代码
+### 3）阅读代码
 
 1. 接口定义
 

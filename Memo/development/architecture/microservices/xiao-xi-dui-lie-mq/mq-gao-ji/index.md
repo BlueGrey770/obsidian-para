@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "MQ高级"
 ---
+# MQ高级
 
-<title>MQ高级</title>
-
-# **如何确保MQ消息的可靠性**
+## **如何确保MQ消息的可靠性**
 
 ![这张图展示了RabbitMQ的消息流转流程，从左到右依次是消息生产者Publisher，它负责向中间的交换机Exchange发布消息；Exchange接收到消息后，会将消息路由分配给两个不同的消息队列Queue，其中下方的Queue还会对应分发给两个消费者Consumer，上方的Queue对应一个消费者Consumer。这个流程和文档中提及的MQ消息可能因未找到合适Exchange或Queue导致丢失的内容相呼应，直观呈现了消息从生产到传递至消费端的路径。](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/mq-gao-ji/AxJKbO1WpohA63xGZJCc8yDmnvd.png)
 
@@ -19,9 +18,9 @@ aliases:
 
 要解决消息丢失问题，保证MQ的可靠性，必须从3个方面入手：
 
-## **保证生产消息的可靠性**
+### **保证生产消息的可靠性**
 
-### **生产者重试机制** ：
+#### **生产者重试机制** ：
 
 当RabbitTemplate与MQ连接超时后，多次重试。可通过配置initial-interval（初始等待时间）、multiplier（倍增器）和max-attempts（最大重试次数）来实现。
 
@@ -49,7 +48,7 @@ spring:
 
 `max-attempts`: 最大重试次数（包括第一次尝试）
 
-### **生产者确认机制** ：
+#### **生产者确认机制** ：
 
 RabbitMQ提供了Publisher Confirm和Publisher Return两种确认机制：
 
@@ -62,29 +61,29 @@ RabbitMQ提供了Publisher Confirm和Publisher Return两种确认机制：
 
 
 
-### **发送失败处理机制** ：
+#### **发送失败处理机制** ：
 
 解决了在ConfirmCallback中收到nack表示消息投递失败，`ReturnCallback`异常表示路由失败，消息投递失败怎么处理的问题
 
 可以将消息记录到失败消息表，由定时任务进行发布，每隔10秒钟(可设置)执行获取失败消息并重新发送，发送一次则在失败次的数字段加一，达到3次停止自动发送由人工处理。
 
-## **确保MQ不会将消息弄丢**
+### **确保MQ不会将消息弄丢**
 
-### **交换机持久化** 
+#### **交换机持久化**
 
 - 将交换机的定义信息(元数据)持久化到RabbitMQ的数据库中，RabbitMQ重启后交换机定义仍然存在。在控制台添加交换机时可配置Durability参数为Durable。
 
-### **队列持久化** 
+#### **队列持久化**
 
 - 将队列的定义信息(元数据)持久化到RabbitMQ的数据库中，保证队列本身的元数据不会因异常情况而丢失。在控制台添加队列时可配置Durability参数为Durable。
 
-### **消息持久化** 
+#### **消息持久化**
 
 - 要确保消息不会丢失需要将消息设置为持久化。在控制台发送消息时，可通过设置delivery_mode=2来实现消息持久化。
 
-## **保证消费消息的可靠性**
+### **保证消费消息的可靠性**
 
-### **消费者手动确认机制** ：
+#### **消费者手动确认机制** ：
 
 要确保消息被成功处理后才会从队列中删除,MQ提供了消费者确认机制(Consumer Acknowledgement)。
 
@@ -136,7 +135,7 @@ spring:
 channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, false);
 ```
 
-### 失败消息加入新队列
+#### 失败消息加入新队列
 
 消费者出现异常后，消息会不断地requeue（重新加入队列）入队，再发送给消费者。如果消费者依旧执行出错，消息会再次返回到队列，再次投递，直至成功。这样无限循环浪费系统资源明显是不合理的，面对这种小概率事件，Spring提供了消费者失败重试机制：
 
@@ -168,7 +167,7 @@ spring:
 
 比较优雅的处理策略是`RepublishMessageRecoverer`，失败后将消息发送到固定的交换机，通过失败交换机发送到失败消息队列，再由程序存入失败消息表持久化，并通过定时任务，进行失败消息尝试处理，最后仍未能解决则通知程序员处理。
 
-### **消息幂等性处理** ：
+#### **消息幂等性处理** ：
 
 确保同一个业务消息重复消费时不会产生多次作用,避免操作重复提交。
 
@@ -194,7 +193,7 @@ spring:
 UPDATE `order` SET status = ? , pay_time = ? WHERE id = ? AND status = 1
 ```
 
-## 业务补偿
+### 业务补偿
 
 如果MQ通知消息失败了怎么办？有没有其它补偿方案，能够确保订单的支付状态一致呢？
 
@@ -206,11 +205,11 @@ UPDATE `order` SET status = ? , pay_time = ? WHERE id = ? AND status = 1
 
 定时任务通常作为兜底方案，来保障业务状态的一致性。
 
-# **如何实现延迟消息**
+## **如何实现延迟消息**
 
 在RabbitMQ中实现延迟消息有两种方案：
 
-## **死信交换机+TTL**
+### **死信交换机+TTL**
 
 - 死信交换机（Dead Letter Exchange, DLX）是一种处理消息队列中无法被消费的消息的方式
 - 结合TTL（Time To Live），设定消息在队列中的存活时间，当消息在队列中停留的时间超过了设定的TTL后，消息就会成为死信
@@ -219,7 +218,7 @@ UPDATE `order` SET status = ? , pay_time = ? WHERE id = ? AND status = 1
 
   ![图 1](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/mq-gao-ji/WDnlbSPp7oeUOmxGWSrcREzpn0b.png)
 
-## **延迟消息插件**
+### **延迟消息插件**
 
 - RabbitMQ社区提供了一个延迟消息插件来实现相同的效果
 - 安装延迟消息插件，发送消息时指定延迟时间，到达延迟时间消息被消费
@@ -238,11 +237,11 @@ UPDATE `order` SET status = ? , pay_time = ? WHERE id = ? AND status = 1
    ![图 3](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/mq-gao-ji/HNbHbbXOpobXJhxmf6YcDZF2nMc.png)
 4. 发送消息时，通过x-delay属性设定延迟时间
 
-# **RabbitMQ有哪些集群，他们的特点是什么？**
+## **RabbitMQ有哪些集群，他们的特点是什么？**
 
 RabbitMQ主要有以下几种集群模式：
 
-## **普通集群模式**
+### **普通集群模式**
 
 - **特点** ：
 
@@ -251,7 +250,7 @@ RabbitMQ主要有以下几种集群模式：
   - 节点之间不能共享数据，队列所在的主节点如果宕机后，数据就丢失了
 - **缺点** ：不具备高可用能力，一旦创建队列的主机宕机，队列就会不可用
 
-## **镜像模式集群**
+### **镜像模式集群**
 
 - **特征** ：
 
@@ -266,7 +265,7 @@ RabbitMQ主要有以下几种集群模式：
   - all模式：在所有节点镜像
   - nodes：指定镜像节点
 
-## **仲裁队列**
+### **仲裁队列**
 
 - **特征** ：
 

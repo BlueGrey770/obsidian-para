@@ -4,14 +4,13 @@ date: 2026-11-06
 aliases:
   - "配置数据同步环境v1.0"
 ---
+# 配置数据同步环境v1.0
 
-<title>配置数据同步环境v1.0</title>
-
-# 1 配置Canal+MQ数据同步环境
-
+## 1 配置Canal+MQ数据同步环境
 
 
-## 1.1 配置Mysql主从同步
+
+### 1.1 配置Mysql主从同步
 
 根据Canal的工作原理，首先需要开启MySQL主从同步。
 
@@ -105,7 +104,7 @@ ON表示开启binlog模式。
 
 ![图片展示了MySQL中查看当前正在写入的binlog文件的命令执行结果。结果中显示binlog文件名为“mysql-bin.000008”，位置为156。该图片与上文配置Mysql主从同步时查看当前正在写入的binlog文件的内容相关，通过执行`SHOW MASTER STATUS;`命令，可获取到当前正在写入的binlog文件信息，以确保数据同步环境配置的准确性。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/YnCVbqzGqoTUEzx9ybUcG8aQnic.png)
 
-## 1.2 安装Canal（**使用下发虚拟机无需安装**）
+### 1.2 安装Canal（**使用下发虚拟机无需安装**）
 
 获取canal镜像
 
@@ -408,7 +407,7 @@ docker run --name canal -p 11111:11111 -d -v /data/soft/canal/instance.propertie
 
 
 
-## 1.3 安装RabbitMQ（**使用下发虚拟机无需安装**）
+### 1.3 安装RabbitMQ（**使用下发虚拟机无需安装**）
 
 安装RabbitMQ参考 微服务课程内容。
 
@@ -420,7 +419,7 @@ docker run --name canal -p 11111:11111 -d -v /data/soft/canal/instance.propertie
 
 
 
-## 1.4 配置Canal+RabbitMQ
+### 1.4 配置Canal+RabbitMQ
 
 下边通过配置Canal与RabbitMQ，保证Canal收到binlog消息将数据发送至MQ。
 
@@ -511,7 +510,7 @@ canal.mq.dynamicTopic=canal-mq-hmall-item:hm-item\\.item_sync
 
 
 
-## 1.5 测试数据同步
+### 1.5 测试数据同步
 
 复制item表到item_sync表。
 
@@ -605,9 +604,9 @@ canal.mq.dynamicTopic=canal-mq-hmall-item:hm-item\\.item_sync
 
 
 
-# 常见问题
+## 常见问题
 
-## 数据不同步
+### 数据不同步
 
 当发现修改了数据库后修改的数据并没有发送到MQ，通过查看Canal的日志发现下边的错误。
 
@@ -661,7 +660,7 @@ docker start canal
 
 
 
-## MQ同步消息无法消费
+### MQ同步消息无法消费
 
 这里以Es和MySQL之间的同步举例：
 

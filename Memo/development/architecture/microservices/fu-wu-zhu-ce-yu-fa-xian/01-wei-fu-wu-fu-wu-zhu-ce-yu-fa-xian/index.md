@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "01 微服务服务注册与发现"
 ---
+# 01 微服务服务注册与发现
 
-<title>01 微服务服务注册与发现</title>
-
-# 学习目标
+## 学习目标
 
 1. 能够说出单体架构与微服务架构的优缺点
 2. 能够搭建黑马商城项目环境
@@ -22,7 +21,7 @@ aliases:
 
 
 
-# 搭建环境-重点
+## 搭建环境-重点
 
 在开始本课程之前请**参考“ 环境搭建” 文档搭建黑马商城项目运行环境，最终将黑马商城项目跑起来。**
 
@@ -32,7 +31,7 @@ aliases:
 
 
 
-# 1.认识微服务
+## 1.认识微服务
 
 学习要点：
 
@@ -50,7 +49,7 @@ aliases:
 
 这一章我们从单体架构的优缺点来分析，看看开发大型项目采用单体架构存在哪些问题，而微服务架构又是如何解决这些问题的。
 
-## 1.1 单体架构
+### 1.1 单体架构
 
 单体架构：整个项目只有一个工程，所有业务模块都在这一个工程中，并采用一个数据库，如下图：
 
@@ -96,7 +95,7 @@ aliases:
 
 
 
-## 1.2 微服务架构
+### 1.2 微服务架构
 
 随着软件业的兴起，以及互联网的发展，对于一些大型的软件项目，单体架构已不能适应需求，软件架构经过的几代的演变，如今对于大型项目更多的会采用微服务架构。
 
@@ -151,7 +150,7 @@ aliases:
 
 
 
-## 1.3 小结
+### 1.3 小结
 
 为什么会有微服务架构：随着项目规模的逐渐扩大，无论是从团队协作上还是代码维护上来讲，单体项目已经无法满足开发需求，而微服务架构则恰好能解决上面提到的问题。当然，解决问题的同时也相应带来了一些挑战，这些咱们在接下来的课程中会进行讲解。
 
@@ -162,7 +161,7 @@ aliases:
 微服架构：适合大型项目
 </callout>
 
-## 1.4. 扩展
+### 1.4. 扩展
 
 AI:分布式架构是什么？
 
@@ -215,15 +214,15 @@ AI:云原生架构是什么？
 
 
 
-## 1.5 面试题
+### 1.5 面试题
 
 你们的项目为什么要用微服务架构？
 
 
 
-# 2 构建微服务工程
+## 2 构建微服务工程
 
-### 2.0 环境准备
+#### 2.0 环境准备
 
 接下来，我们就一起使用微服务架构去构建黑马商城项目，并解决其中出现的各种问题。
 
@@ -231,7 +230,7 @@ AI:云原生架构是什么？
 
 本项目是为教学需求而设计的简化版项目，在后期的互相网项目阶段我们会接触完整的电商项目。
 
-## 2.1 [熟悉黑马商城](https://twk3l3l09tj.feishu.cn/wiki/MYNvwtoDniMjuAk4qGcc2sBQnlh)
+### 2.1 [熟悉黑马商城](https://twk3l3l09tj.feishu.cn/wiki/MYNvwtoDniMjuAk4qGcc2sBQnlh)
 
 1. 整体介绍下黑马商城的各个模块
 2. idea中介绍下项目模块
@@ -240,9 +239,9 @@ AI:云原生架构是什么？
 
 
 
-### 2.1.1. 熟悉项目
+#### 2.1.1. 熟悉项目
 
-#### 2.1.1.1 登录功能
+##### 2.1.1.1 登录功能
 
 首先来看一下登录业务流程，下图黄色框内。
 
@@ -254,7 +253,7 @@ AI:云原生架构是什么？
 
 
 
-#### 2.1.1.2 搜索商品
+##### 2.1.1.2 搜索商品
 
 在首页搜索框输入关键字，点击搜索即可进入搜索列表页面：
 
@@ -268,7 +267,7 @@ AI:云原生架构是什么？
 
 这里目前是利用数据库实现了简单的分页查询。
 
-#### 2.1.1.3 购物车
+##### 2.1.1.3 购物车
 
 在搜索到的商品列表中，点击按钮`加入购物车`，即可将商品加入购物车：
 
@@ -286,7 +285,7 @@ AI:云原生架构是什么？
 
 
 
-#### 2.1.1.4 下单
+##### 2.1.1.4 下单
 
 在购物车页面点击`结算`按钮，会进入订单结算页面：
 
@@ -304,7 +303,7 @@ AI:云原生架构是什么？
 
 
 
-#### 2.1.1.5 支付
+##### 2.1.1.5 支付
 
 下单完成后会跳转到支付页面，目前只支持**余额支付**：
 
@@ -333,7 +332,7 @@ AI:云原生架构是什么？
 
 
 
-##### bug修复
+###### bug修复
 
 Bug描述: 在测试中发现支付成功后用户表的余额字段并没有减少相应的金额。
 
@@ -343,7 +342,7 @@ Bug描述: 在测试中发现支付成功后用户表的余额字段并没有减
 
 
 
-#### 2.1.1.6 小结
+##### 2.1.1.6 小结
 
 如何去熟悉一个项目？
 
@@ -365,20 +364,20 @@ Bug描述: 在测试中发现支付成功后用户表的余额字段并没有减
 
 
 
-## 2.2 创建微服务工程 -学习一个微服务架构-Springcloud
+### 2.2 创建微服务工程 -学习一个微服务架构-Springcloud
 
 本节我们开始使用微服务架构去开发黑马商城项目。
 
 
 
-### 2.2.1. 系统架构
+#### 2.2.1. 系统架构
 
 - 微服架构存在的问题
 - 认识微服务框架-springcloud
 - 熟悉并掌握掌握相关功能组件
 - Spring Cloud Alibaba与Spring Cloud 的联系
 
-#### 2.2.1.1 系统架构图
+##### 2.2.1.1 系统架构图
 
 我们用微服务架构开发黑马商城项目首先需要划分微服务，通常是按照业务模块进行划分，同时也会将一些通用的功能抽取成一个微服务，微服务要做到单一职责，高内聚低耦合。
 
@@ -403,7 +402,7 @@ Bug描述: 在测试中发现支付成功后用户表的余额字段并没有减
 
 
 
-#### 2.2.1.2 认识Spring Cloud
+##### 2.2.1.2 认识Spring Cloud
 
 每个微服务是一个SpringBoot工程，微服务之间的通信协作、服务保护等各种问题都有对应的解决方案和微服务组件，SpringCloud框架可以说是目前Java领域最全面的微服务组件的集合了，如下图：
 
@@ -461,7 +460,7 @@ Spring Cloud Alibaba与Spring Cloud 的区别：
 
 
 
-#### 2.2.1.3 面试题
+##### 2.2.1.3 面试题
 
 SpringBoot和SpringCloud,请你谈谈对他们的理解？
 
@@ -484,9 +483,9 @@ Spring Cloud Alibaba与Spring Cloud区别和联系？
 3. 拆分商品服务
 4. 购物车服务（练习）
 
-### 2.2.2. 创建基础工程
+#### 2.2.2. 创建基础工程
 
-#### 2.2.2.1 创建父工程
+##### 2.2.2.1 创建父工程
 
 本课程使用maven创建微服务架构的电商项目，首先需要创建父工程hmall-parent（普通maven项目，非脚手架项目），在父工程中主要是要pom.xml中规范依赖的版本，我们已经明确使用Spring Cloud Alibaba ，且SpringBoot的版本使用 2.7.x版本。
 
@@ -621,7 +620,7 @@ Spring Cloud Alibaba与Spring Cloud区别和联系？
 
 
 
-#### 2.2.2.2 创建common工程
+##### 2.2.2.2 创建common工程
 
 将原项目的hm-common拷贝到新项目目录下
 
@@ -637,11 +636,11 @@ Spring Cloud Alibaba与Spring Cloud区别和联系？
 
 
 
-### 2.2.3.商品服务
+#### 2.2.3.商品服务
 
 接下来，我们先把商品管理功能、购物车功能抽取为两个独立的微服务，其它的微服务根据教学的需求大家请自行创建。
 
-#### 2.2.3.1 创建数据库
+##### 2.2.3.1 创建数据库
 
 
 
@@ -651,7 +650,7 @@ Spring Cloud Alibaba与Spring Cloud区别和联系？
 
 
 
-#### 2.2.3.2 创建工程
+##### 2.2.3.2 创建工程
 
 在项目中创建module：
 
@@ -721,7 +720,7 @@ Spring Cloud Alibaba与Spring Cloud区别和联系？
 </project>
 ```
 
-#### 2.2.3.3 复制并修改代码
+##### 2.2.3.3 复制并修改代码
 
 拷贝`hm-service`中与商品管理有关的代码到`item-service`，按照模型、持久层、业务层、控制层的顺序拷贝代码，最终效果如下图（注意跟hm-service对比，这里多了item这层包）：
 
@@ -755,7 +754,7 @@ public class ItemServiceApplication {
 }
 ```
 
-#### 2.2.3.4 创建配置文件
+##### 2.2.3.4 创建配置文件
 
 接下来是配置文件，可以从`hm-service`中拷贝：
 
@@ -809,7 +808,7 @@ knife4j:
 
 剩下的`application-dev.yaml`和`application-local.yaml`直接从hm-service拷贝即可。
 
-#### 2.2.3.5 启动微服务
+##### 2.2.3.5 启动微服务
 
 直接运行启动类
 
@@ -821,7 +820,7 @@ knife4j:
 
 
 
-#### 2.2.3.6 测试微服务
+##### 2.2.3.6 测试微服务
 
 访问商品微服务的swagger接口文档：[http://localhost:8081/doc.html](http://localhost:8081/doc.html)
 
@@ -841,7 +840,7 @@ knife4j:
 
 
 
-#### 2.2.3.7. 小节
+##### 2.2.3.7. 小节
 
 创建商品服务步骤：
 
@@ -853,15 +852,15 @@ knife4j:
 
 
 
-### 2.2.4.购物车服务(练习)
+#### 2.2.4.购物车服务(练习)
 
-#### 2.2.4.1 创建数据库
+##### 2.2.4.1 创建数据库
 
 查看购物车微服务使用的数据库：
 
 ![图片展示了在hmall项目下创建的`hm-cart`模块的数据库结构。其中`tables`文件夹下有`1`个文件，即`cart`。该图片与上文“把hm-service中的与购物车有关功能拷贝过来，最终的项目结构如下”的内容相关，直观呈现了项目结构中与购物车功能相关的数据库表情况，帮助理解购物车服务的数据库基础。](../../../../../../Attachments/development/architecture/microservices/fu-wu-zhu-ce-yu-fa-xian/01-wei-fu-wu-fu-wu-zhu-ce-yu-fa-xian/LV0UbN5YNoRwiCxWe4Ncbotjnbb.png)
 
-#### 2.2.4.2 创建工程
+##### 2.2.4.2 创建工程
 
 与商品服务类似，在hmall下创建一个新的`module`，起名为`cart-service`
 
@@ -927,7 +926,7 @@ knife4j:
 
 
 
-#### 2.2.4.3 复制与修改代码
+##### 2.2.4.3 复制与修改代码
 
 把hm-service中的与购物车有关功能拷贝过来，最终的项目结构如下：
 
@@ -975,7 +974,7 @@ public class CartServiceApplication {
 
 
 
-#### 2.2.4.4 创建配置文件
+##### 2.2.4.4 创建配置文件
 
 拷贝商品服务的配置文件到购物车服务下。
 
@@ -1025,7 +1024,7 @@ knife4j:
 
 另外两个环境配置文件也复制过来
 
-#### 2.2.4.5 启动微服务
+##### 2.2.4.5 启动微服务
 
 直接运行启动类启动微服务。
 
@@ -1047,7 +1046,7 @@ knife4j:
 
 
 
-### 2.2.5. 小结
+#### 2.2.5. 小结
 
 如何创建微服务工程？
 
@@ -1060,7 +1059,7 @@ knife4j:
 
 
 
-## 2.3 RestTemplate
+### 2.3 RestTemplate
 
 1. 介绍远程调用技术以及为什么需要它
 
@@ -1073,7 +1072,7 @@ knife4j:
 3.使用RestTemplate
 </callout>
 
-### 2.3.1. Java远程调用技术介绍
+#### 2.3.1. Java远程调用技术介绍
 
 我们发现一个问题：在购物车业务中需要查询商品信息，但商品信息查询的逻辑全部迁移到了`item-service`服务，导致我们无法查询，查询端口信息的代码已经屏蔽：
 
@@ -1171,9 +1170,9 @@ AI: RestTemplate远程调用例子
 
 
 
-### 2.3.2.RestTemplate实现远程调用
+#### 2.3.2.RestTemplate实现远程调用
 
-#### 2.3.2.1 明确需求
+##### 2.3.2.1 明确需求
 
 刚开始学习我们用一个简单点的例子，在购物车中需要显示商品信息，而商品信息在item-service服务，因此要想在购物车拿到商品信息就需要购物车服务远程调用商品服务去获取商品信息，流程图如下：
 
@@ -1183,7 +1182,7 @@ AI: RestTemplate远程调用例子
 
 ![图片展示的是购物车服务中处理购物车项的代码片段。其中，将本地方法调用改为远程跨服务调用的代码部分被红框突出显示，即“List<Item> items = itemService.listByIds(itemIds);”这行代码。上下文提到在购物车中显示商品信息时，需远程调用商品服务获取商品信息，此图片正是对应代码示例，直观呈现了代码中需进行远程调用的部分，帮助理解远程调用在实际代码中的位置和形式。](../../../../../../Attachments/development/architecture/microservices/fu-wu-zhu-ce-yu-fa-xian/01-wei-fu-wu-fu-wu-zhu-ce-yu-fa-xian/CKwnbJVUEoGENmxgOxQcSdIcnzc.png)
 
-#### 2.3.2.2 注入RestTemplate
+##### 2.3.2.2 注入RestTemplate
 
 
 
@@ -1245,7 +1244,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     ...
 ```
 
-#### 2.3.2.3 实现远程调用
+##### 2.3.2.3 实现远程调用
 
 接下来修改代码，使用RestTemplate实现远程调用，使用RestTemplate进行远程调用的代码如下：
 
@@ -1258,7 +1257,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
 - 请求参数（本案例中，为?参数）
 - 返回值类型
 
-#### 2.3.2.4 测试
+##### 2.3.2.4 测试
 
 好了，现在重启`cart-service`，再次测试查询我的购物车列表接口：
 
@@ -1270,7 +1269,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
 
 在这个过程中，`item-service`提供了查询接口，`cart-service`利用Http请求调用该接口。因此`item-service`可以称为服务的提供者，而`cart-service`则称为服务的消费者或服务调用者。
 
-### 2.3.3. 小结
+#### 2.3.3. 小结
 
 微服务之间的远程调用被称为RPC，即远程过程调用。RPC的实现方式有很多，比如：
 
@@ -1295,7 +1294,7 @@ Java使用Spring提供的RestTemplate向服务端接口发送http请求，基本
 
 
 
-### 2.3.4 面试题
+#### 2.3.4 面试题
 
 说几个Java远程调用的技术？你们项目用的什么技术？
 
@@ -1307,16 +1306,16 @@ Java使用Spring提供的RestTemplate向服务端接口发送http请求，基本
 
 
 
-# 3 服务注册和发现
+## 3 服务注册和发现
 
 <callout emoji="📌">
 1.为什么需要负载均衡
 2.nginx和nacos又有什么区别
 </callout>
 
-## 3.1. Nginx负载均衡
+### 3.1. Nginx负载均衡
 
-### 3.1.1 问题说明
+#### 3.1.1 问题说明
 
 在上一章我们实现了微服务的构建以及微服务之间的远程调用。不过这种手动发送Http请求的方式存在一些问题。
 
@@ -1331,7 +1330,7 @@ Java使用Spring提供的RestTemplate向服务端接口发送http请求，基本
 - 如果在运行过程中，某一个`item-service`实例宕机，`cart-service`依然在调用该怎么办？
 - 如果并发太高，`item-service`临时多部署了N台实例，`cart-service`如何知道新实例的地址？
 
-### 3.1.2 Nginx负载均衡
+#### 3.1.2 Nginx负载均衡
 
 
 
@@ -1472,7 +1471,7 @@ cmd进入nginx目录，输入下边的命令加载配置：
 
 
 
-### 3.2.3 面试题
+#### 3.2.3 面试题
 
 如何使用nginx实现负载均衡？
 
@@ -1482,9 +1481,9 @@ Nginx是反向代理，为什么叫反向代理？
 
 
 
-## 3.2. 服务注册与发现流程
+### 3.2. 服务注册与发现流程
 
-### 3.3.1 区分客户端与服务端负载均衡
+#### 3.3.1 区分客户端与服务端负载均衡
 
 刚才使用nginx实现负载均衡解决了我们面临的问题。
 
@@ -1504,7 +1503,7 @@ nginx作为服务端，客户端请求nginx服务端，通过Nginx负载均衡�
 
 
 
-### 3.3.2 服务注册与发现流程
+#### 3.3.2 服务注册与发现流程
 
 <callout emoji="❤️">
 1.学习nacos
@@ -1561,7 +1560,7 @@ nginx作为服务端，客户端请求nginx服务端，通过Nginx负载均衡�
 
 
 
-### 3.3.3 面试题
+#### 3.3.3 面试题
 
 说一下服务注册与发现流程？
 
@@ -1569,9 +1568,9 @@ nginx作为服务端，客户端请求nginx服务端，通过Nginx负载均衡�
 
 
 
-## 3.3.Nacos安装配置
+### 3.3.Nacos安装配置
 
-### 3.3.1 介绍
+#### 3.3.1 介绍
 
 接下来我们就去实现整个服务注册与发现的流程。
 
@@ -1587,7 +1586,7 @@ Nacos是国内产品，中文文档比较丰富，而且同时具备**配置管�
 
 
 
-### 3.3.2 安装数据库
+#### 3.3.2 安装数据库
 
 我们基于Docker来部署Nacos的注册中心，首先我们要准备MySQL数据库表，用来存储Nacos的数据。由于是Docker部署，需要用到数据库（虚拟机已经提供）：
 
@@ -1595,7 +1594,7 @@ Nacos是国内产品，中文文档比较丰富，而且同时具备**配置管�
 
 
 
-### 3.3.3 创建容器
+#### 3.3.3 创建容器
 
 然后，找到课前资料下的nacos文件夹和nacos.2.4.tar，全部上传到/root下：
 
@@ -1646,7 +1645,7 @@ docker run -d \
 nacos/nacos-server:v2.4.0.1
 ```
 
-### 3.3.4 访问nacos
+#### 3.3.4 访问nacos
 
 启动完成后，访问下面地址：[http://192.168.101.68:8848/nacos/](http://192.168.101.68:8848/nacos/)，注意将`192.168.101.68`替换为你自己的虚拟机IP地址。
 
@@ -1662,7 +1661,7 @@ nacos/nacos-server:v2.4.0.1
 
 
 
-### 3.3.5 小结
+#### 3.3.5 小结
 
 Nacos安装步骤小结：
 
@@ -1673,7 +1672,7 @@ Nacos安装步骤小结：
 
 
 
-## 3.4. 服务注册
+### 3.4. 服务注册
 
 
 
@@ -1687,7 +1686,7 @@ Nacos安装步骤小结：
 
 
 
-### 3.4.1 添加依赖
+#### 3.4.1 添加依赖
 
 在父工程中已经添加Spring Cloud及Spring Cloud Alibaba的版本约束，如下
 
@@ -1748,7 +1747,7 @@ Nacos安装步骤小结：
 
 
 
-### 3.4.2 配置Nacos
+#### 3.4.2 配置Nacos
 
 在`item-service`的`application.yml`中添加nacos地址配置：
 
@@ -1765,7 +1764,7 @@ spring:
 
 
 
-### 3.4.3 启动服务实例
+#### 3.4.3 启动服务实例
 
 启动两个商品服务实例。
 
@@ -1777,7 +1776,7 @@ spring:
 Success to connect to server [192.168.101.68:8848] on start up, connectionId ...
 ```
 
-### 3.4.4 查看服务注册信息 
+#### 3.4.4 查看服务注册信息
 
 访问nacos控制台，可以发现服务注册成功：
 
@@ -1789,7 +1788,7 @@ Success to connect to server [192.168.101.68:8848] on start up, connectionId ...
 
 
 
-### 3.4.5 小结
+#### 3.4.5 小结
 
 服务注册过程：
 
@@ -1799,7 +1798,7 @@ Success to connect to server [192.168.101.68:8848] on start up, connectionId ...
 
 
 
-## 3.5. 服务发现
+### 3.5. 服务发现
 
 服务的消费者要去nacos订阅服务，这个过程就是服务发现，步骤如下：
 
@@ -1811,7 +1810,7 @@ Success to connect to server [192.168.101.68:8848] on start up, connectionId ...
 
 
 
-### 3.5.1 引入依赖
+#### 3.5.1 引入依赖
 
 服务发现除了要引入nacos依赖以外，由于还需要负载均衡，因此要引入SpringCloud提供的LoadBalancer依赖。
 
@@ -1834,7 +1833,7 @@ Success to connect to server [192.168.101.68:8848] on start up, connectionId ...
 
 因此，等一会儿`cart-service`启动，同样会注册到Nacos
 
-### 3.5.2 配置Nacos地址
+#### 3.5.2 配置Nacos地址
 
 在`cart-service`的`application.yml`中添加nacos地址配置：
 
@@ -1847,7 +1846,7 @@ spring:
 
 
 
-### 3.5.3 服务发现并调用服务
+#### 3.5.3 服务发现并调用服务
 
 接下来，服务调用者`cart-service`就可以去订阅`item-service`服务了，它的底层使用了Spring Cloud Loadbalancer组件实现客户端负载均衡，常见的负载均衡算法有：
 
@@ -1883,7 +1882,7 @@ public class RemoteCallConfig {
 
 
 
-### 3.5.4 小结
+#### 3.5.4 小结
 
 服务发现流程：
 
@@ -1895,11 +1894,11 @@ public class RemoteCallConfig {
 
 
 
-## 3.6. Spring Cloud Loadbalancer 原理-根据截图里的内容，断点跟下源码
+### 3.6. Spring Cloud Loadbalancer 原理-根据截图里的内容，断点跟下源码
 
 <whiteboard token="Maxtw2YQohIMYebbumxcheSLnFf"></whiteboard>
 
-### 3.6.1 源码解析
+#### 3.6.1 源码解析
 
 为什么我们只输入了service名称就可以访问了呢？之前还要获取ip和端口。 显然有人帮我们根据service名称，获取到了服务实例的ip和端口。这就是 @LoadBalanced注解起到的作用。
 
@@ -1945,15 +1944,15 @@ this.loadBalancer.execute() ：处理服务id，和用户请求。
 
 在Spring Cloud 2020版本以前客户端负载均衡使用的是Netflix公司的Ribbon组件，由于Netflix公司对一些组件不再更新，Spring Cloud之后的版本就移除了Ribbon,使用Spring Cloud LoadBalance实现客户端负载均衡。
 
-### 3.6.2 面试题
+#### 3.6.2 面试题
 
 微服务是怎么实现远程调用的？
 
 
 
-# 4 OpenFeign-**让远程调用像本地方法调用一样简单**
+## 4 OpenFeign-**让远程调用像本地方法调用一样简单**
 
-## 4.1. 认识OpenFeign
+### 4.1. 认识OpenFeign
 
 在上一章，我们利用Nacos实现了服务的治理，利用RestTemplate实现了服务的远程调用，虽然ip和端口换成了服务名，但是**远程调用的代码还有些复杂**：
 
@@ -2041,11 +2040,11 @@ public class CartController {
 3. 简单使用
 </callout>
 
-## 4.2.快速入门
+### 4.2.快速入门
 
 我们还是以cart-service中的查询我的购物车为例。因此下面的操作都是在cart-service中进行。
 
-### 4.2.1 引入依赖
+#### 4.2.1 引入依赖
 
 在消费者端即`cart-service`服务的pom.xml中引入`OpenFeign`的依赖：
 
@@ -2059,7 +2058,7 @@ public class CartController {
 
 
 
-### 4.2.2 编写OpenFeign客户端
+#### 4.2.2 编写OpenFeign客户端
 
 在`cart-service`中，定义一个新的接口，该接口将来通过OpenFeign去访问商品服务中ItemController类的方法，所以参考商品服务的ItemController类去编写Feign接口
 
@@ -2105,7 +2104,7 @@ public interface ItemClient {
 
 
 
-### 4.2.3 使用FeignClient
+#### 4.2.3 使用FeignClient
 
 最后，我们在`cart-service`的`com.hmall.cart.service.impl.CartServiceImpl`中改造代码，直接调用`ItemClient`的方法：
 
@@ -2119,7 +2118,7 @@ feign替我们完成了服务拉取、负载均衡、发送http请求的所有�
 
 
 
-### 4.2.4 启用OpenFeign
+#### 4.2.4 启用OpenFeign
 
 接下来，我们在`cart-service`的`CartApplication`启动类上添加注解，启动OpenFeign功能：
 
@@ -2127,17 +2126,17 @@ feign替我们完成了服务拉取、负载均衡、发送http请求的所有�
 
 @EnableFeignClients注解的作用寻找使用 `@FeignClient` 注解的接口生成Feign客户端(代理对象)，自动配置 Feign 客户端与 Spring Cloud LoadBalancer 的集成。
 
-### 4.2.5 测试
+#### 4.2.5 测试
 
 通过我们购物车接口测试OpenFeign实现远程调用。
 
-### 4.2.6 Feign和RestTemplate对比（掌握就行）
+#### 4.2.6 Feign和RestTemplate对比（掌握就行）
 
 二者**核心原理完全相同**（客户端负载均衡、服务发现 + 选路 + 地址替换），仅**集成方式和入口不同**，如下图：
 
 <sheet sheet-id="OBNZNa" token="JDEOsrliIhs5vWt01T4c2aVtnQc"></sheet>
 
-### 4.2.7 小结
+#### 4.2.7 小结
 
 OpenFeign的使用过程？
 
@@ -2151,11 +2150,11 @@ OpenFeign的使用过程？
 
 
 
-## 4.2 最佳实践
+### 4.2 最佳实践
 
-### 4.2.1. OkHttp
+#### 4.2.1. OkHttp
 
-#### 4.2.1.1 介绍
+##### 4.2.1.1 介绍
 
 Feign底层发起http请求，依赖于第三方的**http客户端框架**。常用的http客户端有：
 
@@ -2197,7 +2196,7 @@ OkHttp 是一个高效的 HTTP 客户端库，由 Square Inc. 开发和维护。
 
 ![图片展示了OpenFeign中Client默认使用HttpURLConnection请求http的代码及调试界面。左侧是项目结构，选中了“Client”目录。右侧代码中，Client类的execute方法被红色框标出，其中调用httpURLConnection请求http的部分被蓝色箭头指向。下方调试界面显示了请求参数、变量等信息，如请求地址为“http://192.168.6.1:7080/...”。该图片与上下文紧密相关，直观呈现了上下文提到的跟踪源代码查看默认Client底层是HttpURLConnection的内容。](../../../../../../Attachments/development/architecture/microservices/fu-wu-zhu-ce-yu-fa-xian/01-wei-fu-wu-fu-wu-zhu-ce-yu-fa-xian/FoxNbBmdtoqxHkxZ9LjcuN9ynQb.png)
 
-#### 4.2.1.2 更换为okhttp
+##### 4.2.1.2 更换为okhttp
 
 <callout emoji="🏆">
 1. 引入依赖
@@ -2242,9 +2241,9 @@ feign:
 
 
 
-### 4.2.2. 抽取API工程
+#### 4.2.2. 抽取API工程
 
-#### 4.2.2.1 思路分析
+##### 4.2.2.1 思路分析
 
 
 
@@ -2275,7 +2274,7 @@ feign:
 
 对于**中小型项目规模通常选择方案一**，不用维护太多的api的工程，简单高效。
 
-#### 4.2.2.2 抽取API工程
+##### 4.2.2.2 抽取API工程
 
 <callout emoji="🏆">
 1.抽取一个新的模块：hm-api
@@ -2352,7 +2351,7 @@ feign:
 
 现在，任何微服务要调用`item-service`中的接口，只需要引入`hm-api`模块依赖即可，无需自己编写Feign客户端了。
 
-#### 4.2.2.3 使用API
+##### 4.2.2.3 使用API
 
 接下来，我们在`cart-service`的`pom.xml`中引入`hm-api`模块：
 
@@ -2387,7 +2386,7 @@ feign:
 
 
 
-### 4.2.3. 完善服务接口
+#### 4.2.3. 完善服务接口
 
 目前为止我们把商品服务的查询商品信息接口作为Feign接口抽取到了hm-api工程中，假设**有一天接变更了该怎么办？比如：商品查询接口加了一个参数，首先需要修改商品服务的商品查询Controller方法**，添加一个参数，然后修改hm-api工程的对应的接口添加一个参数。
 
@@ -2453,19 +2452,19 @@ public List<ItemDTO> queryItemByIds(@RequestParam("ids") Collection<Long> ids){
 
 
 
-## 4.3 面试题
+### 4.3 面试题
 
 OpenFeign的工作原理？
 
 
 
-# 5 总结
+## 5 总结
 
 <whiteboard token="FdlBwujE2horyLbyw8ccDGiJn8d"></whiteboard>
 
-# 作业
+## 作业
 
-## 创建用户微服务
+### 创建用户微服务
 
 将hm-service中用户管理相关的业务抽取出来,创建用户微服务user-service。
 
@@ -2611,7 +2610,7 @@ hm:
 
 
 
-### 注意事项
+#### 注意事项
 
 当业务代码中需要知道当前登录用户是谁，目前暂未实现，先将用户id写死，修改UserContext如下：
 
@@ -2627,7 +2626,7 @@ user-service也需要自己的独立的database，向MySQL中导入课前资料�
 
 ![图片展示的是CentOS系统中数据库表结构。画面中以树状结构呈现，根节点为“centos”，下有“hm-cart”“hm-item”“hm-user”等分支，其中“hm-user”被高亮显示。其下有“address”“user”两个子节点，分别显示大小为32.0 KiB。该图与文档中创建用户微服务的导入结果相关，直观呈现了数据库中与用户相关的表结构情况。](../../../../../../Attachments/development/architecture/microservices/fu-wu-zhu-ce-yu-fa-xian/01-wei-fu-wu-fu-wu-zhu-ce-yu-fa-xian/NV6rbEeQbomZLpxUqvPcc9Q3ntg.png)
 
-### 测试
+#### 测试
 
 启动UserApplication，访问[http://localhost:8084/doc.html#/default/用户相关接口/loginUsingPOST](http://localhost:8084/doc.html#/default/%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/loginUsingPOST)，测试登录接口：
 
@@ -2637,7 +2636,7 @@ user-service也需要自己的独立的database，向MySQL中导入课前资料�
 
 
 
-## 创建交易微服务
+### 创建交易微服务
 
 将hm-service中交易相关的业务抽取出来,创建交易微服务trade-service。
 
@@ -2769,7 +2768,7 @@ feign:
 
 
 
-### 提示
+#### 提示
 
 在交易服务中，用户下单时需要做下列事情：
 
@@ -2814,7 +2813,7 @@ public interface CartClient {
 }
 ```
 
-### 测试
+#### 测试
 
 启动TradeApplication，访问[http://localhost:8085/doc.html](http://localhost:8085/doc.html#/default/%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86%E6%8E%A5%E5%8F%A3/queryOrderByIdUsingGET)
 
@@ -2850,7 +2849,7 @@ paymentType：支付方式，1：支付宝、2：微信，3：余额支付。
 
 
 
-## 创建支付微服务
+### 创建支付微服务
 
 将hm-service中支付相关的业务抽取出来,创建支付微服务pay-service。
 
@@ -2986,7 +2985,7 @@ feign:
 
 
 
-### 提示
+#### 提示
 
 在支付服务中，基于用户余额支付时需要做下列事情：
 
@@ -3002,7 +3001,7 @@ feign:
 
 
 
-### 测试
+#### 测试
 
 启动PayApplication，访问[http://localhost:8086/doc.html](http://localhost:8086/doc.html#/default/%E6%94%AF%E4%BB%98%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/queryPayOrdersUsingGET)。
 

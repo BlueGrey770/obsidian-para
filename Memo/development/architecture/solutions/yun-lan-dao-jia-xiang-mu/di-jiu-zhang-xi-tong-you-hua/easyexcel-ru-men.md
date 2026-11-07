@@ -4,12 +4,9 @@ date: 2026-11-06
 aliases:
   - "EasyExcel入门"
 ---
+# EasyExcel入门
 
-<title>EasyExcel入门</title>
-
-
-
-# 1 介绍
+## 1 介绍
 
 根据需求，目标是将订单趋势图的中的数据导出Excel，数据来源于按天统计表和按小时统计表，现在关键问题是使用java语言生成Excel文档。
 
@@ -25,7 +22,7 @@ EasyExcel是一个基于Java的、快速、简洁、解决大文件内存溢出�
 
 参考官方的例子
 
-# 2 **读Excel**
+## 2 **读Excel**
 
 DEMO代码地址：[https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/read/ReadTest.java](https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/read/ReadTest.java)
 
@@ -84,7 +81,7 @@ public class ReadTest {
 
 
 
-# 3 **写Excel**
+## 3 **写Excel**
 
 DEMO代码地址：[https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/write/WriteTest.java](https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/write/WriteTest.java)
 
@@ -167,7 +164,7 @@ public class WriteTest {
 
 
 
-# 4 **web上传、下载**
+## 4 **web上传、下载**
 
 DEMO代码地址：[https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/web/WebTest.java](https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/web/WebTest.java)
 

@@ -4,12 +4,11 @@ date: 2026-11-06
 aliases:
   - "qk开发功能知识点汇总"
 ---
-
-<title>qk开发功能知识点汇总</title>
+# qk开发功能知识点汇总
 
 <whiteboard token="C1U4wg0fMhn8axbGagTcIkuGnoe"></whiteboard>
 
-#  **项目初始化**
+##  **项目初始化**
 
 **核心：创建父工程（聚合工程）**
 
@@ -64,9 +63,9 @@ aliases:
 
 ---
 
-#  **开发功能分层总结**
+##  **开发功能分层总结**
 
-## **Controller 层**
+### **Controller 层**
 
 **职责**：接收请求参数，调用Service处理业务，返回响应。
 
@@ -96,7 +95,7 @@ JSON对象：使用 @RequestBody 接收请求体中的JSON数据，并自动绑�
 
 **响应封装**：统一使用 `Result`或 `CommonResponse`等自定义类包装返回数据，包含`code`、`msg`、`data`字段，便于前端处理。
 
-## **Service 层**
+### **Service 层**
 
 **职责**：封装核心业务逻辑，校验补全数据,协调多个Dao操作,。
 
@@ -120,13 +119,13 @@ JSON对象：使用 @RequestBody 接收请求体中的JSON数据，并自动绑�
 将Mapper(Dao)查询到的 List结果，包装成 PageInfo对象返回给Controller，其中包含总记录数、总页数等分页信息。
 ```
 
-## **Dao / Mapper 层**
+### **Dao / Mapper 层**
 
 **职责**：负责与数据库进行交互，执行SQL。
 
 **关键技术点**：
 
-### **数据库交互**：
+#### **数据库交互**：
 
 ```Java
 使用MyBatis框架，通过 Mapper接口+XML映射文件 或 注解 的方式定义SQL。
@@ -134,21 +133,21 @@ XML方式（推荐复杂SQL）：在XML中编写SQL，namespace对应接口全�
 注解方式（适合简单SQL）：直接在接口方法上使用 @Select， @Insert等注解。
 ```
 
-### **动态SQL**：
+#### **动态SQL**：
 
 ```Java
 在MyBatis的XML映射文件中，使用 <if>， <where>， <foreach>等标签，根据参数动态拼接SQL，避免手动拼接字符串的复杂和SQL注入风险。
 例如：<if test="name != null and name != ''"> AND name = #{name} </if>
 ```
 
-### **条件查询**：
+#### **条件查询**：
 
 ```Java
 方法参数通常使用一个“查询条件封装对象”（如XxxQuery），而非多个散参数。
 在XML中使用动态SQL标签，根据该对象中字段是否为 null 或空，来动态添加 WHERE 条件。
 ```
 
-### **关联查询**：
+#### **关联查询**：
 
 ```Java
 处理多表关联时，在XML中编写关联SQL（JOIN）。

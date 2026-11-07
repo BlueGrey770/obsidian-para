@@ -4,14 +4,13 @@ date: 2026-11-06
 aliases:
   - "01.SpringAI (V1.0.0) 快速入门"
 ---
+# 01.SpringAI (V1.0.0) 快速入门
 
-<title>01.SpringAI (V1.0.0) 快速入门</title>
-
-# 大模型服务
-
+## 大模型服务
 
 
-## 公共大模型-DeepSeek
+
+### 公共大模型-DeepSeek
 
 
 
@@ -19,7 +18,7 @@ aliases:
 
 <bookmark name="DeepSeek Platform" href="https://platform.deepseek.com/"></bookmark>
 
-### 注册
+#### 注册
 
 首次访问，必须注册：
 
@@ -27,7 +26,7 @@ aliases:
 
 
 
-### 充值
+#### 充值
 
 DeepSeek官方对外提供的大模型API服务是需要收费的，因此我们必须注册账号，充值少量金额（1元也行）。
 
@@ -41,7 +40,7 @@ DeepSeek官方对外提供的大模型API服务是需要收费的，因此我们
 
 
 
-### 创建API_KEY
+#### 创建API_KEY
 
 由于是收费服务，为了防止别人盗用你的账号，DeepSeek的所有API都有权限校验功能。我们需要创建一个鉴权用的`API_KEY`可以。
 
@@ -59,7 +58,7 @@ DeepSeek官方对外提供的大模型API服务是需要收费的，因此我们
 
 OK，准备工作完成。
 
-### API文档
+#### API文档
 
 访问公共大模型都是通过API的形式，不同模型的API标准略有差异，但基本都兼容OpenAI规范。
 
@@ -110,7 +109,7 @@ curl https://api.deepseek.com/chat/completions \
 
 
 
-### 测试
+#### 测试
 
 我们可以使用任意的Http客户端来测试API：
 
@@ -120,13 +119,13 @@ curl https://api.deepseek.com/chat/completions \
 
 
 
-## 公共大模型平台-阿里巴巴百炼
+### 公共大模型平台-阿里巴巴百炼
 
 
 
 我们以阿里云百炼平台为例。
 
-### 注册账号
+#### 注册账号
 
 首先，我们需要注册一个阿里云账号：
 
@@ -140,7 +139,7 @@ curl https://api.deepseek.com/chat/completions \
 
 
 
-### 申请API_KEY
+#### 申请API_KEY
 
 注册账号以后还需要申请一个API_KEY才能访问百炼平台的大模型。
 
@@ -176,7 +175,7 @@ curl https://api.deepseek.com/chat/completions \
 
 
 
-### 体验模型
+#### 体验模型
 
 访问百炼平台，点击模型：
 
@@ -188,7 +187,7 @@ curl https://api.deepseek.com/chat/completions \
 
 
 
-### API文档
+#### API文档
 
 点击API参考即可进入API文档页面：
 
@@ -196,7 +195,7 @@ curl https://api.deepseek.com/chat/completions \
 
 
 
-### 测试
+#### 测试
 
 点击《**立即体验》**即可体验大模型。
 
@@ -238,7 +237,7 @@ curl https://api.deepseek.com/chat/completions \
 
 
 
-## 本地部署
+### 本地部署
 
 很多云平台都提供了一键部署大模型的功能，这里不再赘述。我们重点讲讲如何手动部署大模型。
 
@@ -252,7 +251,7 @@ curl https://api.deepseek.com/chat/completions \
 
 <bookmark name="Ollama - Ollama 框架" href="https://ollama.ac.cn/"></bookmark>
 
-### 下载安装ollama
+#### 下载安装ollama
 
 首先，我们需要下载一个Ollama的客户端，在官网提供了各种不同版本的Ollama，大家可以根据自己的需要下载。
 
@@ -285,7 +284,7 @@ OLLAMA_MODELS=你想要保存模型的目录
 
 
 
-### 搜索模型
+#### 搜索模型
 
 ollama是一个模型管理工具和平台，它提供了很多国内外常见的模型，我们可以在其官网上搜索自己需要的模型：
 
@@ -309,7 +308,7 @@ ollama是一个模型管理工具和平台，它提供了很多国内外常见�
 
 
 
-### 运行模型
+#### 运行模型
 
 选择自己合适的模型后，ollama会给出运行模型的命令：
 
@@ -344,13 +343,13 @@ Ollama是一个模型管理工具，有点像Docker，而且命令也很像，�
   ollama help       # Help about any command
 ```
 
-## 在apifox中使用openAI协议调用大模型
+### 在apifox中使用openAI协议调用大模型
 
-### 在API Hub中克隆接口
+#### 在API Hub中克隆接口
 
 ![这张图片展示的是Apifox平台的API Hub页面，左侧菜单中“API Hub”选项被红色框标注选中，右侧“全部分类”栏里，“OpenAI (ChatGPT)”选项被红色箭头及文字标注“克隆该项目到自己的空间”进行重点提示，该选项下方还显示了项目的收藏数32084、关注数6588，页面还展示了DeepSeek API、企业微信API等其他API相关项目，整体内容与文档中“在API Hub中克隆接口”的操作指导相呼应，用于辅助说明克隆OpenAI相关项目的操作入口。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/OqrNbcrProuVxwxT3EFcKn9Wnod.png)
 
-### 配置环境
+#### 配置环境
 
 ![图片展示了在apifox中配置DeepSeek平台环境的界面。左侧环境管理中，有全局变量、全局参数、Vault Secrets等选项，当前选中“DeepSeek平台”。右侧显示了默认地址为“https://api.deepseek.com/v1”，并有“YOUR_API_KEY”声明变量，其值为对应平台的key。还标注了本地ollama地址“http://localhost:11434/v1”，以及地址使用对应平台地址、声明变量变量名和值等关键信息。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/X2aMb7rmvozNDrxc6CYcfUocnbW.png)
 
@@ -358,7 +357,7 @@ Ollama是一个模型管理工具，有点像Docker，而且命令也很像，�
 
 ![这张图片展示的是在Apifox工具中配置请求参数的界面，是使用OpenAI协议调用大模型相关配置的环节。界面上方的选项卡中，“Body 1”选项处于选中状态，下方的请求体区域以JSON格式编写了调用大模型的相关内容，指定使用的模型为“deepseek-r1:1.5b”，同时设置了消息数组，包含用户角色的提问“你好，你是什么大模型”。该界面内容对应文档中“配置环境”的相关步骤，是完成大模型调用所需的请求参数配置操作的直观呈现。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HuJCbYiz7oASylxuwlCc4kibn0b.png)
 
-# SpringAI入门
+## SpringAI入门
 
 SpringAI整合了全球（主要是国外）的大多数大模型，而且对于大模型开发的三种技术架构都有比较好的封装和支持，开发起来非常方便。
 
@@ -403,13 +402,13 @@ SpringAI整合了全球（主要是国外）的大多数大模型，而且对于
 
 
 
-## 快速入门
+### 快速入门
 
 本节我们学习如何在一个SpringBoot项目中整合SpringAI。
 
 
 
-### 创建工程
+#### 创建工程
 
 创建一个新的SpringBoot工程，**注意JDK版本必须是17**：
 
@@ -489,7 +488,7 @@ SpringAI整合了全球（主要是国外）的大多数大模型，而且对于
 
 
 
-### 引入依赖
+#### 引入依赖
 
 SpringAI完全适配了SpringBoot的自动装配功能，而且给不同的大模型提供了不同的starter，比如：
 
@@ -630,7 +629,7 @@ SpringAI完全适配了SpringBoot的自动装配功能，而且给不同的大�
 
 
 
-### 配置模型信息
+#### 配置模型信息
 
 接下来，我们还要在配置文件中配置模型的参数信息。
 
@@ -669,7 +668,7 @@ spring:
 
 
 
-### ChatClient
+#### ChatClient
 
 `ChatClient`中封装了与AI大模型对话的各种API，同时支持同步式或响应式交互。
 
@@ -714,7 +713,7 @@ public class SpringAIConfiguration {
 
 
 
-### 同步调用
+#### 同步调用
 
 接下来，我们定义一个Controller，在其中接收用户发送的提示词，然后把提示词发送给大模型，交给大模型处理，拿到结果后返回。
 
@@ -762,7 +761,7 @@ public class ChatController {
 
 
 
-### 流式调用
+#### 流式调用
 
 同步调用需要等待很长时间页面才能看到结果，用户体验不好。为了解决这个问题，我们可以改进调用方式为流式调用。
 
@@ -809,7 +808,7 @@ public class ChatController {
 
 
 
-### System设定
+#### System设定
 
 可以发现，当我们询问AI你是谁的时候，它回答自己是DeepSeek Chat，这是大模型底层的设定。如果我们希望AI按照新的设定工作，就需要给它设置System背景信息。
 
@@ -851,7 +850,7 @@ public class SpringAIConfiguration {
 
 
 
-## 推理模型
+### 推理模型
 
 大家知道DeepSeek最广为人知的就是其推理能力，为什么我们刚才没看到DeepSeek的思考流程呢？
 
@@ -868,7 +867,7 @@ SpringAI中默认采用的是deepseek-chat模型，所以看不到推理过程�
 
 
 
-### 修改模型
+#### 修改模型
 
 有两种办法可以修改模型：
 
@@ -907,7 +906,7 @@ public class SpringAIConfiguration {
 
 
 
-### 输出推理过程
+#### 输出推理过程
 
 重启测试后，会发现输出的结果依然是没有思考推理过程。怎么回事？
 
@@ -995,13 +994,13 @@ public class ChatController {
 
 
 
-## 日志功能
+### 日志功能
 
 默认情况下，应用于AI的交互时不记录日志的，我们无法得知SpringAI组织的提示词到底长什么样，有没有问题。这样不方便我们调试。
 
 
 
-### Advisor
+#### Advisor
 
 SpringAI基于AOP机制实现与大模型对话过程的增强、拦截、修改等功能。所有的增强通知都需要实现Advisor接口。
 
@@ -1021,7 +1020,7 @@ Spring提供了一些Advisor的默认实现，来实现一些基本的增强功�
 
 
 
-### 添加日志Advisor
+#### 添加日志Advisor
 
 首先，我们需要修改`SpringAIConfiguration`，给`ChatClient`添加日志Advisor：
 
@@ -1053,7 +1052,7 @@ public class SpringAIConfiguration {
 
 
 
-### 修改日志级别
+#### 修改日志级别
 
 接下来，我们在`application.yaml`中添加日志配置，更新日志级别：
 
@@ -1072,7 +1071,7 @@ logging:
 
 
 
-## 对接前端
+### 对接前端
 
 在浏览器通过地址访问，非常麻烦，也不够优雅。如果能有一个优美的前端页面就好了。
 
@@ -1080,7 +1079,7 @@ logging:
 
 别着急，我提前给大家准备了一个前端页面。而且有两种不同的运行方式。
 
-### npm运行
+#### npm运行
 
 在资料中给大家提供了前端的源代码：
 
@@ -1103,7 +1102,7 @@ npm run dev
 
 
 
-### Nginx运行
+#### Nginx运行
 
 如果你不关心源码，我也给大家提供了构建好的Nginx程序：
 
@@ -1131,7 +1130,7 @@ nginx.exe -s stop
 
 
 
-### 解决CORS问题
+#### 解决CORS问题
 
 前后端在不同域名，存在跨域问题，因此我们需要在服务端解决cors问题。在`com.itheima.ai.config`包中添加一个`MvcConfiguration`类：
 
@@ -1171,7 +1170,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
 请确保你的服务端接口也是这样。
 </callout>
 
-### DeepSeek返回结果问题处理
+#### DeepSeek返回结果问题处理
 
 使用枚举来维护状态
 
@@ -1251,7 +1250,7 @@ public class ChatController {
 }
 ```
 
-### 测试
+#### 测试
 
 启动前端后，访问 http://localhost:5173即可看到页面：
 
@@ -1267,7 +1266,7 @@ public class ChatController {
 
 
 
-## 会话记忆
+### 会话记忆
 
 大型语言模型 （LLM） 是无状态的，这意味着它们不会保留有关以前交互的信息。如果你希望大模型知道之前聊了什么，就需要在每次与大模型交互式携带会话的历史信息，也就是会话的上下文（Context）。当然，你也可以把这个上下文理解成LLM对会话的记忆。
 
@@ -1291,7 +1290,7 @@ SpringAI只提供了**会话记忆**功能（并非会话历史），我们只�
 
 
 
-### ChatMemory
+#### ChatMemory
 
 `ChatMemory`负责管理会话记忆，也就是决定会话历史中的那一部分作为会话记忆。其接口声明如下：
 
@@ -1358,7 +1357,7 @@ public interface ChatMemory {
 
 
 
-### ChatMemoryRepository
+#### ChatMemoryRepository
 
 `ChatMemoryRepository`是SpringAI提供的会话记忆存储接口，强调一下，这个不是会话历史。因为它每次保存会话都会删除旧的会话。
 
@@ -1473,7 +1472,7 @@ public ChatMemory chatMemory(JdbcChatMemoryRepository chatMemoryRepository) {
 
 
 
-### 添加会话记忆Advisor
+#### 添加会话记忆Advisor
 
 有了`ChatMemory`之后，会话记忆就可以交给Spring管理了。Spring底层还是通过AOP的方式来实现的，通过`MessageChatMemoryAdvisor`拦截请求，把消息写入`ChatMemory`。
 
@@ -1505,7 +1504,7 @@ OK，现在聊天会话已经有记忆功能了。
 
 
 
-### 添加会话id
+#### 添加会话id
 
 前面我们看到，ChatMemory的会话记忆管理是基于`conversationId`的，用`conversationId`来区分不同的会话。
 
@@ -1562,7 +1561,7 @@ public class ChatController {
 
 
 
-# 会话管理
+## 会话管理
 
 这里有几个概念我们要区分清楚：
 
@@ -1611,13 +1610,13 @@ public class ChatController {
 
 
 
-## 会话记录管理
+### 会话记录管理
 
 我们需要创建数据库表记录会话id等信息，并提供查询用户会话记录、删除记录等功能。
 
 
 
-### 创建表
+#### 创建表
 
 每次会话的都有自己的唯一标识，也就是**会话id（**`conversationId`**，**以后简称为`chatId`**）。**
 
@@ -1658,7 +1657,7 @@ ENGINE=InnoDB
 
 
 
-### 依赖
+#### 依赖
 
 接着，在项目中引入MyBatisPlus的依赖：
 
@@ -1672,7 +1671,7 @@ ENGINE=InnoDB
 
 
 
-### 创建实体类
+#### 创建实体类
 
 ```Java
 package com.itheima.ai.entity.po;
@@ -1732,7 +1731,7 @@ public class SpringAiChatRecord implements Serializable {
 
 
 
-### 编写mapper
+#### 编写mapper
 
 ```Java
 package com.itheima.ai.mapper;
@@ -1761,7 +1760,7 @@ public interface SpringAiChatRecordMapper extends BaseMapper<SpringAiChatRecord>
 
 
 
-### 编写service
+#### 编写service
 
 ```Java
 package com.itheima.ai.service;
@@ -1833,7 +1832,7 @@ public class SpringAiChatRecordServiceImpl extends ServiceImpl<SpringAiChatRecor
 
 
 
-### 保存记录
+#### 保存记录
 
 修改ChatController中的逻辑，在对话时保存会话记录：
 
@@ -1891,7 +1890,7 @@ public class ChatController {
 
 
 
-## 会话历史
+### 会话历史
 
 会话历史的查询。包含两个接口：
 
@@ -1900,7 +1899,7 @@ public class ChatController {
 
 
 
-### 消息VO
+#### 消息VO
 
 其中，查询会话历史消息，也就是Message集合。但是由于Message并不符合页面的需要，我们需要自己定义一个VO.
 
@@ -1935,7 +1934,7 @@ public class MessageVO {
 
 
 
-### 会话历史接口
+#### 会话历史接口
 
 然后在`com.itheima.ai.controller`包下新建一个`ChatHistoryController`：
 

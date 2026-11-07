@@ -4,12 +4,11 @@ date: 2026-11-06
 aliases:
   - "02 Vue_Axios异步请求_Maven环境配置"
 ---
+# 02 Vue_Axios异步请求_Maven环境配置
 
-<title>02 Vue_Axios异步请求_Maven环境配置</title>
+## Vue
 
-# Vue
-
-## 集成vue环境
+### 集成vue环境
 
 在Vue官网的快速学习中有多种官方定义好的构建方法，通过这些构建方法可以实现我们对HTML的渲染
 
@@ -34,7 +33,7 @@ aliases:
 </script>
 ```
 
-## Vue方法
+### Vue方法
 
 Vue的模块中对方法的使用
 
@@ -66,7 +65,7 @@ Vue的模块中对方法的使用
 
 
 
-## Vue常用指令
+### Vue常用指令
 
 Vue指令展示data()中数据绑定methods()方法，入口函数中发送页面的第一次请求
 
@@ -94,7 +93,7 @@ Vue中定义数据，必须通过data方法来定义，data方法返回值是一
 Vue应用实例接管的区域是 '#app'，超出这个范围，就不受Vue控制了，所以vue的插值表达式，一定写在 `<div id="app">...</div>` 的里面 。
 </callout>
 
-#### v-for
+##### v-for
 
 **作用：**列表渲染，遍历容器的元素或者对象的属性
 
@@ -115,7 +114,7 @@ Vue应用实例接管的区域是 '#app'，超出这个范围，就不受Vue控�
 注意：遍历的数组，必须在data中定义； 要想让哪个标签循环展示多次，就在哪个标签上使用 v-for 指令。
 </callout>
 
-#### v-bind
+##### v-bind
 
 作用：动态为HTML标签绑定属性值，如设置href，src，style样式等。
 
@@ -127,7 +126,7 @@ Vue应用实例接管的区域是 '#app'，超出这个范围，就不受Vue控�
 注意：v-bind 所绑定的数据，必须在data中定义/或基于data中定义的数据而来。
 </callout>
 
-#### v-if
+##### v-if
 
 **作用：**这两类指令，都是用来控制元素的显示与隐藏的
 
@@ -156,7 +155,7 @@ Vue应用实例接管的区域是 '#app'，超出这个范围，就不受Vue控�
 注意：v-else-if必须出现在v-if之后，可以出现多个； v-else 必须出现在v-if/v-else-if之后 。 
 </callout>
 
-#### v-model
+##### v-model
 
 - 作用：在表单元素上使用，**双向数据绑定**。可以方便的 **获取** 或 **设置** 表单项数据 
 - 语法：`v-model="变量名"`
@@ -168,7 +167,7 @@ Vue应用实例接管的区域是 '#app'，超出这个范围，就不受Vue控�
 注意：v-model 中绑定的变量，必须在data中定义。
 </callout>
 
-#### v-on
+##### v-on
 
 作用：为html标签绑定事件（添加时间监听）
 
@@ -191,7 +190,7 @@ Vue应用实例接管的区域是 '#app'，超出这个范围，就不受Vue控�
 
 以上都是Vue中常用的一些指令，而如果想了解Vue中全部的指令，可以参照官方文档：`https://cn.vuejs.org/api/built-in-directives.html#v-text`
 
-## 基于Vue渲染页面
+### 基于Vue渲染页面
 
 ```HTML
 <!DOCTYPE html>
@@ -440,11 +439,11 @@ Vue应用实例接管的区域是 '#app'，超出这个范围，就不受Vue控�
 
 ![这张图片展示了浏览器中打开的“员工信息管理”页面，该页面是Vue渲染完成后的效果。页面顶部设有姓名输入框、预设为“男”的性别选择框、预设为“班主任”的职位选择框，搭配“查询”“清空”两个操作按钮；下方以表格形式呈现员工信息，表格包含序号、姓名、头像、性别、职位、入职日期、更新时间字段，其中显示了两条员工数据，第一条员工姓名为谢逊，入职日期为2023-06-09，第二条为韦一笑，入职日期为2020-05-09，两条数据的职位均为班主任。](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/UwZBbKn7ooONX2xCGw4cyklXnxP.png)
 
-# 发送异步请求
+## 发送异步请求
 
 使用原生的Ajax请求的代码编写起来还是比较繁琐的，所以接下来学习一门更加简单的发送Ajax请求的技术Axios 。Axios是对原生的AJAX进行封装，简化书写。Axios官网是：`https://www.axios-http.cn`
 
-## Axios入门程序
+### Axios入门程序
 
 Axios的使用比较简单，主要分为2步：
 
@@ -476,7 +475,7 @@ axios.post(请求路径,参数).then(结果=>{
 注意：在使用axios时，在axios之后，输入 thenc 会自动生成成功及失败回调函数结构 。
 </callout>
 
-## 请求方式别名
+### 请求方式别名
 
 Axios还针对不同的请求，提供了别名方式的api，具体格式如下：
 
@@ -513,7 +512,7 @@ axios.post("https://mock.apifox.cn/m1/3083103-0-default/emps/update","id=1").the
 
 可以通过async、await可以让异步变为同步操作。async就是来声明一个异步方法，await是用来等待异步任务执行。
 
-## vue+axios使用案例
+### vue+axios使用案例
 
 ```Java
 <!DOCTYPE html>
@@ -793,15 +792,15 @@ axios.post("https://mock.apifox.cn/m1/3083103-0-default/emps/update","id=1").the
 </html>
 ```
 
-# maven环境配置
+## maven环境配置
 
-## maven配置步骤
+### maven配置步骤
 
 <whiteboard token="YU9Twzfq2h7sJ9bYVstcGb0Zn0e"></whiteboard>
 
 
 
-## maven中的标签的含义
+### maven中的标签的含义
 
 <callout emoji="✍️">
 - `<project>`` `：pom文件的根标签，表示当前maven项目
@@ -823,7 +822,7 @@ axios.post("https://mock.apifox.cn/m1/3083103-0-default/emps/update","id=1").the
 - `<project.build.sourceEncoding>` : 设置项目的字符集
 </callout>
 
-## 创建maven项目
+### 创建maven项目
 
 先退出所有项目，在如下设置中依次选中
 
@@ -843,7 +842,7 @@ axios.post("https://mock.apifox.cn/m1/3083103-0-default/emps/update","id=1").the
 
 ![图片展示了IntelliJ IDEA中设置Maven项目相关配置的界面。左侧导航栏中，以红色框突出显示了“Build, Execution, Deployment”“Compiler”“Java Compiler”等选项。右侧“Compiler”选项卡下，有“Use compiler:”下拉框，选中“Javac”，“Project bytecode version”和“Per-module bytecode version”均设置为17，下方还有“Java Options”相关设置。该图片与文档中创建Maven项目时设置默认JDK版本的上下文相关，直观呈现了设置步骤中涉及的界面及关键配置项。](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/N1kPbqUKfoACrVxp1itcWC3mnhb.png)
 
-## 生命周期
+### 生命周期
 
 Maven的生命周期就是为了对所有的构建过程进行抽象和统一。 描述了一次项目构建，经历哪些阶段。
 
@@ -903,7 +902,7 @@ IDEA工具为了方便程序员使用maven生命周期，在右侧的maven工具
     clean不会运行，compile会运行。  因为compile与package属于同一套生命周期，而clean与package不属于同一套生命周期。
 </callout>
 
-## Java项目文件夹层级分类
+### Java项目文件夹层级分类
 
 
 

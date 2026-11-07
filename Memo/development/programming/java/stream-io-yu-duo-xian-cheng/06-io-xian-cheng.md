@@ -4,14 +4,13 @@ date: 2026-11-06
 aliases:
   - "06 IO, 线程"
 ---
+# 06 IO, 线程
 
-<title>06 IO, 线程</title>
+## 一 、IO
 
-# 一 、IO
+### 字符流
 
-## 字符流
-
-###  编码表的故事
+####  编码表的故事
 
 <callout emoji="⚠️">
 *ASCII: 单个字节*  
@@ -25,7 +24,7 @@ aliases:
     *在unicode中, 中文大部分占三个字节*
 </callout>
 
-###  **编码和解码**
+####  **编码和解码**
 
 **将字符串的内容参照码表转成字节的动作叫做编码**
 
@@ -49,7 +48,7 @@ aliases:
 
 
 
-###   字符输出流
+####   字符输出流
 
 作用: 将程序中的数据以字符的方式写到磁盘中
 
@@ -130,7 +129,7 @@ private static void demo2() throws IOException {
 
 
 
-###  字符输入流
+####  字符输入流
 
 作用: 将磁盘中的数据以字节的方式读到程序中
 
@@ -208,7 +207,7 @@ private static void demo3() throws IOException {
           *new String(char[] arr, int start, int len);*
 </callout>
 
-###  字节缓冲流(了解)
+####  字节缓冲流(了解)
 
 
 
@@ -267,7 +266,7 @@ private static void demo01() throws IOException {
 
 ![图片展示了字符缓冲流中读写文件的流程。上方为读文件流程，先读入文件a.flv，再通过缓冲区写入文件b.flv；中间为写文件流程，先写入文件b.flv，再通过缓冲区读取文件a.flv；下方为读写文件流程，先读入文件a.flv，再通过缓冲区写入文件b.flv。每个流程均标注了读写次数，如读文件流程为2次，写文件流程为2次，读写文件流程为2 * 2次。该图与上下文介绍的字符缓冲流相关，直观呈现了其读写文件的操作步骤。](../../../../../Attachments/development/programming/java/stream-io-yu-duo-xian-cheng/D94lbemFpo59XVxjLG0cle0ynXo.png)
 
-### 字符缓冲流(重点!!!)
+#### 字符缓冲流(重点!!!)
 
 *作用：*
 
@@ -324,7 +323,7 @@ private static void demo02() throws IOException {
 
 
 
-#### 综合练习
+##### 综合练习
 
 题目: 现在已知一个乱序的出师表的文章, 请利用所学习IO流以及之前的技术, 将正确顺序出师表存入文件
 
@@ -372,11 +371,11 @@ private static void demo03() throws IOException {
 
 
 
-# 二、线程
+## 二、线程
 
 
 
-## 2.1  概念
+### 2.1  概念
 
 **什么是线程? 什么是进程?**
 
@@ -403,7 +402,7 @@ private static void demo03() throws IOException {
 (2) 我们所有的代码都是被**线程**在执行!!!
 </callout>
 
-## **2.2 线程创建**
+### **2.2 线程创建**
 
 **第一种:** 
 
@@ -492,7 +491,7 @@ public class MyRunnable implements Runnable {
 
 ![这是线程运行后的输出结果，呈现出明显的并发执行的特征。图中输出的内容包含两组交替的字符串，一组是“我就是我，是不一样的烟火”搭配从0到3的数字序号，另一组是“一闪一闪亮晶晶”搭配对应的数字序号，两组内容交错打印，顺序无规律，直观印证了文档中提到的“运行后打印重叠，出现并发现象”，体现了多线程执行时任务交替推进的效果。](../../../../../Attachments/development/programming/java/stream-io-yu-duo-xian-cheng/VxphbBuxIojJUUxkvbYcfLXbnOh.png)
 
-##   2.3 线程的方法
+###   2.3 线程的方法
 
 ```Java
 void start() 开启线程
@@ -541,7 +540,7 @@ void join() 加入到另外一个线程的线程栈中运行
 
 
 
-## 2.4 多线程操作共享数据的安全问题
+### 2.4 多线程操作共享数据的安全问题
 
 多线程操作共享数据为啥会出现线程安全???
 
@@ -703,7 +702,7 @@ void unlock();
 
 
 
-## 2.5 线程池
+### 2.5 线程池
 
 作用:
 
@@ -813,7 +812,7 @@ public class Test {
         new ThreadPoolExecutor.CallerRunsPolicy() 不拒绝, 自己处理不了, 让主线程处理!!!
 ```
 
-## 2.6 线程的状态
+### 2.6 线程的状态
 
 
 
@@ -856,7 +855,7 @@ public class Test {
 
 
 
-## ide代码提示快捷方法修改
+### ide代码提示快捷方法修改
 
 进入设置如下图修改：
 

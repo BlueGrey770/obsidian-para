@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "拓展内容-MCP"
 ---
+# 拓展内容-MCP
 
-<title>拓展内容-MCP</title>
-
-# 一、QA
+## 一、QA
 
 1. openAI  的api key无法传入403，无法识别APIkey
 
@@ -422,11 +421,11 @@ Functioncalling 怎么获取 security中的用户
 
 
 
-# 二、智能体
+## 二、智能体
 
 
 
-## 什么是智能体
+### 什么是智能体
 
 **智能体**，英文叫Agent，它指的是能够**自主执行任务的智能系统**。与传统软件只能按照程序员预先设定的流程执行步骤不同，AI Agent 可以在较大自主性下替用户完成复杂的工作流。
 
@@ -456,9 +455,9 @@ Functioncalling 怎么获取 security中的用户
 
 
 
-# 1. Spring AI MCP
+## 1. Spring AI MCP
 
-## 1.1. 什么是MCP
+### 1.1. 什么是MCP
 
 MCP（Model Context Protocol ）叫作模型上下文协议，是一种标准化协议，它能够使 AI 大模型以结构化的方式与外部工具和资源进行交互。它支持多种传输机制，以在不同环境中提供灵活性。
 
@@ -473,13 +472,13 @@ MCP（Model Context Protocol ）叫作模型上下文协议，是一种标准化
 - 在SpringAI中编写的Tools，可以放到Python中使用吗？，显然是不可以的，要想让Python中使用，就得使用Python语言重写一次Tool，才能使用，这就是不通用性的体现。
 - 在企业项目开发中，我们采用了Spring AI框架来构建智能体。这些智能体通常需要执行一系列通用功能，如天气查询、商品检索及下单等。基于以往的做法，每当开发新项目时，都需要重新编写实现这些功能的工具（Tool），这显然不利于代码复用。为解决这一问题，可以采用MCP标准进行服务器端开发，并将这些常用工具封装成服务接口。这样一来，其他的智能体只需通过调用该服务即可轻松访问所需功能，从而极大地提高了代码的复用性和开发效率。
 
-## 1.2. 技术架构
+### 1.2. 技术架构
 
 SpringAI对MCP做了支持，简化了Java项目中的MCP开发。参考文档：
 
 [https://docs.spring.io/spring-ai/reference/1.0/api/mcp/mcp-overview.html](https://docs.spring.io/spring-ai/reference/1.0/api/mcp/mcp-overview.html)
 
-### 1.2.1. MCP Client
+#### 1.2.1. MCP Client
 
 ![这张图展示了Spring AI中MCP的技术架构，核心位于上方的Java Gen AI Application，其下方连接了多个Java MCP Client实例，这些客户端支持MCP Protocol（stdio、sse），部分客户端对接了Web APIs及对应的远程MCP服务器（remote 1、remote N）。图中还包含三类MCP服务器，分别是基于Brave的MCP Server、对接本地文件夹的MCP Server、对接SQLite Server的MCP Server，这些服务器既支持Stdio传输，也可与外部互联网的搜索能力交互。](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/BLPfbPVWLoU4QYxmztTcVHrOnId.jpg)
 
@@ -502,7 +501,7 @@ MCP Client 负责建立和管理与 MCP 服务器之间的连接，以及管理�
   - 基于 Java HttpClient 的 SSE 客户端传输
   - 用于响应式 HTTP 流的 WebFlux SSE 客户端传输
 
-### 1.2.2. MCP Server
+#### 1.2.2. MCP Server
 
 ![图片展示了MCP Server的两种架构。左侧为基于SSE（服务器发送事件）的架构，包含Client Process（Java LLM应用、Python MCP客户端、JavaScript MCP客户端）、MCP Client API、MCP Protocol（SSE）、Server Process（Web容器、Java MCP Server）、DBs等组件。右侧为基于STD IO（标准输入输出）的架构，同样有Client Process（Java LLM应用、Python MCP客户端、JavaScript MCP客户端）、MCP Client API、MCP Protocol（STDIO）、Server Process（Web容器、Java MCP Server）、DBs等组件。该图与文档中介绍MCP Server传输实现的内容相关，直观呈现了两种架构的组成与连接关系。](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/F4tjbQ8S9oPUjSxF0jUcecWInGd.jpg)
 
@@ -522,11 +521,11 @@ MCP Client 负责建立和管理与 MCP 服务器之间的连接，以及管理�
   - 用于响应式HTTP流的WebFlux SSE服务器传输
   - WebMVC SSE 服务器传输，用于基于 Servlet 的 HTTP 流式传输
 
-## 1.3. MCP Client实战
+### 1.3. MCP Client实战
 
 下面我们将基于`SpringAI`的`MCP`功能进行对`MCP`的`Client`进行学习。
 
-### 1.3.1. 功能需求
+#### 1.3.1. 功能需求
 
 现在我们需要给AI大模型增强2个功能：
 
@@ -539,7 +538,7 @@ MCP Client 负责建立和管理与 MCP 服务器之间的连接，以及管理�
 
 显然，大模型如果不做增强的话，是做不到的，下面我们就基于MCP进行实现。
 
-### 1.3.2. 拉取代码
+#### 1.3.2. 拉取代码
 
 使用git拉取代码，地址：[https://gitee.com/zhijun.zhang/my-spring-ai-mcp.git](https://gitee.com/zhijun.zhang/my-spring-ai-mcp.git)
 
@@ -549,7 +548,7 @@ MCP Client 负责建立和管理与 MCP 服务器之间的连接，以及管理�
 
 ![这张图片是接口调试工具的操作界面，用于测试Spring AI MCP的大模型对话功能。界面上方显示向地址为http://localhost:8100/chat/stream的POST接口发起请求，请求体为JSON格式，携带内容为“你好”的问题与标识为“123”的会话ID；下方时间线区域展示了接口返回的多段内容，包括“！”“今天”“过得怎么样？”等文本信息，以及标识对话结束的“\[END\]”，最终显示已断开连接，直观呈现了该服务的对话交互效果。](https://feishu.cn/file/WDjVbl5TgoJPtKxSmsIcQHgWnzf)
 
-### 1.3.3. 实战1：控制浏览器
+#### 1.3.3. 实战1：控制浏览器
 
 我们的需求是，给大模型提问：`打开网站：https://www.itcast.cn/，总结下这个网站的内容`，就会进行相应的操作。
 
@@ -666,7 +665,7 @@ public class SpringAIConfig {
 
 ![这张图片展示了一个浏览器界面，访问的是传智教育的官方网站（域名itcast.cn），页面中包含该机构的教育课程信息，如JavaEE、Python+大数据开发等众多课程类别。页面核心区域有醒目的红色宣传横幅，内容是针对大学生就业难的相关培训推广信息，右侧还弹出了传智教育的咨询会话窗口，显示了客服的问候及介绍内容，这张图片的场景与上下文里的MCP Client实战技术部署内容无关，更贴合传智教育相关的推广与咨询界面。](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/CeoxbWq9cotmmWxXLYRci64znja.png)
 
-### 1.3.4. 原理分析
+#### 1.3.4. 原理分析
 
 通过上面的实战，已经可以看到大模型可以控制浏览器了，是怎么做到的呢？
 
@@ -676,11 +675,11 @@ public class SpringAIConfig {
 
 而这些工具的开发，并不是我们自己做的，也不是用java开发的，是别人开发好的，遵循了MCP协议，所以就可以集成到SpringAI中使用了，而这工具就是用来控制浏览器的，所以就实现了上面的效果。
 
-### 1.3.5. 实战2：ip地址所在地
+#### 1.3.5. 实战2：ip地址所在地
 
 需求是 ，向大模型提问：`查询ip所在地：223.11.151.238`，就可以查询到ip地址的所在地。要想实现这个功能，可以借助与高德地图服务来实现，也不需要我们自己来对接，直接基于写好的MCP服务即可。
 
-#### 1.3.5.1. 查找MCP服务
+##### 1.3.5.1. 查找MCP服务
 
 首先，需要解决一个问题，就是MCP服务从哪里能找到呢？我们可以通过这个网站来查找：[https://mcp.so/zh/](https://mcp.so/zh/)
 
@@ -692,7 +691,7 @@ public class SpringAIConfig {
 
 ![图片展示的是MCP平台中“工具”页面。页面上方有“概览”“内容”“工具”三个选项卡，当前选中“工具”。在“工具”下，有maps_regeocode、maps_geo两个选项，其中maps_ip_location选项被红色箭头指向，其下方有“有提供IP查询的工具”的提示，且有“ip”输入框，提示输入IP地址，下方还有“运行”按钮。该图片与文档中介绍MCP Client集成到项目时增加配置的内容相关，展示了其中提供IP查询功能的工具。](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/H6esb9fxSoOChzxxnlacArLXnWb.png)
 
-#### 1.3.5.2. 集成到项目
+##### 1.3.5.2. 集成到项目
 
 首先通过npm安装：
 
@@ -738,29 +737,29 @@ npm install -g @amap/amap-maps-mcp-server --registry=https://registry.npmmirror.
 
 ![这张图片展示的是高德地图开放平台申请密钥时的配置页面，明确标注了需填写的“服务平台”相关选项，其中“Web服务”选项被红色箭头指向并选中，符合文档中提醒申请AMAP_MAPS_API_KEY时服务平台需选择Web服务的要求。页面还设有Key名称输入项，提示其支持的字符规则，以及可使用服务列表、IP白名单配置区域，同时在底部有相关服务协议的阅读提示，页面来源标注为黑马程序员-花和尚。](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/Cg5FbVerfoctJNxHwHuct8eVnQh.png)
 
-#### 1.3.5.3. 测试
+##### 1.3.5.3. 测试
 
 重启服务，进行测试：
 
 ![这张图片展示了测试MCP相关功能的操作结果，界面为POST请求页面及下方的时间线响应信息。上方Body区域的动态值中，带有“question”“sessionId”参数，question值为“查询ip所在地:223.11.151.238”。时间线区域的响应内容里，明确显示已成功查询到该IP的所在地信息，具体包含IP前缀22、3.11、.151、.238，以及对应的所在地为中国山西省太原市，还提示有更详细的地理位置信息，右侧配有红色箭头标注“已经查询到所在地信息了”，体现测试功能的正常运行结果。](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/T6nVbluZMoCmDoxPEXscoSsOngc.png)
 
-### 1.3.6. 练习：MCP操作Redis
+#### 1.3.6. 练习：MCP操作Redis
 
 按照上述的操作方法，为大模型增加Redis的操作工具。参考：
 
 [https://mcp.so/zh/server/redis/modelcontextprotocol](https://mcp.so/zh/server/redis/modelcontextprotocol)
 
-## 1.4. MCP Server实战
+### 1.4. MCP Server实战
 
 前面我们都是使用的已经写好的MCP Server，实际上，也可以自己来实现的。
 
 接下来，我们将写一个自己的天气查询服务，将他封装成MCP Server，这样需要的天气查询服务的大模型，就可以直接集成了。
 
-### 1.4.1. 创建my-spring-ai-mcp-server
+#### 1.4.1. 创建my-spring-ai-mcp-server
 
 ![这张图片展示的是创建新项目模块的配置界面，界面左侧选中了Java选项，顶部对应“New Module”窗口，界面右侧将项目名称设置为“my-spring-ai-mcp-server”，项目构建系统为Maven，JDK选择Project JDK 17，Parent模块关联“my-spring-ai-mcp”，此界面对应文档中“1.4.1.创建my-spring-ai-mcp-server”的实操步骤，是搭建Spring AI MCP Server过程里的模块创建操作界面，用于完成天气查询服务所封装的MCP Server的项目创建初始配置。](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/D0vAbtC5RorbNhxDG9ZcJ6L3nsb.png)
 
-### 1.4.2. 导入依赖
+#### 1.4.2. 导入依赖
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -791,7 +790,7 @@ npm install -g @amap/amap-maps-mcp-server --registry=https://registry.npmmirror.
 </project>
 ```
 
-### 1.4.3. 编写配置
+#### 1.4.3. 编写配置
 
 ```YAML
 server:
@@ -810,7 +809,7 @@ spring:
         type: ASYNC # 服务类型 异步，支持 SYNC 和 ASYNC
 ```
 
-### 1.4.4. 启动类
+#### 1.4.4. 启动类
 
 ```Java
 package cn.itcast;
@@ -853,7 +852,7 @@ public class MCPServerApplication {
 }
 ```
 
-### 1.4.5. 编写工具
+#### 1.4.5. 编写工具
 
 ```Java
 package cn.itcast.dto;
@@ -933,7 +932,7 @@ public class WeatherService {
 }
 ```
 
-### 1.4.6. MCPServer配置
+#### 1.4.6. MCPServer配置
 
 ```Java
 package cn.itcast.config;
@@ -960,7 +959,7 @@ public class McpConfig {
 }
 ```
 
-### 1.4.7. 启动测试
+#### 1.4.7. 启动测试
 
 浏览器访问地址：[http://localhost:8101/sse](http://localhost:8101/sse)
 
@@ -968,7 +967,7 @@ public class McpConfig {
 
 说明，MCPServer已经启动成功。
 
-### 1.4.8. 在MCPClient中集成服务
+#### 1.4.8. 在MCPClient中集成服务
 
 只需要在MCPClient中指定服务地址即可。
 
@@ -1007,7 +1006,7 @@ spring:
 
 ![图片展示了在MCPClient中集成服务后的调试界面。上方代码片段为“tools.getToolCallbacks()”，下方结果中显示了多个ToolCallback对象，其中第0个对象的“tool”属性值为“getWeather”，其“name”为“getWeather”，“description”为“根据城市id查询天气信息”，“inputSchema”为“JsonSchema@8337”等信息。该图片与上下文紧密相关，直观呈现了在MCPClient中集成服务后，通过工具获取到的天气查询工具相关信息，验证了服务集成的正确性。](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/BTuOb59MUo5bkYxfOTscabQ4nvb.png)
 
-### 1.4.9. 功能测试
+#### 1.4.9. 功能测试
 
 ![这张图展示了在开发测试工具中，通过指定参数向服务发送请求后，成功获取了对应天气信息的结果。图中POST请求的Body里包含"question"与"sessionId"参数，下方的响应内容清晰显示了查询到的北京天气相关信息，包括温度为16.3℃、最低温度1℃等具体数据，还配有红色箭头标注“查询到天气信息了”，对应了文档中在MCPClient集成服务后查看天气工具效果的相关说明，验证了MCP Server与Client交互的天气查询功能可以正常运行。](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/JsnCbmoQCoqUbMx2YmzcZiMtnRh.png)
 
@@ -1017,13 +1016,13 @@ spring:
 
 
 
-# 在trae中使用MCP
+## 在trae中使用MCP
 
 MCP（Model Context Protocol)，模型上下文协议，由Claude的母公司，Anthropic于2024年底开源发布。
 
 
 
-## 什么是MCP
+### 什么是MCP
 
 来看看官网的定义：
 
@@ -1063,7 +1062,7 @@ MCP采用的是CS架构，分为Client和Server端：
 
 
 
-## MCP服务
+### MCP服务
 
 我们可以在MCP的官方找到常见的MCP服务：
 
@@ -1093,13 +1092,13 @@ mcp.so，收录了10000+MCP服务：
 
 
 
-## Trae集成MCP
+### Trae集成MCP
 
 字节出品的AI开发工具Trae现已集成了MCP功能，非常强大。接下来我们来看看如何在Trae中使用MCP。
 
 
 
-## 添加MCP服务
+### 添加MCP服务
 
 在Trae聊天界面中，点击右上角的齿轮：
 
@@ -1153,7 +1152,7 @@ Trae集成了一个MCP市场，其中有大量优质MCP：
 
 
 
-## 创建智能体
+### 创建智能体
 
 接下来，我们在Trae中创建一个智能体：
 

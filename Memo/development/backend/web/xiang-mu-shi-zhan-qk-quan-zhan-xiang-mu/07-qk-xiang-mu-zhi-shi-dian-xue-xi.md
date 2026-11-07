@@ -4,10 +4,9 @@ date: 2026-11-06
 aliases:
   - "07 qk项目知识点学习"
 ---
+# 07 qk项目知识点学习
 
-<title>07 qk项目知识点学习</title>
-
-# 常见的sql 小函数
+## 常见的sql 小函数
 
 ```SQL
     ifnull（列名，默认值）当某列中的值为的时候采用默认值替换
@@ -113,9 +112,9 @@ FROM users;
 
 ```
 
-# git
+## git
 
-## 基本配置
+### 基本配置
 
 1. 打开Git Bash
 2. 设置用户信息
@@ -134,7 +133,7 @@ git config --global user.name
 git config --global user.email
 ```
 
-## 获取本地仓库
+### 获取本地仓库
 
 要使用Git对我们的代码进行版本控制，首先需要获得本地仓库
 
@@ -156,7 +155,7 @@ git config --global user.email
 | git commit | 将暂存区的文件修改提交到版本库 | git commit –m <message>git commit [file1][file2] –m <message> |
 | git log | 查看操作日志 | git log |
 
-## 基础操作指令
+### 基础操作指令
 
 Git工作目录下对于文件的修改(增加、删除、更新)会存在几个状态
 
@@ -174,7 +173,7 @@ Git工作目录下对于文件的修改(增加、删除、更新)会存在几个
 2. git commit (暂存区 --> 本地仓库)
 </callout>
 
-### 查看修改的状态（status）
+#### 查看修改的状态（status）
 
 - 作用：查看的修改的状态（暂存区、工作区）
 - 命令形式：git status
@@ -188,14 +187,14 @@ Git工作目录下对于文件的修改(增加、删除、更新)会存在几个
   - Modified 已修改状态
   - Staged 已暂存状态
 
-### 添加工作区到暂存区(add)
+#### 添加工作区到暂存区(add)
 
 - 作用：添加工作区一个或多个文件的修改到暂存区
 - 命令形式：git add 单个文件名|通配符
 
   - 将所有修改加入暂存区：git add .
 
-### 提交暂存区到本地仓库(commit)
+#### 提交暂存区到本地仓库(commit)
 
 - 作用：提交暂存区汇总所有内容到本地仓库的当前分支
 - 命令形式：git commit -m '注释内容'
@@ -205,7 +204,7 @@ Git工作目录下对于文件的修改(增加、删除、更新)会存在几个
 提交完后显示缓冲区没有东西可以提交了
 </callout>
 
-### 查看提交日志(log)
+#### 查看提交日志(log)
 
 - 作用:查看提交记录
 - 命令形式：git log [option]
@@ -223,7 +222,7 @@ Git工作目录下对于文件的修改(增加、删除、更新)会存在几个
 提交时候添加的备注会被放到日志中
 </callout>
 
-### 版本回退(reset)
+#### 版本回退(reset)
 
 撤回到之前的某个操作，会去删除 撤回到位置之后的版本
 
@@ -242,7 +241,7 @@ Git工作目录下对于文件的修改(增加、删除、更新)会存在几个
 git reset --hard commitID既可以做版本回退，也可以做版本还原 还可以做取消暂存
 </callout>
 
-## Git远程仓库操作
+### Git远程仓库操作
 
 常见命令如下：
 
@@ -254,7 +253,7 @@ git reset --hard commitID既可以做版本回退，也可以做版本还原 还
 | git push <shortname> [branchname] | 推送到远程仓库 | git push origin master |
 | git pull <shortname> [branchname] | 从远程仓库拉取 | git pull origin master |
 
-### 查看远程仓库 (git remote)
+#### 查看远程仓库 (git remote)
 
 如果要查看已经配置的远程仓库服务器，可以执行 git remote 命令，它会列出每一个远程服务器的简称。
 
@@ -267,7 +266,7 @@ git reset --hard commitID既可以做版本回退，也可以做版本还原 还
   - 远端名称，默认是origin，取决于远端服务器设置
   - 仓库路径，从远端服务器获取此SSH，
 
-### 添加远程仓库 (git remote add)
+#### 添加远程仓库 (git remote add)
 
 - 作用：配置、添加远程仓库
 - 语法：`git remote add 简称 远程仓库地址`
@@ -277,7 +276,7 @@ git reset --hard commitID既可以做版本回退，也可以做版本还原 还
 注意：一个本地仓库可以关联多个远程仓库，多个远程仓库的地址的简称不能重复。（一般只会关联一个）
 </callout>
 
-### 推送到远程仓库(git push)
+#### 推送到远程仓库(git push)
 
 - 作用：将本地仓库的文件推送到远程仓库中。
 - 语法：`git push [-f] [--set-upstream] [远端名称 本地分支名 ]`
@@ -297,7 +296,7 @@ git push --set-upstream origin master
 
 要访问远程仓库了，而访问远程仓库是需要输入账号、密码的，所以需要在弹窗中输出用户名、密码。（仅仅在第一次访问gitee时需要输入，后续就不用了，因为windows系统会自动记录账号密码）
 
-### 从远程仓库克隆 (git clone)
+#### 从远程仓库克隆 (git clone)
 
 - 作用：Git 克隆的是该 Git 仓库服务器上的几乎所有数据（包括日志信息、历史记录等）下载到本地，获得一份Git 远程仓库的拷贝。
 - 语法：`git clone 远程仓库地址`
@@ -309,7 +308,7 @@ git push --set-upstream origin master
 **提示：**由于这个本地仓库是从远程仓库克隆下来的，所以这个本地仓库已经自动关联的这个远程仓库。
 </callout>
 
-### 从远程仓库中抓取和拉取 (git pull)
+#### 从远程仓库中抓取和拉取 (git pull)
 
 - 作用：从远程仓库获取最新版本并合并到本地仓库
 - 语法：`git pull 远程仓库简称 分支名称`
@@ -332,7 +331,7 @@ git push --set-upstream origin master
 解决此问题可以在git pull命令后加入参数--allow-unrelated-histories
 </callout>
 
-## 分支操作
+### 分支操作
 
 - 分支是Git 使用过程中非常重要的概念。使用分支意味着你可以把你的工作从开发主线上分离开来，以免影响开发主线。
 - 本地仓库和远程仓库中都有分支，同一个仓库可以有多个分支，各个分支相互独立，互不干扰。
@@ -351,7 +350,7 @@ git push --set-upstream origin master
 | git merge <branch-name> | 合并指定分支到当前分支 | git merge v1 |
 | git branch –d <branch-name> | 删除分支 | git branch –d v1 |
 
-### 查看分支
+#### 查看分支
 
 - 查看分支命令：`git branch`
 
@@ -359,7 +358,7 @@ git push --set-upstream origin master
   - `git branch -r`         列出所有远程分支
   - `git branch -a`         列出所有本地分支和远程分支
 
-### 创建分支
+#### 创建分支
 
 - 格式：`git branch 分支名称`
 - 样例：`git branch v1`
@@ -368,7 +367,7 @@ git push --set-upstream origin master
 创建的新分支会建立在当前分支的版本之上，所以新建的分支会有当前分支的内容
 </callout>
 
-### 切换分支
+#### 切换分支
 
 一个仓库中可以有多个分支，切换分支命令格式：`git checkout 分支名称`，例如：`git checkout b1`
 
@@ -381,14 +380,14 @@ git push --set-upstream origin master
 **提示：**在命令行的后面会显示出当前所在分支，如上图所示 (b1)。
 </callout>
 
-### 推送分支至远程
+#### 推送分支至远程
 
 - 推送至远程仓库分支命令格式：`git push 远程仓库简称 分支命令`
 - 样例：`git push origin b1`
 
 推送完成后可以查看远程仓库
 
-### 合并分支
+#### 合并分支
 
 - 合并分支就是将两个分支的文件进行合并处理，命令格式：`git merge 分支`，表示将指定分支代码合并到当前分支
 - 样例：`git merge b1` (注意: 操作之前，需要切换到master分支； 表示将b1分支的代码，合并到master分支)
@@ -402,7 +401,7 @@ master是我们的主线，一般将分支合并到主线上面去
 步骤：切换到master分支，然后执行合并命令，执行完后，分支上的资源、文件就会被合并到主线上面去
 </callout>
 
-### 删除分支
+#### 删除分支
 
 如果指定的分支，不需要了，可以直接将分支删除掉。
 
@@ -418,7 +417,7 @@ master是我们的主线，一般将分支合并到主线上面去
 我们去删除没有合并的分支的时候就会出现删除不了的情况，此时就可以使用D
 </callout>
 
-### 分支冲突
+#### 分支冲突
 
 当合并分支后，两个或者多个分支对同一个文件的同一个地方进行修改的时候（不是同一个地方是不会出现冲突的 ），此时git就不知道要取哪个分支修改的值，是取a分支修改的值，还是取b分支修改的值呢，此时就产生了冲突
 
