@@ -15,12 +15,12 @@ tags:
 
 ## 分支一览
 
-| 分支 | 用途 | 状态 |
-| --- | --- | --- |
-| `master` | 主分支，日常笔记在此提交 | 活跃 |
-| `pinyin-filenames` | 文件名采用**拼音 slug**（如 `mian-xiang-dui-xiang.md`）的整库快照，作为命名方案的可回溯基线 | 归档基线，只读 |
+| 分支 | 命名方案 | 用途 | 状态 |
+| --- | --- | --- | --- |
+| `master` | 英文 slug（`oop/05-oop-programming.md`） | 主分支，日常笔记在此提交 | 活跃 |
+| `pinyin-filenames` | 拼音 slug（`mian-xiang-dui-xiang/05-mian-xiang-dui-xiang-bian-cheng.md`） | 改名前的整库快照，命名方案的可回溯基线 | 归档基线，只读 |
 
-两个分支在建立时指向同一个提交，内容完全一致；后续命名方案若调整，从 `master` 继续，`pinyin-filenames` 保留现状不动。
+两个分支在建立时指向同一个提交；2026-11-07 master 完成全库英文化（68 个目录、164 个文件名），旧拼音名已写入各笔记的 `aliases`，因此日常检索不受影响。需要看改名前的目录树时切到 `pinyin-filenames`，`master` 不受影响。
 
 ## 常用操作
 

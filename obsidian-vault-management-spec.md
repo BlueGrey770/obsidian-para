@@ -5,7 +5,7 @@
 修订：2026-11-06 迁入飞书技术知识库（脱敏版）为 development 各主题正文，新建 Python 顶层分类；MOC/topics 建立分类索引；附件目录相应扩展
 修订：2026-11-07 确立双导图插件分工（Light Mindmap 渲染、Mindmap Mode 编辑），导图正文统一为普通段落；登记 light-mindmap、mindmap-mode、obsidian-quiet-outline 插件
 修订：2026-11-07 全库规范检查：补「一篇一个 H1」与不跳级规则、导图多根例外；修复 4 处断图与 1 篇缺属性文档
-修订：2026-11-07 补 Git 版本管理教程与版本管理约定（.obsidian 不入库、敏感内容红线、批量改写前留干净提交）；绑定远程 github.com/BlueGrey770/obsidian-para 并完成首推，建立拼音命名基线分支 pinyin-filenames（标签 pinyin-v1）
+修订：2026-11-07 补 Git 版本管理教程与版本管理约定（.obsidian 不入库、敏感内容红线、批量改写前留干净提交）；绑定远程 github.com/BlueGrey770/obsidian-para 并完成首推，建立拼音命名基线分支 pinyin-filenames（标签 pinyin-v1）；master 全库改名为英文（68 目录 / 164 文件），旧拼音名存入 aliases
 
 本规范只适用于当前独立库。以开发知识为主，支持阅读、生活、考证与语言学习；目录按领域与主题分类，项目只作为可选关联。规则不依赖另一笔记库、公司项目ID或本机绝对路径。
 
@@ -46,6 +46,8 @@
 | Draft | `draft-slug.md` |
 
 正文标题和aliases可以中文。日常更新修改同一文件，旧笔记不为整齐批量改名；独立且需并存的版本才加后缀。附件可保留原名和扩展名。
+
+**文件名与目录名一律用英文，不用拼音。** 通用词转成英文（`mian-xiang-dui-xiang` → `oop`）；专有名词、产品名保留其官方写法或原有拼写（RuoYi、ZenTao、Coze、Dify、Yunlan Daojia、Zhongzhou Eldercare、Baijuyi），技术名不翻译（Java、MySQL、Redis、SpringBoot）。这一条 2026-11-07 全库落地：68 个目录、164 个文件名完成英文化，2648 条图片路径与 397 条双链同步重写。旧拼音名一律写入该笔记的 `aliases`，搜索旧名仍可命中。
 
 标题层级也是结构，不只是装饰：
 
