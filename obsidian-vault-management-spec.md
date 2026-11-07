@@ -5,6 +5,7 @@
 修订：2026-11-06 迁入飞书技术知识库（脱敏版）为 development 各主题正文，新建 Python 顶层分类；MOC/topics 建立分类索引；附件目录相应扩展
 修订：2026-11-07 确立双导图插件分工（Light Mindmap 渲染、Mindmap Mode 编辑），导图正文统一为普通段落；登记 light-mindmap、mindmap-mode、obsidian-quiet-outline 插件
 修订：2026-11-07 全库规范检查：补「一篇一个 H1」与不跳级规则、导图多根例外；修复 4 处断图与 1 篇缺属性文档
+修订：2026-11-07 补 Git 版本管理教程与三条版本管理约定（私有远程、.obsidian 不入库、批量改写前留干净提交）
 
 本规范只适用于当前独立库。以开发知识为主，支持阅读、生活、考证与语言学习；目录按领域与主题分类，项目只作为可选关联。规则不依赖另一笔记库、公司项目ID或本机绝对路径。
 
@@ -147,6 +148,8 @@ PDF、Word、Excel、音视频、完整JSON/CSV、完整脚本与HTML原件优�
 ## 九 基础设置与维护
 
 本库 `app.json` 已实际写入并核对生效（2026-11-05）：默认新建位置Inbox、附件接收位置Attachments、相对链接与自动更新内部链接；graph配置为白名单分色方案。已安装的第三方插件：image-upload-toolkit（阿里云OSS图床化，已配置）、quickadd、obsidian-git、BRAT、realclaudian、vtable、light-mindmap（导图渲染）、mindmap-mode（导图编辑）、obsidian-quiet-outline（大纲侧栏增强）；obsidian-mind-map 已下载但停用，避免导图插件互抢视图。插件密钥与账号只存于 `.obsidian`，不入公开仓库。移动与重命名在本库运行中的Obsidian内完成。
+
+版本管理三条：远程仓库必须为**私有**；`.obsidian/` 整体不入库（含明文 OSS 密钥），换机按 README 重建；批量改写脚本运行前先提交一个干净点，便于整体回退。命令、令牌认证与冲突处理见 [[Memo/development/devops/obsidian-git-version-control.md|Git 版本管理教程]]。
 
 每周清理Inbox、核对重要待办与断链、清点已图床化笔记的本地原图是否已归档，按需提炼知识、更新少数导航。先保证静态入口可用，再选择Bases或Dataview；查询先按领域路径，不能依赖未完整填写的可选字段。
 

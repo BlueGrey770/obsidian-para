@@ -14,6 +14,7 @@
 - Inbox、Logs、Journal、Memo、Attachments、MOC、模板与归档目录。
 - 开发、语言、生活三个基础领域，英语目录以及阅读、考证专题入口。
 - Image Upload Toolkit 已安装并配置阿里云 OSS 图床化（公共读 bucket + RAM 密钥），教程与排查见 [[Memo/development/devops/obsidian-image-host-toolkit.md|图床化教程]]。
+- Git 版本管理已就绪：`master` 分支、`.gitignore` 排除 `.obsidian`、`.gitattributes` 统一 LF；远程私有仓库尚未绑定，绑定与推送命令、日常提交、冲突处理见 [[Memo/development/devops/obsidian-git-version-control.md|Git 版本管理教程]]。
 - 五个 QuickAdd 模板，正式笔记只要求 type/date，不必选择项目；其中 `mindmap-note.md` 用于新建导图笔记（`type: mindmap`）。
 - `.obsidian/app.json`：默认新建 Inbox、附件接收 Attachments、相对链接及自动更新内部链接（2026-11-05 已核对实际生效）。
 - 全新 `.obsidian/graph.json`：知识范围白名单，排除AI维护资料等，按初始领域路径分色，详见 [[MOC/graph-guide.md|图谱说明]]。
@@ -37,7 +38,7 @@
 5. **image-upload-toolkit**：Image store = `ALIYUN_OSS`，Region = `oss-cn-hongkong`，填入 RAM 的 AK/SK，Bucket = `notes-images-para`，Target path = `/img`，打开 **Update original document**。AK/SK 从阿里云 RAM 控制台重新获取，不在任何仓库中。
 6. **QuickAdd**：按 [[Memo/development/devops/obsidian-plugin-setup-guide.md|插件安装与配置教程]] 重建 5 个模板绑定（Log / Journal / Memo / Draft / Mindmap），模板正文在 `_templates/` 已在版本库中。
 7. **图谱**：按 [[MOC/graph-guide.md|图谱说明]] 重设知识范围白名单与领域分色。
-8. **obsidian-git**：Vault backup interval 设 10~15 分钟；远程仓库必须为**私有仓库**。
+8. **obsidian-git**：Vault backup interval 设 10~15 分钟；远程仓库必须为**私有仓库**。首次绑定远程与推送命令（`git remote add origin <私有仓库地址>`、`git push -u origin master`）、令牌认证与冲突处理见 [[Memo/development/devops/obsidian-git-version-control.md|Git 版本管理教程]]。
 
 ## AI维护与安全
 
