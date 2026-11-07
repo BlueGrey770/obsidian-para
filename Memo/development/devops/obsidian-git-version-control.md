@@ -149,7 +149,7 @@ git checkout pinyin-filenames
 git checkout master
 ```
 
-本库的分支现状与命令见 [[BRANCHES.md|分支说明]]。
+本库的分支现状与命令见 [[Memo/development/devops/git-branches.md|Git 分支说明]]。
 
 ## 八 换机器怎么恢复
 

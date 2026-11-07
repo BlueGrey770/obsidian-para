@@ -1,5 +1,5 @@
 ---
-type: doc
+type: memo
 date: 2026-11-07
 aliases:
   - 分支说明
@@ -9,7 +9,7 @@ tags:
   - git
 ---
 
-# 分支说明
+# Git 分支与命名基线
 
 本仓库的 git 分支用途与当前状态。日常提交命令与故障处理见 [[Memo/development/devops/obsidian-git-version-control.md|Git 版本管理教程]]。
 

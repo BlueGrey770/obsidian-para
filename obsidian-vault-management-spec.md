@@ -158,7 +158,7 @@ PDF、Word、Excel、音视频、完整JSON/CSV、完整脚本与HTML原件优�
 
 版本管理三条：远程仓库必须为**私有**；`.obsidian/` 整体不入库（含明文 OSS 密钥），换机按 README 重建；批量改写脚本运行前先提交一个干净点，便于整体回退。命令、令牌认证与冲突处理见 [[Memo/development/devops/obsidian-git-version-control.md|Git 版本管理教程]]。
 
-分支约定：日常在 `master` 提交；`pinyin-filenames` 是文件名采用拼音 slug 的整库基线快照（打标签 `pinyin-v1`），只读不续写，命名方案变更时用于回溯对比。详见 [[BRANCHES.md|分支说明]]。
+分支约定：日常在 `master` 提交；`pinyin-filenames` 是文件名采用拼音 slug 的整库基线快照（打标签 `pinyin-v1`），只读不续写，命名方案变更时用于回溯对比。详见 [[Memo/development/devops/git-branches.md|Git 分支说明]]。
 
 每周清理Inbox、核对重要待办与断链、清点已图床化笔记的本地原图是否已归档，按需提炼知识、更新少数导航。先保证静态入口可用，再选择Bases或Dataview；查询先按领域路径，不能依赖未完整填写的可选字段。
 
