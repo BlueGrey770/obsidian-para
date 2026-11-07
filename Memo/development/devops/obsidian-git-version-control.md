@@ -15,15 +15,16 @@ aliases:
 
 | 项目 | 状态 |
 | --- | --- |
-| 仓库 | 已初始化（2026-11-06），分支 `master` |
+| 仓库 | 已初始化（2026-11-06），分支 `master` + 基线分支 `pinyin-filenames`（标签 `pinyin-v1`） |
 | `.gitignore` | 已排除 `.obsidian/` 整个目录、`.claudian/sessions/`、系统垃圾文件 |
 | `.gitattributes` | 文本强制 LF、附件按二进制处理 |
-| 远程仓库 | **尚未配置**，按第三节接上即可 |
-| 体积 | 附件约 294 MB、文件约 3000 个，首次推送 500 MB 量级，需要几分钟 |
+| 远程仓库 | 已绑定 `https://github.com/BlueGrey770/obsidian-para.git`（2026-11-07 首推成功，Public） |
+| 网络 | 本仓库级配置了代理 `http.proxy = http://127.0.0.1:7890`，推送/拉取需本机代理软件（Clash）运行中 |
+| 体积 | 附件约 294 MB、文件约 3000 个，首推已完成；日常单次推送很小 |
 
 ## 二 三条不变量
 
-1. **远程必须是私有仓库**。`.obsidian/` 已排除（里面有明文的阿里云 OSS 密钥），但笔记正文和附件仍是个人内容，不要图省事开成公开仓库。
+1. **远程仓库可见性与内容红线**。仓库现为 Public（2026-11-07 权衡后自选公开）：`.obsidian/`（含明文 OSS 密钥）已排除，但正文与附件全网可见。红线——任何密钥、证件、公司资料、未脱敏客户信息不进库；想收紧时在 GitHub 的 Settings → Danger Zone 一键改 Private，无需重推。
 2. **`.obsidian/` 永不入库**。配置换了机器按 README 的《新机器恢复清单》重建，不要为了“拉下来就能用”把配置塞进库，那等于把密钥一起推上去。
 3. **批量改动前先留一个干净提交**。脚本批量改标题、批量移动目录之前先 `git status` 干净并提交一次，出事一条 `git checkout -- .` 就能整体回退——2026-11-07 归一 79 篇标题时就是靠这一步救回了误改的代码块。
 
@@ -165,6 +166,8 @@ git clone <私有仓库地址> PARA
 | --- | --- |
 | `! [rejected] ... (fetch first)` | 远程已有本地没有的提交。`git pull --rebase origin master` 后再 push |
 | 提示输入用户名密码，输密码报错 | 平台已禁用密码认证，改用访问令牌（第三节） |
+| `CONNECT tunnel failed, response 502` | 推送走了错误代理。本库已在仓库级配置 `http.proxy=http://127.0.0.1:7890`，确认 Clash 在运行即可；换端口时改 `git config http.proxy` |
+| `Failed to connect to github.com:443` | 直连超时（未走代理）。确认 Clash 开启并占用 7890 端口，或临时 `git -c http.proxy=http://127.0.0.1:7890 push` |
 | 整篇笔记显示全部删除又全部新增 | 行尾被写成 CRLF。确认 `git config core.autocrlf` 为 `false`，`.gitattributes` 在位，再 `git add --renormalize .` |
 | 误把 `.obsidian` 提交了 | 先**立刻吊销 OSS 密钥**，再从索引移除并提交：`git rm -r --cached .obsidian`；历史里仍留有旧值，必要时用 `git filter-repo` 清理 |
 | 单文件超过 100 MB 推不上去 | GitHub 硬限制。改用 Git LFS，或把大文件移出库、正文用 OSS 外链 |
