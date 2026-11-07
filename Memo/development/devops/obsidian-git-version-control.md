@@ -125,7 +125,33 @@ git push
 - **`.gitignore`**：决定什么不进库。当前排除 `.obsidian/`（含 OSS 密钥、插件二进制、workspace 状态）、`.claudian/sessions/`（AI 会话日志）、系统垃圾。附件默认提交，将来放大视频可取消注释改为依赖 OSS 外链。
 - **`.gitattributes`**：决定进库后怎么存。文本统一 `eol=lf`，图片/PDF 标 `binary`。没有它，Windows 上某些工具写回 CRLF 会让整篇笔记显示成“全文改动”，历史彻底失去可读性。
 
-## 七 换机器怎么恢复
+## 七 分支与命名基线
+
+库的文件名方案可能变化（拼音 slug → 其他写法），历史不能跟着一起丢。用分支把旧方案整库冻结下来：
+
+```bash
+git checkout -b pinyin-filenames          # 在当前提交上开分支
+git tag -a pinyin-v1 -m "拼音文件名整库快照"  # 再打一个不可变标签
+git checkout master                        # 切回主分支继续日常提交
+```
+
+三条用法：
+
+- **主分支只留一条**。日常写作、批量脚本都在 `master` 上，避免两套内容各写一半后无法合并（Obsidian 不知道分支，切分支时整库文件会变，正在编辑的笔记可能被覆盖）。
+- **归档分支只读**。`pinyin-filenames` 用来回溯「当时叫什么名字」，需要改动一律回 master 做。
+- **标签比分支可靠**。分支指针会被后来的提交带跑，标签一旦打上就锁定那个提交，几年后 `git show pinyin-v1` 仍能看到当年的目录树。
+
+切换分支前先提交干净：
+
+```bash
+git status --short     # 应为空
+git checkout pinyin-filenames
+git checkout master
+```
+
+本库的分支现状与命令见 [[BRANCHES.md|分支说明]]。
+
+## 八 换机器怎么恢复
 
 ```bash
 git clone <私有仓库地址> PARA
@@ -133,7 +159,7 @@ git clone <私有仓库地址> PARA
 
 拿到的是笔记、附件、模板、规范；`.obsidian/` 不在其中，按 [[README|README]] 的《新机器恢复清单》重装插件、填 OSS 密钥、设图谱白名单，约 15~20 分钟。然后把 obsidian-git 的 `Vault backup interval` 重新设上。
 
-## 八 常见问题
+## 九 常见问题
 
 | 现象 | 原因与处理 |
 | --- | --- |
@@ -144,7 +170,7 @@ git clone <私有仓库地址> PARA
 | 单文件超过 100 MB 推不上去 | GitHub 硬限制。改用 Git LFS，或把大文件移出库、正文用 OSS 外链 |
 | 两台设备同时改同一篇 | 后推的一方先 pull，手工合并冲突标记，别强制推送 |
 
-## 九 命令速查
+## 十 命令速查
 
 | 目的 | 命令 |
 | --- | --- |
