@@ -7,7 +7,7 @@ aliases:
 ---
 # 思维导图插件：Light Mindmap 与 Mindmap Mode
 
-本库导图采用「双插件分工」：**Light Mindmap** 负责把 `type: mindmap` 笔记渲染成漂亮的导图成品；**Mindmap Mode** 负责把任意笔记（含导图笔记）切换成可编辑的放射状导图，直接在图上改结构。两者不冲突，可同时启用。已停更的 obsidian-mind-map（Markmap）已下载但保持停用，避免抢同一视图。
+本库导图采用「双插件分工」：**Light Mindmap** 负责把 `type: mindmap` 笔记渲染成漂亮的导图成品；**Mindmap Mode** 负责把任意笔记（含导图笔记）切换成可编辑的放射状导图，直接在图上改结构。两者不冲突，可同时启用。
 
 本库状态：Light Mindmap v1.5.0（作者 Light Ning）、Mindmap Mode v1.1.2（作者 PHANTOM-Nw），均已启用并写入 `community-plugins.json`。
 
@@ -32,6 +32,7 @@ aliases:
 ### 触发方式（唯一开关）
 
 笔记 frontmatter 写 `type: mindmap`（插件对值做硬判断、不区分大小写，写成 memo 或别名一律不触发）。打开文件自动进入导图视图；新建时用 `_templates/mindmap-note.md` 模板可一次带全必需字段。
+![[../../../Attachments/Pasted image 20261107013637.png]]
 
 ### 解析规则（源码级约定）
 

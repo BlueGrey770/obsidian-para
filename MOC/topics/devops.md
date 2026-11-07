@@ -9,7 +9,7 @@
 - [[Memo/development/devops/obsidian-plugin-setup-guide.md|Obsidian插件安装与基础配置]]
 - [[Memo/development/devops/obsidian-theme-tech001.md|Tech001 主题]]
 - [[Memo/development/devops/obsidian-vtable.md|Vtable 表格增强插件]]
-- [[Memo/development/devops/obsidian-word-attribute-set.md|我的读书笔记]]
+- [[Memo/development/devops/obsidian-note-properties.md|Obsidian 笔记属性]]
 
 ## CI/CD：Jenkins
 - 导读：[[Memo/development/devops/ci-cd-jenkins/index.md|CI/CD：Jenkins]]
