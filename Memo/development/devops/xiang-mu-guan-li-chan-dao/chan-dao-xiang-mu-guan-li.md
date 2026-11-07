@@ -65,7 +65,7 @@ aliases:
 
 禅道是一款国产的开源**项目管理软件**，它专注于研发项目管理，内置了多种核心功能，旨在帮助项目团队成员高效地进行项目规划、任务追踪、质量管理、文档管理等。
 
-![图片展示了禅道项目管理软件的官网首页。背景为蓝色渐变，左侧有“15年倾全力打造开源项目管理软件 助力100万+团队构建研发管理平台”等文字，下方列出“试用Demo”“开源版2.0.3”“企业版10.2”“IPD版2.2”等版本选项。右侧有“产品”“方案”“服务”“价格”“演示”“下载”“云申请”“应用商店”“问答”“论坛”“帮助”“博客”“动态”等导航栏，以及“1个产品，1个平台 满足各领域项目管理需求”“15年坚持原创 研发管理最佳实践”“累计发布491个版本 交付17029个需求”“100万+优秀团队 共同选择”等信息。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/Zf32bze4co1ulyxnESScGqXqn7b.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/Zf32bze4co1ulyxnESScGqXqn7b.png)
 
 官网地址：
 
@@ -136,7 +136,7 @@ docker run --privileged -it -d --name zentao -p 8001:80  -v /www/zentaopms:/www/
 
 其中的关键项配置：
 
-![该图片是禅道项目管理安装部署流程中设置账号的配置页面，页面顶部标注“设置账号”，包含四个必填配置项：公司名称为“黑马程序员”，工作方式固定为“完整研发管理工具”，管理员账号为文档提及的“itcast”，管理员密码为“HEIMA123itcast”。页面还设有已勾选的“导入demo数据”选项，底部有蓝色的“保存”按钮，该页面对应容器启动后访问禅道时的初始化账号配置环节。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/ZJ6Wb5DPVoTidGxgaRwc5AQJnte.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/ZJ6Wb5DPVoTidGxgaRwc5AQJnte.png)
 
 - 管理员账号为：itcast
 - 管理员密码：HEIMA123itcast
@@ -145,7 +145,7 @@ docker run --privileged -it -d --name zentao -p 8001:80  -v /www/zentaopms:/www/
 
 启动成功后的效果：
 
-![图片展示的是禅道项目管理平台的首页界面。上方导航栏有“首页”“日报”“任务”“Bug”“测试”“需求”“项目”“动态”“文档”“统计”“组织”“后台”“帮助”“联系人”等选项。首页显示管理员itcast的欢迎信息，有“项目计划”“项目进展”“项目统计”“我的任务”“我的Bug”“我的测试”“我的需求”“我的文档”“我的统计”“我的组织”“我的后台”等板块，还呈现了“最新动态”“我的协”等内容。该图与文档中介绍禅道安装及部署后启动成功效果的内容相关。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/UZ4mbvRIZobTFrx5m7Rc9Ycmn1d.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/UZ4mbvRIZobTFrx5m7Rc9Ycmn1d.png)
 
 #### 用户数据准备
 
@@ -188,7 +188,7 @@ docker run --privileged -it -d --name zentao -p 8001:80  -v /www/zentaopms:/www/
 - 动态：操作日志相关的信息
 - 公司：可以修改或维护公司的信息
 
-![图片展示的是禅道项目管理平台的用户管理界面。左侧有“部门结构”下拉菜单，可选择“经理”“开发”“测试”“市场”等部门。右侧上方有“用户”“部门”“权限”“动态”“公司”等导航栏，其中“部门”导航被红框突出显示。下方列表呈现用户信息，包括用户姓名、用户名、部门、权限、最后登录时间等，每行右侧有“+”“编辑”“删除”操作按钮。该图与文档中管理员角色可维护组织相关内容的上下文对应，直观呈现了用户管理界面。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/EVHLb3q41obeFkxVH2TcRlvsnXd.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/EVHLb3q41obeFkxVH2TcRlvsnXd.png)
 
 
 
@@ -196,7 +196,7 @@ docker run --privileged -it -d --name zentao -p 8001:80  -v /www/zentaopms:/www/
 
 ##### 产品概览
 
-![这是禅道项目管理系统的产品概览页面，页面顶部导航栏的“产品”选项以红色箭头标出，页面右上方有一个蓝色的“添加产品”按钮，同样有红色箭头指向。页面核心区域显示“总需求”为16，还设有“创建计划”“创建发布”等操作选项，右侧的产品总览板块标注有数字“3”，下方的“未关联的产品”列表展示了相关产品信息，该页面供产品经理查看产品的总览及需求统计，支持进行添加产品、创建计划等操作。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/YpPgbzWa0ovOqQxowsOc1nh5nyc.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/YpPgbzWa0ovOqQxowsOc1nh5nyc.png)
 
 - 在产品面板中，可以看到目前的产品总览和需求的统计
 
@@ -204,25 +204,25 @@ docker run --privileged -it -d --name zentao -p 8001:80  -v /www/zentaopms:/www/
 
 在产品总览中有一个**添加产品**按钮，添加信息内容如下：
 
-![这张图片是禅道系统中产品经理创建产品的“添加产品”页面，页面上方为需填写的产品信息项，包括产品名称、产品代号、产品线、产品负责人等内容，需完成必填项输入后提交。页面下方设有产品描述编辑区，配有文本格式设置工具栏，方便编辑产品相关介绍。页面底部还设置了产品权限控制选项，包含默认、私有、自定义三种权限模式，最下方有“保存”和“返回”按钮，供用户完成创建或取消操作，该页面是创建产品流程中录入信息的核心操作界面。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/PWmKbOEfCob9Kbxx6cFchKeWnFg.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/PWmKbOEfCob9Kbxx6cFchKeWnFg.png)
 
 可以在新创建的产品中维护产品拥有的模块名称
 
-![这是禅道项目管理系统的产品模块管理页面，页面左侧的所有模块区域内，有“维护模块”“模块设置”两个功能按钮，红色箭头指向“维护模块”按钮，提示该操作可用于维护产品的模块信息，对应文档中“在新创建的产品中维护产品拥有的模块名称”的操作流程。页面顶部显示当前处于“产品”板块，还有“需求”“计划”等其他功能选项，右侧有“批量创建”“提需求”等操作按钮，界面呈现出产品模块管理的相关操作入口。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/DXGgbhkGGo7ezrxvxM6cIRFKnnc.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/DXGgbhkGGo7ezrxvxM6cIRFKnnc.png)
 
-![图片展示了禅道项目管理中产品经理角色创建产品时维护子模块的界面。在“产品”面板下，点击“添加产品”按钮后，进入该界面。界面中“维护子模块”区域有多个模块名称输入框，每个输入框右侧有“删除”按钮，可添加或删除模块名称。下方有“保存”和“取消”按钮。该图片与上下文紧密相关，直观呈现了产品经理在创建产品时维护子模块的操作界面及功能。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/AVUWbYslZojFafxmCxzcdzoFnSg.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/AVUWbYslZojFafxmCxzcdzoFnSg.png)
 
 创建好的模块如下
 
-![这是禅道项目管理系统的产品需求页面，左侧被红色框标注的是“所有模块”栏，列出了产品下的各类模块分类，如“需求管理”“版本管理”“文档管理”等；页面右侧是“需求”列表，显示了不同编号的需求，包含需求名称、计划、创建人、团队、状态、操作等信息，界面顶部有“我的地盘”“产品”“项目”等功能菜单，可用于产品需求的管理操作。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/K6Gxb9mOao6GRVxeGoicLV0WnJg.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/K6Gxb9mOao6GRVxeGoicLV0WnJg.png)
 
 创建需求，可以选中模块，然后可以创建对应模块的需求，如下：
 
-![图片展示的是禅道项目管理中创建需求的界面。界面上方有所属产品、模块名称、计划、需求来源等输入框，以及优先级、预计完成时间等设置选项。中间部分有需求名称、详细描述、验收标准等输入区域，还设有附件添加、抄送、关键词等辅助功能。底部有“保存”和“返回”按钮。该图片与上文产品经理创建需求的内容相关，直观呈现了创建需求时的操作界面及各功能位置。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/AMwObd0vxol5vxxa1smch6ounXf.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/AMwObd0vxol5vxxa1smch6ounXf.png)
 
 新增的需求列表如下：
 
-![图片展示的是禅道项目管理平台中需求管理界面。界面左侧为导航栏，有产品管理、需求管理等选项。右侧是需求列表区域，显示了多个需求项，如“新增配置管理”“新增配置管理”等，每个需求项有编号、标题、优先级、状态、模块、负责人、创建人、创建时间等信息。界面底部有“全部”“已分配”“未分配”等筛选按钮，以及“导出”“导出为Excel”等操作按钮。该图与文档中产品经理创建需求后新增需求列表的内容相关，直观呈现了需求管理界面及新增需求列表情况。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/St9nbA2Dmov54extdepcwEl5noh.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/St9nbA2Dmov54extdepcwEl5noh.png)
 
 也可以把需求指定给对应的**开发人员**负责
 
@@ -234,31 +234,31 @@ docker run --privileged -it -d --name zentao -p 8001:80  -v /www/zentaopms:/www/
 
 在这里可以看到所有项目的情况，以及选中项目的总览
 
-![图片展示的是禅道项目管理平台中项目经理的“项目”面板。左侧显示项目统计，有“中州养老”“企业网站第二期”“企业网站一期”等项目，各项目状态、预计、消耗、剩余、进度等信息一目了然。右侧是项目总览，呈现所有项目数量、未开始、进行中、已完成、未完成项目数量。下方是未关闭的项目列表，包括项目名称、截止日期、状态、预计、消耗、剩余、进度、燃尽图等信息。该图直观呈现了项目经理可查看项目情况的内容。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/FcxKb2j3GoueDuxLKFFcTYAan9e.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/FcxKb2j3GoueDuxLKFFcTYAan9e.png)
 
 项目经理可以管理该项目团队的成员，如下图
 
-![这是禅道项目管理系统中项目经理的团队成员管理界面，页面顶部菜单栏的「项目」板块下，当前选中的是「中州养老」项目的「团队」页面，页面核心区域以红色方框标注出了项目团队成员列表，列表内清晰展示了成员的姓名、角色、加入日期、可用工日、可用工时/天、总计工时等信息，且页面设有「团队管理」按钮，上方还有「项目主页」「任务」「看板」等功能入口，用于辅助项目经理管理项目团队相关事务。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/FFbmbUDNZo5UTzxZRt0cA1w5nXe.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/FFbmbUDNZo5UTzxZRt0cA1w5nXe.png)
 
 添加项目，其中可以关联已有产品的项目，可以把所有的需求同步到新创建的项目中
 
-![这是禅道项目管理系统中项目经理使用的“新建项目”页面，页面顶部显示“新建项目”的操作标题，设有“项目名称”“项目代号”“起始日期”“可用工作日”“团队名称”“项目类型”“关联产品”等多个填写或选择项。其中项目名称为“中州养老”，项目代号为“z1001”，起始日期区间为2024年7月31日至2024年12月31日，可选工作日为110天，项目类型为“短期项目”，关联产品为“中州养老”。页面下方设有“项目描述”编辑栏，还包含“默认设置(有项目编辑权限，即可访问)”“私有设置(只有项目团队成员才能访问)”“自定义的权限(团队成员和白名单的成员可以访问)”三类访问控制选项，页面底部配有“保存”和“返回”的操作按钮，与文档中“项目经理可以管理该项目团队的成员，添加项目，其中可以关联已有产品的项目，可以把所有的需求同步到新创建的项目中”的内容相呼应。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/IyFRbe4zuo3lBmxkPNycCwtSnnh.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/IyFRbe4zuo3lBmxkPNycCwtSnnh.png)
 
 也可以单独关联需求，只要关联的产品那边的模块或需求
 
-![图片展示了禅道项目管理中需求面板的界面。左侧为导航栏，有项目管理、需求管理等选项。右侧是需求列表，显示ID、P、需求名称、创建人、预计工时、状态、新版本、T、B、C等信息，部分需求有“+”标识。界面右上角有“导出数据”“添加需求”“关联需求”按钮，其中“关联需求”按钮被红色箭头突出显示。该图片与上下文介绍的项目经理在需求面板可看到所有项目情况、管理团队成员、添加项目及关联需求等内容相契合。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/VA8ZbvAB9omIRjx0IgUcNcRonTg.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/VA8ZbvAB9omIRjx0IgUcNcRonTg.png)
 
 可以创建任务，给团队成员分配任务，主要是时间成本
 
-![这是禅道项目管理系统的项目任务管理页面，页面左侧显示“所有模块”分类，包含“管理后台web”“维护模块”“模块设置”三类。页面上方有“我的地盘”“产品”“项目”等功能导航栏，当前高亮选中“项目”分类下的“任务”标签，有红色箭头指向“任务”选项。页面主体是任务列表，共6条任务，分别标注了任务ID、任务名称、状态、指派者、预计、消耗、剩余、截止等信息，其中“上传体检报告”“应用成果维护项目”等任务处于未开始、进行中、已完成等不同状态，页面下方还显示任务的统计信息。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/MF63bdR4loKyayxMoeKcNIfbn2d.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/MF63bdR4loKyayxMoeKcNIfbn2d.png)
 
 可以查看项目的进度看板
 
-![这张图片是禅道项目管理系统的项目经理需求面板界面，界面顶部设有导航栏，涵盖我的地盘、我的项目等功能入口，当前选中的是需求板块。界面左侧为需求列表区域，标注有不同需求的状态与负责人；主区域按“未开始”“进行中”“已转移”“已完成”“已取消”“已关闭”等需求阶段划分，以网格形式呈现各项需求的进度状态，每条需求条目标注了具体的负责人，直观展示了项目需求的推进情况，和文档中介绍的项目经理可查看项目需求总览的内容相呼应。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/UD9MbgsrKow2rDxwE0ccHMLVnnd.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/UD9MbgsrKow2rDxwE0ccHMLVnnd.png)
 
 项目的燃尽图：
 
-![这张图片是禅道系统里的燃尽图，属于中州养老项目的燃尽图界面，是项目完成前对需完成工作任务的可视化展示。图中包含代表计划的灰色曲线与代表实际的蓝色曲线，两条曲线均呈持续下降趋势，其中实际曲线的下降幅度与计划曲线匹配，直观呈现该项目的任务完成进度变化。该燃尽图所在位置的上下文明确介绍了燃尽图是用于可视化展示项目待完成工作的图表，这张图作为示例，清晰展现了项目任务的消耗趋势，符合项目经理查看项目进度、把控任务完成情况的使用需求。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/IbEEbSECCoYA7xxVHS7cCzDPnJd.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/IbEEbSECCoYA7xxVHS7cCzDPnJd.png)
 
 > 燃尽图（Burn Down Chart）是一种在项目完成之前，对需要完成的工作任务进行可视化表示的工作图表。它由横轴（X）和纵轴（Y）组成，横轴通常表示时间（如工作日或迭代周期），纵轴表示剩余工作量（如剩余工时或任务完成率）。理想情况下，燃尽图呈现为一个向下的曲线，随着项目任务的逐渐完成，“燃尽”至零，从而直观地预测何时工作将全部完成。
 
@@ -266,11 +266,11 @@ docker run --privileged -it -d --name zentao -p 8001:80  -v /www/zentaopms:/www/
 
 使用钱军(测试人员)的账号登录，在首页可以看到自己的任务概览
 
-![图片展示的是禅道项目管理平台测试人员登录后的首页界面。左侧显示任务概览，有待办事项、待测需求、未关联的bug、未关联产品等信息。中间部分有项目管理、产品管理等板块，如项目管理板块下有项目信息、项目成员、项目计划等。右侧有最新动态、我的待办、项目总结等板块，如最新动态显示了李军的登录系统等操作记录。该图与文档中测试人员登录后首页可看到任务概览的内容相契合。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/W7cRbpLmko4XZBxIDGhc7hsMnre.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/W7cRbpLmko4XZBxIDGhc7hsMnre.png)
 
 测试可以在系统中创建测试用例及提bug，下图是提bug的流程
 
-![图片展示的是测试人员登录禅道系统后，在“中州养老”项目下“Bug”页面的界面。页面显示“暂时没有Bug”，并有“+提bug”按钮。该图片与文档中测试人员使用禅道系统创建测试用例及提bug的内容相关，直观呈现了测试人员在系统中提bug的入口位置，为后续详细描述bug信息及创建bug的操作提供直观参考。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/A4CPbNufGolcaVxGuH8cJDQ4nTh.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/A4CPbNufGolcaVxGuH8cJDQ4nTh.png)
 
 详细描述bug的信息，如下：
 
@@ -280,11 +280,11 @@ docker run --privileged -it -d --name zentao -p 8001:80  -v /www/zentaopms:/www/
 - bug类型、测试的操作系统和浏览器
 - 可以把复现的步骤详细描述，有错误信息可以贴图展示
 
-![图片展示的是禅道项目管理中测试人员提bug的流程及创建好的bug状态。画面中“Bug”选项被红色箭头指向。在“Bug管理”页面，可看到“所属模块”为“D 工具”等信息，还有“严重程度”“优先级”等设置区域，其中“严重程度”被红色框突出显示。下方是bug详细信息区域，包含复现步骤、错误信息等。该图与上下文紧密相关，直观呈现了测试人员在禅道系统中创建bug的操作界面及bug创建后的状态。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/AevjbUTiXomcZExRL5ucUq27nud.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/AevjbUTiXomcZExRL5ucUq27nud.png)
 
 创建好的bug如下所示，下图还未解决的状态，目前指派给了开发去解决
 
-![该图片展示了禅道项目管理系统中未解决的Bug列表界面，对应文档中描述的测试人员创建的未解决Bug相关内容。页面顶部为系统导航栏，包含“项目”“Bug”等功能选项；列表区域显示1条Bug记录，Bug ID为006，严重程度为2级（标注为②），优先级为1级（标注为①），Bug标题为“新增护理项目失败”，该Bug创建人是钱军，指派给开发人员王鑫，状态为未解决，操作栏有编辑、删除等功能图标。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/Kcf5beSaYo2aTdxEwXrcAALWnjh.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/Kcf5beSaYo2aTdxEwXrcAALWnjh.png)
 
 
 
@@ -292,11 +292,11 @@ docker run --privileged -it -d --name zentao -p 8001:80  -v /www/zentaopms:/www/
 
 当开发人员已经修复了bug后，可以查看这个bug的状态，为已解决，如下图
 
-![这张图片展示了禅道项目管理系统的页面，属于测试人员使用的验证测试环节。页面顶部是系统导航栏，包含“我的地盘”“产品”“项目”“测试”等功能模块，当前选中的是“Bug”页面。页面列表中有一条已解决的Bug记录，ID为006，类型是代码错误，Bug标题为“新增护理项目失败”，严重程度标识为橙色高等级，优先级为P级，该Bug由钱军创建，指派给王鑫，当前状态为已解决，列表还标注了“指派给”选项卡，以及全选、分页等操作相关功能，对应开发人员修复Bug后的状态展示场景。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/JYV7bSphuoReKdxDMv1crpgTnCg.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/JYV7bSphuoReKdxDMv1crpgTnCg.png)
 
 作为测试人员，需要重复bug复现的操作步骤，如果问题已修复，则可以关闭这个bug，如果没有则需要重新激活
 
-![图片展示的是禅道项目管理中测试人员提bug的流程及bug状态。左侧是系统界面，显示了任务概览等信息。右侧是bug管理页面，有“新建bug”按钮，下方是bug列表，包含编号、标题、模块、严重程度、优先级、类型、操作系统、浏览器、创建人、创建时间等信息。底部有“关闭”“激活”“解决”“忽略”按钮。该图与文档中测试人员使用禅道系统创建测试用例及提bug的内容相关，直观呈现了bug管理操作界面及状态。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/NRA7b1mbOoxtBwx0zC7cuDg8nVg.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/NRA7b1mbOoxtBwx0zC7cuDg8nVg.png)
 
 
 
@@ -304,23 +304,23 @@ docker run --privileged -it -d --name zentao -p 8001:80  -v /www/zentaopms:/www/
 
 使用王鑫（开发人员）的账号进行登录，他的看板是这样的，对自己任务的一个总览
 
-![这是禅道项目管理系统中，研发人员王鑫登录后的个人看板界面，作为任务总览展示了他的工作相关信息。界面上方可看到当日日期、待办任务等核心指标，其中待办任务为2，待提BUG为0，未完成的需求、未完成的产品均为2，还有4项需留意的内容；中间区域是各岗位对应的工作事项列表，涵盖产品、研发、测试等岗位的相关职责内容；右侧是最新动态与我的待办信息，底部则呈现项目统计数据，显示当前项目完成进度为73%，同时列有不同状态的项目数量。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/Bwp3bbyzdonwr4xPg2TcLeOmnAd.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/Bwp3bbyzdonwr4xPg2TcLeOmnAd.png)
 
 查看自己的开发任务，一般是项目经理分配
 
-![图片展示的是研发人员王鑫登录禅道项目管理后，其任务看板界面。界面中显示了“指派给我”的任务列表，包括任务ID、所属项目、任务名称、创建人、指派给、由谁完成、预计、消耗、剩余、状态及操作等信息。其中，任务ID为012的“评估列表查询”任务，所属项目为“中州养老”，创建人为李景，指派给王鑫，状态为“进行中”。该图片与上下文介绍研发人员查看自己开发任务的内容相契合，直观呈现了任务看板的样式及任务信息。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/AAIwbpaluorjZZxUAU1cNYnHn5c.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/AAIwbpaluorjZZxUAU1cNYnHn5c.png)
 
 查看自己的bug列表，由测试人员分配
 
-![这张图片是禅道项目管理系统中研发人员的“我的地盘”界面，展示了对应人员的bug列表。界面顶部有“我的地盘”“产品”“项目”等功能导航栏，当前处于Bug页面，bug列表仅显示1条内容，这条bug的ID为006，级别为P，类型是代码错误，主题为“新增护理项目失败”，指派给王鑫，创建者是钱军，状态待解决，列表旁标注有“指派给”“由我创建”等筛选选项，界面还配备编辑、解决、指派等操作按钮，符合文档中研发人员查看待处理bug、接收测试人员分配任务的使用场景。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/OHrNbi2DYo3iB8xQYQvcCudnngh.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/OHrNbi2DYo3iB8xQYQvcCudnngh.png)
 
 详细查看bug信息，在本地最好复现一下，然后去解决
 
-![这张图片展示的是研发人员使用王鑫的账号登录禅道系统后的界面，属于该用户的任务看板与操作页面，页面核心是bug相关的处理环节。界面左侧是任务与bug相关的列表区域，中间显示了bug详情编辑的弹窗，弹窗内有红色标注的问题描述文本、相关图片上传区域、处理方式填写框及提交按钮；页面右侧则呈现了该bug的基本信息，包括所属项目、创建人、创建时间、操作系统与浏览器等内容，还标注了处理状态与后续操作相关的指引。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/W1zjbHcTnoXFWTxUNwQcE8CMnLg.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/W1zjbHcTnoXFWTxUNwQcE8CMnLg.png)
 
 解决了bug之后，需要填写已解决，然后把bug重新指派给测试人员
 
-![这是禅道项目管理系统的界面，呈现的是研发人员解决bug后的操作环节弹窗。弹窗中，修复方案已选定为“已解决”，修复版本为“主干”，修复日期是2024年8月11日11:19，红色箭头指向“指派”选项，对应上下文里将bug重新指派给测试人员的要求。弹窗下方还有可添加文件的附件栏，以及备注输入框，底部设有蓝色“保存”按钮，界面底部还显示有其他操作相关的记录与选项，用于留存本次bug处理的相关信息。](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/HtRcbIlanoBa4jxBqOYcMVrdnEh.png)
+![](../../../../Attachments/development/devops/xiang-mu-guan-li-chan-dao/HtRcbIlanoBa4jxBqOYcMVrdnEh.png)
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 05 工程化与部署 / 项目管理：禅道 / 禅道项目管理 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/UqMlwptGviWew2kbD30cPVVJnRe)

@@ -474,7 +474,7 @@ FastAPI 基于异步的 Starlette 框架，其高性能依赖于**非阻塞的�
 
 例如，当用户说‘我想订机票’，NLU 识别为 `intent=book_flight`，触发从 `start` → `ask_departure` 的转移；若用户输入‘上海’，则槽位填充成功，进入下一状态
 
-![这是一张关于传统状态机与LangGraph对比的表格，标题为“四、对比表：传统状态机 vs LangGraph”。表格从多个维度对比了二者的差异：实现方式上，传统状态机为类加接口，LangGraph为图加节点和边；状态管理方面，传统状态机用类成员变量，LangGraph用TypedDict或Pydantic；流程控制上，传统状态机通过方法调用实现，LangGraph采用条件边；支持循环维度，传统状态机需手动实现，LangGraph原生支持；与LLM集成方面，传统状态机需手动编写衔接代码，LangGraph与LLM无缝集成；可视化上，传统状态机无可视化能力，LangGraph可导出Mermaid图；学习曲线维度，传统状态机的学习难度为中，LangGraph为中高。该图表用于辅助说明智能体中台的意图-动作状态机实现中，LangGraph相较传统状态机的优势。](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/I6ZbboW9qoyxMix8zzBcM4wCnPL.png)
+![](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/I6ZbboW9qoyxMix8zzBcM4wCnPL.png)
 
 
 
@@ -524,7 +524,7 @@ Notification: 异步事件, 支持Stdion(本地)和SSE/HTTP远程两种传输方
 
 MCP(Model Context Protocol)是一种面向LLM应用的高层协作协议, 他的目的是将大模型和外部工作,数据源之间的交互标准化. 不同于HHTP等网络协议, MCP解决的的是"模型如何理解, 并调用外部能力完成复杂任务", 后者更多低关注于"如何传输数据"
 
-![图片以表格形式对比了传统网络协议（如HTTP/SMTP/TCP）与MCP（Model Context Protocol）在设计目标、抽象层级、交互主体、数据语义、状态管理、扩展性机制等维度上的差异。如传统协议关注底层通信功能，MCP聚焦LLM与外部协作；传统协议数据语义无语义，MCP强语义；传统协议无状态，MCP需维护对话历史等。该图与上下文紧密相关，直观呈现了MCP与传统网络协议的区别，帮助理解MCP在LLM应用协作中的优势。](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/Bir3bRE1wo06xzx0b23c66ezn5g.png)
+![](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/Bir3bRE1wo06xzx0b23c66ezn5g.png)
 
 #### 问题七: MCP协议中, Resource和Tool的区别
 
@@ -546,7 +546,7 @@ MCP原生就支持基于URI的细粒度权限空值, 设置了权限白名单, �
 
 
 
-![这张图是模型与MCP交互的流程示意图，清晰展示了整个交互链路：大模型（Host）提出“我想知道用户的手机号”的需求，嵌入在大模型中的MCP Client向MCP Server发送携带指定URI的JSON-RPC请求；MCP Server接收到请求后，会调用外部系统查询数据库，同时对敏感数据（手机号）进行脱敏处理，返回脱敏后的结果；随后MCP Client将该结果返回给MCP Server，最终由大模型将脱敏后的手机号信息注入上下文，生成最终回复“您的手机号是138****1234”完成交互。](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/GeItbCJWcoIVNhxD84hcF9VWnH4.png)
+![](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/GeItbCJWcoIVNhxD84hcF9VWnH4.png)
 
 其中HOST: 是项目中运行LLM的智能体, MCP Client是嵌入再Host中的客户端, 以及MCPServer: 提供Resource/Tool的服务端
 
@@ -639,7 +639,7 @@ MCP原生就支持基于URI的细粒度权限空值, 设置了权限白名单, �
 
 答：做参考，实际情况各不同，待定：
 
-![图片展示的是一个视频会议界面，时间显示为00:20:31。画面中，说话人2提出问题，询问如果用户不知道问题是什么人，是否需要去发现问题、解决问题，以及是否是因为权限问题。说话人1随后解释，项目并非完全由他们开发，而是与伙伴公司合作，他们负责技术交流，但不是实时线下交流，很多问题分开做。该图片与上下文紧密相关，是对上文关于用户回答问题及知识库更新等问题的讨论内容的呈现。](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/MxmzbP51xo13R9xRU6icYa7Anbf.png)
+![](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/MxmzbP51xo13R9xRU6icYa7Anbf.png)
 
 #### 有一个问题就是你刚才也说到了在这个项目里面你们有很多用户回答这个问题，再去形成新的知识库。这个过程中是谁来做呢？是你们来做，还是说就是还是人工来做？还是说用模型去做的？
 
@@ -647,7 +647,7 @@ MCP原生就支持基于URI的细粒度权限空值, 设置了权限白名单, �
 
 知识库的更新，我们**每周会对RAG做一个全量更新**，就是定时一口气把数据都重新跑一遍，**从文档的分割，文档的向量化存储这些操作**。因为虽然我们的数据有几百份这样的，但是对于我们服务器来说，数据量并不是很大，所以说走的是全量更新。
 
-![这张图片展示了关于知识库更新流程的说明内容，围绕RAG知识库的更新展开。内容提及，因业务多以行程（如旅游产品相关行程）为主，会推出新的行程产品，这些精心挑选的行程会被导入RAG知识库；针对该RAG知识库，会每周进行一次定时的全量更新，即把所有数据全部重做一遍，这些数据以文档形式存储，量级虽达几百份，但并非特别离谱的大规模，属于全量更新的范畴。](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/R2Ksb2Of3okBmYxjGhYcLfFnnHh.png)
+![](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/R2Ksb2Of3okBmYxjGhYcLfFnnHh.png)
 
 #### 一个问题经过了不同的策略拆分，比如包含了多个子问题的复杂问题，经过拆分成子问题然后一个一个回答，并且拼成像旅游网址，景点信息等东西，那你这个RAG系统整个过程的处理耗时大概多久时间？
 
@@ -659,7 +659,7 @@ MCP原生就支持基于URI的细粒度权限空值, 设置了权限白名单, �
 
 <sheet sheet-id="PfJaeR" token="SGQGshav9hKBJmtZ3S1cAHjEnWg"></sheet>
 
-![图片为“回溯算法：深度优先（DFS）策略”相关内容，明确结论是回溯算法基于深度优先搜索（DFS），非广度优先。依据知识库关键描述，回溯法按深度优先策略搜索解空间树，从根结点出发，沿路径深入，遇无效解则回溯至上一节点。回溯算法策略在解空间树上用DFS搜索+剪枝，本质关系中DFS是遍历机制，回溯算法策略是DFS遍历框架+剪枝函数（约束/限界）+状态回退（撤销选择）。关键区分是BFS无法支持“状态撤销”（队列无法回退到上一层中间状态），而DFS的栈结构契合“深入一回溯一换分支”的回溯逻辑。](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/OExsbWufdoJLhPx61F4cI7GqnXe.png)
+![](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/OExsbWufdoJLhPx61F4cI7GqnXe.png)
 
 
 
@@ -858,7 +858,7 @@ Encoder-Decoder 架构：
 - Encoder：堆叠 N 层，每层包含 Multi-Head Attention + 前馈网络（FFN），带残差连接和 LayerNorm。
 - Decoder：类似 Encoder，但增加了一个“Encoder-Decoder Attention”层，用于关注 Encoder 的输出。
 
-![这张图片展示了Attention机制的计算公式及相关参数说明，是Transformer原理中注意力机制部分的核心内容。图片上方给出了注意力的基本计算公式：$\\text{Attention}(Q,K,V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V$，用于实现对查询、键和值的注意力计算。图片下方进一步解释了公式中的$Q$、$K$、$V$的来源，说明它们是通过对输入$X$进行线性变换得到的查询（Query）、键（Key）和值（Value），分别对应$Q=XW_Q$、$K=XW_K$、$V=XW_V$。该内容与文档中Transformer自注意力机制的核心知识点直接对应，是理解注意力机制的关键公式说明。](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/Tbzhbuf10osFNax8Yz3cfgCrnod.png)
+![](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/Tbzhbuf10osFNax8Yz3cfgCrnod.png)
 
 #### 解释一下维度是什么？ （优化）
 
@@ -888,11 +888,11 @@ temperature是用来控制大模型输出多样化的, top-k是每次只从概�
 
 temperature原理
 
-![这张图片用于解释大模型参数temperature的原理，围绕控制概率分布的“平滑度”展开，给出了对应的计算公式：将logits（原始分数）除以temperature，再通过softmax计算概率，公式为$P(x) = \\frac{\\exp(z_x/T)}{\\sum_i \\exp(z_i/T)}$。图片还说明了不同temperature取值的作用，T=1对应原始分布，T<1时会放大高概率、抑制低概率，让输出更确定、更保守，T>1时则拉平概率分布，让输出更随机、更多样，与上下文介绍的temperature控制大模型输出多样化的内容直接对应。](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/GZjQb5MhSoTzKsxZtxocCwcWnVw.png)
+![](../../../../../Attachments/development/programming/interview/ai-mian-shi-ti/GZjQb5MhSoTzKsxZtxocCwcWnVw.png)
 
 top-p原理
 
-![这张图用于解释大模型中top-p原理，展示了top-p的应用示例。示例先给出排序后的各token概率：A为0.6、B为0.3、C为0.05、D为0.03、E为0.02。接着通过两个计算案例说明top-p的操作：当p=0.9时，采样累计概率总和≥0.9的token，得到\[A,B\]；当p=0.95时，采样累计概率总和≥0.95的token，得到\[A,B,C\]。同时图中还标注了top-p的优点，即自适应候选集大小，具备高置信时候选集窄、低置信时候选集宽的特点。](https://feishu.cn/file/Q6ubbnESNotrzTxdzl0cQNFunZc)
+![](https://feishu.cn/file/Q6ubbnESNotrzTxdzl0cQNFunZc)
 
 #### 大模型调用的速度并不是特别快, 如何进行特征处理? (待完成)
 

@@ -14,7 +14,7 @@ SpringAI整合了全球（主要是国外）的大多数大模型，而且对于
 
 不同的模型能够接收的输入类型、输出类型不一定相同。SpringAI根据模型的输入和输出类型不同对模型进行了分类：
 
-![这张图展示了SpringAI所分类的不同生成式AI模型的输入数据类型、模型 specialization类型与输出数据类型的对应关系。具体分为五大类：输入含多模态数据（语言、代码、图像、音频、视频）时，对应大型语言模型（LLM），输出含多模态的语言、代码及音频；输入为语言或图像时，对应图像生成模型，输出为图像或视频；输入为音频时，对应文本转语音模型，输出为语言；输入为语言时，对应语音转文本模型，输出为音频；输入含文本、图像、音频、视频的多模态数据时，对应嵌入模型，输出为向量或嵌入。该图直观呈现了模型分类与输入、输出类型的关联，对应文档中SpringAI按模型输入输出类型对其分类的内容。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/GwUBbbJrgom9ubx5ZyacL8gVn1c.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/GwUBbbJrgom9ubx5ZyacL8gVn1c.png)
 
 大模型应用开发大多数情况下使用的都是基于**对话模型**（Chat Model)，也就是输出结果为自然语言或代码的模型。
 
@@ -63,11 +63,11 @@ SpringAI整合了全球（主要是国外）的大多数大模型，而且对于
 
 创建一个新的SpringBoot工程，勾选Web、MySQL驱动即可：
 
-![图片展示了IntelliJ IDEA中创建新的Spring Boot工程界面。在“Dependencies”下，勾选了“Web”和“MySQL Driver”选项，分别对应“Spring Web”和“MySQL Driver”两个已添加依赖项。该图片与文档中“创建工程”部分内容相关，直观呈现了创建工程时勾选Web、MySQL驱动的操作界面，帮助读者了解如何在IntelliJ IDEA中创建包含Web和MySQL驱动的Spring Boot工程。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/R5SNbp5vkohhoKxvyEkccJLhn9f.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/R5SNbp5vkohhoKxvyEkccJLhn9f.png)
 
 工程结构如图：
 
-![图片展示了SpringAI入门（对话机器人）中创建工程后的工程结构。左侧为Project面板，显示了工程目录结构 - ai - demo，包含.idea、.mvn、src等文件夹，其中src下有main、test文件夹，main里有java、resources、static、templates、application.properties等文件夹及文件。右侧有快捷操作提示，如搜索、文件导航等。该图与上文介绍创建新的SpringBoot工程，勾选Web、MySQL驱动后工程结构的内容相呼应，直观呈现了工程结构情况。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/B46sbg13jobPixxxcipcsBUHnvf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/B46sbg13jobPixxxcipcsBUHnvf.png)
 
 原始pom.xml如下：
 
@@ -318,7 +318,7 @@ spring:
 
 在`com.itheima.ai.config`包下新建一个`CommonConfiguration`类：
 
-![这张图片展示了项目的文件目录结构，对应SpringAI入门教程中在指定包下新建类的要求。项目名为ai-demo，其目录中src文件夹下的main文件夹内有java文件夹，层级为com.itheima.ai，该文件夹下的config目录中，用红色框标注出了本次操作需要新建的CommonConfiguration类文件，这与上下文内容中要求在com.itheima.ai.config包下新建该类的说明相契合，直观呈现了该类在项目源码目录中的位置。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/VZykbZThqoqTVVxNN7LcFwrgnDd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/VZykbZThqoqTVVxNN7LcFwrgnDd.png)
 
 完整代码如下：
 
@@ -357,7 +357,7 @@ public class CommonConfiguration {
 
 接下来，我们定义一个Controller，在其中接收用户发送的提示词，然后把提示词发送给大模型，交给大模型处理，拿到结果后返回。
 
-![这张图片展示了名为ai-demo的项目的本地文件目录结构，路径为D:\\lesson\\code\\ai-demo。目录包含.idea、.mvn、src等文件夹，其中展开src/main/java目录后，可见com.itheima.ai包，该包下有config和controller子包。controller子包中的ChatController类被红色方框特别标注，结合上下文可知，这个类正是该快速入门同步调用功能中，负责接收用户提示词并调用大模型处理的核心Controller类。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/ZAkGbOxUgodYdMxAgEkcAJsln1d.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/ZAkGbOxUgodYdMxAgEkcAJsln1d.png)
 
 代码如下：
 
@@ -399,7 +399,7 @@ public class ChatController {
 
 启动项目，在浏览器中访问：http://localhost:8080/ai/chat?prompt=你好
 
-![图片展示的是在浏览器中访问http://localhost:8080/ai/chat?prompt=你好后的页面。页面地址栏显示网址，下方弹出一个对话框，内容为“你好！很高兴见到你，有什么我可以帮忙的吗？无论是学习、工作还是生活中的问题，都可以告诉我哦！😊”，背景为浅蓝色，对话框文字为黑色，右下角有黄色的笑脸表情。该图片与上文提到的在浏览器中访问http://localhost:8080/ai/chat?prompt=你好相呼应，直观呈现了同步调用后的页面效果。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EAeebGBclojIeXxheGwcfLornAb.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EAeebGBclojIeXxheGwcfLornAb.png)
 
 
 
@@ -428,7 +428,7 @@ public Flux<String> chat(@RequestParam(defaultValue = "讲个笑话") String pro
 
 重启测试，再次访问：
 
-![图片展示了在浏览器中访问`http://localhost:8080/ai/chat?prompt=你好`后的页面。页面显示“你好！很高兴见到你，有什么我可以帮忙的吗？”字样。这与文档中介绍在SpringAI中使用WebFlux技术实现流式调用的内容相关，说明通过流式调用方式，用户可实时看到聊天结果，改善了用户体验。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Ws17br0s0oNlcJxlP8fcg8Wzncb.gif)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Ws17br0s0oNlcJxlP8fcg8Wzncb.gif)
 
 
 
@@ -457,7 +457,7 @@ public ChatClient chatClient(OllamaChatModel model) {
 
 我们再次询问“你是谁？”
 
-![这张图片是在SpringAI快速入门的相关测试页面，地址栏显示为localhost:8080/ai/chat?prompt=你是谁？。页面中的内容分为两部分，上方浅灰色部分是DeepSeek的深度思考内容，下方被绿色高亮的部分是AI的最终回答，回答内容为“您好！我是黑马程序员的课程顾问小黑。很高兴为您提供服务，很高兴认识您！有什么我可以帮您的吗？”，这一结果对应了上下文里AI以“黑马客服小黑”身份回答问题的设定。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HQHLbQp0aoO3ZWxXAD9cNwoDndk.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HQHLbQp0aoO3ZWxXAD9cNwoDndk.png)
 
 注意，前面是DeepSeek的**深度思考**内容，绿色高亮部分才是最终的回答。
 
@@ -479,11 +479,11 @@ public ChatClient chatClient(OllamaChatModel model) {
 
 SpringAI基于AOP机制实现与大模型对话过程的增强、拦截、修改等功能。所有的增强通知都需要实现Advisor接口。
 
-![图片展示了Spring AI框架中ChatClient的流程图。从Prompt开始，经Prompt to AdvisedRequest，再到Before advising，由AroundAdvisor（internal）处理，之后是After advising，最后得到ChatResponse。图中还标注了数字序号标识的步骤，如1、2、3、4、5、6，分别对应流程中的不同环节。该图与文档中介绍Spring AI框架日志功能的内容相关，直观呈现了ChatClient在处理AI对话时的流程。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/FsfabQyhmoZXYQxOSoMcSmMMnSg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/FsfabQyhmoZXYQxOSoMcSmMMnSg.png)
 
 Spring提供了一些Advisor的默认实现，来实现一些基本的增强功能：
 
-![图片展示了Spring框架中Advisor的默认实现。上方为Advisor，下方依次是SimpleLoggerAdvisor、MessageChatMemoryAdvisor、QuestionAnswerAdvisor。这些Advisor通过虚线箭头连接，表明它们是Advisor的子类。该图与文档中介绍Spring提供默认实现来实现基本增强功能的内容相关，直观呈现了这些Advisor的层次关系，帮助理解日志记录、会话记忆及RAG等功能的实现基础。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/RxxQbgsAmoVahtxaBQfcOvu2nqd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/RxxQbgsAmoVahtxaBQfcOvu2nqd.png)
 
 - SimpleLoggerAdvisor：日志记录的Advisor
 - MessageChatMemoryAdvisor：会话记忆的Advisor
@@ -543,7 +543,7 @@ logging:
 
 在资料中给大家提供了前端的源代码：
 
-![这张图片展示了一个文件资源管理器界面，路径为“新加卷 (D:) > 课程资料 > SpringAI > 资料”，界面中列出了三个文件夹与两个ZIP压缩包文件。其中名为spring-ai-protal.zip的360压缩ZIP文件被红色框标注，该文件是SpringAI对接前端环节中提到的构建好的前端程序包，需解压缩至不包含中文、空格及特殊字符的目录中，即可通过对应命令启动Nginx运行前端内容。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/J26jbLJVxoSmKbxNnfQck1fWnGc.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/J26jbLJVxoSmKbxNnfQck1fWnGc.png)
 
 你只需要解压缩（最好放到非中文目录），然后进入解压后的目录，依次执行命令即可运行：
 
@@ -556,7 +556,7 @@ npm run dev
 
 启动后，访问 http://localhost:5173即可看到页面：
 
-![图片展示了运行前端代码后访问http://localhost:5173的页面。页面顶部显示网址“localhost:5173”，右上角有刷新按钮。中间大标题为“AI 应用中心”，下方有四个功能模块，分别是“AI 聊天”（与智能AI助手进行自然对话）、“哄哄模拟器”（温暖贴心的AI情感陪伴）、“智能客服”（24小时在线的智能服务助手）、“ChatPDF”（智能文档阅读与问答系统），每个模块配有图标。该图与上文介绍前端运行命令及访问页面的内容相呼应，直观呈现了运行结果。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Op2lbQabFogXsixle6RcZHsNnLg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Op2lbQabFogXsixle6RcZHsNnLg.png)
 
 
 
@@ -566,7 +566,7 @@ npm run dev
 
 如果你不关心源码，我也给大家提供了构建好的Nginx程序：
 
-![图片展示了课程资料中SpringAI资料下的文件夹内容。其中，红色框突出显示了“spring-ai-nginx.zip”文件，其类型为360压缩ZIP文件，大小为118,803 KB。该图片与文档中“1.3.2.Nginx运行”部分内容相关，对应文档中提到的“如果你不关心源码，我也给大家提供了构建好的Nginx程序”，此Nginx程序即为该压缩文件。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/LvFBbEqAmod09OxHsepcWjvSnCz.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/LvFBbEqAmod09OxHsepcWjvSnCz.png)
 
 解压缩到一个**不包含中文、空格、特殊字符**的目录中，然后通过命令启动Nginx：
 
@@ -586,7 +586,7 @@ nginx.exe -s stop
 
 启动后，访问 http://localhost:5173即可看到页面：
 
-![图片展示了在http://localhost:5173访问后的前端页面。页面顶部显示网址“localhost:5173”，右上角有刷新和星标图标。中间大标题为“AI 应用中心”，下方有四个功能模块，分别是“AI 聊天”（与智能AI助手进行自然对话）、“哄哄模拟器”（温暖贴心的AI情感陪伴）、“智能客服”（24小时在线的智能服务助手）、“ChatPDF”（智能文档阅读与问答系统），每个模块配有图标。该图与文档中介绍前端运行后页面显示内容的上下文对应，直观呈现了运行结果。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/NovhbPu8foFZQaxjdJ1clqQcnle.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/NovhbPu8foFZQaxjdJ1clqQcnle.png)
 
 
 
@@ -596,7 +596,7 @@ nginx.exe -s stop
 
 前后端在不同域名，存在跨域问题，因此我们需要在服务端解决cors问题。在`com.itheima.ai.config`包中添加一个`MvcConfiguration`类：
 
-![这张图片展示了heima-ai项目的目录结构，位于路径D:\\lesson\\code\\heima-ai下，其中src→main→java→com.itheima.ai→config目录下，包含了CommonConfiguration和MvcConfiguration两个类，MvcConfiguration类被红色框标注，对应文档中要求在该配置包中添加MvcConfiguration类的内容，是SpringAI对接前端时，服务端配置相关操作的可视化呈现。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/G9u7b9kIBoQf61xSaCscrdVMnne.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/G9u7b9kIBoQf61xSaCscrdVMnne.png)
 
 内容如下：
 
@@ -638,11 +638,11 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
 启动前端后，访问 http://localhost:5173即可看到页面：
 
-![图片展示的是启动前端后访问http://localhost:5173看到的页面。页面顶部显示网址“localhost:5173”，右上角有刷新和星标图标。中间大标题为“AI 应用中心”。下方有四个功能卡片，分别是“AI 聊天”（与智能AI助手进行自然对话）、“哄哄模拟器”（温暖贴心的AI情感陪伴）、“智能客服”（24小时在线的智能服务助手）、“ChatPDF”（智能文档阅读与问答系统），每个卡片配有图标。该图与上文提到的启动前端后访问页面相呼应，直观呈现了页面内容。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/JaCJbnWO2oblIkxt4KXcEqDUnHe.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/JaCJbnWO2oblIkxt4KXcEqDUnHe.png)
 
 点击第一个卡片《AI聊天》进入对话机器人页面：
 
-![图片展示的是前端访问服务端后，启动前端并访问http://localhost:5173后看到的页面。页面左上角显示“AI Hub”，下方有“聊天记录”区域，列出对话540614和958592。右侧是对话机器人页面，上方有“你好，我叫小明，可以回答哪些问题？”的提示，下方是输入框及发送按钮。该图片与文档中“测试”步骤相关，直观呈现了测试完成后聊天对话机器人的界面情况。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/LoNEb1gYdoUrAxxZvpRc3cEwnDd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/LoNEb1gYdoUrAxxZvpRc3cEwnDd.png)
 
 
 
@@ -754,7 +754,7 @@ OK，现在聊天会话已经有记忆功能了，不过**现在的会话记忆�
 
 以DeepSeek为例，页面上的会话历史：
 
-![这张图片展示了DeepSeek对话工具的会话历史页面，左侧区域的会话历史按时间划分，有7天内和30天内的分类，30天内分类下显示了“这是一张小学三年级的申报表”“我要制作一个小学三年级手工”等不同的对话条目，这些记录对应右侧的小学三年级申报表内容，其中申报项目为“运河好少年”，明确了德智体美劳的表现要求，还给出了得分建议与需要附带的证书复印件等注意事项。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/E3uybLvnEoGMngxGuQjc98YYnje.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/E3uybLvnEoGMngxGuQjc98YYnje.png)
 
 在ChatMemory中，会记录一个会话中的所有消息，记录方式是以`conversationId`为key，以`List<Message>`为value，根据这些历史消息，大模型就能继续回答问题，这就是所谓的会话记忆。
 
@@ -1327,7 +1327,7 @@ ChatGPT刚刚出来时，有一个非常知名的游戏，叫做**哄哄模拟�
 
 游戏规则很简单，就是说你的女友生气了，你需要使用语言技巧和沟通能力，让对方原谅你。
 
-![这张图片是哄哄模拟器的界面，模拟了与生气女友的聊天交互场景。界面顶部显示任务进度：女友的原谅度为30/100，聊天轮次为1/10；下方为聊天对话内容，依次是玩家发送的“哼”，系统生成的道歉话语“对不起，我错了，今晚就用你喜欢的姿势吧”，以及女友带着皱眉表情的回复，女友表示不算轻易被原谅，最终给予的原谅度增加了10，变成40/100；界面最底部还有用于输入回复的输入框，提示“快，说点什么”。该图片直观展示了纯Prompt开发的哄哄模拟器的实际运行效果，对应文档中关于纯Prompt开发哄哄模拟器的内容示例。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/R9HDb1q9roapL3x4n6Hc9vvMnfg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/R9HDb1q9roapL3x4n6Hc9vvMnfg.png)
 
 
 
@@ -1460,19 +1460,19 @@ spring:
 
 首先，点击启动项下拉箭头，然后点击`Edit Configurations`:
 
-![图片展示了在IntelliJ IDEA中启动项下拉箭头处的操作步骤。箭头位置被红色框和数字1标识，点击后弹出下拉菜单，其中“Edit Configurations...”选项被红色框和数字2标识。该图片与文档中“首先，点击启动项下拉箭头，然后点击`Edit Configurations`”的内容对应，直观呈现了操作步骤，帮助用户在IDEA中进行相关配置。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/GlqNbd4V4oaM4axwGfPcU7pXnMg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/GlqNbd4V4oaM4axwGfPcU7pXnMg.png)
 
 然后，在弹出的窗口中点击`Modify options`:
 
-![这张图片展示的是IDEA的Run/Debug Configurations窗口，窗口左侧为项目运行配置列表，包含JUnit、Spring Boot相关配置，当前选中的是名为HeimaAiApplication的Spring Boot启动项。窗口右侧的“Build and run”区域中，红框标注了“Modify options”按钮，还有红色文字标注的提示“点击Modify options”，该提示和标注内容与文档中“在弹出的窗口中点击Modify options”的操作步骤对应，是纯Prompt开发（哄哄模拟器）创建ChatClient环节里的具体操作界面截图。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/ETtEbSppoovVKXxN7gacAhb3n4M.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/ETtEbSppoovVKXxN7gacAhb3n4M.png)
 
 在弹出窗口中，选择`Environment variables`:
 
-![这张图片展示的是IDEA中“Add Run Options”窗口的内容，用于创建ChatClient过程中的配置步骤。窗口分为Spring Boot、Operating System、Java三个功能区块，其中Operating System区块里的“Environment variables”选项被红框标注且已勾选，其右侧标注快捷键为Alt+E，还有鼠标指针指向该选项，对应文档里在弹出窗口选择`Environment variables`的操作步骤，后续该选项将在`Run/Debug Configurations`窗口中生成环境变量配置栏，用于后续配置阿里云百炼的API_KEY。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Sb1SbKEt0oL4fMxhlD0cZmcln1b.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Sb1SbKEt0oL4fMxhlD0cZmcln1b.png)
 
 然后，在刚才的`Run/Debug Configurations`窗口中，就会多出环境变量配置栏：
 
-![图片展示了IntelliJ IDEA中“Run/Debug Configurations”窗口。在“Environment variables”区域，已配置了“OPENAI_API_KEY”环境变量，其值为“sk -914a82ea121f4”。窗口底部有“Debug”按钮（带有绿色箭头图标）和“OK”按钮。该图片与上文配置环境变量的操作步骤相关，直观呈现了配置完成后窗口中的环境变量显示情况，帮助用户确认配置是否正确。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Zdb1bEiBeoay6XxIjOscz7sonVg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Zdb1bEiBeoay6XxIjOscz7sonVg.png)
 
 在其中配置自己**阿里云百炼**上的API_KEY：
 
@@ -1637,11 +1637,11 @@ public class GameController {
 
 与之前类似，我们也提供了前端页面，现在一起去试试吧：
 
-![图片展示了AI Hub的AI应用中心界面。画面中“AI聊天”“哄哄模拟器”“智能客服”“ChatPDF”四个应用板块依次排列，其中“哄哄模拟器”板块被红色框线突出显示。该板块介绍称“一个帮助你练习哄女朋友开心的聊天小游戏”。该图片与上下文紧密相关，上下文提到在前端页面点击“哄哄模拟器”卡片，进入该页面，这里通过图片直观呈现了“哄哄模拟器”在AI应用中心的位置，为后续操作指引提供视觉参考。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/JmUXb07njokE11xeuoXc7kaCnyd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/JmUXb07njokE11xeuoXc7kaCnyd.png)
 
 点击哄哄模拟器卡片，进入页面：
 
-![图片展示的是哄哄模拟器的前端页面。页面顶部显示“AI Hub”，右上角有月牙形图标。中间大标题为“哄哄模拟器”，下方有一个输入框，提示“请输入女友生气的原因（可选）”，输入框下方是蓝色的“开始游戏”按钮。该图片与上文提到的在前端页面测试哄哄模拟器的内容相关，直观呈现了测试时的页面界面。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/NKBKb8vPUonoWkxSunWclXhInbe.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/NKBKb8vPUonoWkxSunWclXhInbe.png)
 
 这里需要输入女友生气原因，如果不输入则是由AI自动生成原因。
 
@@ -1649,7 +1649,7 @@ public class GameController {
 
 点击开始游戏后，就可以跟AI女友聊天了：
 
-![图片展示的是哄哄模拟器的聊天界面。上方显示女友原证值为45%，对话轮次5/10。左侧有“开始游戏”按钮，下方是女友的聊天内容，如“游戏开始，请你在开始哄你的女朋友开心吧，回她让她开心的话！（双手抱胸看着你你昨天为什么把我最爱的瓶装口红弄断了？）”，并有得分和原证值。右侧是玩家的聊天内容，如“哎呀，真的很抱歉，宝贝，我完全没有想到会弄坏它。我知道瓶装口红对你有多重要，我会补偿你，不仅买一支新的，还要买你最喜欢的那款颜色，保证让你开心！能原谅我吗？”。底部有输入框和发送按钮。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/BoMdbn6FvolTNqxT0Ricf29HnSc.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/BoMdbn6FvolTNqxT0Ricf29HnSc.png)
 
 
 
@@ -1769,7 +1769,7 @@ Function Calling就是起到这样的作用。
 
 由于解析大模型响应，找到函数名称、参数，调用函数等这些动作都是固定的，所以SpringAI再次利用AOP的能力，帮我们把中间调用函数的部分自动完成了。
 
-![这张图展示了SpringAI中Function Calling实现智能客服的核心流程，清晰标注了6个关键步骤。首先，标注为①的步骤是带有Tool Definition的Chat Request，会传入SpringAI模块的Dispatch Tool Call Requests；接着，标注为②的步骤是该模块向AI Model发起调用请求；AI Model处理后，依次执行标注为③的、Tool的调用请求与标注为④的、Tool执行结果返回；随后标注为⑤的步骤是调用结果返回至Dispatch Tool Call Requests模块；最后，标注为⑥的步骤是该模块返回Chat Response。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/TaLybv0OJo175zxA9oJccm44nUg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/TaLybv0OJo175zxA9oJccm44nUg.png)
 
 我们要做的事情就简化了：
 
@@ -2253,7 +2253,7 @@ public class CourseReservationServiceImpl extends ServiceImpl<CourseReservationM
 
 先来看下课程表的字段：
 
-![这张图片展示了课程表的字段结构，是文档中分析课程查询条件时的配套内容。表格共有6个字段，分别是id、name、edu、type、price、duration，对应课程的标识、名称、学历背景要求、课程类型、价格和学习时长（单位为天）。这些字段覆盖了文档中提及的筛选条件，包括学历、课程类型、价格、学习时长等，以及作为主键的id和存储学科名称的name字段，为后续定义查询课程的Function提供了数据依据。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/IErObR84bo1RnoxD7cucj0R1nDd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/IErObR84bo1RnoxD7cucj0R1nDd.png)
 
 课程并不是适用于所有人，会有一些限制条件，比如：学历、课程类型、价格、学习时长等
 
@@ -2564,21 +2564,21 @@ public class CustomerServiceController {
 
 最终，完整项目结构如图：
 
-![图片展示了智能客服项目结构。左侧为项目目录，包含main下的java、config、controller、entity、mapper、repository、service、tools等目录。其中，entity目录下有po、query、vo等子目录，po目录下有Course、CourseReservation、School等实体类；mapper目录下有CourseMapper、CourseReservationMapper、SchoolMapper等；service目录下有impl子目录，其中包含CourseReservationServiceImpl、CourseServiceImpl等服务类。该图直观呈现了项目中各模块的层级关系及内容。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/YvuCbdDDho52nzxc76Sc16Uan7t.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/YvuCbdDDho52nzxc76Sc16Uan7t.png)
 
 打开前端页面，访问智能客服卡片：
 
-![图片展示了AI Hub的AI应用中心界面。界面上方显示网址“localhost:5173”。中间标题为“AI应用中心”，下方有四个功能板块，其中“智能客服”板块被红色框线突出显示，其图标为两个并排的人形图案，下方文字说明为“24小时在线的智能服务助手”。该图片与上下文关系紧密，上下文提到打开前端页面访问智能客服卡片，点击卡片进入智能客服聊天页面，此图直观呈现了智能客服在AI应用中心的位置，辅助理解上下文中的操作指引。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Ex4HbcoQLouy4Rx2hHQcthozn7d.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Ex4HbcoQLouy4Rx2hHQcthozn7d.png)
 
 点击卡片，进入智能客服聊天页面，就可以咨询课程了：
 
-![这张图展示的是SpringAI功能调用模块的智能客服聊天页面，页面左侧为咨询记录区域，显示有“咨询92943”，还有“+新咨询”的操作按钮；右侧是AI客服“小黑”的聊天对话窗口，小黑标注为“第3届学办智能客服”。用户向客服发送了“你好”和“编程类的课程有哪些？”的消息，小黑也给出了对应的回复内容，页面底部设置有供用户输入提问的文本框，当前页面处于正常的咨询交互状态。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HITnbxpTEoxpdzxGz9Fc5CF5nOc.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HITnbxpTEoxpdzxGz9Fc5CF5nOc.png)
 
 
 
 AI客服可以智能的自己查询数据库、查询校区，给学生推荐课程、生成预约单：
 
-![图片展示了小鹿与AI客服的聊天记录。小鹿询问AI客服是否能查询校区、课程、预约等信息，AI客服表示能查询校区、课程、预约，并能生成预约单。小鹿还询问了校区的地址、电话、上课时间等信息，AI客服一一给出答案，如北京校区地址为北京市海淀区学院路39号，电话为010 - 6275 1234等。该图片直观呈现了AI客服的智能查询功能，与上下文介绍的AI客服功能相契合。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/TbpqbZnUpoq0zjxVEU5cbH1Mn7d.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/TbpqbZnUpoq0zjxVEU5cbH1Mn7d.png)
 
 
 
@@ -2613,7 +2613,7 @@ AI客服可以智能的自己查询数据库、查询校区，给学生推荐课
 
 数据库中确实有预约的数据了：
 
-![图片展示的是数据库中预约数据的表格。表格包含id、course、student_name、contact_info、school、remark六列。其中，id列有1和2，course列有“新媒体运营”和“JavaEE”，student_name列有“张三丰”和“杨过”，contact_info列有手机号码，school列有“广东校区”和“杭州校区”，remark列有“安排一个好点的老师”和“希望试听时间为上午；特别喜欢虎哥的课”。该图片与上文提到的查看后台调用数据库记录相呼应，直观呈现了数据库中预约数据的具体内容。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/F135b3KeTodrT5xrwKYc31Xanke.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/F135b3KeTodrT5xrwKYc31Xanke.png)
 
 
 
@@ -2692,7 +2692,7 @@ AI客服可以智能的自己查询数据库、查询校区，给学生推荐课
 
 我们以二维向量为例，向量之间的距离有两种计算方法：
 
-![这张图展示了二维平面中两个向量的两种距离计算方式，对应向量相似度的判断方法。图里以坐标原点为起点的两条虚线分别对应两个向量，夹角为θ。图中标注了两种距离：一种是两个向量终点之间的线段，标注为“欧氏距离 ||v₁ - v₂||”，表示两个向量终点的直线距离；另一种是夹角θ，对应余弦距离，其计算公式为cosθ = <v₁,v₂>/(||v₁|| ||v₂||)。结合上下文可知，这种向量距离计算的相关内容，是为了说明将文本转为向量后，可通过向量的距离来判断文本相似度的原理。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Num2bUKA3o7tYBxNSBpcV5F7nxb.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Num2bUKA3o7tYBxNSBpcV5F7nxb.png)
 
 通常，两个向量之间**欧式距离越近**，我们认为两个向量的**相似度越高**。（余弦距离相反，越大相似度越高）
 
@@ -2704,7 +2704,7 @@ AI客服可以智能的自己查询数据库、查询校区，给学生推荐课
 
 现在，有不少的专门的**向量模型**，就可以实现将文本向量化。一个好的向量模型，就是要**尽可能让文本含义相似的向量，在空间中距离更近**：
 
-![图片展示了文本向量化示例，左侧为五组文本，右侧是对应的向量表示。每组文本右侧的向量由多个数值组成，数值颜色不同，代表不同维度。右侧还用箭头连接了向量，标注“近”和“远”，直观呈现了文本含义相似的向量在空间中距离更近的特点，与上文提到的“一个好的向量模型，就是要尽可能让文本含义相似的向量，在空间中距离更近”相呼应。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/YTmZb4Hy3ouGjpxPtyIcIsvOnlf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/YTmZb4Hy3ouGjpxPtyIcIsvOnlf.png)
 
 
 
@@ -2714,7 +2714,7 @@ AI客服可以智能的自己查询数据库、查询校区，给学生推荐课
 
 阿里云百炼平台就提供了这样的模型：
 
-![这张图片展示了阿里云百炼平台的模型广场界面，用于RAG原理相关的向量模型选择。界面的模型筛选栏可按供应商、模型类型、上下文窗口等条件筛选模型，核心突出显示的是被红框标注的“通用文本向量-v3”模型，该模型明确标注为兼容OpenAI的多语言文本向量模型，同时界面还呈现了另外两款文本向量相关模型，整体界面清晰展示了可供选用的向量模型选项，和文档中选用通用文本向量-v3的操作内容相匹配。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/GQ9BbiENBoobz1xoWf8ccL2cnuc.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/GQ9BbiENBoobz1xoWf8ccL2cnuc.png)
 
 
 
@@ -2927,11 +2927,11 @@ class AiDemoApplicationTests {
 
 首先，点击单元测试左侧运行按钮：
 
-![这张图片展示了IDEA开发工具中单元测试的操作界面，位置对应文档中“点击单元测试左侧运行按钮”的步骤。画面中，序号1的红色标记指向19行代码左侧的测试运行图标，点击该图标后弹出包含多个选项的菜单；序号2的红色标记指向菜单中的“Modify Run Configuration...”选项，该部分被红框标注且有光标指向，呈现出操作的关键流程，为后续配置环境变量提供前置操作指引。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EJZublopVocvTJxZ0q8c3t4nnQd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EJZublopVocvTJxZ0q8c3t4nnQd.png)
 
 然后配置环境变量：
 
-![图片展示了IntelliJ IDEA中对“'HeimaAiApplicationTests.contextLoads'”运行配置的编辑界面。关键信息有：在“Environment variables”区域，输入了“OPENAI_API_KEY=sk-9...”（部分信息被遮挡）；界面右下角有“OK”和“Cancel”按钮，其中“OK”按钮被红色框突出显示。该图片与上文“运行单元测试通用需要配置OPENAI_API_KEY的环境变量”内容相关，展示了配置环境变量的操作步骤。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EXPtbUAcyoaA8KxnJyGcg2RlnNb.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EXPtbUAcyoaA8KxnJyGcg2RlnNb.png)
 
 
 
@@ -3231,7 +3231,7 @@ OK，现在我们有了这些工具：
 
 接下来，我们就来实现一个非常火爆的个人知识库AI应用，ChatPDF，原网站如下：  
 
-![这是在线ChatPDF工具的界面，该工具可将用户的个人PDF文件作为知识库，让AI基于PDF内容解答问题，适用于大学生、研究人员、专业人士。界面左上角显示工具官网地址chatpdf.com，界面右侧有明确的PDF上传区域，标注可点击上传或拖拽PDF文件到指定位置，还配有指向该上传区域的手写提示箭头。界面顶部标注该工具的相关资质与数据，如“每天超1,000,000+”的使用量、“2024年度生成式AI应用Top50”等，体现其行业认可度，左侧则有新建聊天、上传文件等功能选项。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/FIo3bP24WoJSmDxXNbpcviQWnKg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/FIo3bP24WoJSmDxXNbpcviQWnKg.png)
 
 
 
@@ -3654,19 +3654,19 @@ public Flux<String> chat(String prompt, String chatId) {
 
 最终，项目结构如下：
 
-![这张图片展示了ai-demo项目的目录结构，其中src/main/java路径下的部分文件和包被红色圆圈标注，这些是与ChatPDF功能相关的核心内容。被标注的内容包括controller包下的PdfController、repository包下的LocalPdfFileRepository与PdfFileRepository，以及util包下的VectorDistanceUtils。该项目结构对应文档中关于ChatPDF配置、RAG自定义流程、对话接口开发的内容，体现了实现RAG（知识库ChatPDF）功能所需的关键代码文件，这些文件是后续对接前端实现PDF提问与回答功能的基础。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/MZv3bc0iZoO6nPxMT79c3YW5nIb.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/MZv3bc0iZoO6nPxMT79c3YW5nIb.png)
 
 打开浏览器，访问http://localhost:5173
 
-![这张图片展示了AI应用中心的页面，页面顶部显示访问地址为localhost:5173，页面核心是四个功能模块卡片，分别为“AI聊天”“哄哄模拟器”“智能客服”“ChatPDF”，每个卡片都配有对应图标与功能说明，其中“ChatPDF”模块被红色方框重点标注，说明该卡片是对应文档中提到的、可进入文档问答功能的入口，符合文档里“点击ChatPDF卡片进入对应页面”的操作指引。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/G0Ajb6LmdoeaRixRHCJcj2ubnCd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/G0Ajb6LmdoeaRixRHCJcj2ubnCd.png)
 
 点击ChatPDF卡片，进入对应页面：
 
-![图片展示的是ChatPDF页面。左侧为“ChatPDF”区域，有“历史记录”和“+添加”按钮。右侧是“与任何PDF对话”区域，上方有“点击上传，或将PDF拖拽到此处”的提示，下方有“上传PDF”按钮。该图片与文档中“配置ChatClient”及“对话接口”等内容相关，是对接前端后与大模型对话前的页面展示，用于上传PDF文件以进行提问和回答。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Bj82btNqsoS1NaxOYZ3c33ybnt2.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Bj82btNqsoS1NaxOYZ3c33ybnt2.png)
 
 上传一个PDF文件之后，就可以对PDF提问了，AI也会根据文档来回答问题
 
-![这是SpringAI相关项目的ChatPDF功能页面，左侧是功能导航区，显示“ChatPDF”及“中二知识点笔记.pdf”文件选项；中间是文档查看区，正展示名为“中二知识点笔记.pdf”的内容，其中《论语》部分有红色框线高亮标注的文本内容，还配有箭头延伸；右侧是对话交互区，上方提示已成功上传对应PDF文件，下方对话中用户输入“请翻译《论语》的是什么”，AI已给出结合上下文内容生成的回答，页面底部设有供用户输入提问的文本框。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/KTn6bIcRsoRhDsxltJ8cYGtbnnt.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/KTn6bIcRsoRhDsxltJ8cYGtbnnt.png)
 
 
 
@@ -3680,13 +3680,13 @@ deepseek、qwen-max等模型都是纯文本模型，在ollama和百炼平台，�
 
 以ollama为例，在搜索时点击vison，就能找到支持图像识别的模型：
 
-![图片展示了ollama网站的搜索界面，搜索框内输入“vision”，下方显示了llava和llama3.2 - vision两个模型。llava被红框突出显示，其描述为一种结合视觉编码器和Vicuna的新型端到端训练大型多模态模型，适用于通用视觉和语言理解，已更新至版本1.6。llama3.2 - vision则是一个指令调优的图像推理生成模型，有11B和90B两种尺寸。该图片与上文提到的以ollama为例，在搜索时点击vision找到支持图像识别模型的内容相关，直观呈现了搜索结果。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/L8NjbQaaWoc2S3xQ6vJcjPHcnzh.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/L8NjbQaaWoc2S3xQ6vJcjPHcnzh.png)
 
 
 
 在阿里云百炼平台也一样：
 
-![这张图片展示了阿里云百炼平台的模型广场界面，界面右上角标注“Qwen-Omni新模型上架”，说明该平台有支持多模态输入输出的大模型。界面中部的模型筛选栏里，“模型类型”的“全模态”选项被红框突出标注，是核心关注的内容。下方展示了三款关联模型，包括“通义千问-Omni-Turbo”等，界面整体呈现了该平台筛选出的全模态相关模型的内容，和文档中提及的阿里云qwen-omni模型属于全模态模型的内容相呼应。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/TPy4bHJRmoMkI8xzgIPckLgGnDe.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/TPy4bHJRmoMkI8xzgIPckLgGnDe.png)
 
 
 
@@ -3814,15 +3814,15 @@ public class ChatController {
 
 访问页面中的AI聊天卡片：
 
-![这张图片是AI应用中心的页面，其中标注为红色框的“AI聊天”卡片，对应文档里测试环节提及的AI聊天卡片，该卡片的说明为“与智能AI助手进行自然对话”，页面还设有“哄哄模拟器”“智能客服”“ChatPDF”等其他AI应用功能入口，整体界面用于展示可使用的各类AI工具。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/XOoebju4VoIe8gxrrTKclEBSnMh.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/XOoebju4VoIe8gxrrTKclEBSnMh.png)
 
 点击卡片，进入聊天页面，可以上传图片让AI来识别了：
 
-![图片展示的是AI Hub的聊天界面。左侧为聊天记录列表，当前选中对话235414。右侧上方有“+新建对话”按钮。中间区域显示对话内容，AI分析了图片中描绘的血色修道院，介绍了其在《魔兽世界》中的位置及历史。下方有“选择1个图片文件，可继续输入消息”的提示，以及一个文件图标和“发送”按钮。该图与文档中测试多模态对话功能的内容相关，展示了上传图片让AI识别的场景。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/BbgTbyK7Qo5vEQxXxuNcrz4WnVe.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/BbgTbyK7Qo5vEQxXxuNcrz4WnVe.png)
 
 图片原图：
 
-![图片展示的是一个充满梦幻色彩的花园场景。画面中有一座喷泉，水流从高处倾泻而下，形成瀑布状，周围环绕着绿植和花卉。花园内有石阶和小径，地面铺有彩色瓷砖。远处可见一座带有尖顶的建筑，建筑前有拱门和柱子。整个场景光线柔和，有阳光透过云层洒落，营造出宁静而美丽的氛围。图片位于文档中“5.3.测试”部分，与访问AI聊天卡片后进入的聊天页面相呼应，展示了聊天场景的背景环境。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/BttHbRJ4BoIHTzxbt79cLUXtn1l.jpg)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/BttHbRJ4BoIHTzxbt79cLUXtn1l.jpg)
 
 
 
@@ -5164,7 +5164,7 @@ docker exec -it redis-stack redis-cli
 
 也可以通过浏览器访问控制台：http://localhost:8001，注意，这里的IP要换成你自己的
 
-![这是一张数据库管理工具的界面截图，当前展示的是名为`spring_ai_index`的Redis键索引界面，左侧列出了多个JSON格式的键，包含对应的数据大小，右侧则选中了键`doc6f2bdd2-ea3a-4028-ae82-07f90c306848`，显示其JSON内容，包含页码、文件名及围绕教育的相关文本内容，和文档中介绍的RedisVectorStore的安装后的访问验证操作内容相呼应，用于直观展示安装完成后通过浏览器访问的Redis数据情况。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/LwGwbiL1yokglNx1wsxcaFMpnGg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/LwGwbiL1yokglNx1wsxcaFMpnGg.png)
 
 
 

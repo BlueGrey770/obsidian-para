@@ -40,7 +40,7 @@ aliases:
 
 用户下单成功提示用户支付，用户支付成功即下单成功，下单成功后家政服务人员才可以进行抢单，如下图：
 
-![这张图分为左右两部分，左侧是支付订单页，标注了“支付剩余时间08:40”，同时显示了订单总价208元、优惠金额10元、待付金额198元，支付方式选中了微信支付，底部设有“确认支付”按钮，对应小程序下单后的支付环节；右侧是下单成功页面，带有绿色对勾图标，标注“下单成功”，还提示服务人员正在抢单，页面设有“返回首页”和“查看订单”按钮，展示了支付成功后的状态，和文档里小程序微信支付的流程内容相匹配。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/FGUJb1c3OofN7kxD5u5ciQP4nMc.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/FGUJb1c3OofN7kxD5u5ciQP4nMc.png)
 
 用户使用的是微信小程序，所以支付过程是使用微信支付，点击确认支付即弹出微信支付界面，输入支付密码确认支付，支付成功后显示下单成功。
 
@@ -289,7 +289,7 @@ HTTPS协议巧妙地结合了对称加密和非对称加密的优点：
 
 jzo2o-trade创建完成如下图：
 
-![图片展示了jzo2o-trade项目的文件结构。在src目录下，有main文件夹，其中包含java文件夹，内有com.jzo2o.trade下的多个子文件夹，如annotation、config、controller等，以及TradeApplication文件。resources文件夹下有logos、bootstrap.yml、bootstrap-dev.yml、bootstrap-prod.yml等文件。该图片与上文创建jzo2o-trade项目及配置bootstrap-dev.yml中nacos地址的内容相关，直观呈现了项目结构。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/JnD6boakZo6rpgxz3l1czoiUnDL.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/JnD6boakZo6rpgxz3l1czoiUnDL.png)
 
 需要注意配置bootstrap-dev.yml中的nacos地址。
 
@@ -318,11 +318,11 @@ rabbit-mq:
 
 示例图：
 
-![该图为支付服务配置页面，是创建jzo2o-trade的nacos配置文件jzo2o-trade.yaml的示例界面，页面上方可设置Data ID为jzo2o-trade.yaml、Group为DEFAULT_GROUP，还能选择配置格式，当前选中的格式为YAML；页面下方展示了配置内容示例，包含jzo2o、jforder、queue等多个字段的配置项，以及如color、width等布局相关配置，该页面用于配置支付模块的对应服务参数，是测试支付接口前完成支付服务配置的关键示例参考。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/ZtOobl7Ddo7Ns3x93x8cBiWbn8e.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/ZtOobl7Ddo7Ns3x93x8cBiWbn8e.png)
 
 创建jzo2o-trade数据库，从课程资料中获取jzo2o-trade.sql并导入此脚本。
 
-![这张图片展示了名为jzo2o-trade的项目结构，展开的“tables 4”目录下包含四个数据库表，分别为pay_channel、refund_record、trading以及undo_log。该图片位于文档“1.2测试支付接口”环节中，对应支付服务搭建过程里创建jzo2o-trade数据库的相关操作步骤，直观呈现了该项目需创建的数据库表情况，与文档中导入jzo2o-trade.sql脚本建库的内容相呼应，是支付模块搭建时数据库准备环节的可视化呈现。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Tg0YbFDCOoTrxtxOegVcQDYbnCc.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Tg0YbFDCOoTrxtxOegVcQDYbnCc.png)
 
 
 
@@ -344,19 +344,19 @@ rabbit-mq:
 
 下边我们测试支付服务的统一收单线下交易接口。
 
-![该图片是家政服务的支付服务接口文档页面，左侧菜单选中“内部接口 - Native支付”下的“统一收单线下交易”选项，右侧展示该接口的核心信息：名称为统一收单线下交易，请求方法为POST，接口路径为/trade/inner/native，请求数据类型是application/json，同时标注有接口描述，页面还设有复制接口、复制文档等功能按钮，与文档中提及的测试支付接口及对应接口信息相匹配。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/LjRObH5PdoDklfxDz8ncUnMSnsb.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/LjRObH5PdoDklfxDz8ncUnMSnsb.png)
 
 接口定义如下：
 
 接口文档地址：http://localhost:11505/trade/doc.html#/default/%E5%86%85%E9%83%A8%E6%8E%A5%E5%8F%A3%20-%20Native%E6%94%AF%E4%BB%98/createDownLineTradingUsingPOST
 
-![图片展示的是家政服务 - 支付服务接口文档页面。左侧导航栏中“内嵌接口 - Native支付”下有“统一收单线下交易”等选项。右侧显示接口为“POST /trade/inner/native”，请求数据类型为application/json，响应数据类型为“\[\]”“*”。接口描述为“统一收单线下交易”，并有请求示例，示例中包含changeChannel、enterpriseId、memo等参数。该图片与文档中测试支付接口的上下文相关，直观呈现了接口定义及示例内容。](https://feishu.cn/file/WAyCbzn1koHJArxuwaIc4n6jnxb)
+![](https://feishu.cn/file/WAyCbzn1koHJArxuwaIc4n6jnxb)
 
 接口路径：**POST**/trade/inner/native
 
 **请求数据类型** application/json
 
-![图片展示了支付接口的请求参数说明。参数名称包括nativePayDTO、changeChannel、enterpriseId等，其中nativePayDTO为扫码支付提交参数，changeChannel表示是否切换支付渠道，为true且类型为boolean。enterpriseId为商户号，也为true且类型为integer。memo、productAppId、productOrderNo、tradingAmount、tradingChannel等参数也均有说明，如memo为备注，tradingAmount为交易金额，单位为元，tradingChannel支付渠道可用值为ALI_PAY、WECHAT_PAY。该图片与上文接口定义及请求参数说明的内容紧密相关，是对接口请求参数的详细展示。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/PEvbbDL7joSHAPxp9u8cWxXYn0c.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/PEvbbDL7joSHAPxp9u8cWxXYn0c.png)
 
 请求参数说明：
 
@@ -376,7 +376,7 @@ tradingChannel        支付渠道,可用值:ALI_PAY,WECHAT_PAY
 
 
 
-![图片展示了支付接口测试的响应参数说明。包含code、msg、data等参数，其中data下有placeOrderMsg、productOrderNo、qrCode、tradingChannel、tradingOrderNo等具体参数，如placeOrderMsg为统一下单返回信息，productOrderNo为业务系统订单号，tradingChannel为支付渠道，tradingOrderNo为交易系统订单号。该图片与上文测试支付接口中响应参数说明的内容相呼应，是对响应参数的详细展示。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/BXTfbDJwmo5fRqx4AxEcTCb6nTf.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/BXTfbDJwmo5fRqx4AxEcTCb6nTf.png)
 
 
 
@@ -416,7 +416,7 @@ qrCode：二维码base64
 
 
 
-![图片展示的是支付接口测试时的调试界面。上方有“POST”标识及“/trade/inner/native”路径，下方是请求参数区域，包括“changeChannel”“tradingChannel”等字段，部分字段有具体值。下方还有响应内容区域，显示了“qrCode”“tradeUrl”等字段及对应值。该图片与上下文紧密相关，上下文提到使用接口文档调试功能进行接口测试，此图直观呈现了测试时的请求与响应情况，帮助理解测试操作。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/J4ZTbVwrOohS0ixaULwcejnVn0c.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/J4ZTbVwrOohS0ixaULwcejnVn0c.png)
 
 响应结果如下：
 
@@ -434,7 +434,7 @@ qrCode：二维码base64
 
 复制qrCode粘贴到浏览器，出现二维码，如下图：
 
-![图片展示的是支付接口测试中复制的二维码。在文档中，作者提到使用接口文档的调试功能进行接口测试，需将qrCode复制粘贴到浏览器，出现二维码。此图即为复制后的二维码，中间有一个绿色的对勾图案，周围由黑色方块组成，是扫码支付的标识，用于后续扫码支付操作。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Z3QibXL3wozk9XxmnTPc17fvnBg.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Z3QibXL3wozk9XxmnTPc17fvnBg.png)
 
 下边进行扫码支付。
 
@@ -448,7 +448,7 @@ qrCode：二维码base64
 
 接口定义如下：
 
-![图片展示的是“根据交易单号查询交易单的交易结果”接口文档。上方显示接口URL为http://localhost:11505/trade/doc.html#/default/内部接口%20-%20交易单服务/findTradResultByTradingOrderNoUsingGET。文档中详细说明了该接口为GET类型，请求数据类型为application/x-www-form-urlencoded，响应数据类型为“\[\]” 。还列出了交易单号（tradingOrderNo）为必填参数，类型为integer(int64)。此图与上文介绍的支付结果查询接口文档内容相呼应，为测试支付接口提供具体接口信息。](https://feishu.cn/file/IudZb7k5BovB2txyGMtcatQEnxd)
+![](https://feishu.cn/file/IudZb7k5BovB2txyGMtcatQEnxd)
 
 
 
@@ -464,15 +464,15 @@ tradingState 交易状态 （4表示已付款）
 
 
 
-![图片展示了支付结果查询接口的响应参数。参数包括msg（响应消息）、code（状态码）、data（交易数据对象）、resultJson（第三方交易返回信息）、tradingChannel（支付渠道）、placeOrderMsg（统一下单返回信息）、openid（openid标识）、operationRefund（操作退款金额）、payerId（付款人Id）、placeOrderCode（统一下单返回编码）、resultCode（第三方交易返回编码）、memo（备注）、tradingState（交易单状态）。该图片与上文介绍的支付结果查询接口相关，是对接口响应参数的说明，帮助理解接口返回数据结构。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/WhNQbnk0qoYLRVxM98CcfjNZnaf.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/WhNQbnk0qoYLRVxM98CcfjNZnaf.png)
 
-![这是一张接口返回数据的字段说明表格，呈现了交易相关接口的响应字段信息。表格每行对应一个字段，从左到右依次为字段名、字段含义、字段类型，涵盖收款人姓名、业务系统订单号、二维码base64数据、交易类型、付款人姓名、主键、收款人账户ID、是否有效、退款请求号、创建时间、交易系统订单号、第三方支付的交易号等内容，其中交易系统订单号字段补充说明“对于三方来说：商户订单”，该表格用于明确测试支付结果查询接口时需关注的字段信息，是支付模块测试环节的相关文档内容。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/QZKDbSHAOoNMVzxsBirc8IJBn7c.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/QZKDbSHAOoNMVzxsBirc8IJBn7c.png)
 
-![这张图片是支付结果查询接口返回参数的详情表，呈现了该接口响应结果的各关键参数及对应说明、数据类型。表中包含placeOrderJson，说明其为统一下单返回信息json，用于生成二维码或唤醒支付，数据类型为string；resultMsg是第三方交易返回提示消息，即最终确认交易信息，数据类型为string；isRefund标识是否有退款，可选值为YES或NO，数据类型为string；还包含商户号、更新时间、退款金额、交易金额等参数，分别对应各自的说明及integer(int64)、string(datetime)、number等数据类型，该表是测试“根据交易单号查询交易单的交易结果”接口时，需要关注的响应结果参数的明确说明。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/WtZZbMSNLoWPkBxAbFmcn8xmnne.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/WtZZbMSNLoWPkBxAbFmcn8xmnne.png)
 
 下边进行测试，传入交易单号：
 
-![这张图是支付服务接口文档的测试页面，对应文档中支付结果查询环节的接口测试内容，页面标题为家政服务-支付服务接口文档，展示的是GET请求“findTradResultByTradingOrderNoUsingGET”的调试界面。左侧是接口列表，高亮显示的正是本次测试的“根据交易单号查询交易结果”接口；右侧的参数区域中，已勾选并填写交易单号参数，数值为1836665005235644578，下方显示了该接口的响应结果信息，能看到交易相关的业务订单号、支付服务交易单号等内容，符合文档中需通过交易单号查询交易结果的测试要求。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/VxRIbIUlKoicQsxNxmkcY1Bnnyf.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/VxRIbIUlKoicQsxNxmkcY1Bnnyf.png)
 
 响应结果：
 
@@ -520,7 +520,7 @@ tradingState 交易状态 （4表示已付款）
 
 接口路径：**POST**/trade/inner/refund-record/refund
 
-![这张图片展示的是家政服务支付服务的统一收单退款接口文档页面，对应测试退款接口的相关内容。页面显示该接口请求方式为POST，接口路径为/trade/inner/refund-record/refund，请求数据类型为application/x-www-form-urlencoded。接口描述为统一收单交易退款，标注的请求参数有3项，分别是参数名称refundAmount（退款金额）、refundNo（退款单号）、tradeOrderNo（交易单号），这三项参数均为必填的Number/Integer类型。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/XBvib8e8RoUPS3x8nVacbm4qnGd.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/XBvib8e8RoUPS3x8nVacbm4qnGd.png)
 
 
 
@@ -530,7 +530,7 @@ tradingState 交易状态 （4表示已付款）
 
 退款单号：每次退款的退款单号必须唯一，多次退款总和不能大于支付金额。
 
-![这张图片展示的是测试退款接口的响应参数说明，包含参数名称、参数说明、类型与schema信息。其中明确标注了核心的退款状态参数refundStatus的含义，即0表示发起退款，1表示退款中，2表示退款成功，3表示退款失败，还列出了退款单号refundNo、第三方支付生成的退款单号refundId等关键参数，这些内容与上下文提到的测试退款接口需关注退款状态的要求对应，便于开发者查看和验证退款接口的响应数据。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/DIbtbS7OGo1siAxMznGcGb9Kngd.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/DIbtbS7OGo1siAxMznGcGb9Kngd.png)
 
 响应结果中有退款状态，还有支付服务添的退款单号以及第三方支付（微信、支付宝）生成的退款单号。
 
@@ -538,7 +538,7 @@ tradingState 交易状态 （4表示已付款）
 
 测试接口：
 
-![图片展示的是测试退款接口的API请求界面。请求方式为POST，目标URL为“/trade/inner/refund-record/refund”。请求参数中，参数名称分别为refundAmount、refundNo、tradingOrderNo，参数值分别为0.1、1836688500523544578、1836688500523544578。下方显示了响应内容，包含refundId、refundId2、refundStatus等信息，其中refundStatus为2，表示退款成功。该图片与文档中测试退款接口的内容相关，直观呈现了接口测试时的请求参数及响应结果。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/LMWKbfBA9od1aPx6HthcoIuXnD7.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/LMWKbfBA9od1aPx6HthcoIuXnD7.png)
 
 
 
@@ -711,41 +711,41 @@ create table `jzo2o-trade`.refund_record
 
 ##### 支付接口（生成二维码）
 
-![这张图片展示的是支付模块相关代码，具体为NativePayController.java文件中的核心方法代码，该方法对应生成支付二维码的支付接口，作用是实现收银台或商户后台的扫码支付接口功能。代码中定义了createDownLineTrading方法，通过@PostMapping注解配置路径，接收NativePayReqDTO类型的参数，调用NativePayService的createDownLineTrading方法处理交易单相关逻辑，返回包含二维码路径的支付响应对象，相关参数注解标注了接口的用途和参数要求。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Q4ogbls4eoG4UHxkuhjcuKabncb.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Q4ogbls4eoG4UHxkuhjcuKabncb.png)
 
 
 
 首先查询交易单是否生成交易单，如果已生成直接返回
 
-![图片展示的是NativePayServiceImpl.java文件中createDownLineTrading方法的代码。该方法首先查询交易单，若已生成直接返回；若切换支付渠道且存在原有支付渠道交易单，则先关闭原交易单；使用分布式锁防止重复支付；根据支付渠道调用不同bean请求第三方支付，获取第三方返回支付URL，支付服务生成支付二维码，插入交易单记录。此代码与上文介绍的支付接口生成二维码流程紧密相关，是其核心实现部分。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/JtIIbBqrao7dNSxLVTzcOkCFn6b.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/JtIIbBqrao7dNSxLVTzcOkCFn6b.png)
 
 如果切换支付渠道且已存在原有支付渠道的交易单，则先关闭原支付渠道的交易单，避免重复支付。
 
-![这张图片展示的是支付接口生成二维码核心代码中的关键逻辑，代码位置对应文档中“如果切换支付渠道且已存在原有支付渠道的交易单，则先关闭原支付渠道的交易单，避免重复支付”的说明内容。代码使用if判断来处理渠道切换场景，当changeChannel条件满足时，会调用changeChannelAndCloseTrading方法，传入交易单号与交易渠道参数，实现切换支付渠道时关闭原有交易单的操作，以此避免重复支付，是支付服务设计中防止重复交易的具体实现代码片段。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/LEn8bCapGoBdZlxybpFcNeuWnjS.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/LEn8bCapGoBdZlxybpFcNeuWnjS.png)
 
 使用分布式锁防止同一个交易单重复支付：
 
-![图片展示的是NativePayServiceImpl.java文件中关于交易订单加锁的代码。首先获取交易订单编号，然后构建Redis锁的key，接着通过RedissonClient获取公平锁。代码中使用try - catch结构，尝试获取锁，若获取成功则执行后续交易前置处理等操作。该图片与上文提到的使用分布式锁防止同一个交易单重复支付的内容相关，直观呈现了加锁操作的代码实现。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Z2PqbAUc7oRffExrnHGcDwAFnMe.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Z2PqbAUc7oRffExrnHGcDwAFnMe.png)
 
 根据支付渠道调用不同的bean请求第三方支付
 
-![这张图片展示了代码编辑页面的内容，来自NativePayServiceImpl.java文件，显示代码中根据交易渠道获取对应的原生支付处理器的过程。代码中先通过交易实体的交易渠道值获取支付渠道枚举类型，再调用HandlerFactory获取对应类型的原生支付处理器，最后执行创建在线交易的方法。画面右侧弹出了两个实现了对应方法的选项，分别是AliNativePayHandler和WechatNativePayHandler，分别对应支付宝和微信渠道的支付处理器，该代码是支付服务生成二维码流程中，根据不同支付渠道调用对应bean实现请求第三方支付的具体体现。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/MwM3bN3q2ocKcVxHstFcsPO6neh.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/MwM3bN3q2ocKcVxHstFcsPO6neh.png)
 
 获取第三方返回的支付URL，支付服务生成支付二维码，插入交易单记录。
 
-![图片展示了NativePayServiceImpl.java文件中生成二维码的相关代码。关键部分是第106行，调用this.qrCodeService.generate方法生成二维码，参数为placeOrderMsg和payChannel。此代码与上下文紧密相关，上下文提到支付服务生成支付二维码，插入交易单记录，此图片正是生成支付二维码的代码实现，体现了支付服务生成支付二维码这一功能。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/CfK8bMF9JoniTCxC9sFc5MUJnVg.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/CfK8bMF9JoniTCxC9sFc5MUJnVg.png)
 
 ##### 退款接口
 
-![图片展示的是RefundRecordController.java文件中的refund方法代码。该方法为统一收单交易退款接口，接收交易单号、退款单号、退款金额等参数。关键部分是调用basicPayService的refundTrading方法，传入交易单号、退款单号、退款金额，返回结果转换为ExecutionResultResDTO类型。此图片与文档中介绍退款接口的内容相关，直观呈现了退款接口的代码实现。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/M86KbPUodo7l7Sx8hWYcyAgpnAf.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/M86KbPUodo7l7Sx8hWYcyAgpnAf.png)
 
 没有退款记录时插入退款记录
 
-![图片展示的是BasicPayServiceImpl.java文件中refundTrading方法的部分代码。代码通过单号查询交易单数据，入前置检查，获取交易订单号，获取Redisson客户端的公平锁，尝试获取锁。若获取成功，对退款中的记录同步退款状态。该图片与上下文“退款接口”相关，具体呈现了退款接口中使用分布式锁防止同一个交易单重复退款的操作代码，是支付服务退款流程中的一环。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/QNYgbDgfnoGTGkxGwjoco8gfnbe.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/QNYgbDgfnoGTGkxGwjoco8gfnbe.png)
 
 请求第三方退款接口
 
-![这张图片展示了支付模块退款相关的Java代码实现，代码位于BasicPayServiceImpl.java文件中。代码通过分布式锁防止重复退款，指定了与退款单号绑定的Redis锁键，获取FairLock锁后按交易渠道调用不同的Handler类处理退款，当获取第三方返回的退款结果为真时，会更新退款记录。光标悬停的提示框显示，当前的退款处理类选择中包含了针对支付宝渠道的AliBasicPayHandler和针对微信渠道的WeChatBasicPayHandler两类实现，对应不同的第三方支付渠道退款请求逻辑。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/CtF8b2Fgao1joHxUEvSc8RgTnqc.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/CtF8b2Fgao1joHxUEvSc8RgTnqc.png)
 
 ##### 支付通知任务
 
@@ -869,13 +869,13 @@ public void tradingJob() {
 
 下边我们实现订单管理服务的发起支付接口，接口位置如下图：
 
-![这是一张展示家政订单支付功能对接支付接口的时序流程图，呈现了用户发起支付后，各系统间的交互逻辑：用户发起支付请求后，订单管理服务生成支付二维码，若支付服务已存在对应二维码则直接返回二维码及交易单信息，若不存在则向微信请求支付，微信生成交易单后返回包含支付地址的信息；支付服务据此新增交易单、生成二维码，再向订单管理服务返回二维码及交易单信息，最终订单管理服务更新订单的支付渠道与交易单号，并将二维码及交易单信息返回给用户，完成支付流程的核心交互。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Nc11bZfhKoRymLxbFH5cnmBenVd.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Nc11bZfhKoRymLxbFH5cnmBenVd.png)
 
 1. **请求参数分析**
 
 用户在支付界面点击“确定支付”，弹出支付二维码，用户扫码支付。
 
-![这张图展示了家政订单支付流程的两个界面：左侧为支付订单页，显示剩余支付时间38分40秒，标注①，列出订单总价208元、优惠金额-10元、待付金额198元，提供微信支付选项并勾选，底部有“确认支付”按钮；右侧为下单成功页，标注③，显示绿色对勾图标，提示“服务人员正在疯狂抢单中，请耐心等待～”，设有“返回首页”和“查看订单”两个操作按钮，整体对应文档中支付订单生成二维码及后续订单状态的流程，与支付接口对接的内容相呼应。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Ah3RbRgERoU6L4xVHDOctuu8nib.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Ah3RbRgERoU6L4xVHDOctuu8nib.png)
 
 要生成二维码需要由订单管理服务请求支付服务的支付接口，支付服务的支付接口如下：
 
@@ -883,9 +883,9 @@ public void tradingJob() {
 
 **请求数据类型** application/json
 
-![图片展示了支付服务的支付接口请求参数。参数包括nativePayDTO（扫码支付提交参数，必填，类型为NativePayReqDTO）、changeChannel（是否切换支付渠道，必填，类型为boolean）、enterpriseId（商户号，必填，类型为integer(int64)）、memo（备注，如：运费，必填，类型为string）、productAppId（业务系统标识，必填，类型为string）、productOrderNo（业务系统订单号，必填，类型为integer(int64)）、tradingAmount（交易金额，单位：元，必填，类型为number）、tradingChannel（支付渠道，可用值ALI_PAY,WECHAT_PAY，必填，类型为string）。这些参数对应支付服务支付接口的参数需求，用于生成二维码时由订单管理服务请求支付服务。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/SuK8b4YtGocMz1xjN93c0596nBe.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/SuK8b4YtGocMz1xjN93c0596nBe.png)
 
-![图片展示了支付服务的支付接口响应参数。包含code、msg、data等字段，其中data下有productOrderNo、qrCode、tradingChannel、tradingOrderNo等具体参数，如productOrderNo为业务系统订单号，类型为integer(int64)；qrCode为二维码base64数据，类型为string；tradingChannel为支付渠道，类型为string；tradingOrderNo为交易系统订单号，类型为integer(int64)。该图片与上文支付接口分析内容相关，用于说明支付服务支付接口的响应参数情况。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/NOGcbNPEYoKjzjxCIcmcJz8xnmb.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/NOGcbNPEYoKjzjxCIcmcJz8xnmb.png)
 
 
 
@@ -964,9 +964,9 @@ qrCode：二维码base64
 
 下边定义订单管理服务提供的支付接口：
 
-![这张图是家政订单支付功能里对接的支付接口详情，对应订单管理服务的订单支付接口定义。该接口为PUT类型，路径为/orders-manager/consumer/orders/pay/{id}，请求数据类型为application/json，响应数据类型为\["/*"\]。请求示例中携带tradingChannel参数，属于请求参数的一部分，请求参数包含订单id（path类型，为integer64、必填）、ordersPayReqDTO（body类型、必填，对应订单支付请求体）、tradingChannel（支付渠道，取值包含ALL_PAY、WECHAT_PAY，类型为string、必填）。](https://feishu.cn/file/DAI8bIMtdoF5SCxkHL6cOXp9ngh)
+![](https://feishu.cn/file/DAI8bIMtdoF5SCxkHL6cOXp9ngh)
 
-![该图片是支付接口定义中的响应参数说明表，对应文档中支付接口响应结果的相关内容，详细列出了各类响应参数信息。表格标注“响应参数”，包含参数名称、参数说明、类型及schema四列，具体参数包括msg，为响应消息，类型是string；code为状态码，200代表成功，其他值为失败，类型为integer(int32)；还有"data"分组下的tradingChannel、tradingOrderNo、productOrderNo、qrCode、payStatus等参数，分别对应支付渠道、交易系统订单号、业务系统订单号、二维码base64数据、支付状态等内容，类型涵盖string与integer(int32)。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/H8LTbZn2wopRWaxSumGcPb1Lnvg.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/H8LTbZn2wopRWaxSumGcPb1Lnvg.png)
 
 编写controller:
 
@@ -1041,7 +1041,7 @@ jzo2o:
 
 示例如下：
 
-![图片展示的是jzo2o-orders-manager.yaml文件中配置支付参数的界面。界面中Data ID为jzo2o-orders-manager - yaml，Groups为DEFAULT_GROUP。配置模式下，rabbitmq - mq1的rabbitmq - mq1配置被突出显示，其中alipayEnterpriseId为2088241317544335，weChatEnterpriseId为1561414331。该图片与文档中“2.1.2支付接口实现”部分的“1）配置支付参数”内容对应，直观呈现了配置参数的具体位置和内容。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/SJGnbZ4p0o3iyqxX2PWcW2kknrg.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/SJGnbZ4p0o3iyqxX2PWcW2kknrg.png)
 
 ##### 2）mapper
 
@@ -1182,7 +1182,7 @@ public OrdersPayResDTO pay(@PathVariable("id") Long id, @RequestBody OrdersPayRe
 
 
 
-![这张图片展示的是家政订单支付测试预期的支付成功状态界面，处于小程序的支付订单页面中。页面上方显示支付剩余时间，订单总价1元，待付金1.00元，还需支付1.00元。页面中间是带绿色对勾标识的支付二维码，下方有红色的“支付完成”按钮，左侧标注了微信、支付宝两种支付渠道选项，右侧有对应的单选按钮，底部还有“确认支付”的按钮，该界面对应文档中接口测试步骤里生成支付二维码且支付完成的预期结果场景。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/BLY1bDN1go3iwpxfosocSB1qnjh.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/BLY1bDN1go3iwpxfosocSB1qnjh.png)
 
 
 
@@ -1246,9 +1246,9 @@ public OrdersPayResDTO pay(@PathVariable("id") Long id, @RequestBody OrdersPayRe
 
 ##### 3）接口定义
 
-![这张图展示了查询订单支付结果的接口定义，该接口为GET请求类型，接口路径为/orders-manager/consumer/orders/pay/{id}/result。其请求数据类型为application/x-www-form-urlencoded，响应数据类型为*/*。图中的请求参数区域清晰显示，请求所需的参数是id，该参数为订单id，请求类型为path，是必填项，对应的数据类型为integer(int64)。该接口对应文档中对接查询支付结果的接口定义部分，用于查询支付结果相关信息。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/YmK3beSmFo7TAFxeNtTc4BIdnnf.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/YmK3beSmFo7TAFxeNtTc4BIdnnf.png)
 
-![这是支付模块家政订单支付功能下，对接查询支付结果接口的响应参数说明表。表格清晰列出了该接口的响应参数相关信息，包含参数名称、参数说明、类型及schema四个维度。其中核心参数可重点关注：状态码code为integer(int32)类型，200代表成功、其他数值代表失败；响应消息msg为string类型；data为订单支付响应体，其包含的子参数有支付渠道tradingChannel、交易系统订单号tradingOrderNo、业务系统订单号productOrderNo、二维码base64数据qrCode、支付状态payStatus，各子参数分别对应不同的业务含义与数据类型。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Wxs5bq6cSo0xRHxYCctc3Bedn2f.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Wxs5bq6cSo0xRHxYCctc3Bedn2f.png)
 
 controller方法定义：
 
@@ -1423,11 +1423,11 @@ public OrdersPayResDTO payResult(@PathVariable("id") Long id) {
 
 
 
-![图片展示的是家政订单支付成功界面。上方显示“支付订单”及“支付剩余时间11:58”，下方有订单总价、待付金额等信息。中间突出显示“支付成功”字样，下方有一个红色的“支付完成”按钮。该图片与文档中测试流程及预期结果部分对应，用于展示用户扫码支付后点击“支付完成”时的支付成功界面，是前后端联调测试流程中的一个关键展示环节。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/NZFrbLVhToYHVzxUzXScHzBhnYe.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/NZFrbLVhToYHVzxUzXScHzBhnYe.png)
 
 然后界面跳转到下单成功界面。
 
-![图片展示的是家政订单支付成功后的“下单成功”界面。界面上方显示“下单成功”，并有提示“服务人员正在疯狂抢单中，请耐心等待~”。中间有一个绿色的对勾图标。下方有两个按钮，左侧是“返回首页”，右侧是红色的“查看订单”按钮。该图片与文档中测试流程相关，对应用户扫码支付后点击“支付完成”后的预期结果，显示支付成功后界面跳转到的下单成功界面。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/U3iSbY6CooGWOwxzeKmcoLxongd.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/U3iSbY6CooGWOwxzeKmcoLxongd.png)
 
 
 
@@ -1487,7 +1487,7 @@ public OrdersPayResDTO payResult(@PathVariable("id") Long id) {
 
 绑定此交换机的有多个队列，每个队列是不同的收费订单支付通知队列，如下图：
 
-![图片展示了jzo2o.exchange.topic.trade交换机在虚拟主机/xzb下的详细信息。其类型为topic，durability为true。Bindings部分列出了多个队列，其中红框突出显示的“jzo2o.queue.orders.trade.update.Status”队列，其Routing key为UPDATE_STATUS。该图片与上下文紧密相关，上下文提到支付服务向此交换机发送消息，所有绑定此交换机且Routing Key=UPDATE_STATUS的队列都会收到支付通知，此图直观呈现了相关队列信息。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/QtBGbA5uuo1bNixe6JYcUzMrnFg.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/QtBGbA5uuo1bNixe6JYcUzMrnFg.png)
 
 当支付服务向jzo2o.exchange.topic.trade交换机发送一条支付通知消息，所有绑定此交换机的队列且Routing Key=UPDATE_STATUS都会收到支付通知。
 
@@ -1503,7 +1503,7 @@ public OrdersPayResDTO payResult(@PathVariable("id") Long id) {
 
 编写代码监听MQ支付通知，首先需要知道支付服务发送到MQ的消息格式是什么，查看源代码：
 
-![这张图片展示了Java项目中TradeJob.java文件的部分代码，对应订单管理服务监听MQ支付通知的代码实现部分。代码中有一个用红色框标注的核心代码段，功能是将TradeMsgList转换为JSON格式，然后通过rabbitClient发送消息，发送的交换器为MQConstants.Exchanges.TRADE，路由键为MQConstants.RoutingKeys.TRADE_UPDATE_STATUS。这部分代码是文档中提及的编写监听MQ支付通知代码的具体实现内容，对应监听jzo2o.queue.orders.trade.update.Status队列、routing Key为UPDATE_STATUS的相关逻辑。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/ZcWwb6fmkoG5gdxn4O9c1aprnbg.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/ZcWwb6fmkoG5gdxn4O9c1aprnbg.png)
 
 通过查阅源代码，支付服务发送的支付通知数据格式是JSON，具体内容是TradeStatusMsg列表（List<TradeStatusMsg>）。
 
@@ -1598,15 +1598,15 @@ public class TradeStatusListener {
 
 首先配置执行器：
 
-![图片展示的是在xxl-job中配置执行器的界面。界面上方显示“编辑执行器”，下方有“AppName”输入框，已输入“jzo2o-trade”，“名称”输入框内显示“支付服务”，“注册方式”处选中“自动注册”。该图片与文档中“2）前后端测试”部分的“1）支付通知定时任务”内容相关，是配置执行器步骤中对执行器基本信息设置的展示，为后续添加任务及启动任务做准备。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/PRAEbNMLYo5pCXx5J4mcBSNInwb.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/PRAEbNMLYo5pCXx5J4mcBSNInwb.png)
 
 添加任务：
 
-![图片展示的是在xxl-job中配置支付服务支付通知定时任务的界面。执行器选择“支付服务”，任务描述为“支付通知”，调度类型为CRON，Cron设置为“0/5 * * * * ?”，运行模式为BEAN，JobHandler为“tradingJob”，任务参数为空。高级配置中路由策略为“分片广播”，调度过期策略为“忽略”，任务超时时间为“任务超时时间，单位秒，大于零时生效”，子任务ID和暗塞处理策略、失败重试次数等字段为空。该图与文档中支付通知定时任务配置的内容对应。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/ZiagbdIRGo7JwqxiDK3cftPWnBe.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/ZiagbdIRGo7JwqxiDK3cftPWnBe.png)
 
 启动任务：
 
-![图片展示的是xxl-job任务调度中心的任务管理界面。界面左侧有导航栏，选中“任务管理”。右侧显示任务ID为14，任务描述为“支付通知”，调度类型为CRON，运行模式为BEAN，负责人是xxljob，状态为STOP。右侧操作栏有“操作”下拉菜单，其中“启动”选项被红色箭头指向。该图片与文档中“支付通知定时任务”配置内容相关，用于说明在xxl-job中配置支付通知定时任务的操作步骤。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/JKx8baQggo6pOAxAlr7cf28Vn6f.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/JKx8baQggo6pOAxAlr7cf28Vn6f.png)
 
 
 
@@ -1618,7 +1618,7 @@ public class TradeStatusListener {
 
 如下图，注意支付完成不要点击“支付完成”，等待程序自动接收支付通知。
 
-![图片展示的是小程序支付订单页面。页面上方显示“支付订单”，下方有“支付剩余时间14:49”提示。订单总价为1元，待付金额也是1.00元。支付方式有微信和支付宝，当前选中微信。页面中央有一个二维码，下方有红色的“支付完成”按钮。该图片与文档中“2.3.2测试”部分内容相关，用于说明在小程序中进行家政订单支付时，生成支付二维码后用户扫码支付的场景，需注意支付完成不要点击“支付完成”，等待程序自动接收支付通知。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Vg7EbieewoWWolxCqJRcBOTmnDc.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/Vg7EbieewoWWolxCqJRcBOTmnDc.png)
 
 
 
@@ -1658,7 +1658,7 @@ public class TradeStatusListener {
 
 订单服务收到支付结果
 
-![图片展示的是TradeStatusListener.java文件代码，重点是第47行代码。该代码将JSON字符串msg转换为Java对象List<TradeStatusMsgs> tradeStatusMsgs = JSON.parseObject(msg, List.class)。上下文提到支付通知定时任务处理完成后，需观察数据库数据是否正确，此代码是接收支付结果后，将接收到的支付结果JSON字符串转换为Java对象，以便后续处理，是接收支付通知测试流程中的一部分。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/PJjfbkrzfo9TFcxhV8Vc8kXNnBg.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/PJjfbkrzfo9TFcxhV8Vc8kXNnBg.png)
 
 
 
@@ -2058,7 +2058,7 @@ public class OrdersHandler {
 
 配置xxl-job
 
-![这是一张“更新任务”的配置界面截图，对应文档中定时任务相关的配置内容。界面包含基础配置、调度配置、任务参数、高级配置等模块，核心配置项清晰明确：基础配置中执行器设为“订单管理”，负责人为“xxljob”，任务描述为“退款”；调度类型选择CRON，CRON表达式为“0/5 * * * * ?”；任务模式为BEAN，对应JobHandler为“handleRefundOrders”；高级配置中路由策略为“第一个”，阻塞处理策略为“单机串行”，其余配置项按默认或要求设置，界面底部设有“保存”和“取消”按钮，该界面是文档中定时任务请求退款接口相关配置的直观呈现。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/L16rbgP9BoIbXDx6w5TcslGbnSf.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/L16rbgP9BoIbXDx6w5TcslGbnSf.png)
 
 测试流程：
 
@@ -2600,7 +2600,7 @@ public class OrderCancelStrategyManager{
 
 在课程资料中的源码目录中“取消订单策略类”里放在所有取消订单的策略。
 
-![这张图片展示的是源码目录中取消订单策略类的文件列表，界面顶部清晰标注该目录路径为“源码目录\\取消订单策略类”。列表中包含8个取消订单策略类文件，具体为CommonUserDispatchingOrderCancelStrategy.java、CommonUserNoPayOrderCancelStrategy.java、CommonUserNoServeOrderCancelStrategy.java、OperationDispatchingOrderCancelStrategy.java、OperationFinishedOrderCancelStrategy.java、OperationNoServeOrderCancelStrategy.java、OperationServingOrderCancelStrategy.java、SystemDispatchingOrderCancelStrategy.java、SystemNoPayOrderCancelStrategy.java。这些文件对应不同场景下的取消订单策略，正是文档中提及的取消订单策略类，后续操作是将这些策略类拷贝至指定的项目目录下。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/TW5Obq5kWoSwxBxlvR8cJMQ6n68.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/TW5Obq5kWoSwxBxlvR8cJMQ6n68.png)
 
 在讲完系统优化将其它策略类拷贝至com.jzo2o.orders.manager.strategy.impl下。
 
@@ -2688,13 +2688,13 @@ public void cancelWithoutCoupon(OrderCancelDTO orderCancelDTO) {
 
 在策略环境对象中包括了所有策略实现对象。
 
-![这张图片展示了Java代码开发界面，具体是OrdersManagerServiceImpl.java文件中取消订单相关方法的调试断点场景。界面中显示了已加断点的cancel方法，调用了OrderCancelStrategyManager类的cancel方法，展开该类的strategyMap属性后，能看到其中包含了10个取消订单策略的实现对象，分别对应NO_PAY、FINISHED、NO_DISPATCHING等不同状态的订单取消策略，直观呈现了策略环境对象包含所有策略实现对象的内容，和文档中取消订单使用策略模式的相关测试流程内容相呼应，用于辅助理解策略模式在订单取消场景中的应用逻辑。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/GGvtb0HdVobrTjx64MYckIhjncb.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/GGvtb0HdVobrTjx64MYckIhjncb.png)
 
 
 
 继续执行，根据订单状态和用户类型找到符合的策略对象：
 
-![图片展示了取消订单流程中策略对象的查找与执行。在策略环境对象中，通过订单状态和用户类型找到符合的策略对象，如图中显示的“CommonUserDispatchingOrderCancelStrategy@26655”。接着执行该策略对象的取消订单方法，代码为“strategy.cancel(orderCancelDTO);”。该图片与上下文紧密相关，直观呈现了取消订单优化中使用策略模式的执行过程，帮助理解项目中策略模式的应用。](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/LR91b6doJovBvUxP4uXc1tbGnzb.png)
+![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-ba-zhang-zhi-fu-mo-kuai/LR91b6doJovBvUxP4uXc1tbGnzb.png)
 
 
 

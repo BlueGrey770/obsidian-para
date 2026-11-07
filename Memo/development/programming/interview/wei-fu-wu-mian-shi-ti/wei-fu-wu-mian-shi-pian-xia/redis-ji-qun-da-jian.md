@@ -14,7 +14,7 @@ aliases:
 
 下图就是一个简单的Redis主从集群结构：
 
-![图片展示了Redis主从集群结构。左侧为客户端，通过RedisClient与集群交互。集群中有master节点和两个slave节点，slave节点又称为replica。写操作通过RedisClient访问master，master会将数据同步给slave；读操作可访问任意slave，slave间也存在数据同步。该图与上下文紧密相关，直观呈现了主从集群中写操作与读操作的访问路径及数据同步机制。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/NCr5boQ77ogJs4xGDksc5NkYnXc.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/NCr5boQ77ogJs4xGDksc5NkYnXc.png)
 
 如图所示，集群中有一个master节点、两个slave节点（现在叫replica）。当我们通过Redis的Java客户端访问主从集群时，应该做好路由：
 
@@ -35,7 +35,7 @@ aliases:
 
 我们利用课前资料提供的docker-compose文件来构建主从集群：
 
-![这张图片展示的是Windows系统的文件资源管理器窗口，路径为“新加卷(D:)>课程资料>服务框架>day10-Redis高级>资料”，窗口中列出了两个文件，其中被红色方框突出标注的是名为“docker-compose.yaml”的Yaml源文件，大小为1KB；另一个是名为“sentinel.conf”的CONF文件，大小同样为1KB，该文件是搭建Redis主从集群所需的相关配置文件，对应文档中提及的用于构建Redis主从集群的docker-compose文件。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/TqOvbuuNxoc79cxrXctcz5j0njg.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/TqOvbuuNxoc79cxrXctcz5j0njg.png)
 
 文件内容如下：
 
@@ -65,7 +65,7 @@ services:
 
 将其上传至虚拟机的`/root/redis`目录下：
 
-![这张图片展示了虚拟机`/root/redis`目录下的文件列表，目录内仅包含一个名为`docker-compose.yaml`的文件，其大小为1KB，该文件正是用于构建Redis主从集群的docker-compose文件，这与文中提及的需将相关文件上传至虚拟机该目录的操作要求相呼应，界面顶部的路径输入栏也明确显示当前所在路径为`/root/redis/`。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/DyoUbiqlroJylexYmwkcyOVpnGe.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/DyoUbiqlroJylexYmwkcyOVpnGe.png)
 
 执行命令，运行集群：
 
@@ -75,13 +75,13 @@ docker-compose up -d
 
 结果：
 
-![这张图片展示的是在Linux虚拟机中执行Docker Compose启动命令后的终端输出内容，对应搭建Redis主从集群的操作步骤。执行的命令是`docker-compose up -d`，输出显示共4项任务已全部完成，其中名为redis-cluster的网络已创建，作为主节点的r1、作为从节点的r2和r3这三个容器均已成功启动，各项任务的执行耗时也在输出中依次列出。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/RISabkpdIoZMTuxXE7IcgVG9nYg.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/RISabkpdIoZMTuxXE7IcgVG9nYg.png)
 
 
 
 由于采用的是host模式，我们看不到端口映射。不过能直接在宿主机通过ps命令查看到Redis进程：
 
-![图片展示了在虚拟机中执行`ps -ef | grep redis`命令的结果。命令执行后，显示了多个Redis进程的相关信息，包括进程ID、父进程ID、进程状态、运行时间、命令等。其中，进程ID为50200、50230、50240的进程对应命令为`redis-server *:7001`、`redis-server *:7003`、`redis-server *:7002`，与文档中搭建的Redis主从集群中r1、r3、r2容器的映射端口7001、7003、7002相对应，验证了Redis进程的运行情况。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/LTPnb9iVcos2isxYyvBcOMiankf.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/LTPnb9iVcos2isxYyvBcOMiankf.png)
 
 
 
@@ -177,11 +177,11 @@ get num
 
 你会发现，只有在`r1`这个节点上可以执行`set`命令（**写操作**）
 
-![图片展示的是在Redis节点`r1:7001`上执行`set`命令的界面。命令为`192.168.101.68-7001:0> set num 123`，执行结果为`"OK"`。该图片与上文测试Redis主从集群中临时模式下节点权限的内容相关，用于说明在`r1`节点上可以执行`set`命令（写操作），体现了Redis主从集群中节点权限的差异，即只有`master`节点可执行写操作。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/SqbKbaQNToQ6SIxNlaOcJyFYnRe.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/SqbKbaQNToQ6SIxNlaOcJyFYnRe.png)
 
 其它两个节点只能执行`get`命令（**读操作**）。也就是说读写操作已经分离了。
 
-![这张图是Redis集群读写测试的命令行输出内容，显示在编号为192.168.101.68的Redis节点（端口7002，为只读从节点）上执行`set num 123`命令后，返回了只读副本无法执行写操作的错误提示，内容为"READONLY You can't write against a read only replica."，该输出对应文档中“只读节点仅能执行读操作、读写分离”的测试结论，验证了临时搭建的Redis主从集群的读写功能特性。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/JlZRb6imPogfldxNCSgcpMIbnNg.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/JlZRb6imPogfldxNCSgcpMIbnNg.png)
 
 
 
@@ -199,7 +199,7 @@ Redis提供了`哨兵`（`Sentinel`）机制来监控主从集群监控状态，
 
 哨兵集群作用原理图：
 
-![这张图是Redis哨兵集群的作用原理图，展示了各组件的关联关系：上方的三个橙色Sentinel构成哨兵集群，箭头显示它会监控由1个master和2个slave组成的Redis主从集群的状态，还会向Redis Client推送服务状态变更通知。主从节点之间标注了“数据同步”，体现slave会与master进行数据同步，而哨兵则会通过监控、故障处理等维护整个集群的可靠性，这对应了文档中提到的哨兵的状态监控、故障恢复与状态通知作用。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/Pf9IbCjK5ot005xXZRacoXQNnpf.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/Pf9IbCjK5ot005xXZRacoXQNnpf.png)
 
 哨兵的作用如下：
 
@@ -225,7 +225,7 @@ docker compose down
 
 然后，我们找到课前资料提供的sentinel.conf文件：
 
-![这张图片展示了Windows系统的文件资源管理器界面，路径为“新加卷(D:)\\课程资料\\服务框架\\day10-Redis高级\\资料”，界面内有两个文件，分别是大小1KB的Yaml源文件docker-compose.yaml，以及大小1KB的CONF文件sentinel.conf，其中sentinel.conf被蓝色高亮选中。这一图片对应的上下文是Redis哨兵集群搭建的操作步骤，对应了文档中“找到课前资料提供的sentinel.conf文件”这一内容，展示了该配置文件的实际获取路径和文件信息。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/NOk3bva1qodE7xxzTy2culpNn2g.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/NOk3bva1qodE7xxzTy2culpNn2g.png)
 
 
 
@@ -253,7 +253,7 @@ sentinel failover-timeout hmaster 60000
 
 我们在虚拟机的`/root/redis`目录下新建3个文件夹：`s1`、`s2`、`s3`:
 
-![图片展示了在虚拟机`/root/redis`目录下新建的3个文件夹，分别是`s1`、`s2`、`s3`，它们被红色框线突出显示。这与文档中搭建Redis哨兵集群的步骤相关，文档提到在该目录下新建3个文件夹，并将课前资料提供的`sentinel.conf`文件分别拷贝一份到这3个文件夹中，此图直观呈现了文件夹的创建情况，为后续操作提供位置参考。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/O3qabMUvtoSCqFxFXQbcjCJBnth.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/O3qabMUvtoSCqFxFXQbcjCJBnth.png)
 
 将课前资料提供的`sentinel.conf`文件分别拷贝一份到3个文件夹中。
 
@@ -313,7 +313,7 @@ docker-compose up -d
 
 运行结果：
 
-![图片展示了在终端执行`docker-compose up -d`命令后，Redis哨兵集群的运行结果。命令执行后，显示“Running 6/6”，表明6个容器已启动，分别是s1、s2、r1、r2、s3、r3，状态均为Started。这与上文搭建哨兵集群时，将`sentinel.conf`文件拷贝到3个文件夹并修改`docker-compose.yaml`文件，最后运行命令启动集群的内容相呼应，直观呈现了集群启动情况。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/YnDab58kqojVt2x8S8Kcyq12nLg.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/YnDab58kqojVt2x8S8Kcyq12nLg.png)
 
 我们以s1节点为例，查看其运行日志：
 
@@ -347,7 +347,7 @@ docker stop r1
 
 登录r2，查看集群状态：
 
-![图片展示的是在r2容器中使用redis-cli命令执行`info replication`操作后的输出结果。其中关键信息是“role:slave”，表明r2当前角色为slave。这与上下文内容相关，上下文提到登录r2查看集群状态后，稍后会发现sentinel节点触发了`failover`，而此图片正是在r2上查看集群状态时的部分输出，用于说明r2当前处于slave状态，为后续主节点故障时的集群故障恢复（failover）演示做准备。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/C5EMbkbduoudjVxX7fYc6TWdnIh.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/C5EMbkbduoudjVxX7fYc6TWdnIh.png)
 
 
 
@@ -355,7 +355,7 @@ docker stop r1
 
 继续查看集群状态发现主节点为r2
 
-![这张图片展示了执行`info replication`命令后的输出内容，是在哨兵完成故障切换后查看集群状态的结果。图片中红框突出显示了关键信息“role:master”，表明当前节点（对应端口7002的Redis节点）已成为新的主节点，符合文档中哨兵完成故障恢复后将r2设为主节点的演示内容。输出还显示该主节点已连接1个从节点，从节点的IP、端口、运行状态、偏移量和同步滞后等信息，可验证Redis集群故障切换后的主从复制状态。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/IUIwbj7u3otdRkxLWpjc3JOqnWf.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/IUIwbj7u3otdRkxLWpjc3JOqnWf.png)
 
 ## 3.Redis分片集群
 
@@ -370,7 +370,7 @@ docker stop r1
 
 Redis分片集群的结构如图：
 
-![图片展示了Redis分片集群的结构。图中有多个master节点，每个master节点下有slave节点，master节点间通过绿色箭头表示的心跳进行健康状态监测，slave节点间通过绿色箭头表示的数据同步。每个master节点保存不同分片数据，master节点间及master与slave节点间均存在数据同步关系。该图与上下文紧密相关，直观呈现了分片集群中master、slave节点的分布及数据同步、心跳监测等关键信息。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/JC2jbh8lFoLyTcxYawvckbsWnnh.jpg)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/JC2jbh8lFoLyTcxYawvckbsWnnh.jpg)
 
 分片集群特征：
 
@@ -387,7 +387,7 @@ Redis分片集群的结构如图：
 
 Redis分片集群最少也需要3个master节点，由于我们的机器性能有限，我们只给每个master配置1个slave，形成最小的分片集群：
 
-![图片展示了Redis分片集群中节点间的数据同步和心跳机制。图中有三个master节点和两个slave节点，master节点间通过绿色箭头表示心跳，slave节点间通过绿色箭头表示数据同步，master与slave间通过黑色箭头表示数据同步。该图与文档中3.1.1.集群配置部分内容相关，直观呈现了分片集群中Redis节点间的数据同步和心跳交互情况，帮助理解集群中节点间通信机制。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/FQIQbQtJ4oQFgExGxZvcc9YDn4R.jpg)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/FQIQbQtJ4oQFgExGxZvcc9YDn4R.jpg)
 
 
 
@@ -513,7 +513,7 @@ redis-cli --cluster create --cluster-replicas 1 \
 
 输入命令后控制台会弹出下面的信息：
 
-![图片展示了在Linux系统下使用redis-cli命令启动Redis分片集群时的控制台输出信息。命令为`redis-cli --cluster create --cluster-replicas 1 192.168.150.101:7001 192.168.150.101:7002 192.168.150.101:7003 192.168.150.101:7004 192.168.150.101:7005 192.168.150.101:7006`。输出中显示了集群中各节点的槽位分配情况，如`7001`是`master`，`7002`是`master`等，并询问是否同意上述配置，红框突出显示了“yes”选项。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/TUaXbBi4Zoq9l0xSa7zcRuJ4njh.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/TUaXbBi4Zoq9l0xSa7zcRuJ4njh.png)
 
 这里展示了集群中`master`与`slave`节点分配情况，并询问你是否同意。节点信息如下：
 
@@ -528,7 +528,7 @@ redis-cli --cluster create --cluster-replicas 1 \
 
 输入`yes`然后回车。会发现集群开始创建，并输出下列信息：
 
-![图片展示的是Redis分片集群启动后，通过命令查看集群状态时的输出信息。内容显示节点配置更新，各节点被分配不同配置版本，发送CLUSTER MEET消息加入集群，等待集群加入。接着进行集群检查，各节点间进行槽位分配和复制，最终确认所有槽位配置一致，无开放槽位，槽位覆盖完整。该图片与上文通过命令查看集群状态的内容对应，直观呈现了集群状态信息。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/JdUJbpa08oJxoUx39GKcoqyznhh.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/JdUJbpa08oJxoUx39GKcoqyznhh.png)
 
 
 
@@ -540,7 +540,7 @@ redis-cli -p 7001 cluster nodes
 
 结果：
 
-![图片展示了在Redis集群搭建中，通过`redis-cli -p 7001 cluster nodes`命令查看集群状态的结果。命令执行后，输出了各节点信息，包括节点ID、IP地址、端口号、角色（master或slave）、主节点ID、连接状态等。其中，`7001`节点为`master`，`7002`和`7003`节点为`master`，`7004`和`7005`节点为`slave`，各节点间状态均为`connected`。该图片与上文通过命令查看集群状态的内容对应，直观呈现了集群节点信息。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/CtdEbd7vcom0FjxaECCcmWX7ngf.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-xia/CtdEbd7vcom0FjxaECCcmWX7ngf.png)
 
 ### 3.2.Java客户端连接分片集群
 

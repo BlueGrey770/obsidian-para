@@ -143,7 +143,7 @@ public class BigDecimalTest {
 
 如图:
 
-![图片展示了IPv4地址的点分十进制表示法。左侧是32位二进制编码，共4个字节，分别为11000000、10101000、00000001、01000010。右侧是对应的点分十进制表示法，即192.168.1.66。该图与文档中介绍IPv4采用32位二进制编码，采用点分十进制描述的内容相呼应，直观呈现了点分十进制表示法的转换过程。](../../../../../Attachments/development/programming/java/wang-luo-bian-cheng/NfYFbMDQ1odXVyxPsugcQX1Pn3d.png)
+![](../../../../../Attachments/development/programming/java/wang-luo-bian-cheng/NfYFbMDQ1odXVyxPsugcQX1Pn3d.png)
 
 **IPv6:** (Internet Protocol version 6)
 
@@ -155,7 +155,7 @@ IPv6分成8段，每段每四位编码成一个十六进制位表示， 每段�
 
 如图:
 
-![图片展示了IPv6地址的冒分十六进制表示法。图中将IPv6地址128位分为8段，每段每四位编码成一个十六进制位，每段之间用冒号（:）分开。图中以黄色框突出显示了这8段，每段内还用黑色箭头指向其对应的十六进制表示。最下方是该IPv6地址的冒分十六进制表示形式“2001:0db8:0000:0023:0008:0800:200c:417a”。此图与上文介绍IPv6使用128位地址、冒分十六进制表示法等内容相呼应，直观呈现了IPv6地址表示方式。](../../../../../Attachments/development/programming/java/wang-luo-bian-cheng/SmncbLVx9osaOixCwAkcNEgtnte.png)
+![](../../../../../Attachments/development/programming/java/wang-luo-bian-cheng/SmncbLVx9osaOixCwAkcNEgtnte.png)
 
 
 
@@ -165,7 +165,7 @@ IPv6分成8段，每段每四位编码成一个十六进制位表示， 每段�
 
 如图转换:
 
-![这张图展示了域名www.itheima.com通过DNS解析获得对应IP的网络流程：电脑先向DNS服务器发起请求，将域名解析为IP地址30.88.151.91，随后电脑根据该IP与服务器通信，服务器向电脑返回对应的网站内容，清晰呈现了域名转IP及电脑与服务器的连接交互过程，和文档中IP、DNS相关的网络编程知识内容相呼应。](../../../../../Attachments/development/programming/java/wang-luo-bian-cheng/B8nvbvjPZohRDUxqMpQcWjBunu2.png)
+![](../../../../../Attachments/development/programming/java/wang-luo-bian-cheng/B8nvbvjPZohRDUxqMpQcWjBunu2.png)
 
 **公网IP & 内网IP**
 
@@ -278,7 +278,7 @@ TCP主要有三个步骤实现可靠传输：三次握手建立连接，传输�
 *第三次: 客户端收到服务的syn+ack包, 发送ack确认收到进行连接*
 </callout>
 
-![这张图展示了TCP三次握手协议的交互过程，对应文档中介绍的网络编程协议相关内容。图中涉及HOST A与HOST B两个主机，主机A先后有三个动作：发送SYN（seq=x）、接收SYN（seq=y，ACK=x+1）、发送ACK（ack=y+1）；主机B也有三个对应动作：接收SYN（seq=x）、发送SYN（seq=y，ACK=x+1）、接收ACK（ack=y+1）。图中用箭头标注了两个主机之间的数据包传输方向，同时在图的底部明确标注了“三次握手协议”的主题，直观呈现了三次握手的交互逻辑。](../../../../../Attachments/development/programming/java/wang-luo-bian-cheng/IGPCbFkdzo1WnSxTql8cFrP5nUg.png)
+![](../../../../../Attachments/development/programming/java/wang-luo-bian-cheng/IGPCbFkdzo1WnSxTql8cFrP5nUg.png)
 
 **四次挥手: 确保通信的双方收发消息都已经完成,处理完毕在断开**
 
@@ -302,7 +302,7 @@ TCP主要有三个步骤实现可靠传输：三次握手建立连接，传输�
 
 如图:
 
-![图片展示了TCP协议的三次握手和四次挥手过程。左侧为客户端A，右侧为服务器B。客户端发送FIN=1，seq=u的报文，服务器回复ACK=1，seq=v，ack=u+1的报文，客户端再回复ACK=1，seq=v，ack=u+1的报文，服务器回复FIN=1，ACK=1，seq=w，ack=w+1的报文，客户端最后回复FIN=1，ACK=1，seq=w，ack=w+1的报文，服务器进入LAST-ACK状态，客户端进入TIME-WAIT状态，最后服务器进入CLOSED状态。该图与上下文介绍的TCP协议三次握手和四次挥手过程相契合。](../../../../../Attachments/development/programming/java/wang-luo-bian-cheng/I8sbbwQ8soK159xf2YacG1nanIf.png)
+![](../../../../../Attachments/development/programming/java/wang-luo-bian-cheng/I8sbbwQ8soK159xf2YacG1nanIf.png)
 
 
 

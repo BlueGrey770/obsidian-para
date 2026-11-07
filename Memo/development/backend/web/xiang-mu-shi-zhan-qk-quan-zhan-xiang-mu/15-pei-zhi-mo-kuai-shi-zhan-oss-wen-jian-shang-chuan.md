@@ -12,7 +12,7 @@ aliases:
 
 目录结构
 
-![这张图片展示的是配置模块实战（OSS文件上传）案例中的项目目录结构，属于该实战步骤里目录结构对应的实际工程层级。该目录从src目录展开，main目录下分为java和resources两个子目录；java目录下按包路径com.itheima划分，包含AliOssConfigure、AliProperties等多个功能相关的类文件。resources目录下存在META-INF/spring子目录，该子目录内有一个名为org.springframework.boot.autoconfigure.AutoConfiguration.imports的配置文件，与文档中配置文件编写的要求相对应。](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/VssxbQFLhoDl3CxjE24chIXNnld.png)
+![](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/VssxbQFLhoDl3CxjE24chIXNnld.png)
 
 ### 将功能类写好
 

@@ -101,7 +101,7 @@ date: {{DATE:YYYY-MM-DD}}
 
 关键设置：填写名称与模板路径；在 File name 中设置命名格式；`New note location` 选择 `In a specific folder`；在 `Folder path` 填 `Logs` 后点击 **Add**；开启创建后打开。较旧界面可能将文件名项称为 File name format，需要先开启开关。[Template Choice 配置](https://quickadd.obsidian.guide/docs/Choices/TemplateChoice/)
 
-![Pasted image 20261102175449](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261102175449.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261102175449.png)
 四个入口按下表配置，文件名格式中不要加 `.md`：
 
 | Choice  | 模板路径                         | 初始目录      | 文件名格式                                |
@@ -112,18 +112,18 @@ date: {{DATE:YYYY-MM-DD}}
 | Draft   | `_templates/inbox-draft.md`  | `Inbox`   | `draft-{{VALUE:slug}}`               |
 
 按照下列方式，分别填入即可：
-![Pasted image 20261102175527](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261102175527.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261102175527.png)
 Folder path 填库内相对路径，例如 `Logs`，不填磁盘绝对路径。
 初始目录不等于最终分类：先在体裁根目录创建，再在 Obsidian 内移入领域与主题。不假设模板会自动判断领域或按项目路由。
 
 ### 实际创建一篇测试笔记
 
 1. `Ctrl+P` 打开命令面板，搜索 QuickAdd，运行主入口 `QuickAdd: Run`。
-	![Pasted image 20261102175844](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261102175844.png)
+	![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261102175844.png)
 2. 选择 `Log`，输入 `english-listening-test`，不要输入日期或扩展名。
-	![Pasted image 20261102180049](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261102180049.png)
+	![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261102180049.png)
 3. 检查文件名是否为 `当天日期-english-listening-test.md`，属性是否为 type=log、date=当天日期（可增加属性tag并自定义标签），正文没有残留占位符。
-	![Pasted image 20261102180258](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261102180258.png)
+	![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261102180258.png)
 4. 写一句测试内容，在 Obsidian 内移到 `Logs/languages/english/`。
 5. 为 Journal、Memo、Draft 各测试一次，尤其检查 Journal 日期在文件名末尾，Memo 不带日期，Draft 不强制属性。
 6. 测试正常后，再用 Choice 的闪电按钮将其注册为独立命令，并在快捷键设置中绑定按键。[QuickAdd 主入口与快捷键](https://quickadd.obsidian.guide/docs/)

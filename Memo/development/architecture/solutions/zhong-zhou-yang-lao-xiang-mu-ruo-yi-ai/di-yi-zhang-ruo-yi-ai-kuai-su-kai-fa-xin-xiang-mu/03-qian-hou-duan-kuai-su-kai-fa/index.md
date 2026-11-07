@@ -25,11 +25,11 @@ aliases:
 
 护理项目中的效果图：
 
-![这张图片展示的是改造后的护理项目列表页面效果图，页面顶部有名称输入框、状态下拉选择框，以及搜索、重置按钮和新增按钮。表格区域包含序号、护理图片、护理项目名称、价格、单位、排序号、状态、创建时间和操作列。状态列清晰显示“启用”“停用”文字，而非数字；创建时间展示了完整的年月日时分秒；操作列包含修改、删除、禁用/启用按钮，列表中显示了2条护理项目数据，页面底部还有分页控制栏。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/PnPYb3fAaotWdixZl8CcW7hundg.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/PnPYb3fAaotWdixZl8CcW7hundg.png)
 
 目前使用若依快速代码生成的效果图：
 
-![这张图是使用若依快速代码生成工具制作的护理项目列表查询页面效果图，页面顶部设有名称搜索框，搭配“搜索”和“重置”按钮，操作栏包含新增、修改、删除、导出功能；表格列表显示测试护理项目的相关信息，其中状态字段显示为数字“1”，创建时间仅展示到年月日，未显示时分秒，同时缺少状态筛选条件和禁用按钮，还存在非必要的导出按钮，序号列是数据库的主键id，并非规范的连续序号，底部分页显示共1条数据，每页10条。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/N4jtbeFblomMXCxyr43c8X7tnSc.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/N4jtbeFblomMXCxyr43c8X7tnSc.png)
 
 经过我们的对比，有以下几点不同
 
@@ -385,7 +385,7 @@ getList();
 
 最终效果：
 
-![图片展示了护理项目列表查询的最终效果。表格中包含序号、图片、名称三列，序号从1到6依次排列，图片为护理相关场景图，名称分别为翻身拍背、复健运动、公共空间清洁、心理咨询、洗脚、洗脸。序号列与上下文提到的“在Table表格组件中，提供了在表格中展示序号的方案”相呼应，展示了修改代码后的序号展示效果。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/GsZ9bBYeboMTLGxeJSMc1pe8nze.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/GsZ9bBYeboMTLGxeJSMc1pe8nze.png)
 
 
 
@@ -434,7 +434,7 @@ getList();
 
 最终效果：
 
-![图片展示了护理项目列表中“创建时间”的最终效果。表格中显示了三个时间记录，分别为2023 - 09 - 26 15:59:08、2023 - 09 - 26 15:46:09、2023 - 09 - 26 15:21:10。这与文档中“时间展示处理”部分的内容相关，说明在修改代码后，创建时间在页面中能以年月日时分秒的形式展示，解决了创建时间仅显示年月日的问题。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/HIeNb1p5woBEQsx3e4OctJQwnPb.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/HIeNb1p5woBEQsx3e4OctJQwnPb.png)
 
 #### 状态样式调整
 
@@ -466,7 +466,7 @@ getList();
 
 在目前的后端代码中已经对状态的条件进行了检索，我们只需要修改前端的代码，在搜索的表单中添加一个新的条件即可。完成后的效果如下：
 
-![这张图片展示的是护理项目页面的列表查询区域，其中状态栏使用了el-select下拉选择组件，下拉选项包含“启用”和“停用”两个状态选项，该下拉选择组件是用于调整状态样式的实现内容，其选择后的值将绑定到查询参数变量queryParams中。页面的其他区域还设有名称输入框、新增、修改、删除按钮，以及搜索、重置功能按钮，整体为护理项目页面改造后状态样式调整完成后的效果。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/ROHMbB93zo8IEYxrRGVcDrV2nwh.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/ROHMbB93zo8IEYxrRGVcDrV2nwh.png)
 
 这里需要使用的是下拉选择的组件`<el-select>`
 
@@ -568,13 +568,13 @@ function handleEnable(row) {
 
 最终效果：
 
-![图片展示的是护理项目页面改造中列表查询完成后的效果。页面上方有“名称”“状态”筛选框及“搜索”“重置”按钮。下方列表呈现护理项目信息，包括序号、图片、名称、价格、单位、排序号、创建人、状态、创建时间及操作栏的“修改”“删除”“禁用”按钮。弹出的“系统提示”框询问是否确认启用护理项目的数据项，有“取消”“确定”两个按钮。该图与上下文介绍的列表查询及状态样式调整等内容对应，直观呈现了改造后的页面样式。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/We3PbAVv0oK1tVxevG1cbkxknxf.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/We3PbAVv0oK1tVxevG1cbkxknxf.png)
 
 #### 其他调整
 
 如下图：
 
-![这张图片是护理项目列表页面的改造示例，展示了列表查询相关的调整效果。页面上方的操作区有+新增按钮，被红色箭头和红色框标注出要删除的“修改”“删除”“导出”按钮，对应文档中删除没用按钮的要求；页面下方的护理项目列表“操作”列，按钮实现了一排展示，被红色框标注，体现了调整列宽让操作按钮横向排列、固定操作列的效果，符合文档中列表查询相关调整的内容要求。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/K5Brbtqkrobnwbxor99cO10EnQg.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/K5Brbtqkrobnwbxor99cO10EnQg.png)
 
 1. 删除一些没用的按钮
 2. 调整列宽，让修改、删除、启用/禁用按钮在一行展示
@@ -586,7 +586,7 @@ function handleEnable(row) {
 
 如下图，把对应的按钮代码注释掉或删除即可
 
-![这张图片是一段代码截图，对应护理项目页面改造中“删除无关按钮”的操作，展示了列表页操作按钮的相关代码内容。截图里的代码区域为红色方框标出部分，包含修改、删除、导出等按钮的相关代码，每个按钮均标注了对应的权限标识，该内容是删除这些无关按钮前的代码展示，后续只需对应注释或删除这些按钮的代码即可完成操作调整。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/HOdPbAS5QoaaCXxWOIjcfFy8nUf.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/HOdPbAS5QoaaCXxWOIjcfFy8nUf.png)
 
 - 其中的导出的操作，也可以找到对应的handleExport方法，进行注释或删除
 
@@ -598,7 +598,7 @@ function handleEnable(row) {
 
 https://element-plus.org/zh-CN/component/table.html
 
-![这是一张Element Plus Table组件相关的说明图片，用于说明固定列的使用规则与效果。图片上方标注“固定列”，并说明横向内容过多时可选择固定列，固定列需使用fixed属性，该属性接受布尔值（为true时列将被左侧固定）或字符串（left或right，分别表示固定在左侧或右侧）。图片下方展示了包含Date、Name、State、City、Address、Operations列的表格，其中最右侧的Operations操作列处于固定在页面右侧的效果，符合固定列的实现示例，对应上下文提到的固定操作列的改造需求。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/GjxJbvdnWoEf1BxiyofcsqjqnRg.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/GjxJbvdnWoEf1BxiyofcsqjqnRg.png)
 
 代码修改如下：
 
@@ -635,21 +635,21 @@ https://element-plus.org/zh-CN/component/table.html
 
 
 
-![这张图片是中州养老系统的字典管理页面，左侧导航栏里被红框标出了“字典管理”选项，对应页面展示了字典列表。页面的字典类型列中被红框重点标注，展示了用户性别、菜单开关、任务状态等不同字典对应的专属类型标识，整体呈现了系统中数据字典的分类管理内容，和文档里提到的数据字典管理相关内容相呼应，直观呈现了数据字典的字典类型设置情况。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/OBIybHpVooXYJYx8hw0cuAByn87.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/OBIybHpVooXYJYx8hw0cuAByn87.png)
 
 每个字典类型，可能会有多个值，比如，下面是用户**性别**的字典数据
 
-![这是用户性别数据字典的管理页面，上方设置了字典名称、字典标签、状态的筛选搜索栏，配有搜索、重置按钮，还提供新增、修改、删除、导出、关闭功能选项。页面主体以表格形式展示字典数据，共3条有效数据，对应男性、女性、未知三种用户性别分类，每条数据包含字典编码、字典标签、字典键值、字典排序、状态、备注、创建时间等信息，操作栏可对单条数据进行修改或删除，底部支持分页操作。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/CUQMbsn0Io46spxBHmjc6t3mnIf.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/CUQMbsn0Io46spxBHmjc6t3mnIf.png)
 
 - 表关系
 
-![这张图片展示了两张数据字典相关的数据库表结构，左侧为sys_dict_type字典类型表，右侧为sys_dict_data字典数据表，用来说明二者的关联关系。左侧的字典类型表包含字典主键、字典名称、字典类型等字段；右侧的字典数据表包含字典编码、字典排序、字典标签等字段，其中有一个红色箭头明确指向右侧表的“dict_type:字典类型”字段，体现出右侧表的该字段和左侧表存在关联，该表关系的展示对应了文档中关于数据字典表关系的说明内容，帮助理解数据字典的表间对应逻辑。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/KlogbLk7HoSFIXxCtNtcIVI7n8f.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/KlogbLk7HoSFIXxCtNtcIVI7n8f.png)
 
 #### 使用方式
 
 在刚刚开发的护理项目中，状态下拉列表就可以使用数据字典来完成数据的展示，如下图
 
-![图片展示了护理项目页面中状态下拉列表的展示效果。列表中有“启用”和“禁用”两个选项，其中“启用”选项被红色框线突出显示。该图片与上下文紧密相关，上下文提到在护理项目中，状态下拉列表可使用数据字典来完成数据展示，此图直观呈现了状态下拉列表的样式及选项，辅助说明了使用数据字典在展示查询条件状态时的具体应用。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/F2f7bL4QJo48Vcx8q62cdcnlnqg.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/F2f7bL4QJo48Vcx8q62cdcnlnqg.png)
 
 在展示查询条件状态的时候，有两个选项值，目前代码中是写死的内容，我们定义了一个options，如果使用字典可以先定义护理项目的状态字典，然后在组件中引用字典数据即可。下面是详细的操作步骤。
 
@@ -657,20 +657,20 @@ https://element-plus.org/zh-CN/component/table.html
 
 1. 新增数据字典
 
-![图片展示的是中州养老系统中护理项目页面的字典管理界面。左侧导航栏选中“字典管理”，右侧显示“护理项目”字典管理页面，有“新增”按钮。弹出的“修改字典类型”窗口中，字典名称为“护理项目状态”，字典类型为“nursing_project_status”，状态为“启用”，备注栏为空，有“确定”和“取消”按钮。该图片与文档中“新增数据字典”内容相关，直观呈现了新增字典类型的操作界面。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/RFjtbGB8Qoika9xtvXZcYGypn9g.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/RFjtbGB8Qoika9xtvXZcYGypn9g.png)
 
 1. 新增字典数据
 
 选中字典类型，可以进入字典数据页面，对字典数据进行新增
 
-![图片展示的是护理项目数据字典管理界面。界面上方有“首页”“字典管理”等导航栏。中间区域有“字典名称”“字典类型”“状态”等搜索栏，下方列表显示字典编号、字典名称、字典类型、状态、备注、创建时间等信息，其中“护理项目状态”字典类型为“nursing_project_status”。底部有分页显示共11条记录，每页10条。该图片与上下文介绍的护理项目数据字典相关，直观呈现了字典管理页面及部分字典数据。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/RclBbjh9EoKgcjxXYIqc4qvLn2c.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/RclBbjh9EoKgcjxXYIqc4qvLn2c.png)
 
 新增字典数据，添加两条数据
 
 - 启用 1
 - 禁用 0
 
-![图片展示的是护理项目中字典数据的添加界面。左侧为字典管理页面，有“+新增”按钮。右侧弹出“添加字典数据”窗口，可输入字典类型、数据标签、数据键值等信息，如字典类型为“nursing_project_status”，数据标签为“应用”，数据键值为1等。窗口底部有“确定”和“取消”按钮。该图片与文档中“新增字典数据，添加两条数据”上下文对应，直观呈现了新增字典数据的操作界面。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/GUA0bkQmAoumeAxSpsUcVMfhnTf.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/GUA0bkQmAoumeAxSpsUcVMfhnTf.png)
 
 在护理项目的组件中引用字典并使用
 
@@ -737,11 +737,11 @@ const options = ref([
 <grid>
 <column width-ratio="0.500000">
 目前生成好的效果
-![这是基于若依框架的护理项目新增弹窗的原始界面，界面顶部标注有“添加护理项目”，包含名称、排序号、单位、价格、图片、护理要求等输入项，各输入项均配有提示文字，其中排序号输入框为普通文本输入框，价格输入框也为普通文本输入框，界面底部有“确定”与“取消”两个操作按钮，图片上传区域明确提示可上传大小不超过5MB的png、jpg、jpeg格式文件，该界面是文档中提到的与需求不符的原始弹窗效果，后续需要按要求将排序号和价格的文本输入框修改为Element Plus的数字输入框，同时新增状态单选字段来优化该弹窗。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/V4yjbBOiiorpfoxkeNYculVAnbe.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/V4yjbBOiiorpfoxkeNYculVAnbe.png)
 </column>
 <column width-ratio="0.500000">
 期望达到的效果
-![这是护理项目新增弹窗的实际效果，是对原有若依框架提供的弹窗效果改造后的成果，符合项目期望效果。弹窗的表单包含多个字段，其中排序号、价格字段旁带有加减按钮，为数字输入控件，状态字段设置了“启用”“禁用”两个单选框，此外还有名称、单位、图片、护理要求等输入项，底部设有确定和取消按钮。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/FfAmbQTjwoNzs3xM2YMczUtongc.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/FfAmbQTjwoNzs3xM2YMczUtongc.png)
 </column>
 </grid>
 
@@ -925,7 +925,7 @@ public AjaxResult uploadFile(MultipartFile file) throws Exception
 
 1. 在父工程中创建子模块为：zzyl-oss，如下图所示
 
-![这张图片展示了创建新模块的界面，是前后端快速开发中OSS集成步骤里，在父工程下创建zzyl-oss子模块的操作窗口。界面中模块名称设为zzyl-oss，位置对应本地代码路径，开发语言选择Java，构建系统为Maven，JDK使用Project SDK 11，父模块关联为zzyl，分组ID为com.zzyl，构件ID为zzyl-oss，且未勾选创建示例代码，点击“Create”按钮即可完成该OSS管理子模块的创建，匹配了文中在父工程下创建专门管理OSS的子模块的推荐方案。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/SqIIbUOq0o5Ryix3JaIcKOcGnwe.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/SqIIbUOq0o5Ryix3JaIcKOcGnwe.png)
 
 在zzyl-oss模块中引入新的依赖
 
@@ -968,7 +968,7 @@ public AjaxResult uploadFile(MultipartFile file) throws Exception
 
 1. 创建oss配置类及客户端
 
-![这张图片展示了zzyl-oss子模块的src/main/java/com.zzyl.oss路径下的文件结构，其中该路径下红框标注了两个核心类，分别是AliyunOSSOperator和AliyunOSSProperties，对应文档中提及的OSS模块开发相关的配置类和交互类。该模块是按照集成步骤要求创建的独立子模块，后续可通过这两个类实现与阿里云OSS的交互，同时依托该模块实现解耦与复用。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/BaxvbvdsQo3ccpx61dTcZ5Q8nXd.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/BaxvbvdsQo3ccpx61dTcZ5Q8nXd.png)
 
 上面的两个类，可以从课程资料中直接拷贝，或者从web课程资料中获取（目前资料中已提供）
 
@@ -1095,7 +1095,7 @@ watch(() => props.modelValue, val => {
 
 测试是否能上传图片并展示
 
-![这张图片展示了与前端OSS配置相关的开发测试界面，左侧是浏览器的网络请求调试面板，请求名称为upload，响应内容中包含以https开头的图片URL，对应使用阿里云OSS的网络访问资源，验证了图片直接从OSS访问的逻辑；右侧是“添加护理项目”的表单界面，在“图片”区域的示例缩略图旁标注了红色箭头，该区域用于上传展示图片，和上下文修改前端图片访问逻辑的内容相呼应，可用于测试图片上传与展示的效果。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/AvG4b5Uw1oG4lsxqWKJcsehhnbd.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/AvG4b5Uw1oG4lsxqWKJcsehhnbd.png)
 
 ## 护理计划功能开发
 
@@ -1107,17 +1107,17 @@ watch(() => props.modelValue, val => {
 
 - 列表查询
 
-![这张图是护理计划功能的列表查询页面，页面设有名称输入框、状态选择下拉框，搭配绿色的“搜索”按钮与“重置”按钮，还有“新增”按钮用于添加新护理计划。列表展示了护理计划的序号、名称、状态、创建时间，两条示例计划分别为“3号护理计划（禁用）”和“2号护理计划（启用）”，每条计划的操作栏对应有修改、删除、查看、启用/禁用功能按钮，页面底部显示总条数、分页设置及页码切换控件，该页面是护理计划功能开发里原型展示的列表查询部分，用于实现护理计划的查询及基础操作。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/TXDsbJGogopo4Yx2M9acXaUqnIh.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/TXDsbJGogopo4Yx2M9acXaUqnIh.png)
 
 在这个页面中，同时也有一些按钮：新增、修改、删除、查看、禁用
 
 - 新增或修改的弹窗
 
-![这是护理计划功能开发中新增或修改护理计划的弹窗界面。界面带有必填项标识，已填充“护理计划名称”为“3号护理计划”，“状态”选中“禁用”，“排序”为1；下方护理项目列表展示了“助餐”“整理床铺”两个已选项目，可编辑各项目的期望服务时间、执行周期与执行频次，界面右下角设有“确定”与“取消”按钮，用于确认或放弃操作，对应开发中新增/修改护理计划的需求内容。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/KGEAb5OMQo6hhxx49YxcBd0qndd.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/KGEAb5OMQo6hhxx49YxcBd0qndd.png)
 
 - 查看详情
 
-![这是护理计划功能开发环节中，新增护理计划的弹窗界面，属于新增或修改护理计划的操作界面。界面顶部明确标注“新增护理计划”，带有必填项标识的输入区域，包括已填入内容的“护理计划名称”输入框、“排序”输入框，以及用于选择“启用”或“禁用”状态的选项，下方还有护理项目的配置区域，可添加如助餐、整理床铺等护理项目，每个项目可设置期望服务时间、执行周期和执行频次，是为老人选配护理服务的相关配置界面。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/He60bbdFTodhTRx1g7gcnXdhnge.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/He60bbdFTodhTRx1g7gcnXdhnge.png)
 
 
 
@@ -1129,7 +1129,7 @@ watch(() => props.modelValue, val => {
 - 一个护理计划中也可以引用多个护理项目
 - 具体的表关系，如下图：
 
-![图片展示了护理计划相关表的表关系。左侧为nursing_plan表，包含编号、排序号、名称、状态、创建时间等字段；中间是nursing_project_plan表，记录计划和项目的关系，有计划ID、项目ID、执行时间等字段；右侧为nursing_project表，有编号、名称、排序号、单位、价格等字段。箭头连接各表，表明它们之间的多对多关系，如一个护理项目可被多个护理计划引用，一个护理计划中也可引用多个护理项目。此图与文档中表关系说明部分对应，直观呈现了护理计划表间关系。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/MdGUb4Xz3ogXEexVRaYcwV3inaf.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/MdGUb4Xz3ogXEexVRaYcwV3inaf.png)
 
 <callout emoji="✍️">
 需求
@@ -1162,21 +1162,21 @@ watch(() => props.modelValue, val => {
 
 在这个文件夹中，分别包含了四个文件，大家需要拷贝到前端的对应目录下：
 
-![图片展示了护理计划功能开发中前端代码准备时需拷贝的四个文件。分别是index.scss、index.vue、plan.js和variables.module.scss，其中index.scss和index.vue以紫色图标显示，plan.js以绿色图标显示，variables.module.scss以粉色图标显示。该图片与上下文紧密相关，上下文提到前端代码可使用当天资料中提供好的代码，需将这四个文件拷贝到前端对应目录下，替换原有文件，且特别指出在plan.js文件中要保证后端接口路径一致。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/NhF0b3OoooKfHzxPACQcG5cRnBr.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/NhF0b3OoooKfHzxPACQcG5cRnBr.png)
 
 1. 拷贝index.scss和index.vue到之前护理计划所对应的目录下，替换掉之前的
 
-![图片展示了护理计划模块下的文件结构。其中，index.scss和index.vue两个文件被红色框线突出显示，分别位于views和plan文件夹下。这与文档中“前端代码准备”部分内容相关，文档提到需将index.scss和index.vue拷贝到之前护理计划所对应的目录下，替换掉之前的文件，此图直观呈现了这两个文件在文件结构中的位置，帮助开发者明确操作对象。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/FLpAblN5AoBasVx35AVchOp0nDb.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/FLpAblN5AoBasVx35AVchOp0nDb.png)
 
 1. 拷贝plan.js到api/nursing目录下并替换掉之前的（可根据自己的实际情况选择目录进行拷贝）
 
-![图片展示了前端代码文件夹结构中的api目录下的文件情况。其中，plan.js文件被红色框线突出显示。根据上下文，前端代码可使用当天资料中提供的代码，需将index.scss和index.vue等文件拷贝到对应目录下，plan.js文件需拷贝到api/nursing目录下并替换原有文件，且特别注意plan.js文件中定义的后端接口路径需与后端一致。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/KmlHbXan3o4mawxxuHSciuCEnKc.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/KmlHbXan3o4mawxxuHSciuCEnKc.png)
 
 **特别注意：在plan.js文件中，定义了后端接口的路径，要保证与后端一致（如与自己的后端不一致，需要进行修正）**
 
 1. 拷贝variables.module.scss到src/assets/styles目录下，替换原有的文件
 
-![图片展示了前端代码文件夹结构中的assets和styles目录内容。assets目录下有401_images、404_images、icons、images、logo等子目录；styles目录下有btn.scss、element-ui.scss、index.scss、mixin.scss、ruoyi.scss、sidebar.scss、transition.scss等文件，其中variables.module.scss文件被高亮显示。该图片与文档中前端代码准备部分内容相关，用于说明在拷贝index.scss和index.vue等文件时，需将variables.module.scss文件替换原有文件。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/D06qbYzciouv6fxTEOccGkTvnNc.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/D06qbYzciouv6fxTEOccGkTvnNc.png)
 
 1. 在@/api/nursing/project.js中新增一个接口，查询所有的护理项目（稍后会开发这个接口）
 
@@ -1192,13 +1192,13 @@ export function getProjectAll() {
 
 1. 修复导入的路径和api请求路径
 
-![图片展示了护理计划功能开发中前端代码准备阶段的代码界面。代码中红框突出显示了“import { getNursingPlan } from '@/api/nursing/plan'”和“import { getProjectCall } from '@/api/nursing/project'”两行代码，分别用于获取护理计划和护理项目数据。该图片与上下文紧密相关，上下文提到需在前端代码中拷贝相关文件并修复导入路径和api请求路径，此图直观呈现了代码中需修改的导入路径部分，辅助理解前端代码准备的具体操作。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/VVLVbQfmWo0zADxbKUhcaH8mnmf.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/VVLVbQfmWo0zADxbKUhcaH8mnmf.png)
 
-![图片展示了护理计划功能开发中前端代码准备时，对plan.js文件的修改情况。文件中定义了查询护理计划列表和查询护理计划详情的接口，其中请求路径中的“serve”被修改为“nursing”。文件还包含对请求参数的处理，如传递query参数等。该图片与上下文紧密相关，上下文提到在plan.js文件中定义了后端接口路径，需保证与后端一致，此图直观呈现了修改后的代码内容。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/D2uVbjyTEopv9bxYobncIwWFnXf.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/D2uVbjyTEopv9bxYobncIwWFnXf.png)
 
 集成之后，报错属于正常现象，因为还没有提供对应的后端接口
 
-![这是中州养老系统的护理计划页面，顶部有一条红色错误提示，标注“请求参数类型不匹配，参数要求类型为：'java.lang.Long'，但输入值为：'test'”，并有红色箭头指向该提示。页面设有“护理计划”标签，下方有名称和状态的筛选栏，包含输入框、状态选择下拉框，以及“搜索”“重置”按钮，还设有“+新增”按钮；列表区域展示了一条测试护理计划的信息，包含序号、名称、状态、创建时间及修改、删除、查看、启用的操作选项，底部还有分页控制区域，整体是完成护理计划功能开发前的前端页面状态，错误提示源于前端接口调用时的参数类型不匹配问题，与文档中提到的需保证前端接口路径和参数与后端一致的要求相呼应。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/AjFMbFAY6o1YKCxkFbOcobCPnif.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/AjFMbFAY6o1YKCxkFbOcobCPnif.png)
 
 
 
@@ -1215,15 +1215,15 @@ export function getProjectAll() {
 
 1. 打开后台管理系统，找到**代码生成**的菜单，导入**nursing_project_plan**表，然后直接预览，如下图
 
-![这张图片展示了系统代码生成模块的表信息列表界面，表格内有序号、表名称、表描述、实体等栏目，分别列出了护理项目表、护理等级表、护理计划表以及护理计划和项目关联表，其中红色箭头指向第4行“护理计划和项目关联表”对应的操作栏中的预览图标。该图片对应上下文里操作步骤的第一步展示内容，用于指导使用者打开后台管理系统的代码生成菜单找到目标关联表。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/Qo6ObDnccojjYcxw95EcmIiInRR.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/Qo6ObDnccojjYcxw95EcmIiInRR.png)
 
 1. 拷贝内容如下图所示（实体类和mapper相关）
 
-![图片展示的是护理项目计划关系表（nursing_project_plan）代码生成的代码预览界面。界面上方有多个选项卡，其中“domain.java”“mapper.java”“mapper.xml”被红色框线突出显示。下方代码内容为NursingProjectPlan类，包含id、planId、projectId等属性及get和set方法。该图片与文档中“后端代码准备”部分内容相关，用于指导开发者在打开后台管理系统找到“代码生成”菜单导入该表后，直接预览并获取代码内容，再将其拷贝到项目中进行替换操作。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/FV9fbAKLgonJyUx0AFBcAdTSnrb.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/FV9fbAKLgonJyUx0AFBcAdTSnrb.png)
 
 拷贝到项目中，如下：
 
-![这张图片展示了项目代码的目录结构，呈现zzyl-nursing-platform项目的src/main/java目录下的代码包内容，重点标识出与护理项目计划关系表相关的文件，包括domain包中的NursingProjectPlan实体类、mapper包中的NursingProjectPlanMapper接口，以及resources/mapper/nursing目录下的NursingProjectPlanMapper.xml映射文件。这些被红色框标注的内容，正是前后端快速开发护理计划功能时，需要借助若依代码生成工具生成并拷贝到项目中的核心文件，对应文档中准备工作里的第二步操作内容。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/JL3qbC7pRonNJCxGJxccRFa8nDg.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/JL3qbC7pRonNJCxGJxccRFa8nDg.png)
 
 替换完前后端代码后，一定要重启后端测试护理计划页面是否能正常工作，如果有问题，先修改正确后再继续后面的内容哦。
 
@@ -1231,17 +1231,17 @@ export function getProjectAll() {
 
 在护理计划列表中，有一个状态选项，是从数据字典（nursing_plan_status）获取数据的，效果如下：
 
-![图片展示了护理计划列表界面。在“状态”下拉菜单中，有“禁用”和“启用”两个选项，其中“启用”选项被红色框突出显示。列表中显示了两条护理计划记录，序号分别为1和2，名称分别是“1号护理计划”和“2号护理计划”，状态栏分别显示“启用”和“禁用”。该图片与上文提到的护理计划列表中状态选项是从数据字典（nursing_plan_status）获取数据的内容相关，直观呈现了状态选项的展示效果。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/GeAvb7lLToCOyoxqdrNc8YuIn5f.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/GeAvb7lLToCOyoxqdrNc8YuIn5f.png)
 
 在**系统管理/字典管理**菜单中定义新的数据字典，详细定义如下：
 
-![这张图片是系统字典管理页面的界面截图，用于展示护理计划功能开发中数据字典的相关配置。页面上方区域展示了当前系统中已有的字典类型，其中红线下标注的“nursing_plan_status”，就是文档中提到的护理计划状态对应的数据字典。页面下方区域是该数据字典的具体内容列表，包含“启用”“禁用”等字典值及对应的排序、状态等信息。整个页面支持新增、修改、删除字典及字典项的操作，还具备搜索、重置功能，可实现数据字典的管理操作，契合文档中创建护理计划数据字典的功能实现场景。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/AhTmbAIYUoJc40xYqTPcmJE4nRf.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/AhTmbAIYUoJc40xYqTPcmJE4nRf.png)
 
 #### 查询所有护理项目
 
 在新增计划对话框中，需要选择关联护理项目的列表，如下图
 
-![这张图片是新增护理计划的界面截图，对应文档中查询所有护理项目的相关内容。界面上方为护理计划名称、状态、排序等基础信息项，其中“状态”选中“启用”选项。中间护理项目选择区域，点击“请选择”后展开下拉列表，列表中用红色方框标注，包含“喂饭”“洗衣服”“测试护理项目”三个护理项目选项，用于在新增护理计划时关联选择所需的护理项目。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/PHfLbmaUWoci9axtZw7c5vronMf.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/PHfLbmaUWoci9axtZw7c5vronMf.png)
 
 这个需要在护理项目的模块中定义一个查询的接口来查询所有的护理项目进行展示（需要结合<cite doc-id="Dn9wwiXBvik60GkY3eFcSRQOnuc" file-type="wiki" title="护理模块-接口文档" type="doc"></cite>中的定义）
 
@@ -1823,7 +1823,7 @@ public int deleteNursingPlanById(Long id)
 
 下图是实现后的护理等级查询列表
 
-![这是护理等级查询列表的实现界面，上方设有等级名称输入框、状态下拉选择框，以及搜索、重置按钮，还有新增按钮；列表包含序号、等级名称、护理计划、护理费用、状态、创建时间和操作列，共2条数据，分别为1号护理计划、测试护理等级，状态均为启用，操作列对应修改、删除、禁用按钮；列表底部标注共2条数据，支持设置10条/页，当前为第1页，可执行翻页操作，界面符合前后端开发中护理等级模块的查询功能展示需求。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/DPH1bTxzVorHT0xPz5pcguvFnMd.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/DPH1bTxzVorHT0xPz5pcguvFnMd.png)
 
 在这个列表中有一些按钮：新增、修改、删除、启用|禁用
 
@@ -1831,7 +1831,7 @@ public int deleteNursingPlanById(Long id)
 
 下图是新增和修改的弹窗，其中的护理计划是一个下拉列表
 
-![图片展示的是护理等级模块中“添加护理等级”弹窗界面。弹窗标题为“添加护理等级”，包含“等级名称”“护理计划”“护理费用”“状态”“等级说明”等输入框或选择项，其中“护理计划”下拉列表中显示“3号护理计划”“2号护理计划”选项，当前选中“3号护理计划”。“状态”处有“启用”“禁用”两个单选按钮，选中“启用”。“等级说明”输入框内无内容。底部有“确定”“取消”两个按钮。该图片与文档中要求利用开发经验开发护理等级模块的内容相关，展示了新增护理等级时的输入界面。](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/RUQYbR98HojFTTxxtEgcbUfGnde.png)
+![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/03-qian-hou-duan-kuai-su-kai-fa/RUQYbR98HojFTTxxtEgcbUfGnde.png)
 
 下拉框组件：https://element-plus.org/zh-CN/component/select.html
 

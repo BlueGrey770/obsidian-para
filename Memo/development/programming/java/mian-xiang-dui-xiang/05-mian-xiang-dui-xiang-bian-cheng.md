@@ -262,7 +262,7 @@ C
 
 **2 程序启动后，应分别提示用户输入学员编号、姓名等信息。 数据接收到程序中，并定义局部变量存储；创建Student对象，通过构造方法将所有数据存储到Student对象中；在main方法中获取并打印对象中的每个属性值。案例执行效果:**
 
-![图片展示的是一个面向对象编程案例执行效果示例。画面背景为浅绿色，上方有提示“请输入学生编号：”，下方依次显示编号“001”、姓名“张三”、性别“男”、身高“185”、年龄“18”。最后输出“学号为:001的学生姓名是:张三，性别是:男，身高是:185.0，年龄是:18”。该图片与文档中“分析以下需求，并用代码实现”部分内容对应，是按照需求用代码实现后的执行效果展示。](../../../../../Attachments/development/programming/java/mian-xiang-dui-xiang/BiQUbWdgFosUPhxgS0yc7KumnWb.png)
+![](../../../../../Attachments/development/programming/java/mian-xiang-dui-xiang/BiQUbWdgFosUPhxgS0yc7KumnWb.png)
 
 **目标: 掌握面向对象基础的语法**
 

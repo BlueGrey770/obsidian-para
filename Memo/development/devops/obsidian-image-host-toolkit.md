@@ -26,7 +26,7 @@ aliases:
 
 Bucket 名称全局唯一，地域创建后不可更改。存储类型选标准存储，**读写权限必须选「公共读」**，否则图片链接会返回 403，笔记里显示为裂图。
 
-![创建 Bucket 弹窗：名称、地域、存储类型](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oss-create-bucket.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oss-create-bucket.png)
 	注意：选择地区时可参考下本章第5小节的成本参考，可根据需要自行选择
 ![Bucket 列表与创建入口](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oss-bucket-list.png)
 
@@ -48,7 +48,7 @@ Bucket 名称全局唯一，地域创建后不可更改。存储类型选标准�
 
 在 Bucket 概览页的「访问端口」可以看到 Endpoint，例如 `oss-cn-beijing.aliyuncs.com`。插件里的 **Region** 只填地域代码部分（`oss-cn-beijing`），不要填中文地域名，也不要带 `https://`。
 
-![Bucket 概览：Endpoint 地域节点](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oss-endpoint.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oss-endpoint.png)
 
 ### 5 成本参考
 
@@ -75,7 +75,7 @@ Bucket 名称全局唯一，地域创建后不可更改。存储类型选标准�
 ## 三 安装与配置插件
 
 1. 设置 → 第三方插件 → 浏览，搜索 `Image Upload Toolkit`（作者 Addo Zhang），安装后启用。安装与启用是两个步骤。
-![Pasted image 20261105163718](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261105163718.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261105163718.png)
 2. 打开该插件设置页，按下面两张表填写。
 
 本库当前配置（截图即实际界面）：
@@ -109,9 +109,9 @@ Bucket 名称全局唯一，地域创建后不可更改。存储类型选标准�
 
 1. 打开含本地图片的笔记。
 2. `Ctrl+P` 打开命令面板，输入 **publish**，执行 **Image Upload Toolkit: Publish page**（插件只有这一个命令）。
-![Pasted image 20261105114000](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261105114000.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261105114000.png)
 3. 插件识别当前笔记里的本地图片（`![[图片.png]]` 与 `![](路径)` 两种写法都支持），批量上传到 `bucket/img/`，并按开关替换正文链接。
-![7af04c74320461ac949c457d2d3b65b2](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/7af04c74320461ac949c457d2d3b65b2.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/7af04c74320461ac949c457d2d3b65b2.png)
 4. 切到阅读视图确认图片正常显示。
 
 > 实时预览（编辑视图）不渲染远程图片，外链图只在阅读视图显示，表格里嵌远程图同理。这不是上传失败，是 Obsidian 的渲染行为。

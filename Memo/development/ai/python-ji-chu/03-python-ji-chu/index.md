@@ -72,7 +72,7 @@ async def read_item(item_id: int, q: Union[str, None] = None):
 
 1. 命令行方式：在主文件所在目录运行下面命令  uvicorn main:app --reload
 
-   ![图片展示了uvicorn main:app命令含义，分为三点说明。一是main指main.py文件，即一个Python“模块”；二是app指在main.py文件中通过app = FastAPI()创建的对象；三是--reload选项，让服务器在更新代码后重新启动，仅在开发时使用。该图片与文档中介绍FastAPI运行服务方式的内容相关，直观呈现了命令中各部分的含义，帮助理解如何运行FastAPI服务。](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/Iq3jbbKczo1AHKxJmLAcnmAHnte.png)
+   ![](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/Iq3jbbKczo1AHKxJmLAcnmAHnte.png)
 2. mian方式：在主文件中添加下面内容，然后直接main方法运行
 
    ```Python
@@ -136,7 +136,7 @@ if __name__ == "__main__":
 
 该前端在当天资料中，是一个html，用浏览器打开即可访问后端接口
 
-![图片展示的是一个博客系统的界面，标题为“我的博客系统”。左侧有“新建博客”选项。右侧列表显示了多篇博客信息，每篇博客有标题、作者、发布时间及操作按钮，如“查看”“编辑”“删除”等。其中“Python编程入门指南”等多篇博客的发布时间均为2024年10月15日，作者均为“张三”。该图片与文档中介绍使用FastAPI和PyMySQL完成博客系统增删改查功能的内容相关，展示了系统界面效果。](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/VViyb8PhGoavnfxcHorcCnlBnSc.png)
+![](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/VViyb8PhGoavnfxcHorcCnlBnSc.png)
 
 #### 1.2.1 创建项目
 
@@ -315,7 +315,7 @@ load_dotenv() 会从项目根目录的 .env 文件（默认路径）中读取键
 
 避免在代码中硬编码敏感信息（如数据库密码、API 密钥），提升安全性
 
-![图片展示了`blog_dao.py`文件的部分代码。其中，`load_dotenv()`函数用于加载.env文件中的配置到环境变量，以避免在代码中硬编码敏感信息。在`create_client`方法中，通过`pymysql.connect()`函数创建数据库连接，参数分别为`host`、`port`、`user`、`password`、`database`和`charset`，这些参数均通过`os.getenv()`函数获取环境变量值，如`MySQL_HOST`、`MySQL_PORT`等，确保数据库连接信息的安全性。](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/ZYUubooUwoPWbSxiDXgczcAgnlg.png)
+![](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/ZYUubooUwoPWbSxiDXgczcAgnlg.png)
 
 #### 1.2.2 实现代码
 
@@ -433,7 +433,7 @@ if __name__ == "__main__":
 - **One-shot：**给出任务描述，提供一个示例，然后让大模型执行任务
 - **Few-shot：**给出任务描述，提供N个示例，然后让大模型执行任务
 
-![图片展示了上下文学习法中零样本、一样本、多样本三种情况下的示例。零样本（Zero-shot）仅给出任务描述“Translate English to French:”，不提供示例；一样本（One-shot）在任务描述后给出一个示例“sea otter => loutre de mer”；多样本（Few-shot）在任务描述后给出多个示例“sea otter => loutre de mer”“peppermint => menthe poivrée”“plush girafe => girafe peluche”，最后是任务提示“cheese =>”。该图与上下文紧密相关，直观呈现了上下文学习法中不同示例数量情况下的输入示例结构。](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/FpRwbEMEKoILbExyKZdcoUDangb.png)
+![](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/FpRwbEMEKoILbExyKZdcoUDangb.png)
 
 #### 2.1.2 指令学习法
 
@@ -451,7 +451,7 @@ if __name__ == "__main__":
 
 下面是思维链法的一个案例
 
-![这张图片展示了标准Prompting与CoT Prompting（思维链提示）的效果对比案例。左侧为标准Prompting，对“罗杰的网球数量”和“食堂的苹果数量”两个问题，仅给出最终答案，其中“食堂的苹果数量”问题的答案标注红色叉号，代表回答错误；右侧为CoT Prompting，针对两个问题先给出详细的分步推理过程，再给出正确最终答案，“食堂的苹果数量”问题的答案标注绿色对勾，代表回答正确。该图片直观呈现了思维链提示通过拆解推理步骤，能提升复杂问题解答的准确性，与上下文介绍的思维链法的作用相呼应。](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/HXvlbaOeZozSDNxtEFqcuVlnnHF.png)
+![](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/HXvlbaOeZozSDNxtEFqcuVlnnHF.png)
 
 #### 2.1.4 总结对比
 
@@ -616,7 +616,7 @@ print(response["message"]["content"])
 
 1. 代码实现
 
-![这张图片展示的是金融文本分类任务中，调用Qwen2.5:0.5b大模型进行文本分类的代码与交互示例。图中明确标注了三类核心内容：一是系统提示词要求模型在指定的“新闻报道、财务报告、公司公告、分析师报告”四类中对文本进行分类；二是用户输入的待分类金融文本，包括“今日，股市经历了一轮震荡，受到宏观经济数据和全球贸易局势的影响，投资者要关注美联储可能的政策调整，以适应市场的不确定性”以及“今日，央行发布公告宣布降低利率刺激经济，这一措施将影响贷款和利率，并在未来几个季度内对金融市场产生影响，投资者应关注这些趋势”；三是模型返回的分类结果，例如将第一类文本归为“新闻报道”。该图对应上下文提及的金融文本分类任务流程，用于演示该任务中模型调用与分类的实际过程。](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/LJy2bbsiJoK3RPxbFSzcCpzYnmd.png)
+![](../../../../../Attachments/development/ai/python-ji-chu/03-python-ji-chu/LJy2bbsiJoK3RPxbFSzcCpzYnmd.png)
 
 ```Python
 # 样本

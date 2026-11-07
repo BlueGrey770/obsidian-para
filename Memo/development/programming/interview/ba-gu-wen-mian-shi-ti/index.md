@@ -1555,11 +1555,11 @@ ConcurrentHashMap和HashMap的区别
 
 ```
 
-![图片展示了JDK1.8中的一些新特性示例代码。1. Lambda表达式示例，使用lambda表达式替代Runnable接口，创建线程并启动；2. Stream API示例，通过stream方法过滤集合中的元素，输出偶数；3. 新的日期与时间API示例，使用LocalDate类获取当前日期；4. 方法引用示例，使用方法引用调用已有方法。这些代码体现了JDK1.8在函数式编程风格、数据操作、日期处理及方法引用等方面的进步。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/NDHCbbIQHo47U0xUeSOc6SJDn5d.png)
+![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/NDHCbbIQHo47U0xUeSOc6SJDn5d.png)
 
-![这张图片展示的是Java中ConcurrentHashMap和HashMap的区别内容，共列出了核心的五个区分点，分别从线程安全性、锁粒度、迭代器一致性、初始容量与扩容机制、null键和null值这五个维度展开说明。其中重点标注了ConcurrentHashMap是线程安全的，多线程读写无需额外同步，而HashMap是非线程安全的，多线程同时读写会导致数据不一致；还明确了ConcurrentHashMap适用多线程高并发场景，HashMap适用于单线程环境，整体清晰呈现了二者的核心差异，用于解答八股文面试题中关于JDK1.8相关集合类的面试问题。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/VvwabGzW7ofafBxsUKycOGc3nmh.png)
+![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/VvwabGzW7ofafBxsUKycOGc3nmh.png)
 
-![这张图片展示的是关于JDK1.8相关的八股文面试内容，具体为JVM的GC垃圾回收机制相关知识。内容包含该机制的定义，指出其是自动管理内存的机制，可识别回收不再用的对象、释放占用内存；还列举了垃圾回收机制的介绍、常见回收算法（标记-清除算法、复制算法、标记-整理算法、分代收集算法），以及默认的回收算法（HotSpot JVM使用分代收集算法，新生代用复制算法，老年代用标记-清除或标记-整理算法），最后附相关的简单回答。该内容属于八股文面试题中JDK1.8新特性相关的知识补充。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/BbSSbTSPYouxyTxSfD4cNjo8nzc.png)
+![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/BbSSbTSPYouxyTxSfD4cNjo8nzc.png)
 
 
 
@@ -1647,7 +1647,7 @@ SpringCloud和SpringBoot的区别和关系
 
 ## SpringCloud和SpringBoot的区别和关系
 
-![这张图是关于八股文面试题中SpringCloud和SpringBoot的区别与关系的内容，标题为“SpringCloud和SpringBoot的区别和关系”。内容里明确说明了两者的定位差异：Spring Boot专注于快速开发单个微服务，可脱离Spring Cloud独立使用，是单体应用的生产力工具；Spring Cloud是关注全局的微服务协调治理框架，用于整合管理Spring Boot开发的微服务，为微服务提供配置管理、服务发现等集成服务，离不开Spring Boot，二者属于依赖关系，图中还给出了对二者区别的最简回答说明。](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/H0ESbC9hkosWvyxHVwsctksbnDg.png)
+![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/H0ESbC9hkosWvyxHVwsctksbnDg.png)
 
 ```Java
 Spring Boot

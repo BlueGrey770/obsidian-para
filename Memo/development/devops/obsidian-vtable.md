@@ -11,7 +11,7 @@ aliases:
 
 本库状态：已安装 v2.0.13（作者 Vmsimab），经 BRAT 安装。插件开源，MIT 协议。
 
-![VTable 表格概览：合并单元格、格内 LaTeX、浮动工具栏](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vtable-overview.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vtable-overview.png)
 
 ## 一 安装
 

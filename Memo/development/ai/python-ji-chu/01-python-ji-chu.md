@@ -86,7 +86,7 @@ conda activate py_base
 
 1. 开pyCharm，创建一个新的项目， 注意选择conda环境
 
-![图片展示了PyCharm中创建Python项目的界面。在“Environment”部分，有“Generate new”和“Select existing”两个选项，其中“Select existing”被红色框突出显示。下方“Path to conda”处，有“edu_rag”等conda环境选项，其中“edu_rag”被红色框突出显示。该图片与文档中“2.4创建python项目”部分内容相关，对应步骤2，即在PyCharm中创建新项目时，需注意选择conda环境，此图直观呈现了选择conda环境的操作界面及关键选项。](../../../../Attachments/development/ai/python-ji-chu/C6LUboFIkoTNOXxZmrtcv3ZVnze.png)
+![](../../../../Attachments/development/ai/python-ji-chu/C6LUboFIkoTNOXxZmrtcv3ZVnze.png)
 
 
 
@@ -98,13 +98,13 @@ conda activate py_base
 2. 在目录中创建一个入门的python文件
 3. 在python文件中编写一个输出\`Hello World\`的程序，并执行
 
-![这张图片展示了Python入门案例的操作步骤，包含三个核心环节：首先在项目文件目录的右键菜单中，通过“New”选项创建Python File；接着在新建的代码文件中编写`print("Hello World")`代码；最后在运行菜单中选择“Run '01-入门案例'”启动程序。整个流程对应文档中创建目录、编写Python程序并执行的步骤，图片的输出区域显示“Hello World”，下方标注“Process finished with exit code 0”，表明程序成功运行。](../../../../Attachments/development/ai/python-ji-chu/UXwQbIOiqo0TTyxNkBjczc79nKb.png)
+![](../../../../Attachments/development/ai/python-ji-chu/UXwQbIOiqo0TTyxNkBjczc79nKb.png)
 
 ### 3.2 基本语法
 
 导入资料中的初始代码`大模型基础\day01-python基础\初始代码`
 
-![图片展示了Python项目文件夹结构。在“day01-python基础”文件夹下，有多个子文件夹，如a - 基本语法、b - 运算符等，以及一个名为“01 - python入门.py”的Python文件。该图片与文档中“3.1入门案例”部分相关，对应步骤1，即在项目中创建一个目录，此图直观呈现了目录创建后的文件夹及文件情况，辅助理解在目录中创建入门python文件的操作。](../../../../Attachments/development/ai/python-ji-chu/BVGjbT6u8oASLUxXSpUcIZv6nQb.png)
+![](../../../../Attachments/development/ai/python-ji-chu/BVGjbT6u8oASLUxXSpUcIZv6nQb.png)
 
 #### 3.2.1 注释
 
@@ -456,7 +456,7 @@ else:
 
 在Python中三目运算符也叫三元运算符，其主要作用：**就是用于简化if...else...语句**。
 
-![图片展示了三目运算符/三元运算符的结构。上方灰色背景标注“语句段1 if 条件判断 else 语句段2”，下方有四个红色数字标识的箭头，分别指向“语句段1”“条件判断”“else”“语句段2”，并标注对应序号。该图与文档中介绍三目运算符的内容相关，直观呈现了其结构，即在条件判断成立时执行语句段1，不成立时执行语句段2，用于简化if...else...语句。](../../../../Attachments/development/ai/python-ji-chu/PbB4biGD9o4xxYxKFlncxqxCnNb.png)
+![](../../../../Attachments/development/ai/python-ji-chu/PbB4biGD9o4xxYxKFlncxqxCnNb.png)
 
 ```Python
 """

@@ -552,7 +552,7 @@ Canal解析binlog日志信息按顺序发到MQ的队列中。
 
 在监听队列的java代码中指定消费线程为1，如下图：
 
-![这张图片展示的是一段Java代码，用于配置RabbitMQ的消费监听逻辑，是项目中索引同步方案的代码实现示例。代码为@RabbitListener注解的配置内容，其中队列参数配置了x-single-active-consumer的值为true，以启用单一活动消费者模式；还设置了exchange名称为exchange.canal-hmall、路由键为canal-mq-hmall-item的Topic交换机相关配置。代码中用红色框重点标注了concurrency参数，值为1，对应单线程消费队列数据的要求，体现了文档中需指定消费线程数为1的内容，保证消费端按顺序消费队列消息。](../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/Zz7LbJ0ZvoqAVtxya8UclpDXnCl.png)
+![](../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/Zz7LbJ0ZvoqAVtxya8UclpDXnCl.png)
 
 
 
@@ -591,7 +591,7 @@ AOF是追加日志持久化方式，这是将每个写操作以追加的方式�
 
 AOF共三种策略：
 
-![图片是一张表格，对比了Redis AOF三种策略的配置项、刷盘时机、优点及缺点。Always为同步刷盘，可靠性高但性能影响大；everysec为每秒刷盘，性能适中但最多丢失1秒数据；no为操作系统控制，性能最好但可靠性较差，可能丢失大量数据。该表与文档中介绍Redis AOF策略的内容相关，直观呈现了不同策略的特点。](../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/Klw8bZfPsoTEkmxp3igcQDiknEh.png)
+![](../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/Klw8bZfPsoTEkmxp3igcQDiknEh.png)
 
 定期进行AOF重写以保持文件大小在可管理范围内，通过配置阈值控制去重写AOF文件的时机。
 

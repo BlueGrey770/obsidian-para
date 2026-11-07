@@ -37,7 +37,7 @@ Claudian 把本地装好的 CLI 型 AI Agent 嵌进 Obsidian 侧边栏，**当�
 
 ## 三 配置提供商
 
-![Claudian 设置：提供商页，Codex CLI 自动检测成功](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/claudian-provider-settings.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/claudian-provider-settings.png)
 
 进入 设置 → Claudian → **提供商**，各后端并列在顶部标签中。配置顺序：
 
@@ -62,7 +62,7 @@ Claudian 把本地装好的 CLI 型 AI Agent 嵌进 Obsidian 侧边栏，**当�
 
 ## 五 日常用法
 
-![Claudian 对话界面：提示词、工具调用与会话列表](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/claudian-chat.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/claudian-chat.png)
 
 | 能力 | 用法 |
 | --- | --- |
@@ -74,7 +74,7 @@ Claudian 把本地装好的 CLI 型 AI Agent 嵌进 Obsidian 侧边栏，**当�
 | 项目 | 多个会话共享目标、指令与记忆文件，会话之间可互相读取与通信 |
 | MCP | 走各 CLI 原生 MCP 配置接外部工具 |
 
-![双栏模式：左侧笔记、右侧会话管理器与工具调用明细](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/claudian-dual-pane.png)
+![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/claudian-dual-pane.png)
 
 双栏模式适合"边读笔记边让 Agent 动手"：右侧能看到每一步工具调用（Script、Bash、WebSearch、Thought），文件被修改时会出现带链接的 diff 提示。
 

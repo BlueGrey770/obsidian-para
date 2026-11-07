@@ -229,7 +229,7 @@ AI:Spring Cloud Gateway实现路由
 
 在`hm-gateway`模块的`com.hmall.gateway`包下新建一个启动类：
 
-![图片展示了hmall项目中hm - gateway模块的目录结构。在“src”目录下，有“main”目录，其中“java”目录内包含“com.hmall.gateway”包，该包下有一个蓝色高亮显示的“GatewayApplication”文件。此外，“main”目录下还有“resources”“test”“hm - gateway.iml”“pom.xml”文件。该图片与文档中“1.2.3启动类”内容相关，直观呈现了在hm - gateway模块下新建启动类“GatewayApplication”的位置。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/J33VbCADtoXxwFx7K1gcEUKQntd.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/J33VbCADtoXxwFx7K1gcEUKQntd.png)
 
 代码如下：
 
@@ -336,7 +336,7 @@ spring:
 
 启动网关服务、商品服务，访问此链接。
 
-![这张图片展示了从网关访问商品服务后返回的JSON格式数据，页面地址为“localhost:8080/items/page?pageNo=1&pageSize=1”，与文档中测试网关路由的步骤完全对应。返回数据包含“total”和“pages”均为88476，显示商品总数和总页数；“list”数组内是单个商品的详细信息，包含商品ID、名称、价格、库存、图片链接、分类、品牌、规格、销量等字段，例如商品名称为华为nova 4手机，价格90600，商品状态显示为1，各项数据清晰呈现。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/IiThbblfooVCkXxCaX5cabntndh.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/IiThbblfooVCkXxCaX5cabntndh.png)
 
 
 
@@ -383,7 +383,7 @@ Header需要两个参数header和regexp（正则表达式），也可以理解�
 
 Header中包括X-Request-Id才可正常访问，`X-Request-Id` 并不是HTTP标准的一部分，常用用于标识一次请求的ID。
 
-![这张图片展示了微服务网关配置文件application.yml的具体内容，属于网关路由配置中路由断言的相关设置。文件中配置了网关的基础信息，如服务端口8080、服务名称为gateway，还指定了Nacos服务注册中心的地址。在routes配置项下，路由规则id为item，指向地址为//item-service，匹配路径为/items/**，重点是用红色框标注的Header规则，要求请求携带标为X-Request-Id的Header，且该Header需符合包含数字的正则表达式，以此实现路由断言的Header匹配逻辑。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Yxl0b2jGko63gIxdHwScP7AOnIg.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Yxl0b2jGko63gIxdHwScP7AOnIg.png)
 
 重启网关，访问http://localhost:8080/items/page?pageNo=1&pageSize=1，不可以正常访问，因为没有添加X-Request-Id请求头。
 
@@ -391,11 +391,11 @@ Header中包括X-Request-Id才可正常访问，`X-Request-Id` 并不是HTTP标�
 
 创建一个请求：
 
-![图片展示了IntelliJ IDEA中Tools菜单下的HTTP Client选项。在Tools菜单下，有多个选项，其中“HTTP Client”选项被高亮显示，其右侧展开的下拉菜单中，“Create Request in HTTP Client”选项被蓝色框线突出显示。该图片与文档中介绍使用Idea的httpclient插件测试添加X-Request-Id请求头的内容相关，用于说明在IntelliJ IDEA中创建HTTP请求的操作位置。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Iulcbk8o0oopfUx6mNncYJHynOb.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Iulcbk8o0oopfUx6mNncYJHynOb.png)
 
 在下边的界面中输入请求url并设置X-Request-Id请求头
 
-![这张图片是IDEA的HTTP Client插件的界面，展示了为请求添加X-Request-Id请求头的操作内容。界面中编辑区的第1行是请求方法与地址，为GET请求，目标地址是http://localhost:8080/items/page?pageNo=1&pageSize=1；第2行是请求头Accept，值为application/json；第3行是需配置的X-Request-Id请求头，当前已填写值为111。界面左侧的绿色三角图标是运行按钮，该操作是为了通过插件便捷添加请求头，后续点击该运行按钮就能正常访问目标网关地址。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/LhXibiuTiovqk5xA5bKclMcJnVe.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/LhXibiuTiovqk5xA5bKclMcJnVe.png)
 
 点击“运行”可以正常访问。
 
@@ -403,7 +403,7 @@ Header中包括X-Request-Id才可正常访问，`X-Request-Id` 并不是HTTP标�
 
 如果IDEA没有HTTP client插件请自行安装
 
-![图片展示了IntelliJ IDEA中插件管理界面。左侧导航栏选中“Plugins”，右侧搜索框输入“plugin”，搜索结果中“HTTP client”被红框突出显示。右侧“Installed”标签下，HTTP Client插件已安装，版本为222.3345.118，状态为Enabled，描述其提供从代码编辑器编写和执行HTTP请求的能力，还列出部分可用功能。该图与文档中介绍使用HTTP client插件添加请求头信息以测试网关路由的内容相关，直观呈现了插件安装情况。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AWFpb0vGzowJGjxo2dZczSoMnJd.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AWFpb0vGzowJGjxo2dZczSoMnJd.png)
 
 
 
@@ -497,7 +497,7 @@ AI:@PreAuthorize("hasRole('ADMIN')") 除了hasRole还有哪些
 
 网关鉴权必须在请求转发到微服务之前做，否则就失去了意义。而网关的请求转发是`Gateway`内部代码实现的，要想在请求转发之前做身份校验，就必须了解`Gateway`内部工作的基本原理。
 
-![图片展示了网关中请求处理流程。客户端请求进入网关后，由HandlerMapping根据路径匹配Route，再由FilteringWebHandler加载并调用路由下的过滤器链，链中包含多个Filter，最后由NettyRoutingFilter将请求发送到具体微服务。该图与上下文紧密相关，直观呈现了文档中描述的客户端请求进入网关后，由HandlerMapping找到匹配路由规则，再由WebHandler加载过滤器链并逐一执行，最终将请求发送到微服务的处理流程。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AWqdb6P4Po0V3xxzCxgcYtEUnhf.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AWqdb6P4Po0V3xxzCxgcYtEUnhf.png)
 
 
 
@@ -804,7 +804,7 @@ spring:
 
 身份校验需要用到JWT，而且JWT的加密需要秘钥和加密工具。这些在`hm-service`中已经有了，我们直接拷贝过来：
 
-![这是一个hm-gateway项目的文件目录结构，其中src目录下的main/java/com.hmall.gateway包内，config文件夹里的AuthProperties、JwtProperties、SecurityConfig被用红框标注，util文件夹里的JwtTool也被红框标注，对应文档中提到的身份校验过滤器相关的核心配置类与工具类。同时，main/resources目录下的hmall.jks秘钥文件同样被红框标注，这与文档中说明的身份校验相关文件内容对应，体现了项目中与网关鉴权的自定义过滤器实现相关的关键文件的位置。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/W87ibLaj7oIgycxZAeDcMGvGnGb.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/W87ibLaj7oIgycxZAeDcMGvGnGb.png)
 
 具体作用如下：
 
@@ -840,7 +840,7 @@ excludePaths配置白名单地址，即无需身份校验的路径。
 
 接下来，我们定义一个身份校验的过滤器：
 
-![这张图展示了名为hm-gateway的微服务网关项目的代码目录结构，其中核心内容为filter文件夹下的AuthGlobalFilter类，该类被红框标注，对应文档中提到的身份校验过滤器的定义。目录中还包含config、util等文件夹，以及resources目录下的application.yaml配置文件和hmall.jks秘钥文件，这些元素与文档中介绍的身份校验相关的AuthProperties、JwtProperties、SecurityConfig、JwtTool等组件相互对应，完整呈现了网关鉴权相关的代码组织与资源配置结构。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/DYjeb9dcro0Qp3x7hfWcT7Z3nZc.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/DYjeb9dcro0Qp3x7hfWcT7Z3nZc.png)
 
 ```JSON
 //1. 获取请求实例和响应实例
@@ -942,23 +942,23 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 由于“/items/\*\* ”  在excludePaths中配置，所以访问/items开头的路径在未登录状态下不会被拦截：
 
-![图片展示的是通过httpclient插件测试访问items接口的返回结果。在浏览器地址栏输入“localhost:8080/items?pageNo=1&pageSize=1”后，返回JSON格式数据，显示了商品的id、name、price、stock等信息，如id为100002624512的商品名称为“【千玺代言】华为新品 HUAWEI nova 4 极点全面屏手机 2000万超广角三摄 8GB+128GB 蜜语红 全网通双卡双待”，价格90600元，库存9998等。该图片与上文测试登录接口拿到token后，使用httpclient插件进行测试，可正常访问items接口的内容相关。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Y5gsbkBnEoYxZmxXxr4cAuF9nIe.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Y5gsbkBnEoYxZmxXxr4cAuF9nIe.png)
 
 
 
 访问/carts路径在未登录状态下请求会被拦截，并且返回`401`状态码(注意：**此时cart服务要启动**)：
 
-![这张图片是访问未登录状态下的 `/carts` 路径得到的页面反馈，对应上下文里“访问/carts路径在未登录状态下请求会被拦截，并且返回`401`状态码”的测试内容。页面顶部显示的地址栏为 `localhost:8080/carts`，主体区域显示“该网页无法正常运作”的提示，下方标注了“HTTP ERROR 401”，直观验证了身份校验过滤器的拦截效果。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/JPTkbHV1Ao76yQxKB2rcdLTEn4e.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/JPTkbHV1Ao76yQxKB2rcdLTEn4e.png)
 
 首先通过user-service的swagger文档测试登录接口，拿到token，如下图：
 
-![图片展示的是user-service的Swagger文档中“用户登录接口”的POST请求界面。在“请求参数”标签下，以JSON格式呈现了登录参数，包括“password”和“username”，其中“password”值为“123456”。下方“Headers”区域显示了请求头信息。右下角有“Token”区域，显示了登录成功后返回的token。该图片与上文测试登录接口，获取token的操作相关，用于直观呈现登录请求参数及token获取位置。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/XOFLb5Jrdop6yNxrECwcF8JWnig.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/XOFLb5Jrdop6yNxrECwcF8JWnig.png)
 
 
 
 接下来使用httpclient插件进行测试，在请求头中添加token再测试，可以正常访问。
 
-![这张图是使用HTTP客户端工具发起测试请求的界面，展示的是向服务端发送GET请求的相关配置：请求地址为`http://localhost:8080/carts`，属于网关身份校验测试中，未登录状态被拦截的`/carts`路径；请求头配置了`Accept: application/json`，同时包含了携带token的`Authorization`请求头，该内容对应文档中“使用httpclient插件在请求头中添加token测试可正常访问”的操作场景，用于验证身份校验过滤器携带合法token时的访问效果。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/VwJPbaF4Io53ocxKGDlc84vmnwb.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/VwJPbaF4Io53ocxKGDlc84vmnwb.png)
 
 
 
@@ -991,7 +991,7 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 流程图如下：
 
-![这是网关传递用户信息的流程图，涉及浏览器、网关、微服务等环节，展示了整个流程的逻辑。浏览器携带JWT发起请求，进入网关后先校验JWT是否有效，若无效则返回异常信息，流程结束后浏览器渲染结果；若JWT有效，网关会解析JWT中的用户信息，将该信息保存到请求头后，转发请求到微服务。微服务侧先通过拦截器获取请求头里的用户信息，将其存入ThreadLocal，之后进行业务处理，最终返回结果完成整个流程。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/PC1UbMCALoikQnxtCJJcLKucnae.jpg)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/PC1UbMCALoikQnxtCJJcLKucnae.jpg)
 
 
 
@@ -1006,7 +1006,7 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 首先，我们修改身份校验拦截器的处理逻辑，保存用户信息到请求头中：
 
-![这是AuthGlobalFilter.java文件中的代码片段，属于微服务网关过滤器的实现代码，核心内容是在解析出Token对应的用户ID后，通过`request.mutate()`方法设置请求头，具体为将用户ID转换为字符串后存入名称为“user-info”的请求头中，该操作是文档中提到的“改造网关过滤器，在获取用户信息后保存到请求头，转发到下游微服务”的具体实现部分。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Cgiyb2tvwoomxoxwBAFcXZ6snNd.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Cgiyb2tvwoomxoxwBAFcXZ6snNd.png)
 
 
 
@@ -1016,11 +1016,11 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 在hm-common中已经有一个用于保存登录用户的ThreadLocal工具：
 
-![图片展示了hm - common项目的目录结构。在utils包下，有一个用红色框突出显示的UserContext类。该图片与文档中“2.5.3.1 ThreadLocal工具类”部分内容相关，用于说明在hm - common中已经有一个用于保存登录用户的ThreadLocal工具，即UserContext类，接下来只需编写拦截器，获取用户信息并保存到UserContext，然后放行即可。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/OjCzbdWbPowBGgxxGpncr2yXn1f.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/OjCzbdWbPowBGgxxGpncr2yXn1f.png)
 
 屏蔽返回固定用户id的代码,返回从threadLocal中获取的userId，代码如下：
 
-![这是UserContext.java文件的代码界面内容，展示了一个名为getUser的静态方法，该方法的返回类型为Long。代码中原本标注了“暂是返回固定的用户id”的注释，对应原本返回1L的代码被注释屏蔽，最终改为从名为tl的ThreadLocal对象中获取用户相关的信息并返回。该代码是上文提及的内容，对应屏蔽返回固定用户id的代码、改为从ThreadLocal中获取userId的实现部分，用于后续微服务中获取用户信息。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/EsMPbJQY8oWsQFx0b2vc7U2EnVf.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/EsMPbJQY8oWsQFx0b2vc7U2EnVf.png)
 
 
 
@@ -1036,7 +1036,7 @@ public class AuthGlobalFilter implements GlobalFilter {
 
 我们在`hm-common`模块下定义一个拦截器：
 
-![这是hm-common模块的目录结构展示，呈现了该模块下从src到main、java，再到com.hmall.common包的层级内容。其中在com.hmall.common包下，包含advice、config、domain、exception等多个子包，还设有interceptor子包，该子包被红色框标注，框内有一个名为UserInfoInterceptor的类文件，它正是文档中提到的要在hm-common模块下定义的拦截器，用于处理ThreadLocal相关的用户信息传递事宜。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/OhzzbKfaLop1w1xQst6cgMNanLb.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/OhzzbKfaLop1w1xQst6cgMNanLb.png)
 
 具体代码如下：
 
@@ -1093,7 +1093,7 @@ AI: ThreadLocal数据用完一定要移除，可以避免内存泄漏
 
 接着在`hm-common`模块下编写`SpringMVC`的配置类，配置登录拦截器：
 
-![图片展示了`hm-common`模块下的`src/main/java`目录结构。其中，`com.hmall.common`包下有`advice`、`config`、`domain`等子包，`config`包下有`MvcConfig`、`MyBatisConfig`等配置类。图片中红色框突出显示了`MvcConfig`类。该图片与上文提到的在`hm-common`模块下编写`SpringMVC`配置类，配置登录拦截器的内容相关，直观呈现了配置类所在位置。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/CQ0Xb4c82oFD9gx34wdcWe7hn5f.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/CQ0Xb4c82oFD9gx34wdcWe7hn5f.png)
 
 具体代码如下：
 
@@ -1123,7 +1123,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
 基于SpringBoot的自动装配原理，我们要将其添加到`resources`目录下的`META-INF/spring.factories`文件中：
 
-![这张图片展示了hm-common模块的资源目录结构，在main的resources目录下的META-INF文件夹中，包含spring.factories和spring-configuration-metadata.json两个文件，其中spring.factories文件被红框标注突出显示。结合上下文可知，这是用于解决SpringMVC配置类无法被其他微服务扫描生效的问题，按照SpringBoot自动装配原理，需要将相关配置添加到该spring.factories文件中。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Wx7JbG6D9oTe0Tx7l5ecPui8nGV.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Wx7JbG6D9oTe0Tx7l5ecPui8nGV.png)
 
 内容如下：
 
@@ -1156,25 +1156,25 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 
 找到`cart-service`模块的`com.hmall.cart.service.impl.CartServiceImpl`：
 
-![图片展示了`cart-service`模块的目录结构。在`service`目录下，有`impl`子目录，其中`CartServiceImpl`被红色框突出显示。该图片与文档中“找到`cart-service`模块的`com.hmall.cart.service.impl.CartServiceImpl`”的内容相关，直观呈现了代码实现中需找到的`CartServiceImpl`类所在位置，辅助理解后续在该类中修改`queryMyCarts`方法的操作。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Y0PDbVkVPoFMn9xAya9c6Kthnnf.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Y0PDbVkVPoFMn9xAya9c6Kthnnf.png)
 
 修改其中的`queryMyCarts`方法：
 
-![图片展示了`CartServiceImpl`类中`queryMyCarts`方法的代码。关键部分是第68行，使用`UserContext.getUser()`获取用户信息，将其作为条件查询购物车列表。该图片与上文提到的修改`queryMyCarts`方法内容相呼应，直观呈现了代码实现，是通过自定义过滤器实现网关传递用户信息步骤中的代码示例，帮助理解网关如何将用户信息传入下游服务。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Nrz1bMmQ5o0Q3WxhQH2ch8dsnGd.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Nrz1bMmQ5o0Q3WxhQH2ch8dsnGd.png)
 
 ##### 2.5.4.2 测试
 
 使用httpclient测试通过网关访问查询购物车接口，并且在请求头中带上token
 
-![这是一张API测试请求的截图，展示了针对购物车查询接口的GET请求配置。请求地址为localhost的8080端口对应的/carts路径，Accept头设置为application/json，表明需要接收JSON格式的响应数据；Authorization头携带了一串加密的token字符串，该token用于携带用户身份信息，对应测试环节中通过HttpClient访问网关时在请求头携带token的要求，符合网关将用户信息传递至下游cart-service服务的调试场景需求。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/JxSKbBAwfoWd9JxppAtcIi4Ln5c.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/JxSKbBAwfoWd9JxppAtcIi4Ln5c.png)
 
 在用户身份拦截器中打断点
 
-![图片展示的是UserInfoInterceptor类的部分Java代码，该类属于网关的用户身份拦截器实现。代码内的preHandle方法中，明确从请求头获取名为“user-info”的用户信息，该信息值在示例中为“1”；方法会判断获取到的userInfo是否非空，若符合条件则将其转换为Long类型后保存至ThreadLocal的UserContext中，以此实现网关向下游的购物车服务传递用户信息的拦截逻辑。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/NyDzbHjgmoJ1Cvx56AncN08Dn7g.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/NyDzbHjgmoJ1Cvx56AncN08Dn7g.png)
 
 在查询购物车接口中打断点
 
-![图片展示了`CartServiceImpl.java`文件中`queryMyCarts`方法的代码。其中，`userId`变量被赋值为1。代码中还包含使用`lambdaQuery()`查询购物车列表的代码，以及判断购物车列表是否为空的逻辑。图片右侧有红色箭头指向`userId: 1`部分，与上下文提到的在`CartServiceImpl`中修改`queryMyCarts`方法的内容相呼应，直观呈现了代码中`userId`变量的赋值情况。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/B95qbrzZZoLDT4x5zYtciqv5n9d.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/B95qbrzZZoLDT4x5zYtciqv5n9d.png)
 
 测试到此说明网关已成功将用户信息传入下游服务中。
 
@@ -1190,7 +1190,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 
 但有些业务是比较复杂的，请求到达微服务后还需要调用其它多个微服务。比如下单业务，流程如下：
 
-![图片展示了下单业务流程图。前端浏览器发起请求，携带JWT，网关校验JWT有效性，若有效则解析JWT中的用户信息并转发请求，若无效则返回异常信息。请求转发后，订单服务获取用户信息并保存订单，商品服务扣减库存，购物车服务清理购物车，最后渲染结果。该图与上下文紧密相关，直观呈现了下单业务中请求在浏览器、网关、订单服务、商品服务、购物车服务间的流转过程。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Aw0FbbeS8ovRtHxD1ffcxGAqnVI.jpg)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Aw0FbbeS8ovRtHxD1ffcxGAqnVI.jpg)
 
 下单的过程中，需要调用商品服务扣减库存，调用购物车服务清理用户购物车。而**清理购物车**时必须知道当前登录的用户身份。但是，**订单服务调用购物车时并没有传递用户信息**，购物车服务无法知道当前用户是谁！
 
@@ -1198,7 +1198,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 
 微服务之间调用是基于OpenFeign来实现的，在进行OpenFeign调用时可以将用户信息放在http头中传递，如下图：
 
-![这张图对应微服务之间基于OpenFeign传递用户信息的方案流程，展示了用户信息的传递路径：从电脑端发起请求，经网关的GlobalFilter完成登录校验、将用户信息保存到请求头后，请求会进入微服务；微服务通过HandlerInterceptor拦截器，把用户信息保存到ThreadLocal中，之后借助OpenFeign的RequestInterceptor拦截器，把用户信息保存到请求头里，最终通过OpenFeign完成对两个微服务的调用，清晰呈现了OpenFeign拦截器实现用户信息传递的完整流程。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Y6NhbRRsYowtEkxEwYIcDSEwnBf.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Y6NhbRRsYowtEkxEwYIcDSEwnBf.png)
 
 借助Feign中提供的一个拦截器接口：`feign.RequestInterceptor`可以实现Feign拦截器
 
@@ -1358,17 +1358,17 @@ public class FeignInterceptorConfig {
 
 定义新接口：
 
-![图片展示的是ICartService接口代码，其中重点突出“removeByItemIds”方法。该方法有两个版本，一个接收Collection<Long> itemIds参数，另一个接收Long userId和Collection<Long> itemIds参数。此图片与文档中“2.6.2.2定义接口”部分相关，单独定义inner包存放内部接口，此处代码是定义的无状态接口，用于实现清理购物车功能。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/WepGbyfOEoWilDxtf4Pc2ZwWnbc.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/WepGbyfOEoWilDxtf4Pc2ZwWnbc.png)
 
 定义新接口并修改原有接口实现：
 
-![图片展示了Feign接口中清理购物车相关代码。上方代码中，`removeByItemIds`方法通过`UserContext.getUser()`获取用户ID，调用`removeByItemIds`方法。下方代码中，`removeByItemIds`方法首先构建删除条件，使用`QueryWrapper`设置`userId`和`itemId`的查询条件，然后调用`remove`方法删除符合条件的数据。该图片与上下文紧密相关，是对上下文提到的将原有清理购物车feign接口修改为新开发的无状态接口的代码示例呈现。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/V0A3bcKfEoEfA8xQr23ctFlQngh.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/V0A3bcKfEoEfA8xQr23ctFlQngh.png)
 
 ##### 2.6.2.2 定义接口
 
 单独定义inner包存放内部接口。
 
-![图片展示了cart - service项目中src目录下的文件结构。在com.hmall.cart包下，有config、controller两个子包，controller包下又有inner子包。其中，inner包下有一个名为CartControllerInner的文件。该图片与文档中“2.6.2.2定义接口”部分内容相关，对应单独定义inner包存放内部接口的说明，直观呈现了inner包及其下文件的存放位置。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Ho4sbQf0AoplozxiY9mcNOX1nMe.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Ho4sbQf0AoplozxiY9mcNOX1nMe.png)
 
 代码如下：
 
@@ -1432,7 +1432,7 @@ public interface CartClient {
 
 修改完后需要修改交易服务，改为调用此无状态接口。
 
-![这张图片展示的是OrderServiceImpl.java文件的代码内容，在第82行的代码被红色方框标注，对应代码行是`cartClient.deleteCartItemByIds(userId,itemIds);`，该行代码的注释为“// 3.清理购物车商品”，属于清理购物车无状态接口的相关实现代码，这段代码会调用购物车服务的Feign接口，传入用户ID与商品ID来执行清理购物车的操作，位于订单保存、扣减库存的逻辑之间，是清理购物车功能的核心代码。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AwUKbaq9ao633IxlvZccicXbnLc.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AwUKbaq9ao633IxlvZccicXbnLc.png)
 
 
 
@@ -1440,11 +1440,11 @@ public interface CartClient {
 
 下边我们测试下单流程，下单成功清理购物车。
 
-![这张图片展示了开发工具中Services面板的Spring Boot应用列表，列出了当前运行的多个微服务应用及对应端口号，其中CartServiceApplication运行在8082端口、ItemServiceApplication运行在7081端口、GatewayApplication运行在8080端口、TradeServiceApplication运行在8085端口、UserServiceApplication运行在8084端口。这些应用与文档中微服务网关和配置中心的场景相呼应，对应了购物车、商品、网关、交易、用户等相关微服务。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/OxXzb06gbownm9xw4PxckVmZn3b.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/OxXzb06gbownm9xw4PxckVmZn3b.png)
 
 首先通过user-service的swagger文档测试登录接口，拿到token，如下图：
 
-![图片展示的是user-service的Swagger文档中“用户登录接口”的测试界面。上方有“主页”“Swagger Models”等导航栏。中间是POST请求的“users/login”接口，可选择“x-www-form-urlencoded”“form-data”“raw”等数据类型，当前选中“raw”，下方有JSON数据输入框，示例数据包含“password”“username”等字段。下方还有“Headers”“Call”等区域。图片与上下文关系紧密，用于说明通过user-service的swagger文档测试登录接口，拿到token的操作。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Bhtlb9RWBoLoOPxKHW7c9Idznog.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Bhtlb9RWBoLoOPxKHW7c9Idznog.png)
 
 
 
@@ -1473,11 +1473,11 @@ Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE3Mjk1
 
 测试时在交易服务创建订单方法中打断点：
 
-![这张图片展示了订单服务实现类OrderServiceImpl.java的代码片段，对应清理购物车商品的业务逻辑部分。代码第82行的`cartClient.deleteCartItemByIds`方法调用中，传入的`userId`参数值被标注为1，该内容用于配合文档中清理购物车无状态接口的断点跟踪测试，验证接口是否能正确传入用户ID，以实现清理购物车的功能，属于下单流程中与购物车服务交互的代码环节。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/FvJtbjgiDo5c2mxqK53c5ml3nZg.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/FvJtbjgiDo5c2mxqK53c5ml3nZg.png)
 
 在购物车服务清理购物车接口中打断点，跟踪是否传入用户id。
 
-![图片展示的是CartControllerInner类中的deleteCartItemByIds方法代码。方法参数为Long类型的userId和List<Long>类型的ids，方法体内调用了cartService的removeByItemIds方法。图片中userId被红色框突出显示，其值为1。该图片与上下文关系紧密，上下文提到在购物车服务清理购物车接口中打断点，跟踪是否传入用户id，此图直观呈现了代码中传入的userId值，辅助理解上下文提到的跟踪点。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/LJu8baUEGoHCGJx1hcZcjMovnWc.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/LJu8baUEGoHCGJx1hcZcjMovnWc.png)
 
 测试预期结果：下单成功，清理购物车成功。
 
@@ -1555,7 +1555,7 @@ Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE3Mjk1
 
 解决：将商品服务中的search接口抽取到item-service服务。
 
-![图片展示了商品搜索微服务的代码及结构。左侧是项目结构，包含pom.xml、src文件夹等，右侧是SearchController类代码，其中定义了搜索商品的接口，使用ItemPageQuery参数，通过itemService.lambdaQuery方法查询商品信息，还涉及PageDTO类等。该图片与文档中商品搜索微服务的前后端联调作业相关，直观呈现了商品搜索微服务的代码实现情况。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/UMJdboFKAoAu1pxZChrctVxSnmb.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/UMJdboFKAoAu1pxZChrctVxSnmb.png)
 
 ```Java
 package com.hmall.item.controller;
@@ -1655,7 +1655,7 @@ public class SearchController {
 
 这些问题都可以通过**配置中心**解决，如下图：
 
-![这张图展示了配置中心的服务流程：左侧为配置中心，上方有代表用户的图标，通过标注“1.修改/发布配置”的箭头指向配置中心，代表用户在此处完成配置的修改与发布；右侧是服务A和服务B，二者均为配置客户端，配置中心通过标注“2.配置更新通知”的箭头向这些服务发送配置更新的通知，再通过标注“3.获取最新配置”的箭头，使服务端获取到配置中心的最新配置，直观呈现了配置中心解决多服务配置维护难题的工作逻辑。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/FThfbdyYOo2fxIxx50ZcFvqMnVb.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/FThfbdyYOo2fxIxx50ZcFvqMnVb.png)
 
 配置中心的服务流程如下： 
 
@@ -1685,7 +1685,7 @@ Nacos不仅仅是注册中心还是配置中心，nacos可以对微服务的配�
 
 Nacos 提供web管理控制台如下图，方便进行配置管理，还提供包括配置版本跟踪、金丝雀发布、一键回滚配置以及客户端配置更新状态跟踪在内的一系列开箱即用的配置管理特性，帮助您更安全地在生产环境中管理配置变更和降低配置变更带来的风险。
 
-![这张图片是Nacos 2.4.0版本的Web管理控制台界面，对应配置管理相关内容。界面顶部显示当前无开启权限的提示，左侧有“配置管理”“历史版本”等功能导航栏，当前处于“配置列表”页面；页面展示的命名空间为public、版本为v1，列表中存在一条符合要求的配置，其Data ID为a.b.c，Group为DEFAULT_GROUP，归属集群为，操作栏提供详情、示例代码、编辑、删除选项，页面还设有“创建配置”“导入配置”等功能按钮，以及查询、删除、导出等操作选项，默认模糊匹配功能处于开启状态，可对配置进行相关管理操作。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/QD9nbn8ThoN01Nx585Hc5iPtn5c.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/QD9nbn8ThoN01Nx585Hc5iPtn5c.png)
 
 
 
@@ -1701,9 +1701,9 @@ Nacos 提供web管理控制台如下图，方便进行配置管理，还提供�
 
 创建命名空间：hmallv1.0，表示商城项目1.0环境，如下图：
 
-![这是Nacos 2.4.0的命名空间操作界面，界面左侧为功能导航栏，当前选中“命名空间”选项，界面提示当前集群未开启鉴权，可参考文档开启该功能。界面中间区域展示了命名空间相关操作按钮与列表，“新建命名空间”按钮被红色箭头重点标注，列表内仅存在保留空间“public”，其配置数为0，该界面对应文档中创建命名空间的操作环节，用于完成命名空间的创建，实现不同项目或环境的配置隔离。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Oey7brUTHoPzP3xJmQ1cEvyenvc.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Oey7brUTHoPzP3xJmQ1cEvyenvc.png)
 
-![图片展示的是在Nacos中创建命名空间的界面。界面上方显示“新建命名空间”。有三个关键输入项：命名空间ID（不填则自动生成），命名空间名（示例为“hmallv1.0”），描述（示例为“商城项目1.0环境”）。右下角有“确定”和“取消”按钮。该图片与文档中“创建命名空间”内容相关，用于直观呈现创建命名空间时所需填写的信息界面。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/RxOJbapxbo63Dpx3HVccxE9Qnmb.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/RxOJbapxbo63Dpx3HVccxE9Qnmb.png)
 
 **命名空间的ID**: 如果不填会自动生成，非常重要，需要在微服务端配置此命名空间ID。
 
@@ -1715,7 +1715,7 @@ Nacos 提供web管理控制台如下图，方便进行配置管理，还提供�
 
 创建成功如下图：
 
-![图片展示的是Nacos 2.4.0配置管理中命名空间页面。页面上方有Nacos标志及导航栏。左侧有“命名空间”等选项。右侧显示命名空间列表，包含“public(保留空间)”和“hmallV1.0”两个命名空间，后者描述为“hmallV1.0商城项目环境”，配置数为7。页面提示当前集群没有开启权限，需参考文档开启权限。该图与上下文关系紧密，是发布配置前切换命名空间的页面展示。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/TpzMbWy9IoaPSCxhQqMcajNFnOh.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/TpzMbWy9IoaPSCxhQqMcajNFnOh.png)
 
 ##### 4.2.1.2 发布配置
 
@@ -1723,13 +1723,13 @@ Nacos 提供web管理控制台如下图，方便进行配置管理，还提供�
 
 我们切换到刚才创建的命名空间：
 
-![图片展示的是Nacos配置管理页面。页面左侧有“配置管理”“配置列表”“历史版本”“监听查询”等选项，当前选中“配置管理”。右侧显示“当前集群没有开启鉴权，请参考文档开启鉴权~”提示。命名空间为“hmallv1.0”，下方有“创建配置”“Data ID”“Group”“默认模糊匹配”等输入框及“查询”“高级查询”“导入配置”按钮。页面还显示查询到7条满足要求的配置。该图与上下文关系紧密，是发布配置操作前的页面展示，用于说明在Nacos上发布购物车服务配置前的页面状态。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/NKkDbc31tozRkVxFTNCcY4FdnQh.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/NKkDbc31tozRkVxFTNCcY4FdnQh.png)
 
 点击“创建配置”，填写dataId、group、配置文件等信息。
 
 将application.yaml配置文件中的内容拷贝到下图配置内容栏，将application.yaml文件中原有内容删除。
 
-![这是配置管理发布配置环节的新建配置操作界面截图。界面中“命名空间”“Data ID”“Group”栏已分别填入对应内容，Data ID为“cart-service-dev.yaml”，Group为“DEFAULT_GROUP”；配置格式已选择YAML，下方配置内容栏显示了对应格式的配置代码，涵盖server、spring、cloud、profile等相关配置项，该界面是完成配置发布前的内容编辑填写区域，和前文提及的将application.yaml配置内容拷贝至配置内容栏的操作要求直接对应。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/SbUxbmJK4oGrrixGz4icVXfknmc.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/SbUxbmJK4oGrrixGz4icVXfknmc.png)
 
 
 
@@ -1743,13 +1743,13 @@ Nacos 提供web管理控制台如下图，方便进行配置管理，还提供�
 
 发布成功如下图：
 
-![这是NACOS 2.4.0的配置管理页面，当前已找到7条满足要求的配置。页面顶部显示当前集群未开启鉴权的提示，配置空间为“hmall1.0商城项目环境”，提供了创建配置、查询、高级查询、导入配置等功能按钮，默认模糊匹配开关处于开启状态。查询结果中有一条目标配置，其Data Id为cart-service-dev.yaml，分组为默认分组DEFAULT_GROUP，操作栏提供详情、示例代码、编辑、删除等操作选项。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/YVWEb6FScoZxN0xdVlxcsjtvngb.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/YVWEb6FScoZxN0xdVlxcsjtvngb.png)
 
 在resources下创建一个备份目录backup，将原来的配置文件复制到backup目录下进行备份。
 
 此时购物车服务的配置文件如下：
 
-![图片展示了购物车服务的项目结构。在src目录下，有main文件夹，其下有java文件夹，包含com.hmall.cart下的config、controller、domain、mapper、service等子文件夹。resources文件夹下有backup、mapper文件夹，以及application.yaml、application-dev.yaml、application-local.yaml配置文件。此图与文档中发布配置成功后的项目结构相关，直观呈现了购物车服务的代码及配置文件分布情况。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/EZFbbs60AoZaVMxUL0oc8Ug1nkh.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/EZFbbs60AoZaVMxUL0oc8Ug1nkh.png)
 
 
 
@@ -1789,7 +1789,7 @@ nacos客户端从nacos拉取配置信息需要在微服务提前配置nacos的�
 
 SpringCloud在初始化上下文的时候会先读取一个名为`bootstrap.yaml`(或者`bootstrap.properties`)的文件，如果我们将nacos地址配置到`bootstrap.yaml`中，那么在项目引导阶段就可以读取nacos中的配置了。
 
-![这张图片展示了项目启动后，在SpringCloud上下文与SpringBoot上下文两个环境下的配置加载流程。项目启动后，先进入SpringCloud上下文，依次完成加载bootstrap.yaml、拉取Nacos配置、初始化ApplicationContext的操作；之后流程转入SpringBoot上下文，依次完成加载application.yaml、合并配置、初始化ApplicationContext的操作。该图是对应文档中创建bootstrap.yaml后，拉取配置环节的流程说明，清晰呈现了不同配置文件在两个技术上下文里的加载步骤关联关系。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/QgrUb7dfKoCCqrxEw74cnLWRnnc.jpg)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/QgrUb7dfKoCCqrxEw74cnLWRnnc.jpg)
 
 
 
@@ -1797,7 +1797,7 @@ SpringCloud在初始化上下文的时候会先读取一个名为`bootstrap.yaml
 
 在cart-service中的resources目录新建一个bootstrap.yaml文件：
 
-![图片展示了cart-service项目的目录结构。在resources目录下，有backup、mapper等文件夹，以及application.yaml、application-dev.yaml、application-local.yaml等配置文件。图片中，bootstrap.yaml文件被红色框线突出显示。上下文提到在cart-service的resources目录新建一个bootstrap.yaml文件，此图直观呈现了文件在项目目录中的位置，与上下文关于创建bootstrap.yaml文件的内容相呼应。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/EPoAbRjaaorWDoxfaVQcbaGWnYd.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/EPoAbRjaaorWDoxfaVQcbaGWnYd.png)
 
 内容如下：
 
@@ -1858,9 +1858,9 @@ cart-service-dev.yaml
 
 下边启动购物车服务，启动成功，访问查询购物车接口，我们直接使用Swagger进行测试。
 
-![图片展示的是购物车服务接口文档中全局参数设置界面。上方有“主页”“全局参数设置(default)”“添加商品到购物车”选项卡。下方提示Knife4J提供全局参数Debug功能，可从header、query(form)两种方式入参。下方表格中显示参数名称为“user - info”，参数值为“1”，参数类型为“header”，右侧有“删除”操作按钮。该图片与文档中测试购物车服务接口时使用Swagger进行测试的内容相关，用于说明添加全局参数的操作界面。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/HLdjbLAhAoNB0IxaubScAQATnxf.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/HLdjbLAhAoNB0IxaubScAQATnxf.png)
 
-![这张图片展示了Swagger工具的测试界面，用于访问购物车服务的查询购物车接口。界面中请求方式为POST，对应地址为“/carts”，当前选中的参数类型为raw（JSON格式），请求参数里包含image、itemId、name、price、spec等字段及对应内容，右上角设有“发送”和“重置”按钮，当前界面顶部显示了“添加商品到购物车”的标签，该界面用于测试购物车服务的接口，对应文档中提到的使用Swagger测试查询购物车接口的相关内容。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/ZtoQbaioFoCVg8xAwBlcrVf4nJd.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/ZtoQbaioFoCVg8xAwBlcrVf4nJd.png)
 
 测试时报错：
 
@@ -1895,7 +1895,7 @@ Service Unavailable：说明从nacos没有找到可用的服务。
 
 进入服务列表，找到相应的命令空间，查询该命令空间下的服务：
 
-![这是NACOS 2.4.0模式为standalone的服务列表页面，页面显示当前集群未开启鉴权，还标注了相应提示。页面的命名空间下拉框选中的是“hmallv1.0商城项目开发环境”，列表中展示了服务cart-service的信息，其分组名称为DEFAULT_GROUP，集群数目、实例数等相关信息均为1，健康实例数也为1，触发保护阈值为false，操作栏可进行查看、示例代码、订阅者、删除等操作。该页面用于完成拉取配置测试相关操作，文档上下文提及需通过此页面找到对应命名空间查询服务，且修改配置时要将所有微服务统一注册到指定命名空间。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/TXXKbwN6xotVCdxR3Z8cfXz6nuh.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/TXXKbwN6xotVCdxR3Z8cfXz6nuh.png)
 
 
 
@@ -1918,13 +1918,13 @@ nacos并没有和网关在同一个命令空间。
 
 修改网关的application.yaml如下图：
 
-![图片展示了修改后的网关application.yaml配置文件内容。关键部分是“discovery”配置，其下“namespace”值被红色框突出显示，内容为`${NACOS_NAMESPACE}:86654eaf-4819-43fc-93b6-316ba39da7c0}`。这与上下文提到的“把所有微服务的服务发现配置全部指定统一的命令空间，添加如下配置”相呼应，是对修改网关配置文件步骤的示例呈现。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Gh91buOLPoEuw5xhNsWcdj1vnfg.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/Gh91buOLPoEuw5xhNsWcdj1vnfg.png)
 
 参考上图修改微服务的配置文件，将微服务统一注册到命名空间：86654eaf-4819-43fc-93b6-316ba39da7c0下边。
 
 重启微服务，进入nacos观察命名空间86654eaf-4819-43fc-93b6-316ba39da7c0下是否有微服务。
 
-![图片展示的是Nacos 2.4.0服务列表页面。页面显示当前集群未开启鉴权，服务命名空间为htmlmall1.0商城项目开发环境。列表中列出了trade - service、user - service等服务，每项服务包含服务名、分组名称、实例数、触发保护阈值等信息，如trade - service的分组名称为DEFAULT_GROUP，实例数为1，触发保护阈值为false。页面右上角有“隐藏空服务”开关及“查询”按钮。该图与上文提到的修改微服务配置文件，将微服务统一注册到特定命名空间，以及重启微服务后观察命名空间下是否有微服务的内容相关。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AaBdbbNmrozY8wx0TcjcSYnGnLb.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AaBdbbNmrozY8wx0TcjcSYnGnLb.png)
 
 
 
@@ -1942,7 +1942,7 @@ nacos并没有和网关在同一个命令空间。
 
 nacos通过namespace、group、dataid去定位一个配置文件，下图是nacos的数据模型（https://nacos.io/zh-cn/docs/architecture.html）：
 
-![这张图是Nacos数据模型的示意图，核心展示了定位配置文件的三个层级维度。图中用三个依次嵌套的椭圆，呈现从大到小的层级结构：最外层是Namespace（命名空间），作为最高层级的隔离维度；中间层为Group；最内层是Service / DataId，三者层层嵌套，体现Nacos中通过这三个层级来定位配置文件的设计，与上下文介绍的Nacos数据模型定位逻辑相呼应，帮助理解配置文件的层级划分逻辑。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/GdlTbGTGFo7NsDxiaWNcvYTnnLd.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/GdlTbGTGFo7NsDxiaWNcvYTnnLd.png)
 
 **Namespace：命名空间**
 
@@ -2027,15 +2027,15 @@ cart-service-dev.yaml
 
 首先是jdbc相关配置：
 
-![这张图片展示了hmall项目中cart-service模块的application.yaml配置文件内容，其中用红色框标注了两处核心配置信息。上方红框标注的是数据源配置，包含数据库连接地址、驱动类、用户名，以及密码的占位符和数据库主机的占位符配置；下方红框标注的是MyBatis-Plus相关配置，指定了枚举类型处理器，同时设置了更新策略和ID类型的配置。这些正是文档中提到的需要抽取的重复配置，属于jdbc相关配置的内容。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/MWQ4bKtEAo8teox0u55ccVeZnvN.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/MWQ4bKtEAo8teox0u55ccVeZnvN.png)
 
 然后是日志配置：
 
-![这张图片展示了位于cart-service项目的application.yaml配置文件中的日志配置内容，属于文档中共享配置抽取部分里提及的日志配置相关内容。图片被红框标注的是logging配置项，其中包含level、pattern等子配置，level下设置了com.hmall的日志级别为debug，pattern下配置了日志时间格式，还指定了日志文件的路径，路径中引用了spring.application.name变量。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/ATghbDXa7oCvvhxv5NTcwWRFnxc.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/ATghbDXa7oCvvhxv5NTcwWRFnxc.png)
 
 然后是swagger以及OpenFeign的配置：
 
-![图片展示了cart-service项目中application.yaml配置文件的部分内容。其中，knife4j配置部分显示enable为true，openapi的title为购物车服务接口文档，description为“信息”，email为zhanghuiyi@itcast.cn，concat为虎哥，url为https://www.itcast.cn，version为v1.0.0，group下的default组group-name为default，api-rule为package，api-rule-resources为com.hmall.cart.controller。feign配置部分显示okhttp的enabled为true，开启OKHttp连接池支持。该图片与上下文介绍的以cart-service为例抽取重复配置的内容相关，展示了可抽取的配置示例。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/CFHwbPXoJotwJexAANKcZcqDnZe.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/CFHwbPXoJotwJexAANKcZcqDnZe.png)
 
 #### 4.5.2 数据库配置
 
@@ -2047,7 +2047,7 @@ cart-service-dev.yaml
 
 在弹出的表单中填写信息：
 
-![图片展示的是新建配置界面，命名空间为86654eaf - 4819 - 43fc - 93b6 - 316ba39da7c0，Data ID为shared - jdbc.yaml，Group为DEFAULT_GROUP。配置内容以YAML格式呈现，包含数据库连接信息，如数据库地址、端口、用户名、密码等，还涉及MyBatis相关配置，如默认枚举类型处理器、全局配置、数据库配置等。该图片与文档中数据库配置内容相关，直观呈现了配置界面及具体配置代码。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/NBVKbmAnFofRbGx100lcrDYznhg.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/NBVKbmAnFofRbGx100lcrDYznhg.png)
 
 其中详细的配置如下：
 
@@ -2166,7 +2166,7 @@ spring:
 
 在bootstrap.yml中编写如下内容：
 
-![这张图片展示了bootstrap.yml文件的配置内容，用于配置微服务的共享配置。文件中spring配置部分定义了服务名称为cart-service，激活的配置环境为dev，同时配置了nacos地址与命名空间；在config配置项的下方，红色框标注的shared-configs区域，列出了多个共享配置文件的标识，分别对应共享的jdbc、日志、swagger、feign、seata、sentinel配置，实现了统一共享配置的引用设置，该配置对应文档中“在bootstrap.yml中编写如下内容”的相关要求。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/XKfrbQzkuocDunxTSckckBpLn2c.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/XKfrbQzkuocDunxTSckckBpLn2c.png)
 
 完整配置如下：
 
@@ -2251,11 +2251,11 @@ hm:
 
 删除application-dev.yaml和application-local.yaml，删除后本地配置文件如下：
 
-![图片展示了购物车服务（cart - service）的目录结构。在“src”目录下，有“main”目录，其中包含“java”和“resources”子目录。在“resources”目录下，有“backup”“mapper”“application.yaml”“bootstrap.yaml”等文件夹和文件。该图片与文档中“4.5.8修改应用配置”部分内容相关，直观呈现了修改应用配置时，配置文件在项目中的存储位置，帮助理解配置文件的结构和位置。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/U2jebjlWMokd1jxBa4ZcgF94nBf.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/U2jebjlWMokd1jxBa4ZcgF94nBf.png)
 
 nacos上的配置文件如下：
 
-![图片展示的是Nacos配置管理界面。左侧有“配置列表”“历史版本”“服务管理”“命名空间”“集群管理”“设置中心”等选项。右侧显示当前集群未开启授权，配置管理处于standalone模式，当前环境为“public | hmallV1.0区域项目环境”。下方有“数据ID”“Group”“归属应用”“操作”等列，列出7条满足要求的配置，如“shared-jdbc.yaml”“shared-log.yaml”等，每条配置后有“详情”“示例代码”“编辑”“删除”操作选项。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/EC0TbpxrronYVExC42hcG5K2n4e.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/EC0TbpxrronYVExC42hcG5K2n4e.png)
 
 
 
@@ -2263,7 +2263,7 @@ nacos上的配置文件如下：
 
 下边重启购物车服务 进行测试，测试购物车接口是否可以正常访问。
 
-![这张图片是购物车服务接口文档的测试页面，展示了针对/carts接口的调试请求配置，请求方式为GET。页面左侧有调试相关的选项，如Open、Script等；中间的请求配置区域，已选择x-www-form-urlencoded格式，并已设置好各请求参数，包含id、num、name、price等字段；页面下方展示了该接口的响应内容，呈现了对应购物车的各项信息，包括购物车条目id、商品名称、数量、价格、创建时间等，同时还标注了响应状态为200，耗时27ms，可用于验证该购物车接口是否正常工作。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AVj2bwC7Voh9l7x618qcsZwwn0d.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AVj2bwC7Voh9l7x618qcsZwwn0d.png)
 
 ### 4.6. 网关配置管理
 
@@ -2370,7 +2370,7 @@ server:
 
 重启网关，测试查询购物车等接口是否正常
 
-![这是一张展示HTTP请求与响应结果的界面截图，上方是地址为http://localhost:8080/carts的GET请求，请求头标注了Authorization字段，红色箭头指向该请求；下方是返回的响应信息，状态为HTTP/1.1 200 OK，内容类型为application/json，响应体里包含id、itemId、num、商品名称、规格、价格、库存等购物车相关数据，该截图与文档中重启网关后测试查询购物车接口是否正常的内容直接相关，可用于验证配置后的网关是否能正常提供接口服务。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/FZlGb8CzCoMf5uxb9CMcieE9nyc.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/FZlGb8CzCoMf5uxb9CMcieE9nyc.png)
 
 ### 4.7.配置热更新
 
@@ -2382,7 +2382,7 @@ server:
 
 有很多的业务相关参数，将来可能会根据实际情况临时调整。例如购物车业务，购物车数量有一个上限，默认是10，对应代码如下：
 
-![图片展示了CartServiceImpl.java文件中checkCartsFull方法的代码。该方法用于检查购物车数量是否超过上限。当传入用户ID时，通过lambdaQuery查询购物车数量，若数量大于10，则抛出BizIllegalException异常，提示用户购物车数量不能超过10。此代码与上下文介绍的购物车数量上限为10的场景相关，体现了代码中对购物车数量的限制逻辑。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/McrGbLvg9oBUgOxFqdJcXYdonAg.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/McrGbLvg9oBUgOxFqdJcXYdonAg.png)
 
 现在这里购物车数量限制是硬编码为固定值，我们应该将其配置在配置文件中，后期直接修改配置文件。
 
@@ -2410,7 +2410,7 @@ hm:
 
 如下图：
 
-![图片展示的是在nacos上配置`cart-service-dev.yaml`的内容界面。界面中显示了命名空间、Data ID、Group等信息，其中Group为DEFAULT_GROUP。配置内容部分，以YAML格式呈现，包括数据库相关信息及购物车商品数量上限设置，其中“cart: maxAmount: 1 # 购物车商品数量上限”被红色框突出显示。该图片与文档中“4.7.2添加配置到Nacos”部分内容对应，用于说明在nacos上增加配置的操作。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/UNi2b3K1roQUbXxgwjpcZZZgnXe.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/UNi2b3K1roQUbXxgwjpcZZZgnXe.png)
 
 #### 4.7.3 配置热更新
 
@@ -2418,7 +2418,7 @@ hm:
 
 在`cart-service`中新建一个属性读取类：
 
-![图片展示了`cart-service`项目中`src`目录下的`main`文件夹结构。在`java`文件夹下的`com.hmall.cart.config`包中，有一个名为`CartProperties`的属性读取类，其被红色框线突出显示。该图片与文档中“在`cart-service`中新建一个属性读取类”的内容相关，直观呈现了新建属性读取类在项目结构中的位置，辅助理解后续在业务中使用该属性加载类的操作。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/SuhRbOTTBo9rSZxLUSjc4xFInle.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/SuhRbOTTBo9rSZxLUSjc4xFInle.png)
 
 代码如下：
 
@@ -2442,7 +2442,7 @@ public class CartProperties {
 
 接着，在业务中使用该属性加载类：
 
-![图片展示了`CartServiceImpl`类的部分代码。关键部分是`cartProperties`属性，其类型为`CartProperties`，被红色框突出显示。此外，代码中还涉及商品数量上限检查，当商品数量超过`cartProperties.getMaxAmount()`时，会抛出`BizIllegalException`异常。该图片与上下文紧密相关，上下文提到在`cart-service`中新建属性读取类，并在业务中使用该属性加载类，此图片正是业务中使用属性加载类的代码示例，体现了配置热更新的实现。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/InZTbG9hco7kl4xaO09cO5WinKc.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/InZTbG9hco7kl4xaO09cO5WinKc.png)
 
 #### 4.7.4 测试
 
@@ -2470,13 +2470,13 @@ public class CartProperties {
 
 我们在nacos控制台，将购物车上限配置为5：
 
-![图片展示的是Nacos控制台中编辑配置界面。界面中显示了命名空间、Data ID、Group等信息，以及配置内容区域。配置内容区域以YAML格式呈现，其中“maxAmount: 5”被红色箭头指向，标注为“购物车商品数量上限”。该图片与上下文关系紧密，上下文提到在nacos控制台将购物车上限配置为5，此图直观呈现了配置内容中的上限设置，辅助理解测试环境配置情况。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/YmdbbrmZGoYzHlxZeFhci0RWnDS.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/YmdbbrmZGoYzHlxZeFhci0RWnDS.png)
 
 
 
 无需重启购物车服务，再次测试购物车功能，发现最多可向购物车添加5个商品。
 
-![图片展示的是黑马商城的购物车商品页面。页面上方有“黑马商城”标志及导航栏。中部是购物车商品列表，显示商品名称、单价、数量、小计及操作等信息。其中，一款商品被红色框突出显示，为“薇薇（Vivien）女士单肩包 - 前开扣皮包后挂绳跨包女士手提包（经典黑）”，单价879.00元，数量1，小计879.00元，操作为“删除”和“移到我的关注”。该图片与文档中测试向购物车添加商品的内容相关，用于展示添加商品后的购物车页面情况。](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AtqUbzoG8ohZ1Nxnfobcp7czn6b.png)
+![](../../../../../../Attachments/development/architecture/microservices/wang-guan-yu-pei-zhi-zhong-xin/03-wei-fu-wu-wang-guan-yu-pei-zhi-zhong-xin/AtqUbzoG8ohZ1Nxnfobcp7czn6b.png)
 
 
 

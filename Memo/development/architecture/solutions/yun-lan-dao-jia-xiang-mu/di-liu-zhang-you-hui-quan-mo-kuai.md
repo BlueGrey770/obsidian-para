@@ -57,19 +57,19 @@ jzo2o-market: dev_02
 
 **查询优惠券活动信息：**
 
-![这是优惠券管理的界面，处于营销管理板块下，顶部设有可输入或选择信息的查询项，包括活动编号、活动名称、优惠券类型、发放状态，配有“重置”与“搜索”按钮，右上角有“刷新”选项，界面右侧还有“新增优惠券”按钮。界面下方以列表形式展示了三条优惠券活动信息，每条信息对应活动编号、活动名称、优惠券类型、满额限制、折扣金额或比例、使用状态，以及操作栏，操作栏提供“撤销”“编辑”“领取记录”的操作选项。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XWAcbq5KKol8nLx08zEcDSQqnke.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XWAcbq5KKol8nLx08zEcDSQqnke.png)
 
-![图片展示的是优惠券管理界面。上方有活动编号、活动名称、优惠券类型、发放状态等搜索框及搜索、重置按钮。下方列表呈现了已有的优惠券活动信息，包括发放时间、使用期限、发放数量、每人限领数量、发放状态、创建时间及操作选项，如“撤销”“编辑”“领取记录”。该界面与文档中“查询优惠券活动信息”部分对应，用于展示和管理优惠券活动信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/MkO0bs1UGoCQbKxdn2bcZ1sfn2e.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/MkO0bs1UGoCQbKxdn2bcZ1sfn2e.png)
 
 **新增优惠券活动：**
 
-![图片展示的是新增优惠券活动的界面。界面分为基本信息和发放规则两部分。基本信息中，活动名称、满额限制、抵扣金额等处需填写相关信息，满额限制和抵扣金额以元为单位。发放规则部分，发放时间和使用期限需选择日期，发放数量需输入张数。界面底部有“返回”和“提交”按钮。该图片与文档中新增优惠券活动的内容对应，直观呈现了新增优惠券活动时所需填写的信息及界面布局。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VHdwbL5ebopshfxEsMIcgg9On9d.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VHdwbL5ebopshfxEsMIcgg9On9d.png)
 
 #### **抢券**
 
 到达优惠券发放时间用户开始抢券，在抢券界面列出了进行中的活动和即将开始的活动。
 
-![图片展示了抢券界面。左侧显示“抢券”标题，下方有“疯抢中”“即将开始”选项，其中“疯抢中”被红色框突出显示。下方有两张优惠券信息，上方为“618大促活动”，满200元立减20元，下方为“平台促销活动”，满200元立享5折，均标注了活动时间。右侧界面与左侧类似，只是“即将开始”选项被红色框突出显示。该图片与文档中“抢券”部分内容对应，直观呈现了抢券界面的样式及优惠券信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ArTNbB2CgoT4NOxHuhjcyLZ2nKd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ArTNbB2CgoT4NOxHuhjcyLZ2nKd.png)
 
 #### **用券**
 
@@ -79,17 +79,17 @@ jzo2o-market: dev_02
 
 优惠券核销后还可以取消核销，如果用户取消订单会将优惠券的状态改为“未使用”  退回的优惠券可以继续使用。
 
-![图片展示的是预约界面中优惠券部分。界面显示有1张可用优惠券，优惠券金额为208元，右侧有红色箭头指向“1张可用”字样。该图片与上下文“优惠券核销后还可以取消核销，如果用户取消订单会将优惠券的状态改为‘未使用’退回的优惠券可以继续使用”相关，直观呈现了优惠券在预约场景下的可用状态，帮助用户了解优惠券使用情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/G5gIbYjacofX3KxIm00cgNUcnvc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/G5gIbYjacofX3KxIm00cgNUcnvc.png)
 
 
 
-![图片展示的是优惠券模块中优惠券核销后的界面。上方显示“优惠券”标题，右侧有“X”关闭按钮。下方有两个优惠券信息框，上方为“618大促活动”优惠券，面额20元，满200元立减20元，有效期至2022年2月25日，右侧有蓝色勾选标志；下方为“平台促销活动”优惠券，面额5折，满200元立享5折，有效期至2022年2月25日，右侧有灰色勾选标志。底部有一个红色“确定”按钮。该图与上下文介绍的优惠券核销后可取消核销，取消订单优惠券状态改为“未使用”等内容相关。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UwXfbuqiJohC1GxMqTscYeJAnKd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UwXfbuqiJohC1GxMqTscYeJAnKd.png)
 
 **支付金额减去优惠金额：**
 
 
 
-![这张图片是支付订单界面，属于优惠券模块的相关内容，界面上方显示支付剩余时间为08:40。该界面清晰展示了订单总价为208元，优惠金额为-10元，待付金额为198元，体现了支付金额减去优惠金额的计算逻辑。界面底部设有微信支付选项，已被勾选，用户可通过该方式完成支付操作，这一界面与上下文介绍的优惠券抵扣、支付金额计算的内容相呼应，直观呈现了优惠券使用后的支付状态。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/AKdLbpWOooTIaQxiOHwc6TaJnGh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/AKdLbpWOooTIaQxiOHwc6TaJnGh.png)
 
 ### 3） **业务模块**
 
@@ -324,7 +324,7 @@ create table `jzo2o-market`.coupon_use_back
 
 导入：jzo2o-market-init.sql
 
-![这张图片展示了名称为jzo2o-market的数据库的表结构，该数据库是优惠券模块搭建环境中要求创建的数据库。图片中清晰呈现了与优惠券相关的核心数据表，包括activity、coupon、coupon_use_back、coupon_write_off以及undo_log，其中coupon表对应优惠券相关主体数据，coupon_use_back、coupon_write_off分别对应优惠券使用退回、核销相关的业务数据，undo_log则是用于数据回滚的日志数据表，这些表为后续的优惠券功能开发提供了基础的数据存储支持。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Ra0VbK4OJoIgFVxcit4cH5gVnse.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Ra0VbK4OJoIgFVxcit4cH5gVnse.png)
 
 
 
@@ -336,7 +336,7 @@ create table `jzo2o-market`.coupon_use_back
 
 jzo2o-market工程如下：
 
-![图片展示了jzo2o-market工程的文件结构。在src目录下，有main文件夹，其中包含java文件夹，内有com、jzo2o、market等子文件夹，如config、controller、handler等，以及MarketApplication文件。resources文件夹下有mapper、scripts等文件，其中bootstrap.yml、bootstrap-dev.yml、bootstrap-prod.yml文件被高亮显示。该图片与文档中创建工程部分内容相关，直观呈现了工程中各文件夹及文件的层级关系。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XdzZbjh3OoAGeRxBAvdcOZbPn6d.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XdzZbjh3OoAGeRxBAvdcOZbPn6d.png)
 
 下边在nacos创建配置jzo2o-market.yaml文件
 
@@ -344,7 +344,7 @@ jzo2o-market工程如下：
 
 **注意：选择namespace为“75a593f5-33e6-4c65-b2a0-18c403d20f63”的命名空间添加配置文件 。**
 
-![图片展示的是在nacos中创建jzo2o-market.yaml配置文件的界面。界面中显示了Data ID为jzo2o - market.yaml，Group为DEFAULT_GROUP，配置格式选择了YAML。下方配置内容区域，以高亮显示了rabbit - mq部分配置，包括rabbit - mq: enable: true，xxl - job: executor: port: 11610。该图片与上文“进入nacos创建jzo2o - market.yaml”及“注意：选择namespace为“75a593f5 - 33e6 - 4c65 - b2a0 - 18c403d20f63”的命名空间添加配置文件”的内容相关，用于指导用户在nacos中进行配置文件的创建与编辑操作。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ZNsPb0iPtoqlm0x0HTdcoE7In6e.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ZNsPb0iPtoqlm0x0HTdcoE7In6e.png)
 
 配置文件内容如下：
 
@@ -372,7 +372,7 @@ xxl-job:
 
 确保启动以下服务
 
-![图片展示的是在Docker容器中运行的多个服务状态信息。其中，用红色框突出显示了“seata5.2.0”“nacos2.4.0.1”“xxl-job-admin”“redis”“mysql”等服务，这些服务对应的状态均为“Up 2 hours”。该图片与文档中“创建数据库”部分上下文相关，用于说明在搭建环境时，确保启动了包含这些服务在内的相关服务，以完成数据库的创建操作。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VRsKb2FuoowTRSxjPMDczCXmnEG.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VRsKb2FuoowTRSxjPMDczCXmnEG.png)
 
 
 
@@ -388,7 +388,7 @@ xxl-job:
 
 ##### **选择满减**
 
-![这是优惠券模块中新增优惠券活动的界面原型，对应选择满减优惠券类型的操作页面。页面分为基本信息和发放规则两个区域，基本信息区包含活动名称、满额限制、优惠券类型（默认选中“满减”选项）、抵扣金额的填写项；发放规则区包含发放方式（默认选中“线上领取”选项）、发放数量、发放时间、使用期限的填写项，底部设有“返回”和“提交”按钮。该界面用于新增满减类优惠券活动，用户可在此填写相关配置信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UYrDb7gYNoJfz4xwfMgcn7iZnxg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UYrDb7gYNoJfz4xwfMgcn7iZnxg.png)
 
 ###### **优惠券类型说明**
 
@@ -438,7 +438,7 @@ xxl-job:
 
 ##### **选择折扣**
 
-![图片展示的是优惠券活动管理中新增优惠券活动的界面原型。在“基本信息”部分，有活动名称、满额限制等必填项，其中“满额限制”需输入元数。在“优惠券类型”处，有“满减”和“折扣”选项，当前选中“折扣”。在“折扣比例”处，有红色框突出显示的必填项，需输入折扣比例。在“发放规则”部分，有发放时间和发放数量的必填项。该图片与上下文紧密相关，直观呈现了新增优惠券活动时需填写的关键信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Fa4ObZirOoAZCixvEE8cye3YnRd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Fa4ObZirOoAZCixvEE8cye3YnRd.png)
 
 #### 2）运营端接口设计
 
@@ -452,9 +452,9 @@ xxl-job:
 
 **请求数据类型：** application/json
 
-![图片展示了保存优惠券活动接口的请求参数。参数包括discountRate、discountAmount、type、distributeEndTime、totalNum、name、amountCondition、id、distributeStartTime、validityDays等，其中discountRate、discountAmount、type、distributeEndTime、name、distributeStartTime、validityDays为必填项，type为优惠券类型，distributeEndTime为发放结束时间，totalNum为发放数量，amountCondition为满减金额，id为活动Id，distributeStartTime为发放开始时间，validityDays为有效期天数。该图片与上文介绍的保存优惠券活动接口请求数据类型为application/json的内容相关，是对接口请求参数的具体说明。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/INu0b9vHqooHDSxB104clJ8tnoe.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/INu0b9vHqooHDSxB104clJ8tnoe.png)
 
-![该图片对应文档中新增优惠券活动里保存优惠券活动接口的响应参数内容，清晰展示了该接口的响应参数信息，以表格形式呈现，列分别为参数名称、参数说明、类型、schema。其中包含两个核心参数：一是名称为msg的参数，参数说明为响应消息，类型为string；二是名称为code的参数，参数说明为状态码（200代表成功，其他均为失败），类型为integer(int32)，schema同样为integer(int32)，这些参数是该接口返回时需提供的关键响应信息，用于标识接口操作结果。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OwSmbNwGioLQ9zxyTBPciWdTnod.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OwSmbNwGioLQ9zxyTBPciWdTnod.png)
 
 
 
@@ -468,9 +468,9 @@ xxl-job:
 
 按条件查询优惠券活动信息。
 
-![图片展示的是优惠券活动管理界面。上方有活动编号、活动名称、优惠券类型、发放状态等搜索框及搜索按钮。下方列表显示了8条活动信息，包括活动编号、活动名称、优惠券类型、满减限制、折扣金额及比例、使用范围、适用对象、发放时间等。其中，活动编号为YH204810121000000001的活动名称为“年中大促，限时特惠”，满减限制为0.00元，折扣金额为10.00元，使用范围为全场通用，适用对象为全部用户，发放时间为2048 - 10 - 12 10:00:00 - 2048 - 10 - 12 10:00:00。该界面与文档中“查询优惠券活动”部分对应，用于展示待生效的活动信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WgGpbG34zoC94mx1dj9cTZvfnVi.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WgGpbG34zoC94mx1dj9cTZvfnVi.png)
 
-![图片展示的是优惠券活动管理界面中查询优惠券活动的界面原型。表格中列出了多项优惠券活动信息，包括折扣金额（元）/比例、使用范围、适用对象、发放时间、使用期限（天）、发放数量（张）、每人限领（张）、发放状态、创建时间及操作选项。其中，有两条活动状态为“已失效”，其余为“进行中”或“待生效”。该图片与文档中“查询优惠券活动”部分内容对应，直观呈现了运营端可查询的优惠券活动信息样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DSpQbHb8qoLwkMxuI8TcN6YEnNe.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DSpQbHb8qoLwkMxuI8TcN6YEnNe.png)
 
 #### 2）运营端接口设计
 
@@ -484,11 +484,11 @@ xxl-job:
 
 **请求数据类型：** application/x-www-form-urlencoded
 
-![图片展示了分页查询优惠券活动接口的请求参数。参数包括id、isAsc1、isAsc2、name、orderBy1、orderBy2、pageNo、pageSize、status、type等，如id为活动id，类型为满减或折扣等。参数类型均为query，是否必须均为false，数据类型多为integer或string。该图片与上文介绍的分页查询优惠券活动接口相关，是对接口请求数据类型的具体说明，帮助理解接口参数设置。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XxhVbi6WdoQjmtx4OL8cobiRn1o.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XxhVbi6WdoQjmtx4OL8cobiRn1o.png)
 
-![图片展示了分页查询优惠券活动接口的响应参数。包含msg、code、data等字段，其中data下的list为数据列表，包含discountRate、discountAmount、updateTime等优惠券活动相关参数，如折扣率、优惠金额、更新时间等。该图片与上文介绍的分页查询优惠券活动接口响应数据结构相呼应，直观呈现了响应参数的具体内容，帮助理解接口返回数据的结构。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/SVdcbIJDvoApg0xr5LYcFpnGn0c.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/SVdcbIJDvoApg0xr5LYcFpnGn0c.png)
 
-![图片展示了分页查询优惠券活动接口的请求数据类型。包含11个字段，如id为活动id，typeCondition为类型条件，amountCondition为满减限额等，各字段后标注了数据类型，如integer、number、string等。其中，total和pages字段标注了Int64类型。该图片与上文介绍的分页查询优惠券活动接口请求数据类型内容对应，直观呈现了字段及类型信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/D4WgbJhlIo3ILixCdfaceXVVnfh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/D4WgbJhlIo3ILixCdfaceXVVnfh.png)
 
 
 
@@ -498,11 +498,11 @@ xxl-job:
 
 待生效的活动信息可以进行修改。
 
-![图片展示的是优惠券活动管理中修改优惠券活动的界面原型。上方有活动编号、活动名称、优惠券类型等输入框，以及发放状态下拉框，当前显示“待生效”，还有重置和搜索按钮。下方表格列出活动编号、活动名称、优惠券类型、满额限制、折扣金额等信息，操作栏有撤销、编辑、领取记录等按钮，其中“编辑”按钮被红色箭头突出指向。此图与上下文介绍的修改优惠券活动功能相契合，直观呈现了操作界面。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Qwf6bQxctoSDdCxd5TEcbtKZnTh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Qwf6bQxctoSDdCxd5TEcbtKZnTh.png)
 
 进入修改页面进行修改：
 
-![图片展示的是优惠券活动修改页面。上方显示“基本信息”，包含活动名称“2023双11”、满限限制“0元”、优惠券类型为“折扣”、抵扣比例“85%”。下方是“发放规则”，有发放时间“2023-11-17 00:00:00 - 2023-11-26 00:00:00”、使用期限“30日内有效”、发放数量“100张”。页面底部有“返回”和“提交”按钮。该图片与文档中“修改优惠券活动”部分对应，用于展示运营端修改待生效优惠券活动时的界面样式及信息填写情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/V0zsbm45EoCehOxJPaIctSEJnRh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/V0zsbm45EoCehOxJPaIctSEJnRh.png)
 
 ##### 数据校验
 
@@ -544,11 +544,11 @@ xxl-job:
 
 **请求数据类型** application/x-www-form-urlencoded
 
-![这张图片是查询优惠券活动详情接口的请求参数说明表，该接口用于在进入优惠券活动修改页面时，根据活动id查询对应活动的详情并在页面展示。表格中明确标注了请求参数的相关信息，参数名称为id，其参数说明为活动id，请求类型为path，是否必须填写为true，数据类型为integer(int64)。该接口为GET请求，接口地址为/market/operation/activity/{id}，需借助该id参数完成优惠券活动详情的查询操作。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VQMvbjty3oIeOuxra5Bcidk1nbb.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VQMvbjty3oIeOuxra5Bcidk1nbb.png)
 
-![该图片为查询优惠券活动详情接口的响应参数表，明确了各响应参数的名称、说明、类型与schema信息。其中，类型为integer(int32)的参数包括表示状态码的code、优惠券类型type、发放总量totalNum；类型为string(date-time)的参数有更新时间updateTime、发放结束时间distributeEndTime、创建时间createTime；类型为number的参数discountAmount，代表满减或无门槛的优惠金额，参数说明为折扣率的discountRate，是与折扣类优惠券相关的参数。该表对应文档中查询优惠券活动详情接口的响应参数规范，用于明确接口返回数据的格式与含义，支撑优惠券活动信息的展示。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OzAqb1NVGomFo1xuOSqcewUknQd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OzAqb1NVGomFo1xuOSqcewUknQd.png)
 
-![图片展示了优惠券活动查询接口的请求数据类型相关内容。表格中列出了多个参数及其类型，如writeOffNum为核销数量，类型为integer(int32)；amountCondition为满减限额，类型为number；id为活动id，类型为integer(int64)；receiveNum为领取数量，类型为integer(int32)；distributeStartTime为发放开始时间，类型为string(date-time)；status为优惠券配置状态，类型为integer(int32)；validityDays为有效天数，类型也为integer(int32)。该图片与文档中查询优惠券活动的接口设计内容相关，是接口请求数据类型的具体说明。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/R7q5b25pyoZB1Axvv7ccvFFcnUh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/R7q5b25pyoZB1Axvv7ccvFFcnUh.png)
 
 ##### 保存优惠券活动接口
 
@@ -564,7 +564,7 @@ xxl-job:
 
 运营人员进入优惠券活动查询界面，点击“领取记录”可查看用户领取优惠券的记录，如下图：
 
-![这张图片展示了优惠券活动的领取记录查询界面，与优惠券活动管理章节的查询领取记录模块内容匹配。界面顶部显示该优惠券的核心统计数据，包括发放数量为100张、领取数量为43张、使用数量为23张，以及对应的43%的发放率和53.48%的使用率。下方是具体的领取记录列表，共展示了5条倒序排列的记录，每条记录标注有序号、用户手机号、领取时间、使用时间、优惠券状态和使用订单，其中多数记录状态为待使用，3条已使用的记录对应了具体的使用时间和订单号，符合该界面无分页、超过5条出现滚动条的显示规则。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/JIssbOLvEoNZZTxUeyWcS5nQnNc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/JIssbOLvEoNZZTxUeyWcS5nQnNc.png)
 
 ##### 数据分析
 
@@ -602,7 +602,7 @@ xxl-job:
 
 在查询领取记录页面共有两部分信息需要调用两个接口获取：优惠券活动信息，领取记录。
 
-![该图片是优惠券模块中查询领取记录的界面原型，标题为“领用记录”。界面顶部展示了核心统计数据，包括发放数量100张、领取数量43张、使用数量23张、发放率43%、使用率53.48%。下方的表格列出了具体的领用记录，包含序号、用户手机号、领取时间、使用时间、优惠券状态和使用订单字段，共展示了5条记录，其中1、2条记录的优惠券状态为待使用，3至5条为已使用，且对应使用订单编号。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/AGNUbEG6roQ1h8xBTNKcuVyynHd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/AGNUbEG6roQ1h8xBTNKcuVyynHd.png)
 
 ##### 查询优惠券活动详情接口
 
@@ -614,11 +614,11 @@ xxl-job:
 
 **请求数据类型** application/x-www-form-urlencoded
 
-![图片展示了查询优惠券活动详情接口的请求参数。表格中包含参数名称、参数说明、请求类型、是否必须、数据类型、schema等列。关键信息是“id”参数，其参数说明为活动id，请求类型为path，是否必须为true，数据类型为integer(int64)。该图片与文档中查询优惠券活动详情接口部分对应，直观呈现了接口请求时所需传递的参数信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EHPzbAcaqoLGlbxlYXccAmymnEf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EHPzbAcaqoLGlbxlYXccAmymnEf.png)
 
-![图片展示了查询领取记录接口的响应参数。包含msg、code、data等字段，如code为状态码，data包含discountRate、discountAmount等优惠券活动详情字段，如discountRate为折扣率，discountAmount为优惠金额，type为优惠券类型，distributeEndTime为发放结束时间，createTime为创建时间，totalNum为发放数量，name为活动名称等。该图片与文档中查询领取记录接口部分对应，直观呈现了接口响应参数内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WpAUboyH4ofKTlx9qpycqeLAn9f.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WpAUboyH4ofKTlx9qpycqeLAn9f.png)
 
-![图片展示了优惠券活动详情接口的请求参数。包含7个参数，如id为活动id，类型为integer(int64)；amountCondition为满减限额，类型为number；status为优惠券配置状态，类型为integer(int32)等。每个参数均有名称、描述及类型。该图片与上文查询优惠券活动详情接口的内容相关，直观呈现了接口请求时所需传递的参数信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DDrvbhYMjoKdQqxRazMcDNF0ngo.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DDrvbhYMjoKdQqxRazMcDNF0ngo.png)
 
 
 
@@ -632,11 +632,11 @@ xxl-job:
 
 **请求数据类型** application/x-www-form-urlencoded
 
-![图片展示了查询领取记录接口的请求参数。包含activityId（活动id）、isAsc1和isAsc2（排序字段1、2是否升序）、orderBy1和orderBy2（排序字段1、2）、pageNo（页码数）、pageSize（每页条数）等参数，其中activityId为必填项，其余均为选填。参数类型有query、boolean、string、integer等，还列出了数据类型及schema。该图片与文档中查询领取记录接口部分对应，直观呈现了接口请求参数信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/BtErbUb3Xo2VubxgdkVcIKJQnNf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/BtErbUb3Xo2VubxgdkVcIKJQnNf.png)
 
-![图片展示了查询领取记录接口的响应参数。包含msg、code、data等字段，其中data下的list为数据列表，类型为array，schema为CouponInfoResDTO。list中包含discountRate（折扣）、validityTime（优惠券过期时间）、userPhone（用户手机号）、discountAmount（优惠金额）、updateTime（更新时间）、type（使用类型）、userName（用户姓名）、activityId（活动id）等字段，类型多为string或integer。该图片与文档中查询领取记录接口部分对应，直观呈现了接口响应数据结构。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OOpzbGb1ko4Jp9xObcHcl5tpnA3.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OOpzbGb1ko4Jp9xObcHcl5tpnA3.png)
 
-![图片展示的是优惠券模块中查询领取记录接口的响应数据结构。包含ordersId、createTime、name、amountCondition、useTime、id、status、total、pages等字段，如id为优惠券id，status为优惠券状态，1表示未使用等。该图片与文档中“查询领取记录”部分对应，直观呈现了接口返回数据的字段及类型，为接口调用时的数据解析提供参考。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ZF5SbpvjSoISRKxkUR3cT1r0n5d.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ZF5SbpvjSoISRKxkUR3cT1r0n5d.png)
 
 
 
@@ -650,11 +650,11 @@ xxl-job:
 
 点击【撤销】，出现【确认撤销】弹窗，如下：
 
-![这是优惠券活动管理模块里的确认撤销弹窗，标题为“确认撤销”，弹窗内提示该操作会结束对应优惠券的发放，未使用的优惠券将作废，用户也无法再使用该优惠券。弹窗右下角设有两个操作按钮，分别为灰色的“取消”按钮和蓝色的“确定”按钮，用于选择是否执行撤销操作。该弹窗对应撤销优惠券活动的流程，是点击撤销按钮后触发的确认提示界面，用于告知操作的影响并供用户完成确认。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DinvbxAsWosEfZxeGIIctY7mnrh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DinvbxAsWosEfZxeGIIctY7mnrh.png)
 
 撤销的活动可以选择发放状态：作废，进行查询
 
-![图片展示的是运营端撤销活动时的发放状态选择界面。界面上方有“发放状态”字样，下方有“作废”“进行中”“已失效”“待生效”四个选项，其中“作废”选项被红色框线突出显示。该图片与文档中“撤销活动”部分内容相关，直观呈现了撤销活动时可选择的发放状态，帮助用户明确操作时的发放状态选项。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Mki1bek4Lo7URLxbtUwc8Mr0nZl.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Mki1bek4Lo7URLxbtUwc8Mr0nZl.png)
 
 ##### 数据校验
 
@@ -672,9 +672,9 @@ xxl-job:
 
 **请求数据类型** application/x-www-form-urlencoded
 
-![这张图片是优惠券模块中撤销活动运营端接口的请求参数表，展示了该接口的必填请求参数信息。表格列出了参数名称为id，参数说明为活动id，请求类型为path，是否必须为true，数据类型是integer(int64)，明确标注该参数为路径必填项，用于指定需要撤销的优惠券活动的唯一标识，与文档中撤销活动的接口设计内容相呼应，是该接口请求所需参数的具体说明。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ZQV4beyYzof3gnx57pXcrCXAnTg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ZQV4beyYzof3gnx57pXcrCXAnTg.png)
 
-![这是第六章优惠券模块中优惠券活动管理里，撤销活动的运营端接口响应参数说明图。图中明确列出该接口的响应参数，包含参数名称、参数说明、类型与schema四项内容，具体参数有msg和code：msg为string类型的响应消息，code为integer(int32)类型的状态码，说明为200代表成功，其他数值代表失败，该接口用于告知调用者撤销优惠券活动操作的结果状态。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/TqA2b9dhXoZ738xnpfrcRxG1nRf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/TqA2b9dhXoZ738xnpfrcRxG1nRf.png)
 
 **注意：本接口除了更新活动状态为作废，还需要将所有抢到本活动优惠券的状态为未使用的记录的状态更改为“已失效” 。**
 
@@ -730,7 +730,7 @@ xxl-job:
 
 本查询为滚动查询，向上拖屏幕查询下一屏，一屏显示10条。
 
-![这张图展示的是微信端应用“我的”页面，页面顶部显示微信用户头像与用户名，下方设置有“我的订单”“我的地址”“我的评价”“我的优惠券”等功能选项，底部是“首页”“全部服务”“消息”“我的”四个导航按钮，客服电话标注为400-000-4000。其中红色箭头分别指向“我的优惠券”选项和底部导航栏的“我的”按钮，对应文档内容里用户领取优惠券后，需进入“我的”页面查找已领取优惠券的操作路径，该页面的设置与文档中“我的优惠券”查询功能的需求说明一致。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Z58cbauF1oiLHsxiWkicVkLdn9b.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Z58cbauF1oiLHsxiWkicVkLdn9b.png)
 
 用户领取到优惠券有三个状态：
 
@@ -744,15 +744,15 @@ xxl-job:
 
 查询未使用的优惠券
 
-![图片展示的是“我的优惠券”界面，分为未使用、已使用、已过期三个标签。当前选中“未使用”标签，显示两张优惠券。上方有“个人测试活动，请勿撤销a 满100元立享6折”和“测试活动测试1 满1元立享1折”，下方分别标注有效期至2023年10月6日和2023年10月14日。该图与文档中“查询未使用的优惠券”需求分析部分对应，直观呈现了未使用优惠券的展示样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/JKQ8b9urjoiRidxGuZCcQtponFL.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/JKQ8b9urjoiRidxGuZCcQtponFL.png)
 
 查询已使用的优惠券：
 
-![图片展示的是“我的优惠券”页面，处于“已使用”状态。页面上方显示“我的优惠券”标题，右侧有三个点和一个放大镜图标。下方有三个标签，分别为“未使用”“已使用”“已过期”，其中“已使用”标签被红色框线突出显示。页面中部显示一张优惠券，券面有“8.0折”字样，券名为“尊享双十一活动 满1元立享8折”，有效期至2023年10月16日，券上还标注有“已使用”。该图片与文档中“查询已使用的优惠券”需求分析内容对应，直观呈现了已使用优惠券的展示样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/R4RRbvfVcoU0FPxKt8hcfORTnKh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/R4RRbvfVcoU0FPxKt8hcfORTnKh.png)
 
 查询已过期的优惠券：
 
-![这是我的优惠券模块的界面原型截图，对应已过期优惠券的查询展示内容。界面顶部为“我的优惠券”标题，设有“未使用”“已使用”“已过期”三个标签页，其中“已过期”标签为红色选中状态。页面展示了一张测试优惠券信息，标注为1.0折，对应活动为测试活动测试1，优惠内容为满1元立享1折，有效期至2023-10-14，优惠券右侧配有“已过期”的红色印章标识。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/IFXebX7qRosTZxxZOBcclMxgnSc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/IFXebX7qRosTZxxZOBcclMxgnSc.png)
 
 
 
@@ -768,11 +768,11 @@ xxl-job:
 
 **请求数据类型** application/x-www-form-urlencoded
 
-![图片展示了“我的优惠券列表”接口的请求参数。参数包括status（优惠券状态，1:未使用，2:已使用，3:已过期，必填）、lastId（上一次查询最后一张优惠券id，非必填）。其中status参数以红色突出显示，表明其为必填项。该图片与文档中“我的优惠券列表接口”部分内容对应，直观呈现了接口请求时所需的关键参数信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/G5IZbYIUwoNFdQxrlMkcAUmHnUc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/G5IZbYIUwoNFdQxrlMkcAUmHnUc.png)
 
-![图片展示了“我的优惠券列表”接口的响应参数。包含msg、code、data等字段，如code为状态码，200表示成功；data为响应数据，包含discountRate、validityTime等；userPhone、discountAmount等字段对应用户手机号、优惠金额等信息；type为使用类型，1代表满减，2代表折扣；activityId为活动id等。该图片与上文介绍的“我的优惠券列表”接口功能相呼应，详细说明了接口响应的数据结构。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/E2ucbrgA2oxgrCxo76Mc3icXnYc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/E2ucbrgA2oxgrCxo76Mc3icXnYc.png)
 
-![图片展示了“我的优惠券列表”接口的响应数据结构。包含ordersId、createTime、name、amountCondition、useTime、id、status等字段，如id为优惠券id，类型为integer(int64)；status为优惠券状态，类型为integer(int32)，1表示未使用等。该图片与上文介绍的“我的优惠券列表”接口功能相关，直观呈现了接口响应的数据内容，帮助理解接口返回的数据结构。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/GxCvb33YJoRixmxQprRc3CPonJb.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/GxCvb33YJoRixmxQprRc3CPonJb.png)
 
 
 
@@ -804,17 +804,17 @@ xxl-job:
 
 在下单时选择可用的优惠券：
 
-![图片展示的是预约界面中优惠券部分。界面上方显示“请填写您的预约信息”，下方有“请选择服务地址”和“上门时间”选项。优惠券区域显示“1张可用”，并有红色箭头指向该位置。下方显示订单金额为208元，右下角有“立即预约”按钮。该图片与上下文介绍的在下单时选择可用优惠券的内容相关，直观呈现了优惠券在预约界面中的位置及状态。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/IzUtbGsaGoP4gXxJVa2cqUG5nab.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/IzUtbGsaGoP4gXxJVa2cqUG5nab.png)
 
 可用优惠券列表：是用户领取到的优惠券且符合满减规则的优惠券，如：满200减20元优惠券只能用在订单金额大于200元的订单。
 
-![这是下单时供用户选择可用优惠券的界面原型，显示两张符合满减规则的优惠券选项。上方是“618大促活动”优惠券，满200元减20元，有效期至202.2.25，已被选中，对应上下文里“选择优惠券后显示优惠金额”的内容；下方是“平台促销活动”优惠券，满200元立享5折，有效期至202.2.25，未被选中，其旁有灰色勾选标识，与上下文提及的“符合规则的优惠券才可使用”的需求匹配，界面底部设有粉色的“确定”按钮，用于确认选择的优惠券。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/A67xb4x9joTHtxxujYAcSv4LnrN.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/A67xb4x9joTHtxxujYAcSv4LnrN.png)
 
 用户选择一张优惠券，界面显示优惠金额，订单金额减去优惠金额为实际支付金额：
 
 
 
-![这是支付订单页面截图，为下单时选择优惠券场景的界面原型。页面顶部显示支付剩余时间08:40，接下来列出订单总价为208元，优惠金额为-10元，经计算订单减去优惠后的待付金额为198元。页面底部提供了微信支付选项，并已勾选该支付方式，符合优惠券使用后抵扣订单金额以计算待付金额的相关规则。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CLoqb0p0NoMNTgx0uGOcdTFynRd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CLoqb0p0NoMNTgx0uGOcdTFynRd.png)
 
 一张优惠券使用完毕将不能用在其它订单。 
 
@@ -912,9 +912,9 @@ xxl-job:
 
 **请求数据类型** application/x-www-form-urlencoded
 
-![该图片是第六章优惠券模块中获取可用优惠券接口的定义内容，位于接口定义相关文档的对应位置。图片明确展示了接口路径为GET /market/inner/coupon/getAvailable，请求数据类型为application/x-www-form-urlencoded，还列出了必须的请求参数：totalAmount为总金额（单位分，类型为number），userId为用户ID（类型为integer(int64)），二者的请求类型均为query，响应数据类型标注为\["/*"\]。该图片与文档中关于此内部接口的功能、路径、数据类型及请求参数的描述完全对应，清晰呈现了该内部接口的核心定义信息。](https://feishu.cn/file/EDjDbYhJsoHZWQxa5xncC7sQncg)
+![](https://feishu.cn/file/EDjDbYhJsoHZWQxa5xncC7sQncg)
 
-![图片展示了获取可用优惠券接口的响应参数。参数包括msg（响应消息）、code（状态码）、data（响应数据，包含discountRate、validityTime、discountAmount、type、activityId、name、amountCondition、id等优惠券信息）。其中，type为使用类型，1表示满减，2表示折扣；activityId为活动id；name为活动名称；amountCondition为满减条件，0表示无门槛；id为优惠券id。该图片与上文介绍的获取可用优惠券接口定义相关，是对接口响应数据结构的详细说明。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XidMbbklso5CfJxSYYgcoRiPn4g.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XidMbbklso5CfJxSYYgcoRiPn4g.png)
 
 下边在优惠券服务进行实现：
 
@@ -1077,7 +1077,7 @@ service接口实现类请自行实现。
 
 **请求数据类型** application/json
 
-![图片展示了优惠券核销接口的请求参数。参数名称包括couponUseReqDTO、totalAmount、orderId、id，其中couponUseReqDTO为必填的优惠券使用模型，totalAmount、orderId、id为非必填的总金额、订单id、优惠券id，数据类型均为int64。该图片与上下文紧密相关，是对上文“请求参数”部分的详细说明，直观呈现了接口请求时所需参数的具体信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QUrjbouX2oKFHpxiy0UcjHX0nhc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QUrjbouX2oKFHpxiy0UcjHX0nhc.png)
 
 请求参数：
 
@@ -1087,7 +1087,7 @@ service接口实现类请自行实现。
 
 订单ID：核销表需要记录具体的订单ID。
 
-![该图片为优惠券核销接口的响应参数说明表格，对应文档中优惠券核销接口定义部分的内容，用于明确该核销接口的返回参数规则。表格涵盖参数名称、参数说明、类型及schema列，具体参数包含三个：一是类型为string的msg，代表响应消息；二是类型为integer(int32)的code，作为状态码，其中200代表成功，其他值代表失败；三是优惠券使用返回信息模型data，其包含类型为number的discountAmount，用于表示优惠金额。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/REY2bUqMmowdddx3oWscVschn5g.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/REY2bUqMmowdddx3oWscVschn5g.png)
 
 响应结果：
 
@@ -1166,9 +1166,9 @@ public class CouponController implements CouponApi {
 
 接口路径：**POST**/market/inner/coupon/useBack
 
-![图片展示了优惠券退回接口的请求参数。参数名称包括couponUseBackReqDTO、userId、orderId、id，其中couponUseBackReqDTO为优惠券使用退回请求模型，为必填；userId和orderId为false，id也为false，数据类型均为integer(int64)。该图片与文档中介绍优惠券退回接口定义的内容相关，直观呈现了接口请求时所需传递的参数信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EaUQbkHhUocfBgxWZoFck66UnOh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EaUQbkHhUocfBgxWZoFck66UnOh.png)
 
-![图片展示了优惠券核销接口的响应参数。包含参数名称、参数说明、类型和schema四列。参数名称有msg和code，msg为响应消息，类型为string；code为状态码，200表示成功，其它表示失败，类型为integer(int32)，schema也为integer(int32)。该图片与上下文紧密相关，是对上文提到的优惠券退回接口定义中响应结果部分的补充说明，明确了响应参数的具体内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/F2MzbyxTFoEXoXxGUx9cdDCMncc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/F2MzbyxTFoEXoXxGUx9cdDCMncc.png)
 
 
 
@@ -1279,7 +1279,7 @@ totalAmount：填写一个满足优惠规则的金额
 
 ordersId：随便填写一个订单id
 
-![这张图是家政服务-促销中心接口文档的页面，展示的是POST请求接口/market/inner/coupon/use的调试界面，接口用于使用优惠券并返回优惠金额。当前处于“请求参数” tab下，参数格式选择为raw，类型为JSON(application/json)。图中用红色框标注了三条核心参数内容，分别为totalAmount值为10，ordersId值为1010101，id值为1722556410543214592，这些参数对应了文档中提及的优惠券核销接口测试所需的相关数据。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/IgKgbvYyFo8kA4xjpV4cSXAanee.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/IgKgbvYyFo8kA4xjpV4cSXAanee.png)
 
 
 
@@ -1289,7 +1289,7 @@ ordersId：随便填写一个订单id
 
 执行成功返回优惠金额：
 
-![图片展示的是在Swagger文档中测试优惠券核销接口的示例。请求方式为POST，URL为http://192.168.101.1:11500/market/inner/coupon/use。请求参数部分，Content-Type设为application/json，数据为JSON格式，包含totalAmount、orderId、id三个字段，分别对应10、1010301、1722556410543214592。下方响应内容显示，优惠金额为3.00。该图片与上下文紧密相关，直观呈现了测试时的请求参数及响应结果，辅助说明了优惠券核销接口的测试操作。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/GMD9bt2YnoQKIJx3e5WcSR9xncc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/GMD9bt2YnoQKIJx3e5WcSR9xncc.png)
 
 
 
@@ -1303,7 +1303,7 @@ ordersId：随便填写一个订单id
 
 首先在添加优惠券活动时指定发放方式为：自动发放
 
-![这张图片展示的是优惠券活动添加页面，对应文档中介绍的定时发放优惠券的配置界面。页面分为基本信息和发放规则两大模块，基本信息模块需填写带星号的必填项，包括活动名称、满额限制，选择优惠券类型为减抵或折扣，填写抵扣金额；发放规则模块已勾选线上领取的发放方式，需填写发放数量、指定发放时间、使用期限等必填项，页面底部设有返回和提交按钮，该页面用于设置优惠券活动的基础配置，与文档中提及的自动发放优惠券的规则配置相关，是实现定时发放优惠券功能的操作界面。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LqbWbQhsRopJhNxd0XEcdaNbnqZ.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LqbWbQhsRopJhNxd0XEcdaNbnqZ.png)
 
 按照什么规则来确定符合发放优惠券资格的用户呢？
 
@@ -1382,23 +1382,23 @@ create table `jzo2o-market`.coupon_issue
 
 此接口支持批量向多个用户发优惠券。
 
-![图片展示的是家政服务 - 促销中心接口文档中提交待发放优惠券接口的相关内容。左侧为文档目录，右侧上方显示“提交待发放优惠券数据”及接口地址“/market/inner/issuedcoupon/save”。中间部分有“POST”标识，下方是请求示例，以及请求参数说明，包括couponissueReqDTO、activityId、userIds等，其中couponissueReqDTO为必填，activityId、userIds也为必填。该图片与文档中介绍提交待发放优惠券接口的内容紧密相关，直观呈现了接口的请求方式、地址及参数等关键信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/I5CEbpgNOojSgNxrHLOcgneRnzf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/I5CEbpgNOojSgNxrHLOcgneRnzf.png)
 
 
 
 响应提交成功的待发放记录：
 
-![这是提交待发放优惠券接口的响应参数说明，明确展示了该接口返回的各类参数信息。表格中的核心参数包括code、msg、data，其中data为响应数据，是类型为CouponIssue的数组，其下包含activityId、id、status、userId四个子参数，所有参数均标注了对应的数据类型。code用于标识请求状态，200代表成功，其他值代表失败；msg为对应的响应消息；userId、activityId等子参数分别关联用户与优惠券活动的相关标识，status可对应发放记录的状态。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DHcZbXz18oWEaLxV50WceDR9n3c.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DHcZbXz18oWEaLxV50WceDR9n3c.png)
 
 ##### 立即发放优惠券接口
 
 此接口支持批量向多个用户发优惠券。
 
-![图片展示的是家政服务-促销中心接口文档中“立即发放优惠券”接口的相关内容。左侧为文档管理目录，右侧是接口详情页面，显示接口为POST类型，URL为/market/inner/issuedcoupon/issue，请求数据类型和响应数据类型均为application/json。下方有请求示例，示例内容为JSON格式。请求参数部分，couponissueReqDTO为必填参数，类型为CouponissueReqDTO，activityId和userIds也为必填参数，类型分别为integer和string。该图片与文档中介绍立即发放优惠券接口的内容紧密相关，直观呈现了接口的请求与参数信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/HrgXbJXezojtDaxzeI5cGQHVn7d.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/HrgXbJXezojtDaxzeI5cGQHVn7d.png)
 
 响应发放成功的记录：
 
-![这是系统设计中立即发放优惠券接口的响应参数说明图，展示了该接口的响应参数结构。响应参数包含code、msg、data三部分：code为状态码，200表示成功，其他数值代表失败；msg是响应消息，类型为字符串；data为响应数据，类型是数组，对应schema为Couponissue，其下包含activityId、id、status、userId这几个参数，其中activityId和userId是唯一索引，规定一个优惠券活动向同一个用户仅发放一张优惠券。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QJM4bq4hio7zWXx7QbZcU9xBnXe.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QJM4bq4hio7zWXx7QbZcU9xBnXe.png)
 
 
 

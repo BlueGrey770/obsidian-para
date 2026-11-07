@@ -722,7 +722,7 @@ https://www.baidu.com
     请求体 ---> 携带post或者put等请求参数部分
 ```
 
-![这张图是HTTP请求的具体示例，清晰标注了HTTP请求的三大核心组成部分：①请求方法为POST，②请求URL为/chapter17/user.html，③HTTP协议及版本为HTTP/1.1。图中还划分了④报文头和⑤报文体两大区域，报文头包含Accept、Referer、Cookie等各类请求相关的头部字段，详细记录了请求的来源、身份标识等信息，报文体则展示了POST请求特有的传输数据，具体为name、password等用户相关参数。该图直观对应了文档中关于HTTP请求结构的说明，帮助理解HTTP请求各部分的具体构成。](../../../../../Attachments/development/backend/web/spring-yu-springboot/AHNEbmjjwo2pcZxHYtFciw7fndf.png)
+![](../../../../../Attachments/development/backend/web/spring-yu-springboot/AHNEbmjjwo2pcZxHYtFciw7fndf.png)
 
 <callout emoji="🏝️">
 ①是请求方法，GET和POST是最常见的HTTP方法，除此以外还包括`DELETE、HEAD、OPTIONS`、`PUT`、TRACE。不过，当前的大多数浏览器只支持`GET`和`POST`，Spring 3.0提供了一个`HiddenHttpMethodFilter`，允许你通过“\_method”的表单参数指定这些特殊的HTTP方法（实际上还是通过`POST`提交表单）。服务端配置了`HiddenHttpMethodFilter`后，Spring会根据_method参数指定的值模拟出相应的HTTP方法，这样，就可以使用这些HTTP方法对处理方法进行映射了。
@@ -774,7 +774,7 @@ https://www.baidu.com
         响应体  ---> 响应的主体内容
 ```
 
-![图片展示了HTTP响应的结构示例。上方是状态行，显示报文协议及版本为HTTP/1.1，状态码及状态描述为200 OK。下方是响应头，包含Server、Content-Type、Transfer-Encoding、Date等属性。最下方是响应体，以JSON格式呈现用户信息，如password、userName、birthday、salary等字段。该图片与文档中介绍HTTP响应结构的内容相关，直观呈现了HTTP响应的组成部分。](../../../../../Attachments/development/backend/web/spring-yu-springboot/ImStbBxllo1CoHxAKoDcxmPnnde.png)
+![](../../../../../Attachments/development/backend/web/spring-yu-springboot/ImStbBxllo1CoHxAKoDcxmPnnde.png)
 
 <callout emoji="🚅"><p>①报文协议及版本；<br/>②状态码及状态描述；<br/>状态码详解<cite doc-id="Eh9OwCm5ZiqLyjkvR7lc6VCUn7e" file-type="wiki" title="day03 SpringBoot基础开发_三层架构_反射分层解耦" type="doc"></cite><br/>③响应报文头，也是由多个属性组成；</p></callout>
 
@@ -838,7 +838,7 @@ public class TestServlet extends HttpServlet {
 
 ### Servlet 执行流程
 
-![这张图展示了Tomcat处理请求并通过DispatcherServlet调度的流程：左侧为浏览器，通过HTTP协议向Tomcat发送请求、接收响应。进入Tomcat后，DispatcherServlet会先解析所有带@RestController注解的类，将对应的方法存入映射集合以对接路径与方法；再从service中获取前端访问的资源，通过映射集合找到对应方法；最后反射执行该功能并将结果返回给浏览器。同时，DispatcherServlet会将Http协议分装成对应的请求对象与响应对象，调用Servlet的service方法将对象传入，右侧还关联了Controller模块，体现了请求在框架内的调度逻辑。](../../../../../Attachments/development/backend/web/spring-yu-springboot/WviXbsJm3oO0xtx3Dlpcy7EGnZf.png)
+![](../../../../../Attachments/development/backend/web/spring-yu-springboot/WviXbsJm3oO0xtx3Dlpcy7EGnZf.png)
 
 <callout emoji="💡">
 1. 浏览器发送请求

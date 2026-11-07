@@ -49,7 +49,7 @@ jzo2o-foundations：dev_02
 
 小程序首页界面原型如下图：
 
-![图片展示了小帮家小程序首页界面。上方有“北京”定位和搜索框，搜索框内显示“日常保洁”。中部有新人优惠信息，提供全屋除菌保洁服务。下方是服务分类，包括保洁清洗、日常保洁、家电清洗等，每个分类配有图标。再往下是精选推荐，以“空调上门检修”为例，展示维修人员形象及服务内容。该图片直观呈现小程序首页布局，与文档中对小程序首页界面原型及包含部分的描述相契合。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/MiJ4btCgMoKeyxxn8KVce7irn6e.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/MiJ4btCgMoKeyxxn8KVce7irn6e.png)
 
 包括如下部分：
 
@@ -63,11 +63,11 @@ jzo2o-foundations：dev_02
 
 百度新闻：
 
-![图片展示的是百度新闻首页界面。上方有“百度新闻”标识及搜索框，右侧有“百度一下”按钮。中部有“热点要闻”板块，呈现多篇新闻标题。下方是“访秋阿尔金山：古朴壮美 生机勃勃”等内容。右侧有“辅助模式”“语音播报”“网上国网”等功能按钮。该图片与文档中介绍小程序首页界面原型的内容相关，用以展示类似门户界面的样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CG8fbtyHJoQCssxJjdbcnQzhn1D.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CG8fbtyHJoQCssxJjdbcnQzhn1D.png)
 
 新浪首页：
 
-![图片展示的是新浪首页界面。上方有导航栏，包括新闻、军事、国内、国际等分类，以及搜索栏。中部有“秋寒浓 留置”等图片，下方是“专栏”“热点”“视频”“综艺”等内容板块，如“千军万马图”“冷空气来袭，第一波秋冬季穿搭街拍请收好！”等。右侧是“新闻”板块，有“第一观察”“热点”“视频”等分类，显示了多篇新闻标题及发布日期。该图片与文档中介绍小程序首页界面原型及门户技术方案的内容相关，直观呈现了类似门户界面的样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/PuUWbmQoWoNvHDxyWKZcx1txnag.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/PuUWbmQoWoNvHDxyWKZcx1txnag.png)
 
 
 
@@ -184,7 +184,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 本项目小程序门户首页如下图：
 
-![图片展示了小程序门户首页界面。1为城市选择区域，显示“北京”；2为搜索框，输入“家电维修”；3为一级分类区域，有保洁清洗、日常保洁等分类；4为商品图区域，展示“空调清洗服务”及预约按钮。该图片与文档中介绍小程序门户首页的内容相关，直观呈现了首页包含的城市选择、搜索、一级分类及商品图等关键部分。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/HvtpbbhpOoSGxCxmbd8cFyM0nXb.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/HvtpbbhpOoSGxCxmbd8cFyM0nXb.png)
 
 ##### **第1部分**：城市选择
 
@@ -192,7 +192,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 已开通城市是指在区域管理中所有启用的区域信息。
 
-![图片展示的是小程序首页“选择服务地址”页面。页面顶部显示“选择服务地址”，右上角有定位图标和刷新图标。下方有“当前城市”输入框，显示“北京市”，右侧有“重新定位”按钮。热门城市区域显示“北京”选项。已开通城市区域有“北京市”和“郑州市”选项。该图片与文档中“首页服务列表”部分上下文相关，用于说明在首页服务列表中点击一级分类进入【全部服务】页时，可选择服务地址的操作界面。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UGjPb4KYUoCo5ixFDyrcN1wsnLD.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UGjPb4KYUoCo5ixFDyrcN1wsnLD.png)
 
 
 
@@ -202,7 +202,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 输入关键字搜索服务信息。
 
-![这是一张小程序界面的搜索功能示意图，界面顶部左侧为返回箭头，中间显示“搜索”字样，右侧有更多选项按钮与圆形的相机类功能图标。界面下方有一个搜索输入框，框内左侧带有放大镜图标及“搜索”提示文字，输入框右侧是红色的“取消”按钮，该界面应是供用户在小程序内进行内容检索的交互入口。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LKE8bPjIaohsdQxvtMoczpZunpt.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LKE8bPjIaohsdQxvtMoczpZunpt.png)
 
 ##### **第3部分**：**首页服务列表**
 
@@ -220,19 +220,19 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 点击首页服务列表的服务分类或直接点击“全部服务”进入全部服务界面，
 
-![图片展示了云凤到家小程序首页的全部服务界面。界面上方显示“北京市”和“日常保洁”搜索框。中部有新人优惠活动，宣传全屋除菌保洁3次低至459元。下方是服务分类图标，分别为保洁清、日常保洁、厨卫维修、家居服务、安装窗帘，其中“保洁清”和“全部服务”有红色箭头指向。精选推荐部分展示了日常保洁服务。该图与文档中介绍全部服务界面的内容对应，直观呈现了界面布局及服务分类。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/BNsvbVBSfobSM0x3D1ocwTJSnCg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/BNsvbVBSfobSM0x3D1ocwTJSnCg.png)
 
 全部服务界面，如下图：
 
 在全部服务界面需要展示当前区域下的服务分类，点击服务分类查询分类下的服务。
 
-![这是小程序全部服务界面的示意图，该界面会展示当前区域下的服务分类与对应服务项。左侧列出了服务分类，包含“保洁清”“家居服务”等类别；右侧展示具体服务项，其中“日常保洁”被红色框标注，下方有对应说明“服务分类下的服务项”；上方标注有“全部服务”字样，该界面的作用是供用户点击服务分类，查询对应分类下的服务内容，进入该界面可通过点击首页服务列表的服务分类或直接点击“全部服务”实现。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XJVVbDPiyob6U3xYZA2cfFZtnqn.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XJVVbDPiyob6U3xYZA2cfFZtnqn.png)
 
 ##### 第6部分 服务详情
 
 点击服务名称进入服务详情页面：
 
-![图片展示的是“日常保洁”服务详情页面。上方有“日常上门保洁服务承诺”“全方位清洁”“随心约上门”等服务说明。中间以红色背景突出显示“¥48/小时”及“厨房 - 卧室 - 客厅 全方位清洁”。下方介绍“日常保洁”服务，价格为“¥1.00/小时”，并有“到家保障”标识，包含时效保障、明码标价、清洁保障等内容。该页面与文档中介绍的点击服务名称进入服务详情页面的内容对应。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OqMxbnbbTooXFXx78AlcEbJlnBf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OqMxbnbbTooXFXx78AlcEbJlnBf.png)
 
 
 
@@ -242,7 +242,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 **1.定位界面上的已开通区域列表**
 
-![图片展示的是小程序首页中“服务信息”部分的“选择服务地址”界面。界面上方显示“选择服务地址”，右上角有三个点和一个圆圈。下方有“当前城市”显示为北京市，右侧有“重新定位”按钮。热门城市中“北京”被灰色圆角矩形框突出显示。已开通的城市列表中，北京市和郑州市被红色边框框起，表明这两个城市是已开通的服务区域。该图片与文档中“服务信息”部分上下文对应，直观呈现了服务地址选择界面及已开通城市信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Et3NbW0VPo7OGqx0zKRcIZ1Ineo.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Et3NbW0VPo7OGqx0zKRcIZ1Ineo.png)
 
 **2.服务搜索**
 
@@ -256,7 +256,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 点击某一个服务打开服务详情页面，如下图：
 
-![图片展示的是日常保洁服务详情页面。上方有“日常保洁”标题，下方列出服务内容，包括日常上门保洁、全方位清洁、随心约上门，还配有“¥48/小时”价格标识及“厨房 - 卧室 - 客厅 全方位清洁”说明。右侧有清洁工人的图片。下方再次显示“日常保洁 ¥1.00/小时”，并有“-”“1”“+”数量调节按钮。最下方是“到家保障”及“立即预约”按钮。该图与文档中“点击某一个服务打开服务详情页面”上下文对应，呈现了服务详情页面的样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/R5lhbEZE4on49dxTM9qchJvZnnh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/R5lhbEZE4on49dxTM9qchJvZnnh.png)
 
 服务的详细信息一部分是服务介绍的图片和内容等，一部分是区域服务信息（比如价格）。
 
@@ -264,7 +264,7 @@ CDN 是构建在数据网络上的一种分布式的内容分发网，旨在提�
 
 在全部服务界面左侧显示服务分类
 
-![图片展示了小程序首页服务分类界面。左侧有“服务分类”标识，下分“保洁清”和“家居服务”两个选项。右侧显示“全部服务”标题，下方有“日常保洁”服务项，配有女性清洁桌面的图片。该图片与文档中“服务分类”部分内容对应，直观呈现了服务分类下的服务项展示情况，帮助理解首页服务分类的布局及样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/GuBNbUnKSoigN1xAJCsc89sungf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/GuBNbUnKSoigN1xAJCsc89sungf.png)
 
 服务分类下的服务项通过Elasticsearch去查询，稍后单独分析。
 
@@ -332,7 +332,7 @@ Spring Cache是Spring提供的一个缓存框架，基于AOP原理，实现了�
 
 本项目已在jzo2o-framework下的jzo2o-redis工程引入此依赖，其它服务只需要引入jzo2o-redis的依赖即可。
 
-![图片展示了jzo2o-redis工程的pom.xml文件内容。文件中以红色框突出显示了引入的Spring Boot缓存依赖，其groupId为org.springframework.boot，artifactId为spring-boot-starter-cache。该图片与文档中“基于SpringBoot使用Spring Cache非常简单，首先加入依赖”的内容相关，直观呈现了引入Spring Boot缓存依赖的操作，辅助说明了在jzo2o-redis工程中使用Spring Cache的步骤。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/P8ECbTF5YoMgOYxvmUVcqMJpnvc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/P8ECbTF5YoMgOYxvmUVcqMJpnvc.png)
 
 简单认识它的常用注解：
 
@@ -361,13 +361,13 @@ jzo2o-foundations_dev02.zip，大家在开发前先在本地创建了一个新�
 
 在jzo2o-foundations工程的bootstrap.yml中引入redis的配置文件，如下图：
 
-![图片展示了jzo2o-foundations工程中bootstrap.yml文件的部分内容。其中，以红色框突出显示了“data-id: shared-redis-cluster.yaml # 共享redis配置”这一行，表明在jzo2o-foundations工程的bootstrap.yml中引入了redis的配置文件，且该配置文件为共享redis配置，刷新设置为false。这与上下文提到在jzo2o-foundations工程的bootstrap.yml中引入redis配置文件，以及在nacos配置shared-redis-cluster.yaml，开发环境使用redis单机等内容相呼应。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/S0ijbneyvo9HMDx0gEXckqZ8ntc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/S0ijbneyvo9HMDx0gEXckqZ8ntc.png)
 
 在nacos配置shared-redis-cluster.yaml，开发环境使用redis单机，配置文件如下：
 
 注意配置redis的IP地址、端口和密码。
 
-![图片展示的是nacos配置文件shared-redis-cluster.yaml的内容。其配置格式为YAML，配置内容中包含spring和redis两个部分，其中redis部分设置了host为192.168.101.68、port为6379、password为“redis”。该图片与文档中“在nacos配置shared-redis-cluster.yaml，开发环境使用redis单机，配置文件如下”的内容对应，直观呈现了配置文件的具体内容，帮助读者了解redis配置的格式和参数设置。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/T7HhbizYlop4okxOvCxcjsJ5nse.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/T7HhbizYlop4okxOvCxcjsJ5nse.png)
 
 
 
@@ -381,7 +381,7 @@ jzo2o-foundations_dev02.zip，大家在开发前先在本地创建了一个新�
 
 首先在工程启动类中添加@EnableCaching注解，它表示开启Spring cache缓存组件。
 
-![这张图片展示了Spring Boot项目的启动类代码，该类名为FoundationsApplication。代码中第14行标注了关键注解@EnableCaching，它被红色框突出显示，作用是开启Spring Cache的缓存功能，是实现查询数据缓存的配置之一。除此之外，该启动类还包含Spring Boot应用启动的主方法，以及Mapper扫描、AOP自动代理等相关配置注解，同时输出了应用启动的日志信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/S21wbK6Uvo3L43xok8RctDSgnnh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/S21wbK6Uvo3L43xok8RctDSgnnh.png)
 
 下边实现对区域服务信息查询时进行缓存。
 
@@ -468,7 +468,7 @@ public void test_queryServeByIdCache(){
 
 运行测试方法，观察redis，数据缓存成功，如下图：
 
-![这张图片展示的是Spring Cache测试后Redis中的缓存数据界面，其中包含了明确标注的缓存key，内容为JZ_CACHE:SERVE_RECORD::1729432374527217666。界面内的缓存value为Java对象序列化后的JSON数据，对应com.jzo2o.foundations.model.domain.Serve类，包含id、serveItemId、regionId等字段信息，同时该缓存的过期时间TTL显示为-1，和上下文提到的“缓存过期时间为-1，表示永不过期”的结果相符，用于验证测试后的缓存数据符合预期。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VbFmbAmvhopFDix0KR9cpOIAnMg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VbFmbAmvhopFDix0KR9cpOIAnMg.png)
 
 缓存key：JZ_CACHE:SERVE_RECORD::1693815623867506689
 
@@ -486,7 +486,7 @@ public void test_queryServeByIdCache(){
 
 所有缓存相关的基础类都在jzo2o-redis工程，在jzo2o-redis工程定义spring cache需要的缓存管理器，如下：
 
-![图片展示了jzo2o-redis工程中config目录下的SpringCacheConfig.java文件代码。文件中定义了SpringCacheConfig类，包含RedisConfiguration、RedisQueueSyncConfiguration、RedissonConfiguration三个属性，分别对应RedisConfiguration、RedisQueueSyncConfiguration、RedissonConfiguration三个配置类。该图片与上文介绍jzo2o-redis工程定义spring cache需要的缓存管理器的内容相关，直观呈现了相关配置代码。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/B1i5bn1LSoZwH2xYvLUcouhunag.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/B1i5bn1LSoZwH2xYvLUcouhunag.png)
 
 上图中共包括三个缓存管理器：
 
@@ -513,7 +513,7 @@ public Serve queryServeByIdCache(Long id) {
 
 测试通过，观察redis中的缓存，过期时间已经改变，这说明我们设置的缓存管理器生效。
 
-![这张图片展示了Redis缓存的相关数据，缓存键值为JZ_CACHE_RECORD:1729432374527217666，大小为380字节，键值内容是符合JSON格式的Java对象序列化数据，包含id、serveItemId等字段，其中price字段值为50.00。图片中明显标注了缓存的存活时间（TTL）为90000秒左右，结合上下文可知，这对应缓存技术方案中设置的缓存时间，验证了配置的缓存管理器生效，且因加入随机数使缓存有效期约为一天。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QnV2blKXKowMjEx1Bg1cYDwXn3g.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QnV2blKXKowMjEx1Bg1cYDwXn3g.png)
 
 由于缓存时间加了随机数，缓存一天的时间为90000秒左右。
 
@@ -527,11 +527,11 @@ Spring Cache是基于AOP原理，对添加注解@Cacheable的类生成代理对�
 
 如下图：
 
-![这张图片展示了Spring Cache切面类`CacheAspectSupport.java`中`execute`方法的代码片段，是对应Spring Cache入门程序工作原理的代码示例。代码里通过条件判断实现缓存逻辑：当`cacheHit`不为空且存在缓存put操作时，会直接返回缓存值，也就是命中缓存的情况；若未命中缓存，则会调用执行方法，以方法的返回值作为缓存值。后续代码还涉及缓存请求的遍历写入操作，以及处理缓存失效相关操作并最终返回处理结果。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RbgibyyS8oPZA7x4lgWcsrAFnTf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RbgibyyS8oPZA7x4lgWcsrAFnTf.png)
 
 下边打断点调试：
 
-![这张图片展示的是 decompiled 后的 CacheAspectSupport.class 文件的代码界面，对应的是 Spring Cache 切面类的相关代码。代码中清晰标注了分支逻辑，当缓存命中（cacheHit 不为空且存在缓存放置的情况）时，会直接查询缓存获取对应数据；当未命中缓存时，则会执行目标方法。该图片用于辅助说明 Spring Cache 的工作原理，即基于 AOP 实现的缓存逻辑，对应了文档中对 execute 方法的跟踪说明，同时配合后续断点调试的内容，直观呈现了缓存命中与未命中时的不同处理流程。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/E9hcbNY2XoVLhnxSYVecDrbPnog.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/E9hcbNY2XoVLhnxSYVecDrbPnog.png)
 
 分别测试命中缓存和未命中缓存的情况。
 
@@ -582,11 +582,11 @@ public Serve onSale(Long id){
 
 重启foundation服务通过界面操作上架：
 
-![这张图片展示的是云岚到家一站式家政服务平台管理端的设置服务界面，处于服务管理下的区域管理页面，当前区域名称为莆田市。界面内列有已登记的服务信息，包括服务名称、服务类型、参考价格、区域价格、是否热门等内容，操作栏对“日常保洁”“厨卫维修”两项服务都设置了“设置热门”“删除”“上架”的操作选项，其中红色箭头指向的是厨卫维修服务对应的“上架”选项，该界面对应文档中重启foundation服务后通过界面操作完成服务上架的环节。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/BoWcb3KcBoDOpLxGTlpcX2iansf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/BoWcb3KcBoDOpLxGTlpcX2iansf.png)
 
 测试成功查看redis是否写入缓存：
 
-![这张图片展示了Redis缓存中存储的一条键名为JZ_CACHE:SERVE_RECORD:17152633950091938的缓存数据，该缓存为上架服务后写入的服务记录。缓存值为JSON格式，包含服务的id、服务类型ID、区域ID、城市编码、销售状态、价格、是否热门、创建时间、更新时间等字段。这条缓存正是文档中测试Spring Cache的@CachePut注解功能后，写入Redis的服务上架记录，其缓存过期时间设置为一天，和上下文所提及的测试内容完全对应。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VrHYbUp16o1FsTxm96Hcl3x5nJf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VrHYbUp16o1FsTxm96Hcl3x5nJf.png)
 
 
 
@@ -608,7 +608,7 @@ public Serve offSale(Long id){
 
 重启foundation服务通过界面操作下架：
 
-![这张图片展示了“云岚到家”家政服务平台的服务管理页面，具体为区域管理下莆田市的服务设置界面，页面中列出了日常保洁、厨卫维修两项服务的相关信息。在操作列中，日常保洁服务对应的“下架”按钮被红色箭头明确标注出来，该按钮的功能与上下文提到的通过界面操作下架服务的内容相呼应，用于完成前文所述的服务下架操作，页面右上角还有刷新与添加服务的相关选项。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/L36QbK1T3oAr0Dxpv5ccojXmnWd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/L36QbK1T3oAr0Dxpv5ccojXmnWd.png)
 
 
 
@@ -703,17 +703,17 @@ Spring Cache有哪些常用的注解，都有什么用？
 
 打开小程序，点击首页左上角的地址进入服务地址城市选择页面，如下图：
 
-![这是云岚到家小程序的服务地址选择界面，背景为红色，顶部显示小程序名称。界面上方设有地址选择栏，当前选中的地址为“北京市”，且有一个红色箭头明确指向该地址选项；选择栏右侧还显示有“石湾保洁”字样。界面下方展示了新人优惠活动，内容为全屋除菌保洁3次低至459元，配有相关服务说明与“立即抢购”按钮，右侧还有一名戴清洁手套的女性形象，整体为小程序首页的地址选择与促销展示页面。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/SgsUbKaStoYHT6xwXuPcK9fXnNc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/SgsUbKaStoYHT6xwXuPcK9fXnNc.png)
 
 在定位界面显示已开通城市列表，已开通城市是指在区域管理中所有启用的区域信息，如下图：
 
-![图片展示的是小程序首页“选择服务地址”页面。页面左上角有返回按钮，右上角有定位和刷新图标。当前城市显示为北京市，下方有“热门城市”区域，北京被选中。已开通的城市区域中，北京市和郑州市被列出。该图片与文档中“查询缓存实现”部分上下文相关，用于说明在小程序开发工具中打开小程序，点击首页左上角地址进入服务地址城市选择页面后，定位界面显示已开通城市列表的情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Ikseb3HUboP94axgaY8cQSEunxd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Ikseb3HUboP94axgaY8cQSEunxd.png)
 
 
 
 跟踪Network找到开通区域列表的URL:/foundations/consumer/region/activeRegionList
 
-![这张图片展示了浏览器开发者工具的Network界面，其中的请求列表里显示了名称为activeRegionList的请求，该请求的URL被红色框突出标注，具体为http://192.168.101.1:11500/foundations/consumer/region/activeRegionList，属于GET请求，对应的响应状态码为200 OK，与文档中提到的开通区域列表接口URL完全匹配，用于跟踪小程序开通区域列表的对应请求信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XOhXbvEZXoPjh3xZ0mrcY14Gn9e.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XOhXbvEZXoPjh3xZ0mrcY14Gn9e.png)
 
 打开jzo2o-foundations工程，根据接口地址找到具体的代码:
 
@@ -762,7 +762,7 @@ public class RegionController {
 
 找到service方法如下：
 
-![这张图片展示了项目开发的代码界面，左侧是jzo2o-foundations工程的目录结构，其中定位到com.jzo2o.foundations.consumer路径下的RegionController类文件。右侧是RegionServiceImpl类的代码编辑区域，显示了重写的queryActiveRegionListCache方法，该方法的功能是返回已开通服务区域的区域简略列表。该代码上下文对应文档中查询缓存实现的开发步骤，是查找并确认与开通区域列表接口相关的service方法的具体代码内容，和文档中查找对应接口service方法的操作要求相匹配。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/NPwibBPAloDIFKxfavzcyuMLn7c.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/NPwibBPAloDIFKxfavzcyuMLn7c.png)
 
 在service方法上添加Spring cache注解：
 
@@ -788,13 +788,13 @@ cacheManager ：RedisConstants.CacheManager.FOREVER设置了缓存永不过期�
 
 通过小程序访问定位界面，观察Network：
 
-![图片展示的是小程序开发工具调试器的Network界面。界面中显示了请求的URL为http://192.168.101.1:11500/foundations/consumer/region/activeRegionList，请求方法为GET，状态码为200 OK。该图片与文档中“通过小程序访问定位界面，观察Network”内容对应，用于直观呈现通过小程序访问定位界面后，Network界面中接口请求成功及状态码正常的情况，辅助说明开通区域列表缓存实现的相关测试结果。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Vd0nbAY1coAv05x7m7qcgfFKngb.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Vd0nbAY1coAv05x7m7qcgfFKngb.png)
 
 /foundations/consumer/region/activeRegionList接口请求成功。
 
 观察redis成功缓存开通区域列表：
 
-![图片展示的是Redis成功缓存的开通区域列表数据。界面显示服务器为192.168.101.68，键值为“IZ_CACHE:ACTIVE_REGIONS”，大小为280字节，TTL为-1。数据内容为两个RegionSimpleResDTO对象，分别对应北京和郑州，包含id、name和cityCode属性。该图片与上文介绍的在小程序首页开通区域列表缓存实现中，通过小程序访问定位界面观察redis成功缓存开通区域列表的内容相呼应，直观呈现了缓存数据。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FUnqbk6AbodUaExmD5pc9n4Pnab.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FUnqbk6AbodUaExmD5pc9n4Pnab.png)
 
 #### 3）启用区域
 
@@ -804,11 +804,11 @@ cacheManager ：RedisConstants.CacheManager.FOREVER设置了缓存永不过期�
 
 可通过接口文档（http://localhost:11509/foundations/doc.html）找到启用区域的接口，如下：
 
-![图片展示的是家政服务 - 运营基础服务接口文档中“区域启用”接口的相关信息。左侧为接口列表，选中“区域启用”；右侧详细说明了该接口的URL为“/foundations/operation/region/activate/\[id\]”，请求数据类型为“application/x-www-form-urlencoded”，响应数据类型为空。参数id为区域id，为必填且数据类型为integer。还列出了响应状态码及对应说明，如200为OK等。此图与文档中介绍启用区域接口的内容相关，直观呈现了接口的具体参数和状态。](https://feishu.cn/file/Atl7btK0rojuDAxyWQhcUJGhnEf)
+![](https://feishu.cn/file/Atl7btK0rojuDAxyWQhcUJGhnEf)
 
 接口的代码如下：
 
-![这张图片展示了Java项目的代码界面，具体是名为RegionController的控制器类代码。其中核心部分为用红色框标注的启用区域相关接口代码，该代码的接口路径为"/activate/{id}"，对应ApiOperation注解标注的功能为"区域启用"，还定义了名为"id"的路径参数，方法名为activate，方法内部调用了regionService.active方法，该代码是文档中提到的启用区域接口的实现代码，实现了启用区域后删除开通区域列表缓存的相关功能。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Ev5PbyUXZoPf9BxroMQc1gNGn4f.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Ev5PbyUXZoPf9BxroMQc1gNGn4f.png)
 
 找到service代码，修改如下：
 
@@ -876,13 +876,13 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 最初有两个开通区域：
 
-![这是一个显示缓存信息的界面截图，对应文档中3.1节开通区域列表缓存实现的初始状态内容。截图显示当前查询的是键为JZ_CACHE:ACTIVE_REGIONS的字符串类型缓存，缓存大小为280字节，缓存内容为一个包含两个对象的ArrayList，对象为区域信息，分别是id为168630222843662337、名称为北京市、cityCode为010的区域，以及id为1692472339767234562、名称为郑州市、cityCode为0371的区域，对应文档提及的最初有两个开通区域的内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/K8vfbr04FoY0I0xuoPlcee0fnLh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/K8vfbr04FoY0I0xuoPlcee0fnLh.png)
 
 将郑州区域禁用，进入redis查询JZ_CACHE::ACTIVE_REGIONS缓存已经删除。
 
 使用小程序进入定位界面查询开通区域列表，观察redis，缓存了最新的开通区域列表
 
-![图片展示的是Redis中JZ_CACHE::ACTIVE_REGIONS缓存的键值内容。键值大小为152字节，类型为java.util.ArrayList，包含一个元素，元素类型为com.jzo2o.api.foundations.dto.response.RegionSimpleResDTO，包含id、name、cityCode三个属性，id为1686303222843662337，name为北京市，cityCode为010。该图片与上文测试启用区域后，使用小程序进入定位界面查询开通区域列表，观察redis缓存最新开通区域列表的内容相关，直观呈现了redis缓存的结构与数据。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WMAGbguN7oB2y7xPAFDc3yZTnde.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WMAGbguN7oB2y7xPAFDc3yZTnde.png)
 
 
 
@@ -890,7 +890,7 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 下边启用区域“郑州”，启动用区域后再次查询开通区域列表，redis缓存了最新的开通区域列表：
 
-![图片展示的是Redis中JZ_CACHE::ACTIVE_REGIONS缓存的内容。键值为“java.util.ArrayList”，包含两个“com.jz20.api.foundations.dto.response.RegionSimpleResDTO”对象，分别对应北京和郑州的区域信息，包括id、name和cityCode。该图片与上文测试启用区域后查询开通区域列表的内容相关，直观呈现了redis缓存了最新的开通区域列表，验证了缓存方案的正确性。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UO4YbCYM6oebEtx4eJjcSwVfnEe.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UO4YbCYM6oebEtx4eJjcSwVfnEe.png)
 
 
 
@@ -926,7 +926,7 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 本项目在framework中定义了jzo2o-xxl-job工程，它对执行器bean执行了定义：
 
-![图片展示了jzo2o-xxl-job项目中XxJobConfiguration.java文件的部分代码。代码中定义了XxJobSpringExecutor类，其构造函数接收XxlJobProperties参数。代码还包含对Admin和Executor属性的初始化逻辑。该图片与文档中“2)执行器”部分内容相关，是对jzo2o-xxl-job工程中对执行器bean执行定义的代码示例，帮助理解执行器bean的实现情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CHQ0bc99oovFerxwpwecT7aSnme.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CHQ0bc99oovFerxwpwecT7aSnme.png)
 
 所以在需要使用xxl-job的微服务中需要引入下边的依赖，在jzo2o-foundations服务中引入下边的依赖：
 
@@ -941,7 +941,7 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 接下来进入nacos，配置shared-xxl-job.yaml：
 
-![图片展示的是nacos中执行器管理界面下的配置界面。界面中显示了配置内容，包含spring、cloud、xxl - job等配置项，其中xxl - job配置项下有address、executor、appname、port等参数。address参数值为http://192.168.101.68:8088/xxl - job - admin，executor参数值为${spring.application.name}，port参数值为172.17.0.170。该图片与上文配置xxl - job的内容相关，用于说明在nacos中配置执行器时的参数设置情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EeIbbT0DIosfX3xMoLfc5r0znx0.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EeIbbT0DIosfX3xMoLfc5r0znx0.png)
 
 说明：
 
@@ -955,13 +955,13 @@ port：执行器端口号,通过xxl-job.port配置
 
 在jzo2o-foundations.yaml中配置执行器的端口：
 
-![该图片展示了jzo2o-foundations.yaml文件的配置页面，Data ID为jzo2o-foundations.yaml，所属Group为DEFAULT_GROUP，配置格式选择YAML。配置内容中，在canal与rabbit-mq相关配置项的下方，明确标注了xxl-job的端口为11603，端口数值由红色箭头和蓝色背景突出标识，该配置项对应执行器端口号的设定要求，是在jzo2o-foundations服务中配置xxl-job执行器的关键内容，用于完成xxl-job环境配置中执行器端口的设置。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FsA8bvSDwoIvRLxtcDCc33Ringd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FsA8bvSDwoIvRLxtcDCc33Ringd.png)
 
 
 
 在jzo2o-foundations中加载shared-xxl-job.yaml：
 
-![这张图片展示了jzo2o-foundations服务下的bootstrap.yml配置文件内容，其中明确标注了共享配置的相关设置，在多个data-id配置项中，被红框重点标注出了“shared-xxl-job.yaml”这一配置项，其对应的refresh属性值为false。该配置是定时任务更新缓存环节中，对XXL-JOB的关键配置内容，它在nacos的相关配置里，用于引入XXL-JOB的配置文件，同时该配置项的refresh设置为false，可避免不必要的配置刷新，是实现XXL-JOB执行器配置加载的重要环节。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EO1QbKDkqo9H45xVb5Ocksn6nDf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EO1QbKDkqo9H45xVb5Ocksn6nDf.png)
 
 
 
@@ -969,11 +969,11 @@ port：执行器端口号,通过xxl-job.port配置
 
 进入调度中心，进入执行器管理界面，如下图：
 
-![这张图片展示的是XXL-JOB任务调度中心的执行器管理界面，左侧导航栏里“执行器管理”选项被红色箭头标注，处于选中状态；界面右上方有一个被红色箭头指向的绿色“新增”按钮，用于添加执行器。界面内还显示了已有的一条执行器信息，其AppName为xxl-job-executor-sample，名称为示例执行器，注册方式为自动注册，在线机器地址为无，页面底部提供了分页操作控件，当前处于第1页。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Kv9ubOOqFoZI9RxUu7DcLJX5nrc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Kv9ubOOqFoZI9RxUu7DcLJX5nrc.png)
 
 点击新增，填写执行器信息
 
-![图片展示的是XXL-JOB调度中心新增执行器界面。界面上方标题为“新增执行器”。下方有必填项，包括“AppName”需输入执行器名称，对应shared-xxl-job.yaml中执行器名称；“名称”需输入执行器名称；“注册方式”有自动注册和手动录入两个选项，当前选中自动注册；“机器地址”需输入执行器地址列表，多地址用逗号分隔。界面底部有“保存”和“取消”按钮。该图片与文档中配置XXL-JOB环境、进入调度中心添加执行器的上下文相关，用于指导用户在调度中心新增执行器时填写相关信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FNNgbx4l3osJ7bxNU00c2hu4neh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FNNgbx4l3osJ7bxNU00c2hu4neh.png)
 
 **AppName**：执行名称，在shared-xxl-job.yaml中指定执行器名称就是微服务的应用名。
 
@@ -987,13 +987,13 @@ port：执行器端口号,通过xxl-job.port配置
 
 找到应用名：jzo2o-foundations，如下图：
 
-![图片展示了jzo2o-foundations微服务的bootstrap.yml配置文件内容。其中，第25行“name: jzo2o - foundations”被高亮显示，对应上文“找到微服务的应用名”的操作，表明在该配置文件中找到了微服务的应用名“jzo2o - foundations”。此图片与上文配置XXL - JOB环境，执行器启动成功后查看控制台，找到应用名“jzo2o - foundations”的内容紧密相关，用于辅助理解应用名的查找位置。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CgVybM1zKonfKQxNxUsc7pednAd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CgVybM1zKonfKQxNxUsc7pednAd.png)
 
 
 
 添加成功：
 
-![该图片展示的是XXL-JOB环境配置中添加执行器成功后的界面内容，画面包含四项信息，从左到右依次为应用名“jzo2o-foundations”、所属模块“运营基础管理”、注册方式“自动注册”以及状态标识“无”，最右侧带有标注“操作”的下拉按钮。这一界面内容对应文档中“配置XXL-JOB环境”环节里执行器添加成功的结果，后续将启动jzo2o-foundations应用，通过查看控制台日志确认执行器启动成功，其中日志会包含“xxl-job remoting server start success”及端口号11603的提示信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LraRb3XAWockY5xpHGqcJpRcnMc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LraRb3XAWockY5xpHGqcJpRcnMc.png)
 
 启动jzo2o-foundations，查看jzo2o-foundations的控制台：
 
@@ -1001,15 +1001,15 @@ port：执行器端口号,通过xxl-job.port配置
 
 稍等片刻进入 xxl-job调度中心，进入执行器管理界面，执行器注册成功：
 
-![图片展示的是xxl-job调度中心执行器管理界面。界面中列出了执行器名称“jzo2o-foundations”、所属应用“运营基础管理”、注册状态为“自动注册”，并有“查看（1）”按钮，该按钮被红色箭头指向。点击“查看（1）”可查看执行器地址，若无法调通，可手动修改执行器地址http://192.168.101.1:11603/。此图与上文配置XXL-JOB环境、启动jzo2o-foundations及查看执行器地址的操作步骤相关，用于指导查看执行器地址的操作。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XJbbbqJ0MoJqzSxlLvKc0vYanpb.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XJbbbqJ0MoJqzSxlLvKc0vYanpb.png)
 
 点击“查看（1）”，查看执行器的地址，如下图：
 
-![图片展示的是xxl-job调度中心执行器管理界面中“查看”操作后的结果。画面中显示“注册节点”字样，下方有1条记录，地址为http://192.168.101.1:11603/，该地址被绿色框突出显示。画面右下角有一个蓝色的“确定”按钮。此图与上文提到的启动jzo2o-foundations后，进入xxl-job调度中心查看执行器地址的操作相关，用于展示执行器地址的具体内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Nun0bj0usoyb8IxmTfTc5nO9nUc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Nun0bj0usoyb8IxmTfTc5nO9nUc.png)
 
 如果无法调通，可手动修改执行器地址 http://192.168.101.1:11603/
 
-![这张图片是xxl-job调度中心的“编辑执行器”界面，对应文档中配置XXL-JOB环境时的相关操作场景。界面中已填写的信息包括：AppName为“jzo2o-foundations”，名称为“运营基础服务”，注册方式选择了“手动录入”，机器地址栏填写的是“http://192.168.101.1:11603/”，底部设有“保存”和“取消”按钮。该界面用于配置执行器的相关参数，与文档中提到的执行器注册、地址配置的内容直接对应，可手动完成执行器的地址修改与信息配置。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/TOj3bSUoCorO3nxvEtyc8RHJnRg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/TOj3bSUoCorO3nxvEtyc8RHJnRg.png)
 
 
 
@@ -1078,11 +1078,11 @@ public class SpringCacheSyncHandler {
 
 进入任务管理，新增任务：
 
-![图片展示的是任务调度中心的任务管理界面。界面上方有“任务调度中心”标题，左侧导航栏有“任务管理”选项。任务管理区域有“执行器”“运营基础管理”等下拉选项，下方有“每页”“条记录”设置，右侧有“搜索”“新增”按钮，其中“新增”按钮被红色箭头指向。该图片与文档中“进入任务管理，新增任务”的内容对应，是新增任务操作的界面展示。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RXZBbpo2VoQV4vxG61lcDyQvnDe.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RXZBbpo2VoQV4vxG61lcDyQvnDe.png)
 
 填写任务信息：
 
-![图片展示的是任务管理中新增任务的界面。执行者为运营基础管理，负责人是xxjob，任务描述为刷新开通区域缓存，Cron为0 0 * * *，调度类型为CRON，通行模式为BEAN，JobHandler为activeRegionCacheSync，任务参数为空。高级配置中路由策略为第一个，调度过期策略为忽略，任务超时时间为0，子任务ID、阻塞处理策略、失败重试次数等均为默认值。该图片与文档中定义缓存更新任务的内容相关，是新增任务时填写的配置信息示例。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/GOyNbgE29oeq2vxH0l9cnFDWnih.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/GOyNbgE29oeq2vxH0l9cnFDWnih.png)
 
 
 
@@ -1090,15 +1090,15 @@ public class SpringCacheSyncHandler {
 
 任务配置完成，下边启动任务
 
-![图片展示的是任务管理界面。界面中有任务ID、任务描述、调度类型、运行模式、负责人、状态、操作等列。任务ID为12，任务描述为“刷新开通区域缓存”，调度类型为CRON，运行模式为BEAN，负责人是xxljob，状态为STOP。操作列有“操作”下拉菜单，显示“执行一次”“查询日志”“注册节点”“下次执行时间”等选项，其中“启动”选项被红色箭头指向。该图与文档中启动任务并测试的内容相关，用于说明任务配置完成后的操作步骤。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QifvbA6DroJeUhxKK9Nckwu8njf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QifvbA6DroJeUhxKK9Nckwu8njf.png)
 
 启动成功：
 
-![图片展示的是任务管理界面，任务ID为12，任务描述为“刷新开通区域缓存”，调度类型为CRON，运行模式为BEAN，负责人是xxijob，状态为RUNNING。界面右下角显示“启动成功”。图片与上文“启动任务并测试”内容相关，直观呈现了任务配置完成并启动成功后，任务状态为RUNNING的情况，辅助说明了任务执行状态。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VyfEbEeCio1fUDxFtufco2zOnEw.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/VyfEbEeCio1fUDxFtufco2zOnEw.png)
 
 我们在任务方法上打断点跟踪，任务方法被执行，如下图：
 
-![这张图片展示的是Java代码文件SpringCacheSyncHandler.java的内容，对应小程序定时更新缓存的任务方法相关代码。代码中定义了名为activeRegionCacheSync的方法，用于已启用区域缓存的更新，被@XxlJob注解标注，该任务每日凌晨1点执行。方法内有一条带箭头的高亮注释，对应34行代码，显示打印日志的语句；还包含清理缓存的相关逻辑，通过RedisConstants.CacheName定义键，调用RedisTemplate的delete方法删除对应缓存键，符合任务启动后执行缓存同步更新的测试场景。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DTfUbsnUPoRGqLxcpdMcfHOMn1c.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DTfUbsnUPoRGqLxcpdMcfHOMn1c.png)
 
 尝试启用或禁用一个区域，观察redis中开通区域列表缓存是否更新。
 
@@ -1122,11 +1122,11 @@ public class SpringCacheSyncHandler {
 
 首页服务列表在门户的中心位置，下图红框中为首页服务列表区域：
 
-![图片展示了小程序首页服务列表区域。红框内为首页服务列表，包含一级分类“保洁清洗”“日常维修”等，每个分类下有对应的服务项图标及名称，如“日常保洁”“空调维修”等。图片与上下文紧密相关，直观呈现了首页服务列表的展示样式，与文档中对首页服务列表需求分析中界面原型的描述相契合，帮助理解默认展示内容及样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WtlSbcd4eo3JjcxkEXLcqy0onVd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WtlSbcd4eo3JjcxkEXLcqy0onVd.png)
 
 默认展示前两个服务分类（按后台设置的排序字段进行升序排序），每个服务分类下取前4个服务项（按后台设置的排序字段进行升序排序）如下图：
 
-![该图为“云岚到家”小程序首页的服务列表界面，页面上方设有定位显示、搜索栏与banner图，其中心区域为首页服务列表部分，分为两类展示内容：左侧红框标注的是一级服务分类，显示有“保洁清洗”“日常维修”的服务分类名称与对应图标，每个一级分类旁带有编号标注；右侧红框标注的是对应服务分类下的服务项，每个分类下展示4个服务项及对应图标，如保洁清洗类对应日常保洁、家电清洗等服务项，日常维修类对应空调维修、房屋维修等服务项，整体符合文档所述“一级服务分类显示图标与名称，每个分类下取前4个服务项”的设定。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WDCGbCJVKoDXalx15FgcLsznnkh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WDCGbCJVKoDXalx15FgcLsznnkh.png)
 
 一级服务分类显示的内容：服务分类的图标，服务分类的名称。
 
@@ -1140,9 +1140,9 @@ public class SpringCacheSyncHandler {
 
 接口路径：**GET**/foundations/customer/serve/firstPageServeList
 
-![该图片为首页服务列表接口的请求参数详情内容，显示该接口的请求数据类型为application/x-www-form-urlencoded，响应数据类型为\["*/*"\]。请求参数区域仅展示了一个参数regionId，其参数说明为区域id，请求类型为query，属于必填（是否必须标记为true），数据类型为integer(int64)。该内容与文档中定义的首页服务列表接口相关，清晰呈现了该接口请求时所需的具体参数信息。](https://feishu.cn/file/PsLpbHQzpoSUPjxIG5HcC3LQnHg)
+![](https://feishu.cn/file/PsLpbHQzpoSUPjxIG5HcC3LQnHg)
 
-![该图片展示的是小程序首页服务列表接口的响应参数定义内容，响应参数分为不同层级，顶层包含msg、code、data参数，其中msg为响应消息的字符串类型参数，code为表示请求状态（200为成功、其余为失败）的整数类型参数，data为承载具体服务数据的数组类型参数；data下的serveResDTOList数组为服务项数据列表，其包含服务类型id、城市代码、服务类型图标等基础参数，以及服务项排序字段、服务项名称、服务项id、服务项图标、服务id、服务类型名称等服务项相关参数，清晰呈现了该接口返回的具体数据结构。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/HVevbR7oToixPTxP0qOc1T0Qnid.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/HVevbR7oToixPTxP0qOc1T0Qnid.png)
 
 响应示例：
 
@@ -1414,7 +1414,7 @@ public class FirstPageServeController {
 
 观察小程序的访问记录
 
-![图片展示了小程序首页服务列表的请求信息。左侧是小程序首页界面，显示了服务列表等内容。右侧是开发者工具的开发者工具界面，网络请求中“firstPageServeList”请求的Request URL为“http://192.168.101.1:11500/foundations/customer/serve/firstPageServeList?regionId=16863022284362337”，Request Method为GET，Status Code为200 OK。该图片与上文测试预期结果相关，用于说明在小程序首页正常显示服务列表时，可观察到的网络请求情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EGtFbgKGXoPS6Xx1w6xc965JnLc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EGtFbgKGXoPS6Xx1w6xc965JnLc.png)
 
 
 
@@ -1426,9 +1426,9 @@ http://192.168.101.1:11500/foundations/customer/serve/firstPageServeList?regionI
 
 这时需要重新定位，切换区域
 
-![图片展示的是云岚到家小程序首页界面。界面上方有“云岚到家”标识及三个点状图标。中间位置有一个红色箭头指向“北京市”区域，箭头旁有文字“点击重新定位”。下方是服务广告，显示“全屋除菌保洁3次低至459元”，并有“立即抢购”按钮。该图片与文档中“观察小程序的访问记录”上下文相关，用于说明在访问记录中regionId为undefined时，需重新定位并切换区域的操作提示。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/U8OQbZ9G8oCFyTxCEOHcWyKInBg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/U8OQbZ9G8oCFyTxCEOHcWyKInBg.png)
 
-![图片展示的是小程序首页服务列表中选择服务地址界面。界面上方显示“选择服务地址”，右上角有三个点和一个圆圈。下方有“当前城市”“热门城市”“已开通的城市”等区域，其中“已开通的城市”区域中“北京市”被红色箭头指向突出显示。该图片与文档中“观察小程序的访问记录”内容相关，用于说明如果访问记录中regionId为undefined时，需重新定位，切换区域，此图即为切换区域后的选择区域界面示例。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EFdGbTp4Mo7VKxx86iucNdoanye.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EFdGbTp4Mo7VKxx86iucNdoanye.png)
 
 测试预期结果：
 
@@ -1436,7 +1436,7 @@ http://192.168.101.1:11500/foundations/customer/serve/firstPageServeList?regionI
 
 示例：
 
-![这是“云岚到家”小程序的首页界面，顶部红色栏标注了平台名称，当前定位为北京市，设有“日常保洁”的搜索框。界面中部展示了新人优惠活动，宣传全屋除菌保洁3次低至459元，附带服务保障说明与立即抢购按钮。界面下方的红色框选区域为首页服务列表，包含保洁清洗、日常保洁、厨卫维修、日常维修、空调维修五项核心服务选项，该页面用于展示平台上门服务的相关内容，符合上下文提及的小程序首页服务列表实现的测试示例场景。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Rab3bWL6uoTW5hx0682cryLNnrf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Rab3bWL6uoTW5hx0682cryLNnrf.png)
 
 
 
@@ -1558,7 +1558,7 @@ public class HomeServiceImpl implements HomeService {
 
 示例：
 
-![这张图片展示了小程序首页服务列表相关的缓存数据内容，为JSON格式数据，数据中包含首页服务分类响应对象ServerCategoryResDTO，以及两个服务简单响应对象ServerSimpleResDTO。其中能看到服务类型ID、服务项图片地址，还有服务的ID、名称、图标地址、排序编号等核心信息，这些内容对应文档中首页服务列表缓存的相关内容，是查询或更新缓存测试过程中产生的缓存数据，用于验证首页服务列表缓存方案的实际情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/IjHGbv4HZoHZSWxuzMmcFoS4nbd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/IjHGbv4HZoHZSWxuzMmcFoS4nbd.png)
 
 
 
@@ -1613,7 +1613,7 @@ public void activeRegionCacheSync() throws Exception {
 
 跟踪断点执行。
 
-![图片展示的是FirstPageServeController类中的activeRegionCacheSync方法代码。该方法在Redis中删除缓存，先通过redisTemplate.delete删除key为RedisConstants.CacheName.JZ_CACHE + "::ACTIVE_REGIONS"的缓存，再通过regionService.queryActiveRegionList查询开通区域列表，最后遍历区域对该区域下的服务类型进行缓存，还删除了该区域的首页服务列表缓存。此代码与文档中“禁用区域时删除缓存”内容相关，用于实现禁用区域时删除首页服务列表缓存的功能测试。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/L5sWbiLNWoTxXaxMrR9cR1x2nfd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/L5sWbiLNWoTxXaxMrR9cR1x2nfd.png)
 
 
 
@@ -1660,13 +1660,13 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 点击首页服务列表的服务分类或直接点击“全部服务”进入全部服务界面，
 
-![图片展示了云凤到家小程序首页界面。上方显示“北京市”和“日常保洁”搜索框。中部有新人优惠活动，宣传全屋除菌保洁3次低至459元。下方是服务分类图标，包括保洁清、日常保洁、厨卫维修、家居服务、安装窗帘等，其中“保洁清”和“全部服务”有红色箭头指向。底部导航栏有首页、全部服务、消息、我的选项。该图对应文档中介绍点击首页服务列表的服务分类或“全部服务”进入全部服务界面的内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/YXLFb59ugogHbPx5rnxcXSHsngc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/YXLFb59ugogHbPx5rnxcXSHsngc.png)
 
 “全部服务” 界面如下图：
 
 在全部服务界面需要展示当前区域下的服务分类，点击服务分类查询分类下的服务。
 
-![图片展示了小程序首页服务分类及服务项的界面。左侧有“服务分类”标题，下分“保洁清”和“家居服务”两个分类。右侧是“全部服务”标题，下方有“日常保洁”等服务项。图片与文档中服务类型列表缓存实现的上下文相关，直观呈现了文档中提到的“只实现上图左侧显示的服务分类列表”这一内容，帮助理解服务类型列表的数据展示形式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FJO5b76k8o2T2nxptT8czZfHnHc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FJO5b76k8o2T2nxptT8czZfHnHc.png)
 
 服务类型列表数据包括：服务类型的名称、服务类型id。
 
@@ -1682,9 +1682,9 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 接口路径：**GET**/foundations/customer/serve/serveTypeList
 
-![这张图片展示了服务分类列表接口的请求参数相关信息，该接口对应文档中提及的服务类型列表缓存实战内容。图中明确标注了该接口的请求数据类型为application/x-www-form-urlencoded，响应数据类型为\["*/*"\]；请求参数里，regionId作为区域id参数，请求类型为query，属于必填参数，数据类型为integer(int64)，该参数与文档中服务类型列表缓存分析时提到的禁用区域、删除对应缓存的逻辑相关联。](https://feishu.cn/file/NUxZb7hRBol55axfi1lckjlTnOd)
+![](https://feishu.cn/file/NUxZb7hRBol55axfi1lckjlTnOd)
 
-![这是服务分类列表接口的响应参数表，表格清晰列出了接口的响应参数名称、参数说明、类型与对应schema信息。响应参数包含msg（响应消息，string类型）、code（状态码，200代表成功，其它代表失败，类型为integer(int32)）、data（响应数据，为服务分类响应信息的数组），以及data下的具体子参数：serveTypeId（服务类型id，integer(int64)）、serveTypeImg（服务类型图片，string类型）、serveTypeSortNum（服务类型排序字段，integer(int32)）、serveTypeName（服务类型名称，string类型），该表为小程序首页服务类型列表缓存实现的相关接口提供了明确的响应参数规范。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/C0Uqb46erojzc3xPqYDcrApNnnd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/C0Uqb46erojzc3xPqYDcrApNnnd.png)
 
 
 
@@ -1720,11 +1720,11 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 在门户有一块区域叫精选推荐，此信息为热门服务列表，如下图：
 
-![图片展示的是门户精选推荐区域的界面原型，标题为“精选推荐”。下方有三组服务项，每组包含服务名称、价格及“立即预约”按钮。第一组为“空调清洗服务”，价格208元/次；第二组为“玻璃清洗服务”，价格88元/次；第三组也是“玻璃清洗服务”，价格68元/次。每组服务项下方均有商品图。该图片与上下文介绍的热门服务列表相关，是对热门服务列表界面原型的具体呈现。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/X3rUbYFHhoDH5ixwrQ1ceck3nmd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/X3rUbYFHhoDH5ixwrQ1ceck3nmd.png)
 
 热门服务列表是在区域服务管理界面进行设置，如下图：
 
-![该图片是小程序首页热门服务列表的后台设置界面，展示了郑州市区域下的服务列表，包含服务名称、服务类型、参考价格、区域价格、是否热门等信息，每项服务对应操作列有设置热门、取消热门、删除、上架等选项。其中，“日常维修”服务项的操作栏中，红色箭头指向的“设置热门”选项，代表将该服务项设为精选推荐，其他未标记的服务项（如空调维修、安装窗帘）当前未被设为热门服务，设置热门列表的操作可通过该界面完成。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DPHRbLDJxojIx5xMksacLtwpnTh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/DPHRbLDJxojIx5xMksacLtwpnTh.png)
 
 “设置热门”表示该服务项在本区域为精选推荐。
 
@@ -1746,11 +1746,11 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 接口路径：**GET**/foundations/customer/serve/hotServeList
 
-![这张图片展示了小程序首页热门服务列表的接口请求参数信息，该接口对应文档中提及的“首页热门服务列表”接口。图片显示请求数据类型为application/x-www-form-urlencoded，响应数据类型为\["*/*"\]，核心是请求参数表格，其中明确标注必填的“regionId”参数，其参数说明为区域id，请求类型为query，是否必须为true，数据类型是integer(int64)。该参数是接口运行时的关键必填项，与文档里说明的查询条件包含区域id的内容相呼应，为接口实现提供了具体的参数规范。](https://feishu.cn/file/FlHibvJPgoaLkpxhJzCcLWS0nce)
+![](https://feishu.cn/file/FlHibvJPgoaLkpxhJzCcLWS0nce)
 
 响应参数：
 
-![图片展示了首页热门服务列表接口的响应参数。参数包括msg（响应消息）、code（状态码）、data（数据）等。data部分包含serveItemName（服务项名称）、serveItemId（服务项id）、unit（服务单位）、detailImg（服务详图）、price（价格）、serveItemImg（服务项图片）、id（主键）等字段，其中serveItemId和id字段以蓝色高亮显示。该图片与上文介绍的接口设计中响应参数内容对应，直观呈现了响应参数的具体结构和字段信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CxX8baeDnoa0iwxZKTOcwSXUnhH.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CxX8baeDnoa0iwxZKTOcwSXUnhH.png)
 
 示例数据：
 
@@ -1799,7 +1799,7 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 在首页服务列表区域、热门服务列表区域以及全部服务界面，点击服务项名称进入服务详情页面，如下图：
 
-![这是小程序服务详情页面的界面原型图，展示了“日常保洁”服务的相关信息。页面上方标注了该服务的核心特点，包括日常上门保洁、全方位清洁、随心约上门，同时显示服务原价为48元/小时，当前活动价为1元/小时，提供了数量调整的增减按钮与输入框。页面还设置了用户评价入口，底部呈现到家保障相关内容，涵盖时效保障、明码标价、清洁保障三项标识，并附带服务前需提前沟通的温馨提示。该图对应了文档中关于服务详情页面设计的内容，呈现了服务项展示与操作的界面样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RfA1bHnq9ovVqmxsUPqct3ONnae.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RfA1bHnq9ovVqmxsUPqct3ONnae.png)
 
 服务详情页面显示服务相关的信息包括：服务项的名称、服务的运营价格、服务项的图片、服务项名称、价格单位。信息来源于serve_item表和serve表。
 
@@ -1811,9 +1811,9 @@ public class RegionServiceImpl extends ServiceImpl<RegionMapper, Region> impleme
 
 请求参数：服务id，即serve表的主键
 
-![该图片展示了小程序首页缓存实现中根据id查询服务的接口请求参数详情，页面显示请求数据类型为application/x-www-form-urlencoded，响应数据类型为\["*/*"\]。其中请求参数部分明确列出了参数名称为id，对应参数说明是服务id，请求类型为path，是否必须为true，数据类型为integer(int64)，这与文档中该接口的请求参数要求完全对应，呈现了接口所需的核心参数信息。](https://feishu.cn/file/DKJgbtaggo1qVXxtULwcMVP7nCc)
+![](https://feishu.cn/file/DKJgbtaggo1qVXxtULwcMVP7nCc)
 
-![图片展示了接口响应参数表，包含参数名称、参数说明、类型、schema四列。其中，data下的ServeAggregationSimpleResDTO包含cityCode、servetItemName、servetItemId、unit、detailImg、price、servetItemImg、id等字段，类型均为string或number等。该图片与文档中接口设计部分相关，是对接口响应参数的说明，为后续根据id查询服务接口的实现提供参数信息参考。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UtPJbtjvaoHAp5xOPFacZ96anub.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UtPJbtjvaoHAp5xOPFacZ96anub.png)
 
 
 

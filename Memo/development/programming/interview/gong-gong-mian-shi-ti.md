@@ -11,7 +11,7 @@ aliases:
 
 ### 软件开发流程图
 
-![这张是软件开发相关的流程图，起点为项目立项，后续依次开展需求分析、需求评审；中间设置需求是否通过的判断分支，若未通过则返回需求分析重新调整，通过后进入系统设计环节。之后依次开展设计评审，同样设置评审是否通过的判断，未通过则返回系统设计，通过后进行任务分解与开发。后续流程包含开发分支、代码评审、单元测试等步骤，中间也设有评审是否通过的判断节点，未通过则对应返回修改环节，还涵盖集成测试、系统测试等环节，最终完成Bug修复、发布上线等流程。](../../../../Attachments/development/programming/interview/UfRjbWkE6oZZZ7xldCrciv5cnld.png)
+![](../../../../Attachments/development/programming/interview/UfRjbWkE6oZZZ7xldCrciv5cnld.png)
 
 
 
@@ -21,7 +21,7 @@ aliases:
 
 \>>>>流程图放这里<<<<
 
-![图片是一张需求评审规范流程图。流程从产品提出需求草案开始，先判断需求类型，分为新功能/大变更和小优化/BUG修复两条路径。新功能/大变更路径需撰写详细PRD，小优化/BUG修复路径填写需求卡片。接着发起评审会议邀请，召开需求评审会，再判断评审是否通过，不通过则打回修改，通过则输出会议纪要与确认清单，研发进行技术评审，再判断技术是否可行，不可行则反馈风险/建议，可行则需求排期，最后进入开发阶段。](../../../../Attachments/development/programming/interview/HpWpb4z8LoaOQzxLy3pc6FltnQd.png)
+![](../../../../Attachments/development/programming/interview/HpWpb4z8LoaOQzxLy3pc6FltnQd.png)
 
 
 
@@ -89,7 +89,7 @@ aliases:
 
 \>>>>流程图放这里<<<<
 
-![这张图是任务排期规范对应的流程示意图，展示了从项目启动到落地的完整步骤。流程始于项目需求确认，依次经过任务拆解与依赖分析、资源需求评估、工作量估算、风险识别评估、制定初步计划、资源分配、里程碑设定、缓冲时间预留后进入计划评审；评审会判断计划是否可行，若不可行则返回计划调整步骤，可行则进入计划确认，随后开展任务分配。后续进入执行阶段，包含变更跟踪、风险监控步骤，最后通过需要调整的判断环节，转向计划变更或计划执行，形成闭环管控的任务排期流程。](../../../../Attachments/development/programming/interview/HK1NbIjhAoMBIzxy43lcuGZZnlc.png)
+![](../../../../Attachments/development/programming/interview/HK1NbIjhAoMBIzxy43lcuGZZnlc.png)
 
 
 
@@ -230,7 +230,7 @@ aliases:
 
 \>>>>流程图放这里<<<<
 
-![这张分支管理规范流程图清晰展示了项目分支的流转逻辑，流程从master主分支与develop开发分支为起点，功能开发从develop创建feature功能分支，完成后合并入develop，经集成测试后，测试通过则创建release预发布分支，开展预发布测试，测试通过的版本合并至master，最后打标签发布并将master合并回develop；若测试不通过则返回修复问题。针对生产环境的紧急修复，从master创建hotfix分支，完成后分别合并入master与develop，严格匹配各分支的操作与流转规则，为团队分支协作提供了明确的操作指引。](../../../../Attachments/development/programming/interview/GCV9bSItfonalcxQUXkcZF1Hnkc.png)
+![](../../../../Attachments/development/programming/interview/GCV9bSItfonalcxQUXkcZF1Hnkc.png)
 
 #### 说明
 
@@ -264,7 +264,7 @@ aliases:
 
 \>>>>流程图放这里<<<<
 
-![图片是一张日志管理流程图。从应用程序开始，经日志框架，进行日志级别判断。若级别不满足，则丢弃日志；若满足，则格式化日志。接着将日志输出到目标，目标有文件输出、控制台输出、远程日志系统三种方式。文件输出包含日志轮转、压缩归档、定期清理；控制台输出有日志聚合；远程日志系统有日志分析、监控告警。该图直观呈现了日志管理从产生到处理的完整流程，与文档中日志管理规范的内容相呼应。](../../../../Attachments/development/programming/interview/Gu0qb47x5o0Bc7xMTtccsdXPnvc.png)
+![](../../../../Attachments/development/programming/interview/Gu0qb47x5o0Bc7xMTtccsdXPnvc.png)
 
 #### 说明
 
@@ -300,7 +300,7 @@ aliases:
 
 \>>>>流程图放这里<<<<
 
-![图片是一张前后端联调规范流程图。流程从接口设计确认开始，依次进行Mock数据准备、前端Mock开发、后端接口开发、接口自测，自测通过后部署测试环境，若联调成功则进行接口测试、集成测试、功能验收，若不成功则进行问题定性，若前端问题则前端修复，若后端问题则后端修复。若接口自测未通过，则需问题排查，排查后若为接口问题则前端切换到真实接口，若为数据问题则部署测试环境，若为逻辑问题则部署测试环境。](../../../../Attachments/development/programming/interview/ZjZ9bxzCEocglixFXGTcqjjAnLb.png)
+![](../../../../Attachments/development/programming/interview/ZjZ9bxzCEocglixFXGTcqjjAnLb.png)
 
 #### 说明
 
@@ -342,7 +342,7 @@ aliases:
 
 \>>>>流程图放这里<<<<
 
-![图片是禅道缺陷管理规范流程图。从发现缺陷开始，依次进行缺陷记录、分类、升级、优先级评估、资源分配、开发修复、测试验证，验证通过则关闭缺陷，不通过则重新打开。最后进行数据统计和质量分析。该流程图与文档中禅道缺陷管理规范上下文对应，直观呈现了缺陷从发现到关闭的完整处理流程。](../../../../Attachments/development/programming/interview/XxcvbkQtcouOpTxPO9Qc3FpGnEg.png)
+![](../../../../Attachments/development/programming/interview/XxcvbkQtcouOpTxPO9Qc3FpGnEg.png)
 
 #### 说明
 
@@ -386,7 +386,7 @@ aliases:
 
 \>>>>流程图放这里<<<<
 
-![图片是一张项目部署规范流程图。从代码提交开始，经自动构建、单元测试、代码扫描、Docker镜像构建与推送、自动部署到测试环境、执行自动化测试等步骤，人工确认后部署到生产环境。若部署失败，自动回滚到上一版本，回滚后进行健康检查，检查通过则部署成功，不通过则执行降级。该图与文档中项目部署规范流程说明部分对应，直观呈现了部署流程。](../../../../Attachments/development/programming/interview/KZ5WbC0W4oSEYBxZWQRcVlxJnab.png)
+![](../../../../Attachments/development/programming/interview/KZ5WbC0W4oSEYBxZWQRcVlxJnab.png)
 
 #### 说明
 
@@ -893,7 +893,7 @@ map filter distinct limit sorted count
 
 ### 项目的分支情况如何？
 
-![图片展示了项目分支的创建与合并流程。从master主干分支开始，通过create操作创建bugfix修复分支，再merge到dev开发分支；dev分支同样通过create操作生成test测试分支，test分支再merge到prod生产分支。各分支间有merge箭头连接，分支对应不同服务器，如dev分支对应本机，test分支对应测试服务器，prod分支对应生产服务器。该图直观呈现了分支创建与合并的步骤及对应环境，与上文项目分支情况说明相呼应。](../../../../Attachments/development/programming/interview/Nk9mbeq4AoQUvXxeDLycLZ58nl4.png)
+![](../../../../Attachments/development/programming/interview/Nk9mbeq4AoQUvXxeDLycLZ58nl4.png)
 
 <callout emoji="⚽">
 我们的项目分支是多个的，不止一个，根据开发环境的不同，有不一样的分支
@@ -989,7 +989,7 @@ map filter distinct limit sorted count
 
 #### 1.3 Redis持久化问题
 
-![图片是一张关于Redis持久化方式对比的表格，展示了RDB和AOF在占用存储空间、存储速度、恢复速度、数据安全性、资源消耗、启动优先级等方面的差异。RDB占用存储空间小（数据级：压缩），存储速度慢，恢复速度快，数据安全性会丢失数据，资源消耗高/重量级，启动优先级低；AOF占用存储空间大（指令级：重写），存储速度快，恢复速度慢，数据安全性依据策略决定，资源消耗低/轻量级，启动优先级高。该图与文档中Redis混合持久化方式的介绍相呼应，直观呈现了RDB和AOF的特性对比。](../../../../Attachments/development/programming/interview/TOwIbXIpUoRqWOxEnWqcsLUgnpe.png)
+![](../../../../Attachments/development/programming/interview/TOwIbXIpUoRqWOxEnWqcsLUgnpe.png)
 
 在`Redis` 4.0之后提供了混合持久化的方式，顾名思义就是把`RDB`持久化和`AOF`持久化结合起来的一种方式。混合持久化就是快照以一定的频率执行，而在两次快照之间，使用 `AOF` 日志记录这期间的所有命令操作。
 

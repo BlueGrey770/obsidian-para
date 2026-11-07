@@ -19,7 +19,7 @@ SQL：结构化查询语言。一门操作关系型数据库的编程语言，�
 | DQL | Data Query Language | 数据查询语言，用来查询数据库中表的记录 |
 | DCL | Data Control Language | 数据控制语言，用来创建数据库用户、控制数据库的访问权限 |
 
-![这张图直观呈现了MySQL数据库相关的架构逻辑，客户端发送SQL语句至DBMS，DBMS通过DDL（数据定义语言）分别操作数据库1和数据库2，数据库1的表1中红框标注了包含今独孤、28岁、男性的记录，其对应关系明确了SQL语句分类（DDL、DML、DQL）的实际应用，是对SQL分类及数据库操作的可视化说明，和前文文档中SQL分类的内容相呼应，清晰展示了不同SQL分类在MySQL数据库服务器中的操作应用场景。](../../../../Attachments/development/databases/mysql-yu-jdbc/KDhpb6VAWoDeF1xhhL5c8Of1ngb.png)
+![](../../../../Attachments/development/databases/mysql-yu-jdbc/KDhpb6VAWoDeF1xhhL5c8Of1ngb.png)
 
 ### DDL语句
 
@@ -234,7 +234,7 @@ id字段是一行数据的唯一标识，不能有重复值。但是现在数据
 
 - 案例：创建tb_user表，对应的结构如下：
 
-![这张图片展示了tb_user表的表结构及其中的4条数据记录，表头包含id、username、name、age、gender五个字段。其中id字段是数据的唯一标识，对应行号1至4；username字段取值分别为qingyifuwang、baimeiyingwang等，均为唯一的非空值；name字段的取值为韦一笑、殷天正等，不包含空值；gender字段的默认值为男，仅最后一条数据的gender取值为女，符合表结构中对该字段的约束设置。](../../../../Attachments/development/databases/mysql-yu-jdbc/VNfEbpKeuoVcyexiic6cIdUzn7b.png)
+![](../../../../Attachments/development/databases/mysql-yu-jdbc/VNfEbpKeuoVcyexiic6cIdUzn7b.png)
 
 在上述的表结构中:
 
@@ -257,9 +257,9 @@ create table tb_user (
 
 数据表创建完成，接下来测试一下表中字段上的约束是否生效
 
-![该图片展示了MySQL客户端工具中，针对tb_user表主键约束的测试结果界面。左侧数据库列表的db01库下的tb_user表结构，显示id字段被设为主键。右侧tb_user表的数据编辑区域中，id为1的行有两行内容，红色框标注的“主键约束”指向该重复的id=1的内容，下方箭头标注“报错”，对应底部提示的错误信息“\[23000\]\[1062\] Duplicate entry '1' for key 'tb_user.PRIMARY'”，用于验证主键约束禁止重复值的特性。](https://feishu.cn/file/PFHSb0hmsoUdsVxwqd4cFjafnAb)
+![](https://feishu.cn/file/PFHSb0hmsoUdsVxwqd4cFjafnAb)
 
-![图片展示了MySQL数据库中tb_user表的数据情况。左侧为数据库结构，tb_user表包含id、username、name、age、gender等字段，其中username字段有唯一约束。右侧是tb_user表的数据查询结果，id为1的记录username为Tom，id为2的记录username也为Tom，显示“唯一约束”字样。下方报错信息为“\[23000\]\[1062\] Duplicate entry 'Tom' for key 'tb_user.username'”。该图片与上文案例中创建tb_user表及测试字段约束生效的内容相关，直观呈现了字段约束的实际效果。](https://feishu.cn/file/SdvTb7xztoBhmwxOXbkcePt5nUb)
+![](https://feishu.cn/file/SdvTb7xztoBhmwxOXbkcePt5nUb)
 
 问题：id字段下存储的值，如果由我们自己来维护会比较麻烦(必须保证值的唯一性)。MySQL数据库为了解决这个问题，提供了一个关键字：auto_increment（自动增长）
 
@@ -352,7 +352,7 @@ char 与 varchar 都可以描述字符串，char是定长字符串，指定长�
 
 表结构如下图所示：
 
-![图片展示的是轻客管家系统中课程管理页面。左侧为功能导航栏，其中“课程管理”下有“课程列表”“课程添加”“课程修改”“课程删除”“课程详情”“课程管理”“活动管理”等选项，其中“课程管理”和“活动管理”被红色框线突出显示。右侧是课程列表区域，显示了序号、课程学科、课程名称、价格、适用人群、课程介绍、最后更新时间等信息，每条记录右侧有“编辑”和“删除”操作按钮。](../../../../Attachments/development/databases/mysql-yu-jdbc/HSrUbpxLAotHg7xLXBdc8gGLnSk.png)
+![](../../../../Attachments/development/databases/mysql-yu-jdbc/HSrUbpxLAotHg7xLXBdc8gGLnSk.png)
 
 示例代码：
 

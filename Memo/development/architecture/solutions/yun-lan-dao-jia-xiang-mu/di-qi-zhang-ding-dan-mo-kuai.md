@@ -188,9 +188,9 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 在首页服务列表区域、热门服务列表区域以及全部服务界面，点击服务项名称进入服务详情页面，如下图：
 
-![这是家政项目中日常保洁服务的详情页面，页面顶部标注该服务每小时48元，涵盖厨房、卧室、客厅的全方位清洁，特点为日常上门保洁、服务随心约。页面中也显示该服务的另一个报价为1元/小时，可调整购买数量，右侧配有一名身着红色围裙的保洁人员清扫的画面。页面下方设有到家保障模块，包含时效保障、明码标价、清洁保障三项服务承诺，底部还有关于上门服务时提前沟通以避免分歧的提示。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FLiwbi1L3oYFNxx2CWVcCj0Hngg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FLiwbi1L3oYFNxx2CWVcCj0Hngg.png)
 
-![图片展示的是家政项目服务预约的界面原型。上方标题为“标准化服务流程”，下方列出4个步骤：1. 在线预约支付费用；2. 服务人员快速接单；3. 电话沟通上门服务；4. 服务完成线上确认。下方有用户评价，显示56条评价，其中一条评价显示为“年黛家”，并有其头像、评价时间及评分。图片底部有一个红色的“立即预约”按钮，箭头指向该按钮。此图与文档中“填写预约信息”部分对应，用于展示预约操作流程中的界面样式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ESL9bbqunob3uCxD9P8cdCQTn3g.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ESL9bbqunob3uCxD9P8cdCQTn3g.png)
 
 ##### 填写预约信息
 
@@ -198,15 +198,15 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 选择上门服务地址，此地址从我的地址簿中选择。
 
-![图片展示了家政项目服务预约界面中填写预约信息的两个步骤。左侧为填写预约信息界面，提示请选择服务地址和上门时间，服务地址处有红色提示，上门时间处有蓝色“请选择”字样。右侧为填写完成的界面，显示服务地址为北京昌平区建材城西路金燕龙写字楼，上门时间为2023年4月29日13:00，下方有“立即预约”按钮。该图片与上下文介绍的预约信息填写流程相关，直观呈现了填写预约信息的前后状态。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QSjab0RB5o2yf6xTDzocXgsgnIc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QSjab0RB5o2yf6xTDzocXgsgnIc.png)
 
 选择上门时间
 
-![这张图是家政服务预约流程中的上门时间选择界面，界面左上角为“取消”按钮，右上角为“确认”按钮，左侧列出了可选的日期，部分日期（2023-10-29、2023-10-30）以红色高亮显示，右侧对应列出了各日期可选择的上门时段，其中2023-10-30对应的10:00时段也为红色，其余时段显示为黑色，用户可在此界面完成上门时间的选择，属于填写预约信息环节的操作界面。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RCS5bJmqZo4j6vx1QFdcyp7YnKd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RCS5bJmqZo4j6vx1QFdcyp7YnKd.png)
 
 填写完成点击“立即预约”
 
-![图片展示的是家政服务预约页面的预约信息填写界面。界面上方显示“请填写您的预约信息”，并有返回和关闭按钮。中间部分有服务地址（河南省郑州市新郑市郑港街道黑马程序员航投大厦）及预约人信息（苗先生及电话号码），下方提示请选择上门时间，当前显示为2023年10月29日10:00。最下方有“优惠券信息”区域，显示暂无可用优惠券，以及一个红色的“立即预约”按钮，该按钮被红色箭头指向。此图与上下文介绍的预约信息填写流程相关，是填写预约信息环节的展示。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/L3eJb3PLMoOWWuxiDrpcJ26inmf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/L3eJb3PLMoOWWuxiDrpcJ26inmf.png)
 
 预约信息包括如下内容：
 
@@ -226,7 +226,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 结算页面主要是计算订单价格，显示支付信息等内容。
 
-![这张图片为订单模块的支付订单结算页面，页面顶部标注“支付订单”，并显示支付剩余时间14分52秒，明确了订单总价为1元、待付金额为1.00元，还需支付1.00元。页面提供两种支付方式可选，当前默认选定微信支付，支付宝支付未被选中，底部配有红色的“确认支付”按钮，该页面用于完成订单的支付操作，对应文档中提及的结算页面相关内容，是支付流程里的关键环节。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/TIWCb8ulDoYdZkxA20uckThVndd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/TIWCb8ulDoYdZkxA20uckThVndd.png)
 
 结算页面显示如下信息：
 
@@ -242,7 +242,7 @@ AI: 电商项目中创建订单需要考虑哪些因素
 
 支付成功下单完成。
 
-![图片展示的是家政服务预约成功后的结算页面。页面上方显示“下单成功”，并有“返回首页”和“查看订单”两个按钮。中间有一个绿色的对勾图标，下方文字提示“服务人员正在疯狂抢单中，请耐心等待~”。该图片与文档中“下单成功”部分内容对应，直观呈现了支付成功后，用户在结算页面看到的提示信息及操作选项，帮助用户了解订单状态及后续操作。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XYeYbkVmooy6fnxFkMAcmI3PnO3.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/XYeYbkVmooy6fnxFkMAcmI3PnO3.png)
 
 
 
@@ -465,7 +465,7 @@ jzo2o-orders-base作为其它四个工程的公共工程，提供订单模块基
 
 先fork再从自己仓库拉取代码，jzo2o-orders工程结构如下：
 
-![图片展示了jzo2o-orders工程结构。在D:\\course\\jzo2o2.0\\code\\jzo2o-orders目录下，有.idea、jzo2o-orders-base、jzo2o-orders-dispatch、jzo2o-orders-history、jzo2o-orders-manager、jzo2o-orders-seize等文件夹，以及.gitignore和pom.xml文件。该图片与文档中“jzo2o-orders工程结构”内容相关，直观呈现了工程中各部分的分布情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Qxatb5NiqoDza5xdYlRcqqZ4nGh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Qxatb5NiqoDza5xdYlRcqqZ4nGh.png)
 
 切换到dev_01分支，预约下单功能在dev_01分支下开发。
 
@@ -475,21 +475,21 @@ jzo2o-orders-base作为其它四个工程的公共工程，提供订单模块基
 
 从课程资料下SQL脚本目录获取jzo2o-orders-alone.sql,导入数据，如下：
 
-![这张图片展示了jzo2o-orders工程对应的订单数据库的表结构，该数据库名称为jzo2o-orders，是按照文档要求导入指定SQL脚本后生成的数据库内容。图片中清晰列出了该数据库包含的多张数据表，涵盖了订单相关的各类核心数据表，如orders（订单主表）、orders_canceled（已取消订单表）、history_orders_sync（历史订单同步表）等，这些数据表用于支撑家政项目服务预约功能所需的各类订单业务数据存储。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/NZSqbNZBqoE55GxCp19cH56Unjg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/NZSqbNZBqoE55GxCp19cH56Unjg.png)
 
 修改nacos中jzo2o-orders-manager.yaml：
 
 屏蔽下边红框中的配置信息。
 
-![图片展示了nacos中jzo2o-orders-manager.yaml的配置界面。红框突出显示了配置部分的关键内容，包括数据源配置，如使用ShardingSphere驱动，连接地址为jdbc:shardingSphere:...，以及cloud配置中的transport、dashboard等信息。该图片与上下文紧密相关，是对上文“修改nacos中jzo2o-orders-manager.yaml，屏蔽下边红框中的配置信息”操作的直观呈现，帮助理解配置的具体位置和内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UCEMbtJDrok3aOxlGcfcJDgynrc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UCEMbtJDrok3aOxlGcfcJDgynrc.png)
 
 修改nacos中jzo2o-orders-seize.yaml：
 
-![图片展示了nacos中jzo2o-orders-seize.yaml的配置界面。界面中显示了命名空间、Data ID、Group等信息，配置格式为YAML。关键部分是配置内容区域，其中红色框突出显示了# spring: # datasource: # driver-class-name: org.apache.shardingsphere.driver.ShardingsphereDriver # url: jdbc:shardingsphere:classpath:shardingsphere-jdbc-${spring.profiles.active}等配置信息。该图片与上文“修改nacos中jzo2o-orders-seize.yaml”内容相关，用于说明配置修改的具体位置和内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Q25tbMmVWouyx9x5Ft8cjpbbn6d.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Q25tbMmVWouyx9x5Ft8cjpbbn6d.png)
 
 修改nacos中jzo2o-orders-dispatch.yaml：
 
-![这张图片展示的是Nacos配置管理界面的部分内容，是修改nacos中jzo2o-orders-dispatch.yaml时需要屏蔽的配置信息区域，界面明确标注了Data ID为jzo2o-orders-dispatch.yaml，配置格式选中的是YAML。图片中用红框标注出了Spring配置相关的内容，包括datasource的driver-class-name与url参数，这部分就是文档中要求在修改jzo2o-orders-dispatch.yaml时需要屏蔽的配置信息，该操作是搭建订单工程流程里修改Nacos配置步骤的一部分。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WBN8bfPOJorPrVxu6TSc8h8bn7d.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WBN8bfPOJorPrVxu6TSc8h8bn7d.png)
 
 
 
@@ -503,7 +503,7 @@ jzo2o-orders-base作为其它四个工程的公共工程，提供订单模块基
 
 使用下发的jzo2o-customer-all.sql脚本导入jzo2o-customer-all数据库。
 
-![这张图片展示的是名为“jzo2o-customer-all”的数据库中包含的表结构，该数据库正是文档中提及的用于jzo2o-customer工程dev_02使用的数据库。图片里的“tables 13”表明该数据库共有13个表，列表中清晰列出了所有表的名称，包括address_book、agency_certification、agency_certification_audit、bank_account、common_user等，这些内容与文档中“使用下发的jzo2o-customer-all.sql脚本导入该数据库”的操作内容直接相关，直观呈现了导入后数据库所包含的表集合。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LmbfbVU75oGdBZxAQgLc2L6Nnyd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LmbfbVU75oGdBZxAQgLc2L6Nnyd.png)
 
 
 
@@ -545,7 +545,7 @@ jzo2o-orders-base作为其它四个工程的公共工程，提供订单模块基
 
 **请求参数**
 
-![这张图片是第七章订单模块下家政项目服务预约系统设计中，下单接口的请求参数定义表。表格清晰列出了下单接口的各项请求参数，包含参数名称、参数说明、请求类型、是否必须、数据类型及schema字段，其中必填参数为带“-”标记的placeOrderReqDTO、servId、addressBookId、serveStartTime，它们的是否必须列均标注为true，而couponId、purNum为非必填，是否必须列为false，placeOrderReqDTO的请求类型为body，其余对应参数的请求类型为空，这些参数均为用户创建订单时需要提交的相关信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OaK1bfkM8oCnRQx2mXdc6w93nwd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/OaK1bfkM8oCnRQx2mXdc6w93nwd.png)
 
 请求示例：
 
@@ -563,7 +563,7 @@ jzo2o-orders-base作为其它四个工程的公共工程，提供订单模块基
 
 **响应参数**
 
-![图片展示了下单接口的响应参数。包含msg（响应消息，类型string）、code（状态码，200-成功，其它-失败，类型integer(int32)）、data（下单响应信息，类型下单响应信息）、id（订单id，类型integer(int64)）。其中data部分以红色框突出显示，表明其为下单响应信息。该图片与上下文紧密相关，是对上文接口响应参数部分的详细说明，帮助理解下单接口的响应结构。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/IJJwbDvN4oOuFIxiwDIcI0HcnSh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/IJJwbDvN4oOuFIxiwDIcI0HcnSh.png)
 
 响应示例：
 
@@ -779,11 +779,11 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
 
 **请求数据类型** application/x-www-form-urlencoded
 
-![图片展示了地址簿远程接口的请求参数信息。表格中包含参数名称、参数说明、请求类型、是否必须、数据类型、schema等列。关键信息是参数名称为id，参数说明为地址簿id，请求类型为path，是否必须为true，数据类型为integer(int64)。该图片与文档中地址簿远程接口的接口定义上下文相关，是对接口请求参数的具体说明。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WRw6bmcdwoqDkzxhk8gcX3B5nAc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/WRw6bmcdwoqDkzxhk8gcX3B5nAc.png)
 
-![图片展示了地址簿远程接口的响应参数。参数包括msg（响应消息）、code（状态码）、data（地址簿详情）、address（详细地址）、city（市级）、county（区/县）、lon（经度）、updateTime（更新时间）、userId（用户id）、isDefault（是否为默认地址）、province（省份）、createTime（创建时间）。其中data为地址簿详情，类型为地址簿详情，其他参数类型多为string、integer等。该图片与文档中地址簿远程接口的接口定义上下文相关，是对接口响应数据结构的详细说明。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RkxZbxVQHoDG72xnqlWcdQ2vnHd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RkxZbxVQHoDG72xnqlWcdQ2vnHd.png)
 
-![图片展示了地址簿远程接口的请求数据类型相关内容。表格中包含4列，分别是字段名、名称、类型及描述。字段名依次为phone（电话）、name（名称）、id（地址簿id）、lat（纬度），类型分别为string、string、integer(int64)、number(double)。该图片与文档中地址簿远程接口的接口定义上下文相关，是对接口请求数据类型的具体说明。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UWxqbB5BvoZhm8xqlNfcsmBJngh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UWxqbB5BvoZhm8xqlNfcsmBJngh.png)
 
 Feign接口如下：
 
@@ -1272,13 +1272,13 @@ public void add(Orders orders) {
 
 并不是通过代理对象执行的add方法。
 
-![图片展示的是跟踪add方法调用代码时的代码断点处信息。在“保存订单”代码行，有红色箭头指向，显示“this.add(orders);”及“orders: 'Orders(id=23102900000000000007, userId=1716346406098296832...’”等内容。下方弹出窗口显示“{OrdersCreateServiceImpl@15920}”及“orderResDTO(orders.getId());”。该图片与上下文紧密相关，用于说明跟踪add方法调用代码时，通过代码断点观察到的add方法调用处的具体代码及对象信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/TYtibFh6roResYxu02Wc8XbTn9e.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/TYtibFh6roResYxu02Wc8XbTn9e.png)
 
 如果是在placeOrder方法上加@Transactional就可以进行事务控制，暂时先在placeOrder方法上添加@Transactional注解，我们跟踪placeOrder方法调用处的代码，在controller方法中调用的placeOrder方法，打断点，如下图：
 
 的确是通过CGLIB代理对象调用的placeOrder方法。
 
-![这张截图是Java后端的代码调试界面，显示在第29行的代码处，通过断点标记正暂停在ordersCreateService调用placeOrder方法的位置，关键标注了调用placeOrder方法的对象为被Spring CGLIB代理生成的对象，标注内容显示该代理对象对应的是OrdersCreateServiceImpl类，这一内容验证了上下文提及的“通过CGLIB代理对象调用placeOrder方法”的结论。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QpoXbn0RKozKRCxCodGcbUMDnsb.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/QpoXbn0RKozKRCxCodGcbUMDnsb.png)
 
 执行完成后控制台抛出了异常，事务被控制，订单数据没有保存成功。
 
@@ -1335,7 +1335,7 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
 
 重启订单管理服务继续进行测试，在owner.add(orders);打断点：
 
-![这是订单模块下单代码优化中事务失效问题相关的调试截图，显示在代码执行owner.add(orders)处打断点的调试界面。代码行owner.add(orders)处于第136行，红色箭头指向的对象为{OrdersCreateServiceImpl$$EnhancerBySpringCGLIB$$9356b163@15695}，该对象是OrdersCreateServiceImpl的Spring代理对象，结合上下文可知此处正是通过代理对象调用add方法，且add方法带有事务注解，这一调试结果验证了优化方案的有效性。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EWxEbAUZsor0xuxxdMWc3Rk3nob.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/EWxEbAUZsor0xuxxdMWc3Rk3nob.png)
 
 从上图可以看出这次是通过代理对象调用的add方法，并且add方法上添加事务注解，所以在执行add方法之前开启事务，执行add方法后提交事务。
 
@@ -1357,7 +1357,7 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
 
 两个Bean，A依赖B，B依赖A就构成了循环依赖，如下图：
 
-![这张图展示了Spring中循环依赖的典型案例，左侧为名为A的Bean类，标注有@Component注解，内部通过@Autowired注入了B类型的私有成员变量；右侧为名为B的Bean类，同样标注@Component注解，内部通过@Autowired注入了A类型的私有成员变量。图中用红色箭头标注A依赖B，绿色箭头标注B依赖A，二者相互依赖，直观呈现出两个Bean互相依赖所构成的循环依赖结构，契合上下文对Spring中循环依赖概念的说明。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UvYmb2jvooUGpCxVHvjcm3CynJb.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/UvYmb2jvooUGpCxVHvjcm3CynJb.png)
 
 同样的道理，如果在A中注入A表示A依赖A，也就构成了循环依赖。
 
@@ -1411,7 +1411,7 @@ A初始化完成，将A从earlySingletonObjects移动到singletonObjects**。**
 
 如下图：
 
-![该图片展示了Spring框架中因构造参数注入引发循环依赖的代码示例，左侧定义了Component修饰的类C，其构造方法需要依赖类D的实例，右侧定义了Component修饰的类D，其构造方法需要依赖类C的实例，图中分别用箭头和文字标注了类C构造时需要D、类D构造时需要C的关系，清晰呈现了二者通过构造参数注入形成的双向循环依赖，对应文档中提到的构造参数注入引发循环依赖会报错的问题，直观解释了该类循环依赖的代码结构。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/TFDDbzBfMoqZIFx0FiCcH0PAn8e.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/TFDDbzBfMoqZIFx0FiCcH0PAn8e.png)
 
 为什么上图中的循环依赖会报错呢？
 
@@ -1736,7 +1736,7 @@ public Object handleLock(ProceedingJoinPoint pjp, Lock lock) throws Throwable {
 
 效果如下：
 
-![这张图呈现了家政服务预约小程序的界面，为日常保洁服务的下单页面，页面上方展示服务名称“日常保洁”及“日常上门保洁”标签。页面包含预约信息，显示服务地址为北京市北京市昌平区回龙观街道文恒（文化传播相关内容存在截断），联系人是苗先生及手机号，需选择上门时间（当前显示为2024-11-05 20:30），优惠券暂无可用，底部标注订单价格为58元，还有“立即预约”按钮。页面中间有突出的深色提示框，标注箭头指向该区域，显示文字“操作频繁,请稍后重试”，对应了测试场景中30秒内针对同一个服务再次下单时的系统提示效果，符合防止重复提交订单的功能测试内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/U64sbYqh5oyyGAxkbgEcKEoCnYb.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/U64sbYqh5oyyGAxkbgEcKEoCnYb.png)
 
 ##### 5）小结
 
@@ -1773,7 +1773,7 @@ AOP在项目中有用吗？怎么用的？
 
 如下图，购买1台空调维护的订单金额是17元。
 
-![图片展示的是家政服务项目中空调维修的价格信息。左侧显示服务名称“空调维修”，下方以红色字体标注价格为“¥17.00/台”。右侧有三个操作按钮，从左至右依次为“-”（减少数量）、“1”（当前数量，为数字标识）、“+”（增加数量）。该图片与文档中家政项目服务预约部分内容相关，可能是用于说明服务项目及价格，为后续服务预约操作提供参考。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/KsMcbgvnpo9S5TxYm0fccCOwndg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/KsMcbgvnpo9S5TxYm0fccCOwndg.png)
 
 前端需要将服务ID和数量传给订单管理服务，计算出订单金额，再调用优惠券服务获取可用优惠券列表。
 
@@ -1787,9 +1787,9 @@ AOP在项目中有用吗？怎么用的？
 
 **请求数据类型** application/x-www-form-urlencoded
 
-![图片展示了获取可用优惠券接口的请求参数。包含参数名称、参数说明、请求类型、是否必须、数据类型和schema等列。关键参数有servId，为服务id，是必填的query类型，数据类型为integer(int32)；purNum，为购买数量，默认1，示例值1，是query类型，数据类型为integer(int64)，是否必须为false。该图片与上文介绍的获取可用优惠券接口定义相关，直观呈现了接口请求参数信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FwOmbfm2Ao6ar7xatLmcfqp9nLd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/FwOmbfm2Ao6ar7xatLmcfqp9nLd.png)
 
-![这张图片展示的是查询可用优惠券接口的响应参数定义表格，包含参数名称、参数说明、类型和schema四个列。响应参数以code（状态码，200为成功）为核心，搭配msg（响应消息）用于反馈结果；核心的data为优惠券信息数组，数组内包含discountRate（折扣）、validityTime（优惠过期时间）、discountAmount（优惠金额）、type（使用类型，1为满减、2为折扣）、activityId（活动id）、name（活动名称）、amountCondition（满减条件，0表示无门槛）和id（优惠券id）等具体字段。该表格对应文档中查询可用优惠券接口的响应数据规范，明确了接口返回信息的格式与各字段含义，用于规范小程序获取可用优惠券时的响应内容。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RvrjbvnMJoJkzaxohGucIIlRnEl.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/RvrjbvnMJoJkzaxohGucIIlRnEl.png)
 
 在订单管理服务编写controller定义可用优惠券查询接口：
 
@@ -1973,25 +1973,25 @@ public class ConsumerOrdersController {
 
 创建两个优惠券活动：全场八折、全场七折，注意活动开始时间设置和当前时间很近。
 
-![图片展示的是家政项目服务预约系统中优惠券核销的优惠券发放页面。页面分为基本信息和发放规则两部分。基本信息中，活动名称为“全场八折”，优惠券类型为折扣，抵扣比例为80%；满额限制为0元。发放规则部分，发放时间为2023 - 11 - 09 17:21:00 - 2023 - 11 - 16 00:00:00，发放数量为100张，使用期限为30日内有效。该图片与上下文介绍的优惠券核销流程相关，展示了发放优惠券时的设置界面。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Glh5bhDFxoWqhGxEcdAcexFanbg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Glh5bhDFxoWqhGxEcdAcexFanbg.png)
 
 修改数据库表中的活动发放开始时间（改成当前之前）
 
 启动定时任务，修改活动状态（改成进行中）
 
-![图片展示的是任务调度中心的任务管理界面。界面左侧有多个功能选项，其中“运行列表”被红色框线突出显示。右侧显示了任务列表，包括任务ID、任务描述、调度类型、运行模式、负责人、状态及操作等信息。其中，任务ID为15的“活动状态变更任务”被红色框线圈出，其状态为STOP。该图片与上下文关系紧密，上下文提到启动定时任务修改活动状态，此图展示了任务调度中心中任务管理的相关界面及任务状态情况。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/PdpnbwX9eogiP3x5stNcxLjKnKc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/PdpnbwX9eogiP3x5stNcxLjKnKc.png)
 
 使用立即发放优惠券接口向指定用户发放优惠券。
 
-![图片展示的是家政服务 - 促销中心接口文档中“立即发放优惠券”接口的调试界面。左侧导航栏选中“内部接口 - 发放优惠券相关接口 - 立即发放优惠券”。右侧上方显示接口信息，方法为POST，路径为/market/inner/issuedcoupon/issue，有“请求头部”“请求参数”“AfterScript”选项卡，当前选中“请求参数”。下方示例参数以JSON格式呈现，包含“activityId”和“userId”两个字段，分别对应活动ID和用户ID。该图片与文档中使用立即发放优惠券接口向指定用户发放优惠券的内容相关，用于展示接口调试操作界面。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ICEibJ7zPo52WFxWttDcYvV0nIg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ICEibJ7zPo52WFxWttDcYvV0nIg.png)
 
 在下单界面查看可用的优惠券
 
-![这张图片是空调上门维修的预约下单界面截图，界面顶部标注有“空调上门检修 维修不限品牌”的服务宣传内容，下方设有填写预约信息的板块，包含选择服务地址、上门时间的选项区域，订单原价显示为¥11.90。界面里的优惠券信息板块用红色箭头特别标注了，实际可抵扣的优惠金额为-5.10元，该信息是订单的优惠相关内容，对应文档中提到的下单界面查看可用优惠券的环节。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/NMQpbBjiBoKDuqxXJo8cemaYnJb.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/NMQpbBjiBoKDuqxXJo8cemaYnJb.png)
 
 优惠金额最大的排在最上边：
 
-![图片展示的是家政项目服务预约中优惠券核销时的可用优惠券界面。界面上方显示“优惠券”标题，下方有两张优惠券卡片，分别为全场七折优惠券和全场八折优惠券，均标注“无门槛立享”，有效期至2023年12月9日。每张优惠券右侧有勾选图标，下方有“确定”按钮。该图片与上下文紧密相关，是使用立即发放优惠券接口向指定用户发放优惠券后，在下单界面查看可用优惠券时的呈现效果。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ZKrMbqIYTo8HDfxQKDNcQTpBn3f.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ZKrMbqIYTo8HDfxQKDNcQTpBn3f.png)
 
 
 
@@ -2005,7 +2005,7 @@ public class ConsumerOrdersController {
 
 这里存在分布式事务，如下图：
 
-![该图片对应文档中订单模块家政项目服务预约的优惠券核销环节，呈现了包含用户端、订单管理服务、优惠券服务三方的分布式事务交互流程。流程首先由用户端向订单管理服务发起获取可用优惠券的请求，订单管理服务再向优惠券服务获取对应优惠券；随后用户端提交下单操作，订单管理服务执行下单逻辑，同时优惠券服务完成优惠券核销，该过程标注为分布式事务。若后续用户端发起取消订单操作，订单管理服务执行取消订单逻辑，优惠券服务完成退回优惠券的操作，该环节也标注为分布式事务，体现了该场景下的分布式事务业务逻辑。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/PMCYbXgeIoQsjBxV088cPTSVnvd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/PMCYbXgeIoQsjBxV088cPTSVnvd.png)
 
 所以首先我们要实现分布式事务控制，这里使用Seata控制分布式事务。
 
@@ -2017,7 +2017,7 @@ public class ConsumerOrdersController {
 
 测试,登录地址http://192.168.101.68:7099,账号和密码均为seata/seata，首次登录可能会慢
 
-![图片展示的是Seata系统中事务信息的基础列表页面。页面上方有“首页”“Seata企业版”“文档”“博客”“社区”“下载”等导航栏。左侧有“全局信息”“事务信息”等选项，当前选中“事务信息”。页面中部显示“事务信息”标题，下方有创建时间、起始日期、结束日期等筛选条件，以及xid、applicationId、status等列信息。底部有每页显示数量选择框及分页导航栏。该页面用于查看和管理事务相关信息，与上文介绍的Seata系统配置及事务管理内容相关。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/KWkAbXgAwozPEGx0hMXcYgwrnFf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/KWkAbXgAwozPEGx0hMXcYgwrnFf.png)
 
 
 
@@ -2025,7 +2025,7 @@ public class ConsumerOrdersController {
 
 修改订单管理服务的bootstrap.yml，添加seata配置文件
 
-![图片展示了订单管理服务的bootstrap.yml配置文件中关于seata的配置内容。在cloud -> nacos -> config部分，添加了data-id为“shared-spring-seata.yaml”的seata配置，其refresh值为false。该图片与上文配置seata环境的内容相关，是对修改订单管理服务bootstrap.yml，添加seata配置文件步骤的示例展示，直观呈现了seata配置在配置文件中的具体位置和格式。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/AvrvbAfQ9o9OGFxvtstcjR5HnZf.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/AvrvbAfQ9o9OGFxvtstcjR5HnZf.png)
 
 在订单基础工程jzo2o-orders-base和优惠券工程jzo2o-market中添加seata依赖
 
@@ -2169,15 +2169,15 @@ public PlaceOrderResDTO placeOrder(PlaceOrderReqDTO placeOrderReqDTO) {
 
 
 
-![图片展示的是家政项目服务预约界面。界面顶部显示“空调维修”，并有返回和刷新按钮。预约信息部分显示预约地址为河南省郑州市新郑市郑港街道黑马程序员航投大厦，预约人电话为13333333333。选择上门时间显示为2023 - 11 - 10 08:00。优惠券信息部分显示有优惠券，可抵扣3.40元，原价17.00元，现价13.60元。底部有“立即预约”红色按钮。该图片与文档中“用户在下单界面选择一个优惠券”及“提交订单”等操作步骤相关，呈现了订单提交前的预约信息界面。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/PUsPbdaROonYlbx304Jc7k0WnOe.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/PUsPbdaROonYlbx304Jc7k0WnOe.png)
 
 选择一张优惠券：
 
-![图片展示的是家政项目服务预约系统中优惠券选择界面。左侧有一个红色背景的优惠券图标，显示“8.0折”，并有“全场八折 无门槛立享8.0折”及有效期至2023 - 12 - 09的说明。右侧有“确定”按钮。该图片与上下文关系紧密，是用户在下单界面选择优惠券环节的呈现，用户选择优惠券后会提交订单，后续进行优惠券核销等操作。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CFW3bP8WUoZmilxq3MRcfxu9nvg.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CFW3bP8WUoZmilxq3MRcfxu9nvg.png)
 
 提交订单：
 
-![这张图片是家政项目服务预约流程中优惠券核销测试环节的支付订单界面。界面顶部显示支付剩余时间14:56；订单总价为17元，使用优惠券后优惠金额为-3.40元，待付金额为13.60元。支付方式中，微信支付选项被选中，支付宝支付选项未选中；界面底部标注需支付13.60元，右侧配有“确认支付”的红色按钮，该界面对应用户下单时选择优惠券后提交订单的操作环节。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/JRXwbErVXok9mPxjwfwchwJfn4e.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/JRXwbErVXok9mPxjwfwchwJfn4e.png)
 
 提交成功查看优惠券信息：
 
@@ -2187,13 +2187,13 @@ orders_id：使用优惠券的订单id
 
 use_time：使用优惠券时间
 
-![这是一张展示已使用的优惠券相关信息的JSON格式数据截图。该优惠券名称为“全场八折”，对应的折扣率为80，有效期至2023年12月9日17时54分16秒，使用时间为2023年11月9日20时34分24秒，状态为2，属于已使用状态。该优惠券绑定的普通用户用户ID为1716346406098296832，用户名是普通用户72135，关联的订单ID为2311090000000000033，这张图片对应文档中优惠券核销测试的查看优惠券信息环节，呈现了核销后的优惠券数据详情。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ABtObuxAuoTDODxJ5Qkc7Ktonyb.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/ABtObuxAuoTDODxJ5Qkc7Ktonyb.png)
 
 
 
 查看优惠券核销表：
 
-![这是一张展示优惠券核销表相关数据的JSON格式截图，呈现了某条优惠券核销的具体信息。其中的核心内容包括id、优惠券编号（coupon_id）、用户id（user_id）、使用该优惠券的订单id（orders_id）、活动id（activity_id）、核销时间（write_off_time），以及核销人员姓名（为普通用户72135），而核销人员手机号（write_off_man_phone）为空。该内容对应文档中优惠券核销流程里“查看优惠券核销表”的操作结果，用于验证优惠券核销后的相关记录信息。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/B22mb4QiDo0FrzxBo2Ocsl5FnNd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/B22mb4QiDo0FrzxBo2Ocsl5FnNd.png)
 
 
 
@@ -2316,11 +2316,11 @@ public void addWithCoupon(Orders orders, Long couponId) {
 
 用户在订单列表点击订单信息进入订单详情页面，点击“取消订单”
 
-![图片展示的是订单待支付界面。上方提示“订单待支付，请在内完成支付，超时将取消订单”。中间显示订单信息，为“保洁清”服务，1小时，1元。下方有服务地址、联系人及电话等信息，订单编号为2311010000000000012，下单时间为2023 - 11 - 01 06:53。界面底部有“取消订单”和“去支付”两个按钮，其中“取消订单”按钮被红色箭头指向。该图与上下文介绍的取消未支付订单功能相关，展示了取消订单操作的界面位置。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LeI8bobisoT8qkx1sUYc8lwBndc.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/LeI8bobisoT8qkx1sUYc8lwBndc.png)
 
 进入取消订单界面：
 
-![图片展示的是取消订单界面中选择取消原因的页面。页面顶部显示“取消原因”，右上角有三个点和一个相机图标。下方有四个取消原因选项，分别是“问题已解决，不需要了”“下单地址有误”“下单时间错误”“商家联系不上”，每个选项右侧都有一个未选中的圆圈。底部有一个红色的“提交”按钮。该图片与文档中“3.2定义取消订单方法”部分内容相关，是用户在订单列表点击订单信息进入订单详情页面，点击“取消订单”后进入的取消订单界面示例。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Un9lbyro1oOmPyxt9YPcjAbnnxd.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/Un9lbyro1oOmPyxt9YPcjAbnnxd.png)
 
 选择取消原因，点击“提交”。
 
@@ -2694,13 +2694,13 @@ private Orders canalIfPayOvertime(Orders orders){
 
 在未什么中找到该订单，点击订单名称打开订单详情界面
 
-![这是小程序“我的订单”页面的待支付订单列表截图，页面顶部显示“我的订单”字样，导航栏有“待支付”“待服务”“服务中”“待评价”“全部”五个订单分类标签，当前处于“待支付”分类。页面展示了一条编号为“日常保洁”的待支付订单，订单时间为2023年12月4日21:30，收货地址为北京市昌平区城北街道相关区域，待支付金额为1元，红色箭头指向该条订单条目，订单条目右侧标注有红色“待支付”标签，页面右下角设有红色“去支付”按钮，该订单对应文档中提到的“未支付订单”。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CP3Nb398ooFROIxIEwIcWrdOnLh.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/CP3Nb398ooFROIxIEwIcWrdOnLh.png)
 
 
 
 订单自动取消后进入订单详情页面显示“订单已取消”
 
-![这张图片是小程序的订单详情页面，显示订单已被自动取消，页面顶部有红色背景条，标注“订单已取消”，并有箭头指向该区域，同时标注“取消原因”的位置但未显示具体取消原因。页面展示了该订单的相关信息，包括服务项目为保洁清洗（日常保洁1小时，金额1.00元）、实际支付1.00元，还列出了预约时间2023-12-04 21:30、服务地址、联系人苗先生及联系电话13333333333、订单编号2312040000000000055、下单时间2023-12-04 17:21，页面底部设有“删除订单”按钮。该图片对应文档中订单自动取消后进入详情页面显示“订单已取消”的预期结果。](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/KD8LbOstMonFUExf4eUcnkfBnwe.png)
+![](../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/KD8LbOstMonFUExf4eUcnkfBnwe.png)
 
 
 

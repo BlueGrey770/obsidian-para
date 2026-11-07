@@ -24,17 +24,17 @@ aliases:
 
 下图是健康评估列表页，展示了经过健康评估的老人列表。
 
-![该图片是健康评估的详情列表页面，页面顶部有“老人姓名”“身份证号”“入住情况”的筛选栏，配有“重置”“搜索”按钮。页面主体是评估信息列表，列有序号、老人姓名、身份证号、健康评分、建议入住情况、推荐护理等级等内容，其中序号1至9的健康评分多为87.7分及以上，对应不同的护理等级和入住状态。列表右上方设有“上传体检报告”按钮，右上角还有带红色标记的操作提示。页面底部显示总数据量为658条，支持按10/页等规格调整分页，可跳转至对应页码查看内容。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/J8nCbKXkToR3TexoJqKcy5Htnmb.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/J8nCbKXkToR3TexoJqKcy5Htnmb.png)
 
 当点击了**上传体检报告**按钮之后会弹窗，效果如下，需要输入信息，需要提前准备好老人的体检报告(**PDF格式**)
 
 点击**确定**按钮之后，会使用AI对老人的健康报告进行评估
 
-![这张图片是点击“上传体检报告”按钮后弹出的表单弹窗，用于上传老人体检报告的信息录入界面。界面设有三个带星号的必填文本输入项，分别是“老人姓名”“老人身份证号”“体检单位”，每项右侧标注了对应可输入的最大字数限制；还有必填的“体检报告”项，带有“点击上传”按钮，提示需上传大小在60M以内的pdf格式文件，弹窗右下角设有“取消”与“确定”按钮，与文档中点击上传按钮后弹出该界面、需提前准备PDF格式体检报告的内容完全对应。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/B3lBb7c3qovqXvxoMtVc8CxSnYf.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/B3lBb7c3qovqXvxoMtVc8CxSnYf.png)
 
 下图是健康评估的详情页面，是使用AI分析后的结果页，给了很多的数据，可以让护理员或销售来查看老人的健康状况，进一步更好的服务老人或者给老人推荐一些护理服务。
 
-![图片展示的是健康评估系统中智能评测的示例结果页面。页面上方显示基本信息，如姓名、性别、出生日期等。中间部分是体检结果，包括身体成分、身体指标、疾病风险等数据，如身体成分中脂肪百分比为21.2%。下方是疾病风险分析，以图表形式呈现不同疾病的风险等级及风险值，如高血压风险等级为2，风险值为14.01。底部有“查看详情”按钮。该图片与文档中健康评估模块智能评测接口说明上下文对应，直观呈现了智能评测的输出结果。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/TRXlb2nvCoW8jCxY5EQc2yOUn8g.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/TRXlb2nvCoW8jCxY5EQc2yOUn8g.png)
 
 
 
@@ -42,7 +42,7 @@ aliases:
 
 基于需求原型，我们可以确定健康评估表（health_assessment）如下：
 
-![图片展示了健康评估表（health_assessment）的表结构。表中包含id、elder_name、id_card等18个字段，如elder_name为老人姓名，id_card为身份证号，age为年龄，health_score为健康评分等。其中，abnormal_analysis字段是字符串类型，会将异常数据转换为json存储；disease_risk字段表示疾病风险；system_score字段为健康系统分值。该图片与文档中表结构说明部分对应，直观呈现了健康评估表的字段信息。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/XJgwbbIO3oNAlaxd1B7cJJBPnlb.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/XJgwbbIO3oNAlaxd1B7cJJBPnlb.png)
 
 > 特别字段说明：
 > 
@@ -83,7 +83,7 @@ CREATE TABLE "health_assessment" (
 
 ```
 
-![图片展示了健康评估表（health_assessment）的表结构说明。表中包含id、abnormal_analysis、admission_status、age、assessment_time、birth_date、create_by、create_time、disease_risk、elder_name、gender、health_score、id_card、nursing_level_name、physical_exam_institution、physical_report_url、remark、report_summary、risk_level、suggestion_for_admission、system_score、total_check_date、update_by、update_time等字段。其中，abnormal_analysis、admission_status、age、assessment_time、birth_date、create_by、create_time、disease_risk、elder_name、gender、health_score、id_card、nursing_level_name、physical_exam_institution、physical_report_url、remark、report_summary、risk_level、suggestion_for_admission、system_score、total_check_date、update_by、update_time等字段有红色框标注，部分字段还标注了数据来源，如通过身份证号提取、前端给的、AI分析后的结果等。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/NaGybc0MuoeVkFxB7lvc2xxAnqd.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/NaGybc0MuoeVkFxB7lvc2xxAnqd.png)
 
 
 
@@ -207,7 +207,7 @@ public class PDFUtilTest {
 
 - 注册地址：https://qianfan.cloud.baidu.com/
 
-![图片展示的是百度智能云账号注册页面。页面上方显示“欢迎注册百度智能云账号”，右上角有“登录”按钮。下方有“注册用户名”“密码”“确认密码”“手机号”“验证码”等输入框，以及勾选框，分别对应服务协议、订购协议、隐私政策和用户授权信息共享协议。最下方是“注册”按钮。该图片与文档中“注册和实名认证”部分内容相关，直观呈现了注册账号时所需填写的信息及操作界面。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/O5cVb6kUKoxCVLxaBvycb92CnPd.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/O5cVb6kUKoxCVLxaBvycb92CnPd.png)
 
 **实名认证**
 
@@ -215,10 +215,10 @@ public class PDFUtilTest {
 
 1. 在手机上下载一个百度智能云app
 
-   ![图片展示的是百度智能云的手机应用图标。图标为一个由绿色、蓝色、红色、黄色四边形组成的几何图形，背景为浅棕色。下方有白色中文文字“百度智能云”。该图标与文档中“在手机上下载一个百度智能云app”的内容相关，是实名认证操作前需下载的百度智能云手机应用，为后续登录及实名认证操作提供入口。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/PzHbbjOzxoyrVMx4Xg4ctCbcnQn.png)
+   ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/PzHbbjOzxoyrVMx4Xg4ctCbcnQn.png)
 2. 使用刚刚注册的账号进行登录，找到**我的**，**个人中心**，可以进行实名认证操作
 
-![图片展示了百度智能云APP个人中心的实名认证操作页面。左侧为APP首页，显示“个人中心”选项。右侧是个人中心页面，有“基本信息”“消息接收人管理”“实名认证”“账号注销”等选项，其中“实名认证”选项被红色箭头突出指向。该图片与文档中“实名认证”部分内容相关，直观呈现了在手机端下载APP后，使用注册账号登录，找到“个人中心”进行实名认证操作的步骤。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/ZYhiblg0Eoq5sFxpublcA3yanfe.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/ZYhiblg0Eoq5sFxpublcA3yanfe.png)
 
 进入实名认证页面后，选择个人认证 --> 开始认证 --> 个人刷脸认证即可
 
@@ -228,21 +228,21 @@ public class PDFUtilTest {
 
 点击[大模型服务与开发平台ModelBuilder](https://console.bce.baidu.com/qianfan/overview)**，**可以进入到管理平台
 
-![图片展示的是百度智能云千帆大模型平台的管理平台界面。界面上方有平台名称及导航栏，中间部分突出显示“千帆大模型平台”及“企业级一站式大模型与AI原生应用开发及服务平台”。下方有四个板块，分别是应用开发服务、模型训练与推理、场景最佳实践、AI开发资源，每个板块配有图标和简要说明。该图片与上下文关系紧密，是创建Access Key操作前在PC端访问千帆大模型平台的指引图示。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/AxUDb6ExvoXymNxgA6mcGnihnhg.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/AxUDb6ExvoXymNxgA6mcGnihnhg.png)
 
 进入管理平台后，点击头像，选择**安全认证**，进入权限管理控制平台
 
-![图片展示的是百度智能云千帆ModelBuilder管理平台的页面。页面左侧有多个功能选项，右侧显示应用身份信息，包括应用身份名称、应用身份ID、应用身份描述、创建人、创建时间等。页面右上角有头像图标，点击后弹出下拉菜单，其中“安全认证”选项被红色框突出显示。该图片与上下文关系紧密，是创建Access Key步骤中，进入管理平台后点击头像选择安全认证，进入权限管理控制平台的页面示例。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/NgEXbPelYouTlbxG6QocRtFbnAz.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/NgEXbPelYouTlbxG6QocRtFbnAz.png)
 
-![这张图片展示的是百度智能云创建Access Key流程中的一个确认弹窗，内容围绕主账号Access Key的使用提示展开。弹窗上方标注“不建议使用主账号AccessKey”，并列出两项风险提示：一是主账号AccessKey拥有所有权限且无法做权限控制，若密钥泄漏会让账号资源面临严峻安全风险；二是针对必须使用AccessKey的场景，建议采用子用户AccessKey并进行最小化权限控制。弹窗内有一个已勾选的选项“我确认知晓使用主账号AccessKey的安全风险”，下方设有两个操作按钮，分别是“继续使用主账号AccessKey”和“使用子用户AccessKey”，且有红色箭头指向“继续使用主账号AccessKey”按钮。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/P8dgbcLU9oirYkxLAG2cVs18nEe.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/P8dgbcLU9oirYkxLAG2cVs18nEe.png)
 
 进入页面后，点击创建Access Key，输入验证码创建
 
-![这张图展示的是百度智能云权限管理平台的Access Key创建页面，属于创建Access Key流程中的关键界面。页面左侧为“安全认证”栏目，当前选中“Access Key”选项，还包含“证书管理”“API Key”选项；右侧页面顶部有安全提示，说明自2025年5月15日起需降低AccessKey泄露风险，同时标注已创建0个、最多可创建20个的信息。页面中的“创建Access Key”按钮被红色箭头突出标注，对应流程里的“点击创建Access Key”操作。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/RVQLbV8o3oaaHixKbnZcH3Uon1f.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/RVQLbV8o3oaaHixKbnZcH3Uon1f.png)
 
 保存Access Key
 
-![图片展示的是百度智能云管理平台中创建Access Key成功弹窗。弹窗标题为“新建AccessKey成功”，提示AccessKey仅在创建时提供明文Secret Key，当前窗口关闭后不再支持明文查询。弹窗中显示了AccessKeyID和AccessKeySecret，下方有“下载AccessKey”蓝色按钮。图片下方红色箭头指向“下载AccessKey”按钮，并有“不要泄露”字样，强调AccessKey需妥善保管，与上下文创建Access Key的操作步骤相关。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/G7J5bplh1oLGmaxfPUTcmC0Vn5V.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/G7J5bplh1oLGmaxfPUTcmC0Vn5V.png)
 
 
 
@@ -250,11 +250,11 @@ public class PDFUtilTest {
 
 当前版本的百度智能云，在创建应用时选择的服务全部都默认开通了按量后付费服务，可以直接使用，可以从在线推理页面 https://console.bce.baidu.com/qianfan/ais/console/onlineService 中看到当前已经开通付费的服务：
 
-![图片展示的是百度智能云在线推理页面中已开通付费服务的列表。列表包含服务名称、付费状态、付费方式、TPM及操作等信息。其中，服务名称如ERNIE 4.0 - BK、ERNIE 4.0 - BK Latest等，付费状态均为付费使用中，付费方式为按量后付费，TPM数值不一，操作栏有“购买配额”“配置详情”“API文档”“查看监控”“日志投递”选项。该图与文档中费用说明部分相关，直观呈现了已开通付费服务情况。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/HolObxNB9oB1TMxoFnScj8TGnpc.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/HolObxNB9oB1TMxoFnScj8TGnpc.png)
 
 在自助工具页面 https://console.bce.baidu.com/support/?u=bce-head#/priceCounter 中可以看到不同模型的费用说明：
 
-![这张图片是百度智能云千帆大模型的计费配置界面，展示了大模型相关的费用信息。界面中突出显示了模型名称为ERNIE-4.0-8K-Preview，同时明确标注了该模型的费用标准：输入 tokens 的费用为¥0.03元/千tokens，输出 tokens 的费用为¥0.09元/千tokens。此外，界面还提供了业务量预估的相关选项，支持后付费的付费模式，同时显示了固定的流控策略为RPM:300、TPM:300000，还有查看详情的入口，该内容和文档中关于ERNIE-4.0-8K-Preview的价格说明部分相对应。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/A1oPb0DU5oiBNXxocwscOm3unKb.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/A1oPb0DU5oiBNXxocwscOm3unKb.png)
 
 我们要使用的大模型**ERNIE-4.0-8K-Preview**，价格如下：
 
@@ -271,11 +271,11 @@ public class PDFUtilTest {
 
 查看代金券，如下图
 
-![图片展示的是百度智能云控制台界面。左侧有“控制台总览”“全局”等导航栏，中间是平台资源租赁优惠信息及四种使用场景介绍。右侧是账户余额为0元，待缴费、可开具、代金券等选项，其中“代金券”被红色箭头突出显示。该图片与上下文关系紧密，上下文提到新注册账号首次开通可获20元代金券，此图直观呈现了代金券在控制台中的位置，帮助用户了解如何查看代金券额度及使用时间。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/ZNPab88fWovLv3xj1GhcJgaHnGg.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/ZNPab88fWovLv3xj1GhcJgaHnGg.png)
 
 可以看到代金券的额度，以及使用的开始时间和结束时间
 
-![这张图片展示的是百度智能云的已激活代金券详情页面，属于该平台新注册账号首次开通赠送的代金券相关内容。页面中明确显示一张状态为“未使用”的代金券，编号为DSUVZWZTP8C53KB，金额/折扣为20.00元，已使用金额为0.00元，余额为20.00元，适用产品是百度智能云千帆大模型平台公有云，适用区域为全局产品，订单类型与适用场景均为通用，该代金券的使用有效期为2024年8月30日至2024年9月29日，页面顶部还有“激活代金券”的操作按钮及筛选相关选项，这一内容对应文档中查看新注册账号首次开通所赠送代金券的说明。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/X52fbqQiJo3QKJx3vrtciGnOncg.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/X52fbqQiJo3QKJx3vrtciGnOncg.png)
 
 这个代金券可以兑换任何大模型使用费用。
 
@@ -357,7 +357,7 @@ public class AIModelTest {
 
 调用成功，控制台的结果打印：
 
-![这张图片展示了Java代码编辑器与控制台输出的混合内容，上方是名为AModelTest的Java代码片段，包含main方法，注释提及参数为认证类型Auth.TYPE_AUTH。下方是控制台输出，显示了Apache HttpClient连接释放的日志信息，以及一份智能体检报告的具体结构说明，其中明确列出基本信息、身体检查、临床检验三部分的内容与检测项。这张图片是对AI智能评估相关功能的运行结果展示，呼应了文档中关于集成大模型进行智能评估、测试相关代码的内容。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/MwW1bBx7QoylGVx2Y8KczdgYnHg.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/MwW1bBx7QoylGVx2Y8KczdgYnHg.png)
 
 ## 接口开发
 
@@ -365,27 +365,27 @@ public class AIModelTest {
 
 打开后台管理系统，我们继续使用代码生成功能，来完成基础代码的准备，导入最新的表结构（健康评估表）
 
-![这张图片是后台管理系统的代码生成界面，当前选中“代码生成”功能页。界面上方设有表名称、表描述、创建时间等搜索栏，搭配“搜索”“重置”按钮，还有“生成”“导入”“修改”“删除”的操作按钮。界面下方的列表里，序号为1的表名为health_assessment，表描述是健康评估表，对应的实体为HealthAssessment，创建时间为2024-08-30 06:38:32，更新时间为2024-08-30 06:40:25，操作栏带有查看、编辑等功能按钮，该表正是文档中提到的需导入的健康评估表。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/LiKUbT9c0ofn1vxFy7vci5Hance.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/LiKUbT9c0ofn1vxFy7vci5Hance.png)
 
 修改代码生成
 
 - 把字段中的一些Long类型改为Integer（id主键依然是Long类型）
 - 把字段中的日期相关修改为LocalDateTime类型（创建时间和修改时间不用改）
 
-![图片展示的是后台管理系统中代码生成功能的字段信息界面。界面中有序号、字段列名、字段描述、物理类型、Java类型、Java属性、插入、编辑、列表、查询、查询方式、必填、显示类型、字典类型等列。其中，字段类型如id为Long，elder_name为String，id_card为String，birth_date为LocalDateTime，age、gender、health_score、risk_level、suggestion等字段类型均为Integer。该图片与上下文紧密相关，是代码生成功能中字段信息展示的示例，用于辅助理解字段类型等信息。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/CQv3bDVfRo0qXPxco1mcZCZinOf.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/CQv3bDVfRo0qXPxco1mcZCZinOf.png)
 
 - 生成包路径：`com.zzyl.nursing`
 - 生成的模块名：`nursing`
 - 生成的业务名：`healthAssessment`
 - 上级菜单：不选择（由于目前已经提供了所有的前端和菜单的表结构，无需自己创建选择菜单）
 
-![这张图片展示的是代码生成的配置界面，处于后台管理系统的代码生成操作环节。界面顶部有基本信息、字段信息、生成信息三个选项卡，当前处于生成信息选项页。页面左侧标注了生成模板选择单表（增删改查）、生成包路径为com.zzyl.nursing、生成业务名为healthAssessment、生成代码方式选择zip压缩包；右侧标注了前端类型为Vue3 Element Plus模版、生成模块名为nursing、生成功能名为健康评估、上级菜单选择请选择系统菜单。页面底部设有提交和返回按钮，对应了文档中配置代码生成的各项参数要求。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/BAK6b87DgoPwpYx8DXlcNXP6nPg.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/BAK6b87DgoPwpYx8DXlcNXP6nPg.png)
 
 配置完成后，下载代码到本地
 
 **特别注意**：只需要拷贝后端代码到idea中即可，**不需要执行SQL**，**不需要拷贝前端代码**
 
-![图片展示了代码生成完成后，需要拷贝到idea的文件夹及不需要拷贝和执行的文件。其中，`main`文件夹需拷贝到idea，`vue`文件夹不需要拷贝，`healthAssessmentMenu.sql`文件不需要执行。该图片与上文提到的“特别注意：只需要拷贝后端代码到idea中即可，不需要执行SQL，不需要拷贝前端代码”内容对应，直观呈现了操作要求。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/BVKlbNsAGoe2AyxxElncAt2unch.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/BVKlbNsAGoe2AyxxElncAt2unch.png)
 
 
 
@@ -414,7 +414,7 @@ INSERT INTO `health_assessment`(`system_score`,`nursing_level_name`,`gender`,`to
 
 清楚了Prompt的构成部分之后，我们再来分析一下之前的需求，重点来看一下哪些字段需要AI来提供，如下图：
 
-![该图片是一份健康评估相关的结果展示界面，上方为个人基本信息区域，包含姓名、身份证号、登记日期等内容；中间部分呈现健康评估的核心结果，左侧有不同年龄段人群的健康指数分布柱状图，右侧为各健康系统的健康指数环形图，标注核心指数为81.25分；下方为详细的健康分析列表，包含各类检测指标的名称、结果、参考值及相关注释，界面中多处标注“A健康”，是完成健康相关智能评估的实际示例，用于展示设计后需依赖AI提供相关字段的最终效果。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/DaDBbAYZgorCLdxNw43cIK8MnSh.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/DaDBbAYZgorCLdxNw43cIK8MnSh.png)
 
 设计之后的Prompt提示词，这里涉及了大量的专业名词和健康指标，**实际开发中需要找产品经理协助**
 
@@ -481,7 +481,7 @@ INSERT INTO `health_assessment`(`system_score`,`nursing_level_name`,`gender`,`to
 
 参数有两个：身份证号和体检报告**文件**
 
-![图片展示的是智能评估中上传体检报告弹窗界面。弹窗内有“老人姓名”“老人身份证号”“体检单位”“体检报告”等输入框，其中“体检报告”下方有“点击上传”按钮，提示上传pdf文件且大小在60M以内。弹窗右上角有“×”关闭按钮。图片右侧有红色箭头指向“点击上传”按钮，下方文字说明“选择文件之后，触发上传接口调用”。该图片与文档中上传体检报告需求相关，直观呈现了上传体检报告的操作界面及关键操作步骤。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/ATwDblAhWoU4cFxcpuvcNCiznng.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/ATwDblAhWoU4cFxcpuvcNCiznng.png)
 
 #### 思路回顾
 
@@ -889,7 +889,7 @@ private String getPrompt(HealthAssessmentDto healthAssessmentDto) {
 
 为了更方便的解析AI的json结果，我们可以从当天资料中获取对应的vo类
 
-![该图片展示了五个后缀为.java的Java类文件，分别为AbnormalDataVo.java、HealthAssessmentVo.java、HealthReportVo.java、RiskDistributionVo.java、SystemScore.java。这些类文件是智能评估相关的工具类，用于辅助解析千帆大模型返回的JSON结果，适配体检报告智能评测功能的业务需求，对应文档中提及的“从当天资料中获取对应的vo类”的内容，为体检报告的异常数据、健康评测结果等信息的存储和处理提供了对应的载体类。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/VTynbhVKrorjTyxxX2KcMUcVnVb.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/VTynbhVKrorjTyxxX2KcMUcVnVb.png)
 
 ## 作业
 

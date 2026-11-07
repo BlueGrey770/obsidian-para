@@ -31,7 +31,7 @@ aliases:
 
 多表查询可以分为：
 
-![图片是一个Venn图，展示了两个集合A和B的关系。图中A和B分别用蓝色和绿色椭圆表示，A与B的交集部分用绿色填充，标注为AnB。该图与文档中“连接查询”部分上下文相关，用以直观呈现内连接的概念，即内连接相当于查询A、B交集部分数据，即A与B的交集部分。](../../../../Attachments/development/databases/shu-ju-ku-jin-jie/ErsUb8EVGo9EdFxwTqQcjzXbn8c.png)
+![](../../../../Attachments/development/databases/shu-ju-ku-jin-jie/ErsUb8EVGo9EdFxwTqQcjzXbn8c.png)
 
 1. 连接查询
 

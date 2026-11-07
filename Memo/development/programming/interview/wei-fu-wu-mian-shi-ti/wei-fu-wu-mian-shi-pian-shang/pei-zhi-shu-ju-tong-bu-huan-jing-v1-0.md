@@ -78,7 +78,7 @@ max_binlog_cache_size = 512m
 
 `SHOW VARIABLES LIKE 'log_bin';`
 
-![这张图片展示了执行`SHOW VARIABLES LIKE 'log_bin';`命令后的查询结果，表格的两列分别为Variable_name和Value。表格内仅一行数据，Variable_name的值为log_bin，对应的Value为ON。该结果用于验证MySQL的binlog模式是否成功开启，当log_bin的Value为ON时，说明已按要求开启了Binlog写入功能，与文档中配置MySQL主从同步的操作要求相对应。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/WUNbbF5tboUG9xxwESQc2Zp0nlU.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/WUNbbF5tboUG9xxwESQc2Zp0nlU.png)
 
 ON表示开启binlog模式。
 
@@ -86,7 +86,7 @@ ON表示开启binlog模式。
 
 `show variables like 'binlog_format';`
 
-![图片展示的是MySQL服务器中`binlog_format`变量的值为`ROW`的查询结果。表格中包含两列，分别是`Variable_name`和`Value`，其中`Variable_name`列显示为`binlog_format`，`Value`列显示为`ROW`。该图片与文档中配置Mysql主从同步的内容相关，用于说明当`binlog_format`的值为`row`时，表示MySQL服务器当前配置为使用行级别的二进制日志记录，这对于数据库复制和数据同步更为安全。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/ETopbpVkPoVo8SxZDl9cYdNenZe.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/ETopbpVkPoVo8SxZDl9cYdNenZe.png)
 
 当 `binlog_format` 的值为 `row` 时，表示 MySQL 服务器当前配置为使用行级别的二进制日志记录，这对于数据库复制和数据同步来说更为安全，因为它记录了对数据行的确切更改。
 
@@ -96,13 +96,13 @@ ON表示开启binlog模式。
 
 `SHOW BINARY LOGS;`
 
-![图片展示了MySQL的binlog日志文件列表。表格包含Log_name（日志名称）、File_size（文件大小）和Encrypted（加密）三列。Log_name列显示了多个binlog文件名，如mysql-bin.000001等，File_size列显示了各文件大小，Encrypted列显示所有文件为No。该图片与上文“查看binlog日志文件列表”相关，直观呈现了MySQL当前binlog日志文件的名称、大小及加密状态。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/F1f6b7RwEoOfsFxbRyxc4XcPnFe.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/F1f6b7RwEoOfsFxbRyxc4XcPnFe.png)
 
 - 查看当前正在写入的binlog文件：
 
 `SHOW MASTER STATUS;`
 
-![图片展示了MySQL中查看当前正在写入的binlog文件的命令执行结果。结果中显示binlog文件名为“mysql-bin.000008”，位置为156。该图片与上文配置Mysql主从同步时查看当前正在写入的binlog文件的内容相关，通过执行`SHOW MASTER STATUS;`命令，可获取到当前正在写入的binlog文件信息，以确保数据同步环境配置的准确性。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/YnCVbqzGqoTUEzx9ybUcG8aQnic.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/YnCVbqzGqoTUEzx9ybUcG8aQnic.png)
 
 ### 1.2 安装Canal（**使用下发虚拟机无需安装**）
 
@@ -494,19 +494,19 @@ canal.mq.dynamicTopic=canal-mq-hmall-item:hm-item\\.item_sync
 
 创建exchange.canal-hmall交换机：
 
-![该图片是RabbitMQ的交换机配置界面，用于创建新的交换机。界面中Virtual host设为/hmall，交换机名称为exchange.canal-hmall，类型选择topic，Durability设为Durable，Auto delete和Internal均设为No。界面下方还提供了Arguments配置栏，以及Alternate exchange配置选项，左下角有Add exchange的操作按钮，这一界面对应了文档中配置Canal+RabbitMQ时创建exchange.canal-hmall交换机的步骤。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/QTiUbn4oMoCCyKxNVqQcB1Gdnph.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/QTiUbn4oMoCCyKxNVqQcB1Gdnph.png)
 
 创建队列：canal-mq-hmall-item
 
-![图片展示的是rabbitMQ配置队列的界面。在“Add a new queue”区域，Virtual host下拉框选中“/hmall”，Type下拉框选中“Classic”，Name输入框填写“canal-mq-hmall-item”，Durability下拉框选中“Durable”，Auto delete下拉框选中“No”，Arguments区域有多个选项，如Message TTL、Auto expire等，底部有“Add queue”按钮。该图片与上文配置Canal+RabbitMQ中创建队列的内容相关，直观呈现了创建队列时的参数设置界面。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/JdSzbenapoASIex07rOcgj14nIc.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/JdSzbenapoASIex07rOcgj14nIc.png)
 
 绑定交换机：
 
-![该图片展示了RabbitMQ交换机的绑定配置界面，对应的交换机是virtual host为/hmall的exchange.canal-hmall。在该界面的绑定配置区域，用户需完成将该交换机与指定队列绑定的操作，其中To queue下拉框已选定目标队列名称为canal-mq-hmall-item，Routing key输入框中填写了相同的canal-mq-hmall-item值，图中这两个输入项被红框标注，界面底部还有用于确认绑定的Bind按钮，此界面对应文档中进入rabbitMQ配置交换机和队列后进行绑定的操作步骤。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/XaAjbVZgCo6jecxabX5cMl7KnpH.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/XaAjbVZgCo6jecxabX5cMl7KnpH.png)
 
 绑定成功：
 
-![这张图片展示的是RabbitMQ中交换机与队列的绑定配置界面，核心为exchange.canal-hmall交换机的绑定详情，该交换机处于虚拟主机/hmall下。界面的Bindings区域清晰显示，该交换机绑定了名称为canal-mq-hmall-item的队列，绑定使用的路由键为canal-mq-hmall-item，绑定操作的相关按钮也在界面中呈现，此配置与上下文内容对应，是为实现hm-item数据库item_sync表数据的同步，完成交换机与对应队列绑定的配置界面呈现。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/D360bY0cvoUdlIxF6BVcHgB2nCj.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/D360bY0cvoUdlIxF6BVcHgB2nCj.png)
 
 
 
@@ -518,7 +518,7 @@ canal.mq.dynamicTopic=canal-mq-hmall-item:hm-item\\.item_sync
 
 修改hmall-item数据库的item_sync表的数据，稍等片刻查看canal-mq-hmall-item队列，如果队列中有的消息说明同步成功，如下图：
 
-![这张是RabbitMQ的队列管理页面，展示了名为canal-mq-hmall-item的队列信息。该队列所属的虚拟主机为/hmall，类型为classic，状态为idle，当前Ready消息数为1，Unacked消息数为0，消息总数为1，消息流入速率为0.00/s，符合测试数据同步成功后的预期状态，对应文档中测试步骤里同步成功后队列存在消息的情况。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/I2hWbgGSBoJykaxQhkgcQPoknXe.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/I2hWbgGSBoJykaxQhkgcQPoknXe.png)
 
 如果没有同步到 MQ参考常见问题中“数据不同步”进行解决。
 
@@ -668,7 +668,7 @@ docker start canal
 
 进入MQ的管理控制台，进入要清理消息的队列，通过purge功能清理消息：
 
-![这张图片展示了MQ管理控制台中的一个操作按钮区域，区域上方标注有“Purge”字样，下方是一个醒目的橙色按钮，按钮上标注有“Purge Messages”的文字，该按钮是用于清理MQ队列消息的功能入口，对应文档中提及的清理MQ同步消息的操作步骤。](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/F2cNb5GLToTxXtxGM43csjhlndf.png)
+![](../../../../../../Attachments/development/programming/interview/wei-fu-wu-mian-shi-ti/wei-fu-wu-mian-shi-pian-shang/F2cNb5GLToTxXtxGM43csjhlndf.png)
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 08 面试知识库 / 微服务面试题 / 微服务面试篇（上） / 配置数据同步环境v1.0 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/QgsHwSqFDitNVqkZ9a4cxQVznhh)

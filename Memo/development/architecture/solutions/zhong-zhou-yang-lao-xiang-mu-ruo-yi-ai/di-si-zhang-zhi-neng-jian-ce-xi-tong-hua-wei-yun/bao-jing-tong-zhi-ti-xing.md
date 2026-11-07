@@ -11,7 +11,7 @@ aliases:
 
 当设备中的数据触发了报警规则之后，需要及时提醒相关人员来进行处理，为了更快的让相对应的负责人收到消息，一旦监测到有异常数据，可以在当前后台管理系统中进行通知，如下效果：
 
-![图片展示的是后台管理系统中设备数据触发报警规则后的报警提醒效果。弹窗标题为“报警提醒”，内容显示接入位置为2楼201,201-1，所属产品是睡眠监测带，功能名称为心率，数据值为54。下方有“9秒后，弹窗自动关闭”提示，底部有“取消”和“查看”两个按钮。该图片与文档中需求说明部分对应，直观呈现了设备数据触发报警规则后在后台管理系统中进行通知的效果。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/LthYbBp8douJ9txUj7nce438nDf.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/LthYbBp8douJ9txUj7nce438nDf.png)
 
 要想实现这个功能，我们需要使用一个符合该场景的技术来解决，就是下面要讲的websocket
 
@@ -29,7 +29,7 @@ WebSocket 是基于 TCP 的一种新的**网络协议**。它实现了浏览器�
 - WebSocket支持**双向**通信
 - HTTP和WebSocket底层都是TCP连接
 
-![这张图对比展示了HTTP和WebSocket两种协议的通信流程，左侧为HTTP的通信过程，仅包含客户端向服务器发送请求、服务器向客户端返回响应的单向请求-响应交互，且通信过程多次重复请求与响应；右侧为WebSocket的通信过程，首先完成握手与确认后，实现了双向通信，最后才结束连接。它直观呈现了两种协议的核心差异，即HTTP为单向短连接，WebSocket支持双向长连接，与文档中对两种协议的特性对比内容相呼应，帮助读者更清晰理解两者的区别。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/AHW9bheACoqEqFx8B19cXuWTnke.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/AHW9bheACoqEqFx8B19cXuWTnke.png)
 
 **思考：**既然WebSocket支持双向通信，功能看似比HTTP强大，那么我们是不是可以基于WebSocket开发所有的业务功能？
 
@@ -47,15 +47,15 @@ WebSocket 是长连接，受网络限制比较大，需要处理好重连
 
 1). 视频弹幕
 
-![这是一张黑马程序员Java面试专题教学视频的播放界面截图，视频标题为“新版Java面试专题视频教程，java八股文面试全套真题+深度详解（含大厂高频面试...”，当前播放进度为07:42，总时长08:53，清晰度设置为720P高清。界面顶部、文字旁和右侧都带有“加油”的相关文案，核心文字内容是“多一句没有，少一句不行，用更短时间，教会更实用的技术！让千万学生少走弯路！”，画面右下角还展示了对应课程示例内容的缩略小图，整体是面向Java面试备考的教学类视频界面。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/OObYbI9efoIjpuxcf0JcENpTn2g.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/OObYbI9efoIjpuxcf0JcENpTn2g.png)
 
 2). 网页聊天
 
-![该图片展示了传智教育官网的界面，画面右侧显示了网站的在线客服弹窗，弹窗内有用户与客服的对话内容，包括用户询问Java相关问题、客服答复的文字信息。画面的主体区域是传智教育JavaEE高级软件工程师课程的宣传内容，标注了“JavaEE V13.0新升级”“五大专技 轻松过招职场”等课程推广信息，页面顶部还有“男女成团·报名有礼”的活动横幅，整体场景对应文档中提及的网页聊天这一WebSocket的使用场景，体现了网页端的实时交互功能。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Tsg0bxV0jobPyyxvbQ4cnJl4nlh.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Tsg0bxV0jobPyyxvbQ4cnJl4nlh.png)
 
 3). 体育实况更新
 
-![图片展示的是NBA比赛实时比分界面。画面中显示勇士队（GSW）83分，湖人队（LAL）90分，第三节剩余7分27秒。比赛于2023年10月14日10:00开赛，球馆为加密网球馆，上座人数为0。界面下方有总分、数据直播、文字直播、手机直播、比赛战报等选项。该图片与上下文介绍的体育实况更新使用场景相契合，直观呈现了体育赛事实时比分的展示形式。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/ANOub2AUHopjLmxKoLcc4c7qnob.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/ANOub2AUHopjLmxKoLcc4c7qnob.png)
 
 ### 入门案例
 
@@ -63,11 +63,11 @@ WebSocket 是长连接，受网络限制比较大，需要处理好重连
 
 实现浏览器与服务器全双工通信。浏览器既可以向服务器发送消息，服务器也可主动向浏览器推送消息。
 
-![这张图片展示了WebSocket报警通知相关的客户端运行效果界面，界面包含输入框、“发送消息”和“关闭连接”两个按钮。界面显示有“连接成功”的提示，后续是服务端定时向客户端推送的内容，每条内容都为“Hello Client, Current Server Time:”加上具体的时间戳，从2023-10-14T13:46:40到13:47:45共有多条推送记录，界面末尾还有“close”标识，体现出WebSocket连接后的数据交互情况。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/MTekbD9yzoKjbWxLdKKc4oGZnLf.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/MTekbD9yzoKjbWxLdKKc4oGZnLf.png)
 
 （2）流程如下
 
-![这张图展示了WebSocket报警通知提醒的交互流程，流程始于橙色的浏览器与蓝色的服务端（server）先进行握手操作，服务端确认后，浏览器向服务端发起携带数据的请求，服务端完成主从数据推送至浏览器的操作，最后双方完成连接关闭，该图对应文档中说明的WebSocket交互流程，清晰呈现了客户端与服务端在Websocket连接及通信中的完整环节。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/IoT8b6EPxoshDvxNAmnct9TQnsh.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/IoT8b6EPxoshDvxNAmnct9TQnsh.png)
 
 - 需要准备客户端，可以在浏览器上编写客户端
 - 服务端，使用java代码实现，启动一个服务
@@ -309,11 +309,11 @@ public class MessageTask {
 
 客户端的效果：
 
-![图片展示的是Websocket客户端的效果界面。界面上方有一个输入框，显示“hello”，旁边有“发送消息”和“关闭连接”按钮。下方文字区域显示“连接成功”，并有多个“Hello Client, Current Server Time”信息，时间从2023 - 10 - 14 14:08:20.003118900到2023 - 10 - 14 14:08:50.002298100不等。该图片与文档中介绍Websocket客户端功能实现的内容相关，直观呈现了客户端成功连接后，服务端推送数据及客户端接收显示的效果。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Y9ZvbLSB1oWhVxxJTLqcXncxnce.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Y9ZvbLSB1oWhVxxJTLqcXncxnce.png)
 
 服务端接收到的数据，在控制台打印
 
-![图片展示了WebSocket服务端接收到的数据在控制台的打印信息。上方显示“com.itheima.config.WebSocketServer：有客户端连接到了服务器，mnhowixntzk”，表明有客户端连接到服务器。下方显示“com.itheima.config.WebSocketServer：接收到了客户端mnhowixntzk发来的消息：hello”，表明服务器接收到客户端发送的消息“hello”。该图片与文档中介绍WebSocket服务端功能实现的内容相关，直观呈现了服务端接收到客户端数据后的打印效果。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/VFxWbskMcobepAxKHocc9hCnnde.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/VFxWbskMcobepAxKHocc9hCnnde.png)
 
 ## 功能实现
 
@@ -739,7 +739,7 @@ private List<AlertData> insertAlertData(Collection<Long> allUserIds, DeviceData 
 
 放行代码
 
-![这张图片展示的是Spring Security的安全配置代码页面，内容为设置请求的权限规则，其中用红色框和箭头重点标注了需放行的路径“/ws/**”。在配置的请求授权规则中，针对不同路径设置了对应权限，明确了需要放行的请求内容，该配置的作用是放开对“/ws”相关请求的权限，以此配合WebSocket功能的实现，确保前端能够与后端建立WebSocket连接，这正是文档中提到的在Spring Security中对ws请求进行放行的具体代码实现。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Y7DPbqRpsomMSTxvucdcoOZDnBh.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Y7DPbqRpsomMSTxvucdcoOZDnBh.png)
 
 
 
@@ -749,7 +749,7 @@ private List<AlertData> insertAlertData(Collection<Long> allUserIds, DeviceData 
 
 修改前端的ws的连接地址：
 
-![图片展示了在VUE3项目中修改前端ws连接地址的操作。左侧是项目的文件结构，右侧是.env.test文件内容。文件中VITE_APP_SOCKET_URL变量被修改为“ws://localhost:8080”，并有红色箭头指向该变量及文件。图片与上下文的关系是，上下文提到用资料中提供的index.vue替换src/layout目录下的index.vue，修改前端的ws连接地址，此图直观呈现了修改后的.env.test文件内容，强调了两个文件都需修改为后端服务地址。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/MKVubiY45o3Adwx9RtwcH7JDnkh.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/MKVubiY45o3Adwx9RtwcH7JDnkh.png)
 
 **注意：是ws不是wss**
 

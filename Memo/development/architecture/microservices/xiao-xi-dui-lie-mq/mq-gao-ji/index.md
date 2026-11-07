@@ -8,7 +8,7 @@ aliases:
 
 ## **如何确保MQ消息的可靠性**
 
-![这张图展示了RabbitMQ的消息流转流程，从左到右依次是消息生产者Publisher，它负责向中间的交换机Exchange发布消息；Exchange接收到消息后，会将消息路由分配给两个不同的消息队列Queue，其中下方的Queue还会对应分发给两个消费者Consumer，上方的Queue对应一个消费者Consumer。这个流程和文档中提及的MQ消息可能因未找到合适Exchange或Queue导致丢失的内容相呼应，直观呈现了消息从生产到传递至消费端的路径。](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/mq-gao-ji/AxJKbO1WpohA63xGZJCc8yDmnvd.png)
+![](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/mq-gao-ji/AxJKbO1WpohA63xGZJCc8yDmnvd.png)
 
 消息从生产者到消费者的每一步都可能导致消息丢失，比如
 
@@ -52,7 +52,7 @@ spring:
 
 RabbitMQ提供了Publisher Confirm和Publisher Return两种确认机制：
 
-![图片展示了RabbitMQ中Publisher Confirm和Publisher Return两种确认机制的示意图。左侧为publisher，中间有topic exchange和exchange2，右侧有queue1（non durable）和queue2（durable）。当消息投递成功时，通过Publisher Confirm返回ack；若路由失败，通过Publisher Return回调方法返回异常信息。该图与文档中介绍的生产者确认机制内容相关，直观呈现了两种确认机制在消息投递过程中的作用。](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/mq-gao-ji/TvQJbuu3Wo9R6oxZ2SscR14gnbt.png)
+![](../../../../../../Attachments/development/architecture/microservices/xiao-xi-dui-lie-mq/mq-gao-ji/TvQJbuu3Wo9R6oxZ2SscR14gnbt.png)
 
 - Publisher Return：消息投递成功但路由失败时调用回调方法返回异常信息
 - Publisher Confirm：消息投递成功返回ack，投递失败返回nack

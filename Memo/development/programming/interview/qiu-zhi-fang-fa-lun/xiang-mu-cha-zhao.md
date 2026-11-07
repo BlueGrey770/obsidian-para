@@ -7,9 +7,9 @@ aliases:
 
 # 项目查找
 
-![这张图片展示的是“项目查找”相关的常见疑问内容，分为两个核心疑问板块。其中疑问1为“为什么要找项目呢？”，对应说明需通过下载APP或打开小程序、体验业务功能来为写项目做准备；疑问2为“为什么要写表述文档中呢？”，其核心原因包括锻炼归纳能力、向面试官证明项目真实性、培养面试自信心等，还标注了“内容要完善”“平时多背诵”等具体要求，重点强调了项目找取与表述文档撰写对于丰富简历、通过面试的重要性。](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/YBtXbOkQ2oXPnqxtgVqccmevnAb.png)
+![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/YBtXbOkQ2oXPnqxtgVqccmevnAb.png)
 
-![这张图片展示了关于项目查找的相关内容，对应文档中“项目查找”的相关疑问解答部分，涵盖三个核心疑问的解答：疑问3明确说明简历项目数量一般为5个，其中至少1个为至少业复有余的主项目，其余为副项目，主项目要求有一定难度和技术水平，为简历中排在首个的项目，且提及工作年限统一按3年经验相关要求；疑问4解释了要找多个不同类型项目的原因，一是防止简历同质化程度过高，二是外包公司项目多为多种类型，多为小型团队项目；疑问5解答一个项目足够，主项目是技术含量最高的内容，为面试核心，整理副项目也十分高效，且副项目也需提前准备。](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/LwK7bu67ioy2OhxlSIWcZJZenOf.png)
+![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/LwK7bu67ioy2OhxlSIWcZJZenOf.png)
 
 ### **分类目录**
 

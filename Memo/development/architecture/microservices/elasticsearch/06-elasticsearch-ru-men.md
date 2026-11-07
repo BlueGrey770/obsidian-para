@@ -33,11 +33,11 @@ aliases:
 
 由于数据库模糊查询不走索引，在数据量较大的时候，查询性能很差。黑马商城的商品表中仅仅有不到9万条数据，基于数据库查询时，搜索接口的表现如图：
 
-![这张图片展示了黑马商城的搜索页面及相关的接口请求性能数据，上方是搜索框输入“电视”后的商品搜索界面，显示了商品分类、品牌筛选栏；下方是开发者工具的网络请求面板，列出了搜索相关的请求信息，包括每个请求的耗时，耗时部分用红框突出显示，数值在132到137毫秒之间，整体呈现了数据库模糊查询相关的接口性能表现，与文档中提到的基于数据库查询时搜索接口的性能情况对应。](../../../../../Attachments/development/architecture/microservices/elasticsearch/S4XubC8KNoHdPUx1Jg2cCu3snqe.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/S4XubC8KNoHdPUx1Jg2cCu3snqe.png)
 
 改为基于搜索引擎后，查询表现如下：
 
-![图片展示的是黑马商城商品表搜索结果页面。搜索框内输入“电视”，下方分类、品牌等筛选项显示，结果列表中“listKey”等名称对应的“时间”列用红色框突出显示，数值为28 - 25毫秒不等。该图片与上下文紧密相关，用于直观呈现基于搜索引擎查询商品表现，与数据库查询表现对比，以说明搜索引擎性能不受数据量增加影响，查询表现更优。](../../../../../Attachments/development/architecture/microservices/elasticsearch/K9JvbcYusoflgbxARRpcM0idnIb.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/K9JvbcYusoflgbxARRpcM0idnIb.png)
 
 需要注意的是，数据库模糊查询随着表数据量的增多，查询性能的下降会非常明显，而搜索引擎的性能则不会随着数据增多而下降太多。目前仅10万不到的数据量差距就如此明显，如果数据量达到百万、千万、甚至上亿级别，这个性能差距会非常夸张。
 
@@ -96,22 +96,22 @@ Elasticsearch是一款非常强大的开源搜索引擎，支持的功能非常�
 
 <grid>
 <column width-ratio="0.500000">
-![图片展示了Elasticsearch代码搜索功能的界面。左侧为过滤选项，包括Code、Repositories、Issues等，其中Code选项被选中，显示6.1M条代码。右侧是代码搜索结果，上方代码行204处有红色箭头指向，标注“Version tmp = new Version(id, TransportVersion.CURRENT, org.apache.lucene.util.Version.LATEST);”，下方代码行70处也有红色箭头，标注“Collections.sort(digits);”。该图片直观呈现了Elasticsearch代码搜索功能，与文档中介绍其支持代码搜索功能的内容相契合。](../../../../../Attachments/development/architecture/microservices/elasticsearch/C7zfbeVpwoxocqxZEbScabddn6e.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/C7zfbeVpwoxocqxZEbScabddn6e.png)
 **代码搜索**
 </column>
 <column width-ratio="0.500000">
-![图片展示的是一个商品搜索界面，搜索框内输入“iphone”，下方显示了多款iPhone手机及相关配件的图片、价格、评价等信息。其中，iPhone 12（A2412）128GB紫色、iPhone 11（A2223）128GB白色、iPhone 12 5G全网通双卡手机（A2412）128GB等商品被红色框突出显示。该图片与文档中介绍Elasticsearch支持的商品搜索功能上下文对应，直观呈现了Elasticsearch在商品搜索方面的应用效果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/GH1xbEU44ooAAcxRN4LcejQenrh.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/GH1xbEU44ooAAcxRN4LcejQenrh.png)
 **商品搜索**
 </column>
 </grid>
 
 <grid>
 <column width-ratio="0.500000">
-![这张图片展示的是谷歌搜索结果页面，搜索关键词为“illegalargumentexception”。页面中显示了多个与Java的IllegalArgumentException异常相关的搜索结果条目，包括来自stackoverflow.com的问答内容，以及airbrake.io的相关博客内容。这些搜索结果对应了文档中所列举的Elasticsearch支持的代码搜索、解决方案搜索等功能，说明搜索类工具可以实现这类与技术问题、技术方案相关的内容检索。](../../../../../Attachments/development/architecture/microservices/elasticsearch/M5RZbxx0FoIIZyxuMtmclvGKnCh.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/M5RZbxx0FoIIZyxuMtmclvGKnCh.png)
 **解决方案搜索**
 </column>
 <column width-ratio="0.500000">
-![图片展示的是高德打车界面，显示从“黑马程序员训练营(上海校区)”出发，目的地为“航头路/航都路(路口)东南侧”，并推荐了附近适合的上车点。界面下方有“五一出行必看知识点！点我”提示，还显示上海市今日天气为阴，17℃~23℃。图片与上下文的关系是，通过展示实际打车场景，形象地说明了Elasticsearch支持的“地图搜索”功能，即在地图上进行搜索操作。](../../../../../Attachments/development/architecture/microservices/elasticsearch/M4e3bX8TvouBTMx6v1hcKxg1nJf.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/M4e3bX8TvouBTMx6v1hcKxg1nJf.png)
 **地图搜索**
 </column>
 </grid>
@@ -154,7 +154,7 @@ select * from tb_goods where title like '%手机%';
 
 那搜索的大概流程如图：
 
-![这张图展示了执行`select * from tb_goods where title like "%手机%"`时的搜索流程，与上下文描述的SQL语句搜索流程对应。图中左侧是包含id、title、price字段的商品数据列表，核心流程为：从开始后进行数据搜索，接着逐条获取表内数据，随后判断该数据的title字段是否包含“手机”。若不包含则直接丢弃，如示例中id为3、title为“华为小米充电器”的数据被标红叉丢弃；若包含则存入结果集，最终的结果集是包含id2、title“华为手机”和id1、title“小米手机”的商品数据。](../../../../../Attachments/development/architecture/microservices/elasticsearch/DMCsbyRvDoZDMLx8gTPcHZo3nSF.jpg)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/DMCsbyRvDoZDMLx8gTPcHZo3nSF.jpg)
 
 说明：
 
@@ -217,7 +217,7 @@ select * from tb_goods where title like '%手机%';
 
 倒排索引的**搜索流程**如下（以搜索"华为手机"为例），如图：
 
-![图片展示了搜索“华为手机”时的倒排索引搜索流程。首先对条件分词得到词条“华为”“手机”，再根据词条到词条列表中查询得到对应文档id，最后根据文档id查询文档，存入结果集。图中还呈现了倒排索引表，包含词条及对应文档id，如“小米”对应文档id为1、3、4等；以及正向索引表，包含id、title、price等信息，如id为1的文档title为小米手机，price为3499。该图与上下文紧密相关，直观呈现了搜索流程及数据对应关系。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Wpyyb3oXtopAhMx0eNcc402ynBg.jpg)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Wpyyb3oXtopAhMx0eNcc402ynBg.jpg)
 
 流程描述：
 
@@ -251,7 +251,7 @@ Elasticsearch是由elastic公司开发的一套搜索引擎技术，Elasticsearc
 
 <bookmark name="www.elastic.co" href="https://www.elastic.co/cn/elasticsearch/"></bookmark>
 
-![这张图片展示了Elasticsearch官方网站的页面内容，页面顶部带有elastic的品牌标识，设有“Platform”“解决方案”等导航选项，还有“开始免费试用”“联系销售人员”的操作按钮。页面核心区域明确标注“Elasticsearch”，并配有文字说明，指出Elasticsearch是免费且开放的Elastic Stack的核心所在，同时介绍其作为分布式、RESTful风格的搜索和数据分析引擎，具备集中存储数据、快速完成搜索、微调相关性、强大分析及轻松缩扩规模的能力，与上下文介绍Elasticsearch相关内容的信息相契合。](../../../../../Attachments/development/architecture/microservices/elasticsearch/GkC0bbJX4oZfCkx3fMVcNMxAnue.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/GkC0bbJX4oZfCkx3fMVcNMxAnue.png)
 
 它是elastic技术栈中的一部分，整套技术栈被称为ELK，经常用来做日志收集、系统监控和状态分析等等。
 
@@ -269,7 +269,7 @@ ELK 是指一套流行的技术栈，用于构建高级的日志收集、分析�
 
 
 
-![这是Elasticsearch相关的Fleet System仪表盘界面，左侧展示按主机名统计的Fleet系统事件柱状图，横轴为时间，纵轴为事件数量，不同颜色区分两台主机。右侧是按主机名和进程划分的环形图，用于展示对应主机的进程分布。下方的Fleet系统日志表格，按时间倒序列出日志条目，包含时间、主机名、进程名称及具体日志信息，整体用于呈现Fleet系统的运行事件与日志数据，辅助运维人员监控系统状态。](../../../../../Attachments/development/architecture/microservices/elasticsearch/YYLhbJOV9oBqPexqIhkc6F6anQh.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/YYLhbJOV9oBqPexqIhkc6F6anQh.png)
 
 
 
@@ -356,7 +356,7 @@ docker run --name kibana \
 
 启动kibana容器成功，在浏览器输入地址访问：`http://192.168.101.68:5601`
 
-![图片展示的是Elastic的欢迎页面。页面上方有“elastic”标志及搜索栏。下方有四个彩色板块，分别代表“Enterprise Search”“Observability”“Security”“Analytics”，每个板块配有图标和简短描述。如“Enterprise Search”板块介绍使用精炼的API和工具创建搜索体验；“Analytics”板块介绍探索、可视化和分析数据。页面底部提示可通过添加集成开始工作，可从应用或服务收集数据，或上传文件。该图片与文档中“安装Kibana后在浏览器输入地址访问http://192.168.101.68:5601”上下文对应，展示了访问后的页面内容。](../../../../../Attachments/development/architecture/microservices/elasticsearch/HHtjbqoVAokVFIxOZqVc0cuknXg.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/HHtjbqoVAokVFIxOZqVc0cuknXg.png)
 
 
 
@@ -392,7 +392,7 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 
 <grid>
 <column width-ratio="0.500000">
-![图片展示了一张表格，用于说明Elasticsearch中文档存储的JSON格式。表格包含id（索引）、title、price三列，分别对应商品的编号、名称和价格。其中，id列以1、2、3、4等递增，title列有小米手机、华为手机、华为小米充电器、小米手环等商品名称，price列对应商品价格。该图与上下文紧密相关，直观呈现了文档数据被序列化为JSON格式后存储在Elasticsearch中的情况，帮助理解文档数据在ES中的存储形式。](../../../../../Attachments/development/architecture/microservices/elasticsearch/NhaybWHmPo8TcWxRxxYcfUvhnIh.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/NhaybWHmPo8TcWxRxxYcfUvhnIh.png)
 </column>
 <column width-ratio="0.500000">
 ```JSON
@@ -429,7 +429,7 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 
 随着业务发展，需要在es中存储的文档也会越来越多，比如有商品的文档、用户的文档、订单文档等等：
 
-![这张图展示了6条JSON格式的文档数据，可分为三类：一是id为103的“麻子”、id为102的“李四”的用户文档；二是id为10的订单文档，含用户ID、商品ID、总费用信息；三是id为1、2、3的“小米手机”“华为手机”“三星手机”的商品文档，含商品名称和价格信息。这些不同类型的文档，正好对应文档中提及的需要划分到不同索引的商品、用户、订单类文档，直观体现了将相同类型文档集中管理的思路。](../../../../../Attachments/development/architecture/microservices/elasticsearch/IFB4beivzopBG6xtxalcHZaOnvb.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/IFB4beivzopBG6xtxalcHZaOnvb.png)
 
 所有文档都散乱存放显然非常混乱，也不方便管理，因此，我们要将相同类型的文档集中在一起管理，称为**索引（Index）**。例如：
 
@@ -523,7 +523,7 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 
 如图：
 
-![这张图是Elasticsearch与MySQL基础概念的对应关系示意图，直观展示了两者各概念的映射关系。图中左侧是商品索引的结构示例，以及对应关系的源数据表格，右侧是分类整理的概念对照说明表，表头分为MySQL、Elasticsearch及说明三列。其中，蓝色连线将MySQL的Table与Elasticsearch的Index对应，粉色连线将MySQL的Row与Elasticsearch的Document对应，绿色连线将MySQL的Column与Elasticsearch的Field对应；此外还标注了Schema对应Mapping、SQL对应DSL的关系，与上下文的概念对比内容完全匹配，清晰呈现了两类工具的核心概念对应逻辑。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Y1BybAvfpouYshxCwnzcnnwBnYd.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Y1BybAvfpouYshxCwnzcnnwBnYd.png)
 
 
 
@@ -542,7 +542,7 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 - 对查询性能要求较高的搜索需求，使用elasticsearch实现
 - 两者再基于某种方式，实现数据的同步，保证一致性
 
-![图片展示了MySQL与Elasticsearch结合使用的工作流程。左侧为用户操作端，通过CRUD操作与中间服务器交互。中间服务器接收写操作，将其同步至MySQL数据库；接收搜索请求，将数据同步至Elasticsearch。MySQL与Elasticsearch间有数据同步箭头。该图与上下文紧密相关，直观呈现了在企业中MySQL与Elasticsearch结合使用，分别处理写操作和搜索需求，再通过数据同步保证一致性的工作机制。](../../../../../Attachments/development/architecture/microservices/elasticsearch/RWLAbS2pRoq3LPx0Gi7cF3X3nKh.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/RWLAbS2pRoq3LPx0Gi7cF3X3nKh.png)
 
 
 
@@ -877,7 +877,7 @@ docker restart es
 
 找到课前资料提供的ik分词器插件，
 
-![这张图展示了ES插件目录下的内容，目录路径为`es安装\\es\\plugins`，该路径是安装IK分词器时需要上传ik文件夹的目标位置；图中明确显示了名为“ik”的文件夹，对应文档中提到的将ik目录上传至虚拟机`/data/soft/es7.17.7/xzb/plugins`目录的操作对象，直观呈现了安装IK分词器前目标路径下的关键文件，是IK分词器安装步骤中确认文件存放位置的直观展示。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Qf9kbq5AhozeQKx3J34cJmHdnhg.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Qf9kbq5AhozeQKx3J34cJmHdnhg.png)
 
 将ik目录上传至虚拟机的/data/soft/es7.17.7/xzb/plugins这个目录：
 
@@ -1096,7 +1096,7 @@ POST /_analyze
 cd /data/soft/es7.17.7/xzb/plugins/ik/config/
 ```
 
-![图片展示了在Linux系统下，以root用户身份进入Elasticsearch插件IK分词器的config目录并列出文件内容的操作过程。首先，使用“pwd”命令显示当前目录为“/data/soft/es7.17.7/xzb/plugins/ik/config”，接着使用“ll”命令列出该目录下的文件，包括IKAnalyzer.cfg.xml配置文件，以及多个以“extra_”开头的字典文件等。此图与上下文介绍的IK分词器配置相关，直观呈现了配置文件及字典文件所在位置。](../../../../../Attachments/development/architecture/microservices/elasticsearch/NbpRb1n92oLpqQx9zQ9cTTfkntc.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/NbpRb1n92oLpqQx9zQ9cTTfkntc.png)
 
 注意，如果采用在线安装的通过，默认是没有config目录的，需要把课前资料提供的ik下的config上传至对应目录。
 
@@ -1141,7 +1141,7 @@ remote_ext_stopwords：远程扩展停用词
 
 在IKAnalyzer.cfg.xml文件中配置ext.dic。
 
-![图片展示了IKAnalyzer.cfg.xml文件内容，其中关键部分为红色框标注的<entry key="ext_dict">ext.dic</entry>。这与上下文介绍的在IK分词器的config目录新建`ext.dic`文件，以及在IKAnalyzer.cfg.xml文件中配置`ext.dic`的内容相呼应，表明已正确配置本地扩展词典文件，为后续测试奥利给正确分词做准备。](../../../../../Attachments/development/architecture/microservices/elasticsearch/MZVLbxVWLo6X7cxxlhfc367rnKf.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/MZVLbxVWLo6X7cxxlhfc367rnKf.png)
 
 
 
@@ -1233,11 +1233,11 @@ IK分词器如何拓展词条？
 
 打开Kibana，进入DevTools，如下图：
 
-![这张图片展示的是Elastic平台的Web界面，左上角的汉堡菜单按钮有红色箭头指向，点击后展开了侧边栏。侧边栏中，Management分类下的Dev Tools选项被红色箭头标注出来，界面右侧是该平台的功能卡片区域，分别显示了Enterprise Search、Observability、Security三个核心功能模块，卡片带有对应样式的图标与功能简介文本。这张图片对应的是文档中打开Kibana进入DevTools的操作步骤，直观呈现了进入DevTools的界面路径，辅助完成Elasticsearch创建索引的前置操作。](../../../../../Attachments/development/architecture/microservices/elasticsearch/UOzxbJxiZow8Q3xpFfOcdK8ynoe.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/UOzxbJxiZow8Q3xpFfOcdK8ynoe.png)
 
 进入DevTools
 
-![这张图片展示的是Elasticstack的Kibana工具中DevTools板块的Console界面，是进行Elasticsearch操作的核心区域。界面被明确划分为两个核心功能区域，左侧为标注的命令区，用于输入与Elasticsearch交互的相关命令；右侧为标注的结果显示区，用于展示命令执行后的返回结果。该界面是在Kibana中进行Elasticsearch相关操作的入口，用户可在此通过编写RESTful命令，完成创建索引、添加文档等Elasticsearch操作，与文档中提到的创建索引相关的快速入门内容相呼应，为执行Elasticsearch命令提供了操作载体。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Q1c8b9B36ofMBQxo87xcbBU7nLh.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Q1c8b9B36ofMBQxo87xcbBU7nLh.png)
 
 
 
@@ -1278,7 +1278,7 @@ Elasticsearch会对title、content两个字段的内容进行分词，每个词�
 
 执行结果如下图：
 
-![这是Elasticsearch的Dev Tools控制台操作界面截图，左侧是用于创建文档的请求代码，向名称为my_index的索引的doc类型下编号为1的文档发送POST请求，传入title为“Elasticsearch: cool and easy”、content为“This is a test document”的内容。右侧是该请求的响应结果，显示请求已成功执行，创建了对应文档，同时提示Elasticsearch内置安全功能未启用，存在安全访问风险，还明确标注此次操作已在201创建状态下完成。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Ia9tbG7RBovXGWxZvMgcuUMondb.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Ia9tbG7RBovXGWxZvMgcuUMondb.png)
 
 结果显示：索引名称为my_index
 
@@ -1298,7 +1298,7 @@ my_index：索引名
 
 查询结果
 
-![图片展示了Elasticsearch中根据id查询文档的操作及结果。左侧为POST请求，URL为/my_index/_doc/1，请求体包含文档信息，如title和content。右侧为GET请求结果，显示了索引名my_index、类型_doc、id为1等信息，还呈现了文档的_source内容，包括title和content。该图片与文档中“根据id查询文档”部分内容对应，直观呈现了查询操作及结果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/ZxZTb59DboaZHTxJ9UHcRt4Qnzg.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/ZxZTb59DboaZHTxJ9UHcRt4Qnzg.png)
 
 
 
@@ -1334,7 +1334,7 @@ content：my_index索引中的字段名。
 
 执行结果：
 
-![图片展示的是Elasticsearch Dev Tools界面，用于执行搜索文档操作。界面左侧为操作区域，显示了POST和GET请求语句，分别对应创建文档和搜索文档的请求。右侧是执行结果区域，呈现了搜索结果，包括文档的index、type、id、score和source等信息，如文档标题为“Elasticsearch: cool and easy”，内容为“This is a test document”。该图片与上下文介绍的搜索流程和执行结果内容相关，直观呈现了搜索文档操作的执行结果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/REALbnKehoZfK0x1TBict0VFnrh.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/REALbnKehoZfK0x1TBict0VFnrh.png)
 
 动手实验，下边的搜索可以搜出结果吗？
 
@@ -1361,7 +1361,7 @@ DELETE /my_index/_doc/1
 
 如下图：
 
-![图片展示的是Elasticsearch Dev Tools控制台界面。左侧Console区域显示了搜索和删除文档的语句及结果，如“POST /my_index/_doc/1”成功创建文档，“GET /my_index/_search”查询文档内容等。右侧Response区域呈现了删除文档的响应信息，其中“result”字段值为“deleted”，“shards”部分的“successful”字段值为1，表明删除操作成功。该图片与上下文介绍的Elasticsearch删除文档操作及执行结果相关，直观呈现了删除操作的响应情况。](../../../../../Attachments/development/architecture/microservices/elasticsearch/I6qAb2HLro95nRxQ3YScUpu0nXf.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/I6qAb2HLro95nRxQ3YScUpu0nXf.png)
 
 删除了1号文档，此时再去搜索1号文档的内容还可以找到吗？
 
@@ -1770,7 +1770,7 @@ POST /heima/_doc/1
 
 **响应：**
 
-![图片展示的是Elasticsearch Dev Tools中新增文档的操作界面及结果。左侧Console区域执行了POST命令，向“/heima/_doc/1”发送请求，添加了包含“info”“email”“name”等字段的文档。右侧Response区域显示了请求成功，状态码201，操作结果为“created”，还给出了“index”“type”“id”等信息，以及“total”“successful”“failed”等统计结果。该图片与文档中新增文档的示例内容对应，直观呈现了新增文档操作及响应结果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/JUBMb18cOornhdxr2s3cT2Gmndh.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/JUBMb18cOornhdxr2s3cT2Gmndh.png)
 
 
 
@@ -1796,7 +1796,7 @@ GET /heima/_doc/1
 
 **查看结果：**
 
-![图片展示的是Elasticsearch Dev Tools界面，处于Console标签下。左侧输入框中显示GET /heima/_doc/1命令，右侧为响应结果，展示了文档的index、type、id、version等信息，其中id为1，version为1，_source字段包含name、email、info等字段内容。该图片与文档中3.3.1全量修改部分内容相关，直观呈现了全量修改操作后文档在Elasticsearch中的存储情况。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Hb6IbM8t9o9yHRxLRGVcfhTqnAe.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Hb6IbM8t9o9yHRxLRGVcfhTqnAe.png)
 
 ### 3.3 修改文档
 
@@ -1849,11 +1849,11 @@ PUT /heima/_doc/1
 
 由于`id`为`1`的文档已经被删除，所以第一次执行时，得到的反馈是`created`：
 
-![图片展示的是Elasticsearch控制台界面，左侧输入框中执行了PUT命令，将id为1的文档信息（包含info、email、name等字段）提交至“heima/_doc/1”索引。右侧返回结果中，“result”字段以红色框突出显示，其值为“created”，表明该操作成功创建了文档。该图片与文档中“3.3.1全量修改”部分内容对应，直观呈现了全量修改操作的执行及反馈结果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/CQxKbMCqbogKboxcxVHcv3utnob.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/CQxKbMCqbogKboxcxVHcv3utnob.png)
 
 所以如果执行第2次时，得到的反馈则是`updated`：
 
-![图片展示的是Elasticsearch控制台界面，左侧输入框中执行了PUT命令，将id为1的文档信息更新为“云”姓“赵”的高级Java讲师，右侧返回结果中“result”字段被红色框突出显示为“updated”，表明执行局部修改操作成功更新了文档。该图片与文档中“3.3.2局部修改”部分内容对应，直观呈现了局部修改文档操作的反馈结果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Dd4RbB0FQoUXRQxBNyycvrbrnpd.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Dd4RbB0FQoUXRQxBNyycvrbrnpd.png)
 
 
 
@@ -1889,7 +1889,7 @@ POST /heima/_update/1
 
 **执行结果**：
 
-![图片展示的是Elasticsearch控制台界面，左侧为请求输入区域，显示POST /heima/_update/1请求，更新文档内容为“email”字段值为“ZhaoYun@itcast.cn”；右侧为请求结果区域，显示“result”为“updated”，表明文档更新成功，还呈现了了“_index”“_type”“__id”](../../../../../Attachments/development/architecture/microservices/elasticsearch/XFgkb9pzIoQ2CgxALqCcd9jdnEC.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/XFgkb9pzIoQ2CgxALqCcd9jdnEC.png)
 
 ### 3.4 删除文档
 
@@ -1913,7 +1913,7 @@ DELETE /heima/_doc/1
 
 **结果：**
 
-![这张图片展示的是Elasticsearch开发者工具Console界面，对应删除文档的操作场景。左侧输入区域显示了删除请求：DELETE /hetma/_doc/1，符合文档中介绍的根据文档id执行删除的语法要求；右侧响应结果中，被红色框突出标注的“result": "deleted”是核心信息，表明该删除操作已成功执行，契合文档中删除文档操作的相关示例与结果说明。](../../../../../Attachments/development/architecture/microservices/elasticsearch/CEh3bCvnRoyNruxIApFc3cTBnXc.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/CEh3bCvnRoyNruxIApFc3cTBnXc.png)
 
 ### 3.5 批处理
 
@@ -2009,7 +2009,7 @@ POST /_bulk
 
 由于ES目前最新版本是8.x，提供了全新版本的客户端Java Client，老版本的客户端Java REST  Client已经被标记为过时。
 
-![图片展示了Elasticsearch官方客户端文档首页。上方标题为“Welcome to the Clients documentation”，并说明可在此找到所有官方Elasticsearch客户端的文档。右侧有多个客户端图标，如PHP、.NET、JS等。下方分为“Active clients”和“Deprecated clients”两部分，“Active clients”列出新版本的Java Client、JavaScript Client等，其中Java Client以红色框突出显示；“Deprecated clients”列出老版本的Java REST Client等，其中Java REST Client也以红色框突出显示。该图片与文档中介绍Elasticsearch官方客户端内容相关，直观呈现了不同语言的客户端情况。](../../../../../Attachments/development/architecture/microservices/elasticsearch/NurTbwJ8Qo0VaCxfRsEc7FiTnJd.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/NurTbwJ8Qo0VaCxfRsEc7FiTnJd.png)
 
 我们使用的是7.17.x版本，新版本和老版本都支持，将来的版本会全面抛弃老版本的Java  REST Client ，所以本教程使用新版本的Java Client。
 
@@ -2137,7 +2137,7 @@ public class ESTest {
 
 搜索页面的效果如图所示：
 
-![这张图片展示了黑马商城的搜索页面效果，对应Elasticsearch入门相关的内容演示。页面左侧标注了“过滤字段”，可用于对商品的分类、价格区间等进行筛选；上方标注为“排序字段”，可选择按默认、销量、价格等维度对商品排序；页面中展示了多个商品卡片，标注为“展示字段”，呈现了商品的图片、名称、价格等信息，符合使用Elasticsearch实现搜索接口的相关场景。](../../../../../Attachments/development/architecture/microservices/elasticsearch/CHdjbRDULoCG8ExTorqcjznZnwI.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/CHdjbRDULoCG8ExTorqcjznZnwI.png)
 
 最终我们使用Elaticsearch实现搜索接口。
 
@@ -2172,7 +2172,7 @@ public class ESTest {
 
 对应的商品表结构如下，索引库无关字段已经划掉：
 
-![这是一张商品表结构的表格，展示了索引库无关字段已被划去的各字段信息，共包含id、name、price等16项内容。其中标注为红色删除线的是索引库无关字段，对应编号为8的spec、12的status、14的update_time、15的creater、16的updater。表格列项包括序号、名称、数据类型、注释、长度/集合，例如商品id（id）的数据类型为BIGINT，长度为19；商品名称（name）的数据类型为VARCHAR，长度为200。](../../../../../Attachments/development/architecture/microservices/elasticsearch/YXqDbxH8IoI00Nxh64bcpMcbnOd.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/YXqDbxH8IoI00Nxh64bcpMcbnOd.png)
 
 
 
@@ -2454,7 +2454,7 @@ GET /items/_search
 
 结果：
 
-![图片展示的是Elasticsearch Java Client的查询结果界面。界面中显示了GET /items/_search的请求信息，状态码为200 OK，响应时间为68ms。响应体内容为JSON格式，包含“_shards”“total”“successful”“failed”等字段，其中“hits”字段下有“total”“value”“relation”等信息，以及“_index”“_type”“_id”等具体文档数据，如“id”为“1000026464680”、价格为45780、图片链接等。该图片与文档中4.5查询文档部分内容对应，直观呈现了查询结果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/NoZ9bGCV3oWBTHxSAxAc0g6dnvI.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/NoZ9bGCV3oWBTHxSAxAc0g6dnvI.png)
 
 确定ES的索引中存在刚才添加的文档。
 
@@ -2744,13 +2744,13 @@ GET /{索引库名}/_search
 
 示例：
 
-![图片展示的是Elasticsearch的搜索界面。左侧代码区域显示了GET请求语句，查询条件为`term`，`brand`字段值为“小米”。右侧结果区域呈现了搜索结果，包括总条数、最大分数等信息，还展示了部分匹配商品的详细数据，如商品名称、价格、库存、图片等。该图片与文档中介绍Elasticsearch搜索功能的内容相关，直观呈现了使用`term`查询品牌为“小米”的商品时的搜索结果界面。](../../../../../Attachments/development/architecture/microservices/elasticsearch/NL9kbumGGoInGaxNXkMcrE5Fnbd.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/NL9kbumGGoInGaxNXkMcrE5Fnbd.png)
 
 
 
 当你输入的搜索条件不是词条，而是短语时，由于不做分词，你反而搜索不到：
 
-![图片展示的是Elasticsearch的搜索界面。左侧为搜索查询代码区域，显示了GET请求语句“GET /items/_search”，以及查询条件“query”下的“term”查询，其中“brand”字段的值为“华为 小米”。右侧是查询结果，显示了“took”“timed_out”等信息，以及“hits”部分，其中“total”值为0，表明没有找到符合条件的文档。该图片与文档中介绍Elasticsearch搜索功能的内容相关，直观呈现了精确查询的示例操作及结果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/W88wbf2hNoWWF2xUnr5cQSS1nab.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/W88wbf2hNoWWF2xUnr5cQSS1nab.png)
 
 
 
@@ -2783,7 +2783,7 @@ GET /{索引库名}/_search
 
 示例：
 
-![图片展示的是Elasticsearch的搜索界面。左侧Console区域显示了搜索请求的JSON代码，内容为GET请求至“/items/_search”，查询条件为“range”类型，包含“price”字段，其“gte”为100，“lte”为500。右侧Response区域呈现了搜索结果，包括总数量、相关性、最高分等信息，以及匹配的物品ID、名称、价格、库存、图片、类别、品牌、是否售出、评论数量、是否为广告、更新时间等详细数据。该图片直观呈现了使用Elasticsearch进行价格范围查询的操作及结果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/D8ZybzWcyoEKAOxzpTycjuKanId.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/D8ZybzWcyoEKAOxzpTycjuKanId.png)
 
 #### 5.1.3 全文检索
 
@@ -2808,7 +2808,7 @@ GET /{索引库名}/_search
 
 示例：
 
-![这是Elasticsearch全文检索中`match`查询的操作界面截图，属于搜索入门模块里的内容。界面展示了Kibana的Console查询控制台，左侧是输入的`GET /items/_search`请求语句，其中`query`部分使用`match`查询匹配“华为荣耀”词条。右侧是返回的查询结果，显示符合条件的文档相关信息，包含`total`总数为7119，匹配项的`max_score`为9.623196，还有具体文档的`index`、`type`、`_source`等内容，`_source`中包含商品名称为“华为荣耀 荣耀V20 华为荣耀手机 幻夜黑 全网通(6G+128G)”的商品信息。](../../../../../Attachments/development/architecture/microservices/elasticsearch/TgOLbVCKBoR6OcxMSIWcvx8AnOc.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/TgOLbVCKBoR6OcxMSIWcvx8AnOc.png)
 
 ##### 5.1.3.2 multi_match
 
@@ -2828,7 +2828,7 @@ GET /{索引库名}/_search
 
 示例：
 
-![图片展示了Elasticsearch的搜索示例，左侧为搜索请求代码，使用`multi_match`查询，搜索条件为“作为”，字段包括“name”和“brand”，并指定了`fields`参数。右侧是搜索结果，显示了7145条匹配记录，包含`index`、`id`、`score`等信息，还列出了部分商品名称、价格、库存等数据，如“华为Mate7 Plus 3GB+32GB 普通版 香槟金 移动联通电信4G手机 双卡双待”等。该图片直观呈现了Elasticsearch全文检索中`multi_match`查询的实际效果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/ZH4XbBsoColbGxxqqyFcco0pnWg.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/ZH4XbBsoColbGxxqqyFcco0pnWg.png)
 
 
 
@@ -3073,7 +3073,7 @@ SearchResponse为响应类型，可以依据DSL查询结果进行解析，如下
 
 结合解析handleResponse()方法阅读代码：
 
-![图片展示了Elasticsearch Java Client实现搜索中Term查询的代码及解析响应结果的流程。代码中，`handleResponse`方法接收`SearchResponse`类型参数，通过`response.getHits()`获取命中结果，再通过`SearchHits`相关方法获取总条数、文档数组等信息。图片右侧以红色框突出显示了`SearchResponse`的JSON结构，其中`total`字段的`value`为60，`hits`数组包含多个文档对象，如`id`、`name`、`price`等字段，直观呈现了代码解析响应结果的对应关系。](../../../../../Attachments/development/architecture/microservices/elasticsearch/HmWIbAwR9oWmAIxF301cxuNDnwg.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/HmWIbAwR9oWmAIxF301cxuNDnwg.png)
 
 **代码解读**：
 
@@ -3104,7 +3104,7 @@ elasticsearch返回的结果是一个JSON字符串，结构包含：
 
 上边的代码改为如下代码，并打断点,复制DSL语句
 
-![这张图展示了Elasticsearch Java Client Term查询的断点调试场景，左侧代码界面中，名为termQuery的方法内有创建SearchRequest的Java代码，下方标有“1.打断点”的红色箭头指向代码中被标记为打断点的位置。调试运行时，下方控制台出现“SearchRequest: POST /item/_search...”的DSL语句，并有箭头标注“2.跟踪searchRequest的值”。右侧是编辑器的右键菜单，标有“3.复制DSL”的箭头，指向菜单中的“Copy Value”选项。该图用于辅助说明Java代码调试中提取并格式化DSL语句的操作步骤，和文档中“打断点、复制DSL”的内容相呼应。](../../../../../Attachments/development/architecture/microservices/elasticsearch/EVqobKjh9oeuONxfWd8cc4Zgnlh.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/EVqobKjh9oeuONxfWd8cc4Zgnlh.png)
 
 
 
@@ -3468,7 +3468,7 @@ minimum_should_match也可以指定百分比例，比如：minimum_should_match:
 
 例如黑马商城的搜索页面：
 
-![图片展示了黑马商城的搜索页面。页面上方有黑马商城标志及导航栏，中间红色框内为“搜索关键字”输入框和红色“搜索”按钮。下方是全部结果区域，左侧有“过滤条件”标识，右侧有分类、品牌、价格等筛选栏，如分类有手机、曲面电视等选项，品牌有小米、华为等，价格有100以下、100~299元等区间。该图用于说明搜索页面中输入框的搜索条件要参与相关性算分，而价格范围过滤、品牌过滤、分类过滤等可采用filter逻辑运算，不参与相关性算分。](../../../../../Attachments/development/architecture/microservices/elasticsearch/OwXQbSLcfoommixfGLNccdS0nze.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/OwXQbSLcfoommixfGLNccdS0nze.png)
 
 其中输入框的搜索条件肯定要参与相关性算分，可以采用match。但是价格范围过滤、品牌过滤、分类过滤等尽量采用filter，不要参与相关性算分。
 
@@ -3554,7 +3554,7 @@ public void boolQuery() throws IOException {
 
 我们在百度，京东搜索时，关键字会变成红色，比较醒目，这叫高亮显示：
 
-![图片展示了百度搜索页面及页面源码。搜索框中输入“java培训”，搜索结果中“黑马程序员”被高亮显示。页面源码中，高亮的“java”被加了`<em>`标签，且`<em>`标签的样式为`color: #c00;`。该图片与上下文紧密相关，通过展示实际搜索页面及源码，直观呈现了关键字高亮显示的实现方式，即前端在页面编写时通过`<em>`标签并设置样式来实现高亮效果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/OMeEbtrxAo2MVlx38tGc6FiLnhd.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/OMeEbtrxAo2MVlx38tGc6FiLnhd.png)
 
 观察页面源码，你会发现两件事情：
 
@@ -3672,7 +3672,7 @@ public void higlightQuery() throws IOException {
 1. 对数据进行统计
 2. 在搜索界面显示符合条件的品牌、分类、规格等信息，如下图：
 
-![图片展示了京东网站中“游戏手机”搜索结果页面，搜索框内输入“游戏手机”。页面上方有多个分类导航栏，如全部商品分类、大牌奥莱等。品牌分类中，如华为、vivo、OPPO等品牌被突出显示。CPU型号、运行内存、机身内存等分类也以品牌和型号形式呈现，如CPU型号下有“第三代骁龙8 领先版”等选项。页面底部有“更多”按钮，可查看更多分类选项。该图片与上下文介绍的Elasticsearch数据聚合应用场景相关，展示了聚合后在搜索界面显示符合条件的品牌、分类等信息的效果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/To3qb9eWDofCWox6iuEcfsj4nig.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/To3qb9eWDofCWox6iuEcfsj4nig.png)
 
 
 
@@ -3743,7 +3743,7 @@ GET /items/_search
 
 来看下查询的结果：
 
-![这张图片展示了Elasticsearch Bucket聚合的查询结果，返回的JSON数据中“hits”数组为空，仅聚合结果的bucket数组清晰可见，直观呈现了按分类聚合的结果。“hits”的为空状态对应上下文提到的设置size为0、不返回文档的要求，结果里的bucket数组包含分类为“休闲鞋”“牛仔裤”“老花镜”的桶，每个桶都标注了对应的doc_count数值，比如休闲鞋对应20612、牛仔裤对应19611、老花镜对应16222。图中红色箭头还明确标注了核心信息，包括“文档并没有返回”“对分类的聚合”“聚合结果的bucket数组”，与上下文的语法说明内容形成对应。](../../../../../Attachments/development/architecture/microservices/elasticsearch/FE6ubH4XXoqKUPxmuOkcm6PlnSf.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/FE6ubH4XXoqKUPxmuOkcm6PlnSf.png)
 
 #### 6.2.2 多级聚合
 
@@ -4019,7 +4019,7 @@ GET /items/_search
 
 默认情况下，Bucket聚合是对索引库的所有文档做聚合，例如我们统计商品中所有的品牌，结果如下：
 
-![这是一段Elasticsearch的操作代码及执行结果截图，左侧为请求代码：向items索引库发送search请求，设置size为0以不返回匹配文档，定义brand_agg聚合，基于brand字段进行term聚合，size设为20限定返回20个品牌。右侧是该聚合的返回结果，展示了符合条件的不同品牌及其对应的文档统计数量，其中出现的品牌包括华为、南极人、奥古狮登、森马、恒源祥、回力等，该结果对应了统计价格高于3000元的手机品牌的聚合需求。](../../../../../Attachments/development/architecture/microservices/elasticsearch/EO25bEwnOonAV5xcWV8cEfxrnzb.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/EO25bEwnOonAV5xcWV8cEfxrnzb.png)
 
 可以看到统计出的品牌非常多。
 
@@ -4179,11 +4179,11 @@ GET /items/_search
 
 结果如下：
 
-![图片展示了Elasticsearch中品牌聚合的结果。在“aggregations”部分，有“brand_agg”聚合，其下有“buckets”字段，分别列出苹果、小米、中兴等品牌。以苹果品牌为例，其“doc_count”为63，“stats_metric”字段下有“count”“min”“max”“avg”“sum”等统计信息，如“min”为3600.0，“max”为688000.0，“avg”为123130.15873015873，“sum”为7757200.0。该图片直观呈现了品牌聚合后的统计结果，与上下文介绍的Elasticsearch数据聚合内容相契合。](../../../../../Attachments/development/architecture/microservices/elasticsearch/V7Xib2K3EormzXxEwsnc7uNmnJg.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/V7Xib2K3EormzXxEwsnc7uNmnJg.png)
 
 另外，我们还可以让聚合按照每个品牌的价格平均值排序：
 
-![图片展示的是Elasticsearch的搜索界面，左侧为搜索查询代码区域，右侧是查询结果。代码中使用了`brand_agg`聚合，按品牌分组统计价格，还对`stats_metric`聚合的`avg`字段按降序排序。右侧结果部分用红色框突出显示了各品牌的价格平均值，如苹果品牌价格平均值为121310.15873015873，中兴品牌价格平均值为79980.0，体现了按品牌价格平均值排序的效果。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Xrc0b5UQ0o7FcHxFvyfc0CZOnpp.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Xrc0b5UQ0o7FcHxFvyfc0CZOnpp.png)
 
 
 
@@ -4268,7 +4268,7 @@ public void aggTermAndMetricQuery() throws IOException {
 
 示例：
 
-![图片展示的是黑马商城商品搜索页面。上方搜索框内输入“绿色拉杆箱”，下方筛选栏有品牌、分类、价格等筛选条件，当前筛选品牌为“小米”。页面显示搜索结果，商品包括RIMOWA 21寸拉杆箱、26寸拉杆箱等，每件商品有价格、评价、购买选项等信息。该图片与文档中新建搜索服务的需求相关，直观呈现了搜索功能支持的示例，即输入关键字进行全文检索，匹配商品名称、品牌、分类信息。](../../../../../Attachments/development/architecture/microservices/elasticsearch/Rr55bvfc5oM3TVxuLPFcQDSwnZe.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Rr55bvfc5oM3TVxuLPFcQDSwnZe.png)
 
 #### 提示
 
@@ -4276,7 +4276,7 @@ public void aggTermAndMetricQuery() throws IOException {
 
 创建搜索服务，命名为`search-service`，端口为8083。
 
-![图片展示的是IntelliJ IDEA中创建新模块的界面。在“Generators”分类下，选中“Spring Initializr”，Server URL为“start.aliyun.com”。Name输入“search - service”，Location为“D:\\course\\springcloud\\code\\hmall - micro”，Module will be created in: D:\\course\\springcloud\\code\\hmall - micro。Language有Java、Kotlin、Groovy选项，Type为Maven、Gradle，Group、Artifact、Package name等字段已填写，JDK为“Project SDK 11”，Java为11，Packaging为Jar、War。该图片与文档中新建search - service服务相关，是创建该服务时的配置界面。](../../../../../Attachments/development/architecture/microservices/elasticsearch/PWSrbVEr4oB9SqxQN69cWwcunbo.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/PWSrbVEr4oB9SqxQN69cWwcunbo.png)
 
 
 
@@ -4396,11 +4396,11 @@ hm:
 
 确保：搜索手机关键词能像原来一样搜到结果
 
-![图片展示的是黑马商城商品搜索界面及控制台网络请求情况。上方搜索框输入“手机”，下方分类、品牌、价格等筛选栏显示对应选项。商品列表中展示了多款手机图片及名称。控制台网络请求部分，状态栏显示“200”，类型为xhr，发起程序为axios.min.js。该图片与文档中“确保：搜索手机关键词能像原来一样搜到结果”及“新建的search-service控制台会有对应的SQL日志”内容相关，直观呈现了搜索功能及控制台日志情况。](../../../../../Attachments/development/architecture/microservices/elasticsearch/REHgbVaxmordnixusGacvwFznqf.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/REHgbVaxmordnixusGacvwFznqf.png)
 
 新建的search-service控制台会有对应的SQL日志
 
-![图片展示的是SearchApplication_8083/控制台的日志信息。日志中显示了两条关于HikariDataSource的INFO级别信息，时间分别为16:55:38.525和16:55:38.765，内容为HikariPool-1 - JDBC Connection \[HikariProxyConnection@1338234775 wrapping com.mysql.cj.jdbc.ConnectionImpl@72f463eb\] will be closed。下方是SQL执行日志，包括查询商品数量和详细信息的SQL语句，以及对应的参数、列、行数等信息，如商品数量查询返回1条记录，商品详细信息查询返回3条记录。](https://feishu.cn/file/JFnEbHh3FoHFvlxcVAOcYTQcnGf)
+![](https://feishu.cn/file/JFnEbHh3FoHFvlxcVAOcYTQcnGf)
 
 
 
@@ -4408,7 +4408,7 @@ hm:
 
 
 
-![这张图展示了实现基于Elasticsearch的商品搜索功能后的最终效果，分为上下两部分：上方是网页搜索界面，顶部有全文检索输入框，当前输入“华为手机”，搜索结果区域支持多条件动态筛选、按销量或价格排序，商品卡片高亮显示部分内容，还支持分页浏览，当前显示2133件商品中的第1页；下方是浏览器的开发者工具面板，显示了当前页面相关的网络请求信息，请求目标为esloal-api-mini.js，时长37ms，该界面是将原MySQL版本的商品搜索替换为ES实现后的运行结果，验证了搜索功能符合需求。](../../../../../Attachments/development/architecture/microservices/elasticsearch/JwgSbHzFCozhhlx6OEqctLe7nVb.png)
+![](../../../../../Attachments/development/architecture/microservices/elasticsearch/JwgSbHzFCozhhlx6OEqctLe7nVb.png)
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 04 微服务与中间件 / Elasticsearch / 06 Elasticsearch入门 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/WbhYwokcsiJTrfkHwKXc9PqMnce)

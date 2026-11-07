@@ -11,7 +11,7 @@ aliases:
 
 用户在前端页面点击发起入住申请或者查看详情，会进入到入住详情页面，下图是需要用入住详情页面的前端效果图：
 
-![这张图是前端入住详情页面的效果图，该页面分为四个核心部分，分别为基本信息、家属信息、入住配置、签约办理。页面左上角的“基本信息”区域包含多类输入项，用于填写基础资料；其下方的“家属信息”区域以列表形式呈现，包含多条条目，每条配有复选框，可支持填写多条家属相关信息；再下方的“入住配置”区域设置了价格、周期等配置类选项；最下方的“签约办理”区域则含日期填写等相关内容，页面底部还设有操作按钮。该页面是前端入住申请流程中的详情展示界面，为后续组件拆分开发提供了视觉参考。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/WLLCbJKuBoKuzXxNNQwcjJFLnOb.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/WLLCbJKuBoKuzXxNNQwcjJFLnOb.png)
 
 从效果图上可以看出来，这个页面共分为了四部分
 
@@ -30,7 +30,7 @@ aliases:
 
 - 在入住列表页面index.vue点击按钮发起入住申请，进入到details.vue详情页，由于details.vue中的内容过多，因此将其拆分成4个单独的页面，然后在details.vue中统一引入，最终前端效果如下：
 
-![图片展示了checkin组件下的文件结构。在components文件夹中，有ApplyForm.vue、ConfigurationForm.vue、Family.vue、TransactForm.vue四个子组件，它们分别对应入住申请表单、配置表单、家庭成员表单、交易表单。此外，还有details.vue、index.scss、index.vue文件。该图片与文档中介绍前端申请入住表单设计思路的内容相关，直观呈现了父组件引用子组件后，子组件与父组件间数据通信的组件层级关系。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/NUh8bl7vmoO82wxr77zcQ86mnug.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/NUh8bl7vmoO82wxr77zcQ86mnug.png)
 
 - 其中details.vue是父组件，components目录下的四个组件是子组件，最终四个子组件表单中的数据需要统一收集到父组件中，因此这里就涉及到了组件之间的通信
 
@@ -41,7 +41,7 @@ aliases:
 
 先来通过下面这张图片认识一下什么是父子组件，图中有三个组件，组件A的子组件是B和C，其中B和C是兄弟关系。咱们重点研究是父子组件的通信，如果想要实现B和C的通信，需要使用第三方组件pinia才行（不是课程重点）
 
-![图片展示了三个组件A、B、C的关系。组件A的子组件是B和C，其中B和C是兄弟关系。图中用红色实线箭头表示组件A与B、C之间的父子关系，用蓝色虚线箭头表示B和C之间的非父子关系。该图与上下文紧密相关，用于直观呈现父子组件的概念，为后续讲解父组件向子组件传递数据等内容提供可视化参考。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/G36bbk81ro5HDNx6somcMGU5nde.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/G36bbk81ro5HDNx6somcMGU5nde.png)
 
 在 Vue中，父子组件间的通信是通过属性传递（props）和事件（events）的方式来进行的。
 
@@ -134,7 +134,7 @@ function handleMessage(message) {
 
 我们打开菜单中的**系统工具**-->**表单构建**
 
-![这张图片展示的是若依框架的表单构建功能界面，具体为“表单生成器（Form Generator）”页面。界面左侧是功能导航栏，高亮选中的是“系统工具”下的“表单构建”选项；中间区域是表单配置主操作区，当前正在编辑手机号输入字段，对应输入框提示“请输入手机号”；右侧是该输入字段的属性配置面板，显示该字段类型为单行文本，字段名是mobile，标题为手机号，还设置了占位提示、表单缩略、组件密度等相关配置项，同时界面顶部还有导入Excel、复制代码、清空、组件属性、表单属性等操作按钮。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/QC6XbK88HoOdtixoREicVFMznLb.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/QC6XbK88HoOdtixoREicVFMznLb.png)
 
 使用**表单构建**的优点：
 
@@ -151,7 +151,7 @@ function handleMessage(message) {
 
 效果图：
 
-![图片展示的是若依框架表单构建中基本信息组件的示例效果。左侧为老人姓名、出生日期、性别、家庭住址等输入框，右侧为身份证号、年龄、联系方式等输入框，以及一寸照片、身份证人像面、身份证国徽面的上传区域。其中，性别处有“男”“女”两个单选按钮，家庭住址处有输入框和一行容器，身份证相关区域有“点击上传”按钮。该图与上文介绍基本信息组件的字段及所用组件内容相呼应，直观呈现了组件效果。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/PmpmbQbrco9Brbxsn5kc6k3Mnia.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/PmpmbQbrco9Brbxsn5kc6k3Mnia.png)
 
 基于上图，我们可以使用**表单生成**来生成代码，每个组件的属性值可参考接口文档
 
@@ -175,11 +175,11 @@ function handleMessage(message) {
 
 选择组件的效果如下图，只展示了部分
 
-![图片展示的是若依框架表单构建中基本信息组件的表单生成界面。左侧为表单组件选择栏，有输入型、选择型、布局型等组件分类。右侧是表单填写区域，包含老人姓名、身份证号、出生日期等字段，部分字段有红色星号标注必填。右侧还显示了选中组件的属性设置区域，如字段名、标题、占位提示等。该图与上下文紧密相关，直观呈现了表单构建中基本信息组件的样式及组件属性设置情况。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/K2urbJzIto8PPnx5XMzcbjNBnxh.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/K2urbJzIto8PPnx5XMzcbjNBnxh.png)
 
 表单构建完成以后，找到**导出vue文件**，生成类型选择**页面**，把文件下载到本地备用
 
-![这张图是前端申请入住表单相关的表单构建操作中的类型选择弹窗，标题为“选择生成类型”，核心是“生成类型”选项，其中“页面”选项被蓝色高亮选中，红色箭头指向该选项，未选中的相邻选项为“弹窗”。弹窗右下角有“取消”和“确定”两个操作按钮，用于确认或取消当前的生成类型选择操作，该图对应文档中表单构建完成后导出vue文件时选择生成类型的步骤内容。](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/LRGobQ1IFoYFvbxFCNScaY4Knzf.png)
+![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/LRGobQ1IFoYFvbxFCNScaY4Knzf.png)
 
 生成后的代码：
 

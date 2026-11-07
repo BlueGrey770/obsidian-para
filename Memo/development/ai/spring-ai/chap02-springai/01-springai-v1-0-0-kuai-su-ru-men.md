@@ -22,7 +22,7 @@ aliases:
 
 首次访问，必须注册：
 
-![图片展示的是DeepSeek开放平台的登录页面。页面上方显示网址为https://platform.deepseek.com/sign_in。中间部分有“deepseek 开放平台”字样，下方有“验证码登录”和“密码登录”选项。登录区域提示所在地区仅支持手机号/微信/邮箱登录，需输入手机号并点击“发送验证码”，再输入验证码后点击“登录”。页面右侧有一个二维码，下方有“微信扫码登录”字样。该图片与文档中“注册”部分内容相关，是注册前需先登录的页面示例。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/MBvEbuh2nooK3QxqIjjcCFVKnAc.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/MBvEbuh2nooK3QxqIjjcCFVKnAc.png)
 
 
 
@@ -34,7 +34,7 @@ DeepSeek官方对外提供的大模型API服务是需要收费的，因此我们
 
 注册成功后即可进入平台管理页面，点击**充值**选项，进入充值页面：
 
-![这张图是DeepSeek开放平台的充值页面，页面左侧的功能栏里，“充值”选项被标为红色且带有数字“1”的标记，是需要点击进入的入口。充值区域提供了预设的充值档位，分别是10元、20元、50元、100元、300元、500元，另有“自定义”选项及“查看价格”按钮，被标为数字“2”。用户可在数字“3”对应的输入框内填写1元至10000元之间的自定义支付金额。支付方式支持支付宝和微信支付，其中支付宝为选中状态，被标为数字“4”，页面底部还有标为数字“5”的“去支付”按钮，同时附带相关提示信息。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/QwoibZfTOonfkwxFsmMcoNOVn7d.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/QwoibZfTOonfkwxFsmMcoNOVn7d.png)
 
 选择合适的价格充值后，即可使用DeepSeek的官方API服务。
 
@@ -48,7 +48,7 @@ DeepSeek官方对外提供的大模型API服务是需要收费的，因此我们
 
 点击**API Keys**选项卡，进入对应页面。第一次进入应该没有API key，可以点击创建`API key`:
 
-![图片展示了DeepSeek开放平台的API keys页面。左侧导航栏中“API keys”选项被红色框和数字1标识。页面中部显示API keys列表，包含名称、Key、创建日期和最新使用日期等信息，其中“test”名称对应的Key部分被遮挡。页面底部有“创建API key”按钮，被红色框和数字2标识。该图片与文档中“第一次进入应该没有API key，可以点击创建`API key`”的内容相关，直观呈现了创建API key的操作位置。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/FzAeb9TX5opozdx0YHXc36cznvg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/FzAeb9TX5opozdx0YHXc36cznvg.png)
 
 <callout emoji="❗">
 **注意**：API key只有在创建时可以查看，以后都无法查看了。所以需要在创建时妥善保管自己的API key
@@ -113,7 +113,7 @@ curl https://api.deepseek.com/chat/completions \
 
 我们可以使用任意的Http客户端来测试API：
 
-![图片展示的是使用Postman测试调用DeepSeek大模型API的界面。请求方式为POST，URL为https://api.deepseek.com/chat/completions。请求体内容类型为application/json，原始请求体为JSON格式，包含“model”“messages”“stream”等字段，其中“model”为“deepseek-chat”，“messages”包含系统和用户角色及内容，“stream”为false。该图片与上文介绍的调用DeepSeek大模型API示例相关，直观呈现了API调用时的请求体内容。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EJ87b8GtbouJxXxyCMYcwAKGn8c.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EJ87b8GtbouJxXxyCMYcwAKGn8c.png)
 
 
 
@@ -147,7 +147,7 @@ curl https://api.deepseek.com/chat/completions \
 
 注册成功后进入阿里云百炼首页，点击模型：
 
-![这张图片是阿里云百炼平台的首页界面，页面顶部导航栏有“模型”“应用”“MCP”“文档”“API参考”等选项，其中“模型”选项被红色方框突出标注，页面中间显示平台定位为全链路大模型服务与应用开发平台，下方还展示了多款不同的通义千问大模型卡片，包括通义千问3-235B-A22B、通义千问-Plus-Latest、通义千问-Turbo-Latest，每款模型卡片标注了对应的能力属性。这张图对应文档中“点击模型”的操作指引，明确了进入阿里云百炼首页后需要点击的目标选项。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/J1vubDpGWoi8Z5xcVmBctbwAnUh.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/J1vubDpGWoi8Z5xcVmBctbwAnUh.png)
 
 
 
@@ -155,21 +155,21 @@ curl https://api.deepseek.com/chat/completions \
 
 在阿里云百炼平台的左侧菜单的最下方，有一个API-Key选项：
 
-![这张图片展示的是阿里云百炼平台的操作界面，用户在该平台左侧菜单的最下方，能看到被红色框标注的API-Key选项，这是生成API密钥的前置操作入口。该界面顶部设有模型、应用、MCP等功能导航栏，当前处于模型广场页面，页面内展示了多种大模型如通义千问3、通义千问-Plus、通义千问-Turbo，还有模型筛选、搜索等功能选项，用户点击标注的API-Key选项后，即可进入API-Key管理页面完成后续创建操作。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/WMJmbscKsoKg2SxAt4zcNXQ0nbg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/WMJmbscKsoKg2SxAt4zcNXQ0nbg.png)
 
 
 
 点击后，进入API-Key管理页面，点击创建`API-KEY`：
 
-![这是阿里云百炼平台的API Key管理页面界面，页面右上角用红色框标注出“创建API-KEY (1/10)”按钮，该按钮对应文档中点击创建API-KEY的操作步骤；页面左侧菜单选中“API-Key”选项，显示当前处于API Key管理板块，板块内展示了已有的一条API Key记录，包含ID、API Key、所属业务空间、描述、创建时间等内容，还提供查看、删除操作选项，该页面是创建API-KEY流程中的对应操作页面。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Gs6jbzig8o582VxhkPzc4eltnsg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Gs6jbzig8o582VxhkPzc4eltnsg.png)
 
 选择`创建API-KEY`后，会弹出表单：
 
-![图片展示的是阿里云百炼平台API-Key管理页面中创建新的API-Key表单。表单包含“归属业务空间”下拉选择框，当前选中“主账号空间”；“描述”区域输入了“学习学习”。右下角有“取消”和“确定”两个按钮，其中“确定”按钮为紫色。该图片与上文提到的在阿里云百炼平台创建API-Key的操作流程相关，是填写API-Key相关信息的界面展示。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/SYevblFGMoe1XSxruOUczuxanNh.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/SYevblFGMoe1XSxruOUczuxanNh.png)
 
 填写完毕，点击确定，即可生成一个新的`API-KEY`：
 
-![图片展示的是阿里云百炼平台的API-Key管理页面。页面上方显示“我的API-KEY”，右侧有“创建我的API-KEY（2/10）”按钮。下方表格中，ID为1864730，API KEY部分有部分信息被遮挡，所属业务空间为默认业务空间，描述为“学习学习”，创建时间为2025 - 02 - 26 22:23:30，操作栏有“复制”和“删除”选项。该图片与上文创建API-Key后生成新API-Key的内容相关，展示了生成后的API-Key信息。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/H2I6bIM8soOVg7x6vhjcTXTzn0d.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/H2I6bIM8soOVg7x6vhjcTXTzn0d.png)
 
 后续开发中就需要用到这个`API-KEY`了，一定要记牢。而且要保密，不能告诉别人。
 
@@ -179,11 +179,11 @@ curl https://api.deepseek.com/chat/completions \
 
 访问百炼平台，点击模型：
 
-![这张图片展示的是阿里云百炼平台的模型广场页面，该页面为全链路大模型服务与应用开发平台。页面顶部有“模型”“应用”“MCP”“文档”“API参考”等导航选项，其中“模型”选项被红色框标注，明确对应文档中提到的“访问百炼平台，点击模型即可进入模型广场”的操作。页面中展示了三款通义千问系列大模型，分别为通义千问3-235B-A22B、通义千问-Plus-Latest、通义千问-Turbo-Latest，每款模型都标注了对应特性，同时明确了“模型”“应用”两大核心功能入口。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Dho9b2KZiokFDNx6e6ncKLaMnnf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Dho9b2KZiokFDNx6e6ncKLaMnnf.png)
 
 即可进入模型广场：
 
-![图片展示的是阿里云百炼平台模型广场页面。页面上方有模型、应用、MCP、文档、API参考等导航栏。中间是模型筛选区域，可按供应商、模型类型、上下文长度等条件筛选模型。下方展示了多个模型卡片，如通义千问3、通义千问 - Plus、通义千问 - Turbo等，每张卡片有模型名称、类型、上下文长度、主干模型等信息，部分卡片下方有“API参考”“立即体验”等按钮。该图与文档中介绍模型广场的内容相关，直观呈现了模型广场的界面及部分模型信息。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/PbWtb9Y3yor9Znxv3uLcQa5Bnoe.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/PbWtb9Y3yor9Znxv3uLcQa5Bnoe.png)
 
 
 
@@ -191,7 +191,7 @@ curl https://api.deepseek.com/chat/completions \
 
 点击API参考即可进入API文档页面：
 
-![图片展示的是阿里云百炼平台API文档页面。页面顶部有模型、应用、MCP、文档、API参考等导航栏。左侧有模型、应用、准备工作等选项，当前选中“对话”。右侧是API文档内容，标题为“请求体”，下方有多种编程语言示例，如Python、Java、Node.js等。其中Python示例代码中，`curl -X POST "https://dashscope.aliyuncs.com/compatible/v1/chat/completions?`等部分被红色框线突出显示。该图片与文档中介绍API文档的内容相关，直观呈现了API文档中请求体部分的示例代码。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/RTyVbDRFIo7xYqxJCUFcorVGnft.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/RTyVbDRFIo7xYqxJCUFcorVGnft.png)
 
 
 
@@ -203,11 +203,11 @@ curl https://api.deepseek.com/chat/completions \
 
 如果立即体验是灰色，说明尚未开通模型服务。鼠标悬停在**《立即体验》**按钮，会弹出模型列表，鼠标悬停模型列表中任意模型，会弹出未开通提示：
 
-![图片展示的是百炼平台模型广场界面。左侧有模型筛选栏，可按供应商、模型类型、上下文长度筛选。下方列出多个模型，如通义千问3、通义千问3 - Turbo等。右侧详细介绍了通义千问 - Plus模型，其为超大规模语言模型的增强版，支持中文英文等不同语言输入。右下角弹出提示框，显示“还未开通模型服务，暂不能使用体验”，并有红色框突出显示“去开通”按钮。该图片与上下文介绍的开通模型服务流程相关，直观呈现了未开通时的提示及操作按钮。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/COUobomX5oGiXlxWIrkcbCb4nbh.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/COUobomX5oGiXlxWIrkcbCb4nbh.png)
 
 点击去开通，会弹出开通提示：
 
-![图片展示的是阿里云百炼大模型服务开通提示界面。界面上方提示继续使用服务需开通商品并创建模型调用API - KEY。下方有“我已阅读并同意《模型管理服务协议》”的勾选框，已勾选。右侧有“计费详情”“取消开通”按钮，最右侧是“确认开通”按钮。该图片与上下文关系紧密，是用户点击“去开通”后弹出的开通提示界面，用户需勾选协议并点击“确认开通”才能开通服务。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/SCrDb2WciocmFdxUkAJczjm1n2e.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/SCrDb2WciocmFdxUkAJczjm1n2e.png)
 
 勾选**同意**协议，然后点击**《确认开通》，**稍等片刻即可。
 
@@ -221,11 +221,11 @@ curl https://api.deepseek.com/chat/completions \
 
 鼠标悬停《立即体验》按钮，在弹出的模型列表中任意选择一个，即可进入体验页面：
 
-![图片展示的是公共大模型平台-阿里巴巴百炼的模型广场界面。左侧有模型筛选栏，可按供应商、模型类型、上下文长度等筛选。右侧是模型列表，以通义千问系列模型为主，如通义千问-Plus、通义千问-Turbo等。其中，通义千问-Turbo-Latest被红色框突出显示。鼠标悬停《立即体验》按钮后，弹出的模型列表中任意选择一个，即可进入体验页面，此图对应文档中“鼠标悬停《立即体验》按钮，在弹出的模型列表中任意选择一个，即可进入体验页面”这一操作步骤。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/QMlzbX6REommsCxZ6ivczc4GnBu.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/QMlzbX6REommsCxZ6ivczc4GnBu.png)
 
 点击某个模型，就可以进入API调用大模型的试验台：
 
-![图片展示的是阿里云百炼平台的文本调试界面。左侧为导航栏，选中“模型体验”下的“文本模型”。右侧上方有“文本对话”和“文本调试”选项卡，当前选中“文本调试”。中间部分有模型配置区域，可选择模型，配置系统、top_p、temperature等参数。下方输入区域有Message和Prompt选项卡，可输入内容。右侧预览区域显示结果和输出。该图与上文介绍的在模型体验中进入文本调试页面后模拟调用大模型接口的内容相关，直观呈现了调试界面。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/JyN2bEQ2po1RQuxo3ukcNCPMnqF.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/JyN2bEQ2po1RQuxo3ukcNCPMnqF.png)
 
 在这里就可以模拟调用大模型接口了。
 
@@ -233,7 +233,7 @@ curl https://api.deepseek.com/chat/completions \
 
 当然，我们也可以使用任意Http客户端来调试：
 
-![这张图是模拟调用大模型接口的页面，为工具提供的调试界面，页面中显示的请求方式为POST，接口地址为dashscope.aliyuncs.com的兼容模式对话补全路径。内容类型设置为application/json，原始请求体部分清晰标注了模型参数为qwen-max-2025-01-25，还包含了两个对话内容，分别是role为system的助手设定话术，以及role为user的用户提问“你好~”，stream参数被设为false，页面右上方还有发送、保存等操作按钮。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/XhzIbUD9BomiHNxqg51cUvkSnDy.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/XhzIbUD9BomiHNxqg51cUvkSnDy.png)
 
 
 
@@ -255,7 +255,7 @@ curl https://api.deepseek.com/chat/completions \
 
 首先，我们需要下载一个Ollama的客户端，在官网提供了各种不同版本的Ollama，大家可以根据自己的需要下载。
 
-![图片展示的是Ollama官网下载页面。页面上方有导航栏，包括Discord、GitHub、Models等选项。中间大标题为“Download Ollama”，下方有macOS、Linux、Windows三个图标，Windows图标被高亮显示。底部有一个“Download for Windows”按钮，标注“Requires Windows 10 or later”。该图片与文档中“下载安装ollama”部分内容相关，直观呈现了下载Ollama客户端的官网页面及Windows版本下载选项。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/L8CsbRg4konqp3xZu90cFrvqnlf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/L8CsbRg4konqp3xZu90cFrvqnlf.png)
 
 下载后双击即可安装，这里不再赘述。
 
@@ -280,7 +280,7 @@ OLLAMA_MODELS=你想要保存模型的目录
 
 环境变量配置方式相信学过Java的都知道，这里不再赘述，配置完成如图：
 
-![图片展示了Windows系统中新建用户变量的设置界面。变量名为“OLLAMA_MODELS”，变量值为“D:\\ollama_models”。界面中有“浏览目录”和“浏览文件”按钮，以及“确定”和“取消”按钮。该图片与文档中配置环境变量的内容相关，用于说明在Ollama安装完成后，更改下载和部署模型位置时，新建用户变量的设置方式，帮助用户正确配置环境变量。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/REnGbCSA0oGNyPxFm9Vc6KT6nyf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/REnGbCSA0oGNyPxFm9Vc6KT6nyf.png)
 
 
 
@@ -292,17 +292,17 @@ ollama是一个模型管理工具和平台，它提供了很多国内外常见�
 
 如图，目前热度排第一的就是deepseek-r1：
 
-![图片展示的是ollama官网上的模型搜索页面。页面顶部有Discord、GitHub、Models等导航栏，中间有搜索框。下方展示了多个模型，其中“deepseek-r1”被突出显示，其下有多个版本选项，如7b、8b、14b、32b、70b、671b等，671b版本被标记为最强满血版。此外，还展示了“llama3.3”模型，其下有70b版本。该图片与上下文紧密相关，直观呈现了ollama官网可搜索的模型及版本情况。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/LoOJbSPCNoYYeaxaMLXcr62QnSk.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/LoOJbSPCNoYYeaxaMLXcr62QnSk.png)
 
 点击进入deepseek-r1页面，会发现deepseek-r1也有很多版本：
 
-![这张图是ollama平台的deepseek-r1模型详情页，上方红色框标注出了不同参数规格的deepseek-r1版本，分别为1.5b、7b、8b、14b、32b、70b、671b，其中671b版本是参数最大的满血版，对应上下文介绍的模型参数信息。该页面还展示了模型的拉取量、更新时间，以及所选7b版本的架构、参数、量化方式、模板、许可证等具体配置信息，同时包含了执行模型的命令“ollama run deepseek-r1:7b”。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/MjLRbliaRoKxaKxs4YrccJ8enPg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/MjLRbliaRoKxaKxs4YrccJ8enPg.png)
 
 
 
 这些就是模型的参数大小，越大推理能力就越强，需要的算力也越高。671b版本就是最强的满血版deepseek-r1了。需要注意的是，Ollama提供的DeepSeek是量化压缩版本，对比官网的蒸馏版会更小，对显卡要求更低。对比如下：
 
-![这张图片是一份模型配置参数对照表，对应文档中“搜索模型”的对比内容。表中按版本分为满血版、蒸馏版、蒸馏量化版三类，涵盖DeepSeek-R1等多个模型的名称、参数、数值类型、模型大小、模型格式、发布者，还标注了各模型所需的单机部署要求，比如满血版DeepSeek-R1（7b，BF8，8G）需要8*Nvidia H200或AMD MI300等算力资源，帮助用户根据自身硬件条件选择适配的模型。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Whg4b8f3joUZtBxtyvgcVeXcnnc.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Whg4b8f3joUZtBxtyvgcVeXcnnc.png)
 
 比如，我的电脑内存32G，显存是6G，我选择部署的是7b的模型，当然8b也是可以的，差别不大，都是可以流畅运行的。
 
@@ -312,11 +312,11 @@ ollama是一个模型管理工具和平台，它提供了很多国内外常见�
 
 选择自己合适的模型后，ollama会给出运行模型的命令：
 
-![图片展示了ollama平台中“deepseek-r1”模型的相关信息。左侧显示模型版本有1.5b、7b、8b等，其中7b被选中，对应4.7GB内存。右侧突出显示了“ollama run deepseek-r1:7b”这一运行模型的命令。该图片与上下文紧密相关，上下文提到选择合适模型后，ollama会给出运行模型的命令，此图直观呈现了命令及模型版本对应关系，帮助用户了解如何在cmd命令行中运行模型。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/AbQibU2i9oi61zxlFH9cWiH8nke.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/AbQibU2i9oi61zxlFH9cWiH8nke.png)
 
 复制这个命令，然后打开一个cmd命令行，运行命令即可，然后你就可以跟本地模型聊天了：
 
-![图片展示了ollama运行模型后的界面。左侧是命令行窗口，显示了运行命令“ollama run deepseek-r1:7b”及聊天内容，如“你好，你是谁？”等。右侧是虚拟助手DeepSeek-R1的插画形象，其为蓝绿色长发的女性，穿着白色上衣和黑色短裙。该图片与文档中“运行模型”部分内容相关，直观呈现了运行命令后与本地模型聊天的场景，辅助说明了如何在命令行与模型交流。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/WNy7b8nBsoFYQlxAHEPcsjv6nTf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/WNy7b8nBsoFYQlxAHEPcsjv6nTf.png)
 
 <callout emoji="❗">
 **注意：**
@@ -347,15 +347,15 @@ Ollama是一个模型管理工具，有点像Docker，而且命令也很像，�
 
 #### 在API Hub中克隆接口
 
-![这张图片展示的是Apifox平台的API Hub页面，左侧菜单中“API Hub”选项被红色框标注选中，右侧“全部分类”栏里，“OpenAI (ChatGPT)”选项被红色箭头及文字标注“克隆该项目到自己的空间”进行重点提示，该选项下方还显示了项目的收藏数32084、关注数6588，页面还展示了DeepSeek API、企业微信API等其他API相关项目，整体内容与文档中“在API Hub中克隆接口”的操作指导相呼应，用于辅助说明克隆OpenAI相关项目的操作入口。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/OqrNbcrProuVxwxT3EFcKn9Wnod.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/OqrNbcrProuVxwxT3EFcKn9Wnod.png)
 
 #### 配置环境
 
-![图片展示了在apifox中配置DeepSeek平台环境的界面。左侧环境管理中，有全局变量、全局参数、Vault Secrets等选项，当前选中“DeepSeek平台”。右侧显示了默认地址为“https://api.deepseek.com/v1”，并有“YOUR_API_KEY”声明变量，其值为对应平台的key。还标注了本地ollama地址“http://localhost:11434/v1”，以及地址使用对应平台地址、声明变量变量名和值等关键信息。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/X2aMb7rmvozNDrxc6CYcfUocnbW.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/X2aMb7rmvozNDrxc6CYcfUocnbW.png)
 
-![这张图展示了在Apifox工具中配置环境以使用OpenAI协议调用大模型的操作界面，核心内容有两处标注突出：一是界面右上角标注的“选择环境”功能，箭头指向本地选择的“本地Ollama”选项；二是“Headers”标签页下的配置项，其中Authorization参数的参数值为Bearer {{YOUR_API_KEY}}，用红框和箭头标注，说明此处需配置对应API密钥，这是环境配置的关键步骤，用于完成接口调用所需的身份认证设置，契合文档中配置环境的相关操作说明。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/J7b7bjxKko7N18x8QJpcMUnLnjf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/J7b7bjxKko7N18x8QJpcMUnLnjf.png)
 
-![这张图片展示的是在Apifox工具中配置请求参数的界面，是使用OpenAI协议调用大模型相关配置的环节。界面上方的选项卡中，“Body 1”选项处于选中状态，下方的请求体区域以JSON格式编写了调用大模型的相关内容，指定使用的模型为“deepseek-r1:1.5b”，同时设置了消息数组，包含用户角色的提问“你好，你是什么大模型”。该界面内容对应文档中“配置环境”的相关步骤，是完成大模型调用所需的请求参数配置操作的直观呈现。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HuJCbYiz7oASylxuwlCc4kibn0b.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HuJCbYiz7oASylxuwlCc4kibn0b.png)
 
 ## SpringAI入门
 
@@ -365,7 +365,7 @@ SpringAI整合了全球（主要是国外）的大多数大模型，而且对于
 
 不同的模型能够接收的输入类型、输出类型不一定相同。SpringAI根据模型的输入和输出类型不同对模型进行了分类：
 
-![图片展示了不同输入数据类型对应的大模型类型及输出数据类型。输入数据类型包括语言/代码（含图像、音频、视频）、语言/图像、音频、语言，对应的大模型类型有大型语言模型（LLM）、图像生成模型、文本到语音模型、语音到文本模型、嵌入模型，输出数据类型为语言/代码（含图像）、图像/视频、语言、音频、向量/嵌入。该图与上下文介绍SpringAI对模型分类的内容相关，直观呈现了模型分类依据。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Hr7aboDMcoX8xUxERLocbqaVnoP.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Hr7aboDMcoX8xUxERLocbqaVnoP.png)
 
 大模型应用开发大多数情况下使用的都是基于**对话模型**（Chat Model)，也就是输出结果为自然语言或代码的模型。
 
@@ -412,15 +412,15 @@ SpringAI整合了全球（主要是国外）的大多数大模型，而且对于
 
 创建一个新的SpringBoot工程，**注意JDK版本必须是17**：
 
-![图片展示的是IntelliJ IDEA中创建Spring Boot工程的界面。左侧列表中选中“Spring Boot”，右侧设置区域显示Server URL为start.spring.io，Name为spring - ai - demo，Location为D:\\code，JDK版本为17 Oracle OpenJDK 17.0.11，Java版本为17，Package name为com .itheima .ai等。该图片与文档中“创建工程”部分相关，用于直观呈现创建Spring Boot工程时的界面及参数设置情况。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/WKIjbcvBqoTT3uxQYl8coLGtnNd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/WKIjbcvBqoTT3uxQYl8coLGtnNd.png)
 
 在依赖选择界面，勾选Web、MySQL驱动即可：
 
-![这是创建SpringBoot工程的依赖选择界面，用于01.SpringAI(V1.0.0)快速入门的入门步骤。界面左侧为依赖选项列表，当前高亮选中“Web”分类，右侧的“Added dependencies”区域用红色框标注了已勾选的两个依赖：Spring Web与MySQL Driver，界面顶部的Spring Boot版本为3.5.3，底部有“Previous”“Create”“Cancel”操作按钮，该图用于辅助说明创建工程时依赖的选择操作。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/XnNLbep0Xo2vqJxzR2KcvhtEnpg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/XnNLbep0Xo2vqJxzR2KcvhtEnpg.png)
 
 工程结构如图：
 
-![图片展示了SpringAI示例工程的文件结构。左侧为文件资源管理器，显示工程名为“spring - ai - demo”，其下有.idea、.mvn、src、test、.gitattributes、.gitignore等文件夹及pom.xml文件。src文件夹内有main文件夹，其中java文件夹下有com.theima.ai包，包含SpringAIDemoApplication类。右侧是文件操作提示，如搜索、文件导航等快捷键。该图与文档中创建工程部分相关，直观呈现了工程的目录结构。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EXyLb5P0eo1yBDxPd5icxrYBnuc.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EXyLb5P0eo1yBDxPd5icxrYBnuc.png)
 
 原始pom.xml如下：
 
@@ -662,7 +662,7 @@ spring:
 
 大家可以把自己的API_KEY设置到系统**环境变量**中，避免泄露：
 
-![图片展示了Windows系统中的系统变量设置界面，其中突出显示了两个API_KEY变量。上方的“DEEPSEEK_API_KEY”变量值为“sk - f36e...8497”，下方的“QWEN_API_KEY”变量值为“sk - 91...92”。这些API_KEY变量被红色框线标注，与文档中“API_KEY不建议直接写死在配置文件，而是通过`${}`引入系统的环境变量”的内容相呼应，直观呈现了API_KEY在系统环境变量中的存储形式。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HXLrb0GISoH3J6x3uM1cKY8Inie.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HXLrb0GISoH3J6x3uM1cKY8Inie.png)
 
 程序启动时，会自动加载环境变量，读取到API_KEY
 
@@ -680,7 +680,7 @@ spring:
 
 在`com.itheima.ai.config`包下新建一个`SpringAIConfiguration `类：
 
-![这张图展示了Spring Boot项目`spring-ai-demo`的目录结构，清晰呈现了项目下src/main/java包内的层级关系。其中，在com.itheima.ai包下的config目录中，标注出了SpringAIConfiguration类，这个类就是文档中提到需要在com.itheima.ai.config包下新建的配置类，在项目源码目录里处于指定的位置。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/PQQ7bfytQo4PKKxTtRjcWGTEnbe.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/PQQ7bfytQo4PKKxTtRjcWGTEnbe.png)
 
 完整代码如下：
 
@@ -717,7 +717,7 @@ public class SpringAIConfiguration {
 
 接下来，我们定义一个Controller，在其中接收用户发送的提示词，然后把提示词发送给大模型，交给大模型处理，拿到结果后返回。
 
-![图片展示了SpringAI入门示例项目“spring - ai - demo”的目录结构。其中，红色框突出显示了“controller”文件夹下的“ChatController”类。该图片与文档中“同步调用”部分内容相关，用于说明接下来将定义一个Controller，在其中接收用户发送的提示词，然后把提示词发送给大模型处理，拿到结果后返回，此Controller即为ChatController。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Me7BbLD8fosz1kxu0MScVgl6ncd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Me7BbLD8fosz1kxu0MScVgl6ncd.png)
 
 代码如下：
 
@@ -757,7 +757,7 @@ public class ChatController {
 
 启动项目，在浏览器中访问：http://localhost:8080/ai/chat?prompt=你好
 
-![图片展示的是在浏览器中访问http://localhost:8080/ai/chat?prompt=你好后的页面。页面地址栏显示网址，下方弹出窗口中AI回复“你好！很高兴见到你，有什么我可以帮忙的吗？无论是学习、工作还是生活中的问题，都可以告诉我哦！😊”。该图片与文档中“同步调用”部分上下文对应，直观呈现了在浏览器访问指定网址后，AI对“你好”指令的响应结果，用于说明同步调用的页面显示情况。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/E2MNbPhK4oM4zRxmBByczIbdnzh.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/E2MNbPhK4oM4zRxmBByczIbdnzh.png)
 
 
 
@@ -802,7 +802,7 @@ public class ChatController {
 
 重启测试，再次访问：
 
-![该图片是浏览器访问本地地址的页面截图，地址栏显示访问的为本地8080端口的/ai/chat接口，请求参数prompt为“你是谁？”；页面响应内容为“你好！😊 很高兴见到你～有什么我可以帮你的吗？”，结合上下文可知，这是SpringAI同步调用场景下的测试结果，对应修改ChatController重启后的访问效果，可体现大模型底层未调整System设定时的默认响应状态。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HYu2borxEoGNDyxmHAdcyYoTnZf.gif)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HYu2borxEoGNDyxmHAdcyYoTnZf.gif)
 
 
 
@@ -840,7 +840,7 @@ public class SpringAIConfiguration {
 
 我们再次询问“你是谁？”
 
-![这张图片展示的是浏览器页面内容，地址栏为localhost:8080/ai/chat?prompt=你是谁？，页面中仅显示了“喵”的内容，对应文档中设置完默认System信息后，再次询问AI“你是谁？”的交互结果，该结果体现出AI已按照修改后的设定，给出了不符合预期的回复，呼应了文档中提及的修改ChatClient默认System信息后AI会改变身份回答的内容。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/ALuxbRE46oPWrBxCufac5OAQnMe.gif)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/ALuxbRE46oPWrBxCufac5OAQnMe.gif)
 
 
 
@@ -914,7 +914,7 @@ public class SpringAIConfiguration {
 
 这是因为DeepSeek返回的思考内容与普通内容不是在一起的，而是分为两个字段返回：
 
-![这张图片介绍了DeepSeek推出的推理模型deepseek-reasoner的相关信息，该模型会先输出思维链内容以提升最终答案准确性，其API需先升级OpenAI SDK支持新参数。图片还展示了该模型API的输出字段，其中重点用红色框标注了两个关键输出字段：reasoning_content为思维链内容，与content同级，content为最终回答内容。这张图片的内容对应了文档中提及的DeepSeek返回的思考内容与普通内容分为两个字段返回的相关说明。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EbnAbP8XNoNOvFxWHsjc1IOenIc.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EbnAbP8XNoNOvFxWHsjc1IOenIc.png)
 
 
 
@@ -986,7 +986,7 @@ public class ChatController {
 
 再次重启测试：
 
-![图片展示的是在浏览器中访问localhost:8080/ai/chat?prompt=你是谁?后显示的页面内容。页面上方有浏览器地址栏，显示网址。页面主体部分以红色字体呈现一段文字，内容为“(叉腰大笑)既然你诚心诚意地发问了！(手指前方)我们就大发慈悲地告诉你！为了防止世界被破坏！为了守护世界的和平！贯彻爱与真实的邪恶！可爱又迷人的反派角色！武藏！(甩动粉色长发)就是这样喵~喵哈哈哈！”。该图片与上文提到的在SpringAI中测试AI推理过程的内容相关，展示了AI推理后的输出结果。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/PsRwb4SZ6oxiT3x5skFcr6xznYd.gif)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/PsRwb4SZ6oxiT3x5skFcr6xznYd.gif)
 
 可以看到，这次AI推理的过程也被输出了。
 
@@ -1004,11 +1004,11 @@ public class ChatController {
 
 SpringAI基于AOP机制实现与大模型对话过程的增强、拦截、修改等功能。所有的增强通知都需要实现Advisor接口。
 
-![图片展示了Spring AI中ChatModel的调用流程。从Prompt开始，经Prompt to AdvisedRequest，再到Before advising，由AroundAdvisor（internal）处理，之后是After advising，最后得到ChatResponse。流程中还涉及AdvisedRequest、AdvisedResponse等关键环节，以及ChatModel模型。该图与上下文介绍的Spring AI日志功能相关，直观呈现了日志Advisor在ChatModel调用过程中的作用位置，帮助理解日志记录的实现机制。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Wn32b6ZegoeQY2xImQIckQiTnlg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Wn32b6ZegoeQY2xImQIckQiTnlg.png)
 
 Spring提供了一些Advisor的默认实现，来实现一些基本的增强功能：
 
-![图片展示了Spring提供的默认Advisor实现，包括SimpleLoggerAdvisor、MessageChatMemoryAdvisor和QuestionAnswerAdvisor。其中，SimpleLoggerAdvisor用于日志记录，MessageChatMemoryAdvisor实现会话记忆功能，QuestionAnswerAdvisor实现RAG功能。这些Advisor通过虚线箭头与Advisor相连，表明它们是Advisor的子类或实现。该图与上下文紧密相关，直观呈现了上下文中提到的Advisor类型及其关系，帮助理解Spring AI中增强功能的实现基础。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/SImSb5Vzxod6whxUOkec8M7Nnre.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/SImSb5Vzxod6whxUOkec8M7Nnre.png)
 
 - SimpleLoggerAdvisor：日志记录的Advisor
 - MessageChatMemoryAdvisor：会话记忆的Advisor
@@ -1083,7 +1083,7 @@ logging:
 
 在资料中给大家提供了前端的源代码：
 
-![图片展示了在D盘“课程资料”文件夹下的“SpringAI 资料”文件夹内容。其中，“spring - ai - protal.zip”文件被红色框突出显示，其类型为360压缩ZIP文件，大小为116,861 KB。该图片与文档中“npm运行”部分内容相关，对应资料中提供的前端源代码，说明只需解压缩此文件（最好放到非中文目录），然后进入解压后的目录，依次执行命令即可运行，启动后访问http://localhost:5173即可看到页面。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/GO4BbdToJoSVk7x8sddcpwb5nTb.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/GO4BbdToJoSVk7x8sddcpwb5nTb.png)
 
 你只需要解压缩（最好放到非中文目录），然后进入解压后的目录，依次执行命令即可运行：
 
@@ -1096,7 +1096,7 @@ npm run dev
 
 启动后，访问 http://localhost:5173即可看到页面：
 
-![图片展示了SpringAI的前端页面，标题为“AI Hub”，下方是“AI 应用中心”。页面中有四个功能模块，分别是“AI 聊天”（与智能AI助手进行自然对话）、“哄哄模拟器”（温暖贴心的AI情感陪伴）、“智能客服”（24小时在线的智能服务助手）、“ChatPDF”（智能文档阅读与问答系统）。该图片与文档中介绍前端运行情况的内容相关，直观呈现了运行后前端页面的样式及功能模块。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Yl7nb3mDHoiJ3Ex9GMvcl8Rynse.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Yl7nb3mDHoiJ3Ex9GMvcl8Rynse.png)
 
 
 
@@ -1106,7 +1106,7 @@ npm run dev
 
 如果你不关心源码，我也给大家提供了构建好的Nginx程序：
 
-![这张图片展示了电脑D盘下“课程资料\\SpringAI\\资料”目录的文件列表，核心突出显示了名为“spring-ai-nginx.zip”的压缩包，该压缩包类型为360压缩ZIP文件，大小为118,803 KB。这个文件就是文档中提到的提供的构建好的Nginx程序对应的压缩包，文档要求将该压缩包解压缩到不包含中文、空格、特殊字符的目录中，之后通过命令启动Nginx。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/F9FXbX0uRoglnvxbchxcFwYEnce.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/F9FXbX0uRoglnvxbchxcFwYEnce.png)
 
 解压缩到一个**不包含中文、空格、特殊字符**的目录中，然后通过命令启动Nginx：
 
@@ -1126,7 +1126,7 @@ nginx.exe -s stop
 
 启动后，访问 http://localhost:5173即可看到页面：
 
-![该网页是SpringAI项目的前端运行后展示的AI应用中心页面，页面地址显示为localhost:5173。页面左侧标注有“AI Hub”，顶部中央为“AI应用中心”标题，右侧有一个月亮样式图标。页面主体包含四个功能模块：第一个是“AI聊天”，对应图标为对话气泡，说明是与智能AI助手进行自然对话；第二个是“哄哄模拟器”，对应图标为爱心，说明是温暖贴心的AI情感陪伴；第三个是“智能客服”，对应图标为人群，说明是24小时在线的智能服务助手；第四个是“ChatPDF”，对应图标为文档，说明是智能文档阅读与问答系统。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Km38bTVnHofQpuxIHMtcT4Nrnzd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Km38bTVnHofQpuxIHMtcT4Nrnzd.png)
 
 
 
@@ -1134,7 +1134,7 @@ nginx.exe -s stop
 
 前后端在不同域名，存在跨域问题，因此我们需要在服务端解决cors问题。在`com.itheima.ai.config`包中添加一个`MvcConfiguration`类：
 
-![图片展示了SpringAI Demo项目的目录结构。在`src/main/java`目录下的`com.itheima.ai.config`包中，有一个用红色框突出显示的`MvcConfiguration`类。该图片与文档中对接前端的内容相关，用于说明在`com.itheima.ai.config`包中添加`MvcConfiguration`类的操作，重启服务后即可通过前端访问服务端接口进行聊天，此图直观呈现了代码位置。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Jt3qb8YC5oh54Axc6COcb4FhnKj.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Jt3qb8YC5oh54Axc6COcb4FhnKj.png)
 
 内容如下：
 
@@ -1254,11 +1254,11 @@ public class ChatController {
 
 启动前端后，访问 http://localhost:5173即可看到页面：
 
-![图片展示的是启动前端后访问http://localhost:5173看到的页面。页面顶部显示网址“localhost:5173”，右上角有刷新和星标图标。中间标题为“AI 应用中心”，下方有四个卡片，分别是“AI 聊天”（与智能AI助手进行自然对话）、“哄哄模拟器”（温暖贴心的AI情感陪伴）、“智能客服”（24小时在线的智能服务助手）、“ChatPDF”（智能文档阅读与问答系统）。该图片与文档中介绍启动前端后页面显示内容的上下文对应，直观呈现了页面布局和功能选项。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/MYpNb5QvZoFtRLxBH4kcUW8ancb.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/MYpNb5QvZoFtRLxBH4kcUW8ancb.png)
 
 点击第一个卡片《AI聊天》进入对话机器人页面：
 
-![图片展示的是Heima AI Hub的聊天机器人页面。左侧为聊天记录区域，显示对话次数937383。右侧是聊天对话框，上方有“你好”及用户头像，下方显示机器人回复“你好”，并有“思考”字样及一段较长的回复内容。底部输入框提示可上传图片、音频或视频，右侧有发送按钮。该图片与文档中“测试”部分上下文对应，展示了启动前端后访问页面并点击《AI聊天》进入对话机器人页面后的界面情况。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/B8nJbsYy4oK2IsxhG1ycWSaKnkc.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/B8nJbsYy4oK2IsxhG1ycWSaKnkc.png)
 
 恭喜您，你的第一个AI对话机器人就完成了。
 
@@ -1414,7 +1414,7 @@ CREATE TABLE IF NOT EXISTS SPRING_AI_CHAT_MEMORY (
 
 需要将脚本放在项目的resource目录中，例如：
 
-![图片展示了SpringAI项目中resources目录下的结构。在resources目录下有一个名为“sql”的文件夹，其中包含一个名为“schema-mysql.sql”的文件。该图片对应文档中“准备SQL脚本”步骤，说明需要将脚本放在项目的resource目录中，此处以“schema-mysql.sql”文件为例，表明其应放置在resource目录下的“sql”文件夹中，与上下文介绍的JdbcChatMemoryRepository配置步骤相呼应。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Mmfpb0TSTon4YkxOxelcwUUInHf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Mmfpb0TSTon4YkxOxelcwUUInHf.png)
 
 **3）配置**
 
@@ -1582,7 +1582,7 @@ public class ChatController {
 
 以DeepSeek为例，页面上的**会话记录**、**会话历史**：
 
-![图片展示了DeepSeek页面中的会话记录及某次会话的完整历史。左侧为会话记录列表，显示了“30 大内”“2025 - 04”“Java入门教程switch案例设计”“用户提问能助手身份”“2025 - 02”等记录。右侧是“Java入门教程switch案例设计”会话的完整历史，包含Java基础课程变量运算案例等内容，右上角有“某次会话的完整历史”文字标注。该图片与上下文介绍的会话记录、会话历史等内容相关，直观呈现了会话记录的展示形式。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EH0Yb1Tc5oI9XYxmMKpcQS8knUh.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EH0Yb1Tc5oI9XYxmMKpcQS8knUh.png)
 
 
 

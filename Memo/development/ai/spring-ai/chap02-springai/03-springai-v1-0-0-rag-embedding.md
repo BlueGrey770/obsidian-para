@@ -78,7 +78,7 @@ aliases:
 
 我们以二维向量为例，向量之间的距离有两种计算方法：
 
-![这张图以二维坐标系呈现了向量距离的两种计算方法，是上下文介绍的向量相关距离计算的具象示例。图中展示了从原点出发的两个向量v1和v2，二者夹角为θ，二者端点间用蓝色线段标注了“欧氏距离”，向量端点与原点分别构成的两条虚线旁，标注了“余弦距离 1-cosθ”，直观体现了向量间欧式距离与余弦距离的计算方式，呼应了上下文里“向量之间的距离有两种计算方法”的内容，也为后续说明通过向量距离判断文本相似度提供了可视化参考。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Th94bC6v0oJuvNxxLhfc7X1cn7b.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Th94bC6v0oJuvNxxLhfc7X1cn7b.png)
 
 通常，两个向量之间**欧式距离越近**，我们认为两个向量的**相似度越高**（距离值越小，相似度越高）
 
@@ -90,7 +90,7 @@ aliases:
 
 现在，有不少的专门的**向量模型**，就可以实现将文本向量化。一个好的向量模型，就是要**尽可能让文本含义相似的向量，在空间中距离更近**：
 
-![图片展示了文本向量化示例，左侧为五组文本，右侧是对应的向量表示。每组文本右侧的向量由多个数值组成，数值颜色不同，代表不同维度。右侧还画有坐标轴，标注“近”和“远”，表示向量间的距离关系。该图与上下文紧密相关，直观呈现了文本向量化后在空间中距离的近远情况，帮助理解文本含义相似的向量在空间中距离更近这一概念。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/M6UwbUxBVon1dtxg41ycNc0xnvf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/M6UwbUxBVon1dtxg41ycNc0xnvf.png)
 
 
 
@@ -100,7 +100,7 @@ aliases:
 
 阿里云百炼平台就提供了这样的模型：
 
-![这张图片展示的是阿里云百炼平台的模型广场界面，页面的模型筛选栏设置了“全部”“通义”等供应商选项，以及“文本”“全模态”等模型类型选项，还可设置上下文长度参数。在共6个展示的模型中，核心突出的是被红框标注的“通用文本向量-v3”模型，该模型介绍其功能是为检索任务生成高质量的多段文本向量，适配全平台，且兼容OpenAI配置。界面还呈现了模型的查看详情、API调用示例等功能入口，页面上方有Qwen-Omni新模型上架的提示。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/UTfPb7Id7o7rmUxODBbcvQranMd.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/UTfPb7Id7o7rmUxODBbcvQranMd.png)
 
 
 
@@ -645,7 +645,7 @@ OK，现在我们有了这些工具：
 
 接下来，我们就来实现一个非常火爆的个人知识库AI应用，ChatPDF，原网站如下：  
 
-![图片展示的是ChatPDF网站界面。左侧有“中二病晚期记”PDF文件标识，下方有“下载Windows应用”等选项。右侧上方有“#1 PDF Chat AI”等标识，下方文字“与任何PDF对话”及“数百万大学生、研究人员与专业人士都在使用它来轻松回答问题并理解研究内容”。中间有“点击上传，或将PDF拖拽到此处”提示，下方有“@上传PDF”按钮。该图片与上下文介绍的ChatPDF网站相呼应，直观呈现了其功能界面。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/C5sYb8bomowRcPxfKWQc9X2Infb.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/C5sYb8bomowRcPxfKWQc9X2Infb.png)
 
 
 
@@ -1090,19 +1090,19 @@ public class PdfController {
 
 最终，项目结构如下：
 
-![图片展示了SpringAI项目中部分类的结构。其中，`PdfController`、`Result`、`FileServiceImpl`、`IFileService`、`VectorDistanceUtils`等类被红色框线突出显示，这些类可能与文档中提到的ChatPDF功能相关。此外，`DefaultChatMemory`、`SpringAIChatMemoryServiceImpl`等类也以蓝色框线标注，可能涉及大模型对话相关功能。该图片与文档中介绍项目结构及对接前端等内容相呼应，直观呈现了相关类的分布情况。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/J5t9bupVgorxC1x6smhcJvcXnNf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/J5t9bupVgorxC1x6smhcJvcXnNf.png)
 
 打开浏览器，访问http://localhost:5173
 
-![这张图片是AI应用中心的界面，标题为“AI应用中心”，左上角显示“AI Hub”，界面提供四项AI应用选项，从左到右依次是AI聊天、哄哄模拟器、智能客服、ChatPDF。其中ChatPDF选项被红色方框特别标注，其图标为蓝色文件样式，说明文字为“智能文档阅读与问答系统”，这对应文档中“点击ChatPDF卡片，进入对应页面”的操作步骤，是后续上传PDF并提问的入口。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/DzdObEaZuoYdeYx42Rocwk31nWf.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/DzdObEaZuoYdeYx42Rocwk31nWf.png)
 
 点击ChatPDF卡片，进入对应页面：
 
-![图片展示的是ChatPDF页面。左侧为“ChatPDF”区域，有“历史记录”和“+添加”按钮。右侧是“与任何PDF对话”区域，上方有“点击上传，或将PDF拖拽到此处”的提示，下方有“上传PDF”按钮。该图片与文档中“点击ChatPDF卡片，进入对应页面”及“上传一个PDF文件之后，就可以对PDF提问了，AI也会根据文档来回答问题”的内容对应，直观呈现了进入ChatPDF页面后的界面情况。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Pv9RbWXYioKrYexTtmpcBpjLnCh.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Pv9RbWXYioKrYexTtmpcBpjLnCh.png)
 
 上传一个PDF文件之后，就可以对PDF提问了，AI也会根据文档来回答问题
 
-![这是ChatPDF功能的操作界面，左侧显示项目包含的“中二知识笔记.pdf”，界面中间为该PDF的内容页面，第2页中被红框标注了“教育的目的是培养完善自己的，培养有用的人”的相关内容，并有红色箭头将这部分内容与右侧对话框中用户提出的“谈谈中庸教育的目的是什么”的问题相关联，界面右下角的输入框提示用户可以在此向AI提问，右侧对话区还显示有“已成功上传文件：中二知识笔记.pdf，您可以开始提问了”的提示，体现了用户上传PDF后可向AI针对PDF内容提问的使用场景。](../../../../../Attachments/development/ai/spring-ai/chap02-springai/OhNEbgjGso6uDnxR3ERcw7EenLg.png)
+![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/OhNEbgjGso6uDnxR3ERcw7EenLg.png)
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 06 AI 应用开发 / Spring AI / Chap02. SpringAI / 03.SpringAI(V1.0.0)-RAG Embedding · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/BKJ5wmShoiviEnknJpmcZMhdnlf)
