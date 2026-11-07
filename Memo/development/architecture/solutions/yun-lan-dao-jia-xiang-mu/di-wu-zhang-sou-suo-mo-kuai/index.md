@@ -59,12 +59,14 @@ mall-plus: dev_01
 如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/RMGKbpgm8om1xtxM3dAcMZKcnlf.png)
+> 图注：图片展示了云岚到家平台的服务搜索页面。页面上方显示“北京”和“家电维修”搜索框，右上角有“...”和“O”图标。中部有“云岚到家平台，给你最贴心的最专业的上门服务”文字及“banner图”。下方有“一级分类icon”及多个服务项icon，如保洁清洗、日常保洁等。最下方是“精选推荐”，有“专业、贴心的上门服务”文字及“商品图”，并显示“空调清洗服务 ¥208/次”及“立即预约”按钮。
 
 在**第2部分**触发搜索框进入搜索页面，输入关键字进行搜索，如下图：
 
 
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/EPt8b6NwMoallLxnUgrc5GOynVe.png)
+> 图注：这是家政项目服务搜索技术方案中，第二处触发搜索后进入的搜索页面界面。页面顶部显示“搜索”标题，左侧有返回箭头，右侧是更多操作图标和关闭按钮，右上角还有“取消”选项。搜索框内已输入关键字“保洁”，搜索框右侧设有清除输入内容的“×”按钮，搜索框下方展示了推荐的“日常保洁”搜索建议，该界面对应在搜索页面输入关键词查找家政服务的操作场景。
 
 1. 在门户最下方点击“全部服务”进入全部服务界面。
 
@@ -73,6 +75,7 @@ mall-plus: dev_01
 点击服务分类查询分类下的服务。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/FIwjb2yCVoikQWxSzmYcQE4tndb.png)
+> 图注：图片展示了家政项目服务搜索中在门户最下方点击“全部服务”进入全部服务界面后，点击服务分类查询分类下的服务时的界面。左侧有“服务分类”栏，包含“保洁清”和“家居服务”选项，其中“保洁清”被红色框突出显示。右侧是“全部服务”标题，下方有“日常保洁”等服务项，其中“日常保洁”被红色框突出显示。该图片与上下文介绍的服务搜索入口相关，直观呈现了在门户最下方点击“全部服务”后，通过服务分类查询分类下的服务项进行搜索的场景。
 
 #### 2）技术方案
 
@@ -85,6 +88,7 @@ mall-plus: dev_01
 通过关键字去匹配服务的哪些信息呢？比如：输入关键字“家庭保洁”，它会去匹配服务相关的信息，比如：服务类型的名称、服务项的名称，甚至根据需要也可能去匹配服务介绍的信息，只要与“家庭保洁”相关的服务都会展示出来。如下效果：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/YwfLbPGpioVouEx2F6ncq7gBnCb.png)
+> 图注：这张图是家政项目服务搜索的界面，页面顶部显示“搜索”字样，右侧设有“取消”选项。搜索输入框内已输入“家庭保洁”关键词，呈现了全文检索的初始输入状态，该界面正是文档中所提及的使用ES进行全文检索的对应效果展示，契合服务搜索技术方案里的全文检索场景。
 
 
 
@@ -192,6 +196,7 @@ MySQL的`dump`协议是MySQL复制协议中的一部分。
 通过以上流程可知Canal和MySQL master主服务器之间建立了长连接。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/IwALbApoeosMEOxxa0ucIznrnig.png)
+> 图注：图片展示了Canal + MQ数据同步流程。MySQL主服务器（Master）生成binlog，通过dump方式将binlog发送给Canal，Canal作为slave接收并解析binlog，解析出serve_sync表的数据更新日志，再将数据发送至MQ的数据同步队列。右侧列出了MQ的多种类型，包括kafka、elasticsearch、Apache HBase、RocketMQ、Pulsar等。
 
 基于Canal+MQ数据同步流程：
 
@@ -266,6 +271,7 @@ GET /_cat/indices?v
 ```
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/EyQfbwtfToCferxf6j8cxvT8ncd.png)
+> 图注：图片展示的是Elasticsearch中索引查询结果。其中，红色框突出显示了“serve_aggregation”和“serve_provider_info”两个索引，它们均为黄色状态，open且pri为1，rep为1，store.size分别为33.7kb和16.2kb。该图片与上文“创建serve_aggregation索引（已经存在无需重复创建）”的内容相关，用于直观呈现serve_aggregation索引的查询结果，辅助理解其在Elasticsearch中的状态及存储情况。
 
 如果需要修改索引结构需要删除重新创建：
 
@@ -377,14 +383,17 @@ PUT /serve_aggregation
 修改foundations的配置文件：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/L42pbpBa3oQ1X0x1f4CcNv7onKf.png)
+> 图注：这张图片展示的是bootstrap.yml配置文件的部分内容，具体是在nacos命名空间下的共享配置区域。该区域通过data-id标识了多个共享配置项，其中被红色框重点标注的是两项RabbitMQ与Elasticsearch（ES）的配置：对应RabbitMQ配置的data-id为shared-rabbitmq.yaml，对应ES配置的data-id为shared-es.yaml，两项配置的refresh属性均被设置为false。这部分内容与文档中提到的“修改foundations的配置文件”以及“修改nacos中es的配置文件shared-es.yaml”“修改nacos中rabbitmq的配置文件”的操作要求直接对应。
 
 修改nacos中es的配置文件shared-es.yaml
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/GJ3obqjmNoAzw1xQUb6cXMPfnNx.png)
+> 图注：图片展示的是nacos中es的配置文件shared - es. yaml部分内容。其中，配置内容以YAML格式呈现，突出显示了“host: 192.168.101.68”和“port: 9200”这两行关键配置项，分别对应es的主机地址和端口号。该图片与文档中“配置连接ES”部分上下文对应，用于说明在nacos中配置es连接时，需设置主机地址和端口号等信息。
 
 修改nacos中rabbitmq的配置文件
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/Mo4ZbzrKfopY8nxI4ovcGzFrnXb.png)
+> 图注：图片展示的是nacos中rabbitmq的配置文件shared-rabbitmq.yaml部分内容。其中，rabbitmq项下有host、username、password、port等配置项，对应值分别为192.168.101.68、xbz、xbz、5672。该图片与文档中“3.阅读同步程序”部分相关，用于说明在nacos中rabbitmq配置文件中rabbitmq配置项的设置情况，是配置连接ES步骤中修改rabbitmq配置文件操作的示例。
 
 
 
@@ -522,26 +531,31 @@ public class ServeCanalDataSyncHandler extends AbstractCanalRabbitMqMsgListener<
 启动成功,jzo2o-foundations服务作为MQ的消费者和MQ建立通道，进入canal-mq-jzo2o-foundations队列的管理界面，查看是否建立 了监听通道。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/GMtabvspLoVL80x8PAecLNFjn0c.png)
+> 图注：这张图片是RabbitMQ的界面截图，界面顶部显示了RabbitMQ的版本相关信息，当前停留在Queues页面，展示的队列名称为canal-mq-jzo2o-foundations，对应的虚拟主机为/xzb。界面下方的Consumers区域显示了消费者监听通道的相关信息，其中标注了IP为192.168.101.1:63085的消费者相关内容，该队列的消息统计显示Unacked、Total等指标的数值均为0，此界面对应文档中索引同步流程里的监听通道建立环节，直观呈现了监听通道建立后RabbitMQ的队列及消费者相关状态。
 
 监听通道建立 成功，下边在同步程序打断点：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/Td30bGu7yoY462xR7PZcU3DrnAg.png)
+> 图注：图片展示的是ServeCanalDataSyncHandler.java文件代码。其中，关键部分是两个红色箭头指向的代码行，分别为第40行的onMessage方法和第46行的batchSave方法。onMessage方法用于解析消息，batchSave方法用于批量保存数据。该图片与文档中测试索引同步程序的上下文相关，用于说明同步程序中涉及的关键方法。
 
 
 
 手动修改jzo2o-foundations数据库的serve_sync表的记录，这里修改了服务项的名称
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/LfCEb69LIoRSqlxlzJHcnLhvnHe.png)
+> 图注：这张图片展示了一张表格，表格中有id、item_name、serve_type_id等字段。其中id为1686352662791016449的记录，item_name（服务项名称）为“日常维修ab”，该条记录正是文档中所提及的手动修改了服务项名称的serve_sync表对应记录，其id与文档中提到的需查询的1686352662791016449记录一致，符合文档中测试索引同步程序时修改数据库记录的操作内容。
 
 
 
 正常执行同步程序：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/LxNnb3E7roqAK4xB5zXcWd4qn8b.png)
+> 图注：图片展示的是ServeCanalDataSyncHandler类代码，该类继承自AbstractCanalRabbitMqMsgListener<ServeSync>。关键部分是@RabbitListener注解，用于监听canal-mq-jzo2o-foundations队列，设置交换机、键等信息。还有onMessage方法，用于解析消息。batchSave方法用于批量保存数据。图片与上下文关系紧密，是测试索引同步程序中同步程序打断点后，手动修改数据库记录，正常执行同步程序时的代码展示，用于后续保证ES服务正常，同步方法执行成功后进入Kibana查看服务信息。
 
 放行继续执行到batchSave方法：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/JuVab6zCloaSysxITFdcPTJgnec.png)
+> 图注：图片展示的是代码调试界面，显示了ServeCanalDataSyncHandler.java文件中的代码。关键部分是batchSave方法，其参数data的值为1。右侧弹出的代码断点调试窗口中，data列表里有一个元素，其serveitemName属性值被修改为“日常维修ab”。该图片与文档中测试索引同步程序的内容相关，用于说明在同步程序打断点后，手动修改jzo2o-foundations数据库的serve_sync表记录，执行同步程序时，同步方法执行成功后进入Kibana查看，查询服务信息与数据库serve_sync表中记录信息一致的操作过程。
 
 保证ES服务正常，同步方法执行成功后进入Kibana查看
 
@@ -555,16 +569,19 @@ GET /serve_aggregation/_search
 ```
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/ZXdjbEvASodzO7xEN0VccEwlnnd.png)
+> 图注：图片展示的是Elasticsearch Dev Tools界面，左侧Console区域输入了GET命令，右侧结果区域显示了服务信息。关键信息有：id为1688352662791016449，serve_type_name为“日常维修ah”，serve_type_img为https://jyv-xzbjzfw-oss.oss-cn-hangzhou.aliyuncs.com/00ba6db...等。该图片与上文测试索引同步程序中，手动修改数据库记录后执行同步程序，同步成功后查看Kibana查询服务信息的内容相关，展示了查询结果。
 
 查询服务信息与数据库serve_sync表中1686352662791016449记录的信息一致。
 
 下边再将服务项名称恢复。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/RBQAb5Fb5oLOgCxs1RAc6fawnrg.png)
+> 图注：图片展示的是数据库操作界面，显示了serve_sync表中的一条记录，id为1686352662791016449，serve_item_name为“日常维修”，serve_type_id为1678654490336124929，serve_item_id为1678727478181957634，city_code为010。界面上方有“Tx: Auto”和“DDL”选项，右上角有“提交”按钮。该图片与文档中测试索引同步程序的内容相关，用于展示手动修改jzo2o-foundations数据库的serve_sync表记录后的情况。
 
 再进入Kibana查看索引的内容与数据库一致
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/Hg23bvZT8oE6qqxtffwc4yM9nwg.png)
+> 图注：这张图片展示了Elastic的Dev Tools界面，左侧为Console区域，显示了用户输入的GET请求命令，具体为“GET /serve_aggregation/_search”。右侧为查询返回的结果，其中id为1686352662791016449的文档中，“serve_item_name”字段的值为“日常维修”，该内容与文档中提及的修改并同步后的serve_sync表对应记录信息一致，用于验证ES索引同步操作的结果。
 
 
 
@@ -679,8 +696,10 @@ concurrency=”1“表示 指定消费线程为1。
 接口路径：**GET**/foundations/customer/serve/search
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/KBE4buOSwo2hzJx7K7WctpPmnrb.png)
+> 图注：图片展示了服务搜索接口的请求参数信息。请求数据类型为application/x - www - form - urlencoded，响应数据类型为“/”。参数包括cityCode（城市编码，query类型，必填，数据类型为string）、keyword（关键词，query类型，非必填，数据类型为string）、serveTypeId（服务类型id，query类型，非必填，数据类型为integer(int64)）。该图片与文档中介绍服务搜索接口的上下文相关，是对接口请求参数的具体说明。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/Cxqvb4Jl5oSpFGxMi7ccXG1DnMc.png)
+> 图注：图片展示了服务搜索接口的响应参数。参数包括msg（响应消息，类型string）、code（状态码，类型integer，范围200 - 成功，其它 - 失败）、data（响应数据，类型array，schema为服务简略响应信息）、serveltemSortNum（服务项排序字段，类型integer）、serveltemName（服务项名称，类型string）、serveltemId（服务项id，类型integer）、serveltemIcon（服务项图标，类型string）、id（服务id，类型integer）。该图片与上文介绍的服务搜索接口响应参数内容相呼应，直观呈现了各参数的名称、说明、类型及schema。
 
 controller方法：
 
@@ -728,14 +747,18 @@ public class FirstPageServeController {
 首页搜索栏输入关键字进行搜索：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/Nn1obmAoToKTlhx51PMcOHDOnhb.png)
+> 图注：图片展示了青橙电商首页界面。上方有“青橙电商”标识，搜索栏内有“精品零食抢先购”字样，右侧有“输入关键字”提示。下方有多个功能图标，如秒杀活动、每日拼团、领券中心等。最下方是“300新人专享”满1200元可用的活动区域。图片与文档中“首页输入关键字”内容相关，直观呈现了首页搜索栏的位置及界面样式。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/A2oEbIlx5o5wzGxhuracHtzon3c.png)
+> 图注：图片展示的是电商项目商品搜索页面。页面顶部有“商品”标题，搜索栏内显示“荣耀”。下方有综合排序、销量、价格等筛选选项，以及筛选按钮。商品列表中展示了多款荣耀80手机，包括红色128G和256G、黑色128G和256G等，每款商品下方显示价格、已售数量及“进店”按钮。该图片与文档中“首页输入关键字”搜索需求分析部分对应，直观呈现了搜索结果页面样式。
 
 #### 通过分类进行搜索
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/U2LUbupMuo6Z2dx03becqm32nVg.png)
+> 图注：图片展示的是青橙电商首页界面。上方有“精品零食抢先购”搜索栏。中间有“约会女王 第二件半价”活动宣传图。下方有多个功能图标，如秒杀活动、每日拼团、领券中心等。最下方是“300元新人专享”满1200元可用的活动区域。图片中红色箭头指向“分类”图标，该图标位于底部导航栏，与其他图标如首页、购物车、我的等相邻。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/G07nb5TEFomQEhxNdVRcmQswnGg.png)
+> 图注：图片展示的是电商项目商品搜索中通过分类进行搜索的界面。左侧有多个分类标签，如数码办公、家用电器等。右侧是手机通讯分类下的商品展示，有手机、老年机、对讲机等商品图片及名称。图片中红色箭头指向老年机商品，并标注“点击分类进行搜索”，直观提示用户可通过点击分类标签进行商品搜索。
 
 
 
@@ -744,10 +767,12 @@ public class FirstPageServeController {
 #### 条件筛选
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/SFpabGXXmob0JBxPqTgcUeagnbc.png)
+> 图注：这张图呈现的是电商项目的商品搜索页面，页面顶部设有搜索栏，下方显示荣耀80系列的多款在售商品，包含红色、黑色不同配色，128G、256G不同存储版本的款式，售价均为1.00元，标注有自营、家家乐相关标识及已售数量，页面右上方的“筛选”按钮被红色箭头重点标注，对应文档中电商项目搜索功能的条件筛选相关需求，该筛选功能是商品搜索时进行条件筛选操作的核心入口。
 
 
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/MPupbKyuAozMtOxSnotcmHG5nxZ.png)
+> 图注：这是电商项目搜索模块的条件筛选界面，用于对商品进行精准筛选。界面包含多个筛选维度：品牌筛选区，全部分类下设有数码办公、手机通讯、手机等选项；还有价格区间筛选栏，可设置最低价与最高价；网络筛选分为4G网络（默认选项为4G FDD-LTE）和5G网络（当前状态为支持5G）；充电接口默认选项为Type-C；内存提供128G、256G两个选项可供选择，底部设有“重置”和“确定”按钮，用于清空筛选条件或确认当前筛选条件并执行搜索，该界面用于配合商品搜索，满足用户按多维度筛选商品的需求。
 
 
 
@@ -957,6 +982,7 @@ http://localhost:8084/buyer/doc.html#/default/%E4%B9%B0%E5%AE%B6%E7%AB%AF,%E5%95
 controller方法如下：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-wu-zhang-sou-suo-mo-kuai/TJ0XbcGCqotvKXxsd7ycwj2znRb.png)
+> 图注：这张图片展示了电商项目中买家端的商品搜索相关的Controller方法代码，具体是GoodsBuyController类的内容。左侧项目结构显示该类位于mall-consumer-web模块的com.juzo.mall.buyer.controller路径下；右侧代码区域用红框标注了两个核心接口方法，第一个是标注@ApiOperation注解、用于从ES中获取商品的getGoodsByPageFromEs方法，第二个是用于从ES获取商品相关品牌、分类及属性的getGoodsRelatedByPageFromEs方法，代码中明确了两个方法的入参与返回值，和文档里的搜索接口、聚合接口定义完全对应。
 
 
 

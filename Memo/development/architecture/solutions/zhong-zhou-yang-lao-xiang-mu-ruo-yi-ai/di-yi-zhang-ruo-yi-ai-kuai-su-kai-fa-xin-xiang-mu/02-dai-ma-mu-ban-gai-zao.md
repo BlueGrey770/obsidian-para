@@ -39,6 +39,7 @@ aliases:
 其实在若依框架中，主要生成代码的模块是zzyl-generator模块
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/NJ9Lbl0ScoUE0JxaXfecjrr9nGb.png)
+> 图注：这张图片展示的是zzyl-generator模块的目录结构，其中resources目录下的vm目录存放的是velocity模板文件，包含controller.java.vm、domain.java.vm、mapper.java.vm等多个以java.vm为后缀的模板文件，这些是用于代码生成的核心模板。该目录结构对应文档中提到的代码生成相关内容，能帮助理解要改造代码生成效果所需修改的velocity模板文件的所在位置。
 
 
 
@@ -109,6 +110,7 @@ Velocity是一个基于Java的模板引擎，可以通过特定的语法获取ja
 如下图
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/TCLVbp2rNozSOJxDkCvc3NZ9noc.png)
+> 图注：这张图片展示的是若依项目ruoyi-generator模块的目录结构，呈现了该模块下的文件层级关系，清晰标注了resources目录下的vms子文件夹内，有一个被红色框突出显示的文件，名称为index.html.vm，该文件正是入门案例中需要准备的Velocity模板文件，对应文档里提到的模板文件，是代码生成模块使用的Velocity模板引擎的入门案例所需的模板文件，它存放在ruoyi-generator模块的resources目录下的vms子目录中。
 
 模板文件内容：
 
@@ -179,10 +181,12 @@ public class VelocityDemoTest {
 在指定的目录中生成index.html文件
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/CJYubtPMeoxW6XxqqN5caddynOc.png)
+> 图注：这张图片展示了项目目录结构，其中突出标注了ruoyi-generator模块下resources目录中vm子目录内的index.html.vm模板文件，以及生成后的index.html文件，与文档中介绍的Velocity模板引擎入门案例步骤相关，该案例步骤为将指定的HTML文档拷贝至该路径并重命名为index.html.vm，后续通过编写Java代码填充数据可在指定目录生成index.html文件，该图片直观呈现了案例相关的文件路径与结构。
 
 打开之后的效果：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/ZqpJbcFGYobwlXxhIpicRMW5n9f.png)
+> 图注：图片展示了在浏览器中打开index.html文件后的效果。页面显示“心怀梦想，坚持不懈，成功即在前方。加油朋友！！！”字样。该图片与文档中“入门案例实现步骤”部分对应，是对步骤2中“最终的效果：在指定的目录中生成index.html文件，打开之后的效果”这一内容的直观呈现，直观呈现了使用Velocity模板引擎进行数据填充后生成的HTML文件在浏览器中的显示效果。
 
 
 
@@ -464,6 +468,7 @@ private void generatorCode(String tableName, ZipOutputStream zip)
 先在实体类中手动加上注解，进行测试，通过没有问题后再按照实体类改模板
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/JsmZbi3jzo4eGfxgK7HcvKjTnde.png)
+> 图注：图片展示了NursingLevel实体类的部分代码。其中，关键部分被红色框突出显示，包括导入lombok相关注解的三行代码（lombok.AllArgsConstructor、lombok.Data、lombok.NoArgsConstructorArgsConstructor），以及类中添加的三个lombok注解（@Data、@AllArgsConstructor、@NoArgsConstructor）。此外，还删除了get、set、toString等方法。该图片与上下文紧密相关，是对修改模板后生成实体类代码的展示，直观呈现了Lombok注解的添加及部分方法的删除情况。
 
 #### 修改模板
 
@@ -671,6 +676,7 @@ public class ${ClassName} extends ${Entity}
 修改完成之后，重启项目，找到代码生成的功能，通过**代码预览**可以查看实体类的代码：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/WhVBbQPgOoBhgLxqoUbc8LE2nPf.png)
+> 图注：图片展示的是若依框架代码生成模块中代码预览界面。界面上方有多个选项卡，当前选中“domain.java”。下方代码区域显示了NursingLevel实体类代码，其中“@Data”注解被红色箭头突出显示，表明这是Lombok集成后新增的注解。代码还包含主键ID、等级名称等字段定义，以及部分注释。该图片与上下文紧密相关，直观呈现了修改模板后生成的代码效果，验证了Lombok集成的实现情况。
 
 > - 正常添加了关于lombok的注解
 > - 删除了setter、 getter  、toString 等方法
@@ -733,6 +739,7 @@ public class ${ClassName} extends ${Entity}
 appliation.yml文件中新增MyBatisPlus配置，同时**删除Mybatis相关的配置**
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/VR6IburfloeI5XxzxyWc3NKCnUh.png)
+> 图注：这张图片展示了项目配置文件application.yml里的MyBatis和MyBatis-Plus相关配置内容，其中红框标注了#MyBatis配置相关的内容。在该配置区域内，设置了MyBatis的类型别名扫描包为com.zzyl.**domain，指定了Mapper文件的扫描路径，还配置了MyBatis的全局配置文件位置；而红框下方是MyBatis-Plus的配置内容，包含类型别名扫描包、Mapper扫描路径、主键生成策略以及驼峰命名转换等配置项，这和文档中提到的在application.yml文件中新增MyBatisPlus配置并删除Mybatis相关配置的内容相呼应。
 
 ```YAML
 # MyBatisPlus配置
@@ -1485,8 +1492,10 @@ public class BaseEntity implements Serializable
 改造完成后，重新查看若依生成的代码：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/PV1gbnODLo4GkyxBHFrc3F3knNb.png)
+> 图注：图片展示的是若依框架代码生成模块中“service.java.vm”模板生成的代码内容。代码位于“service.java”标签下，定义了护理计划和项目关联Service接口，继承了IService<NursingProjectPlan>，包含查询护理计划和项目关联、按id查询护理计划和项目关联主键、查询护理计划和项目关联主键等方法。图片与上文改造代码生成模板的内容相关，直观呈现了改造后service接口的实现情况。
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/RJfMbZu4BoONZdxocWKchr48nTh.png)
+> 图注：这张代码预览界面展示的是MyBatis-Plus改造后的serviceImpl代码内容，顶部选项卡高亮显示的是`serviceImpl.java`文件，箭头指向的类定义明确标注该类继承了MP相关的ServiceImpl类，同时保留了所需的Mapper与Service接口实现，还包含了业务层的基础导包、注解及方法注释，用于管理护理计划与项目关联的相关业务逻辑，这对应了改造代码生成模板中对`serviceImpl.java.vm`继承逻辑的修改要求，呈现了替换改造后三层架构代码的实际效果。
 
 接下来，先用代码生成功能重新生成一次三层架构的代码，替换到项目中，测试通过后再接着往下操作。
 
@@ -1575,6 +1584,7 @@ public class BaseEntity implements Serializable
 1. 在zzyl-framework模块中新增MyMetaObjectHandler 来处理字段自动填充
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/K6pLbdintoWulMx6uDOcgMJpnWc.png)
+> 图注：这张图片展示了名为ruoyi-framework的项目的Java模块目录结构，其中interceptor目录下有一个红框标出的MyMetaObjectHandler类，这正是文档中提到的用于处理字段自动填充的类，符合文档中“在zzyl-framework模块中新增MyMetaObjectHandler来处理字段自动填充”的相关说明，该目录路径为ruoyi-framework > src > main > java > com.ruoyi.framework > interceptor，且该目录下还包含MemberInterceptor、RepeatSubmitInterceptor等其他拦截器类。
 
 详细的代码如下：
 
@@ -2116,6 +2126,7 @@ public class ${ClassName} extends ${Entity}
 重启服务之后，我们可以预览生成后的效果：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/XlXobZHlioL30BxpwrPcXgi8nhe.png)
+> 图注：这是代码模板改造中代码生成模块Swagger集成相关的预览界面，展示了Controller层代码，包含NursingLevel相关的类定义、方法注释与注解内容。界面中用红色框标注了多处核心内容，包括类定义处的NursingLevelController类声明、“查询护理等级列表”方法上的@Operation注解（带有对应操作描述），以及“导出护理等级列表”方法上的@Operation注解，这些标注对应了代码模板改造中需生成的Swagger相关注解，可直观预览修改后的效果。
 
 
 
@@ -2142,10 +2153,12 @@ public class ${ClassName} extends ${Entity}
 在目前代码生成中，其中字段详细这一栏中的Java类型并不支持LocalDateTime类型，所以我们需要在前端也要修改其内容，让它支持LocalDateTime
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/VH4TbThFnoscd8xZ97VcnlXLnTg.png)
+> 图注：图片展示的是代码生成模块中字段信息的编辑界面。界面中有多个字段信息展示，如序号、字段列名、物理类型、Java类型等。其中，字段列名“create_time”对应的Java类型为“LocalDateTime”，下方显示其对应的Java属性为“createTim”。该图片与上下文紧密相关，上下文提到在前端选择了LocalDateTime类型后，后端代码生成中需导入对应包并修改代码，此图直观呈现了前端字段信息中Java类型为“LocalDateTime”的情况，辅助理解上下文内容。
 
 打开前端项目，找到src/views/tool/gen/editTable.vue文件，在这个文件添加中以上一行代码，如下：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/YllybKwVaoCAyaxzcGecgu81nJb.png)
+> 图注：图片展示了前端项目中editTable.vue文件的代码内容，该文件位于src/views/tool/gen路径下，是文档中说明需修改以支持LocalDateTime类型的目标文件。图片里的表格包含“Java类型”列，对应的选项中原本有Date、String、Integer等类型，其中Date选项被红色框标注，另有一行被红色框标注并添加的选项，是label为LocalDateTime、value为LocalDateTime的项，也就是文档提及的新增代码行，用于让该前端文件支持LocalDateTime类型。
 
 当前端选择了LocalDateTime类型之后，在后端的代码生成中，需要导入对应的包才可以，后端的代码也需要修改
 
@@ -2200,6 +2213,7 @@ public static final String TYPE_LOCAL_DATE_TYPE= "LocalDateTime";
 修改模块文件domain.java.vm文件，修改的内容如下：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/VljJb3ls7oZhoGxeHVkcMUHjn4H.png)
+> 图注：图片展示的是代码生成模块中domain.java.vm文件的部分代码。其中，红框突出显示了判断语句，当$column.javaType为“Date”或“LocalDateTime”时，readConverterExp赋值为“$column.readConverterExp()”，并使用@JsonFormat(pattern = “yyyy-MM-dd HH:mm:ss”)注解。该代码与上下文紧密相关，是在前端选择了LocalDateTime类型后，对后端代码生成进行修改，确保导入相应包并修改代码生成内容，以支持LocalDateTime类型。
 
 ## 其他修改
 
@@ -2208,6 +2222,7 @@ public static final String TYPE_LOCAL_DATE_TYPE= "LocalDateTime";
 若依默认生成的包路径和模块名都是system，效果如下：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/BYrTbEEfroudsdx76b5cx4cYn9e.png)
+> 图注：图片展示的是若依框架中生成信息配置界面。界面中有基本信息、字段信息和生成信息三个选项卡，当前选中生成信息。生成包路径为“com.zzy.system”，生成模块名为“system”，生成业务名为“nursingProject”，生成功能名为“护理项目”，上级菜单为“服务管理”，前端类型为“Vue3 Element Plus 模版”。该图片与上下文内容相关，用于说明若依默认生成的包路径和模块名都是system的情况。
 
 而咱们项目中用到的包路径和模块名都是nursing，如果要将这里的默认值改为nursing，只需要修改配置文件即可：
 
@@ -2231,6 +2246,7 @@ gen:
 若依默认生成的字段信息中很多数据库中的`int`类型和`tinyint`类型对应的Java类型都是`Long`，如下图所示：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/YnX0bPlNYoRItMxwKbEclNb9nBe.png)
+> 图注：图片展示的是数据库字段信息配置界面。界面中有字段序号、字段名称、字段描述、物理类型、Java类型、插入、编辑、判表、查询、查询方式、必填、显示类型、字典类型等列。其中，字段序号1的物理类型为bigint，Java类型为Long；字段序号2的物理类型为int，Java类型为Long；字段序号4的物理类型为tinyint，Java类型为Long。这些字段信息与文档中修改物理类型对应的Java类型的内容相关，直观呈现了字段对应的物理类型和Java类型情况。
 
 可以通过修改zzyl-generator模块下的GenUtils工具类中的代码来将其统一改为INTEGER类型，具体的修改位置为：
 

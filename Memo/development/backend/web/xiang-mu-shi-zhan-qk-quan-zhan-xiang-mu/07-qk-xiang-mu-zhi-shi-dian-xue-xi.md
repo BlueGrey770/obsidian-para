@@ -160,6 +160,7 @@ git config --global user.email
 Git工作目录下对于文件的修改(增加、删除、更新)会存在几个状态
 
 ![](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/H3utbAAGzoKwWCxQonMcdYnXnDb.png)
+> 图注：图片展示了Git工作目录下文件修改状态的流程。仓库（repository）包含暂存区（index）和工作区（workspace）。工作区中，修改已有文件处于未暂存状态，新创建文件处于未跟踪状态。暂存区中，已暂存文件处于已暂存状态。当修改进入仓库，就变成了一次提交记录。此图与上文介绍的Git工作目录下文件修改状态相关，直观呈现了各状态及转换关系。
 
 ```XML
 工作区：我们电脑本机写代码的目录
@@ -338,6 +339,7 @@ git push --set-upstream origin master
 - 通过 `git init` 命令创建本地仓库时默认会创建一个`master`分支。
 
 ![](../../../../../Attachments/development/backend/web/xiang-mu-shi-zhan-qk-quan-zhan-xiang-mu/Y1YLbZVITo278lxpN3zco6p2nrd.png)
+> 图注：图片展示了git分支操作的流程图。左侧为master分支，右侧是v1分支。v1分支由master分支创建，head指针指向v1分支。v1分支上还有“切换”“删除”“合并”三个操作，分别对应git checkout、git branch -d、git merge指令。
 
 分支的操作指令包括:
 

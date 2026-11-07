@@ -30,6 +30,7 @@ aliases:
 原型文件如下：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/Rh7PbLGXioQRAix9aQsc1IB0noh.png)
+> 图注：图片展示的是养老项目入住办理列表页的原型图。上方有老人姓名和老人身份证号的搜索框，以及重置和搜索按钮。下方列表呈现了10条入住成功且未退住的老人信息，包括序号、老人姓名、老人身份证号、入住床位、护理等级、入住期限、出退住时间等。列表底部有分页导航，当前显示第52页。
 
 1. 搜索：老人姓名为模糊搜索，老人身份证号为精准搜索；
 2. 列表数据：列表中所展示的数据是入住成功且未退住的老人信息
@@ -41,6 +42,7 @@ aliases:
 我们可以通过原型打开入住办理详情页，详细如下：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/F0HmbcDwhoPkJKxWWtachCLCnDw.png)
+> 图注：这张图片是养老项目入住办理详情页的原型界面，对应文档中提及的入住办理详情内容，分为四个核心部分。第一部分是基本信息区，包含老人姓名、性别、身份证号等入住老人的基础信息录入或展示项；第二部分是家属信息区，以列表形式呈现家属的联系方式、与老人关系等信息，还配有操作按钮；第三部分是入住配置区，可设置护理等级、入住床位、入住期限等相关费用与配置信息；第四部分是签约办理区，展示合同签订相关的日期、协议类型等内容，页面底部配有操作按钮，整体界面清晰划分了入住办理需涉及的各类信息模块，与文档中介绍的需求内容相呼应。
 
 上述需求中，共包含了四部分：
 
@@ -63,6 +65,7 @@ aliases:
 在开发接口之前呢，我们需要先熟悉一下，后端开发的流程，如下：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/GfQDbBTT8osKNAxlaeMcJZzCnLh.png)
+> 图注：图片展示了后端开发流程图。从需求分析开始，经过评估工期、表结构设计、接口设计、功能实现、前后端联调、测试提bug、前后端优化、测试回归bug、功能验收等环节，最终回到原型+PRD。图中还标注了解决缺陷、测试缺陷、缺陷回归等步骤。
 
 - 需求分析(基于原型和PRD)
 - 开发计划(工期评估)
@@ -395,6 +398,7 @@ CREATE TABLE `contract` (
 以elder表为例：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/ZwKHbgWnfod5vHxxKLCcTnV9n6c.png)
+> 图注：这是elder表在数据库连接工具中的修改界面，用于调整该表的字段非空约束。界面左侧的表结构列表中，create_time、update_time、create_by、update_by、remark这几个字段被红框标注；界面右侧针对create_time字段的设置中，“Not Null”选项旁有红色标注文字“去掉非空约束”，该设置正好对应文档中提到的需调整的重点字段，操作对象就是elder表，目的是消除AI生成字段为必填带来的后期数据操作限制。
 
 ## 接口设计
 
@@ -456,6 +460,7 @@ CREATE TABLE `contract` (
    - 响应结果：参考若依框架定义的分页对象：`{total:120,rows:[],code:200,msg:成功或失败}`
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/VhKnb4smRoU4kNxFLbTcKIf5nNc.png)
+> 图注：图片展示的是入住办理模块中分页查询入住列表的页面。页面上方有老人姓名、老人身份证号的搜索框及搜索、重置按钮。下方列表显示序号、老人姓名、老人身份证号、入住床位、护理等级、入住日期、创建时间等信息，如序号1的老人姓名为安欣，入住床位1011，护理等级为一般护理等级等。列表底部有分页导航，当前显示第52页，每页20条数据。该图片与文档中介绍的分页查询入住列表接口对应，直观呈现了接口响应结果示例。
 
 1. 查询所有护理等级信息
 
@@ -464,10 +469,12 @@ CREATE TABLE `contract` (
 - 响应结果：参考若依框架定义的普通返回对象：`{msg:成功或失败,code:200,data:[]}`
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/XpZubm0fio6QXTxcKbhc84qPnec.png)
+> 图注：这张图片展示的是入住办理相关的配置界面，左侧区域呈现了护理等级的选择项，红框内清晰列出了特级、一级、二级、三级、六级这五种护理等级，对应文档中查询所有护理等级信息的接口的相关内容。该界面还设置了入住期限、费用期限、押金、床位费用等其他相关字段，右侧区域包含入住床位选择，以及护理费用、其他费用、政府补贴等费用类配置项，符合文档中入住办理模块的功能设计。
 
 选择护理等级之后，可以自动填充**护理费用**这个这个
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/RLEgbteK2olZupxr6jkce3TanLb.png)
+> 图注：图片展示的是入住办理系统中入住配置界面。界面左侧有入住期限、护理等级、押金、床位费用、医保费用等配置项，其中护理等级为一级护理等级，押金为3000元。右侧是费用期限、入住床位、护理费用、其他费用、政府补贴等配置项，护理费用显示为2000元。图片与上下文的关系是，上下文提到选择护理等级后可自动填充护理费用，此图直观呈现了护理费用的显示情况。
 
 
 
@@ -478,6 +485,7 @@ CREATE TABLE `contract` (
 - 响应结果：参考若依框架定义的普通返回对象：`{msg:成功或失败,code:200,data:[]}`
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/UuEAbezGRouSK5xUZy7cE9f5n4c.png)
+> 图注：这张图是入住办理模块中“根据床位状态查询所有楼层数据”接口对应的操作界面。界面右侧的红色框标注了楼层与床位的选择区域，可展开显示对应楼层的床位编号，左侧则显示入住配置相关内容，包含入住期限、护理等级、押金、床位费用、医保费用等配置项，以及费用期限、入住床位、护理费用等信息，与接口设计内容相呼应，对应了选择床位的操作场景。
 
 
 
@@ -488,6 +496,7 @@ CREATE TABLE `contract` (
 - 响应结果：参考若依框架定义的普通返回对象：`{msg:成功或失败,code:200,data:{}}`
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/OUtRbUyYpoeZzmx9fnCcThAWn5c.png)
+> 图注：这张图片展示了入住配置相关的表单界面，界面中清晰显示了“床位费用”输入框及对应数值4000，还有用于调整该费用的增减按钮；同时有红色箭头指向这个床位费用区域，标注出该内容的位置。此外，界面还包含入住期限、护理等级、入住床位、押金、医保费用、护理费用等多个与入住办理相关的配置项，“入住床位”一栏明确标注为8楼/807/807-1，各费用配置项旁也配有对应的增减操作按钮。
 
 1. 申请入住
 
@@ -506,6 +515,7 @@ CREATE TABLE `contract` (
 - 响应结果：参考若依框架定义的普通返回对象：`{msg:成功或失败,code:200,data:{}}`
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/UD1QbKt6yoA5YPxXkMgcqXXBncd.png)
+> 图注：图片展示的是入住办理系统中填写入住信息的界面。界面上方显示入住人员为李长生，身份证号为420112195508091234，年龄69岁，联系方式为15212346666。下方有家庭信息、入住信息、签约办理、丙方信息等板块，如家庭信息板块有配偶姓名、配偶联系方式、与本人关系等填写项；入住信息板块有入住日期、护理等级、押金、床位费等填写项；签约办理板块有合同编号、签约时间等填写项；丙方信息板块有丙方姓名、丙方联系方式等填写项。
 
 ### 接口文档
 
@@ -520,6 +530,7 @@ CREATE TABLE `contract` (
 把我们生成的四张表导入到代码生成页面中（入住表、入住配置表、合同表、老人表），如下图
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/SrWRbdr1soBAHax90cZchy5Dnob.png)
+> 图注：图片展示的是代码生成页面中导入的四张表信息。页面上方有表名称、表描述、创建时间等搜索栏，下方表格列出了序号、表名称、表描述、实体、创建时间、更新时间、操作等信息。表格中红框内显示了check_in、check_in_config、contract、elder四张表的相关数据，如表名称、表描述、实体等，还呈现了创建和更新时间。该图片与文档中基础代码生成部分上下文对应，直观呈现了导入表的配置情况。
 
 
 
@@ -529,6 +540,7 @@ CREATE TABLE `contract` (
 - 模块名：`nursing`
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/MBK2blld7od3tKxJMsEcVz9wnEb.png)
+> 图注：图片展示的是入住表（check_in）代码生成配置界面。界面中有“生成信息”选项卡，包含生成模板、生成包路径、生成业务名等配置项。生成模板选择“单表（增删改查）”，生成包路径为“com.zzyl.nursing”，生成业务名为“checkin”，生成模块名为“nursing”，生成功能名为“入住”，生成代码方式为“zip压缩包”。该图片与文档中基础代码生成部分上下文对应，用于说明入住表代码生成的具体配置情况。
 
 **合同表(contract)代码生成配置**
 
@@ -536,6 +548,7 @@ CREATE TABLE `contract` (
 - 模块名：`nursing`
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/PwjqbbnLeozuSlxdy3JcbSFmnYe.png)
+> 图注：这是入住办理后端接口开发中合同表（contract）的代码生成配置页面，属于基础配置环节的内容。页面当前显示在“生成信息”标签页，生成模板选择为单表（增删改查），前端类型为Vue3 Element Plus模版；核心配置项包括生成包路径为com.zzyl.nursing，生成模块名和生成业务名均为nursing与contract，生成功能名为合同，生成代码方式选择zip压缩包，上级菜单标注为“不选”，页面底部设有提交和返回按钮，该配置是将合同表导入代码生成页面后的具体参数设置。
 
 **其他所有表的配置**
 
@@ -547,12 +560,14 @@ CREATE TABLE `contract` (
 > ps：创建时间和修改时间无需改动，还是Date类型
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/DOq0bUb5aovJpLx9Sl5ckYv5nec.png)
+> 图注：图片展示的是入住表（check_in）的代码生成配置界面。其中，start_date、end_date、care_level、status、sort_order等字段被红色框突出显示。start_date和end_date的Java类型为LocalDateTime，care_level为Integer，status也为Integer，sort_order为int。这些字段的配置与上下文提到的修改所有表中日期类型为LocalDateTime，状态和排序等改为Integer类型等内容相呼应，是基础配置环节中对字段类型等信息的设置。
 
 #### 批量生成导入
 
 全选之后，点击代码生成，如下操作
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/Bx6VbMRIKogAFnxld8wcXI5Mnvd.png)
+> 图注：图片展示的是代码生成页面，用于管理表信息。页面上方有表名称、表描述等输入框，以及搜索、重置按钮。下方列表显示了check_in、check_in_config、contract、elder四张表的相关信息，如表名称、表描述、实体、创建时间、更新时间等。列表中有选中勾选框，以及生成、导入、修改、删除等操作按钮。页面右上角有放大镜和刷新图标。该图与上下文介绍的代码生成配置及批量生成导入操作相关，展示了操作前的页面状态。
 
 
 
@@ -563,6 +578,7 @@ CREATE TABLE `contract` (
 把下载好的后端代码，统一拷贝到**zzyl-nursing-platform**模块中，如下效果
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/E7Wnbo56VoCW6ixhKfKcLFJynMc.png)
+> 图注：该图片展示了zzyl-nursing-platform模块的Java包结构，红色框分别标注了controller包下的CheckInController、ContractController、ElderController，以及mapper包下的CheckInConfigMapper、CheckInMapper、ContractMapper、ElderMapper。这些内容与文档中后端代码拷贝说明相关，对应文档要求保留的domain、service、mapper等代码内容，且按照文档提示需删除CheckInConfigController类，图中也清晰呈现了该类未在标注的controller列表中。
 
 > 注意：
 > 
@@ -576,6 +592,7 @@ CREATE TABLE `contract` (
 重新启动前后端项目，其中的入住列表效果如下图
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/M3wCb8KG3o3Zu7xqZKHcoOQgnEh.png)
+> 图注：图片展示的是入住列表页面。页面上方有老人姓名、身份证号搜索框及搜索、重置按钮。下方列表显示序号、老人姓名、身份证号、入住床位、护理等级名称、入住期限、状态、创建时间等信息，如张三、李天龙等老人的入住信息。列表底部有分页功能，当前显示第1页，共4条记录，每页10条。该页面是自动生成的代码已包含的分页查询入住列表接口效果，无需开发。
 
 > 自动生成的代码已包含该接口，无需开发
 
@@ -637,6 +654,7 @@ public List<NursingLevel> listAll() {
 打开前端页面来测试，如下效果：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/MQJrbLlSroKyMJxm3BFc8IqIntd.png)
+> 图注：这张图片展示的是入住办理相关的前端页面界面，页面左侧设有入住配置相关的选择项，包括入住期限、护理等级（下拉选项中显示2号护理等级、1号护理计划、3号护理等级等内容）、押金、床位费用、医保支付等选项区域，右侧对应设有费用相关的数值设置区域，包含费用期限、入住床位、护理费用（当前数值为3000）、其他费用、政府补贴等选项。有红色箭头指向页面右侧的“护理费用”项，关联左侧选中的3号护理等级，体现该护理等级对应生成的护理费用设置内容，该页面用于直观展示入住办理时的相关配置及对应费用情况。
 
 
 
@@ -647,6 +665,7 @@ public List<NursingLevel> listAll() {
 最终的效果图如下：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/BwkyblwJQoKfOPxgVl2cwHounkg.png)
+> 图注：图片展示的是入住办理系统中根据床位状态查询所有楼层数据的最终效果。左侧为入住配置区域，有入住期限、护理等级、押金、床位费用、医保支付等输入框。右侧是费用期限、入住床位等区域，入住床位部分以红色框突出显示，呈现了楼层及对应房间号，如1楼301、2楼302等，其中3楼303被选中。
 
 我们结合**接口文档的数据结构**，这个接口需要查询三张表的数据，分别是**楼层表、房间表、床位表**，它们的关系如下：
 
@@ -664,6 +683,7 @@ order by f.id, r.id, b.id
 ```
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/JaiebEld1o8CWcxHvjDcy3szn1g.png)
+> 图注：这是一张数据库操作界面截图，上方显示的是一条SQL查询语句，该语句从floor表、room表、bed表中联合查询相关数据，用于构建基于床位关联的楼层、房间数据查询逻辑。下方是查询结果的展示区域，部分数据行被红框和绿框标注，对应不同的查询结果条目，左侧标注的“fid”为楼层ID，“fname”为楼层名称，“rcode”为房间编号，“bid”为床位编号，清晰呈现了三个表关联查询后的结构化数据，与文档中“根据床位状态查询所有楼层数据”接口的sql语句及返回结果相关，用于验证该接口的数据库查询效果。
 
 #### 控制层
 
@@ -789,6 +809,7 @@ xml映射文件
 效果图：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/A5qrb6L97oZXR7xhupXcVD7Knth.png)
+> 图注：图片展示的是入住配置界面，用于查询房间数据（楼层、房间、价格）。界面中“入住床位”处显示3楼/303/303 - 1，下方“其他费用”区域有303、304、305、306等房间编号。其中303 - 1房间编号被红色箭头指向突出显示。该图片与文档中“根据房间id查询房间数据（楼层、房间、价格）”的思路说明相关，直观呈现了根据床位查询房间数据的效果，辅助理解业务逻辑。
 
 当选择了某一个床位之后，需要根据床位所在的房间，查询所匹配的价格，我们结合接口文档的返回结果来分析，这里面涉及到了3张表：
 
@@ -947,6 +968,7 @@ public AjaxResult apply(@RequestBody CheckInApplyDto dto){
 大家也可以使用资料中提供的代码
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/YSaGbsZvsobJLMxxwBgc1GRsnQh.png)
+> 图注：图片展示了五个Java类文件，分别为CheckInApplyDto.java、CheckInConfigDto.java、CheckInContractDto.java、CheckInElderDto.java和ElderFamilyDto.java。这些文件名称与文档中“申请入住”部分的控制层接口开发相关，表明在入住申请的控制层接口开发中，这些类文件是基本结构的一部分，属性名称需与json结构保持一致，是接口开发的基础内容。
 
 基本的结构如下：
 
@@ -1141,6 +1163,7 @@ private Elder insertOrUpdate(Bed bed, CheckInElderDto checkInElderDto) {
 - 大家也可以直接使用我生成好的类，在当天资料中可以找到
 
   ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/RrjGbTj0GosOQAxoN1hcm1ZDnOh.png)
+> 图注：该图片展示了一个名为CodeGenerator.java的Java工具类的相关标识。结合上下文可知，这个工具类是用于生成入住相关合同编号的工具，其生成的编号总长度为16位，前12位是当前的年月日时分秒（格式为yyyyMMddHHmmss，示例为20250101101259），后4位是从0001开始递增的数值，最大值为9999，可辅助完成入住办理后端接口开发中创建合同时生成编号的需求。
 
 
 
@@ -1176,6 +1199,7 @@ public AjaxResult detail(@PathVariable("id") Long id){
 在当天的资料中，已经提供了对应的vo类，大家可以直接拷贝：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/01-ru-zhu-ban-li-hou-duan-jie-kou-kai-fa/AoRjb6ZXRo6CkwxwYiocIOW4nTw.png)
+> 图注：图片展示了四个Java类文件，分别是CheckInConfigVo.java、CheckInDetailVo.java、CheckInElderVo.java和ElderFamilyVo.java。这些类文件与文档中入住办理接口开发的申请入住详情相关，是基于接口文档定义内容，在CheckInController中定义的新方法的返回对象，需严格按照接口文档中定义的json结构来定义，或使用AI生成对应的vo类，方便给前端传输数据。
 
 入住详情的其他代码，需要自行实现
 

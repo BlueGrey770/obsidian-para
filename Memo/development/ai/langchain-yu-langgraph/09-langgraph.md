@@ -17,6 +17,7 @@ LangChain&LangGraph开发生态是一个模块化的语言模型应用开发框�
 - 部署：使用LangGraph Platform将您的LangGraph应用程序转换为生产就绪的API和助手
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/UNpabwKA3oTPouxQCBZcNeyhnGb.png)
+> 图注：这张图展示了LangGraph相关工具的架构与分类结构，左侧分为Deployment、Components、Architecture三个类别，其中Deployment下的LangGraph Platform为商业产品，Components下的Integrations为开源产品，Architecture类别下包含LangChain与LangGraph两款开源产品；右侧的LangSmith为商业产品，其功能涵盖Debugging、Playground、Prompt Management、Annotation、Testing、Monitoring等，该图清晰呈现了不同Lang系列工具的定位、所属类别及商业/开源属性。
 
 
 
@@ -30,6 +31,7 @@ LangChain&LangGraph开发生态是一个模块化的语言模型应用开发框�
 - **人工介入**：在某些非常关键的位置，必须由人类决定的点，可以人工介入，然后继续走流程
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/BYUAbI761oHdKvxuK6Lc1Ynznhd.png)
+> 图注：图片展示了一个基于Graph结构的流程图，用于说明动态调整流程、分支与并行、多人协作及人工介入等场景。流程从“__start__”开始，分为两条路径，一条是“磨咖啡豆”后“冲咖啡”，再询问是否加糖，若加糖则“加糖”后结束，若不加糖则结束；另一条是“heat water”（加热水），若水烧开了则“get boil water”，若水没开则循环返回“heat water”。该图直观呈现了LangGraph框架下流程的动态变化与分支处理，与上下文介绍的LangGraph核心创新相契合。
 
 **LangGraph**是由LangChain团队开发的开源框架，专为构建基于大型语言模型(LLM)的有状态、多参与者应用程序而设计
 
@@ -38,6 +40,7 @@ LangChain&LangGraph开发生态是一个模块化的语言模型应用开发框�
 用**节点（Node）**表示任务步骤，用**边（Edge）**连接节点，并通过**状态（State）**在不同节点之间传递信息
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/KYkwbm1dcoX2d7xNBvoctlyKnZb.png)
+> 图注：这张图展示了LangGraph的基础结构，左侧蓝色矩形的“Start”作为流程起点，通过连线依次连接黄色的“Node 1”和“Node 2”两个任务步骤节点，最右侧为蓝色的“Stop”流程终点。此外，图中存在一条从两个节点指向下方绿色“State”模块的箭头，代表节点在执行过程中会生成并传递状态信息，该图对应上下文里关于LangGraph采用图结构、以节点表示任务步骤且通过状态传递信息的核心内容。
 
 LangGraph主要可以应用在下面场景中：
 
@@ -59,9 +62,13 @@ LangGraph主要可以应用在下面场景中：
 <grid>
 <column width-ratio="0.266973">
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/M2Pqbt9vpo3UrCxtsgqcGjG4nqo.png)
+> 图注：图片展示了基于LangGraph实现的简单两位数计算图。图中“__start__”为起始节点，有两条分支，分别指向“得到热水子图”和“磨咖啡豆”节点。这两个节点的输出再共同指向“冲咖啡”节点。之后，“冲咖啡”节点的输出指向“加糖子图1”节点，最后“加糖子图1”的输出到达“__end__”节点。该图直观呈现了图中节点的连接关系和执行顺序，与上下文介绍的图由状态、节点、边组成，以及后续的代码编写步骤相呼应。
+
 </column>
 <column width-ratio="0.733027">
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/Bf33brL48oJIvCxkjcgcIgVcnbg.png)
+> 图注：图片展示了基于LangGraph实现的两位数计算图示。图中包含“__start__”起始节点，“询问是否加糖1”节点，以及“加糖”和“__end__”节点。其中，“询问是否加糖1”节点有“是”和“否”两个分支，分别指向“加糖”和“__end__”节点。
+
 </column>
 </grid>
 
@@ -79,6 +86,7 @@ LangGraph主要可以应用在下面场景中：
 ```
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/IEQWbCWkFodmFRxLBt1cUKatnng.png)
+> 图注：这张图是基于LangGraph实现两位数计算的入门案例流程，对应案例需求中的计算图。图中从上至下依次设置了__start__、add_node、multi_node、__end__的流程节点，节点间通过箭头连接明确执行顺序。对应流程的具体操作为：从起始节点__start__输入两位数x与y，经add_node执行加法运算x=x+y并输出结果，再经multi_node执行乘法运算x=x*y并输出结果，最终由__end__节点结束流程。
 
 #### 1.3.2 准备环境
 
@@ -184,6 +192,7 @@ LangGraph的核心组件有：图（Gragh）、**状态（State）、节点（No
 StateGraph默认有一个START节点和一个END节点，编写一个**最简化**的图
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/Ae4Sbw02voybjxxw9y5cNxf6nCc.png)
+> 图注：图片展示了LangGraph中StateGraph的最简化图结构。图中有两个节点，上方节点为“__start__”，下方节点为“end”，二者之间有一条虚线箭头连接。该图与上下文紧密相关，上下文提到StateGraph默认有一个START节点和一个END节点，此图直观呈现了这一结构，帮助理解StateGraph在最简化场景下的基本组成。
 
 代码如下：
 
@@ -333,6 +342,7 @@ def configLLM(state):
 - 条件边：基于状态动态选择路径，通过函数返回目标节点名
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/S9KUbtFXSogXMkxD5F6cuYX0nMe.png)
+> 图注：这张图是展示LangGraph核心组件里边的类型的流程图，内容结合了文档中边的相关说明，清晰呈现了边的两种类型：普通边和条件边。图中__start__节点通过普通边指向heatUp节点；heatUp节点通过条件边，当判断为“yes”时，通过带有“普通边”标识的实线箭头指向getWater节点，当判断为“no”时，通过虚线箭头回到heatUp节点；getWater节点再通过普通边指向__end__节点，直观体现了普通边的无条件跳转和条件边的动态路径选择的特点。
 
 ```Python
 import os
@@ -494,12 +504,14 @@ LangGraph的流程控制方式：分支、循环、并行、人工介入、子�
 这个过程可以用下图表示：
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/Vw9cbJRc7oiEtGxWbOocrNGHnje.png)
+> 图注：图片展示了冲咖啡流程的图示。从“__start__”开始，分为“磨咖啡豆”和“烧水”两条路径。烧水路径中，若水烧开则进入“冲咖啡”，否则继续加热；磨咖啡豆路径直接进入“冲咖啡”。冲咖啡后询问是否加糖，若加糖则为“加糖咖啡”，不加糖则为“无糖咖啡”，最后都到达“__end__”。该图与上下文介绍的冲咖啡流程控制方式相呼应，直观呈现了流程中分支、循环等控制逻辑。
 
 ### 3.1 分支
 
 通过综合运用条件边和条件节点，可以控制graph的分支，我们把关注点放在案例的**烧开水部分**
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/Tiwjb38Pmo4kIsx6WUKcU3YPn9e.png)
+> 图注：这张图是LangGraph中描述烧开水流程的分支示意图，对应文档里冲咖啡案例的分支控制内容。流程从“__start__”节点开始，进入“烧水”环节；烧水后根据结果分为两个分支，若水烧开则流向“冲咖啡”节点，最后汇至“__end__”节点，若水没开则跳转至“需要继续加热”节点，加热后重新汇入终点，这一设计结合了分支与循环逻辑，能够满足烧开水时水温不足需反复加热、达到要求后进入后续步骤的实际需求。
 
 根据上述流程实现代码：
 
@@ -618,6 +630,7 @@ if __name__ == "__main__":
 **实际上， LangGraph 中的“循环”本质上不是 while，而是「条件分支 + 指向自身的边」**  
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/Rlc1bp65UoAVBpxmbXic6N3Ynue.png)
+> 图注：这是LangGraph流程控制中关于烧开水的循环逻辑示意图，属于冲咖啡流程里的烧开水环节。图中以“start”为起始，指向核心节点“烧水”；当判断“水烧开了”时，流程进入“end”结束节点；若判断“水没开”，则通过指向自身的虚线箭头，让流程回到“烧水”节点，实现循环加温，这对应了文档中所说的“条件分支+指向自身的边”的循环本质，直观展现了水温不足时反复加温、达标后结束流程的控制逻辑。
 
 代码实现如下
 
@@ -728,6 +741,7 @@ if __name__ == "__main__":
 这一小节，我们把关注点转移到烧开水和磨咖啡豆两个任务的并行执行和结果合并上
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/UzuQbiIdDoRSYBxeGU7cqDrjnWd.png)
+> 图注：这张图是煮咖啡任务的流程控制示意图，对应文档中3.3并行小节的内容。图中以`__start__`作为起始节点，分支出两条并行路径，分别指向“烧水节点”和“磨咖啡豆节点”；两个并行节点完成后，箭头共同汇入“冲咖啡节点”，最终由“冲咖啡节点”指向`__end__`结束节点。该图直观展示了烧水与磨咖啡豆这两个并行任务的执行逻辑，与文档中关于并行节点的说明内容相呼应，体现了并行节点执行后再合并的流程设计。
 
 代码实现
 
@@ -828,6 +842,7 @@ if __name__ == "__main__":
 - `graph`必须带有`memory`
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/Dc1nbfBq5oF8LgxlDktcJH7Hnhd.png)
+> 图注：图片展示了煮咖啡任务的流程图。从“__start__”开始，依次经过“冲咖啡”节点，然后到达“询问是否加糖”节点，该节点有“是”和“否”两个分支，若选择“是”则进入“加糖”节点，最后到达“__end__”节点；若选择“否”则直接到达“__end__”节点。此图与上下文紧密相关，直观呈现了案例中人工决定是否加糖这一关键环节的流程，是人工介入方式的示例。
 
 代码实现如下:
 
@@ -924,6 +939,7 @@ if __name__ == "__main__":
 - 总图
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/RhKmbVa41oFMilxxZmnccvS9nmf.png)
+> 图注：这张煮咖啡任务的LangGraph流程图，以__start__为起始节点，分为并行子图与后续处理流程。并行子图由烧水相关节点构成，包含heat water节点，其分支标注“水烧开了”指向get boil water节点，若“水没开”则回流至heat water节点；磨咖啡豆节点与并行子图的get boil water节点最终都指向冲咖啡节点。冲咖啡节点后接询问是否加糖节点，该节点的“是”分支指向加糖节点，“否”分支直接指向__end__结束节点，加糖节点也最终指向__end__。此图对应文档中并行、人工介入等内容，清晰展现了煮咖啡任务的节点流转逻辑。
 
 现在整个案例已经有了完整的处理流程，整体代码如下：
 
@@ -1130,6 +1146,7 @@ if __name__ == "__main__":
 增强型智能体的基本构建块是一个增强的LLM，其中包含检索、工具和记忆等增强功能。
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/FzlZbUZ3rodSmAxxqdJck1UQnbe.png)
+> 图注：图片展示了增强型智能体的架构模式。左侧“In”为输入端，右侧“Out”为输出端。中间是LLM（大模型），与检索（Retrieval）、工具（Tools）、记忆（Memory）三个模块有交互。检索模块与LLM双向箭头，表示查询/结果；工具模块与LLM双向箭头，表示调用/响应；记忆模块与LLM单向箭头，表示读/写。该图直观呈现了增强型智能体中LLM与各增强功能模块的交互关系，与上下文对增强型智能体架构的描述相契合。
 
 **📚 模式说明：**
 
@@ -1142,6 +1159,7 @@ if __name__ == "__main__":
 工作流智能体模式，就是将任务分解为一系列步骤，其中每个LLM调用处理上一个步骤的输出，通过多步骤LLM调用分阶段处理复杂任务。
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/GMdAbuiBmoes8BxwsoocpxsLntf.png)
+> 图注：这张图展示了链式工作流智能体的流程结构，是对应“顺序分解+中间检查（Gate）”模式的直观呈现。输入“(In)”首先进入第一个LLM调用（LLM Call 1）生成输出1，之后到达中间的Gate决策点；若Gate验证结果为“Pass”，则流程进入后续的LLM Call 2、LLM Call 3环节，最终输出结果“Out”；若Gate验证结果为“Fail”，则直接触发“Exit”环节。该图清晰对应文档中关于链式工作流智能体的“顺序分解”与“中间检查（Gate）”的规则说明，体现了工作流智能体多步骤处理复杂任务且可在中间节点阻断错误的特点。
 
 📚 **模式说明：**
 
@@ -1155,6 +1173,7 @@ if __name__ == "__main__":
 路由工作流智能体，这种模式是将输入通过 **LLM Call Router** 对意图识别，再交由下游的 **LLM** 执行。
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/S0bFb5tu4oMKttx7PE2cmoFMnSf.png)
+> 图注：图片展示了路由工作流智能体的架构模式。输入（In）经LLM Call Router节点处理，根据输入特征决定调用LLM Call 1、LLM Call 2或LLM Call 3中的一个。若调用LLM Call 1，则其结果经LLM Call 1箭头指向Out；若调用LLM Call 2或LLM Call 3，则其结果经LLM Call 2或LLM Call 3箭头指向Out。
 
 📚 **模式说明：**
 
@@ -1168,6 +1187,7 @@ if __name__ == "__main__":
 并行工作智能体，是指一个输入同时交给多个LLM去执行，再将这些大模型的输出进行汇总处理，再输出。
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/LIu9bxU4Aox6AfxJVjPctlR0nWb.png)
+> 图注：这张图展示了并行工作流智能体的运行机制，输入（In）会同时分发到三个独立的LLM Call模块：LLM Call 1、LLM Call 2和LLM Call 3，各模块并行执行处理无直接依赖关系。三个LLM的输出会汇总至Aggregator模块，经该模块整合后，最终生成输出（Out）。这一设计对应任务并行拆分与结果聚合的核心逻辑，通过并发处理提升效率，借助冗余计算增强结果可靠性，同时模块化的隔离设计还能降低单点故障的风险。
 
 📚 **模式说明：**
 
@@ -1187,6 +1207,7 @@ if __name__ == "__main__":
 协调器工作流智能体，这种模式是，由`Orchestrator LLM`作为智能调度中心，**动态生成**子任务列表，子任务可以是并行或串行执行，结果由`Synthesizer`进行聚合输出。
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/GWQSbIAvXoirryxev3lclrA5ncd.png)
+> 图注：图片展示了协调器工作流智能体的架构模式。输入（In）经Orchestrator处理后，动态生成子任务列表，包括LLM Call 1、LLM Call 2和LLM Call 3，这些子任务可并行或串行执行。执行结果由Synthesizer进行聚合输出，最终输出（Out）。该图直观呈现了文档中所描述的由Orchestrator作为智能调度中心，动态生成子任务列表，子任务并行或串行执行，结果由Synthesizer聚合输出的工作流智能体架构模式。
 
 📚 **模式说明：**
 
@@ -1196,12 +1217,14 @@ if __name__ == "__main__":
 - **这种工作流程适合处理复杂且细节不确定的任务（如编程时根据实际情况修改文件）。它看起来像并行处理，但更灵活：任务不是预先定义好的，而是由协调器根据进展动态分配和调整。**
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/XVwVb5yQgoOH49xmqkhcBrmtnjh.png)
+> 图注：这张图以商业研究报告生成为例，展示了评估优化工作流智能体的完整执行流程。首先是输入环节，用户输入“分析2024年AI芯片市场趋势”；接着由协调器Orchestrator完成任务拆解与调度，分解出数据收集、竞品分析、风险预测三个子任务，调度数据专家、分析模型、风险模型三类大语言模型分别执行对应子任务；之后通过合成器Synthesizer整合三方输出、消除数据矛盾，再按企业模板重写为PPT大纲；最终输出结构化的30页研究报告。
 
 #### 4.1.6 评估优化工作流智能体
 
 评估优化工作流智能体，是这一种 生成 → 评估 → 反馈 循环反馈的机制。
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/RWhwbGWNRouY1VxbxcFcQvIBnGf.png)
+> 图注：图片展示了协调器工作流智能体的架构模式。左侧输入（In）经LLM Call Generator生成解决方案（Solution），再由LLM Call Evaluator评估，若评估结果为Accepted（认可），则输出（Out）；若为Rejected+Feedback（拒绝+反馈），则返回LLM Call Generator重新生成。
 
 📚 **模式说明：**
 
@@ -1211,6 +1234,7 @@ if __name__ == "__main__":
 - **举例：**
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/WjTdb9KPnoPeLBxLJq7cAPpbncc.png)
+> 图注：图片以学术摘要生成场景为例，展示了协调器工作流智能体的流程。首先，用户输入论文主题，Generator调用LLM生成初始摘要；Evaluator检查摘要是否包含研究目标、方法论、关键结论，检测到未明确说明数据来源则Rejected；Evaluator向Generator发送指令补充数据采集方法描述；Generator基于反馈生成包含数据来源的Solution；Evaluator验证通过后，流程结束。该图直观呈现了协调器工作流智能体的生成、评估、决策等环节，与上下文对协调器工作流智能体模式说明相呼应。
 
 **场景：**
 
@@ -1237,10 +1261,12 @@ if __name__ == "__main__":
 路由工作流智能体的架构，一般是解决复杂的业务场景，例如：在线客服，用户提问后，会按照问题进行分类，然后将请求路由到定价、退款、退货等特定流程
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/QUazbA04ZopJyvxm40nc2IH5nSd.png)
+> 图注：这张图展示了路由工作流智能体的架构，对应文档中要实现的根据用户输入选择生成故事、笑话或诗歌的智能体助手架构。图中输入“In”进入标有“Router”的路由组件，该路由组件通过三条带箭头的虚线，将请求分别指向三个功能组件，每个功能组件配有脑状图标，最终每个组件对应输出“Out”，体现了路由智能体分类请求并将其分发到对应特定功能流程的核心逻辑，和文档中路由工作流智能体用于分类请求并定向处理的内容相契合。
 
 我们将实现一个智能体助手，根据用户的输入来决定是生成故事、笑话、诗歌其中的一个，架构如下：
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/Xhr6b6kUtoGNuVxkLD1cYjoLnne.png)
+> 图注：图片展示了智能体助手的架构图。用户输入经路由智能体处理后，输出“story”“joke”“poem”三种类型，分别对应故事生成Agent、笑话生成Agent、诗歌生成Agent。这些生成Agent将内容传至最终输出，完成智能体助手的执行层功能。该图与上下文紧密相关，直观呈现了根据用户输入决定生成故事、笑话或诗歌这一工作流智能体架构。
 
 代码实现
 

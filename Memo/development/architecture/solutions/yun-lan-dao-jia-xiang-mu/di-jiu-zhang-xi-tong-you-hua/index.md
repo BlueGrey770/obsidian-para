@@ -136,6 +136,7 @@ if(订单状态==服务中){
 我们拿待支付状态到派单中状态举例：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/Y0CcbXCOqoJ4UnxNLrZcK4acnX5.png)
+> 图注：该图以流程图形式呈现了订单的状态流转过程，清晰展示了状态机的应用场景：用户发起“下单”操作后，订单从用户对应的初始状态进入“待支付”状态；当执行“用户支付”的事件后，订单状态便从“待支付”迁移至“派单中”，这恰好对应了文档中所举的待支付状态到派单中状态的状态迁移例子，直观呈现了订单在支付环节前后的状态变化逻辑。
 
 **现态**：订单当前处于待支付状态那么现态为待支付。
 
@@ -818,6 +819,7 @@ create table `jzo2o-orders`.biz_snapshot
 在orders-base工程的AutoImportConfiguration类中配置导入订单状态机。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/Ew3JbedN6o75C8xXQKgcSkkenle.png)
+> 图注：这张图片展示的是Java代码文件AutoImportConfiguration.java的编辑界面，对应文档中加载订单状态机的操作内容。文件的第14行用红框突出标注了核心代码，内容为@Import({OrderStateMachine.class})，这行代码的作用是将订单状态机导入到当前配置类中；该文件的位置在com.jzo2o.orders.base.config包下，类上还标注了@Configuration、@ComponentScan等用于项目配置的注解，和文档中“在orders-base工程的AutoImportConfiguration类中配置导入订单状态机”的要求完全对应。
 
 ##### 2）**测试启动状态机**
 
@@ -859,6 +861,7 @@ public class OrderStateMachineTest {
 执行测试方法，对101订单启动状态机管理，启动后101号订单的状态为NO_PAY待支付状态。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/GwOvbpkCdoBqlsxk9HGcrQkAn4f.png)
+> 图注：这是测试订单状态机启动功能的代码截图，内容为Java测试方法test_start，该方法用于启动订单状态机。方法内以101号订单为参数调用orderStateMachine的start方法以启动状态机，随后通过log.info打印该方法的返回结果，截图中明确显示返回的初始状态为“NO_PAY”，这与文档中描述的“101号订单测试状态机”的操作内容对应。
 
 观察state_persister表有一条101号订单的状态持久化记录，每条订单对应state_persister表的一条记录。
 
@@ -887,6 +890,7 @@ public void test_changeStatus() {
 执行PAYED事件对应的动作，在动作类中打断点
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/NfJcbB5EtoMXqvxHIG1cGeSmn5f.png)
+> 图注：图片展示的是OrderPayedHandler.java文件代码。该文件定义了OrderPayedHandler类，实现了StatusChangeHandler接口，用于处理订单支付相关状态变更事件。代码中包含订单支付处理逻辑，接收bizId、statusChangeEventEnum、bizSnapshot参数，通过OrderUpdateStatusDTO.builder()构建OrderUpdateStatusDTO对象，设置订单状态为NO_PAY和DISPATCHING。图片与上下文紧密相关，是对执行PAYED事件对应动作后，动作类中打断点时代码状态的展示。
 
 如果动作方法执行成功state_persister表中101订单的状态变更为DISPATCHING。
 
@@ -1507,6 +1511,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 拷贝课程资料下的“取消订单策略类”下的策略类到 jzo2o-orders-mamanger工程下的com.jzo2o.orders.manager.strategy.impl包下，阅读取消订单使用的策略类，找到使用状态机修改订单状态的代码。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/SwHIbu4c1o4Bb0x3eqicJDzMnjb.png)
+> 图注：图片展示了jzo2o订单模块下的manager和strategy文件夹结构。manager文件夹下有config、controller、handler、listener、model、properties、service等子文件夹。strategy文件夹下有impl子文件夹，其中包含多个取消订单策略类，如CommonUserDispatchingOrderCancelStrategy、CommonUserNoPayOrderCancelStrategy等，这些策略类与上下文提到的取消订单使用状态机修改订单状态的代码相关。
 
 
 
@@ -1555,6 +1560,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 下边是一个电商系统的数据库，涉及了店铺、商品的相关业务。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/Ph91bcOoKo1pQKxiQUxcAPKenXd.png)
+> 图注：这张图展示了电商数据库拆分后的逻辑结构，核心围绕“SELLER_DB”相关的分库分表思路，拆分为地理区域、店铺信息、商品信息三个数据表。地理区域表包含地理区域编码、名称、级别、上级编码等字段；店铺信息表设有店铺ID、名称、信誉、所在地字段，且有箭头指向商品信息表，说明二者存在关联；商品信息表则包含所属店铺（带有外键标识）、商品名称、规格、产地、价格、图片、描述等字段，通过拆分数据库和数据表，缩小单一数据库、数据表的数据量，以此解决数据库数据量过大导致的性能降低问题。
 
 
 
@@ -1563,6 +1569,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 我们可以把数据分散在不同的数据库中，使得单一数据库的数据量变小来缓解单一数据库的性能问题，从而达到提升数据库性能的目的，如下图：将电商数据库拆分为若干独立的数据库，并且对于大表也拆分为若干小表，通过这种数据库 拆分的方法来解决数据库的性能问题
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/XjbqbWHluo2fhFxhMIZczU4qnTD.png)
+> 图注：图片展示了电商数据库拆分的示例。左侧是一个标有“电商数据库”的黄色圆柱形图标，右侧有四个黄色圆柱形图标，分别标有“用户库”“商品库”“订单库”和“...”，中间有一个蓝色箭头指向右侧图标。这与上下文介绍的将电商数据库拆分为若干独立数据库，以及对大表拆分若干小表，通过数据库拆分解决性能问题的内容相契合，直观呈现了拆分后的数据库结构。
 
 
 
@@ -1581,6 +1588,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 下图是商品查询列表：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/YyJZbHg2KotWdNx902ucjm1PnHb.png)
+> 图注：这张图片展示的是商品查询列表，呈现了四个线上商品信息，每个条目包含商品图、名称、价格、运费、店铺名称与发货地。其中第一款商品是24瓶装的Vita Coco唯他可可椰子水饮料，售价298元且包邮；第二款是24罐装的绿力冬瓜茶饮料，售价88.8元，运费18元；第三款是24瓶装的上海风味盐汽水，售价26.8元，运费8元；第四款是16瓶装的沙棘汁饮料，售价47.88元且包邮，发货地为山西吕梁。这些商品对应文档中提及的商品名称、图片、价格等访问频次较高的商品基本信息。
 
 
 
@@ -1593,6 +1601,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 将访问频次低的商品描述信息单独存放在一张表中，访问频次较高的商品基本信息单独放在一张表中。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/Mci4brhDPoX6H4xlKl3ckOQfnsd.png)
+> 图注：图片展示了商品信息的分库分表示例。上方是商品信息表，包含id、所属店铺、商品名称、规格、产地、商品价格、商品图片、商品描述等字段。下方是商品描述表，仅包含id、商品ID、商品描述字段。箭头从商品信息表指向商品描述表，表明将访问频次低的商品描述信息单独存放在一张表中。该图与上下文紧密相关，直观呈现了将商品信息表拆分的分库分表方式。
 
 
 
@@ -1615,6 +1624,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 经过思考，他把原有的SELLER_DB(卖家库)，分为了PRODUCT_DB(商品库)和STORE_DB(店铺库)，并把这两个库分 散到不同服务器，如下图： 
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/TEpYbh0OeoiD8xx1ok5cjVAen2f.png)
+> 图注：图片展示了分库分表后SELLER_DB、PRODUCT_DB、STORE_DB三个数据库的结构。SELLER_DB包含店铺信息、商品信息、商品描述、地理区域；PRODUCT_DB包含商品信息、商品描述；STORE_DB包含店铺信息、地理区域。箭头分别指向三个数据库，表明原有SELLER_DB被拆分为这三个数据库。此图与上下文紧密相关，直观呈现了垂直分库后数据库结构的变化，帮助理解商品信息与店铺信息的独立存储。
 
 
 
@@ -1643,6 +1653,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 尝试水平分库，将店铺ID为单数的和店铺ID为双数的商品信息分别放在两个库中。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/GB0VbMPkxooIEGxz8b3cXzfUnCc.png)
+> 图注：图片展示了商品信息分库分表的结构。左侧是PRODUCT_DB，包含商品信息和商品描述两张表，商品信息表有商品ID、所属店铺ID等字段。右侧是PRODUCT_DB1和PRODUCT_DB2，商品信息表和商品描述表分别对应，商品ID%2为判断依据，商品ID为双数时映射至PRODUCT_DB1，为单数时映射至PRODUCT_DB2。该图与上下文介绍的水平分库方式相呼应，直观呈现了商品ID按规则拆分到不同数据库的结构。
 
  
 
@@ -1665,6 +1676,7 @@ public class CommonUserNoPayOrderCancelStrategy implements OrderCancelStrategy {
 按照水平分库的思路把PRODUCT_DB_X(商品库)内的表也可以进行水平拆分，其目的也是为解决单表数据量大 的问题，如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/G0FxbRXDToASgLxVIgIcX961n2d.png)
+> 图注：图片展示了PRODUCT_DB数据库中商品信息及商品描述的分库分表情况。商品信息分为商品信息1和商品信息2，商品描述也分为商品描述1和商品描述2。商品ID为双数时，操作映射至商品信息1和商品描述1；商品ID为单数时，映射至商品信息2和商品描述2。此图与上文提到的水平分表思路类似，通过商品ID的奇偶性将商品信息及商品描述分别映射到不同表，以解决单表数据量大的问题。
 
 
 
@@ -1723,6 +1735,7 @@ WHERE...ORDER BY...LIMIT...
 在分库分表环境中，由于表中数据同时存在不同数据库中，主键值平时使用的自增长将无用武之地，某个分区数据库生成的ID无法保证全局唯一。因此需要单独设计全局主键，以避免跨库主键重复问题。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/L0cvbG7u3oIrmwxQHwCcdv32nbe.png)
+> 图注：图片展示了分库分表环境下商品信息表的结构。上方是DB1的商品信息表，包含ID、数据项1等字段，ID有1等值；下方是DB2的商品信息表，同样包含ID、数据项1等字段，ID也有1等值。图片中ID冲突，无法保证唯一，用蓝色箭头和文字标注突出显示，直观呈现了在分库分表中主键避重问题，即主键值在不同数据库中可能重复，无法保证全局唯一，需单独设计全局主键以避免跨库主键重复问题。
 
 #### 5）**公共表**
 
@@ -1809,6 +1822,7 @@ ShardingSphere-JDBC 定位为轻量级 Java 框架，在 Java 的 JDBC 层提供
 如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/REs8b1b54oSh1Fxh90JcHlnonwh.png)
+> 图注：图片展示了ShardingSphere-JDBC架构图。左侧和右侧均为Java应用，分别包含业务代码和ShardingSphere-JDBC。中间是治理中心。下方有三个数据库。业务代码通过ShardingSphere-JDBC与治理中心交互，再由治理中心调度到数据库。该图直观呈现了ShardingSphere-JDBC对jdbc访问数据库的封装，实现了分库分表功能，与上文介绍的ShardingSphere适用范围及功能相呼应。
 
 ShardingSphere-JDBC是一个框架，对jdbc访问数据库进行了封装，实现了分库分表的功能。
 
@@ -1829,6 +1843,7 @@ ShardingSphere-Proxy 定位为透明化的数据库代理端，通过实现数�
 ShardingSphere-Proxy和MyCat的作用一样，是一个数据库代理，应用程序原来是直接访问数据库，现在通过访问ShardingSphere-Proxy实现对数据分库分表。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/WtL2bA3jVof9QUxVcD9cT8Xqnpd.png)
+> 图注：图片展示了ShardingSphere-Proxy的工作原理。左侧为Application，包含Business Code，通过ShardingSphere-Proxy与数据库交互。右侧有MySQL/PostgreSQL CLI和MySQL/PostgreSQL GUI。ShardingSphere-Proxy连接数据库，数据库间有箭头连接，表示数据交互。该图与上下文紧密相关，直观呈现了ShardingSphere-Proxy作为数据库代理，应用程序通过其访问数据库，实现对数据分库分表的功能。
 
 我们的课程讲解ShardingSphere-JDBC，因为它的功能更强大，灵活性更好。
 
@@ -1913,6 +1928,7 @@ CREATE TABLE `t_order`
 创建成功
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/NSh6bXWMxoFP7yxyzQhcnHABn5f.png)
+> 图注：该图片展示了两个名为“shardingsphere-test-01”和“shardingsphere-test-02”的模块，每个模块下都包含一个“tables”分组。每个tables分组中都有3个表，分别为t_order、t_order_1和t_order_2。这些内容是搭建ShardingSphere-JDBC入门程序过程中，创建普通SpringBoot工程“shardingsphere-test”时生成的数据库表结构相关内容，对应文档中提到的生成模型类及表的相关操作结果呈现。
 
 
 
@@ -1921,6 +1937,7 @@ CREATE TABLE `t_order`
 创建一个普通的SpringBoot工程shardingsphere-test：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/OhjybR0UPobargxGtz5cv8Fwnoh.png)
+> 图注：这张图片展示的是创建SpringBoot工程的界面，该工程名称为shardingsphere-test，用于搭建ShardingSphere-JDBC的入门项目，与文档中创建名为shardingsphere-test的普通SpringBoot工程的内容相关。界面左侧选中了“Spring Initializr”选项，用于初始化SpringBoot项目，可配置的内容还包含项目的存储路径、开发语言、构建工具、组织标识、包名、JDK版本、Java版本以及打包方式等参数。
 
 
 
@@ -2043,6 +2060,7 @@ pom.xml内容如下：
 生成过程略，生成成功如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/EkOFbcmWNomKCTxZi9UcjPqAnMv.png)
+> 图注：图片展示了shardingsphere-test项目的目录结构。在main目录下的java文件夹中，有cn、itcast和shardingsphere三个子文件夹。其中，shardingsphere文件夹下包含mapper、model、service和impl四个子文件夹，分别对应TOrderMapper、TOrder、TOrderServiceImpl和ITOrderService等类。该图片与上文“生成mapper和模型类”内容相关，直观呈现了生成成功后模型类和mapper在项目中的存放位置。
 
 ###### 配置application.yaml
 
@@ -2524,12 +2542,14 @@ public void testSelect(){
 订单数据库分为三个库 :jzo2o-orders-0、jzo2o-orders-1、jzo2o-orders-2
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/WHQgb5UisoOTVqxQK7ZcXqkEnNh.png)
+> 图注：图片展示了三个数据库，分别为jzo2o-orders-0、jzo2o-orders-1、jzo2o-orders-2。这与文档中“2.2.1搭建分库分表环境”章节下“2）创建数据库”部分的内容相关，该部分提到订单数据库分为三个库，此图直观呈现了这三个数据库，与上下文对数据库分库分表的介绍相呼应，为后续导入SQL脚本等操作提供可视化参考。
 
 下边分别向三个数据库导入jzo2o-orders-sharding.sql（从课程资料下的SQL脚本目录获取）。
 
 每个数据库对orders、biz_snapshot、orders_serve进行分表（暂分3个表），其它表为广播表(即在每个数据库都存在且数据是完整的)，如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/MXaRb07Jxo8YkEx16fgcdJSinBc.png)
+> 图注：图片展示了jzo2o-orders-0数据库下的tables目录内容。目录下包含多个表，如biz_snapshot、breach_record、history_orders_sync、history_orders_sync、orders等，其中orders表及其多个分表（如orders_0、orders_1等）尤为突出。该图片与文档中“2.2.1搭建分库分表环境”章节下“2）创建数据库”内容相关，直观呈现了每个数据库对orders、biz_snapshot、orders_serve进行分表（暂分3个表）的结构情况。
 
 
 
@@ -2764,6 +2784,7 @@ spring:
 如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/ShCTbkQp0oSskDxh1d7ciclLnTf.png)
+> 图注：图片展示的是nacos中配置数据源的界面。上方显示Data ID为jzo2o - orders - manager - yml，Group为DEFAULT_GROUP。配置内容以YAML格式呈现，包括spring、datasource、url等参数，其中url为jdbc:shardingsphere:classpath:shardingsphere - jdbc - ${spring.profiles.active}.yml。该图片与文档中“2.2.2测试分库分表”部分的“1）配置数据源”内容相关，用于说明在jzo2o - orders - manager.yaml中配置数据源使用ShardingSphereDriver的操作。
 
 完整配置如下：
 
@@ -3067,6 +3088,7 @@ private OrderSnapshotDTO canalIfPayOvertime(OrderSnapshotDTO orderSnapshotDTO){
 示例：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/PleMbH30iokIBSxf3ymcCD1JnQh.png)
+> 图注：这是一个订单状态机快照的缓存键值信息展示界面，缓存键为“JZ_STATE_MACHINE:order23110200000000000022”，是与测试流程中提及的快照缓存key规则匹配的示例，用于验证订单详情优化后对应的缓存数据存储形式，清晰呈现了该缓存键对应的订单详情相关字段，包括tradingChannel、ordersStatus、payTime、serviceAddress、userId、payStatus等多项订单信息，可直观确认优化后的快照缓存数据存储内容符合预期的测试结果。
 
 订单变更状态后再次查询订单信息可以得到最新的状态，这说明最新数据已经同步到缓存中。
 
@@ -3520,14 +3542,17 @@ public List<OrderSimpleResDTO> consumerQueryList(Long currentUserId, Integer ord
 查询订单ID
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/WI6ZbZK1yo7vT8x9UBxcaVtRnwg.png)
+> 图注：图片展示了小程序订单查询优化中测试查询全部订单时IDEA控制台日志中的SQL语句及参数信息。日志显示了两条记录，时间分别为2023 - 11 - 03 15:56:18.862和15:56:19.814，分别记录了订单ID列表查询的SQL语句及其参数，参数为user_id、display和limit值。该图片与上文测试查询全部订单的内容相关，用于说明从IDEA控制台日志中获取执行的SQL语句并查看执行计划的操作示例。
 
 根据订单ID查询订单信息
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/FgXJb4esJo9tctx6D2NcT8rvnoe.png)
+> 图注：图片展示了优化后Service方法中查询订单ID列表时的IDEA控制台日志。日志记录了两次执行过程，时间分别为2023 - 11 - 03 15:56:20.263和2023 - 11 - 03 15:56:20.363。执行的SQL语句为从orders表中查询id、user_id等字段，条件是id在指定的订单ID列表中。参数部分显示了具体的订单ID值。该图片与上文测试查询全部订单的内容相关，用于展示执行的SQL语句及参数情况。
 
 复制日志中的SQL，使用explain获取执行计划
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/AG3jbdNLwoVFmtxEcvVc7K8in3f.png)
+> 图注：图片展示的是IDEA控制台日志中查询订单ID的SQL语句及其执行计划。SQL语句为“SELECT id FROM orders_0 WHERE (user_id = 1716346406098296832 AND display = 1) ORDER BY sort_by DESC LIMIT 10”，执行计划中显示使用了覆盖索引，具体为“Using index”，且rows为11，filtered为100，Extra为“Using index”。该图片与上文测试查询全部订单的内容相关，用于验证优化后查询订单ID列表时是否使用了覆盖索引。
 
 从输出可以看出使用了覆盖索引。
 
@@ -3720,6 +3745,7 @@ WHERE (id IN (2311030000000000029, 2311020000000000028, 2311020000000000027))
 现在市面上也有很多的分布式数据库，分布式数据库是指将数据库系统中的数据存储和处理分布在多个计算机节点上，这些节点可以位于不同的物理位置或在同一物理位置上。分布式数据库旨在通过分布数据和查询负载，提高系统的可伸缩性、性能和容错性。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/PhenbmZ4foZOZCxefi5cN8SZnwf.png)
+> 图注：图片展示了分布式数据库中节点间的信任边界关系。图中有四个节点，分别为Node A、Node B、Node C、Node D，它们通过紫色线条相连，形成网络结构。图中还标注了“Trust Boundary”（信任边界）和“Access Control Data Validation”（访问控制数据验证），表明节点间存在信任边界，且需进行访问控制数据验证。图下方有文字“'We trust each other' 'It's us against the world!'”，强调节点间互信但需抵御外部威胁。此图与文档中介绍分布式数据库及阿里云PolarDB的内容相关，直观呈现了分布式数据库中节点间的关系与信任边界。
 
 常见的分布式数据库：
 
@@ -3738,6 +3764,7 @@ NoSQL数据库：**Apache Cassandra、HBase、MongoDB。**
 
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/XIPybERBEorw2PxhlEVcdlybnjd.png)
+> 图注：图片展示了HTAP系统架构，分为OLTP系统、OLAP系统和ETL三层。OLTP系统包括Transaction Service Interface、Transaction Data Storage和Meta Data Storage，用于处理事务数据。OLAP系统包含Data Extraction Layer、OLAP Cube和Analytical Layered Data Stream，进行多维分析。ETL层通过Extract、Transform、Load将数据从OLTP系统提取、转换后加载到OLAP系统。此图与文档中介绍HTAP系统用于实时分析操作数据的内容相契合，直观呈现其架构。
 
 TiDB是一个开源的分布式数据库，它支持SQL语法，并且兼容MySQL协议，同时支持事务处理（OLTP）和分析处理（OLAP）的工作负载。
 
@@ -3787,6 +3814,7 @@ AI: 我们的电商项目有50万用户规模，请估算出订单数据量的�
 如果每年有20%的用户增量，五年后的订单量将是第一年订单量的大约两倍多，订单表的数据量在300万以内。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/EyFWbVGmzo4gySxIdOZcgwB1noc.png)
+> 图注：这张图片是一张数据统计表格，清晰呈现了系统冷热分离方案中提及的五年内的相关数据。表格包含年份、用户基数（单位为万）、活跃用户数（单位为万）、订单量（单位为万）四列内容，具体数据按年份依次对应：第1年用户基数50万、活跃用户数10万、订单量120万；第5年用户基数达103.68万，活跃用户数20.736万，订单量增长至248.832万。表格直观体现了随年份递增的用户与订单增长情况，可印证文档中“五年后的订单量将是第一年订单量的大约两倍多，订单表的数据量在300万以内”的相关表述。
 
 基于年百万量的数据没有必要使用基于大数据平台的分布式数据库，只有当年数据量上千万甚至上亿时才会考虑使用大数据平台。
 
@@ -3805,6 +3833,7 @@ AI: 我们的电商项目有50万用户规模，请估算出订单数据量的�
 下图中用户只能查询一个年度的统计数据，这个需求在很多银行也存在，查询历史账单不能跨年查询。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/IUQobUh1zoIxHWxLURpcqLsdnjf.png)
+> 图注：图片展示的是云岚到家平台工作台 - 概览仪表盘界面。界面左侧有工作台、订单管理、评价管理、服务管理、服务人员管理等导航栏。右侧“经营分析”区域显示了2023年11月24日至2023年12月24日的日期范围，下方有订单分析和营业分析板块，分别列出有效订单数、取消订单数、关闭订单数、实付单均价、有效订单总额等统计指标。该图与上下文介绍的订单趋势图需求相关，用于展示统计时间区间内每天的下单总数等数据。
 
 统计指标说明：
 
@@ -3823,6 +3852,7 @@ AI: 我们的电商项目有50万用户规模，请估算出订单数据量的�
 如果统计时间区间小于等于1天，订单趋势显示当天每小时的下单总数，查询按小时统计表的数据即可。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/CfHvbfWxWoSGVLxB6FGcRah8nXb.png)
+> 图注：图片展示的是订单分析界面。上方显示取消订单数5笔、关闭订单数400笔、实付单均价125元、有效订单总额1,190,625元。订单趋势图呈现2023年9月1日至9月30日每天的下单总数，以折线图形式显示。用户分析部分，用户转化漏斗图显示用户数2000人，下单转化率32%，付费转化率72%；用户平均支付笔数图以折线图形式呈现2022年1月到2023年9月的用户平均支付笔数。该图与上下文介绍的订单趋势图需求对应，直观呈现相关数据。
 
 ##### 分库分表方案
 
@@ -3897,6 +3927,7 @@ AI: 我们的电商项目有50万用户规模，请估算出订单数据量的�
 创建jzo2o-orders-history数据库，导入jzo2o-orders-history.sql脚本：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/BZf6bccmbowevXxGzydcvQeBnme.png)
+> 图注：图片展示了jzo2o - orders - history数据库下的tables文件夹内容。其中包含history_orders、history_orders_serve、history_orders_serve_sync、history_orders_sync、stat_day、stat_hour六个表。该图片与上文创建jzo2o - orders - history数据库，导入jzo2o - orders - history . sql脚本的内容相关，直观呈现了脚本导入后数据库中表的结构情况，帮助理解历史订单数据库的表组成。
 
 history_orders：用于存储历史订单数据。
 
@@ -3919,6 +3950,7 @@ stat_hour：存储按小时统计数据，统计分析模块使用
 在订单数据库jzo2o-orders-0、jzo2o-orders-1、jzo2o-orders-2 存在订单同步表和服务单的同步表：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/LNFsbS9l0oGbS6xCF14clqKlnse.png)
+> 图注：这张图片展示了两个同步表的名称，分别为history_orders_serve_sync与history_orders_sync，对应订单数据库中的订单同步表与服务单同步表。该图片的内容与文档中提到的订单数据库jzo2o-orders-0、jzo2o-orders-1、jzo2o-orders-2中存在订单同步表和服务单同步表的描述相呼应，直观呈现了文档所述的两类同步表的具体名称。
 
 1. **当订单完成、取消、关闭时向同步表写入记录。**
 
@@ -3988,10 +4020,12 @@ historyOrdersSync.setSortTime(orders.getUpdateTime().plusDays(15));
 首先进入RabbitMQ，配置exchange.canal-jzo2o交换机绑定下边红框的队列。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/G8wUbLpxVo3Q3xxcEcnc81Ognbe.png)
+> 图注：该图片展示了RabbitMQ的exchange配置界面，对应订单数据冷热分离中第二步的操作要求。界面中显示需配置exchange.canal-jzo2o交换机的绑定队列，其中红框标注的“canal-mq-jzo2o-orders-history”为订单同步队列，“canal-mq-jzo2o-orders-serve-history”为服务同步队列，其余多个队列目前均为已解绑状态，明确呈现了需绑定的关键队列信息。
 
 找到历史订单服务中的数据同步类：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/F6W7bogQxoRNKqx8X5PcuDXsnUf.png)
+> 图注：这张图片展示了项目“jzo2o-orders-history”的代码目录结构，在“main/java/com/jzo2o/orders/history”路径下，存在controller与handler两个子目录；其中controller目录下包含agency、consumer、inner、operation、worker等子目录，handler目录下则标注了两个核心类，分别是HistoryOrdersServeSyncHandler与HistoryOrdersSyncHandler，该结构对应文档中提及的历史订单服务数据同步类的相关内容，与订单同步的业务操作直接关联。
 
 代码如下：
 
@@ -4043,6 +4077,7 @@ public class HistoryOrdersSyncHandler extends AbstractCanalRabbitMqMsgListener<H
 通过historyOrdersSyncService.saveOrUpdateBatch(historyOrdersSyncs);将订单数据写入历史订单数据库的同步表history_orders_sync中。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/ImnBbrvj6oy41Ix7kpmcygUzndb.png)
+> 图注：图片展示了jzo2o-orders-history数据库中tables下的表结构。其中，history_orders_sync表被红色框突出显示，其下有history_orders、history_orders_serve、history_orders_serve_sync、stat_day、stat_hour等表。该图片与上文介绍的订单同步内容相关，对应于“Canal+MQ将同步表数据同步到历史订单数据库的同步表”这一步骤，直观呈现了历史订单数据库中同步表的分布情况。
 
 服务单同步类HistoryOrdersServeSyncHandler请自行查询源码。
 
@@ -4082,6 +4117,7 @@ canal.mq.dynamicTopic=canal-mq-jzo2o-orders-dispatch:jzo2o-orders-1\\.orders_dis
 屏蔽nacos下jzo2o-orders-history.yaml中的内容，如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/WmoMb0W0poqHIqxY1eOc8JxWnzb.png)
+> 图注：这张图片展示了Nacos配置页面中jzo2o-orders-history.yaml的内容，该内容是文档中提及需要屏蔽的对象。页面包含Data ID、Group的配置项，当前已选中YAML的配置模式，配置内容区域显示了与订单数据相关的ShardingSphere及MyBatis-Plus配置，涉及spring、mybatis-plus配置字段，还有shardingsphere的数据源、分页、分表策略等配置信息，该配置是订单数据冷热分离流程里需调整的关键配置内容。
 
 测试流程如下：
 
@@ -4106,10 +4142,12 @@ canal.mq.dynamicTopic=canal-mq-jzo2o-orders-dispatch:jzo2o-orders-1\\.orders_dis
 取消订单后向同步表添加成功：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/Eh2UbqDGLoR2T6xJvhrcsfNKnud.png)
+> 图注：图片展示了jzo2o-orders-1数据库中tables下的部分表结构。其中，history_orders_sync和history_orders_serve_sync两个表被红色框突出显示。这与文档中测试订单同步的内容相关，表明在测试订单同步时，可通过canal将完成订单同步到历史库，此图片直观呈现了历史订单同步表在数据库中的位置，辅助理解测试流程中相关表的使用。
 
 通过canal将完成订单同步到历史库
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/BN06bAeMDoGjL3xtzQNcXVHBnvc.png)
+> 图注：图片展示了数据库中jzo2o-orders-history表的结构。在tables文件夹下，有history_orders、history_orders_serve、history_orders_serve_sync、history_orders_sync四个表。其中，history_orders_serve_sync和history_orders_sync表被高亮显示。该图片与文档中测试订单同步的内容相关，用于说明在测试订单同步时，可通过canal将完成订单同步到历史库，此图展示了历史库中相关表的结构情况。
 
 测试时注意：保证Canal工作正常。
 
@@ -4342,10 +4380,12 @@ public class XxlJobHandler {
 添加执行器：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/HMTMbQKyVoh989xmeXNcvyClnph.png)
+> 图注：这张图片展示了订单冷热分离相关的系统操作界面，界面顶部设有AppName搜索栏，已输入“jzo2o-orders-history”，搭配有搜索和新增按钮，还包含每页显示10条记录的设置选项。下方的表格中，已存在一条数据，其AppName为“jzo2o-orders-history”，名称是“历史订单”，注册方式为自动注册，OnLine机器地址处提供“查看(1)”的操作入口，操作栏设有可展开的下拉“操作”按钮，该界面用于订单冷热分离流程里的测试环节，对应文档中“添加执行器”这一步骤的操作场景。
 
 添加任务并启动任务：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/Ztxkb1HEPofmOnxCAZwcG6b0nWe.png)
+> 图注：图片展示的是订单冷热分离中定时任务的添加界面。基础配置部分，执行器为历史订单，负责人是xxljob。调度配置中，调度类型为CRON，Cron为0/10 * * * * ? 。任务配置里，运行模式为BEAN，JobHandler为migrateHistoryOrders。高级配置中，路由策略为第一个，调度过期策略为忽略，任务超时时间为0。该图片与上文提到的实现定时任务相呼应，直观呈现了任务添加时各配置项的具体设置情况。
 
 
 
@@ -4372,16 +4412,19 @@ public class XxlJobHandler {
 经营看板是一种用于实时监控关键业务指标的工具，它不仅帮助团队保持敏捷、透明和高效，还促进了团队的协作和创新。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/ZWMnb9V4tofwczxwhykcEMfYnDf.png)
+> 图注：图片展示了系统经营看板中订单分析和用户分析的内容。订单分析部分呈现了有效订单数、取消订单数、关闭订单数、实付客单价、有效订单总额等数据，还展示了订单数趋势图。用户分析部分有用户转化漏斗图，显示用户数、下单转化率、付费转化率等；以及用户平均支付笔数折线图，呈现2021年3月至2023年9月的数据变化。该图与上下文紧密相关，直观呈现了订单和用户相关数据，帮助团队监控业务指标。
 
 
 
 软件中经营看板的应用场景非常多，下图显示了公司销售分析周报：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/AHkvbfbGroB2oNx92Uucc4UsnUv.png)
+> 图注：图片是XXX公司销售经营分析周报，展示了2020年1月第2周的销售数据。左侧是销售达成率及业务员销售排名，如李芳销售达成为8.08%。中间是整体销售情况，如销售总额326,604元，销售利润245,597元，销售达成率90.72%等。下方是2020年1月第2周销售趋势折线图。右侧是产品销售排名和区域销售对比，如MP4销售32,662元，天津销售78,588元等。该图直观呈现了销售数据，与上下文介绍的经营看板功能相契合。
 
 双11销售统计：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/L83obyzkWoMn6vxlrk4cYRXRnod.png)
+> 图注：图片展示的是2021年天猫双11全球狂欢季的经营看板。上方显示成交金额为1,000,000.00元，同比增速为43.09%。中间部分有多个数据指标，如浏览量、访客数、访客数转化、访客数转化等，部分指标数值为100,000。底部有部分商品的销售数据，如商品名称、销售金额、销售数量等。该图与上下文介绍的经营看板功能相呼应，直观呈现了双11期间的经营数据情况。
 
 通过学习本节的内容掌握看板功能 的开发方法。
 
@@ -4392,6 +4435,7 @@ public class XxlJobHandler {
 首先选择一个时间区间（不能大于365天），统计在此时间区间内的订单数据，只统计已取消、已关闭、已完成的订单数据。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/LhORbwQazo2NddxRdgecLxI1nhc.png)
+> 图注：这是云岚到家管理后台工作台页面，当前显示经营分析相关的内容，其中经营分析板块包含时间选择区域，红色框内选中的统计时间区间为2023-11-24至2023-12-24。页面设有多个快捷入口，分别是订单列表、服务人员认证、企业认证、客户列表、服务项管理、区域管理，左侧为功能导航栏，涵盖工作台、订单管理、评价管理、服务管理等选项，还包含订单分析、营业分析相关板块的内容展示，页面右上角有刷新按钮，时间选择区域右侧设有导出明细按钮。
 
 订单分析内容如下：
 
@@ -4404,6 +4448,7 @@ public class XxlJobHandler {
 实付单均价=有效订单总额/有效订单数
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/UX3Dbib3uofH0Px4T7Vcc6ivnib.png)
+> 图注：这张图属于第九章系统优化中统计模块的订单统计方案里的经营看板部分，整体展示了多类订单及用户相关统计数据。上方的订单分析区域，标注了“有效订单”的标识，同时呈现了取消订单数为5笔、关闭订单数为400笔、实付单价125元、有效订单总额1,190,625元的核心数据。中间是订单数趋势折线图，以时间为横轴，呈现了统计时段内的订单数量变化。下方的用户分析区域包含用户转化漏斗图和用户平均支付笔数折线图，其中漏斗图展示了不同转化阶段的用户数及对应转化率。
 
 订单趋势：
 
@@ -4698,6 +4743,7 @@ public class XxlJobHandler {
 添加订单统计任务
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/YqNLbqxB6oYUiexS0CxcfcNEnug.png)
+> 图注：图片展示的是xxl-job定时任务配置界面。基础配置中，执行器为历史订单，负责人是xxijob，任务描述为订单统计，报警邮件需填写。调度配置里，调度类型为CRON，Cron为0/10 * * * * ?。任务配置中，运行模式为BEAN，JobHandler为statAndSaveData。高级配置部分，路由策略为第一个，调度过期策略为忽略，任务超时时间为0，阻塞处理策略为单机串行，失败重试次数为0。
 
 保证history_orders_sync和history_orders_serve_sync有要统计的数据，按订单完成时间统计15天以内的订单
 
@@ -4730,6 +4776,7 @@ public class XxlJobHandler {
 根据时间区间统计以下内容：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/Ve6ebTv7MoAQ7nxULiCcWYlOnZf.png)
+> 图注：图片展示的是云岚到家平台工作台概览仪表盘界面。界面左侧有工作台、订单管理、评价管理、服务管理、服务人员管理等导航栏。右侧“经营分析”区域有日期选择框，显示2023年11月24日 - 2023年12月24日。下方有订单分析和营业分析板块，订单分析板块有有效订单数、取消订单数、关闭订单数等数据，营业分析板块有实付单均价、有效订单总额等数据。该图与上下文需求分析中关于订单趋势图的描述相关，用于展示订单趋势数据。
 
 - 有效订单数：在统计时间内，订单状态为已完成的订单数。（订单被取消、退款、关闭状态均不属于有效订单）
 - 取消订单数：在统计时间内，提交订单后被取消订总量
@@ -4746,6 +4793,7 @@ public class XxlJobHandler {
 如果统计时间区间小于等于1天，订单趋势显示当天每小时的下单总数，查询按小时统计表的数据即可。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/NewNbNKHXoDDIRxJmLicfaKOnS9.png)
+> 图注：这是开发经营看板的截图，上方展示了订单相关统计数据，包含有效订单（5笔）、取消订单（400笔）、实付均价（125元）、有效订单金额（1,190,625元），还配有标注说明有效订单为“订单状态为已完成的订单”。中部的订单数趋势图呈现了不同日期的订单数量波动，另有时间标注“9.10 共707笔”。下方包含用户分析相关模块，左侧是用户转化漏斗图，标注了总用户数2000、下单数640、付款数460，还标注了下单转化率32%、付款转化率72%；右侧则是用户平均支付笔数的折线对比图，展示了不同月份2021年与2022年的相关数据变化，整体对应了看板展示各类经营统计数据的需求。
 
 **需求3: 缓存**
 
@@ -4982,6 +5030,7 @@ private OperationHomePageResDTO getHourOrdersStatistics(LocalDateTime minTime) {
 通过工作台查看统计数据
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/F18AbAOgno6b2vxD9amcNOzInng.png)
+> 图注：这张图片展示的是云匠到家的运营端经营看板页面，该页面属于第九章统计模块下开发经营看板的内容。页面顶部设有订单列表、服务人员认证等功能入口，左侧为工作台、订单管理等导航栏；经营分析区显示的统计数据包含有效订单2笔、取消订单0笔、关闭订单0笔、实对平均价1.00元、有效订单总额2.00元，还附有订单数趋势图，右上角设有导出明细按钮，此页面正是查看经营看板统计数据的对应界面。
 
 
 
@@ -5002,16 +5051,19 @@ private OperationHomePageResDTO getHourOrdersStatistics(LocalDateTime minTime) {
 点击“导出明细”，导出Excel。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/COonbPhJvoLUzqxHkM0cSYPnnBb.png)
+> 图注：该图片是云岚到家管理端的经营看板界面，对应文档中订单统计结果导出的相关内容。界面显示时间范围为2023-10-20至2023-11-20，右上方有红色的“导出明细”按钮，符合文档中点击该按钮导出Excel的操作指引。界面内展示了订单分析与营业分析的相关数据，其中有效订单为2笔，取消订单数、关闭订单数均为0笔，实付单价为1.00元，有效订单总额为2.00元，还呈现了订单数趋势的折线图，该界面是完成订单统计结果导出操作的前置页面。
 
 示例：
 
 2023-10-20\~2023-11-20 全国经营分析统计.xlsx
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/JsxTbuL7Hozu3FxeisSctKbxnMb.png)
+> 图注：这张图片是全国经营分析统计的订单数据导出Excel示例，统计区间为2023-10-20至2023-11-20，导出时间为2023年11月20日22点15分08秒。表格按月份分为10月、11月两部分，每日及月度统计涵盖日期、订单数、有效订单数、取消订单数、关闭订单数、有效订单总额、实付单均价等列，10月月底的“月统计”行中，所有统计项数值均为0，完整呈现了该区间内的订单统计明细数据，与文档中订单统计结果导出的功能示例内容相匹配。
 
 示例2：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/EkeGbTM8kosrXNxG0HgcDHFOnWb.png)
+> 图注：图片为2023年11月20日全国经营分析统计表，显示2023 - 11 - 20 21:42:37的数据。表头有日期、订单数、有效订单数、取消订单数、关闭订单数、有效订单总额、实付单均价等列。数据从00时到23时，每小时订单数、有效订单数等均为0，仅16时订单数、有效订单数、关闭订单数、有效订单总额、实付单均价分别为2、2、0、2、1。日续计部分订单数、有效订单数、关闭订单数均为2，有效订单总额、实付单均价均为1。该表与上下文介绍的订单统计结果导出功能相关，展示了导出的Excel数据示例。
 
 
 
@@ -5083,6 +5135,7 @@ public class OrdersStatisticsController {
 通过工作台查看统计数据,点击“导出明细”
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/G2CsbNkHOoIOXvxcTmLcDU0DnQh.png)
+> 图注：该图片展示的是云岚到家运营端的工作台页面，页面顶部设有订单列表、服务人员认证等多个功能入口，左侧是工作台、订单管理等导航栏。页面主体是2023-10-20至2023-11-20期间的经营分析内容，涵盖订单分析、营业分析数据，其中有效订单为2笔，取消订单数、关闭订单数均为0，实付单均价1.00元，有效订单总额2.00元，还配有订单数趋势图。页面右上角设有红色的“导出明细”按钮，该页面对应文档中统计结果导出环节里，进入运营端后点击“导出明细”的测试操作场景展示。
 
 
 
@@ -5124,12 +5177,14 @@ public class OrdersStatisticsController {
 提前创建好2024、2025两个年份的历史订单表和历史服务单表，其它表都为全局表。
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/ZO4hbMApCozM4vxlVR6cYeh7ncf.png)
+> 图注：图片展示了名为“jzo2o-orders-history”的文件夹内容，其中包含多个以“history_orders”和“history_orders_”开头的文件夹，如“history_orders”“history_orders_2024”等，还有“history_orders_sync”“stat_day”“stat_hour”等文件。该图片与文档中“订单查询优化bug修复”章节下“提示”部分相关，用于说明在历史订单微服务添加依赖时，提前创建好2024、2025两个年份的历史订单表和历史服务单表，其它表都为全局表，此图展示了相关表的存储情况。
 
 
 
 测试时注意修改数据库的连接配置，如下：
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-jiu-zhang-xi-tong-you-hua/P2YebOFIeoolQDxvOIlcNTEgnJh.png)
+> 图注：图片展示的是在历史订单微服务中添加依赖时的配置界面。界面中显示了命名空间、Data ID、Group等信息，以及配置格式为YAML。关键部分是配置内容区域，其中“#”号注释部分后有“#”号，表明后续内容为注释。非注释部分的“spring.datasource.driver-class-name”设置为“org.apache.shardingsphere.driver.ShardingSphereDriver”，“url”设置为“jdbc:shardingsphere:classpath:shardingsphere-jdbc-${spring.profiles.active}.yml”。该图片与文档中测试时修改数据库连接配置的内容相关，用于说明配置数据库连接相关信息。
 
 测试时通过手动修改订单数据库中历史订单同步表的数据，使其同步到历史订单数据库的同步表中。
 

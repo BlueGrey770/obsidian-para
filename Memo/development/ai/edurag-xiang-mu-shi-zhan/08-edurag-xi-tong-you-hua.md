@@ -103,10 +103,12 @@ if __name__ == "__main__":
 在资料中提供了对应的建表语句
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/Je31byArYoTRzbxOuJjc5GE4n9e.png)
+> 图注：这张图片展示的是名为conversations的表结构，其下包含5个字段：id为自增主键，session_id为会话id，question为问题，answer为回答，timestamp为创建时间。该表是会话记忆模块中提到的会话记忆表，对应文档中2.1创建会话记忆环节的相关内容，用于存储对话相关的各类数据，为后续的会话记忆操作提供了数据存储的结构基础。
 
 并且提供了对表的基本操作方法
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/Tve6bOhKuoIJVmxRjFUcmbj4nIb.png)
+> 图注：图片展示了Edu addCriterion()函数的代码，用于添加会话记忆相关操作。代码中定义了三个函数：fetch_recent_history()获取会话历史（查询最近的5轮对话），update_session_history()更新会话历史，clear_session_history()清除会话历史。这些函数分别接收session_id等参数，返回值类型为list或bool。图片与上下文紧密相关，是会话记忆操作中对表的基本操作方法的代码示例，为后续在main.py中添加会话记忆查询和更新步骤等操作提供代码参考。
 
 ### 2.2 会话记忆操作
 
@@ -566,6 +568,7 @@ if __name__ == "__main__":
 将资料中提供的页面放入根目录，启动app.py进行测试
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/XksrbhQesojnuAx7JC0cjbjVn5g.png)
+> 图注：图片展示了EduRAG系统中文件夹结构。其中，红色框突出显示了“static”文件夹，其下有“src”和“index.html”两个子文件夹。该图片与文档中“对接前端”部分相关，对应“添加测试页面”步骤，说明将资料中提供的页面放入根目录后，此处展示了页面所在位置，即在“static”文件夹下的“index.html”，并需启动app.py进行测试。
 
 ## 4 系统评估
 

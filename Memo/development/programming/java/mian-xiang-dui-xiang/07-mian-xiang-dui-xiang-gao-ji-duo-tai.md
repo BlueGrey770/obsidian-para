@@ -498,6 +498,7 @@ public class Test {
 **题目: 下面程序编译是否会报错并说明原因？并给出正确的代码！**
 
 ![](../../../../../Attachments/development/programming/java/mian-xiang-dui-xiang/WZBBb5OEjopoYpxojdvcxZvGn4g.png)
+> 图注：这张图片展示了一段Java代码，是名为Animal的公共类定义。该类包含一个公共抽象方法eat，注释标注这是吃饭的抽象方法，类的定义以分号结尾，符合抽象方法的语法要求。同时还包含一个名为sleep的非抽象方法，方法内通过println语句输出“sleep方法”，注释说明了这是一个非抽象方法。该代码内容和文档中“掌握抽象类和抽象方法的特点”的学习目标相关，属于抽象类相关的代码示例。
 
 **目标: 掌握抽象类和抽象方法的特点**
 
@@ -510,6 +511,7 @@ public abstract class Animal
 **请分析如下程序是否会报错并说明原因？**
 
 ![](../../../../../Attachments/development/programming/java/mian-xiang-dui-xiang/Kl4sbOroCogkBQxNnwVcf4LWnWf.png)
+> 图注：这张图片展示了一段Java代码，属于面向对象多态相关的课堂内容。代码定义了抽象类Animal，再创建继承自Animal的Dog类，Dog类中实现了非抽象的eat方法，还包含main方法，main方法里通过多态格式创建了Animal类型的对象animal，实例化为Dog类的对象，接着调用animal的eat方法，右侧还标注了两行注释，分别说明该行是通过多态的方式创建Animal对象，以及调用eat方法。这段代码是用于分析该程序是否会报错的示例程序，对应文档中关于抽象类与多态的课堂问答任务。
 
 **目标: 掌握多态格式下成员的访问特点以及抽象类的注意事项**
 
@@ -527,6 +529,7 @@ public abstract class Animal{
 **题目: 请分析如下程序在控制台的输出结果是什么并说明原因？以及如何避免该问题？**
 
 ![](../../../../../Attachments/development/programming/java/mian-xiang-dui-xiang/DqQvb9vwwoG4mJxiJw1c4PBlnzc.png)
+> 图注：图片展示了一个面向对象编程中的多态示例代码。首先定义了一个抽象类Animal，其中包含一个抽象方法eat。接着分别定义了Cat和Dog类，它们都继承自Animal并重写了eat方法。最后在main方法中，通过多态方式创建Animal对象，将其转换为Cat类型，再调用eat方法。该图片与文档中课堂问答部分相关，用于说明抽象类与多态转型的注意事项。
 
 **目标: 掌握多态转型以及和抽象类的注意事项**
 

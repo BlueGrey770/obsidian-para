@@ -47,6 +47,7 @@ aliases:
 **市场规模及预测**
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/JphvbKuWrouvLsxaoMXcz4YVn2d.png)
+> 图注：这是一张2018-2027年中国养老产业市场规模及预测图表，其中黄色柱形代表市场规模（单位：万亿元），红色折线代表增长率（单位：%）。2018年至2027年的市场规模依次为6.6万亿元、6.9万亿元、7.2万亿元、8.8万亿元、10.3万亿元、12.0万亿元、13.9万亿元、16.1万亿元、18.5万亿元、21.1万亿元，整体呈持续增长趋势；增长率在2011年达到峰值22.3%，2009年为2.9%、2020年为3.9%，后续逐步回落，2027年预测为13.9%，直观体现了中国养老产业的市场规模及增长变化，贴合文档中提及的2023年中国养老产业市场规模达12万亿元、同比增长16.8%的相关数据背景。
 
 - 2023年中国养老产业市场规模达到12万亿元，同比增长16.8%。
 - 预计2023-2027年中国养老产业迎来较快速增长。预计2027年中国养老产业市场规模达21.1万亿元
@@ -56,6 +57,7 @@ aliases:
 中州养老系统是为**养老院**量身定制开发的专业的养老管理软件产品；涵盖来访管理、入退管理、在住管理、服务管理、财务管理等功能模块，涉及从来访参观到退住办理的完整流程。
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/ADRvbuUvvoo9NbxpZxrcp2bfnue.png)
+> 图注：图片展示了中州养老项目业务流程。老人及家属通过小程序进行参观养老院、到院身访、办理入住、护理服务等操作。流程包括参观养老院时了解环境、设施及护理人员，到院身访时与护理人员沟通，办理入住时填写入住申请表、缴纳押金，护理服务时根据护理计划进行。流程还涉及家属缴纳护理费用、指定护理人员、办理住院等环节，体现了项目从参观到入住、护理服务的全流程。
 
 **项目原型**访问地址：https://codesign.qq.com/s/459277624064324   密码: FSTI
 
@@ -65,14 +67,17 @@ aliases:
 - 家属端：养老院的老人家属使用，查看老人信息，缴费，下订单等等
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/Hi92bCIz2oYDrwxMVVrcwwL4nCe.png)
+> 图注：图片展示了中州养老项目管理后台的业务主页效果。左侧为管理后台，包含登录、合同、登录、来访管理、资产管理、财务管理、账单管理、权限管理、智能监管等板块，每个板块下有具体功能选项。右侧为第三方系统，有文件存储、工作台引擎、支付管理、客户管理、财务管理、阿里云CT平台等板块，同样列出具体功能。
 
 业务主页效果：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/B8iMbBYoso8oaMxLR8ZcFzkNnUg.png)
+> 图注：这是中州养老项目管理后台的业务主页界面，页面左侧为功能导航栏，包含入退管理、床位管理、考勤管理等多项功能选项。页面上方的概览区域展示了核心业务数据，分别是655人、812个床位数量、100.35w笔服务单数据、204人员工数量以及410.81万元的收入金额。中间区域为收益情况折线图，可切换不同时段查看数据走势，下方还有老人年龄分布、预约总监等相关板块。页面右侧设有问候语，还列出了常用功能模块，包含床位申请、用户管理、订单管理等8个功能入口。
 
 
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/DJAWbPIAFo4vIUxjQkPciyKhnTh.png)
+> 图注：图片展示的是中州养老小程序的业务主页效果。上方有“把温暖送给父母，让情爱陪伴家人”的宣传语，配有养老院员工与老人互动的图片。中部有“入住咨询”“探访预约”“参观预约”等功能选项，以及“养老院介绍”“绑定家人”“我的订单”“我的账单”等服务按钮。下方展示了“单人套房”的房间图片，配有介绍文字。底部有“首页”“家人”“服务”“账单”四个导航栏。该图片直观呈现了小程序业务主页的布局和功能。
 
 > 教育公司无养老相关资质，小程序无法正式上架，无法体验。在课程的对应阶段，我们会进行调试开发
 
@@ -129,6 +134,7 @@ aliases:
 <bookmark name="RuoYi 若依官方网站 |后台管理系统|权限管理系统|快速开发框架|企业管理系统|开源框架|微服务框架|前后端分离框架|开源后台系统|RuoYi|RuoYi-Vue|RuoYi-Cloud|RuoY" href="https://ruoyi.vip/"></bookmark>
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/YJVDbEwylolD4DxyT8Ych7s8nze.png)
+> 图注：图片展示的是若依框架的Vue前端分离版页面。页面背景为绿色，左侧有若依标志及导航栏，右侧突出显示“Vue前端分离版”及“基于SpringBoot的权限管理系统”字样，下方有“2021-12-01正式版 版本：v1.0.7”等信息，还标注了支持的终端。页面底部有一个绿色的“立即下载”按钮。该图片与文档中介绍若依框架版本的内容相关，直观呈现了Vue前端分离版的界面样式。
 
 若依框架分为四个版本：
 
@@ -160,6 +166,7 @@ RuoYi-Vue 是一个 Java EE 企业级快速开发平台，基于经典技术组�
 <bookmark name="若依管理系统" href="http://vue.ruoyi.vip"></bookmark>
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/JnVvblTgPotcUmxYdPZcKXNEnlh.png)
+> 图注：图片展示了若依框架RuoYi-Vue前后端分离版的演示地址页面。页面左侧为系统管理导航栏，有首页、系统管理、系统监控、系统工具、若依官网等选项。右侧上方显示“首页”，下方有登录、注册等操作按钮，还展示了若依后台管理框架的相关信息，包括版本v3.8.8及技术选型，如后端技术有Spring Boot、Spring Security等，前端技术有Vue、Element Plus等。该图片与文档中介绍若依框架技术选型的内容相关，直观呈现了框架的前端和后端技术栈。
 
 #### 技术选型
 
@@ -216,6 +223,7 @@ RuoYi-Vue 是一个 Java EE 企业级快速开发平台，基于经典技术组�
 在目前提供的虚拟机环境中已经使用docker安装了对应的基础环境
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/FrLFbqJ9SoykWjxMOwycA9tJnNe.png)
+> 图注：图片展示的是在Linux服务器上使用docker ps命令查看容器运行情况的结果。显示了两个容器信息，分别为mysql:8.0.29和redis:latest，它们分别运行于2个月前，状态为运行中，且运行时间约为1分钟。mysql容器的端口映射为0.0.0.0:3306->3306/tcp，:::3306->3306/tcp；redis容器的端口映射为0.0.0.0:6379->6379/tcp，:::6379->6379/tcp。该图片与文档中介绍在VMWare软件中部署linux服务器，使用docker安装基础环境的内容相关，直观呈现了已安装的MySQL和Redis服务状态。
 
 详细说明如下：
 
@@ -235,6 +243,7 @@ RuoYi-Vue 是一个 Java EE 企业级快速开发平台，基于经典技术组�
 - 代码下载地址：[https://gitee.com/y_project/RuoYi-Vue](https://gitee.com/y_project/RuoYi-Vue)[ ](https://gitee.com/y_project/RuoYi-Vue)
 
   ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/Esh8bJ3jNo3g8ixYZIicJQGHnQ7.png)
+> 图注：图片展示了若依框架在Gitee平台的代码下载页面。页面左侧显示了若依/RuoYi-Vue项目的代码分支、提交记录等信息。右侧弹出“右键下载”窗口，有HTTPS、SSH、SVN、SVN+SSH等多种下载方式，其中HTTPS方式被红色箭头指向。该图片与文档中下载代码部分内容相关，直观呈现了从Gitee平台下载若依框架代码的操作界面，为后续借助包名修改器进行包名全局替换等操作提供参考。
 
 由于若依提供的代码的包名和项目名和咱们的需求不一致，因此这里暂时不要采用Git克隆的方式下载代码，直接下载ZIP包到本地，然后先替换所有的包名和项目名，再使用idea打开项目
 
@@ -245,22 +254,27 @@ RuoYi-Vue 是一个 Java EE 企业级快速开发平台，基于经典技术组�
 - 可以使用资料中提供的包名修改器
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/ZIqvbp1WCoPyDvxCTFpcXY3TnIo.png)
+> 图注：图片展示的是若依框架修改器的图标。图标为一个白色文件夹，左侧有绿色的植物图案，右侧有橙色的齿轮和播放按钮。该修改器用于若依框架代码包名和项目名的全局替换，可借助其一键修改从官方下载代码中的包名，使其与需求一致。修改完成后，修改器会自动导出新目录，将此目录复制到代码目录中，再使用idea打开即可。
 
 请参考下方截图进行修改哦
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/RVx5be4wNosK8gxQNYsclMlnnCf.png)
+> 图注：图片展示的是若依框架修改器界面。界面上方显示软件版本、Python版本、WxPython版本等信息。左侧有选择文件、选择系列、修改内容等选项，其中“系列”下选中“RuoYi-Vue”，“修改内容”中“目录名称”“项目名”“包名”等处已填写“zzyl”等信息。右侧为操作记录，记录了修改包名、项目名等操作。该图片与文档中介绍使用若依框架修改器修改代码包名等内容相关，用于辅助说明修改操作。
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/H6rPbCSQZo9oWVxSdLLc3bFcnOC.png)
+> 图注：该界面是若依框架修改器的配置设置窗口，核心功能为修改数据库与Redis的相关配置信息。界面中“是否启用配置”选项设为True，此时选中的配置参数会生效；数据库配置部分包含IP地址、端口号、名称、账号、密码，分别为192.168.100.168、3306、zzyl、root、heima123；Redis配置部分包含IP地址、端口号、密码，分别为192.168.100.168、6379、123456。界面下方标注该设置在修改框架时会使用对应参数，且仅需设置一次后无需再次修改，右下角设有“保存”与“关闭”按钮。
 
 - 修改完成之后，修改器会自动导出一个新的目录，将目录复制到你的代码目录中，然后使用idea打开即可：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/MEpvbS7pqo8VxRxe343c1H5NnXe.png)
+> 图注：图片展示了若依框架v3.8.8的项目结构及平台简介。左侧为项目文件夹，包含zyyl、zyyl-admin等子文件夹，以及github、bin、doc、sql等文件。右侧是平台简介，介绍若依为基于Spring Boot + Vue前后端分离的Java快速开发框架，采用Vue、Element UI等技术，支持多种认证系统、权限控制等，还提供了技术栈（Vue3 Element Plus Vue）。
 
 打开项目后，先修改项目和模块使用的JDK版本为11。
 
 - 修改pom.xml文件中JDK的版本为11
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/ZYYObVpOJo5Sh0xpCEgc5ycgnqe.png)
+> 图注：这张图片对应文档中修改pom.xml文件的操作步骤，展示了IDEA开发工具的代码编辑界面。左侧项目结构中，pom.xml文件被红色框选中，右侧代码编辑区域的properties标签内，标注了要修改的java.version属性，当前值为11，该属性行被红色框和箭头突出显示，图片右侧标注了“改完之后先不要刷新”的提示，与文档上下文的要求完全对应，直观呈现了修改JDK版本的核心操作内容。
 
 注意：先不要刷新
 
@@ -273,6 +287,7 @@ RuoYi-Vue 是一个 Java EE 企业级快速开发平台，基于经典技术组�
 1. 配置环境变量
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/MN35bPYXnoYMwoxvgUTcfHzmnNh.png)
+> 图注：这张图片展示了Windows系统环境变量的配置窗口，该内容对应文档中JDK配置步骤里的环境变量配置环节。窗口内，变量名被设置为“JAVA_HOME”，变量值被填写为JDK11的解压路径“D:\\develop\\jdk-11.0.20”，窗口还提供了“浏览目录”“浏览文件”的选择按钮，以及“确定”“取消”的操作按钮，用于完成或放弃本次环境变量的设置操作。
 
 
 
@@ -281,26 +296,33 @@ RuoYi-Vue 是一个 Java EE 企业级快速开发平台，基于经典技术组�
 打开之后，需要配置maven的本地仓库，建议将资料中的本地仓库先解压到自己的Maven仓库中（初次下载较慢）
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/Qy1SbwMx4o0Gy3xc5DvcDZH8nTf.png)
+> 图注：这张图片展示了一个名为“repository_zzyl.zip”的压缩文件，图标为蓝色圆形背景内搭配白色闪电符号，右下角配有“ZIP”标识，表明这是一个ZIP格式的压缩包文件。该文件对应文档中提及的Maven本地仓库相关内容，即需要从指定资料路径解压出来、用于配置maven的本地仓库的文件。
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/QVY7bpeB9oSdZGxecvncphAQn1g.png)
+> 图注：图片展示了Maven配置界面及相关文件夹内容。界面中“User settings file”处显示为“D:\\develop\\apache-maven-3.5.4\\conf\\settings.xml”，“Local repository”处显示为“D:\\develop\\apache-maven-3.5.4\\repository”。右侧文件夹中，有“repository_zyl.zip”文件，其内容被复制到自己的本地仓库。图片与上文“maven配置”内容相关，说明了配置Maven本地仓库的操作，以及将下载的maven依赖内容复制到本地仓库的操作步骤。
 
 
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/BdE4b87y6ojrB6x2KUwcwiwknab.png)
+> 图注：图片展示的是IntelliJ IDEA中Maven设置界面。左侧导航栏选中“Maven”选项，右侧显示Maven相关设置，包括Maven home path、User settings file、Local repository等。其中，Maven home path指向D:\\develop\\apache-maven-3
 
 改完之后刷新maven。
 
 idea中的配置
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/Uhsab75HhoBeK4x0k4tcwrwVnif.png)
+> 图注：这是IDEA的“Project Structure”设置界面，左侧选中“Project Settings”下的“Project”选项，右侧对应项目名称为“zzyl”，SDK栏处高亮显示为“11 Oracle OpenJDK 11.0.20”，该界面用于配置项目的JDK版本，是搭建若依项目时JDK配置步骤中的核心设置界面，对应文档里修改pom.xml JDK版本为11后，在IDEA中配置JDK的相关操作。
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/EuE0bd4RNo0ZiXxXjQacB7LpnHh.png)
+> 图注：这张图片展示的是IDE的设置界面，左侧导航栏中“Build, Execution, Deployment”分类下的“Runner”选项被红色方框标注突出显示，对应右侧主区域的“Build, Execution, Deployment > Build Tools > Maven > Runner”配置页，这里是JDK配置的关键操作位置。该页的JRE选项中，已选中的JDK为Oracle OpenJDK 11.0.20，路径为本地的JDK11安装目录，对应文档中“JDK配置”步骤里的JDK11设置要求，整体界面用于完成IDE中运行环境的相关配置。
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/XSrkbc5acovgbNxISmtc2U8dnbd.png)
+> 图注：图片展示了IntelliJ IDEA中“Settings”设置界面的“Compiler”下的“Java Compiler”选项卡。关键信息有：左侧导航栏中“Java Compiler”被红色框突出显示；右侧“Project bytecode version”处的下拉框被红色框圈出，显示版本为11；下方“Javac Options”区域中，“Use compiler from module target JDK when possible”选项被勾选。该图片与文档中“JDK配置”部分相关，用于指导用户在IntelliJ IDEA中配置Java编译器版本等设置。
 
 - 修改idea中的项目编码为utf-8
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/B5gfb1m56obaUgxppLHcLasvnlW.png)
+> 图注：这张图片是IntelliJ IDEA的Settings设置窗口，展示了Editor（编辑器）分类下的File Encodings（文件编码）配置页面，对应文档中修改项目编码为UTF-8的操作说明。页面中用红框标注了关键配置项：一是全局编码（Global Encoding）设置为UTF-8，二是项目编码（Project Encoding）设置为UTF-8，三是属性文件的默认编码（Default encoding for properties files）也设置为UTF-8，下方还附带相关编码设置的提示信息，页面底部有OK、Cancel、Apply三个操作按钮。该图片直观呈现了修改Idea项目编码为UTF-8的具体设置界面，与文档中对应配置步骤相匹配。
 
 #### 数据库准备和配置
 
@@ -321,6 +343,7 @@ use zzyl;
 - 导入项目根目录下的sql/ry_2024xxxx.sql文件，如下图
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/G2qpbXrkIoPnnnxkWB9cE7efnyf.png)
+> 图注：图片展示了若依框架项目文件夹结构中的“sql”文件夹内容。其中，“ry_20240629.sql”文件被红色框突出显示。该图片与文档中“在idea中创建数据库并导入项目中的基础表结构和数据”部分内容相关，用于说明在项目根目录下的“sql”文件夹中找到并打开“ry_20240629.sql”文件，以导入项目基础表结构和数据的操作步骤。
 
 sql执行成功以后，修改数据库连接，找到ruoyi-admin模块中的`resources`目录下的`application-druid.yml`
 
@@ -406,6 +429,7 @@ spring:
 目前下载的代码中，其中ruoyi-ui这个目录就是前端的代码，不过这个代码是基于vue2开发的
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/SvwLbWiPMoP1ZLxPdjWc7H8nnFg.png)
+> 图注：图片展示了若依项目代码目录结构。其中，红色框突出显示的“ruoyi-ui”目录是前端代码所在，基于vue2开发。该图片与文档中“代码下载”部分内容相关，用于说明下载的代码中“ruoyi-ui”目录是前端代码，若需使用基于vue2开发的前端，可使用此代码，运行方式与文档后续描述相同。
 
 
 
@@ -422,6 +446,7 @@ spring:
 也可以在当天的资料中找到，解压到代码目录，并将目录名改为**zzyl-vue3**，然后使用VSCode打开即可：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/FBwcbhUMYoZfzsxw4Lkc4Vc3nle.png)
+> 图注：图片展示的是一个名为“RuoYi-Vue3-master.zip”的文件图标。图标上方有蓝色背景，中间是360的标志，下方是绿色背景，中间有棕色的皮带和扣子图案。该文件是基于vue3开发的若依前端代码，可通过解压改名为zzyl-vue3后用VSCode打开，用于后续运行前端项目，是文档中介绍将后端项目上传到gitee、运行前端项目步骤中提到的代码文件。
 
 
 
@@ -434,20 +459,24 @@ npm install
 ```
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/Wmijb9b1LosuTIxwxNDcPRxKn3f.png)
+> 图注：图片展示了在VSCode中运行npm install命令的终端界面。命令执行后，显示了468个包已添加，365秒内完成，107个包正在寻找资金。界面中还列出了多个被废弃的npm包及其原因，如source-map-url@0.4.1、stable@0.1.8等。该图片与文档中“安装依赖和项目运行(可选)”部分对应，直观呈现了安装依赖时终端的反馈情况，帮助用户了解安装进度及依赖包状态。
 
 资料已经提供好安装好依赖的前端项目
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/O1pLb0IPboLapix4GELcJxYznXe.png)
+> 图注：图片展示了下载好的前端项目文件夹内容。文件夹中有一个名为“RuoYi-Vue3-master.zip”的ZIP文件，其修改日期为2024年10月22日19:17，类型为ZIP文件，大小为53.2MB。图片中“下载好依赖的前端项目”及“RuoYi-Vue3-master.zip”部分被红色箭头突出显示。该图片与文档中“代码下载”部分内容相关，说明了下载好依赖的前端项目文件情况，为后续解压改名并用VSCode打开等操作提供参考。
 
 解压好改名为zzyl-vue3之后用vscode打开
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/ZNLVbjropoJvxQxQcu9crlw6n0b.png)
+> 图注：图片展示了在Windows系统下，打开“此电脑 - 软件”文件夹，进入“code”文件夹，再进入“zyyl-vue3”文件夹的文件夹界面。其中，vite文件夹被高亮显示。该图片与文档中“运行前端项目”部分相关，对应“解压好改名为zzyl-vue3之后用vscode打开”这一操作步骤，直观呈现了前端项目代码解压后的文件结构，帮助用户确认文件夹位置，以便后续进行项目运行等操作。
 
 #### 修改配置
 
 打开前端根目录下的**vite.config.js**文件，把目标地址改为若依后端的服务地址，如下图：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/BtHnbJs3doLB1Sx2GRKcwh3knSe.png)
+> 图注：图片展示了若依前端项目中vite.config.js文件的内容。文件中定义了vite相关配置，包括server配置，如端口、主机、是否开启等，以及proxy配置，其中target字段被红色箭头突出显示，其值为“http://localhost:8080”，即若依后端的服务地址。该图片与上下文紧密相关，上下文提到需打开前端根目录下的vite.config.js文件，将目标地址改为若依后端的服务地址，此图直观呈现了操作内容。
 
 #### 启动项目
 
@@ -474,10 +503,12 @@ PS D:\workspace\project-ry-zzyl-vue3> npm run dev
 启动前后端成功后，可以访问页面，地址：http://localhost:80/
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/FXJZbwwfDobzb0xJkf9c53Adn1g.png)
+> 图注：图片展示的是若依后台管理系统登录页面。页面背景为室内场景，有窗户、窗帘等元素。页面上方显示“若依后台管理系统”，下方有用户名、密码、验证码等输入框，用户名为“admin”，密码为“123456”，验证码为“4-4=?”。页面底部有“登录”按钮，还有“记住密码”选项。该图片与文档中“启动项目”部分对应，展示了若依后端项目启动成功后的登录界面，说明启动成功后可访问页面，地址为http://localhost:80/。
 
 也可以通过脚本启动。如果显示的是pnpm run dev。则需要先安装`npm install pnpm`
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/QyaMbCEu9osavJxl8orcGAOQnQc.png)
+> 图注：这张图片展示的是VS Code编辑器界面，左侧为项目文件目录，当前选中名为package.json的配置文件，该文件的dependencies部分包含多个依赖包的版本信息，其中repository字段标识了代码的Git地址。图片中用红色箭头指向了左侧文件列表里package.json右侧的运行按钮。界面底部的终端区域显示VITE已成功启动，输出了服务运行的本地网络地址。结合所在上下文，这是若依前端项目配置启动相关的操作界面，对应修改配置或启动项目的步骤场景。
 
 ### 将前端项目上传到gitee
 
@@ -502,6 +533,7 @@ PS D:\workspace\project-ry-zzyl-vue3> npm run dev
 下面是idea打开项目后的截图
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/NhYdbB4q5o0ItwxhyOVcfNXknPg.png)
+> 图注：图片展示了idea打开的RuoYi-Vue项目结构。左侧目录栏中，ruoyi-admin、ruoyi-common、ruoyi-framework等模块被展开显示，ruoyi-admin下有多个文件夹，如bin、doc等。此外，还有sql文件夹，包含quartz.sql和ry_20231130.sql文件。下方还有.gitignore、LICENSE、pom.xml、README.md等文件。
 
 官方文档的介绍
 
@@ -542,6 +574,7 @@ com.ruoyi
 项目中的配置文件都在ruoyi-admin模块下，如下图：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/KVz9bL5gYobW9AxNgR3cEKXcnCg.png)
+> 图注：图片展示了若依前后端项目结构中ruoyi-admin模块下的配置文件。在resources文件夹下，有i18n、META-INF、mybatis等文件夹，其中mybatis文件夹内有application.yml和application-druid.yml两个配置文件，还有banner.txt和logback.xml文件。
 
 - i18n：国际化处理
 - META-INF：存储了项目的元信息（*描述数据的数据*），无需修改
@@ -760,6 +793,7 @@ spring:
 刚才我们已经导入了关于若依的表结构，目前已经提供了19张表，我们可以先简单熟悉一下每个表代表的含义：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/IZk0bEJniop88bxmpu6cbUtYnLc.png)
+> 图注：这张图片展示的是一组列表形式的数据库表结构列表，内容与前后端项目的后端表结构相关。列表里包含19张表的表名，从上到下依次为gen_table、gen_table_column、sys_config、sys_dept、sys_dict_data、sys_dict_type、sys_job、sys_job_log、sys_logininfor、sys_menu、sys_notice、sys_oper_log、sys_post、sys_role、sys_role_dept、sys_role_menu、sys_user、sys_user_post、sys_user_role，这些表名和文档中提及的若依项目已导入的19张表完全对应，用于供用户熟悉表结构。
 
 表结构说明及关系
 
@@ -774,6 +808,7 @@ spring:
 如下图：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/SeJgbOACXoO2ILxr3zccVsuUnpb.png)
+> 图注：这张图片展示了名为ZZYL-VUE3的前端项目代码结构目录，各类目录与文件按层级清晰呈现，包含bin、html、node_modules、public等一级目录；src目录下又细分了api、assets、components、directive、layout、plugins、router、store、utils、views等子目录，还有App.vue、main.js等多个JS和Vue文件；此外还包含vite相关配置文件、不同环境的环境变量文件，以及.gitignore、index.html、LICENSE、package.json、pnpm相关文件、README.md、vite.config.js等项目相关文件，该目录结构可对应文档中提及的前端代码结构内容。
 
 详细目录或文件说明：
 
@@ -884,6 +919,7 @@ export default defineConfig(({ mode, command }) => {
 - 路径重写---> `rewrite: (p) => p.replace(/^\/dev-api/, '')`
 
   ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/K057bXkXQopFDyxJESHcfvZTn2g.png)
+> 图注：图片展示了前端请求与vite.config.js中代理部分代码的关系。左侧是web请求界面，显示请求地址为http://localhost/dev-api/system/notice，请求方法为GET，状态代码200 OK。右侧是vite.config.js中的代理部分代码，包含target指向localhost:8080，rewrite规则去除dev_api并转发至localhost:8080服务器，最终请求地址为http://localhost:8080/system/notice。该图直观呈现了前端请求与代理配置的对应关系。
 
 
 
@@ -904,12 +940,14 @@ export default defineConfig(({ mode, command }) => {
 最终的效果：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/SzFLbsy2toVJUQxVoeFcR4AbnIf.png)
+> 图注：这张图展示的是中州养老系统的后台管理界面，重点呈现了左侧的菜单结构。其中用红框标注的“服务管理”是主菜单，其下方的“护理项目”“护理等级”“护理计划”是对应的子菜单，清晰体现了护理项目模块的菜单层级。该界面属于若依后台管理框架，界面顶部有“首页”选项，右侧区域有相关阿里云、腾讯云的优惠推广内容，还标注了该框架的技术选型，后端技术包含Spring Boot、MyBatis等，前端技术包含Vue、ElementUI等，明确了框架的技术组成。
 
 只新建**服务管理** 主菜单即可，子菜单将来由代码生成实现
 
 准备主菜单-->**服务管理，**详细配置，如下：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/C2Bgb9T4LorfFNxCtJYczXesnjv.png)
+> 图注：这张图是若依系统创建“服务管理”主菜单的界面，左侧系统管理栏的“菜单管理”被蓝色框标注，作为操作入口；上方“新增”按钮被红色框标注，是添加菜单的操作按钮；右侧“修改菜单”面板被红色框标注，其中已填写关键配置信息，包括菜单类型选为“目录”，菜单图标为“tool”，菜单名称为“服务管理”，显示排序设为0，是否外链选“否”，路由地址为“nursing”。
 
 
 
@@ -940,20 +978,24 @@ CREATE TABLE `nursing_project` (
 把以上sql导入到若依对应的数据库中即可
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/Lrv9bUOFFo2E9txAst9cIESIndc.png)
+> 图注：图片展示了若依框架中“Tables”文件夹下的表结构列表。其中，“nursing_project”表被红色框突出显示。该图片与文档中“表结构”部分内容相关，文档提到护理项目表结构定义，需把相关sql导入到若依对应的数据库中，此图直观呈现了数据库中已有的表结构，帮助理解后续代码生成操作的表基础。
 
 ### 代码生成
 
 找到**系统工具**-->**代码生成**，然后点击**导入**按钮
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/MjoFb7RYFodpmLx02QicS0SBnxb.png)
+> 图注：这是若依管理系统的代码生成页面，左侧侧边栏选中“代码生成”选项，页面顶部路径显示为“首页 / 系统工具 / 代码生成”，页面内核心区域用红色框突出显示了“导入”按钮，该操作对应上下文所述的找到系统工具下的代码生成后点击导入按钮的指引，页面还呈现了表名称、表描述输入框，以及生成、修改、删除等功能按钮，整体界面和上下文的代码生成操作步骤相契合，可辅助使用者完成代码生成的导入相关操作。
 
 选中**nursing_project**表结构，点击确定
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/WlRPbuq8EoTb0uxf0DhcL9xDnwh.png)
+> 图注：这张图是若依代码生成功能里的“导入表”页面，页面上方设有“表名称”“表描述”两个输入框，旁侧配有“搜索”“重置”功能按钮。中间的表格展示了可导入的表结构列表，其中nursing_project表被勾选，其表描述为护理项目表，该表的创建时间为2024-04-09 07:24:08。页面底部标注共有18条数据，支持分页查看，最下方有蓝色的“确定”按钮与“取消”按钮，有红色箭头指向“确定”按钮，符合文档中选中nursing_project表后点击确定的操作要求。
 
 目前在代码生成列表中，可以看到需要生成的数据
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/Yo8gbUiD6ofvgmxVoNecFWkHnhf.png)
+> 图注：图片展示的是若依框架代码生成列表界面。界面中显示了“nursing_project”表的相关信息，包括表名称、表描述、实体、创建时间、更新时间等。右侧有“查看生成后的代码”“修改配置”“同步表”“删除”“下载代码”等操作按钮。该图片与文档中介绍代码生成操作的上下文相关，直观呈现了代码生成列表中数据及操作按钮的布局情况。
 
 > 该数据对应了5个按钮
 > 
@@ -976,6 +1018,7 @@ CREATE TABLE `nursing_project` (
 下图是**基本信息，**可以根据自己的需求修改：表、实体、表描述、作者相关的数据
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/J9wSbmuTlourZxxK5IbcfppEnCh.png)
+> 图注：这是代码生成配置里的基本信息页面，属于若依框架开发流程中的代码生成配置环节。页面分为三个部分标签，当前选中的是“基本信息”标签，页面内带有红色星号标注的必填项包括表名称（对应导入的nursing_project表）、实体类名称（NursingProject）、表描述（护理项目表）和作者（ruoyi），还有非必填的备注输入框，页面底部设有“提交”和“返回”两个操作按钮，用户可在此处修改代码生成的基础相关配置。
 
 
 
@@ -998,20 +1041,24 @@ CREATE TABLE `nursing_project` (
 | 字典类型 | 字典管理是用来维护数据类型的数据，如下拉框、单选按钮等，可自定义 |
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/VmV3bcnMFobVPCx6x1bcyHVAnqf.png)
+> 图注：图片展示的是若依框架代码生成功能中的字段信息页面。页面分为基本信息、字段信息、生成信息三个标签页，当前显示字段信息。列出了id、name等13个字段，包括字段列名、字段描述、物理类型、Java类型等信息。部分字段有插入、编辑、列表、查询等操作选项，如name字段可进行插入、编辑、列表、查询操作。页面底部有“提交”和“返回”按钮。该图与上下文介绍的若依框架代码生成功能相关，展示了字段信息的填写与操作界面。
 
 下图是**生成信息，**可以按照自己的实际情况，来修改包路径，模块名称，上级菜单
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/RC2ZbxabIolVzVx7kvWcxdSCnId.png)
+> 图注：图片展示的是若依框架代码生成功能中的生成信息页面。页面左侧有基本信息、字段信息、生成信息三个选项卡，当前选中生成信息。页面右侧有生成模板、生成包路径、生成业务名等必填项，以及前端类型、生成模块名、生成功能名、上级菜单等可选项。其中生成包路径处显示“com.zzyl.nursing”，前端类型为“Vue3 Element Plus 模版”，生成模块名是“nursing”，生成功能名是“护理项目”，上级菜单为“服务管理”。该页面用于设置生成代码的相关信息，后续可点击提交按钮进行提交。
 
 修改完成后，点击**提交**按钮
 
 等我们修改完毕后，回到了列表页，这个时候就可以点击**下载**按钮，去下载代码包
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/NISZbqEgKoWFvOxBq4rcqYZTngg.png)
+> 图注：这是若依系统的代码生成页面，页面顶部为系统导航栏，左侧是包含系统管理、系统工具等功能的侧边栏。主区域的代码生成界面设有表名称、表描述等输入项，支持生成、导入等操作，下方展示了名为nursing_project的护理项目表信息。页面右上角的通知弹窗显示了近期的下载内容，包含ruoyi.zip和20241wbs.zip两个文件，提示用户完成代码修改后可下载对应代码包。
 
 下载后的代码包，解压后，包含了三部分，如下图：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/RfXSbyvlAoVpXTxCvKUc7Hmznsh.png)
+> 图注：图片展示了下载代码包后解压内容，包含三个文件夹及一个SQL文件。左侧是“main”和“vue”两个文件夹，右侧是“projectMenu.sql”SQL文件。该图片与文档中介绍下载代码包后内容相关，直观呈现了下载后的代码包结构，与文档中提到的下载代码包解压后包含三部分的内容相呼应，帮助理解代码包的组成。
 
 
 
@@ -1051,10 +1098,12 @@ values('护理项目导出', @parentId, '5',  '#', '', 1, 0, 'F', '0', '0', 'nur
 把main目录拷贝后，找到后端ruoyi-admin模块，在**main目录上点右键**，选择Paste进行拷贝，效果如下：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/K2aBbfqcSoP2VTxXCrac1a3lnAb.png)
+> 图注：这张图片展示了若依项目后端模块的文件目录结构，目录层级为zzyl-admin下的src/main目录。其中两处核心内容被红色方框标注，一处是main目录下com.zzyl包内的nursing包，该包下包含controller、domain、mapper、service四个子包；另一处是resources目录下的mapper.nursing包内的NursingProjectMapper.xml文件，对应上下文里代码生成后端相关的操作内容。
 
 打开vue文件夹，里面包含了两部分内容
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/YqoZbSBJnoQyAoxlHAhcP31bnLf.png)
+> 图注：图片展示了打开vue文件夹后的内容，包含两个文件夹，分别是“api”和“views”。其中，“api”文件夹用于存放后端接口定义代码，“views”文件夹包含vue组件的前端代码。该图片与文档中介绍前端项目结构的内容相关，直观呈现了vue文件夹下的这两部分内容，为后续代码拷贝操作提供参考。
 
 > - api是指后端的接口定义代码
 > - views中包含了vue组件的前端代码
@@ -1062,10 +1111,12 @@ values('护理项目导出', @parentId, '5',  '#', '', 1, 0, 'F', '0', '0', 'nur
 **选中这两个文件夹**，打开前端项目，**选中src目录**进行拷贝，效果如下：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/NM9wb2thCoVx9QxLTknczZV4ndf.png)
+> 图注：图片展示了前端项目文件结构。左侧为文件夹列表，右侧是文件内容。在“src”目录下，“api”文件夹内有“nursing”文件夹，其中包含“project.js”文件；“views”文件夹内也有“nursing”文件夹，其中“project”文件夹下有“index.vue”文件。这些文件与文档中提到的将“api”和“views”文件夹选中进行前端项目src目录拷贝的内容相关，是代码生成后前端项目的部分结构展示。
 
 等代码拷贝完成后，重新启动前后端项目，打开页面，可以在**服务管理**中看到子菜单**护理项目**，如下图
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/SD80bxgeVo8foNxqmRrcqTqonKm.png)
+> 图注：图片展示的是若依管理系统中“服务管理”下的“护理项目”页面。左侧导航栏中“护理项目”被红色框突出显示。页面上方有“首页”“服务管理”“护理项目”等导航选项。中部显示护理项目列表，包含编号、名称、排序号、单位、价格、图片、护理要求、状态等信息，如编号84的衣物清洁等。底部有分页导航和每页显示条数选择。该图与上文提到的在服务管理中看到子菜单护理项目，可对护理项目进行操作等内容相呼应。
 
 可以对护理项目进行一些操作，比如，新增、修改、删除、查询等
 
@@ -1303,6 +1354,7 @@ public class NursingProjectController extends BaseController {
 1. 继承了BaseController，其中BaseController详细定义如下图：
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/NGAHbYOAKoRkN3xZJAUcJB1DnVf.png)
+> 图注：图片展示了若依框架中BaseController类的部分方法。其中，`initBinder(WebDataBinder): void`用于日期类型转换；`startPage(): void`是分页方法；`startOrderBy(): void`用于排序方法；`clearPage(): void`清理分页的线程变量；`getDataTable(List<?>): TableDataInfo`响应分页数据；`success(): AjaxResult`返回成功；`error(): AjaxResult`返回失败；`success(String): AjaxResult`返回成功消息；`success(Object): AjaxResult`返回成功对象；`error(String): AjaxResult`返回失败消息；`warn(String): AjaxResult`返回警告消息；`toAjax(int): AjaxResult`响应返回结果；`toAjax(boolean): AjaxResult`响应返回布尔结果；`redirect(String): String`页面跳转；`getLoginUser(): LoginUser`获取用户信息；`getUserId(): Long`获取登录用户id；`getDeptId(): Long`获取登录部门id；`getUsername(): String`获取登录用户名；`logger: Logger = LoggerFactory.getLogger(...)`获取日志器。该图与上文介绍的NursingProjectController继承自BaseController相关，辅助理解其方法功能。
 
 1. 符合RestFul请求风格
 2. 返回值有两个：TableDataInfo 和  AjaxResult   
@@ -1359,6 +1411,7 @@ public class NursingProjectController extends BaseController {
 5. 分页逻辑详细分页逻辑如下图：
 
    ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/D620bjnkEoNCPFxvJ8aceIpWnke.png)
+> 图注：图片展示了NursingProjectController中list方法的代码及startPage()方法的实现。list方法继承了BaseController，符合RestFul请求风格，返回TableDataInfo和AjaxResult。startPage()方法从请求参数中获取pageNum和pageSize参数，调用PageHelper.startPage()进行分页处理。其中，PageHelper.startPage()方法接收pageNum、pageSize、orderBy参数，还设置了reasonable属性。该图片与上文介绍的分页逻辑相关，直观呈现了分页处理的代码实现。
 
 当调用了startPage()方法后主要干了两件事：
 
@@ -1376,6 +1429,7 @@ public class NursingProjectController extends BaseController {
 我们来看一下目前**护理项目**这个菜单的配置项，如下图
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/QfEgb3BgVofXnnx7k8McqOAznIc.png)
+> 图注：这是若依系统中“修改菜单”的配置界面，对应上下文里提及的“护理项目”菜单配置项。界面显示上级菜单为“服务管理”，菜单类型选择了“菜单”，菜单名称为“护理项目”，显示排序设为1。父菜单路由为“nursing”，界面用红色箭头和文字标注了这一信息，同时用红框突出标注了两项核心配置：路由地址为“project”、组件路径为“nursing/project/index”，其余配置还包括菜单图标、是否外链、权限字符等，底部有“确定”“取消”按钮用于保存或放弃修改。
 
 - 这个菜单的类型为**菜单，**菜单需要有对应的**组件路径**
 - 父菜单的路由地址+当前菜单的路由地址 就可以访问组件路径对应的组件即： nursing/project     加载组件为     @/views/nursing/project/index.vue
@@ -1390,14 +1444,17 @@ public class NursingProjectController extends BaseController {
 - 组件路径：nursing/nursingPlan/index
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/ZNPUbdGbooYj1nxHJhKcICUonoh.png)
+> 图注：这是添加菜单的配置界面，对应在服务管理中新增“护理计划”菜单的操作配置项。界面中上级菜单已选择“服务管理”，菜单类型选中“菜单”，菜单名称填写为“护理计划”，路由地址设置为“nursingPlan”，组件路径填写为“nursing/nursingPlan/index”。界面还显示了其他配置选项，如菜单图标、显示排序、是否外链、权限字符、是否缓存、显示与菜单状态等，最后设有“确定”和“取消”按钮用于完成或放弃本次菜单配置。
 
 在@/views/nursing/nursingPlan目录中新增一个index.vue组件
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/LvNWbaex3otLLSxfWDGchfgunjb.png)
+> 图注：这张图片展示了若依项目的前端代码结构与对应文件内容，左侧资源管理器栏中高亮选中了`src/views/nursing/nursingPlan`路径下的`index.vue`文件，对应测试案例中新增菜单“护理计划”要求的组件路径。右侧的编辑栏呈现了该`index.vue`的代码模板，仅包含基础的`<script>`、`<template>`标签，模板内标注了“这是护理计划组件”的文本内容，符合测试案例里要求在对应目录新增组件的操作步骤。
 
 测试是否能正常访问这个组件
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/FkepbQh5bo4U6Kxu8BscL1KBnKd.png)
+> 图注：图片展示了若依管理系统中护理计划组件的访问情况。左侧导航栏选中“护理计划”菜单，对应路由地址为“localhost/nursing/nursingPlan”。右侧导航栏显示“护理计划”处于选中状态。页面上方地址栏显示完整路由地址。底部文字说明加载的组件为“@/views/nursing/nursingPlan/index.vue”。该图片与上文测试案例内容相关，直观呈现了在服务管理中新增护理计划菜单后，通过路由地址访问对应组件的场景。
 
 1. 代码阅读
 
@@ -1777,6 +1834,7 @@ getList();
 - 创建**zzyl-nursing-platform**模块，如下效果
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/PkTHbuNFrodxGFxzR1QcM3Qwn7g.png)
+> 图注：图片展示了若依项目中zzyl-nursing-platform模块的文件结构。在E:\\code\\2024\\zzyl-ruoyi-ai-code目录下，zzyl-nursing-platform模块被红色框突出显示。该模块包含.gitignore、LICENSE、pom.xml、README.md等文件，以及bin、doc、sql等文件夹。该图片与文档中“创建zzyl-nursing-platform模块，如下效果”上下文对应，直观呈现了新创建模块在项目中的位置及结构。
 
 - 在父模块中管理zzyl-nursing-platform模块的版本：
 
@@ -1815,6 +1873,7 @@ getList();
   - 统一修改包名为`com.zzyl.nursing`
 
   ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/ABXybD8eBoBKz4xEBvwcQ90OnGe.png)
+> 图注：图片展示了若依项目中zzyl-nursing-platform模块的目录结构。红色框内为关键部分，显示了包名为`com.zzyl.nursing`的目录，包含controller、domain、mapper、service等子目录，其中`NursingProjectController`和`NursingProjectMapper.xml`被高亮显示。该图片与文档中“把护理项目相关的代码，都移动到新模块中zzyl-nursing-platform，统一修改包名为`com.zzyl.nursing`”的内容相关，直观呈现了代码迁移后的目录及文件情况。
 
 修改完成后，重启后端程序，完成测试。
 
@@ -1893,6 +1952,7 @@ CREATE TABLE "nursing_level" (
 2. 请使用若依的代码快速生成的功能，完成护理等级和护理计划的功能开发，最终效果图
 
 ![](../../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-yi-zhang-ruo-yi-ai-kuai-su-kai-fa-xin-xiang-mu/01-cong-0-kai-shi-yong-ruo-yi/ASHEbLnOwoi2whxQLybcOM0bnFh.png)
+> 图注：这张图是若依管理系统中护理等级模块的页面，左侧导航栏的“服务管理”类目下，“护理项目”子菜单中，“护理等级”和“护理计划”被红色框标注，是当前的功能入口。页面主体为护理等级列表，上方可切换“护理等级”和“护理计划”标签页，还有搜索、重置功能，以及新增、修改、删除、导出的操作按钮；下方列表展示了一条测试护理等级的信息，包含主键ID、等级名称、护理计划ID、护理费用、状态、等级说明、创建时间等字段，右下角为分页控件，当前共1条数据，显示在第1页。
 
 ### 定制化UI
 

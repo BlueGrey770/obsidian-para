@@ -9,6 +9,7 @@ aliases:
 整个项目的流程图如下，我们先来处理向量数据库中内容存储和检索的部分
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/TWqNbZRyYo0ZZUx1VghcCg0ynEf.png)
+> 图注：图片展示了EduRAG系统中RAG部分的流程图。用户输入query后，先进行Mysql数据库检索，若存在且阈值≥0.85则直接返回答案；若不存在则进入RAG系统检索。本地文档加载读取后进行文档切分，将字符串向量化存入Milvus数据库，再进行数据库检索，得到top-K相关文档，与query+doc拼接后由LLM生成result。该图与上下文紧密相关，直观呈现了RAG部分的处理流程。
 
 ## 1 文档存储
 
@@ -53,6 +54,7 @@ aliases:
 - edu_text_spliter 文本分割工具
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/IDI8bGKDyoweJNxLuPYcGOIOn9e.png)
+> 图注：图片展示了EduRAG系统中rag_qa文件夹下的core文件夹内容。其中，edu_document_loaders文件夹下有edu_docloader.py、edu_imgloader.py等文件；edu_text_splitter文件夹下有edu_chinese_recursive_text_splitter.py、edu_model_text_splitter.py等文件。该图片与文档中“工具准备”部分相关，直观呈现了文档加载和拆分工具的文件结构，帮助理解本模块负责加载多种格式文档的核心思路及代码实现。
 
 
 
@@ -61,6 +63,7 @@ aliases:
 准备数据
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/SX37bYE5wozfulx4ucDcJ525nyb.png)
+> 图注：这张图片展示了项目本地路径与文件资源管理器中两个区域的对应关系，左侧为项目目录结构，其中`edu_rag_pro`项目下的`data`目录里包含`ai_data`子文件夹，子文件夹内有三份PDF及Word格式的文件。通过红色箭头与红色框线突出的内容可清晰看到，`ai_data`子文件夹和右侧文件资源管理器中“02-RAG问答系统(核心模块)资料文档”路径下的三份文件完全对应，呈现了项目准备的待加载文档的存储位置与具体文件内容，和文档中介绍的1.3加载文档的准备数据环节直接相关。
 
 本模块主要负责**加载**多种格式的文档（如`.txt`、`.pdf`等），核心思路如下
 
@@ -326,6 +329,7 @@ if __name__ == '__main__':
 1）将下载好的**bge-m3**模型加入到项目的models目录下
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/Q3wWbvqn0oUIH5x04YbcoMQfn0c.png)
+> 图注：这张图片展示了edu_rag项目的本地目录结构，其中项目根路径为D:\\workspace\\428\\edu_rag，根目录下包含base、data、logs、models等子文件夹，当前处于展开状态的models文件夹中，已存放有bge-m3、bge-reranker-large、nlp_bert_document-segmentation_等文件夹，该目录是文档中提及的将bge-m3模型加入项目的目标路径，与文档内将BGE-M3模型放入项目models目录的操作要求对应。
 
 2）安装依赖
 
@@ -645,6 +649,7 @@ if __name__ == '__main__':
 混合检索的代码实现流程如下:
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/MFdXbZc8Fop4m5xws8hcdFYonWh.png)
+> 图注：图片为文档检索中混合检索的流程图。从开始混合检索，先向量化生成查询嵌入向量，再分别提取稠密向量和稀疏向量，构建搜索请求，执行混合搜索，转换搜索结果为Document对象，提取去重父文档，判断父文档数量，若数量为2则进行重排序处理，否则直接返回前CANDIDATE_M个文档。该图与上下文紧密相关，直观呈现了混合检索的具体步骤。
 
 代码实现如下:
 
@@ -913,6 +918,7 @@ print(model1.predict(pairs))  # [0.999556  0.003653  0.3362122]
 ```
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/SStFbNOw3oBvTDxL3lJco6aHnMf.png)
+> 图注：这是文档检索部分混合检索的代码实现流程示意图，图中左侧流程围绕向量存储初始化展开，包含检测设备、加载模型相关分支，后续涉及集合是否存在的判断，不存在则依次完成创建集合、定义Schema、创建集合、构建索引、加载集合到内存的操作，存在则直接加载现有集合；中间流程从加载文档内容开始，依次执行处理向量、构建索引记录、执行spark操作、记录日志等步骤；右侧流程从BGE-M3生成向量嵌入开始，经构建检索请求、执行混合搜索、转换文档对象、获取含义文档后，进入文档判断环节，最终通过BGE-Reranker重排序得到最终结果，完整呈现了混合检索从向量构建到结果输出的各关键步骤。
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 06 AI 应用开发 / EduRAG 项目实战 / 06-EduRAG-RAG部分 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/XgOZwtYcqi3GTek2dXUcMFJcnxf)

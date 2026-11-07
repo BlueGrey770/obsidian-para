@@ -115,6 +115,7 @@ GC垃圾回收机制是指Java虚拟机自动管理内存的机制, 通过自动
 ```
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/J7nLbzZMkoisfIxxHT2cFusVntc.png)
+> 图注：这张图片是JVM内存配置相关的说明内容，核心围绕JVM堆内存的配置建议展开。图片上方直观呈现JVM堆内存（设置为-Xmx4g）、全部物理内存（4G），同时标注内存包含其他内存、存在损耗的组成关系。下方的文字明确给出内存相关的计算公式，同时强调配置-Xmx4g时一定会出现OOM的情况，重点提出永远建议-Xmx的取值为最大物理内存的0.6~0.8倍，当物理内存为4G时，-Xmx设为2.4g到3.2g为佳，用于指导JVM堆内存的合理配置，避免OOM问题的发生。
 
 ```Java
 举例,物理内存4G, 运行JAR包时可指定堆内存参数
@@ -178,6 +179,7 @@ Error继承自java.lang.Error类,而Exception继承自java.lang.Exception类
 ### Java常用的集合
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/WRLmbyz58okC6Vx7OElczHRdnNf.png)
+> 图注：这张图片是一张对比表格，展示了Java常用集合框架中List、Set、Map、Queue这四大集合的核心特性。表格从定义、存储、可重复性、实现类、遍历、查找、应用场景七个维度展开对比：List是允许重复元素的有序集合，典型实现类为ArrayList、LinkedList等，可按索引操作；Set不允许重复元素且为无序集合，代表实现有HashSet等；Map是由键值对组成的集合，键不允许重复，实现类包含HashMap、TreeMap等；Queue则是一种按特定规则进行元素插入和删除的特殊集合，如LinkedList、PriorityQueue。
 
 ```Bash
 Collection 接口: Collection是集合List、Set、Queue的最基本接口
@@ -421,6 +423,7 @@ Executors返回的线程池对象的弊端如下:
 ### 线程池工作原理
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/OiJpbPtmzoMZvMxtWuUcaE9cnsf.png)
+> 图注：图片展示了线程池执行任务的流程。当提交任务时，先判断核心线程是否已满，若未满则创建线程执行任务；若已满则判断队列是否已满，若未满则任务入队列等待；若队列已满且线程池未满，则创建线程执行任务；若队列和线程池均已满，则按照拒绝策略处理无法执行的任务。
 
 线程池刚创建时, 里面没有一个线程. 任务队列是作为参数传进来的. 不过,就算队列里有任务,线程池也不会马上执行它们.
 
@@ -443,6 +446,7 @@ Executors返回的线程池对象的弊端如下:
 ### 线程池的拒绝策略有哪些
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/VYKDbB1BcoTEZVxWGFNcNqPunFF.png)
+> 图注：图片是一张表格，对比了线程池的5种拒绝策略。从左至右依次为默认（AbortPolicy）、丢弃任务、丢弃最早的任务、抛出异常、调用者运行。每种策略对应特点、适用场景、示例代码等内容。如默认策略适用于大多数情况，示例代码为ThreadPoolExecutor.AbortPolicy；丢弃任务适用于不关心无法处理任务的情况，示例代码为ThreadPoolExecutor.DiscardPolicy等。该表与文档中介绍线程池拒绝策略的内容相关，直观呈现了各策略特点及适用场景。
 
 ```Java
 线程池的拒绝策略有四种：
@@ -508,6 +512,7 @@ ThreadLocal是一种Java技术，它允许在多线程环境中维护线程私�
 ### TCP和UDP的区别
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/Yicab6gFOoe4A8xGzekcSlMUnvg.png)
+> 图注：这张图片展示了TCP与UDP协议的对比表格，以“特征”为表头分为左右两栏，分别对应TCP和UDP的各项参数。表格涵盖连接、可靠性、顺序性等共8项关键特征：TCP为面向连接的协议，提供可靠数据传输，而UDP是无连接协议，不保证传输可靠性；在适用性方面，TCP适用于对可靠性要求高的文件传输、网页访问场景，UDP则多用于对传输速度要求高、可靠性要求低的实时音视频传输、在线游戏场景；此外两者在连接性、头部开销等细节上也有明显差异，清晰呈现了两种传输协议的核心区别。
 
 ```Java
 TCP是一种面向连接的、可靠的协议,它保证数据的顺序和完整性,适用于要求数据传输可靠性的场景.UDP是一种无法连接的、不可靠的协议,传输速度快,适用于对传输速度要求较高,对可靠性要求较低的场景.
@@ -685,6 +690,7 @@ public enum Singleton{
 ### MySQL存储引擎
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/Z6X0bTUpEo5Tvjx04vacSzVMnNg.png)
+> 图注：图片是一张关于MySQL存储引擎InnoDB和MyISAM特性的对比表格。表格分为事务、并发、外键、备份、崩溃恢复、其他六个类别。InnoDB在事务上为事务型，支持行级锁和外键，有在线热备，崩溃恢复概率低，其他有聚簇索引、MVCC特性；MyISAM为非事务型，支持表级锁，不支持外键和备份，崩溃恢复慢且易丢失，其他有压缩表、空间数据索引。此图与文档中介绍MySQL存储引擎的内容相关，直观呈现了两者特性差异。
 
 ```Java
 Mysql默认是Innodb存储引擎,适合比较庞大的应用场景
@@ -822,9 +828,13 @@ InnoDB储存引擎中的主键默认就会创建一个聚集索引,每张表只�
 <grid>
 <column width-ratio="0.468303">
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/PEtzblIxpo9I6Mxfyf2c48FbnNe.png)
+> 图注：图片展示了InnoDB聚集索引的B+树结构示例。图中以1 - 9为根节点，分为1 - 3和5 - 9两个子节点，再分别对应1、3、5、9等具体记录。每个记录包含id、name、sex、grade等字段信息。该图与上下文紧密相关，直观呈现了聚集索引中数据存储与索引结构的关系，帮助理解聚集索引将所有数据存储在索引上，叶子节点直接对应数据，从中间级索引页的索引行直接对应数据页的特点。
+
 </column>
 <column width-ratio="0.531697">
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/KU5Wby7tfoLDzdxxuA2cp3Mynag.png)
+> 图注：图片展示了非聚集索引的B+树结构。图中“l-z”为根节点，下分“l-s”和“w-z”两个子节点，再分别有“l”“s”“w”“z”等子节点，最底层为“5”“1”“9”“3”等叶子节点。该图与上下文介绍的非聚集索引内容相关，说明非聚集索引的叶子节点不存放具体的整行数据，而是存储这一行的主键值，如图中叶子节点存储的id值。
+
 </column>
 </grid>
 
@@ -852,6 +862,7 @@ select * from t where name = 'list';
 ```
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/Rf5EbsajAoZ9x9x91VFcJRdCnid.png)
+> 图注：图片展示了MySQL中主键索引（Clustered Index）和非主键索引（Secondary Index）的结构。左侧是主键索引，以数字1 - 9为索引，每个数字对应一行记录，记录包含字母和数字。右侧是非主键索引，以字母I - Z为索引，每个字母对应一行记录，记录包含数字。图片中粉红色部分突出显示了主键值id=5对应的行记录，直观呈现了回表查询中先定位主键值再定位行记录的过程，与上下文对回表查询的解释相呼应。
 
 如粉红色路径,需要扫描两遍索引树:
 
@@ -1046,6 +1057,7 @@ Redis 之所以快是因为它采用了内存存储和非阻塞的I/O模型,避�
 ### Redis的持久化机制
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/Ly55bfSG7o6YPMxG2ficxKdBnOe.png)
+> 图注：这张图是Redis持久化方式对比表，展示了RDB与AOF两种持久化方式在多个维度的差异。具体来看，在占用存储空间上，RDB小（为数据级压缩），AOF大（为指令级重写）；存储速度方面，RDB慢，AOF快；恢复速度上，RDB快，AOF慢；数据安全性上，RDB会丢失数据，AOF则依据策略决定；资源消耗方面，RDB为高/重量级，AOF为低/轻量级；启动优先级上，RDB低，AOF高，这份对比表能帮助用户结合业务需求选择适合的持久化方式，和文档中介绍的选择RDB或AOF的内容相呼应。
 
 在`Redis`4.0 之后提供了混合持久化的方式，顾名思义就是把 `RDB `持久化和 `AOF`持久化结合起来的一种方式。混合持久化就是快照以一定的频率执行，而在两次快照之间，使用`AOF`日志记录这期间的所有命令操作。
 
@@ -1062,6 +1074,7 @@ RDB是Redis的快照持久化方式，通过周期性的快照将数据保存到
 ### Redis常用的数据类型
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/HbI8b3uG5oB7WFx9HC7cWGOInle.png)
+> 图注：这张图片是一张表格，对应“Redis常用的数据类型”相关内容，清晰呈现了Redis常见的五种数据类型信息，每一行对应一种数据类型。表格的列包含数据类型、特征、适用场景、常用命令四项，其中数据类型包括String、List、Set、Hash、Sorted Set，每类数据都标注了明确的特性，如String用于存储单个值、Sorted Set是关联分数的有序集合，也明确了各自适用的场景及对应常用命令，和文档中介绍String、List、Set类型的上下文内容相呼应，补充了另外两种Redis常用数据类型的相关信息。
 
 - **String**：存储单个值，适用于缓存和键值存储，常用命令：SET用于设置值，GET用于获取值。
 - **List**：有序、可重复的字符串集合，适用于消息队列和发布/订阅系统，常用命令：LPUSH用于从列表左侧添加元素，LRANGE用于获取指定范围的元素。
@@ -1104,6 +1117,7 @@ RDB是Redis的快照持久化方式，通过周期性的快照将数据保存到
 Redis 的哨兵（Sentinel） 机制是一种用于监控和管理 Redis 实例的高可用性解决方案。它由一组独立运行的Redis哨兵节点组成，用于监控主节点和从节点的状态，并在主节点故障或其他变化时进行自动切换和故障恢复。
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/X0ZebGHyWogYUuxI3nacUBP3nJf.png)
+> 图注：这张图展示了Redis哨兵集群与主从集群的工作架构，其中哨兵集群由三个标注为“Sentinel”的节点组成，负责监控下方主从集群的状态，还会向RedisClient发送服务状态变更通知。主从集群包含1个master主节点和2个slave从节点，主节点与从节点间存在“数据同步”的关系，客户端RedisClient可与主、从节点建立连接。该图对应文档中关于Redis哨兵集群的内容，直观呈现了哨兵集群监控主从集群、保障服务高可用的逻辑，呼应了哨兵机制的监控、故障检测功能。
 
 **哨兵机制的主要功能和意义如下：**
 
@@ -1132,6 +1146,7 @@ Redis 的哨兵集群主要用于实现高可用性，监控Redis 主、从节�
 Redis分片集群是一种将数据分布到多个节点的解决方案，用于实现数据的水平扩展和提高系统的吞吐量。
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/KXDobXsvaoVAEwxbVCUcPidEnAc.png)
+> 图注：这张图展示了Redis分片集群的结构，顶部的Client将请求指向RedisCluster集群，集群内包含3个主节点，分别标注为A、B、C，每个主节点对应不同的哈希槽范围，节点A负责的插槽为0~5460，节点B为5461~10922，节点C为10923~16383。每个主节点下方还配备了对应的从节点，节点A的从节点为Slave-A1、Slave-A2，节点B的为Slave-B1、Slave-B2，节点C的为Slave-C1、Slave-C2，主从节点之间通过双向箭头连通，直观呈现了Redis分片集群的数据分片和主从备份的架构设计，和文档中提及的Redis分片集群由多个节点组成、可实现故障恢复的内容相呼应。
 
 1. **节点数量**：Redis分片集群通常由多个节点组成，每个节点负责存储部分数据。节点数量可以根据需求进行配置，常见的节点数量为3主3从，或3主6从或更多。
 2. **故障恢复**：当一个节点出现故障或下线时，集群会进行自动的故障恢复。其他节点会接管故障节点上的数据，保证数据的可用性。
@@ -1430,6 +1445,7 @@ MVC 是 Model 一View 一 Controler 的简称，它是一种架构模式，它�
 - oController （控制器）：Controller 是用来处理用户输入数据，以及更新业务模型的部分。控制器中接收了用户与界面交互时传递过来的数据，并根据数据业务逻辑来执行服务的调用和更新业务模型的数据和状态。
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/TpCIblYAfoWBTIxAcywcuq5wnWb.png)
+> 图注：图片展示了SpringMVC执行流程。客户端发送HTTP请求到DispatcherServlet，DispatcherServlet根据请求信息调用HandlerMapping解析请求对应的Handler，寻找处理器；适配处理器，调用处理器；返回ModelAndView；根据Model渲染视图，返回HTTP响应。图中还标注了ViewResolver、Model、View等组件，以及HandlerAdapter、Controller等关键环节，直观呈现了请求处理到响应返回的整个流程。
 
 工作原理：
 
@@ -1555,6 +1571,7 @@ Spring Cloud是一个用于构建分布式系统的开发工具包，它提供�
 ### SpringCloud组件分类
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/ZO3RbG4tDo2qzQxJ2BpcnA6cngg.png)
+> 图注：图片展示了Spring Cloud组件分类，分为官方贡献者Pivotal（官方原生组件）和第三方贡献者（第三方组件）两类。官方贡献者有Spring Cloud Gateway、Spring Cloud Sleuth、Spring Cloud Config、Spring Cloud Bus等。第三方贡献者中，Netflix贡献了Feign、Ribbon、Hystrix、Eureka、Zuul等，Alibaba贡献了Nacos、Sentinel、Seata等。该图与上文介绍的Spring Cloud五大组件相关，直观呈现了各组件所属类别及具体名称。
 
 ### Eureka工作原理
 
@@ -1594,6 +1611,7 @@ Gateway网关是一种API网关，具有路由、负载均衡、安全认证、�
 ### Gateway的路由断言工厂
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/DV6ebOJWpon2V4x3FIec7Q8jnhg.png)
+> 图注：这是一张展示Spring Cloud Gateway相关配置代码的图片，内容为网关的路由相关配置示例。图片中呈现的代码属于Gateway配置的routes部分，包含路由唯一标识为user、路由目的地为lb://eadnews-user的配置；predicates（路由断言）配置了Path=/user/**，用于判断请求是否符合以/user开头的规则，符合则转发到对应目的地；filters（路由过滤器）配置了StripPrefix=1，用于处理请求。此外，配置中还包含全局跨域（cors）相关设置，允许所有请求头、跨域源及GET、POST等常见请求方法，同时提及了add-to-simple-url-handler-mapping相关配置，该图对应文档中关于Gateway路由断言工厂的内容，直观展示了路由断言与过滤器的具体配置形式。
 
 在网关的路由配置里只需在-Path中配置/user/\*\*，那么以user开头的请求就会被网关处理，这是如何实现的呢？
 
@@ -1753,6 +1771,7 @@ MongoDB比MySQL快的原因在于它使用了内存映射的技术提高数据�
 ### MongoDB和Redis的区别
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/WZO0brQByoOjLRxjJEOceyiTnXg.png)
+> 图注：图片是一张对比表，展示了MongoDB和Redis在数据类型、存储方式、查询能力、内存管理、数据持久性、可扩展性、数据一致性及主要应用场景等方面的区别。如MongoDB支持复杂数据类型和非结构化数据，而Redis主要支持键值对数据；MongoDB可通过持久化机制将数据持久化在磁盘上，Redis可将数据保存在内存中作为缓存；MongoDB提供丰富查询表达式和聚合框架，Redis仅提供基本查询功能；MongoDB不以内存为中心，Redis以内存为中心；MongoDB支持数据持久化，Redis可通过持久化机制实现；MongoDB支持分片和复制集，Redis支持分布式集群；MongoDB提供强一致性，Redis提供最终一致性；MongoDB适用于大规模数据存储和复杂查询，Redis适用于高速读写的缓存、消息队列等。
 
 ```Java
 MongoDB和Redis在几个关键方面有明显区别。首先，数据模型不同，MongoDB支持复杂数据类型和非结构化数据，而Redis主要支持键值对。其次，存储方式不同，MongoDB将数据持久化在磁盘上，而Redis可以将数据保存在内存中作为缓存，最后，应用场景不同，MongoDB适用于大规模数据存储和复杂查询，而Redis适用于高性能的键值对缓存和消息队列等场景。根据具体需求，选择适合的数据库方案
@@ -1811,6 +1830,7 @@ MongoDB和Redis在几个关键方面有明显区别。首先，数据模型不�
 ### Jenkins自动部署原理
 
 ![](../../../../../Attachments/development/programming/interview/ba-gu-wen-mian-shi-ti/EJAPbtSUboQhTtxcu3ycCfrLnYf.png)
+> 图注：图片展示了Jenkins自动部署的流程。开发人员提交代码至Gitlab代码仓库，Jenkins从仓库拉取代码，进行编译、代码审查、打包等操作，再将项目部署到测试服务器和生产服务器，由测试人员和用户进行测试和访问使用。图中还标注了JDK、Git、Maven等关键组件，以及Tomcat服务器等部署环境，直观呈现了Jenkins在项目构建、部署中的作用。
 
 1. 配置Jenkins项目：在Jenkins上创建一个新项目，并设置相关参数，例如项目名称、源码管理方式、构建触发条件等
 2. 源码拉取：当触发条件满足时，Jenkins会从Git仓库中获取最新的代码。

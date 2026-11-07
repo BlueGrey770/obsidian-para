@@ -162,6 +162,7 @@ Vue应用实例接管的区域是 '#app'，超出这个范围，就不受Vue控�
 - 这里的双向数据绑定，是指 Vue中的数据变化，会影响视图中的数据展示 。 视图中的输入的数据变化，也会影响Vue的数据模型 。
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/Fcg3bzpz0ojNaMx2MRLcEDyUnBd.png)
+> 图注：图片展示了Vue中v-model双向数据绑定的示例。左侧代码中，data方法定义了searchForm对象，包含name、gender、job三个属性，初始值均为空字符串。右侧是员工信息表格，上方有姓名、性别等输入框，输入框的id与代码中v-model绑定的变量名对应。该图片直观呈现了v-model双向数据绑定的原理，即视图中的输入数据变化会影响Vue的数据模型，反之亦然。
 
 <callout emoji="💥">
 注意：v-model 中绑定的变量，必须在data中定义。
@@ -183,6 +184,7 @@ Vue应用实例接管的区域是 '#app'，超出这个范围，就不受Vue控�
 这里的handle函数，就需要在Vue应用实例创建的时候创建出来，在methods定义。
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/JyvabGcB3oxZl4xa26ycasl9n8g.png)
+> 图注：这张图片展示了Vue框架中v-on指令的相关用法，左侧是Vue模板代码，呈现了两种绑定点击事件的写法，分别是完整语法`v-on:click="handle"`和简写语法`@click="handle"`，均用于为按钮元素绑定点击事件。右侧是Vue应用实例的配置代码，箭头指向代码里的methods选项，其中定义了与事件绑定对应的handle函数，函数内通过console.log实现打印提示内容的功能，该图直观对应了文档中v-on指令绑定事件的用法说明，帮助理解指令语法与对应函数的关联。
 
 <callout emoji="💥">
 注意： methods函数中的this指向Vue实例，可以通过this获取到data中定义的数据。
@@ -434,10 +436,13 @@ Vue应用实例接管的区域是 '#app'，超出这个范围，就不受Vue控�
 代码生成完成之后，可以使用浏览器将其打开了，来看一下页面的效果展示。
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/OYJDbXJKroz9dUxsYMecNgUQnmh.png)
+> 图注：这张图片展示的是一个名为“员工信息管理”的网页界面，该页面位于员工信息管理系统的127.0.0.1:5500路径下的员工管理html页面。页面设有姓名、性别、职位的筛选输入框与选择下拉框，还有“查询”“清空”按钮；下方的员工信息列表包含序号、姓名、头像、性别、职位、入职日期、更新时间等内容，已显示4位员工的信息，分别为姓名谢逊（班主任）、韦一笑（班主任）、黛绮丝（讲师）、殷天正（学工主管），对应的头像为卡通形象，各员工还标注了对应的入职与更新时间，这是基于Vue渲染后在浏览器中呈现的页面效果。
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/NmZGbwmnyoZhjOxmlgschPkJnuf.png)
+> 图注：这张图片展示的是“员工信息管理”页面，页面上方设有姓名、性别、职位的信息筛选栏，性别栏默认选中“男”，职位栏为待选择状态，右侧配有“查询”和“清空”按钮。页面下方以表格形式展示了3条员工信息，每条信息包含序号、姓名、头像、性别、职位、入职日期与更新时间，员工均为男性，职位有班主任和学工主管，其中第一条和第二条员工的入职日期分别为2023-06-09、2020-05-09，第三条员工入职日期为2022-11-06，该页面属于Vue项目中基于Vue渲染的员工管理界面。
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/UwZBbKn7ooONX2xCGw4cyklXnxP.png)
+> 图注：这张图片展示了浏览器中打开的“员工信息管理”页面，该页面是Vue渲染完成后的效果。页面顶部设有姓名输入框、预设为“男”的性别选择框、预设为“班主任”的职位选择框，搭配“查询”“清空”两个操作按钮；下方以表格形式呈现员工信息，表格包含序号、姓名、头像、性别、职位、入职日期、更新时间字段，其中显示了两条员工数据，第一条员工姓名为谢逊，入职日期为2023-06-09，第二条为韦一笑，入职日期为2020-05-09，两条数据的职位均为班主任。
 
 ## 发送异步请求
 
@@ -827,20 +832,25 @@ axios.post("https://mock.apifox.cn/m1/3083103-0-default/emps/update","id=1").the
 先退出所有项目，在如下设置中依次选中
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/TqGzbejkdohwp9x7b6UcjcMwn3G.png)
+> 图注：图片展示了IntelliJ IDEA 2025.1的欢迎界面。左侧导航栏中，“Customize”选项被红色框突出显示。右侧“Appearance”设置区域中，“All settings...”选项也被红色框标出。该图片与文档中“创建maven项目”步骤相关，用于指导用户在IntelliJ IDEA中进行相关设置，即先退出所有项目，依次选中“Customize”和“All settings...”选项，以设置默认JDK版本等，且注意不要勾选Use settings from.mvn/maven.config。
 
 注意： 不要勾选Use settings from .mvn/maven.config
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/WaIYbdW4Qo9DLcxPUrEcSHeEnVb.png)
+> 图注：图片展示了IntelliJ IDEA中Maven配置界面。左侧导航栏选中“Build, Execution, Deployment”下的“Build Tools”和“Maven”。右侧Maven配置区域中，Maven home path设置为H:/develop/maven/install/apache-maven-3.9.4，User settings file设置为H:/develop/maven/install/apache-maven-3.9.4/conf/settings.xml，且有“Override”选项被勾选。该图片与文档中创建Maven项目时设置默认JDK版本的上下文相关，直观呈现了Maven配置的具体操作界面及关键设置项。
 
 设置默认JDK版本，按照图中顺序依次选中
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/Oby7bYhpfoBOikx2eaMcuQZwn4f.png)
+> 图注：图片展示了IntelliJ IDEA中Maven设置界面。左侧导航栏选中“Build Tools”下的“Maven”，右侧“Runner”选项被红框突出显示。在JRE设置区域，有两个JRE选项，分别是“17 (Oracle OpenJDK 17, path: H:/develop/jdk17/install)”和“17 (Oracle OpenJDK 17, path: H:/develop/jdk17/install)”，也被红框标注。右下角有“Apply”和“Cancel”按钮。该图片与文档中创建Maven项目时设置默认JDK版本的操作步骤相关，用于指导用户在IntelliJ IDEA中选择JDK版本。
 
 
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/S0qVb1Zzko6Zz6xhf42cdzkynAb.png)
+> 图注：图片展示了IntelliJ IDEA中Maven设置界面。左侧导航栏选中“Build Tools”下的“Maven”选项。右侧“Importing”标签页中，有“Detect compiler automatically”等勾选项，以及“JDK for importer”下拉框，显示了两个Oracle JDK 17选项，路径分别为“C:/Users/itcast/jdk17/install”和“C:/Users/itcast/jdk17/install”，下方还有“Use JAVA_HOME”选项。该图片与文档中创建Maven项目时设置默认JDK版本的内容相关，用于说明设置JDK版本的操作步骤。
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/N1kPbqUKfoACrVxp1itcWC3mnhb.png)
+> 图注：图片展示了IntelliJ IDEA中设置Maven项目相关配置的界面。左侧导航栏中，以红色框突出显示了“Build, Execution, Deployment”“Compiler”“Java Compiler”等选项。右侧“Compiler”选项卡下，有“Use compiler:”下拉框，选中“Javac”，“Project bytecode version”和“Per-module bytecode version”均设置为17，下方还有“Java Options”相关设置。该图片与文档中创建Maven项目时设置默认JDK版本的上下文相关，直观呈现了设置步骤中涉及的界面及关键配置项。
 
 ### 生命周期
 
@@ -853,6 +863,7 @@ Maven从大量项目和构建工具中学习和反思，然后总结了一套高
 Maven对项目构建的生命周期划分为3套（相互独立）：
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/Uu6VbXa3noTocvxiWCYcsyZfnFg.png)
+> 图注：这张图片展示了Maven构建生命周期中相互独立的3套生命周期，每套都用带图标的蓝色卡片呈现。从左到右，第一个卡片图标是垃圾桶，对应clean生命周期，用于项目的清理工作；中间的卡片图标是交叉的扳手和螺丝刀，对应default生命周期，是日常项目构建的核心生命周期；最右侧的卡片图标是堆叠的文件，对应site生命周期，用于生成项目站点。这和上文提到的“Maven对项目构建的生命周期划分为3套（相互独立）”的内容对应，清晰呈现了三套生命周期的标识。
 
 - clean：清理工作。
 - default：核心工作。如：编译、测试、打包、安装、部署等。
@@ -861,6 +872,7 @@ Maven对项目构建的生命周期划分为3套（相互独立）：
 三套生命周期又包含哪些具体的阶段呢, 我们来看下面这幅图:
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/V0nKbXAadoB3KMxhql3czvd7n2d.png)
+> 图注：这张图展示了Maven的三套核心生命周期，分别为clean、default和site生命周期，每套生命周期下都包含对应阶段。其中clean生命周期仅有pre-clean、clean、post-clean三个阶段；default生命周期包含validate、initialize、generate-sources等多个阶段，还涵盖了compile、test、package、install等被提及的常用阶段；site生命周期则包含pre-site、site、post-site、site-deploy四个阶段。该图直观呈现了Maven三套生命周期及其所包含的阶段，用于辅助理解文档中关于Maven生命周期的相关说明。
 
 每套生命周期包含一些阶段（phase），阶段是有顺序的，后面的阶段依赖于前面的阶段。
 
@@ -885,10 +897,12 @@ deploy:发布项目
 Maven的生命周期是抽象的，这意味着生命周期本身不做任何实际工作。**在Maven的设计中，实际任务（如源代码编译）都交由插件来完成。**
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/SgttbOn52ojmnQxNuBGcpCRxnPd.png)
+> 图注：这张图展示了Maven构建的核心流程：以pom.xml文件为源头，依次关联项目对象模型（POM）与依赖管理模型（Dependency），依托构建生命周期/阶段，再调动插件完成对应任务，最终生成编译后的文件（如JAR包），产出物会被提交至仓库。这与文档中介绍的Maven核心内容相呼应，清晰呈现出Maven通过插件实现生命周期具体任务的核心设计。
 
 IDEA工具为了方便程序员使用maven生命周期，在右侧的maven工具栏中，已给出快速访问通道。
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/XVAPbdD2loJd3Vx7WM1cotfCnqh.png)
+> 图注：图片展示了IDEA工具中maven项目pom.xml文件的生命周期相关内容。左侧为项目结构，右侧是maven工具栏。工具栏中以红色框标注了各阶段生命周期，如clean、validate等。箭头指向“执行生命周期时，会调用响应的插件”处，下方以红色框突出显示了与生命周期绑定的插件，如maven-clean-plugin、maven-compiler-plugin等。该图片与上下文介绍的maven生命周期相关，直观呈现了生命周期各阶段及对应插件。
 
 - 生命周期的顺序是：`clean` --> `validate` --> `compile` --> `test` --> `package` --> `verify` --> `install` --> `site` --> `deploy`
 - 我们需要关注的就是：`clean` -->  `compile` --> `test` --> `package`  --> `install`
@@ -907,6 +921,7 @@ IDEA工具为了方便程序员使用maven生命周期，在右侧的maven工具
 
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/QSZ2beFoToMKZhxmLUicqPFVn6e.png)
+> 图注：这张图片展示了Maven项目的文件夹层级结构，所属项目名称为day03_maven_test，顶层目录包含.mvn、src、test文件夹与pom.xml文件。其中src是核心目录，其下分为main和test两个子目录：main目录内的java文件夹用于放置java代码，resources文件夹是配置文件放置的目录；test目录内的java文件夹则用于放置测试代码。该图片用于直观说明文档中Maven环境配置相关的Java项目文件夹层级分类内容，清晰标注了各目录的用途。
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 03 Web 开发与框架 / 前端基础与 Vue / 02 Vue_Axios异步请求_Maven环境配置 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/EUxRwSVugiR5dmkVQ9Wchy56nyb)

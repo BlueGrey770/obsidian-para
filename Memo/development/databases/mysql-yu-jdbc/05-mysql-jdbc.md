@@ -20,6 +20,7 @@ SQL：结构化查询语言。一门操作关系型数据库的编程语言，�
 | DCL | Data Control Language | 数据控制语言，用来创建数据库用户、控制数据库的访问权限 |
 
 ![](../../../../Attachments/development/databases/mysql-yu-jdbc/KDhpb6VAWoDeF1xhhL5c8Of1ngb.png)
+> 图注：这张图直观呈现了MySQL数据库相关的架构逻辑，客户端发送SQL语句至DBMS，DBMS通过DDL（数据定义语言）分别操作数据库1和数据库2，数据库1的表1中红框标注了包含今独孤、28岁、男性的记录，其对应关系明确了SQL语句分类（DDL、DML、DQL）的实际应用，是对SQL分类及数据库操作的可视化说明，和前文文档中SQL分类的内容相呼应，清晰展示了不同SQL分类在MySQL数据库服务器中的操作应用场景。
 
 ### DDL语句
 
@@ -235,6 +236,7 @@ id字段是一行数据的唯一标识，不能有重复值。但是现在数据
 - 案例：创建tb_user表，对应的结构如下：
 
 ![](../../../../Attachments/development/databases/mysql-yu-jdbc/VNfEbpKeuoVcyexiic6cIdUzn7b.png)
+> 图注：这张图片展示了tb_user表的表结构及其中的4条数据记录，表头包含id、username、name、age、gender五个字段。其中id字段是数据的唯一标识，对应行号1至4；username字段取值分别为qingyifuwang、baimeiyingwang等，均为唯一的非空值；name字段的取值为韦一笑、殷天正等，不包含空值；gender字段的默认值为男，仅最后一条数据的gender取值为女，符合表结构中对该字段的约束设置。
 
 在上述的表结构中:
 
@@ -353,6 +355,7 @@ char 与 varchar 都可以描述字符串，char是定长字符串，指定长�
 表结构如下图所示：
 
 ![](../../../../Attachments/development/databases/mysql-yu-jdbc/HSrUbpxLAotHg7xLXBdc8gGLnSk.png)
+> 图注：图片展示的是轻客管家系统中课程管理页面。左侧为功能导航栏，其中“课程管理”下有“课程列表”“课程添加”“课程修改”“课程删除”“课程详情”“课程管理”“活动管理”等选项，其中“课程管理”和“活动管理”被红色框线突出显示。右侧是课程列表区域，显示了序号、课程学科、课程名称、价格、适用人群、课程介绍、最后更新时间等信息，每条记录右侧有“编辑”和“删除”操作按钮。
 
 示例代码：
 

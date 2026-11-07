@@ -262,6 +262,7 @@ hash表：链表+数组
 hash表内存图：
 
 ![](../../../../../Attachments/development/programming/java/ji-he-kuang-jia-yu-map/LMT5b4qvTodebWxKAy1cyclDnHf.png)
+> 图注：图片展示了Java中Map的hash表内存图。图中显示一个长度为16的Entry数组，数组中部分位置存放着键值对，如K k = bbb，V v = 456，next = null等。左侧列出键值对“aaa”，“123”等，以及新创建的Entry对象。该图与上文介绍的hash表内存结构相关，直观呈现了hash表中数组+链表构成的存储方式，帮助理解将键的hashcode值与数组长度求“位&”运算得到索引，以及将键值封装Entry存入该位置等操作。
 
 <callout emoji="🌰">
 将算出键的hashcode值，然后和底层数组的长度求"位&"运算，得到一个索引

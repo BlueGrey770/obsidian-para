@@ -265,6 +265,7 @@ private static void demo01() throws IOException {
  他的出现是为了提高复制文件的效率, 但是没有自定义小数组的快, 原因如下图:
 
 ![](../../../../../Attachments/development/programming/java/stream-io-yu-duo-xian-cheng/D94lbemFpo59XVxjLG0cle0ynXo.png)
+> 图注：图片展示了字符缓冲流中读写文件的流程。上方为读文件流程，先读入文件a.flv，再通过缓冲区写入文件b.flv；中间为写文件流程，先写入文件b.flv，再通过缓冲区读取文件a.flv；下方为读写文件流程，先读入文件a.flv，再通过缓冲区写入文件b.flv。每个流程均标注了读写次数，如读文件流程为2次，写文件流程为2次，读写文件流程为2 * 2次。该图与上下文介绍的字符缓冲流相关，直观呈现了其读写文件的操作步骤。
 
 #### 字符缓冲流(重点!!!)
 
@@ -490,6 +491,7 @@ public class MyRunnable implements Runnable {
 运行后打印重叠，出现并发现象：
 
 ![](../../../../../Attachments/development/programming/java/stream-io-yu-duo-xian-cheng/VxphbBuxIojJUUxkvbYcfLXbnOh.png)
+> 图注：这是线程运行后的输出结果，呈现出明显的并发执行的特征。图中输出的内容包含两组交替的字符串，一组是“我就是我，是不一样的烟火”搭配从0到3的数字序号，另一组是“一闪一闪亮晶晶”搭配对应的数字序号，两组内容交错打印，顺序无规律，直观印证了文档中提到的“运行后打印重叠，出现并发现象”，体现了多线程执行时任务交替推进的效果。
 
 ###   2.3 线程的方法
 
@@ -860,6 +862,7 @@ public class Test {
 进入设置如下图修改：
 
 ![](../../../../../Attachments/development/programming/java/stream-io-yu-duo-xian-cheng/BztnbjI7qok4pAx2njEc3GxYnee.png)
+> 图注：图片展示了IntelliJ IDEA中Keymap设置界面。左侧导航栏选中“Keymap”。右侧Keymap设置区域，搜索框内显示“Code Completion”。下方“Code Completion”选项下，有“Basic”选项，其右侧有“Alt+Enter”快捷键标识。该图片与文档中“ide代码提示快捷方法修改”内容相关，直观呈现了在IntelliJ IDEA中修改代码提示快捷键的操作界面及“Alt+Enter”快捷键位置。
 
 
 

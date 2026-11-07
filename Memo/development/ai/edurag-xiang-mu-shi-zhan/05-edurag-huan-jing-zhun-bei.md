@@ -27,6 +27,7 @@ aliases:
 4. 基于query实现Milvus数据库检索：将query进行向量表示，并从Milvus数据库中检索出相似的文本段，将query和文本段拼接，送入大模型，实现预测
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/PTjXbRPxUowEhQxTpsDc7L7gnjg.png)
+> 图注：图片展示了教育行业RAG问答系统的项目流程图。用户输入query后，先进行Mysql数据库检索，若相似度≥0.85则直接返回答案；若相似度<0.85则进入RAG系统检索。RAG系统中，本地文档加载读取后进行文档分割，再将字符串向量化存入Milvus数据库。query向量化后与数据库检索得到的top-K相关文档拼接，送入LLM模型预测，最终输出result。该图直观呈现了系统从输入到输出的处理流程。
 
 
 
@@ -58,6 +59,7 @@ Milvus用于处理从非结构化数据转换而来的嵌入向量，能够通�
 1. 将资料中提供好的软件镜像包上传到Linux中
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/XVS7b0i3yohcjFxrmI5crsPKnN6.png)
+> 图注：图片展示的是Linux系统下的文件管理界面，显示了/root/ai/目录下的文件信息。其中，docker-compose.yml文件大小为1KB，创建于2026年1月10日；etcd.tar、milvusdb.tar、minio.tar、redis.tar文件大小分别为72803KB、521488KB、100045KB、116868KB，均创建于2026年1月10日，所有者和组均为root。该图片与文档中“2.1.2安装服务”部分内容相关，用于说明将资料中提供的软件镜像包上传到Linux中后，文件上传情况。
 
 1. 执行下面命令安装镜像
 
@@ -156,20 +158,24 @@ Redis 服务
 1. 启动 Milvus 和 Redis，在 /root/ai/dev/milvus_redis 目录下，运行命令：docker compose up -d
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/VNQFbixplo7majxsykxc1YkFn9e.png)
+> 图注：图片展示的是在/root/ai/dev/milvus_redis目录下运行docker compose up -d命令的执行结果。命令成功运行，显示运行5/5，其中Network milvus-network、Container milvus-etcd、milvus-redis、milvus-minio、milvus-standalone等均处于Started状态，且有绿色对勾标识。该图片与文档中“2.1.1准备虚拟机”部分的后续操作相关，用于说明启动Milvus和Redis服务的执行情况。
 
 #### 2.1.3 连接Milvus
 
 1. 验证milvus是否安装成功，可以使用可视化工具连接即可，在当天的资料中找到对应的软件
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/A3LSbQnDlorcUzxx9aOcC6Ehncg.png)
+> 图注：图片中展示了两个可执行安装文件，分别是用于macOS系统的`attu-mac-x64-v2.6.0.dmg`安装包，以及用于Windows系统的`attu-Setup-2.6.0.exe`安装程序。结合上下文可知，这些文件是用于Milvus连接验证的可视化工具（Attu）的安装包，对应文档中“找到对应的软件以验证Milvus是否安装成功”的操作要求，是完成Milvus连接验证所需的工具安装文件。
 
 1. 安装成功之后，可以直接连接Milvus服务
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/FNFabisk6ovB03xBneqcVrgdnEh.png)
+> 图注：图片展示的是连接Milvus服务器的界面。界面上方显示“连接 Milvus 服务器”，下方有“Milvus 地址”输入框，其中以红色框突出显示了地址“192.168.100.128:19530/default”，“Milvus 数据库（可选）”输入框显示“default”，还有“认证”开关、“启用 SSL”选项及“检查健康状态”选项。该图片与文档中“2.1.3连接Milvus”部分内容相关，用于指导用户在连接Milvus服务时输入地址等信息。
 
 1. 连接成功后，可以看到默认的数据库
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/NjGPb5lcDo81GrxObBLcf4LKnTh.png)
+> 图注：图片展示的是Milvus可视化工具界面中数据库信息。界面上方显示“数据库(1)”及一个绿色加号。下方有一个绿色边框的“default”数据库区域，内有数据库图标，显示“Collection数量0”“创建时间2026/1/10 18:43:16”。下方“系统信息”部分，有“v2.4.4 Milvus Version”“STANDALONE 部署模式”“2.63分钟 运行时间”“1用户”“2角色”等信息。该图片与文档中“连接成功后，可以看到默认的数据库”内容对应，直观呈现了连接成功后的数据库状态。
 
 
 
@@ -219,6 +225,7 @@ IVF_FLAT是一种基于聚类和倒排索引来进行数据存储和检索的方
 2. **倒排索引**：为每个簇创建倒排索引。每个向量会被映射到它所属的簇
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/PRnSbMcT1o9iXqxprpacCEXBnfe.png)
+> 图注：图片展示了IVF_FLAT索引的聚类和倒排索引过程。左侧为聚类过程，将向量映射到簇，每个簇有一个中心点，如图中红点代表簇中心，蓝点为向量；右侧为倒排索引过程，记录向量所属簇，如“Document 1”对应“CAT”和“DOG”，“Document 2”对应“CAT”和“PIG”，再通过簇中心点找到相关文档，如“CAT”对应“Document 1”和“Document 2”。此图直观呈现IVF_FLAT索引的工作原理，与上下文对IVF_FLAT聚类和倒排索引的解释相契合。
 
 这样在查询时，系统只需关注与查询向量相似的簇，而不需要搜索整个高维空间，从而显著降低搜索的时间复杂度
 
@@ -228,6 +235,7 @@ IVF_FLAT是一种基于聚类和倒排索引来进行数据存储和检索的方
 - 减少 nprobe 可以缩小搜索范围，降低计算时间，查询速度更快，但可能会牺牲一些精度
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/FBHnbUPS0oMgt9xSffgcSybEnGf.png)
+> 图注：图片展示了IVF_FLAT（聚类+倒排索引）的索引结构。左侧是一个数值矩阵，包含多个数值。右侧是用椭圆表示的簇，每个簇内有多个方块，代表向量。右侧椭圆上方标注“IVF_FLAT”。该图与上下文紧密相关，直观呈现了IVF_FLAT中向量被聚类成簇，再通过倒排索引记录向量所属簇的过程，帮助理解查询时先找到离查询向量最近簇再细找的机制。
 
 <callout emoji="✏️">
 **IVF_FLAT（ 聚类+倒排索引 ）**
@@ -258,6 +266,7 @@ IVF_PQ通过减少存储空间的占用，同时保持较高的查询速度和�
 > **推荐补充学习资料:**  https://www.doubao.com/chat/36534212460515586
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/YQR3bgcd5oYU0mxV7oXcGK9ynRb.png)
+> 图注：图片展示了IVF_PQ（乘积量化）的向量压缩过程。左侧图中，初始向量被拆分成多个子向量，每个子向量对应一个量化子向量，再通过复制值代码生成中心ID向量。右侧图呈现了IVF_FLAT结构，其中包含多个簇，每个簇内有多个带有方块标识的向量。该图与上下文紧密相关，直观呈现了IVF_PQ通过将向量拆分并分别压缩，以实现更极致压缩的特点。
 
 <callout emoji="✏️">
  **IVF_PQ（乘积量化）**
@@ -272,6 +281,7 @@ IVF_PQ通过减少存储空间的占用，同时保持较高的查询速度和�
 HNSW是基于图的索引，最适合对搜索效率有高要求的场景
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/UwP5bIVVQoFJiHxsi8bcL9FmnFe.png)
+> 图注：这张图是对HNSW索引原理的示意，对应文档中HNSW是基于图的索引的介绍。图中呈现了一个由节点组成的图结构，有明确标识的Entry Point作为搜索的起点，蓝色箭头标注了Query Vector（查询向量）的路径，指向最近邻节点Nearest Neighbour，红色曲线标注的路径展示了搜索过程，直观呈现了HNSW通过在图结构中逐步搜索、快速定位目标的逻辑，体现出HNSW查询速度快的特点。
 
 <callout emoji="✏️">
 **HNSW（基于图的索引）**
@@ -294,6 +304,7 @@ HNSW是基于图的索引，最适合对搜索效率有高要求的场景
 - 例子：两个点 (1,2) 和 (4,6) 的距离是 √[(1-4)² + (2-6)²] = 5
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/BzCEbmCNBokuzuxN6iRcL7RqnOb.png)
+> 图注：图片展示了欧几里得距离的计算公式及示意图。公式为d(A, B) = √∑(A_i - B_i)^2，其中A和B表示两个比较的向量，n表示向量维度。示意图中，x1、x2、y1、y2分别对应坐标轴上的点，通过连接两点形成直角三角形，直观呈现了两点间欧几里得距离的计算。该图与上文介绍的欧几里得距离概念紧密相关，通过公式和示意图帮助理解其计算原理。
 
 #### 2.4.2 余弦相似度
 
@@ -303,6 +314,7 @@ HNSW是基于图的索引，最适合对搜索效率有高要求的场景
 - 例子：两个方向完全相同的向量，余弦相似度为1。
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/BcKNbTv6moafu5xi78HcYYXsnoQ.png)
+> 图注：该图片展示了两个向量夹角余弦值的相关内容，包含余弦相似度的计算公式，标注为$\\cos(\\theta) = \\frac{\\boldsymbol{A} \\cdot \\boldsymbol{B}}{|\\boldsymbol{A}||\\boldsymbol{B}|}$，还配有示意图，图中以原点出发的两条带有箭头的线段分别标注为a和b，二者的夹角标注为α。图片还说明了余弦相似度的特点，即对向量长度不敏感，仅关注向量方向，适用于高维向量的相似性计算，典型应用场景为语义搜索和文档分类，这与文档中关于Milvus相似度度量的内容相呼应，体现了余弦相似度的相关知识。
 
 #### 2.4.3 内积
 
@@ -312,6 +324,7 @@ HNSW是基于图的索引，最适合对搜索效率有高要求的场景
 - 例子：向量 A = [1, 2]，B = [3, 4]，内积 = 1×3 + 2×4 = 11
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/Ce1RbERRKodlraxT3wFct4avncc.png)
+> 图注：图片展示了内积的计算公式及应用场景。公式为x₁y₁+x₂y₂+...，并用向量a、b示例，计算出内积为11。图片左侧列出内积的优点（简单易懂、计算速度快、兼顾向量长度和方向）、适用场景（图像识别、语义搜索、文档分类等）及问题（对向量长度敏感，计算高维向量相似性时会丢失信息）。
 
 
 
@@ -323,6 +336,7 @@ conda create -n edu_rag python=3.10
 2)  创建一个新项目，指定环境 
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/Q2Ecb38tUodsGFxmHwZcYv94n7g.png)
+> 图注：这张图片显示的是一个代码编辑器界面，打开了名为“03-milvus”的项目，其本地路径为“D:\\workspace\\428\\03-milvus”，该项目与文档中创建edu_rag的环境要求相关联。界面底部的输入框中标注有“edu_rag”，对应文档里创建名称为edu_rag的conda环境的内容。左侧侧边栏展示了项目的目录结构，包含External Libraries和Scratches and Consoles选项。
 
 3）安装python的依赖
 
@@ -598,6 +612,7 @@ if __name__ == '__main__':
 每个都可以查询到2个文档，那就是拿到了4个文档，接下来就要对这四个文档进行重新排序，找到最相关的两个送到大模型
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/R5RbbxFYHocx9rx2cghcesmlnpd.png)
+> 图注：图片展示了Milvus混合查询的流程。左侧是两个搜索请求，分别包含数据、limit等参数。中间是Collection，包含id、dense_vector、sparse_vector、chunk、date等字段。右侧是搜索结果，如Search Result 1和Search Result 2，每个结果包含id、score等信息。最后返回topK。
 
 Milvus支持两种重排策略：**加权排名策略（WeightedRanker）**和**重排序策略**（**RRFRanker**）
 
@@ -707,6 +722,7 @@ if __name__ == '__main__':
 使用pycharm创建一个新的项目，并在根目录中创建一个文件 `requirements.txt`
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/BXNabauXeoeFigxWJubcorpmnRf.png)
+> 图注：这张图片展示的是PyCharm开发工具的界面，其中打开了项目`edu_rag_pro`根目录下的`requirements.txt`文件，文件内记录了项目所需的依赖库信息及安装说明，顶部明确标注提示可执行命令`pip install -r requirements.txt`来安装依赖。左侧项目视图中，`edu_rag_pro`项目节点被红色箭头指向，`requirements.txt`文件已创建在项目根目录，该图片对应文档中3.1创建项目并安装依赖库的相关内容，呈现了项目根目录下依赖配置文件的具体内容。
 
 - `requirements.txt` 文件的内容如下，可直接下载拷贝到项目的根目录
 - 执行命令： pip install -r requirements.txt
@@ -764,6 +780,7 @@ edu_rag_pro/
 - 创建好的效果：
 
 ![](../../../../Attachments/development/ai/edurag-xiang-mu-shi-zhan/BZy2bAfCHovlNUxckJKcAVsLnkg.png)
+> 图注：图片展示了EduRAG项目文件结构。左侧是文件浏览器，红框内突出显示了`edu_rag_pro`项目下的`lib`和`lib_ok`文件夹，其中包含`base`、`config.py addCriterion
 
 **注意**：其中的`config.py`、`logger.py`、`config.ini`从今天资料中拷贝过来即可
 

@@ -40,10 +40,12 @@ Spring 形成了开发生态圈，由众多子项目组成“spring 全家桶”
 创建Spring Boot 模块
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/C5xubgyXMoVTmexv50OcOikcn2c.png)
+> 图注：这张图片展示的是创建Spring Boot模块的配置界面，对应SpringBoot开发步骤里创建模块的操作环节。界面中明确标注了核心内容：需填写模块名“day04-spring-test”，选择构建工具为Maven，Group项填写“cn.itcast”，Package name项也对应填入“cn.itcast”，且选择JAR作为打包方式，最后可点击右下角的“Next”按钮继续后续操作，同时界面还提供了Server URL、项目存储位置、语言、Java版本等配置选项。
 
 选择Spring Boot版本 以及 勾选web开发相关依赖
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/Me7qbfeg2oABrqx04s9cesKDnxb.png)
+> 图注：这张图片展示了创建Spring Boot模块的操作界面，核心呈现了SpringBoot开发的关键步骤：选择稳定版本的Spring Boot（选中了3.5.8版本），勾选Web模块下的Spring Web依赖，同时勾选了Lombok依赖，最后点击右下角的“Create”按钮以完成模块创建。这一界面与文档中提及的SpringBoot开发步骤对应，是第1步创建SpringBoot工程时选择版本和相关依赖的操作界面，用于搭建包含Web开发所需依赖的Spring Boot项目，满足开发RESTful Web应用的需求。
 
 <callout emoji="🌟">
 SpringBoot官方提供的脚手架，里面只能够选择SpringBoot的几个最新的版本，如果要选择其他相对低一点的版本，可以在springboot项目创建完毕之后，修改项目的pom.xml文件中的版本号。
@@ -52,12 +54,14 @@ SpringBoot官方提供的脚手架，里面只能够选择SpringBoot的几个最
 可以删除 不需要的内容
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/U1I7bZTKaoTd7Lx9Jwhc3Qipneb.png)
+> 图注：这张图片展示了Java Web项目的工程目录结构，在名为day04-spring-test的项目文件夹内，src目录上方被红色方框标出了.gitattributes、.gitignore、HELP.md、mvnw、mvnw.cmd这几个文件，方框内配有红色文字标注“可以删除 暂时无用”，说明这些文件对当前的SpringBoot入门程序开发没有实际作用，可以选择删除。该图对应了文档中提到的“可以删除不需要的内容”这一步骤，为开发者清理项目冗余文件提供了直观的参考。
 
 **2). 定义HelloController类，添加方法hello，并添加注解**
 
 在`com.itheima`这个包下新建一个类：`HelloController`
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/OYrXbCa84olHT0xukwOcOZgunbd.png)
+> 图注：这张图片展示了一个SpringBoot项目的目录结构，项目名称为springboot-web-quickstart。在src/main/java/com.itheima目录下，红色方框标注出了刚刚创建的HelloController类，同一目录下还存在SpringbootWebQuickstartApplication类，项目其他目录包括resources、test，以及pom.xml文件和web-project01.ml配置文件。这张图片直观呈现了SpringBoot开发步骤中定义HelloController类的具体文件位置结构，对应了文档中在com.itheima包下新建HelloController类的操作要求。
 
 HelloController中的内容，具体如下：
 
@@ -86,42 +90,51 @@ public class HelloController {
 运行SpringBoot自动生成的引导类 (标识有`@SpringBootApplication`注解的类)
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/CEHNbV0rAoVfYPx2u8hcNKD8nGb.png)
+> 图注：这张图片展示了IntelliJ IDEA开发工具的界面，右侧是名为Day04SpringTestApplication的Spring Boot引导类代码，该类带有@SpringBootApplication注解，包含main方法。代码编辑器左侧的红色箭头指向类名左侧的三角形运行标识，点击该标识后弹出操作菜单，菜单中突出显示了“Run 'Day04SpringTestApplication'...”选项，这对应文档中运行SpringBoot引导类的步骤，即带有@SpringBootApplication注解的类的方式，用于测试Web入门程序。
 
 创建一个应用接口
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/NLvVbskUsohG5IxCm3CcoFNTnQb.png)
+> 图注：图片展示了在IntelliJ IDEA中创建的Spring Boot项目结构及Test类代码。左侧是项目结构，包含`cn.itcast.day04_spring_test`包下的`demo01`目录，其中`Test`类被高亮显示。右侧是Test类代码，定义了`show`方法，通过`@RequestMapping`注解指定访问路径为`/test/show`，当访问该路径时，会执行`show`方法并打印“show方法执行了...”信息，最后返回“hello!”。该图片与文档中创建应用接口的内容相关，直观呈现了接口实现代码。
 
 
 
 打开浏览器，输入 `http://localhost:8080/test/show`
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/PlmkbBnQKoDVjWxk6RzcbvO6n6f.png)
+> 图注：这张图片展示的是一个浏览器页面，地址栏显示访问的网址为`localhost:8080/test/show`，页面主体内容显示“hello!”，该内容对应上下文里在浏览器输入指定地址后运行测试的结果。浏览器顶部还排列着多个标签页的快捷方式，包括Gmail、YouTube、哔哩哔哩、Maven Repository等应用及学习相关的标签入口。
 
 ##### SpringBoot常见问题
 
 大伙儿在下来联系的时候，联网基于spring的脚手架创建SpringBoot项目，偶尔可能会因为网内网络的原因，链接不上SpringBoot的脚手架网站，此时会出现如下现象：
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/H6Bjb3D6moXXhux418DcfblJnOb.png)
+> 图注：这张图片展示的是在创建SpringBoot项目时出现的初始化错误界面，对应文档中SpringBoot常见问题的相关内容。界面中弹出的错误窗口显示，初始化链接`https://start.spring.io`失败，错误信息为无法下载该地址，连接超时，提示需检查URL、网络及代理设置；界面背景可看到项目创建的相关设置项，包括选择的是Spring Initializr生成器，服务器URL为start.spring.io，项目名称设为demo，开发语言选择Java，构建工具为Maven，包类型为Jar，JDK版本为17。该界面呈现的正是文档中提及的因网络原因无法连接SpringBoot脚手架网站时的报错现象。
 
 此时可以使用阿里云提供的脚手架，网址为：`https://start.aliyun.com`
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/SiiobRTg2olTShxWdCPcCVGPn9p.png)
+> 图注：图片展示了在IntelliJ IDEA中使用阿里云提供的脚手架创建Spring Boot项目时的界面。左侧“New Module”下选中“Spring Boot”；右侧“Server URL”处显示“start.spring.io”，并有“?”标识；“Location”处输入“https://start.aliyun.com”；“Language”下选中“Java”；“Type”下选中“Maven”；“Group”处输入“cn.itcast”。该图片与文档中介绍使用阿里云脚手架创建Spring Boot项目的内容相关，直观呈现了操作步骤。
 
 然后按照项目创建的向导，一步一步的创建项目即可。
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/Qnh8bLuwDomva9xAoACcg6X5nlc.png)
+> 图注：这是IDEA创建Spring Boot项目的“New Module”界面，用于通过阿里云脚手架创建SpringBoot项目。界面左侧选择了Spring Boot类型的项目，右侧相关配置项被红色框和标记重点标注：项目名称设为“day-spring-test”，语言选择Java，类型为Maven，Group填为“cn.itcast”，Artifact是“day-spring-test”，包名同样为“cn.itcast”，JDK选用17版本，打包方式为Jar。界面右下角的“Next”按钮被红色标记突出，提示完成配置后可点击该按钮继续后续操作，这对应文档中使用阿里云脚手架创建项目的步骤内容。
 
 选择Spring Boot版本 以及 勾选web开发相关依赖
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/N0P5bk2cooC85YxxS8ycK5pPnpj.png)
+> 图注：这是一张新建SpringBoot模块的配置界面，用于展示创建SpringBoot Web项目的依赖选择步骤。界面内，Spring Boot版本选择区高亮显示3.0.2版本；Dependencies列表中，Developer Tools选项下勾选了Lombok，Web选项下勾选了Spring Web；界面右下角的“Create”按钮被红框标注，作为最终创建项目的操作按钮。该图对应上下文里的SpringBoot项目创建环节，具体是使用阿里云脚手架创建项目时，选择Spring Boot版本、勾选Web开发相关依赖的操作展示。
 
 修改层级名称 删除无用类
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/Tb2ob6EPUonq9kx9T0EcjBBGnWe.png)
+> 图注：这张图展示了SpringBoot项目创建后的文件目录结构，对应的是创建项目后修改层级名称的操作场景。目录中src/main/java路径下的cn.itcast.demos层级里，红色框出了controller目录，并有标注“修改层级名称”。该目录下有BasicController.java、PathVariableController.java、User.java这三个文件，被标注说明“可以删除阿里镜像给的引导”。此外，目录中还包含DaySpringTestApplication.java、resources、test等项目常规结构文件，契合文档中关于修改项目层级并删除无用类的内容要求。
 
 当阿里云镜像创建项目时 如果模块失效，可以用下列步骤重新生效模块
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/OgVabOUgaobRqrxFwdbcSeVwnLe.png)
+> 图注：图片展示了IntelliJ IDEA中导入模块的操作界面。左侧导航栏中“File”选项被红色框标出，点击后弹出下拉菜单，其中“Project Structure...”选项也被红色框标出。右侧“Project”标签页下，“Modules”选项被红色框标出，其下有“Add”选项，再下有“Import Module”选项。下方“Sources”区域中，“Path”输入框被红色框标出，其右侧“...”按钮也被红色框标出。该图片与文档中介绍在IntelliJ IDEA中导入模块的操作步骤相关，直观呈现了操作位置。
 
 ### 依赖
 
@@ -160,6 +173,7 @@ B ==>DE
 </callout>
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/NS5wbq4Tjoizg7xQ9EJcTXNRnNe.png)
+> 图注：这张图片展示的是Maven项目的界面，项目名称为day03_maven_test，在该项目的Lifecycle目录下，清晰列出了Maven的核心生命周期阶段，分别是clean、validate、compile、test、package、verify、install、site、deploy，这些是Maven编译打包等构建流程的关键步骤；界面右上角的“m”标识，对应文档中提到的“一键构造”功能，该功能可通过按钮完成编译、打包等操作，此界面正是Maven项目一键构造功能对应的操作区域，为该功能提供了可视化的操作入口。
 
 #### 统一项目目录
 
@@ -179,16 +193,19 @@ maven-project01
 ```
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/ODMlblKrToomhLx0kYbctQeYnze.png)
+> 图注：这是一个SpringBoot项目的目录结构截图，标注了项目相关的核心目录与文件。最外层是名为“javaweb142”的项目根目录，其下包含多个模块，重点标注了“day04-spring-test”模块。在该模块内，标注了“src”目录下的“main”和“test”子目录：main目录下的“java”目录用于存放Java源码，“resources”目录用于存放配置文件；test目录下的“java”目录则用于存放测试文件。同时还展示了项目内的其他目录与文件，如target目录、pom.xml等。
 
 ### 三层架构
 
 
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/DBFZbWrOto7wqCxGgfNcwAY7nx3.png)
+> 图注：图片以饭店为例，展示了软件系统三层架构。上方是饭店，有服务员、厨师、采购员。下方是软件系统，分为表示层、业务逻辑层、数据访问层。表示层与业务逻辑层、数据访问层有双向箭头，业务逻辑层与数据访问层也有双向箭头。
 
 即：
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/HwprbxymboQjf5xV6xKcwlCPnrc.png)
+> 图注：图片展示了三层架构中后台程序的职责划分。控制层（Controller）负责接收前端传入的参数，封装参数，调用service层处理业务得到结果，再将结果响应给前端；业务层（Service）接收Controller层数据，处理数据、校验数据等，调用Dao层持久化操作，将结果返回Controller层；持久层（Dao）接收Service层数据，执行数据库操作，将结果返回Service层。
 
 
 
@@ -503,10 +520,12 @@ private static void demo03() throws Exception {
 由于我们现在在程序中，需要什么对象，直接new一个对象 `new EmpDaoImpl()`  。
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/PxLybWiEso5Vj3xUkatcx1JhnVf.png)
+> 图注：这张图片展示了Java代码实现的分层架构相关示例，上方是`EmpServiceImpl`类的代码，其中定义了`EmpDao`类型的成员变量，直接实例化了`EmpDaoImpl`，下方是`EmpDaoImpl`类的代码，实现了`EmpDao`接口的`findAll`方法，该方法负责读取本地的`emp.txt`文件获取数据。图片中红色箭头和标注的内容，直观体现了业务层直接硬编码依赖具体实现类`EmpDaoImpl`的情况，这对应了上下文提到的“需要直接new一个对象”导致后续更换实现类时需修改代码的问题。
 
 如果说我们需要更换实现类，比如由于业务的变更，EmpDaoImpl 不能满足现有的业务需求，我们需要切换为 EmpDaoImpl2 这套实现，就需要修改Contorller的代码，需要创建 EmpDaoImpl2 的实现`new EmpDaoImpl2()` 。
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/CGX3bGjcmopoXuxtbCgccgtAnKg.png)
+> 图注：图片展示了EmpService和EmpDaoImpl两个类的代码。EmpServiceImpl类中，empDao属性被赋值为EmpDaoImpl2的实例。EmpDaoImpl类实现了EmpDao接口，包含findAll()方法，该方法通过JDBC操作数据库获取员工数据。图片与上下文紧密相关，通过展示具体代码，直观呈现了上下文提到的直接new对象的问题，即在程序中需要什么对象就new一个对象，如new EmpDaoImpl()，若需更换实现类，需修改相关代码，如创建EmpDaoImpl2的实现new EmpDaoImpl2()，以说明业务层面向接口编程的好处。
 
 Controller中调用Service，也是类似的问题。这种呢，我们就称之为层与层之间 **耦合** 了。 那什么是耦合呢 ？
 
@@ -528,6 +547,7 @@ Controller中调用Service，也是类似的问题。这种呢，我们就称之
 那最终我们的目标呢，就是做到层与层之间，尽可能的降低耦合，甚至解除耦合。
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/ASS3b6pGUo1IAUxN2x2cWGBInvf.png)
+> 图注：图片展示了三层架构中层与层之间解耦合前后的对比。左侧为当前情况，controller依赖service，service依赖dao，用红色圈标注；右侧为理想状态，controller、service、dao之间无直接依赖，用绿色箭头表示。该图与上下文紧密相关，直观呈现了层与层之间耦合与解耦合的现状，为理解业务层面向接口编程的好处及后续解耦操作提供可视化参考。
 
 #### 解耦思路
 
@@ -540,6 +560,7 @@ Controller中调用Service，也是类似的问题。这种呢，我们就称之
 **1). 首先不能在EmpServiceImpl中使用new对象。代码如下：**
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/HbgbbkRWnoluUcx9PkAcEAKZnLE.png)
+> 图注：图片展示的是EmpServiceImpl类代码，该类实现了EmpService接口。代码中定义了EmpDao类型的empDao私有成员变量，下方有注释“不要再new对象了”。类中有一个findAll()方法，用于获取所有Emp对象。此图片与上文提到的不能new出Dao层对象的问题相关，通过这种方式，Service程序从容器中获取EmpService类型的对象，应用程序用到对象时直接从容器中获取，实现了对象交给容器管理的目标。
 
 此时，就存在另一个问题了，不能new，就意味着没有Dao层对象（程序运行就报错），怎么办呢? 
 
@@ -551,10 +572,12 @@ Controller中调用Service，也是类似的问题。这种呢，我们就称之
 **2). 将要用到的对象交给一个容器管理。**
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/Wd3IbOLJdoy4JExtVf3caiNcnBg.png)
+> 图注：图片展示了两个EmpDao接口实现类的代码片段。上方是EmpDaoImpl1，下方是EmpDaoImpl2，均实现了EmpDao接口。下方代码中，通过Class.forName()加载数据库驱动，使用DriverManager.getConnection()获取数据库连接，执行SQL查询语句，获取结果集并遍历。图片下方有一个黄色圆角矩形框，内有数字“1”，与上文提到的“那问题来了，我们如何将对象交给容器管理呢？”相呼应，暗示这是容器管理对象的示例代码。
 
 **3). 应用程序中用到这个对象，就直接从容器中获取**
 
 ![](../../../../../Attachments/development/backend/web/spring-yu-springboot/SRzwblOpnoxMb6xe19oc6icqnEc.png)
+> 图注：图片展示了EmpServiceImpl类与EmpServiceImpl2类的代码关系。左侧EmpServiceImpl类中，有empDao属性，其类型为EmpDao。右侧EmpServiceImpl2类中，包含数据库连接、查询数据等代码。下方蓝色区域标注为1，与右侧代码区域有红色箭头指向，表明两者存在关联。该图与上下文关系紧密，直观呈现了上下文中提到的将对象交给容器管理的思路，即应用程序用到对象时，从容器中获取，而对象由容器管理。
 
 那问题来了，我们如何将对象交给容器管理呢？ 程序运行时，容器如何为程序提供依赖的对象呢？ 
 

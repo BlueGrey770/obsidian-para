@@ -28,6 +28,7 @@ aliases:
 ## 用户认证-微信小程序认证
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/QuJPbloe9ozgzmxYxxVcUaD2nFc.png)
+> 图注：图片展示了云岚到家项目中用户认证 - 微信小程序认证的流程。前端小程序向网关发送认证请求，网关将请求路由到客户中心系统微服务，客户中心系统微服务调用公共微服务获取openid，若数据库中无用户信息则自动注册。接着，先调用微信服务获取token，再根据手机号临时凭证结合token获取手机号，更新数据库表。最后，利用Jwt生成token返回给小程序端，后续用户请求时携带token请求网关，网关统一拦截校验token获取用户id，将用户id放入请求头路由到业务微服务，微服务中拦截器获取用户id放入ThreadLocal。
 
 1. 小程序端获取到临时**登录凭证 ~~和 手机号凭证~~**
 2. 请求后端网关，网关将请求路由到**客户中心系统微服务**
@@ -44,6 +45,7 @@ aliases:
 ## 小程序首页-高德地图定位
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/D0cmbfqvEofPdHxD0eOciEbZngb.png)
+> 图注：图片展示了小程序首页高德地图定位的流程。前端调用微信方法获取经纬度，再查询经纬度对应的位置信息，返回详细位置信息及cityCode、城市名称等。jzo2o - publics根据cityCode从开通城市列表中找到区域ID，同时调用高德地图查询地理编码接口。该图与上下文紧密相关，直观呈现了小程序获取高德地图定位位置信息的步骤及数据交互关系。
 
 - 首先我们从高德地图提前下载到**所有的城市**以及对应的**城市编码cityCode**，将数据提前给到前端（包括运营端和小程序端）
 - 在进入小程序的时候，查询所有已开通区域城市列表（城市名称、城市编码、区域id）。接着获取用户的地理位置的权限，如果用户同意，获取到当前用户的**经纬度坐标**
@@ -77,6 +79,7 @@ aliases:
 - 增量同步
 
   ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/P8hPbRpLgoAU7ZxRSZAcr5jAnpy.png)
+> 图注：这张图展示了云岚到家项目增量同步模块的工作流程，以泳道形式呈现了从运营人员、C端用户到各中间组件的交互逻辑。运营人员通过管理端对MySQL进行CRUD操作，MySQL记录binlog数据；Canal读取并解析该binlog，将对应数据的CRUD操作内容写入MQ；同步程序监听MQ并接收消息，之后基于该消息为Elasticsearch创建索引，完成数据同步。此外，C端用户的搜索请求会直接流向Elasticsearch，获取对应的搜索结果。
 
   - 增量同步使用的是**canal+MQ**
   - 当运营任务在操作服务类型或者服务项目的时候，写入到Mysql数据库。Mysql数据库是开通了**binlog日志**功能
@@ -101,10 +104,12 @@ aliases:
 ### 优惠券整体业务流程
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/GUQNbLCEsocESoxf9W2cQSKFnxf.png)
+> 图注：该图是云岚到家项目中优惠券模块的业务流程图，展示了运营人员、用户、系统定时任务三方的优惠券相关流程。运营人员流程从“开始”起步，包含新增优惠券活动，还可开展修改、撤销活动及优惠券统计操作，最终结束；用户流程从“开始”启动，到达指定发券时间后可领取优惠券，后续经过下单使用、提交订单核销、取消订单退回优惠券等环节，最终结束；系统定时任务流程则是“开始”后自动发放优惠券，直接结束，整体对应文档提及的优惠券管理发放及定时任务等相关业务内容。
 
 ### 优惠券发放
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/FekebpCcFoFfFsx3bI5csUbZnDb.png)
+> 图注：图片展示了优惠券发放的整体业务流程。业务系统提交待发放用户名单，先添加到待发放优惠券表，再批量插入优惠券表；立即发放优惠券，发放完毕更新发放状态为已发放。自动发券的定时任务查询需自动发放的活动，启动多线程，更新库存后批量插入优惠券活动表，同时查询待发放记录，更新完毕后更新发放状态为已发放。该图与上下文介绍的优惠券发放流程内容相契合，直观呈现了各环节操作及数据流转关系。
 
 - 优惠券系统的是一个通用的微服务，这里**只负责优惠券的管理发放等功能**，**不负责具体的业务**（不关注优惠券给谁发），只是对业务服务提供openFeign接口，供业务服务进行调用
 - 提供了两个**openFeign接口**，一个是**提交待发放用户的名单**、**立即发放优惠**
@@ -120,6 +125,7 @@ aliases:
 ### 订单的状态
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/AjaPbCkc5oubQrxB1RlclvQqnae.png)
+> 图注：这张图展示了云岚到家项目的订单状态流转流程：从用户下单进入待支付状态开始，依次经历用户支付后的派单中、用户或运营人员抢单派单后进入待服务状态，接着到开始服务、服务中，最终服务完成后变为订单完成状态；同时各个阶段均设有取消分支，待支付时用户取消订单会变为已取消，派单中、待服务、服务中、订单完成状态下，若用户或运营人员取消订单，均会自动退款并变为已关闭状态。
 
 ### 下单功能
 
@@ -141,6 +147,7 @@ aliases:
 ## 订单模块-取消订单
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/H1gWbdHdIoXiMNxgxEtc53PZnYd.png)
+> 图注：这张云岚到家项目订单模块的取消订单流程图，清晰展示了订单从创建到最终状态的全流程及各节点的取消规则。用户发起下单后，订单进入待支付状态，若此时用户取消订单，订单会直接变为已取消；用户完成支付后，订单进入派单中状态，此时若用户或运营人员取消订单，订单会变为已关闭。后续订单流转至待服务、服务中、订单完成状态时，只要取消操作来自用户或运营人员，均会触发自动退款并使订单变为已关闭，该图明确了各订单阶段取消订单的触发条件与结果。
 
 
 
@@ -187,6 +194,7 @@ aliases:
 ## 支付模块
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/MezEbCJYmo1wKwxBnsocdShFnqg.png)
+> 图注：这是云岚到家项目支付模块的流程时序图，包含了下单支付、预下单、支付处理等环节的交互流程，明确了各环节涉及的角色，包括小程序端、订单服务、支付服务等。图中通过流程节点与箭头，展现了从用户发起支付请求，到订单服务处理订单查询、判断订单状态，再到支付服务组装参数、进行加密签名的完整支付相关环节的动作走向，对应了文档中描述的支付模块的业务流转过程，直观呈现了各服务间的交互逻辑。
 
 - 支付流程
 
@@ -251,6 +259,7 @@ aliases:
 ## 系统优化-冷热分离
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/ORQUbU3cyo9VPqxoLTOc0NRVnzf.png)
+> 图注：图片展示了订单管理服务、Canal+MQ、历史订单服务及历史订单数据库间的数据同步流程。订单管理服务将订单信息写入同步表，同步表数据经Canal+MQ同步至历史订单服务的同步表。历史订单服务监听同步消息，将符合条件的数据迁移到历史订单表，定时任务删除已迁移数据。该图与上下文紧密相关，直观呈现了文档中提到的Canal+MQ将同步表订单数据同步到历史订单数据库同步表的具体过程。
 
 随着时间的推移，订单数据越来越多，虽然做了分库分表，但是对于一些历史的订单数据，用户查询操作的频率就非常低了，对于订单完成15日之后的订单，几乎不会再发生变化了，可以使用冷热分离进行优化。另外冷库中的数据将来还可以进行统计分析报表
 
@@ -291,6 +300,7 @@ aliases:
 ## 抢券
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/IAG9b6Kj7ogfdgxYfo9c3RnwnFd.png)
+> 图注：这是云岚到家项目抢券环节的流程示意图，展示了从用户抢券到相关数据同步的完整技术流程。图中涉及用户端、优惠券服务、数据库、Redis四个参与方，左侧标注了抢券、抢券结果异步同步程序两类核心操作，其中优惠券服务的定时预热程序会先查询数据库的待生效活动库存，再将库存存入Redis；用户端发起抢券请求后，优惠券服务的抢券操作会直接读写Redis完成相关步骤，右侧黄色提示框明确了三步核心规则，分别是扣减库存并记录用户抢券信息、写入抢券成功队列用于同步Redis数据、写入同步队列将Redis中的抢券信息同步至MySQL；待抢券结果同步完成后，优惠券服务还会删除Redis中的同步队列记录，完成整个抢券流程的闭环。
 
 - 活动和库存的预热
 
@@ -323,6 +333,7 @@ aliases:
 ## 抢单
 
 ![](../../../../../../Attachments/development/architecture/solutions/yun-lan-dao-jia-xiang-mu/di-shi-er-zhang-xiang-mu-zong-jie-bu-shu/Typpbmynhogi1wxcAtqczuAznJc.png)
+> 图注：图片展示了云岚到家抢单流程的系统架构图。用户下单支付后，订单管理将订单写入抢单池，再由canal+mq同步到Elasticsearch，同时将库存存入redis。抢单大厅通过ES查询抢单池数据，判断是否可抢单，获取城市编码后执行lua脚本抢单，同步抢单结果。抢单结果写入成功队列，与抢券结果同步队列。该图直观呈现了抢单流程中各系统模块的交互关系及数据流转路径。
 
 - 用户下单完成，支付后。服务人员和机构就可以进行抢单，首先需要进行**技能的配置**和**接单范围距离的配置**
 - **订单分流**

@@ -231,6 +231,7 @@ public class ForTest {
 内存图：
 
 ![](../../../../../Attachments/development/programming/java/ji-he-kuang-jia-yu-map/OzgUb7rBQovvMwxpM3GcaG2Knog.png)
+> 图注：这是Java集合遍历中forEach方式的内存示意图，用于说明该遍历方式的原理。图中左侧是main方法的代码逻辑，创建了存储1、2、3、4的ArrayList集合和Consumer对象；中间梳理了方法调用流程，main方法调用了Collection对象（编号001）的forEach方法（编号002），该forEach会调用accept方法；右侧的内存区域显示，forEach遍历集合时，内部类访问了main方法的局部变量sum，图中标注该变量为“常量类”，且sum被final修饰，借此体现foreach遍历集合的相关注意事项，即不能修改方法的局部变量。
 
 <callout emoji="🎹">
 *原因:*

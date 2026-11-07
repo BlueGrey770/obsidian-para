@@ -1625,6 +1625,7 @@ create index idx_a_b_c on t(a,b,c);
 #### 1. 联合索引的B+树底层结构
 
 ![](../../../../../../Attachments/development/programming/interview/xiang-mu-mian-shi-ti/ri-chang-zheng-li/NiN0bXAMho6zvSx4hTHcHC80nie.png)
+> 图注：图片展示了联合索引`idx_a_b_c(a,b,c)`的B+树底层结构。根节点为`a:1,3`，有分支节点1和分支节点2。分支节点1存储`a:1`和`b:2,5`，其下有叶子节点1和叶子节点2，分别对应`a:1 b:2 c:7`和`a:1 b:5 c:3`，主键分别为101和102。分支节点2存储`a:3`和`b:1,4`，其下有叶子节点3和叶子节点4，分别对应`a:3 b:1 c:9`和`a:3 b:4 c:6`，主键分别为103和104。该图直观呈现了联合索引B+树的结构。
 
 - **叶子节点**：按 `a→b→c` 顺序排序，存储索引列值 + 主键值（回表用）；
 - **分支/根节点**：只存“上层排序字段”的分界值，用于快速定位叶子节点；
@@ -2276,6 +2277,8 @@ public class UserService {
      </column>
      <column width-ratio="0.300000">
      ![](../../../../../../Attachments/development/programming/interview/xiang-mu-mian-shi-ti/ri-chang-zheng-li/G3OibiX7uo1VTlxscWtcBtU7nFf.png)
+> 图注：该图是AT模式的基本流程图，对应文档中提及的AT模式相关内容，主要展示了AT模式的事务处理流程。流程分为两个阶段，阶段一为：从开始节点S出发，依次完成注册分支事务、记录快照、执行业务SQL、提交并报告事务状态；阶段二以菱形“是否可以提交”为判断节点，若结果为“是”则删除快照，若为“否”则读取快照恢复数据，最终汇合至结束节点E。图中还标注了id为1、money为100的示例数据，以及对应的快照内容。
+
      </column>
      <column width-ratio="0.340000">
      ![图 3](../../../../../../Attachments/development/programming/interview/xiang-mu-mian-shi-ti/ri-chang-zheng-li/I1kQbHIn0ownmWx0vO4czwPvnGb.png)

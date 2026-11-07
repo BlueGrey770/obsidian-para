@@ -22,6 +22,7 @@ aliases:
 我们打开原型图
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Df4AbQWrqoA8ICxf4I6cOGpFnnc.png)
+> 图注：图片展示了智能床位管理界面。界面中显示了多个床位信息，每个床位有床位号、老人姓名、心率、呼吸率等数据。其中，床位号1012显示“已离床”，离床次数6次，离床时间20:00:00。其他床位如1010、1013、1014、1015、1016等床位号、老人姓名、心率、呼吸率等信息也一目了然。
 
 - 在床位管理里面有个智能床位，可以展示绑定智能设备的房间或床位以及设备对应的数据
 
@@ -57,6 +58,7 @@ aliases:
 比如下图中，只有3楼、4楼、5楼、1楼绑定了设备，那就只展示这些楼层
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/DUdvb0k3Ooh2Wsx4g3xcPmIhnkb.png)
+> 图注：图片展示了智能床位查看效果的前端页面。上方有“3楼”“4楼”“5楼”“1楼”四个标签，其中“3楼”标签被红色框线突出显示。下方是303床位信息，显示床位号为303 - 1，老人姓名为李大宝，心率45次/分，呼吸率43次/分，床铺状态为清醒中。该图片与文档中获取智能楼层的上下文相关，用于展示在智能床位查看页面中，当选择不同楼层标签时，对应的床位信息会显示出来。
 
 表关系
 
@@ -166,6 +168,7 @@ List<FloorVo> getAllFloorsWithDevice();
 - 根据楼层查询房间或者是床位的设备数据（最新的一条数据）
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/K83db2RT1ob21IxcYYdcgvBrnPh.png)
+> 图注：该图片展示了智能床位相关的设备数据界面，当前选中的楼层为1楼，显示了编号101的房间详情，该房间内的床位为101-1，入住老人为李老头儿，设备及数据区域标注高床次数为14次，已高床时长为00:33:44，界面右侧标注了该设备上报的最新数据：湿度72%、温度23℃，报警状态为正常，这是智能床位设备采集的实时监测数据，与文档中智能床位获取设备及数据的实现思路相呼应，对应从redis获取最新设备数据的内容展示。
 
 在这个接口中返回的数据较多，条件是选中的**楼层ID**
 
@@ -496,6 +499,7 @@ public List<RoomVo> getRoomsWithDeviceByFloorId(Long floorId) {
 效果如下：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Rln2bp48Qoygbfx83jVcieFinIg.png)
+> 图注：这是智能床位相关的效果展示界面，顶部有3楼、4楼、5楼、1楼的楼层选项，当前选中1楼。界面展示了101房间的相关信息，右上角红框标注区域显示该房间设备的环境数据：湿度72%、温度23℃、报警状态正常；左侧红框为床位相关数据，床位号为101-1，对应老人姓名为老李头儿，显示该床位离床次数14次，当前已离床，离床时长为00:33:44。
 
 
 
@@ -508,6 +512,7 @@ public List<RoomVo> getRoomsWithDeviceByFloorId(Long floorId) {
 索引可以在数据库表的一列或多列上创建，它们包含了对应列值的引用和指针，使得数据库系统可以快速定位到需要的数据。通过使用索引，数据库系统可以根据索引的排序和搜索算法，快速定位到符合查询条件的数据，提高查询的效率。
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/IXPrbF1CgoX5okx1XmDchJYGnwe.png)
+> 图注：图片展示了在MySQL中执行相同SQL查询，但未添加索引和添加索引后的效率对比。左侧未添加索引时，查询耗时381ms，右侧添加索引后，查询耗时32ms。两者执行的SQL语句相同，均为从device_data表中查询iot_id和product_key符合条件的数据数量。该图片直观呈现了索引使用前后的性能差异，与上下文提到的相同SQL执行效率差异10倍有余相呼应，强调了索引在提高查询效率、降低数据库IO成本方面的关键作用。
 
 相同的SQL执行，左边没加索引，后边添加了索引，效率差了10倍有余（基础数据量为60万）
 
@@ -536,16 +541,19 @@ MySQL数据库支持的索引结构有很多，如：Hash索引、**B+Tree**索�
 - 二叉树
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Az9qbwtEsoRQ4Jx09npcdA27nPe.png)
+> 图注：图片展示了一棵二叉树结构，根节点为36，其左子节点为22，右子节点为48。22的左子节点是19，右子节点是33，19的左子节点是17，右子节点是20，33的左子节点是23，右子节点是34。48的左子节点是45，右子节点是53，45的左子节点是40，右子节点是46，53的左子节点是50，右子节点是70。该图与上下文介绍的二叉树结构相关，用于辅助说明二叉树的节点分布及连接关系。
 
 > 二叉查找树：左边的子节点比父节点小，右边的子节点比父节点大
 
 当我们向二叉查找树保存数据时，是按照从大到小(或从小到大)的顺序保存的，此时就会形成一个单向链表，搜索性能会打折扣。
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/DlUObRoevoausTxdUURcOJSKnGb.png)
+> 图注：这张图片展示了一个特殊结构的树，所有节点从下到上依次为17、19、20、22、23、33、34、36，箭头自上而下指向相邻较大的节点。该结构属于二叉查找树的一种特例，因数据按从小到大的顺序保存，最终形成单向链表形态，这类结构的搜索性能存在不足，这恰好对应上下文所描述的“当向二叉查找树按序保存数据时会形成单向链表，搜索性能会打折扣”的情况。
 
 可以选择平衡二叉树或者是红黑树来解决上述问题。（红黑树也是一棵**平衡**的二叉树）
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/FPmibOLOQo2NC0xXwcRcBeGdnDe.png)
+> 图注：图片展示了一个B+Tree结构示例。根节点为23，其下方有两个分支，分别指向20和34。20下方有19和17，34下方有33和36。20和34为非叶子节点，存储key和指针；19、22、33、36为叶子节点，存储数据。该图与上下文紧密相关，直观呈现了B+Tree结构中节点的分类及数据存储情况，帮助理解B+Tree如何避免二叉搜索树或红黑树在Mysql数据库中作为索引结构的问题。
 
 但是在Mysql数据库中并没有使用二叉搜索数或二叉平衡数或红黑树来作为索引的结构。
 
@@ -554,6 +562,7 @@ MySQL数据库支持的索引结构有很多，如：Hash索引、**B+Tree**索�
 下面我们来看看B+Tree(多路平衡搜索树)结构中如何避免这个问题：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Nadsbt7dwoQIJpx3zGmcP7ajn2f.png)
+> 图注：这张图展示了MySQL索引所用的B+Tree结构，与上下文介绍的B+Tree结构内容对应。图中所有数据都存储在最下层的叶子节点，中间层为非叶子节点，顶层为根节点；节点以页/磁盘块为单位，每个节点可存储多个键值key和对应指针，且节点分为叶子节点与非叶子节点两类。图中所有叶子节点被红色箭头连成双向链表，以此实现数据的排序及区间范围查询，能直观体现该结构可优化查询性能的特点。
 
 B+Tree结构：
 
@@ -642,6 +651,7 @@ drop index idx_iot_id_product_key on device_data ;
 聚集索引和二级索引的具体结构如下： 
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/FY8Fbr5Atol12ixNkxOcRif7nHH.png)
+> 图注：图片展示了InnoDB存储引擎中聚集索引和二级索引的具体结构。上半部分为聚集索引，将数据存储与索引放在一起，索引结构的叶子节点保存行数据，必须有且只有一个。下半部分为二级索引，数据与索引分开存储，索引结构的叶子节点关联主键。图中以红色箭头标注了聚集索引和二级索引的位置，直观呈现了两种索引的存储形式，与上下文对聚集索引和二级索引的分类及特点介绍相呼应。
 
 - 聚集索引的叶子节点下挂的是这一行的数据 。
 - 二级索引的叶子节点下挂的是该字段值对应的主键值。
@@ -651,6 +661,7 @@ drop index idx_iot_id_product_key on device_data ;
 接下来，我们来分析一下，当我们执行如下的SQL语句时，具体的查找过程是什么样子的。
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Ab6JbyqAmo8tM2x3cPgcnz85nrg.png)
+> 图注：图片展示了MySQL执行SQL语句“select * from user where name='Arm'”时的查找过程。图中用红色框突出显示了二级索引和聚集索引的查找路径。首先，根据name='Arm'在二级索引中匹配查找，查找到主键值10；然后，通过主10到聚集索引中查找10对应的记录，最终找到10对应的行row。该图与上下文紧密相关，直观呈现了文档中描述的SQL执行过程。
 
 具体过程如下:
 
@@ -679,6 +690,7 @@ EXPLAIN   SELECT   字段列表   FROM   表名   WHERE  条件 ;
 ```
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/TguObp55lolCqLxHQ41cOiscnIe.png)
+> 图注：图片展示了在MySQL中使用EXPLAIN命令获取SELECT语句执行信息的示例。执行语句为“explain select * from t_user where id = '1';”，返回结果包含id、select_type、table等字段信息。其中，type字段显示为“const”，表示根据主键查询；possible_keys和key字段均为“PRIMARY”，表明当前SQL可能会使用到的索引是主键；key_len为98，ref为“const”，rows为1，filtered为100.00，Extra字段为空。该图片与上下文介绍的MySQL索引失效检查相关，用于说明如何通过EXPLAIN命令获取SQL执行信息。
 
 - possible_key  当前sql可能会使用到的索引
 - **key 当前sql实际命中的索引**
@@ -711,10 +723,12 @@ EXPLAIN   SELECT   字段列表   FROM   表名   WHERE  条件 ;
 我们先来分析需求，打开原型图
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Xk7fb4jRRoSNzXxXF2Lc7UCTn7d.png)
+> 图注：这是中州养老系统的“新增报警规则”页面，页面左侧为系统功能导航栏，显示“设备管理”“报警管理”等选项，当前选中“报警规则”。页面主体区域是报警规则的配置表单，顶部标注“新增报警规则”，规则配置项包含报警规则名称、所属产品、关联设备、故障数据类型、报警触发条件等，还设置了通知方式相关的报警生效时间、报警沉默周期等参数，页面底部有“取消”和“确定”两个操作按钮。该页面是为智能养老设备制定报警规则的配置界面，用于实现设备异常时的报警管控需求。
 
 数据来源：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Y8W8bPQVsoouVkxggKUcbQlFnzc.png)
+> 图注：这是一份智能床位报警规则相关的字段配置表，表中分为字段名称和数据来源两部分，明确了报警规则配置涉及的各类信息。所属产品的数据来源为智能监测-设备管理-产品管理-产品名称；模块的数据来源为同路径下该产品下的模块名称，功能名称来源为对应模块下功能类型的属性-功能名称。关联设备的默认状态为全部设备，仅创建产品未关联设备时该位置显示此内容。运算符支持等于、小于、小于等于三类符号，持续周期包含1分钟、3分钟、5分钟等多种时长选项，对应不同的周期触发要求，可用于配置报警规则的触发条件。
 
 逻辑规则：
 
@@ -729,6 +743,7 @@ EXPLAIN   SELECT   字段列表   FROM   表名   WHERE  条件 ;
 监控值（统计字段）是否 < 90（运算符+阈值），当持续3个周期（持续周期）都满足这个规则时，触发报警；
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/UlTabVfjeo5ew3xgMyHcGZexnfc.png)
+> 图注：图片展示的是智能床位&MySQL索引报警规则的创建界面。界面中“所属产品”为智能手表，“模块”为默认模块，“功能名称”为血氧，“关联设备”为全部设备，“报警数据类型”选择老人异常数据，“报警规则名称”为低血氧报警，“持续周期”为持续3个周期（1周期=1分钟），“运算符”为小于，“阈值”为90.00。该图片与上下文紧密相关，是对上下文中新增报警规则需求分析中报警规则创建操作的直观呈现。
 
 **通知方式**：
 
@@ -745,12 +760,14 @@ EXPLAIN   SELECT   字段列表   FROM   表名   WHERE  条件 ;
 渠道：站内信（见消息通知模块原型图）、短信；
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Fo9Bbsfryo7RYMxHHuicyvbLn7d.png)
+> 图注：这张图是智能床位报警规则对应的消息通知原型，清晰呈现了两类报警场景的通知模板。第一类是老人异常数据的触发场景，其触发规则为“报警数据类型=老人”，通知来源为“智能监测-报警数据-老人异常数据”，通知对象是老人对应的护理员，通知渠道为短信，消息内容涵盖异常提示、老人的个人信息（姓名、位置）、所属产品、设备名称、功能名称及异常数据等。第二类是设备异常数据的触发场景，触发规则为“报警数据类型=设备”，通知来源为“智能监测-报警数据-设备异常数据”，通知对象是后勤部维修工，渠道同样为短信，消息内容包含异常提示、设备位置、产品及设备信息、功能与异常数据，同时给出了现场处理的提示。该图明确了两类不同触发条件下的报警通知逻辑，呼应了文档中报警方式与通知对象的相关需求规则。
 
 #### 报警规则其他需求
 
 下面这个就是刚刚创建的报警规则查询列表
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/ZwICb9G15o2ce2xmB4kciGm5nPb.png)
+> 图注：图片展示的是智能设备报警规则查询列表界面。界面上方有“报警规则名称”“所属产品”“功能名称”等搜索框及“重置”“搜索”按钮。下方列表显示序号、报警规则名称、所属产品、关联设备、报警规则、报警生效时段、创建人、创建时间、状态、操作等信息，如智能烟感烟雾量报警规则等。列表中部分操作栏有“启用”“禁用”“删除”“编辑”按钮，其中“智能烟感烟雾量”规则状态为禁用。该图与上下文介绍的报警规则查询相关，呈现了具体查询结果。
 
 其中在操作中可以处理报警规则（删除，编辑，启用禁用）
 
@@ -759,6 +776,7 @@ EXPLAIN   SELECT   字段列表   FROM   表名   WHERE  条件 ;
 #### 表结构
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/SamnbP0f1oqJqtxkJNMcWAuZnyc.png)
+> 图注：图片展示了报警规则的表结构信息。其中，id为报警规则唯一标识；alert_data_type表示报警数据类型，0为老人异常数据，1为设备异常数据；alert_effective_period为报警生效时段；alert_rule_name是告警规则名称；alert_silent_period为报警沉默周期；create_by是创建人id；create_time为创建时间；device_name是设备名称；duration是持续周期；function_id为功能标识；function_name是功能名称；iot_id是物联网设备id；module_id为模块的key；module_name是模块名称；operator是运算符；product_key是所属产品的key；product_name是产品名称；remark是备注；status为0禁用1启用；update_by是更新人id；update_time是更新时间；value是阈值。该图片与上下文介绍的报警规则需求分析相关，是对报警规则表结构的说明。
 
 **特别注意：重新导入表结构**
 
@@ -807,6 +825,7 @@ CREATE TABLE "alert_rule" (
 - 生成功能名称：报警规则
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/KNiXbYlOPo2ZH1xqRzFcMB1Dn1b.png)
+> 图注：图片展示的是智能床位系统中“报警规则”页面。页面上方有表名称、表描述、创建时间等输入框及搜索、重置按钮。下方列表显示序号、表名称、表描述、实体、创建时间、更新时间等信息，其中序号1对应的表名称为“alert_rule”，表描述为“报警规则”，实体为“AlertRule”，创建和更新时间为2024年9月23日11:53:48和11:55:06。页面底部有分页功能。该图片与上下文介绍的“报警规则”功能相关，直观呈现了其在系统中的展示情况。
 
 由于报警规则，就是单表的增删改查，所有功能都已实现，大家无需编写代码。但是要充分理解业务。
 
@@ -823,6 +842,7 @@ CREATE TABLE "alert_rule" (
 详细报警规则，如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/J4zMbU5wqoufW4xSFN4clnkhn0d.png)
+> 图注：图片展示的是“心率低值监测”报警规则设置界面。所属产品为睡眠监测带，功能名称是HeartRate，报警数据类型为老人异常数据，持续周期为持续1个周期（1周期=1分钟），阈值为65，运算符为<，报警生效时段为00:00:00 - 23:59:59，报警沉默周期为5分钟。模块为sm_services，关联设备是全部设备，报警规则名称为心率低值监测。该图片与上下文案例一中睡眠监测带心率异常数据报警规则的说明对应，直观呈现了设置界面及参数。
 
 - 监测的产品为**睡眠监测带**，物模型为**心率，**过滤的是该产品下的**所有设备**
 - 报警类型为老人异常数据（设备报警通知**老人绑定的护理员和超级管理员**）
@@ -840,6 +860,7 @@ CREATE TABLE "alert_rule" (
 报警规则如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/EUFabaZhZov3N9xfGWhcM4h4nPb.png)
+> 图注：图片展示的是烟雾报警器温度报警规则设置界面。所属产品为烟雾报警器，功能名称是IndoorTemperature，关联设备为全部设备，模块是ym_services。报警数据类型为设备异常数据，持续周期为持续1个周期（1周期=1分钟），阈值为55，运算符为>=，报警生效时段为00:00:00 - 23:59:59，报警沉默周期为5分钟。该图片与文档中案例二的报警规则说明对应，直观呈现了案例二中报警规则的设置情况。
 
 - 监测的产品为**烟雾报警器**，物模型为**温度，**过滤的是该产品下的全部设备
 - 报警类型为**设备异常数据**（设备报警通知**行政和超级管理员**）

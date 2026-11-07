@@ -28,6 +28,7 @@ aliases:
 - 生成功能名称：报警规则
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/PiqJbIhJHoOtjGxd4dfcMOwdnwh.png)
+> 图注：图片展示的是“报警规则”管理界面。界面上方有表名称、表描述、创建时间等输入框及搜索、重置按钮。下方列表显示序号、表名称、表描述、实体、创建时间、更新时间等信息，其中序号1对应的表名称为“alert_rule”，表描述为“报警规则”，实体为“AlertRule”，创建和更新时间为2024年9月23日11:53:48和11:55:06。列表底部有分页功能，当前显示第1页，共1条记录。该图片与文档中“报警规则基础代码准备”内容相关，展示了生成的业务名称“alertRule”对应的表信息。
 
 - 只需要拷贝后端代码
 - 由于报警规则，就是单表的增删改查，所有功能都已实现，大家无需编写代码。但是要充分理解业务。
@@ -41,6 +42,7 @@ aliases:
 当我们新增报警规则的时候，是需要选择产品中具体的功能的，所以在选择产品之后需要查询到该产品下具体的服务及物模型的属性
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/Uq5qbBC1LoeMoAx2lTZcmOmKnfg.png)
+> 图注：图片展示的是智能定位报警手表的报警规则设置界面。界面中“所属产品”选择为智能定位报警手表，“模式”为watch_services，“报警数据类型”有BodyTemp、xueyang、HeartRate、BatteryPercentage等选项，“报警规则名称”“运算符”“报警生效时段”等字段可填写，还有“报警沉默周期”下拉选择。图片通过红色箭头和文字标注，突出显示了“选择产品触发接口调用”和“模式”为“watch_services”等关键信息，与上下文介绍的报警规则基础代码准备相关，辅助说明报警规则设置操作。
 
 #### 接口定义
 
@@ -123,6 +125,7 @@ public AjaxResult queryProduct(String productKey) {
 详细报警规则，如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/PkGKbbrwjod2Czxbh0jcu9k5ntb.png)
+> 图注：图片展示的是“心率低值监测”的报警规则设置界面。所属产品为睡眠监测带，功能名称是HeartRate，报警数据类型为老人异常数据，持续周期为持续1个周期（1周期=1分钟），阈值为65，运算符为<，报警生效时段为00:00:00 - 23:59:59，报警沉默周期为5分钟。模块选择sm_services，关联设备为全部设备，报警规则名称为心率低值监测。该图片与上下文案例一中详细报警规则的说明对应，直观呈现了案例一中设置的报警规则参数。
 
 - 监测的产品为**睡眠监测带**，物模型为**心率，**过滤的是该产品下的**所有设备**
 - 报警类型为老人异常数据（设备报警通知**老人绑定的护理员和超级管理员**）
@@ -140,6 +143,7 @@ public AjaxResult queryProduct(String productKey) {
 报警规则如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/QndvbAUxroDn60x9bRLc3J18nLe.png)
+> 图注：图片展示的是烟雾报警器的报警规则设置界面。所属产品为烟雾报警器，功能名称是IndoorTemperature，报警数据类型为设备异常数据，持续周期为持续1个周期（1周期=1分钟），阈值为55，运算符为>=，报警规则名称是房间温度高值报警，关联设备为全部设备，模块是ym_services，报警生效时段为00:00:00 - 23:59:59，报警沉默周期为5分钟。该图片与上下文案例二中烟雾报警器的报警规则设置内容对应，直观呈现了设置界面及参数。
 
 - 监测的产品为**烟雾报警器**，物模型为**温度，**过滤的是该产品下的全部设备
 - 报警类型为**设备异常数据**（设备报警通知**维修工和超级管理员**）
@@ -163,6 +167,7 @@ public AjaxResult queryProduct(String productKey) {
 告警数据表结构：alert_data（已提供）
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/S6bfbAxnAo1LQexvQ8YcOwyjnXf.png)
+> 图注：图片展示了报警规则表（alert_rule）和报警数据表（alert_data）的结构。左侧为报警规则表，包含id、alert_type、alert_effective_period、alert_rule_name等字段，如设备异常数据类型、生效周期、规则名称等。右侧为报警数据表，有id、access_location、alert_reason等字段，如主题、访问位置、报警原因等。该图片与上下文紧密相关，直观呈现了上下文提到的告警数据表结构，帮助理解报警规则与报警数据为一对多关系，以及重要字段提醒等内容。
 
 - 报警规则与报警数据为一对多的关系
 - 重要字段提醒
@@ -182,6 +187,7 @@ public AjaxResult queryProduct(String productKey) {
   - 生成功能名称：报警数据
 
   ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/IVqCbOpNWoBT91xGyp3cxKACn6b.png)
+> 图注：图片展示的是报警数据表的管理界面。界面中有表名称、表描述、创建时间等字段，以及生成、导入、修改、删除操作按钮。下方列表显示了两条记录，序号分别为1和2，表名称分别为alert_rule和alert_data，表描述分别为报警规则和报警数据，实体分别为AlertRule和AlertData，创建时间分别为2024 - 09 - 23 11:53:48和2024 - 09 - 24 14:49:37，更新时间分别为2024 - 09 - 23 11:55:06和2024 - 09 - 24 14:52:18。该图片与文档中报警数据基础代码准备部分内容相关，展示了alert_data表的管理情况。
 
   - 只需要拷贝后端代码
 
@@ -277,6 +283,7 @@ public class AlertJob {
 需要在后台管理系统中创建定时任务，并指定开启
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/UNGVbtccTod6gJxc3QGcRrqun5g.png)
+> 图注：图片展示的是在后台管理系统中创建定时任务的界面。任务名称为“设备上报数据警规则过滤任务”，任务分组默认，调用方法为“alertJob.deviceDataAlertFilter”，cron表达式为“0****?”，执行策略有立即执行、执行一次、放弃执行，是否并发允许，状态为禁止。该图片与文档中“在后台管理系统中创建定时任务，并指定开启”的内容对应，直观呈现了创建定时任务时的参数设置界面。
 
 > `0 * * * * ? ` 表示每分钟整执行一次
 
@@ -509,6 +516,7 @@ alert:
   - 创建一条规则，如下：
 
   ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-si-zhang-zhi-neng-jian-ce-xi-tong-hua-wei-yun/HBgObhqOPojDkIxxb4xcIh2on8e.png)
+> 图注：图片展示的是心率异常报警规则的设置界面。所属产品为睡眠监测带，功能名称是心率，关联设备为全部设备，报警数据类型为老人异常数据，持续周期为持续3个周期（1周期=1分钟），阈值为65.0，运算符为小于，报警生效时段为00:00:00 - 23:59:59，报警沉默周期为5分钟。该图片与文档中创建报警规则的内容相关，是创建规则时需填写的参数界面。
 
   - 启动该设备的数据上报，手动改一下心率物模型的参数，需要保证上报的心率值地域65才行
 - 启动后端项目

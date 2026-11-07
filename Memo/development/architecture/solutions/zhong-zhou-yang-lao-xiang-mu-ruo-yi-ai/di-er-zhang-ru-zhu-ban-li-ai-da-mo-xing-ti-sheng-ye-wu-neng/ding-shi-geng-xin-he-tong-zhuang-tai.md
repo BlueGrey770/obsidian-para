@@ -131,6 +131,7 @@ public class ZzylApplication {
 启动项目即可执行，测试效果，每个5秒执行了一次方法，如下图：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/LXMWbFBy0oSJVTxbzSEc3cranlh.png)
+> 图注：这张图片展示了SpringTask定时任务的执行日志，日志均来自com.zzyl.task.MyTask类的定时任务。每条日志都标注了“定时任务开始执行”的状态，从日志的时间戳可以看到，执行时间分别为2023年12月8日20点32分15秒、20秒、25秒、30秒，相邻两次执行的时间间隔为5秒，这与文档中提到的“每个5秒执行一次方法”的测试结果完全对应，直观呈现了定时任务的执行频率。
 
 ## 若依中定时任务的使用
 
@@ -163,6 +164,7 @@ public class HelloJob {
 找到**系统监控**-->**定时任务，**可以新增任务，如下：
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/RcXlb6GfwozLLlxO3mncniZ8n4f.png)
+> 图注：这是若依系统后台添加定时任务的表单界面，与文档中后台系统创建定时任务的内容对应。表单内的核心配置项包括任务名称设为“定时任务-测试”、任务分组选择默认、调用方法填写为“helloJob.myJob”，且标注了需与后端任务类和方法对应、cron表达式设置为“0/5 * * * * ?”，该表达式表示任务每隔5秒执行一次。此外还包含执行策略、是否并发等配置选项，底部有确定和取消按钮，完成这些配置后可创建定时任务。
 
 - 任务名称：自定义，如：定时查询任务状态
 - 任务分组：根据字典`sys_job_group`配置，可自行进行配置
@@ -183,12 +185,14 @@ public static final String[] *JOB_WHITELIST_STR* = { "com.zzyl.quartz.task", "co
 创建完成后，在定时任务列表页可以对任务进行操作
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/WT8XbA3s7oUIPPxLdQZcJA2Yno4.png)
+> 图注：图片展示的是后台系统中定时任务列表页。页面上方有搜索、重置按钮，以及新增、修改、删除、导出、日志等操作按钮。下方表格列出了任务编号、任务名称、任务组名、调用目标字符串、cron执行表达式、状态、操作等信息。其中，任务编号101对应的任务名称为“定时任务-测试”，其状态为开启（红框突出显示），操作栏有编辑、删除、查看详情、任务调度日志等选项。
 
 > 可以对任务进行：状态开启、修改、删除、查看详情、任务调度日志
 
 开启任务后，可以在idea的控制台查看任务的执行情况
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/D5rhbd9WHoOa9qxlv95cpmhlnId.png)
+> 图注：这张图片是IDEA的控制台日志内容，记录了定时任务的执行情况，时间范围为11:45:25左右，包含quartzScheduler_Worker-5、Worker-6、Worker-7、Worker-9等不同线程的执行日志。日志中，“helloJob”这一内容被多次用红框标注，且每隔5秒左右就会出现一次，对应了文档中提到的任务每隔5秒执行一次的设定，同时也与自定义的HelloJob类定时任务相关联，直观展示了该定时任务在指定间隔下的运行状态。
 
 > 任务是每隔5秒执行一次
 
@@ -264,6 +268,7 @@ public class ContractJob {
 1. 在后台系统中创建定时任务
 
 ![](../../../../../../Attachments/development/architecture/solutions/zhong-zhou-yang-lao-xiang-mu-ruo-yi-ai/di-er-zhang-ru-zhu-ban-li-ai-da-mo-xing-ti-sheng-ye-wu-neng/UWGObLQxxo4MaCx3mr6cFPi9nwd.png)
+> 图注：这张图片是定时任务配置界面，对应文档中在后台系统创建定时任务的步骤。界面中“任务名称”设置为“合同自动更新”，“任务分组”选择了“默认”；“调用方法”为“contractJob.updateContractStatusJob”，其右侧标注了“bean的名称+方法名称”作为提示；“cron表达式”填写为“001*？”，状态显示为“暂停”。界面还设有“立即执行”“执行一次”“放弃执行”三种执行策略，以及“允许”“禁止”的并发选项，底部有“确定”和“取消”操作按钮。
 
 1. 解决批量更新报错的问题
 

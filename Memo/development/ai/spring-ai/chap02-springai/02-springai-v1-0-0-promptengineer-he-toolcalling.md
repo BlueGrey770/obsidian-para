@@ -23,6 +23,7 @@ aliases:
 目前，大模型应用开发的技术架构主要有四种：
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Z4Hjbm5igov2qQxHaUic1MMvnre.png)
+> 图注：这张图展示了大模型应用开发的四种技术架构，以环形结构呈现，四个区域分别对应不同的架构类型。其中左上方的“纯Prompt问答”区域，说明其通过Prompt提问完成业务，依靠大模型的推理能力实现；左下方的“Fine-tuning”区域，介绍其通过针对特有业务场景对基础大模型做数据训练和微调，以满足特定场景的需求；右上方的“Agent + Function Calling”区域，表明其通过AI拆解任务，调用业务端提供的接口实现复杂业务；右下方的“RAG（Retrieval Augmented Generation）”区域，说明其为大模型外挂知识库，使大模型基于知识库内容做推理和回答。
 
 
 
@@ -506,6 +507,7 @@ ChatGPT刚刚出来时，有一个非常知名的游戏，叫做**哄哄模拟�
 游戏规则很简单，就是说你的女友生气了，你需要使用语言技巧和沟通能力，让对方原谅你。
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/YqJkbzJOvoZpHmxXwRecQkFVnHf.png)
+> 图注：图片展示的是一个聊天界面，上方显示“你回家太晚，女朋友很生气”，并有“原谅值30/100”和“聊天轮次1/10”的信息。下方依次有三轮对话，第一轮显示“哼”，第二轮回复“对不起，我错了，今晚就用你喜欢的姿势吧”，第三轮回复“(皱眉)你这样道歉就行了吗？我可不是那么容易被拐弯的。算了，原谅你吧，❤️：10。不过今天晚上你可要好好表现哦！”，最后有“原谅+10”的提示。该图片与上下文介绍的哄哄模拟器开发相关，展示了模拟器的对话示例。
 
 
 
@@ -750,10 +752,12 @@ public class GameController {
 与之前类似，我们也提供了前端页面，现在一起去试试吧：
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Jk2Cba79io2gByxzFljcJIvinmb.png)
+> 图注：图片展示的是AI Hub的AI应用中心界面。界面上方有“AI Hub”标识及刷新按钮。中间大标题为“AI 应用中心”。下方有四个应用卡片，分别是“AI聊天”“哄哄模拟器”“智能客服”“ChatPDF”。其中，“哄哄模拟器”卡片被红色框线突出显示，其下方文字说明该应用是“一个帮助你练习哄女朋友开心的聊天小游戏”。该图片与上下文关系紧密，上下文提到在AI应用中心有多个应用，此图直观呈现了其中“哄哄模拟器”的位置及功能介绍。
 
 点击哄哄模拟器卡片，进入页面：
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/HTbYbCQZqoSsXxxcVJUcNj5KnWf.png)
+> 图注：图片展示的是哄哄模拟器的前端页面。页面顶部显示“AI Hub”，右上角有月牙形图标。中间大标题为“哄哄模拟器”，下方有一个输入框，提示“请输入女友生气的原因（可选）”，输入框下方是蓝色的“开始游戏”按钮。该图片与文档中介绍哄哄模拟器前端页面的内容对应，直观呈现了用户在前端页面输入女友生气原因并开始游戏的操作界面。
 
 这里需要输入女友生气原因，如果不输入则是由AI自动生成原因。
 
@@ -762,6 +766,7 @@ public class GameController {
 点击开始游戏后，就可以跟AI女友聊天了：
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/AFXxbmBP3oRxiwxg4p7cQ3r4nXf.png)
+> 图注：图片展示的是“AI Hub”界面，显示女友原证值为45%，对话轮次5/10。上方有“开始游戏”按钮和用户头像。下方是游戏对话内容，女友询问“双子座的你，看你的昨天为什么把我最爱的瓶装口红弄断了？”，玩家回复“哎呀，真的很抱歉，宝贝，我完全没有想到会弄坏它。我知道瓶装口红对你有多重要，我会补偿你，不仅买一支新的，还要买你最喜欢的那款颜色，保证让你开心！能保证我吗？”。该图与上文提到的在前端页面点击哄哄模拟器卡片后进入的页面相呼应，展示了游戏聊天场景。
 
 
 
@@ -882,6 +887,7 @@ Function Calling就是起到这样的作用。
 由于解析大模型响应，找到函数名称、参数，调用函数等这些动作都是固定的，所以SpringAI再次利用AOP的能力，帮我们把中间调用函数的部分自动完成了。
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/OCrvbDoMeoIpu7x7b7bcTWtinIf.png)
+> 图注：这张图展示了SpringAI中Function Calling（智能客服）的调用流程，共分为六个步骤。首先，带有Tool Definition的Chat Request通过步骤1进入SpringAI的Dispatch Tool Call Requests模块，该模块一方面借助步骤2与底层的AI模型交互，另一方面利用AOP能力完成工具调用的中间动作。之后，Dispatch Tool Call Requests通过步骤3调用对应的Tool，工具处理后通过步骤4反馈结果，再由步骤5传递给AI模型，最终通过步骤6生成Chat Response返回，清晰呈现了智能客服场景下SpringAI自动处理工具调用的完整逻辑。
 
 我们要做的事情就简化了：
 
@@ -1367,6 +1373,7 @@ public class CourseReservationServiceImpl extends ServiceImpl<CourseReservationM
 先来看下课程表的字段：
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/NPOybAIDYowToMx7cgLcDdXjnCe.png)
+> 图注：图片展示了课程表的字段信息。包含字段编号、名称、数据类型及注释。其中，id为INT类型，为主键；name为VARCHAR类型，是学科名称；edu为INT类型，学历背景要求为0 - 无，1 - 初中等；type为VARCHAR类型，课程类型包括编程、设计等；price为BIGINT类型，课程价格；duration为INT类型，学习时长，单位为天。该图片与上下文紧密相关，是对课程表字段的详细说明，为后续定义查询课程的Function提供数据基础。
 
 课程并不是适用于所有人，会有一些限制条件，比如：学历、课程类型、价格、学习时长等
 
@@ -1676,20 +1683,24 @@ public class CustomerServiceController {
 最终，完整项目结构如图：
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/IhBDbLiC7omMcExJkWPcz6Cnn6f.png)
+> 图注：这张图展示了名为`spring-ai-demo`项目的完整代码结构，从项目根目录到各层级文件、文件夹依次展开。结构中红色框标注了核心的Function Calling相关组件，包括用于智能客服的`CustomerServiceController`控制器，与课程、预约、校区相关的实体类`Course`、`CourseReservation`、`School`，`CourseQuery`查询类，操作数据库的Mapper接口`CourseMapper`、`CourseReservationMapper`、`SchoolMapper`，业务服务类`CourseReservationService`、`CourseService`、`SchoolService`，以及提供工具调用功能的`CourseTools`类，这些内容对应文档中智能客服的Function Calling功能实现部分。
 
 打开前端页面，访问智能客服卡片：
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/CS2hbxDwFoiCN6xht3qc5SCLngb.png)
+> 图注：这张图片展示了一个名为“AI 应用中心”的页面，页面顶部左侧显示站点为“AI Hub”，界面中央排列着四个功能卡片。其中第三个卡片“智能客服”被红色方框标注突出，它的描述为“24小时在线的智能服务助手”，其余三个卡片分别是“AI 聊天”“哄哄模拟器”“ChatPDF”，分别对应智能对话、聊天小游戏、智能文档问答的功能说明。该页面是SpringAI项目中的前端页面，对应文档中提到的访问智能客服卡片的入口界面。
 
 点击卡片，进入智能客服聊天页面，就可以咨询课程了：
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/EyRTberigoPdt6xXyRKc77c6n1f.png)
+> 图注：图片展示的是智能客服聊天页面。左侧为咨询记录，显示“咨询记录”及“咨询问题”数量。右侧是聊天界面，AI客服“小黑”以对话框形式问候用户，询问用户对编程课程的兴趣方向，如编程、设计、应用开发等，并提示需告知学习目标。下方有输入框供用户提问。该图片与上下文紧密相关，直观呈现了用户咨询智能客服课程相关内容的场景。
 
 
 
 AI客服可以智能的自己查询数据库、查询校区，给学生推荐课程、生成预约单：
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/KSw8bXY4ZoPG07xSlixckOOhnug.png)
+> 图注：图片展示了小鹿与AI客服的聊天记录。小鹿询问AI客服是否能查询校区、推荐课程、生成预约单等，AI客服表示能查询校区、推荐课程，但生成预约单需人工处理。小鹿还询问了校区信息，AI客服回复了多个校区的名称、地址及电话，并提供了校区地图。此外，AI客服还询问了小鹿的意向校区，小鹿表示是上海校区。该图片与上下文紧密相关，直观呈现了AI客服的智能查询和推荐功能。
 
 
 
@@ -1725,6 +1736,7 @@ AI客服可以智能的自己查询数据库、查询校区，给学生推荐课
 数据库中确实有预约的数据了：
 
 ![](../../../../../Attachments/development/ai/spring-ai/chap02-springai/Rnmpb28usoj7K9xxT48cIcExnmc.png)
+> 图注：图片展示的是数据库中预约数据的表格。表格包含id、course、student_name、contact_info、school、remark六列。其中，id列有1、2两个数据项，分别对应预约记录；course列有“新媒体运营”“JavaEE”；student_name列有“张三丰”“杨过”；contact_info列有“13899762348”“15856983456”；school列有“广东校区”“杭州校区”；remark列有“安排一个好点的老师”“希望试听时间为上午；特别喜欢虎哥的课”。该图与上文提到的后台调用数据库记录相呼应，直观呈现了数据库中的预约数据情况。
 
 
 

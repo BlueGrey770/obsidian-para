@@ -64,6 +64,7 @@ aliases:
 #### 1.1 业务流程图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/Bq70bZqlworaLtxxi3IcXXGXnog.png)
+> 图注：这是用户端业务流程图，对应文档中用户端业务流程的内容。流程图以用户注册或登录为起点，首先判断是否为首次使用用户，若是则需完成个人偏好设置，非首次用户直接进入首页；进入首页后用户选择对应功能，包括其他功能、AI旅行助手、景区查询、行程推荐，各功能完成后都会进入“我的行程”环节，之后可编辑或执行行程，最终完成行程评价，完整呈现了用户使用项目服务的全流程。
 
 #### **1.2 业务流程图步骤说明**
 
@@ -88,6 +89,7 @@ aliases:
 #### 2.1 业务流程图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/JSq3bCdXMoHo9VxoGSjcoyWunmf.png)
+> 图注：这张图是管理端业务流程图，呈现了管理员的操作流程：管理员先登录后台，进入管理后台后选择对应管理模块，下方设置了用户管理、内容管理、数据统计、系统设置4类核心模块入口。每个模块包含具体功能，如用户管理模块下设用户信息管理、用户行为分析；内容管理模块含景点信息维护、行程攻略审核等；数据统计模块含用户增长分析、功能使用统计；系统设置模块含系统参数配置、账号管理等，清晰展现了管理端的业务操作链路。
 
 #### 2.2 业务流程图步骤说明
 
@@ -116,6 +118,7 @@ aliases:
 ### 技术架构图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/QMtWb04N6oAhE0x3yCucCz5an7h.png)
+> 图注：图片展示了“项目技术架构”中“技术架构图”的内容。从上至下依次为最上层的前后端分离，包含Web前端/JS小程序、管理端Web/React；接入网关层的Spring Cloud Gateway；中间业务层的用户服务、行权服务、服务总线、搜索服务、存储服务、定时任务服务等；通用技术组件的认证与安全、消息队列、工具库；以及数据与存储层的缓存与数据库交互、数据存储与查询、AOP框架、应用数据等。该图直观呈现了项目技术架构的层次结构。
 
 ### 技术栈情况
 
@@ -268,6 +271,7 @@ aliases:
 ### 用户端微服务调用关系图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/AGECbwotMoNbBVxe7ejcfYRXn1c.png)
+> 图注：这是用户端微服务调用关系图，清晰展示了用户端各模块的调用链路：最上层是用户端App/Web，通过API网关连接到用户端核心功能的四个模块，即AI旅行助手、行程推荐、景区搜索和行程管理，这四个模块均关联行程服务。行程服务还分别对接AI服务、Redis缓存、搜索服务和用户服务，AI服务关联Ollama大模型，搜索服务关联Elasticsearch，用户服务关联MySQL数据库；此外，AI旅行助手关联消息服务，搜索服务关联景区服务，整体还通过高德地图API实现相关功能的对接，完整呈现了用户端微服务的调用逻辑。
 
 **用户端主要功能流程：**
 
@@ -279,6 +283,7 @@ aliases:
 ### 管理微服务调用关系图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/JgSsb8eQ7ovRSPxkOlRc8G7pn4b.png)
+> 图注：图片是管理微服务调用关系图，展示了管理端核心功能与各服务之间的调用关系。管理端后台通过API网关调用内容管理、AI配置管理、用户管理和数据运营等核心功能，这些功能分别与景区服务、搜索服务、AI服务、行程服务等服务交互，还与定时任务服务、Redis缓存等组件关联。MySQL数据库作为数据源，与各服务均有数据交互。Elasticsearch也与部分服务有数据关联。
 
 **管理端主要功能流程：**
 
@@ -299,6 +304,7 @@ aliases:
 ### 系统部署架构图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/D5CKb8Ux7o329nxqs4lc52FMnQg.png)
+> 图注：图片为项目系统部署架构图，展示了系统各模块间的关系。左侧为用户交互模块，包括AI智能客服、AI智能助手、AI智能推荐等。中间是AI大模型模块，有通义千问qwen-plus、通义千问、通义千问v1.5等模型。右侧是后端服务模块，包含API Gateway、数据库、存储等。各模块间通过箭头连接，体现了数据流向和交互关系，如AI智能客服与通义千问qwen-plus模型交互，通义千问模型与数据库交互等，直观呈现了系统架构。
 
 ### 系统部署架构说明
 
@@ -420,6 +426,7 @@ AI 旅行助手是自驾甄行 APP 的核心功能之一，用户输入自驾起
 ##### 1.2 业务流程图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/DKy1bPsDfoBS1mxAEOwcz5Zhnxe.png)
+> 图注：这是对应AI旅行助手的业务流程图，完整呈现了用户从使用该功能到获取最终行程方案的全流程。流程始于用户进入AI旅行助手页面，随后依次输入起点、终点与旅行天数，提交行程生成请求后，由系统处理并生成详细行程方案，再向用户展示包含每日安排的完整行程计划。之后进入用户操作环节，用户可选择直接使用并将行程保存到个人中心，也可选择调整行程内容，调整后能重新生成或直接保存修改后的行程。
 
 ##### **1.3 业务流程图及说明**
 
@@ -436,6 +443,7 @@ AI 旅行助手是自驾甄行 APP 的核心功能之一，用户输入自驾起
 ##### 2.1 表关系图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/E0bhb1g4AowTjexQkOLclwUrnGc.png)
+> 图注：这张表关系图是AI旅行助手的核心数据表关联示意图，清晰展示了相关表的关系。其中tb_user代表用户表，与tb_ai_trip（AI行程主表）为一对多关系，对应1个用户可生成多个AI行程，通过user_id关联；tb_ai_trip与tb_ai_trip_detail（行程详情表）为一对多关系，对应1个行程包含多个每日详情，通过trip_id关联；tb_ai_trip_detail与tb_scenic（景区表）通过中间表tb_trip_scenic_rel关联，tb_ai_trip_detail和tb_trip_scenic_rel为一对多关系，对应1个详情关联多个景区，tb_scenic和tb_trip_scenic_rel为多对一关系，对应1个景区出现在多个详情中，完整呈现了AI旅行助手的核心表间数据链路。
 
 ##### 2.2 表关系说明
 
@@ -474,6 +482,7 @@ AI 行程主表：**tb_ai_trip**
 ##### 4.1 技术实现方案流程图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/Mk0hbui1roURHQxW8mLcSXUenYf.png)
+> 图注：图片是一张AI旅行助手技术实现方案流程图。从用户提交行程生成请求开始，经API网关路由、参数校验与用户身份验证、查询用户偏好缓存、构建行程提示词、调用SpringAI接口、调用Ollama模型生成初步行程方案、获取景区信息、生成行程地图、数据结构化处理、保存至MySQL、缓存至Redis，最后返回行程数据给用户。该图与上下文紧密相关，直观呈现了AI旅行助手从请求到响应的完整流程。
 
 ##### 4.2 流程图步骤说明
 
@@ -527,6 +536,7 @@ AI 行程主表：**tb_ai_trip**
 ##### 1.2 业务流程图及说明
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/EvmKbfopwoswsuxsy5RcghqAnAe.png)
+> 图注：这张图片是行程推荐功能的业务流程图，完整呈现了该功能从用户进入到操作的全流程。流程起始于用户进入行程推荐页面，之后依次经历系统获取用户信息、分析用户偏好与历史数据、调用推荐引擎生成行程、对候选行程排序、获取行程详细信息、生成预览卡片、展示推荐列表的步骤，最终进入用户操作环节。用户操作环节包含四种分支，分别是查看行程详情、筛选或排序行程、收藏行程、以推荐行程为基础创建个性化行程，每个分支还附带对应的操作反馈，比如查看行程后进入行程详情页、收藏行程后弹出成功提示、创建行程后进入行程编辑页，清晰对应了步骤说明里的各项内容。
 
 **流程图步骤说明：**
 
@@ -550,6 +560,7 @@ AI 行程主表：**tb_ai_trip**
 ##### 2.1 表关系图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/IdprbMagnohohMxrSGpcZ9u4nkd.png)
+> 图注：图片是行程推荐核心表的表关系图，展示了tb_recommend_trip、tb_recommend_detail、tb_user_trip_rel、tb_user、tb_scenic五个表之间的关系。tb_recommend_trip与tb_recommend_detail是一对多关系，tb_recommend_trip与tb_user_trip_rel是多对多关系，tb_user_trip_rel与tb_user是多对多关系，tb_recommend_detail与tb_scenic是一对多关系。图中还标注了各表间的关系类型及数量，如1个推荐行程包含多个每日详情等。
 
 ##### 2.2 表关系说明
 
@@ -588,6 +599,7 @@ AI 行程主表：**tb_ai_trip**
 ##### 4.1 技术实现方案流程图
 
 ![](../../../../../Attachments/development/programming/interview/qiu-zhi-fang-fa-lun/Vg0TbGdzjoLL7JxcngxcZhibnch.png)
+> 图注：图片是行程推荐技术实现方案流程图。用户请求推荐行程后，API网关将请求路由至推荐服务，获取用户信息及偏好数据。有偏好数据时，基于偏好构建模型输入参数，无偏好则使用默认参数，再用策略算法模型。结合季节、热点等过滤后，从ElasticSearch查询符合条件的行程，对候选行程排序，获取基础信息并缓存至Redis，返回给前端。用户查看详情时，从MySQL查询完整数据，调用地图服务获取地图数据，最后返回行程详情给用户。
 
 ##### 4.2 流程图步骤说明
 

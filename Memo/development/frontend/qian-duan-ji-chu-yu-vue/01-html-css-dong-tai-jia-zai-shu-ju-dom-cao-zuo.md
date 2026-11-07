@@ -20,6 +20,7 @@ aliases:
 具体的请求访问流程为：
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/KZedbwSrFo3S7GxBgLVcyauInbd.png)
+> 图注：这张图展示了Web网站的请求访问流程，依次涉及前端程序、服务端程序、数据库三个核心环节，各环节配有对应的功能说明。Chrome浏览器代表用户端，它会向前端程序发起请求；前端程序负责界面展示，处理后再将请求传递给服务端程序，服务端程序承担业务逻辑处理工作，之后会向数据库发起数据请求；数据库负责数据的存储和管理，最终数据会沿反向路径返回至前端，供用户在浏览器中获取。
 
 ## HTML快速入门
 
@@ -267,6 +268,7 @@ HTML语法中注释的写法：<!– 注释的内容 -->
 效果如下：
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/M5jFbfGnEoYHvcxATYRcwMOfnPh.png)
+> 图注：这张图片展示的是名为“员工信息管理”的网页界面，属于员工信息系统页面。界面上方设有姓名输入框、性别下拉选择框、职位下拉选择框，还有蓝色的“查询”按钮和“清空”按钮，用于筛选员工信息。下方是员工信息表格，表格包含序号、姓名、头像、性别、职位、入职日期、更新时间这些列，当前表格内显示了两条员工数据，分别为序号1的令狐冲和序号2的左冷禅，两人的职位均为讲师，各自对应着不同的入职与更新时间，页面地址栏显示该页面是本地运行的员工管理页面。
 
 上述案例的整个窗口是一个表单，而表单是一项一项的，这个我们称为表单项 或 表单元素。
 
@@ -310,6 +312,7 @@ HTML语法中注释的写法：<!– 注释的内容 -->
 - 查阅官方文档，官方文档地址： [https://developer.mozilla.org/zh-CN/docs/Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/DqJ6bnXakoXXDexbvwwcTpVZnS0.png)
+> 图注：这张图片呈现的是MDN（Mdn）网站的HTML参考页面，具体内容围绕HTML表单相关知识展开。页面左侧是HTML元素导航栏，列出了多个HTML元素标签，如abbr、acronym等。页面右侧的表单说明区域，详细介绍了HTML表单提供了许多可一起使用的元素，允许用户输入信息并提交到网站或应用程序，还列举了多个表单相关元素的英文名称及对应功能描述，部分元素为表单交互和数据提交等提供支持。页面右上角是网站通用的导航栏，包含HTML、CSS、JavaScript等分类选项。
 
 ## CSS
 
@@ -495,6 +498,7 @@ JS代码也是书写在html中的，那么html中如何引入js代码呢？主�
 浏览器打开之后，会报如下错误：
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/FoHwbVzqjovE0AxpoeGcFlaFnVh.png)
+> 图注：图片展示的是浏览器开发者工具界面，地址栏显示为“127.0.0.1:5500/02%20JS基础语法.html”。界面中“问题”标签下，问题列表显示“1 个错误”，错误内容为“TypeError: Assignment to constant variable.”，并有红色背景突出显示。该图片与上文提到的在JS中使用`const`关键字声明常量，一旦声明常量值不能改变，浏览器打开后会报此错误的内容相关，直观呈现了错误提示情况。
 
 该错误就表示，常量不可以被重新分配值。
 
@@ -546,8 +550,10 @@ JS代码也是书写在html中的，那么html中如何引入js代码呢？主�
 测试结果：
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/RK1abPHjPoyyhexiNBUc8ZYJnk9.png)
+> 图注：图片展示了在浏览器中执行JavaScript代码后的效果。上方弹出一个警告框，显示“127.0.0.1:5501 显示 Hello JS (window.alert)” 。下方是浏览器开发者工具界面，左侧控制台区域显示“Hello JS” 。该图片与文档中介绍JavaScript输出语句的内容相关，直观呈现了使用`window.alert(...)`输出语句时在浏览器中弹出警告框的场景。
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/WFypbyQC1oPONWxFbfhc55hSnSc.png)
+> 图注：图片展示了浏览器开发者工具中Console标签页的界面。左侧有Elements、Console、Sources等标签，当前选中Console。右侧显示了控制台信息，有“Hello console test”等提示，下方还有“2 user messages”“No errors”“No warnings”“2 info”“No verbose”等状态标识。该图片与文档中介绍JavaScript输出语句时的内容相关，直观呈现了在浏览器控制台中输出信息的效果。
 
 ##### 函数
 
@@ -688,6 +694,7 @@ let 对象名 = {
 浏览器控制台结果如下：
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/HDEVbyN4yoaRyuxKZXVcj6IQnQg.png)
+> 图注：这是前端学习相关的浏览器控制台截图，对应文档中自定义对象代码演示后的结果展示。该截图显示浏览器开发者工具已切换至“控制台”标签页，控制台内分别输出了自定义对象关联的姓名“Tom”，以及该对象调用方法后返回的内容“悠悠的唱着最炫的民族风~”，这一结果是自定义对象属性调用与方法调用的代码运行输出，印证了文档中自定义对象相关代码的执行效果。
 
 其中，上述函数定义的语法可以简化成如下格式：
 
@@ -726,6 +733,7 @@ Comment：注释对象
 如下图，左边是 HTML 文档内容，右边是 DOM 树
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/B8WabYH4motkqdx7dZ1cvlwLnIe.png)
+> 图注：图片展示了HTML文档内容及对应的DOM树结构。左侧HTML代码包含`<html>`、`<head>`、`<title>`、`<body>`等标签，以及`<h1>`、`<a>`标签和文本内容。右侧是DOM树，以“文档”为根节点，下有“根元素`<html>`”等分支，各节点对应HTML代码中的标签，如`<head>`、`<title>`、`<body>`等，还展示了属性如`<a>`标签的`href`属性。此图直观呈现了HTML与DOM树的关系，辅助理解DOM操作。
 
 DOM主要作用如下：
 
@@ -828,6 +836,7 @@ PS：在早期的JS中，也可以通过如下方法获取DOM元素（了解）�
 ```
 
 ![](../../../../Attachments/development/frontend/qian-duan-ji-chu-yu-vue/DzgqbnEfKoObg7xjh2Lcfurpnyf.png)
+> 图注：这张图片是前端事件监听的代码演示运行效果，显示了本地地址127.0.0.1下的网页运行场景，页面弹出提示框，内容为“127.0.0.1:5501 显示 按钮1被点击了...”，提示框右下角配有蓝色的“确定”按钮，页面左上角还有“点我一下试试1”“点我一下试试2”的按钮，呈现了addEventListener绑定的点击事件触发后的反馈结果，直观展示了事件触发时的响应效果。
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 03 Web 开发与框架 / 前端基础与 Vue / 01 html_CSS_动态加载数据_DOM操作 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/HLe7wffnRiD2w4kUFkwccD7Jnfg)

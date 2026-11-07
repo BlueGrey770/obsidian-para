@@ -31,10 +31,12 @@ aliases:
 首先，我们创建一个SpringBoot工程：
 
 ![](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/WSgjbiQcRowjYIxJFZMcY6gYnjf.png)
+> 图注：这张图片是创建SpringBoot工程的“New Project”窗口，位于文档说明的创建工程步骤中。窗口左侧的Generators区域已选中“Spring Boot”选项，右侧展示了项目创建的相关配置项，其中项目名称（Name）设为“heima-ai-alibaba”，项目存储位置（Location）为指定的本地路径，语言（Language）选择了Java，构建工具（Type）选择Maven，组（Group）、构件（Artifact）、包名（Package name）等配置也已填入，JDK选用17版本，打包方式（Packaging）选了Jar，底部有Next和Cancel操作按钮，与文档中创建工程、选择依赖的内容相呼应。
 
 点击**next**，选择依赖：
 
 ![](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/E7gSbVG56o6WohxOTR4cB9awnDc.png)
+> 图注：图片展示的是IntelliJ IDEA中创建Spring Boot工程时的依赖选择界面。在“Dependencies”区域，左侧有多个数据库相关选项，如Elasticsearch Vector Database等，其中“OpenAI”选项被勾选。右侧显示已添加的依赖为“Spring Web”和“OpenAI”。该图片与上下文紧密相关，上下文提到在创建SpringBoot工程时，需点击“next”选择依赖，此图直观呈现了选择依赖时的界面及已勾选的“OpenAI”选项，帮助用户了解如何进行依赖选择操作。
 
 依赖我们选择两个，一个是**Spring Web**依赖，另一个是**AI**依赖。由于SpringAI默认不支持alibaba的百炼，所以我们先勾选**OpenAI**依赖，等会儿再修改。
 
@@ -185,6 +187,7 @@ public class ChatController {
 启动项目，打开浏览器，访问：http://localhost:8080/ai/chat
 
 ![](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/WhNebS5j7oIX09xFjMyczr6fnTh.png)
+> 图注：图片展示的是在浏览器中访问http://localhost:8080/ai/chat后的界面。界面上方显示网址为“localhost:8080/ai/chat”。下方文本框内容为“你好！有什么我可以帮你的吗？无论是问题、建议还是闲聊，我都在这里为你服务。”并配有笑脸表情。该图片与文档中“测试”部分对应，直观呈现了项目启动后通过访问指定URL所看到的聊天界面，验证了配置和代码实现的效果。
 
 
 
@@ -570,6 +573,7 @@ public ChatClient chatClient(DashScopeChatModel chatModel, ChatMemory chatMemory
 官方Advisor效果：
 
 ![](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/M5pzb3XO8oweslxQfPBcKUbmnv2.png)
+> 图注：图片展示了在浏览器开发者工具中查看ChatClient响应结果的界面。上方显示“你好！我是由中国的深度求索（DeepSeek）公司开发的智能助手DeepSeek R1，如您有任何任何问题，我会尽我所能为您提供帮助。”下方是响应的HTML代码，包括多个“<script>”标签，其中包含“chatPrompt”等代码。该图片与文档中测试配置Advisor到ChatClient后响应结果变化的内容相关，直观呈现了测试后的响应内容。
 
 
 
@@ -578,6 +582,7 @@ public ChatClient chatClient(DashScopeChatModel chatModel, ChatMemory chatMemory
 自定义Advisor效果：
 
 ![](../../../../Attachments/development/ai/spring-ai-alibaba-yu-mcp/PhVnbg7FVoX1OixO7YKc0FrCnO2.png)
+> 图注：这张截图展示了浏览器中发起请求并获取响应的页面内容，页面显示由中国深度求索（DeepSeek）公司开发的智能助手DeepSeek-R1的两次相同问候语，下方开发者工具的“网络”面板中，对应请求的响应内容被红框标注，响应文本同样是两次重复的问候语，与页面显示的内容一致，该内容是配置Advisor后测试时产生的官方Advisor效果与自定义Advisor效果的实际运行结果，直观呈现了相关配置生效后的助手响应表现。
 
 
 

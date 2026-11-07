@@ -19,6 +19,7 @@ LangChain目前有三个语言的实现：**python**、nodejs、Java(LangChain4J
 - LangChainAPI文档：https://python.langchain.com/api_reference/
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/I5wlbrWb6o7UVBxClyEcy9SCnVf.png)
+> 图注：这张图片是LangChain的官方标识，整体以白色为背景，左侧是一只黄绿相间、喙为黑色的鹦鹉图案，其旁是两枚银色的互扣式链条图案，右侧配有黑色的英文名称“LangChain”。该标识与上下文介绍的LangChain这一围绕大语言模型构建的框架内容相呼应，直观呈现了项目的视觉形象。
 
 ### 1.1 核心功能
 
@@ -43,6 +44,7 @@ LangChain简化了LLM应用程序生命周期的每个阶段：
 - 部署：将您的LangGraph应用程序转变为生产就绪的API和助手，使用[LangGraph Cloud](https://langchain-ai.github.io/langgraph/cloud/)
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/OiXlbVDnuoLje3xcrTtc51nsnOg.png)
+> 图注：图片展示了LangChain架构的组成部分。左侧分为Deployment、Components、Architecture三部分，Deployment下有LangGraph Platform，Components下有Integrations，Architecture下有LangChain和LangGraph，均标注为OSS。右侧为LangSmith，包含Debugging、Playground、Prompt Management、Annotation、Testing、Monitoring等，标注为COMMERCIAL。
 
 具体来说，该框架由以下开源库组成：
 
@@ -1051,8 +1053,10 @@ langchain支持的嵌入模型有很多，我们可以给大家演示两个
 继续采用百炼平台中提供好的嵌入模型(兼容了openai)
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/Z9LqbolBpormRWxrXmocyhVGnph.png)
+> 图注：图片展示的是阿里云百炼平台模型广场页面。页面左侧为导航栏，有模型广场、模型管理等选项。右侧上方有模型类型筛选栏，可选择多种模型类型。下方展示了部分模型，如通义千问、通用向量模型等。图片中红色框突出显示了“通用向量模型”和“深度文本重排序”两个模型，分别标注了发布日期为2025 - 06 - 05和2025 - 03 - 28。该图片与上下文介绍的阿里文本模型相关，用于说明平台提供的模型类型及部分模型信息。
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/E68PbctyFoJRfXxTWu1cVAcsnXb.png)
+> 图注：图片展示了阿里云提供的不同嵌入模型信息。包含模型名称、向量维度、最大行数、单行最大Token数、单价、支持语种及免费额度等。如text - embedding - v4属于Owen3 - Embedding系列，向量维度为2,048、1,536、1,024等，单价为0.0005元/每千输入Token，支持多种主流语种，免费额度为各100万Token，有效期为百炼开通后90天内。该图与上下文介绍阿里文本嵌入模型的内容相关，为选择模型提供参考。
 
 参考：[百炼平台中的说明](https://help.aliyun.com/zh/model-studio/use-bailian-in-langchain#e43d66bb40rpq)
 
@@ -1619,12 +1623,14 @@ if __name__ == "__main__":
 在今天资料找到测试的html：
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/N1blbKTgCo9v7Mx5NGEcu97wnYh.png)
+> 图注：这张图片展示的是谷歌浏览器的图标，图标下方配有文字“保小宝.html”，这是用于测试保险智能问答系统的前端文件。该文件是本次保险智能问答综合案例的测试用前端文件，搭配基于LangChain搭建的智能问答后台系统使用，双击该文件即可结合后台启动进行功能测试，对应文档中“在今天资料找到测试的html”这一内容。
 
 > 前端html也由deepseek提供：https://chat.deepseek.com/share/a1t8erykqfi9gw5oyg
 
 双击打开即可，启动`main.py`  测试如下：
 
 ![](../../../../Attachments/development/ai/langchain-yu-langgraph/ZWOBbPPLtovRnsxsAS9crfbFnJf.png)
+> 图注：图片展示的是保小宝 - 智能保险顾问的界面。上方有“保小宝 - 智能保险顾问”标题及“在线服务”按钮。下方有四个问题选项，分别是“我有保险合同问题有什么区别？”“重疾险一般包含哪些疾病？”“如何选择适合自己的医疗险？”“保险理赔流程是怎样的？”。中间部分显示“您好！我是保小宝，我可以为您解答各类保险相关问题，请随时提问！”，并有“什么是犹豫期？”的蓝色对话框。下方还有关于犹豫期的介绍及输入框，可输入保险问题。
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 06 AI 应用开发 / LangChain 与 LangGraph / 04-LangChain · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/D3jwwAWkAieEnykqzxYcNXdknbg)
