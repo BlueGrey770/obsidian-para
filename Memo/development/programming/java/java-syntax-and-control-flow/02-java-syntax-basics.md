@@ -7,6 +7,7 @@ aliases:
 ---
 
 # 02 java基础语法·笔记
+> 讲义全文：[[Memo/development/programming/java/basics-course/day02-java-syntax-basics.md|Day02 基础语法讲义]]
 
 
 

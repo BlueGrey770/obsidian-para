@@ -7,6 +7,7 @@ aliases:
 ---
 
 # 01 入门·笔记
+> 讲义全文：[[Memo/development/programming/java/basics-course/day01-getting-started.md|Day01 入门讲义]]
 
 
 

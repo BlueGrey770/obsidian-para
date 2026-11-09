@@ -7,6 +7,7 @@ aliases:
 ---
 
 # 07 面向对象高级(多态)·笔记
+> 讲义全文：[[Memo/development/programming/java/basics-course/day07-polymorphism.md|Day07 多态讲义]]
 
 ## 课堂问答：多态
 

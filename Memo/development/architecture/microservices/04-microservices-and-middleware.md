@@ -123,7 +123,7 @@ aliases:
 
 ## 相关面试题
 
-微服务阶段面试资料（面试篇上/下、微服务阶段面试题）已整体移至 [微服务面试题](../../programming/interview/wei-fu-wu-mian-shi-ti/index.md)（08 面试知识库）。
+微服务阶段面试资料（面试篇上/下、微服务阶段面试题）已整体移至 [微服务面试题](../../programming/interview/microservices-interview/index.md)（08 面试知识库）。
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 04 微服务与中间件 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/JWMQwsfjpiUhoJk3opice7NRnzh)

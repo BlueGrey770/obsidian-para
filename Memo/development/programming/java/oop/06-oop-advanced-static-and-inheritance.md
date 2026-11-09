@@ -7,6 +7,7 @@ aliases:
 ---
 
 # 06 面向对象高级(static , 继承)·笔记
+> 讲义全文：[[Memo/development/programming/java/basics-course/day06-static-and-inheritance.md|Day06 static与继承讲义]]
 
 ## 课堂问答：static 与继承
 

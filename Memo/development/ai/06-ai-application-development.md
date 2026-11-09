@@ -93,7 +93,7 @@ aliases:
 
 ## 相关面试题
 
-AI 与 Python 大模型方向的面试题已整体移至 [AI 面试题](../programming/interview/ai-mian-shi-ti/index.md)（08 面试知识库）。
+AI 与 Python 大模型方向的面试题已整体移至 [AI 面试题](../programming/interview/ai-interview/index.md)（08 面试知识库）。
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 06 AI 应用开发 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/ZLm3wPC5JiZPDskNt17cwnRDnvg)

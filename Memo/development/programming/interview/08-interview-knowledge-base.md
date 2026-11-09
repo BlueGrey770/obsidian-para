@@ -94,10 +94,10 @@ aliases:
 
 ## 🗂 本分类结构（v4 面试题聚合版，2026-11-05 重组）
 
-- [**八股文面试题**](ba-gu-wen-mian-shi-ti/index.md)：Java 基础 / 框架 / 数据库 / 微服务等每日 Blog 面试题总汇（含「每日背诵」「面试题抄写」子页）
-- [**微服务面试题**](wei-fu-wu-mian-shi-ti/index.md)：微服务面试篇（上）（下）+ 微服务阶段面试题（自 04 分类移入）
-- [**AI 面试题**](ai-mian-shi-ti/index.md)：AI 与 Python 大模型方向面试题（自 06 分类移入）
-- [**项目面试题**](xiang-mu-mian-shi-ti/index.md)：项目通用面试题、中州养老项目面试题、百居易 Function Calling 应用、日常整理等
+- [**八股文面试题**](interview-qa-classics/index.md)：Java 基础 / 框架 / 数据库 / 微服务等每日 Blog 面试题总汇（含「每日背诵」「面试题抄写」子页）
+- [**微服务面试题**](microservices-interview/index.md)：微服务面试篇（上）（下）+ 微服务阶段面试题（自 04 分类移入）
+- [**AI 面试题**](ai-interview/index.md)：AI 与 Python 大模型方向面试题（自 06 分类移入）
+- [**项目面试题**](project-interview/index.md)：项目通用面试题、中州养老项目面试题、百居易 Function Calling 应用、日常整理等
 - **公共面试题**：工程规范与通用职场题
 - **求职方法论**：项目查找、项目表述
 

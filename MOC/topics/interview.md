@@ -50,7 +50,7 @@
 - 导读：[[Memo/development/programming/interview/project-interview/daily-notes/strategy-pattern-deep-dive/index.md|策略模式详解]]
 - [[Memo/development/programming/interview/project-interview/daily-notes/strategy-pattern-deep-dive/spring-ioc-concurrenthashmap.md|Spring IoC容器底层是如何用ConcurrentHashMap存储Bean]]
 
-## zhuan-ti-jin-jie
+## 面试专题进阶
 - [[Memo/development/programming/interview/interview-topics/01-jvm-topic.md|面试专题：JVM 进阶]]
 - [[Memo/development/programming/interview/interview-topics/02-mysql-advanced-topic.md|面试专题：MySQL 高级（索引、事务、MVCC 与锁）]]
 - [[Memo/development/programming/interview/interview-topics/03-mq-topic.md|面试专题：MQ 可靠性与顺序性（RabbitMQ 与 Kafka）]]

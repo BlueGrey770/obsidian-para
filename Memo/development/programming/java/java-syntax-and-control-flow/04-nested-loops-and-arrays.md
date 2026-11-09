@@ -7,6 +7,7 @@ aliases:
 ---
 
 # 04 嵌套循环、数组、二维数组·笔记
+> 讲义全文：[[Memo/development/programming/java/basics-course/day04-nested-loops-and-arrays.md|Day04 循环与数组讲义]]
 
 
 

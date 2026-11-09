@@ -6,6 +6,19 @@ Java 语言从入门语法到集合、IO、多线程、网络编程的系统知�
 - [[Memo/development/programming/java/java-basics-mindmap.md|Java 基础思维导图]]（导图）
 - [[Memo/development/programming/java/comprehensive-review.md|综合复习]]
 
+## Java 基础课程讲义（Day01-Day09）
+
+- 导读：[[Memo/development/programming/java/basics-course/index.md|Java 基础课程讲义]]——九天课程从入门到 ATM 综合实战的完整讲义，每篇附课堂问答与精讲笔记入口
+- [[Memo/development/programming/java/basics-course/day01-getting-started.md|Day01 入门：Java 快速入门]]
+- [[Memo/development/programming/java/basics-course/day02-java-syntax-basics.md|Day02 Java 基础语法]]
+- [[Memo/development/programming/java/basics-course/day03-program-flow-control.md|Day03 程序流程控制]]
+- [[Memo/development/programming/java/basics-course/day04-nested-loops-and-arrays.md|Day04 嵌套循环、数组与二维数组]]
+- [[Memo/development/programming/java/basics-course/day05-oop-programming.md|Day05 面向对象编程]]
+- [[Memo/development/programming/java/basics-course/day06-static-and-inheritance.md|Day06 static 与继承]]
+- [[Memo/development/programming/java/basics-course/day07-polymorphism.md|Day07 多态]]
+- [[Memo/development/programming/java/basics-course/day08-abstract-final-singleton-enum-string.md|Day08 抽象类、final、单例、枚举与 String]]
+- [[Memo/development/programming/java/basics-course/day09-arraylist-and-atm-project.md|Day09 综合项目实战：ArrayList 与 ATM]]
+
 ## 方法引用、异常与泛型
 - 导读：[[Memo/development/programming/java/method-reference-exception-generics/index.md|方法引用、异常与泛型]]
 - [[Memo/development/programming/java/method-reference-exception-generics/02-method-reference-exception-generics.md|02 方法引用,异常,泛型]]

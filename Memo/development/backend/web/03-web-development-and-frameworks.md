@@ -97,7 +97,7 @@ aliases:
 
 ## 相关面试题
 
-本分类各主题的每日 Blog 面试题（含原「Web 阶段 Blog 汇总」）已全部聚合至 [八股文面试题](../../programming/interview/ba-gu-wen-mian-shi-ti/index.md)（08 面试知识库）。
+本分类各主题的每日 Blog 面试题（含原「Web 阶段 Blog 汇总」）已全部聚合至 [八股文面试题](../../programming/interview/interview-qa-classics/index.md)（08 面试知识库）。
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 03 Web 开发与框架 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/OP0CwBMAriesnrkDkQTcbzAgnSh)
