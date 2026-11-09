@@ -10,7 +10,7 @@ aliases:
 
 创建一个工程化的Vue项目，执行命令：`npm create vue@3.16.4`
 
-![](../../../../../Attachments/development/frontend/frontend-engineering-vue3-elementplus/16-frontend-web-practice-vue-elementplus/TO8NbsHiLoqTitxeZXocVen9nDb.png)
+![to8nbshiloqtitxezxocven9ndb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/to8nbshiloqtitxezxocven9ndb.png)
 > 图注：这张图片展示了创建Vue3项目执行命令的终端操作界面，核心内容为：执行`npm create vue@3.16.4`命令创建项目，界面标注该命令（序号1）；提示执行操作需安装create-vue相关包，输入项目名称后直接回车可创建空项目（序号3为对应操作提示）；后续可执行`cd vue-test`命令切换到项目目录（序号4为对应命令）。此外，执行npm install项目依赖的操作也在界面中显示，整个过程的操作步骤都在终端界面中清晰呈现，对应文档里创建Vue工程化项目的命令执行步骤。
 
 <callout emoji="✅">
@@ -19,7 +19,7 @@ aliases:
 
 项目创建完成以后，进入`cd vue-test` 项目目录，执行命令安装当前项目的依赖：`npm install`
 
-![](../../../../../Attachments/development/frontend/frontend-engineering-vue3-elementplus/16-frontend-web-practice-vue-elementplus/CY4lbBnayo9KEwxhCjvcNbKWnTh.png)
+![cy4lbbnayo9kewxhcjvcnbkwnth](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cy4lbbnayo9kewxhcjvcnbkwnth.png)
 > 图注：这张图片展示了Vue项目初始化完成后的终端界面内容，项目路径为H:\\web_code\\itcast_web\\webwork\\webvue\\test\\vue-test。界面清晰列出了项目初始化后可执行的命令，包含核心步骤提示：需先执行安装依赖命令`npm install`，再执行启动项目命令`npm run dev`，同时标注了对应操作的红框及文字说明。图片与文档中创建Vue项目的内容相呼应，直观呈现了项目创建后执行依赖安装、项目启动命令的终端执行结果，能看到执行`npm install`后添加了147个包的相关反馈，符合文档中关于项目创建后需联网安装依赖的操作说明。
 
 创建项目以及安装依赖的过程，都是需要联网的。【如果网络不太好，可能会造成依赖下载不完整报错，继续再次执行 命令安装。】 
@@ -28,7 +28,7 @@ aliases:
 
 **在浏览器输入http://localhost:5173验证看看能不能进入到项目默认主页**
 
-![](../../../../../Attachments/development/frontend/frontend-engineering-vue3-elementplus/16-frontend-web-practice-vue-elementplus/HSFmbxVuao1MtfxTGXacBJshn5c.png)
+![hsfmbxvuao1mtfxtgxacbjshn5c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hsfmbxvuao1mtfxtgxacbjshn5c.png)
 > 图注：图片展示的是Vue App的默认主页界面。左侧有绿色的Vue标志及“Congratulations! You’ve successfully created a project with Vite + Vue 3.”的提示。右侧是关于Vue的文档、工具、生态系统、社区及支持Vue的相关信息。该图片与上文“在浏览器输入http://localhost:5173验证看看能不能进入到项目默认主页”的内容相呼应，直观呈现了项目创建成功后的主页样式。
 
 ## 项目开发流程

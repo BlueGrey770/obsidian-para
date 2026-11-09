@@ -284,7 +284,7 @@ mindmap-node: rounded
 
 ### 具体利用SpringCache实现
 
-![示意图](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-12-summary-and-deployment/GthHbPIBCo5b5wxX9eqcSW61nkh.png)
+![gthhbpibco5b5wxx9eqcsw61nkh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gthhbpibco5b5wxx9eqcsw61nkh.png)
 
 #### 为了防止出现缓存雪崩，我们设置了过期时间是30分钟+随机值
 
@@ -466,7 +466,7 @@ mindmap-node: rounded
 
 #### 订单状态
 
-![示意图](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-12-summary-and-deployment/NW5PbpUpboyBLMxP67hcqG1Rnnb.png)
+![nw5pbpupboyblmxp67hcqg1rnnb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nw5pbpupboyblmxp67hcqg1rnnb.png)
 
 ### 实现流程
 
@@ -566,7 +566,7 @@ mindmap-node: rounded
 
 ## 我们有一个独立的支付服务jzo2o-trade实现微信支付的
 
-![示意图](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-12-summary-and-deployment/Y1dGbyK5JoPnbYxcS6Ncof11nJe.png)
+![y1dgbyk5jopnbyxcs6ncof11nje](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/y1dgbyk5jopnbyxcs6ncof11nje.png)
 
 ## 支付流程
 
@@ -712,7 +712,7 @@ mindmap-node: rounded
 
 #### 接着根据不同的人不同的订单状态分别写一个策略实现类
 
-![示意图](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-12-summary-and-deployment/IwA9bgEEsoiMp9x7byVcnO8Kncg.png)
+![iwa9bgeesoimp9x7byvcno8kncg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iwa9bgeesoimp9x7byvcno8kncg.png)
 
 ##### 每种策略类都是实现同一个接口，为了方便获取对应的策略类，我们给每个策略类的Bean名称起了个名字 ${用户类型:订单状态}
 
@@ -766,7 +766,7 @@ mindmap-node: rounded
 
 ##### 比如
 
-![示意图](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-12-summary-and-deployment/FewfbHgbXof9ERxMqayc5hFvnoh.png)
+![fewfbhgbxof9erxmqayc5hfvnoh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fewfbhgbxof9erxmqayc5hfvnoh.png)
 
 #### 按照规范定义状态机类（核心），指定初始状态
 
@@ -808,7 +808,7 @@ mindmap-node: rounded
 
 ### 具体的实现流程
 
-![示意图](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-12-summary-and-deployment/BsOBbI7Sdo4jy9xvkM5cCKAunle.png)
+![bsobbi7sdo4jy9xvkm5cckaunle](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bsobbi7sdo4jy9xvkm5cckaunle.png)
 
 #### 我们按照五年期来算，分了三个库
 
@@ -1168,7 +1168,7 @@ mindmap-node: rounded
 
 ##### redis使用的数据结构是Zset结构
 
-![示意图](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-12-summary-and-deployment/K1OkbNmjjoRFLdxooFKcBFVDnyb.png)
+![k1okbnmjjorfldxoofkcbfvdnyb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/k1okbnmjjorfldxoofkcbfvdnyb.png)
 
 #### 服务人员的同步
 

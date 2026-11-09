@@ -14,7 +14,7 @@ aliases:
 
 我们再来回顾一下IOT基本的工作原理
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/QGTZb82HwoG31Exhmr6c7ElAnic.png)
+![QGTZb82HwoG31Exhmr6c7ElAnic](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/QGTZb82HwoG31Exhmr6c7ElAnic.png)
 > 图注：这张图展示了物联网的基本工作流程，左侧为各类设备，这些设备可通过MQTT等协议接入中间的“华为云IoT”物联网平台；右侧是智慧城市、智慧园区等业务应用，这类应用可通过HTTP/AMQP等协议从平台获取数据。图中清晰呈现了设备、物联网平台与业务应用三者间的数据交互路径，对应文档中提及的“设备上报数据到IOT平台后，业务系统可从平台拉取数据用于应用展示”的内容，直观呈现了物联网的运行原理。
 
 从图中，我们可以看到，当设备上报数据到IOT平台之后，业务系统可以从IOT平台中拉取数据到自己的数据库，方便在业务应用中去展示。
@@ -90,7 +90,7 @@ AMQP协议的实现包括多种消息队列软件，例如RabbitMQ、Apache Acti
 
 今天我们会在课程中快速使用Apache Qpid软件来接收IOT中的数据，如下图
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/So61brfiGocCivxKkryczNkanOc.png)
+![So61brfiGocCivxKkryczNkanOc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/So61brfiGocCivxKkryczNkanOc.png)
 > 图注：这是一张物联网系统架构示意图，展示了设备、物联网平台与业务应用的连接关系。左侧为设备端，各类设备可通过MQTT等协议接入中间的华为云IoT物联网平台；华为云IoT平台既接收设备上报的数据，也可通过HTTP/AMQP等协议将数据接入右侧的业务应用，业务应用包含智慧城市、智慧园区等场景；图中还明确标注，本次课程会使用Apache Qpid客户端接收设备上报的数据，对应上下文介绍的AMQP协议相关工具内容。
 
 
@@ -105,7 +105,7 @@ AMQP协议的实现包括多种消息队列软件，例如RabbitMQ、Apache Acti
 
 设备接入物联网平台后，可以通过自定义Topic或产品模型将数据上报给平台。在控制台上设置订阅后，平台会将包括设备生命周期变更、**属性上报**、消息上报及状态变更等信息，通过订阅推送的方式转发到您指定的服务器。
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/KMNDb8EeNoOffvxcJbRc9JYTnqb.png)
+![KMNDb8EeNoOffvxcJbRc9JYTnqb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/KMNDb8EeNoOffvxcJbRc9JYTnqb.png)
 > 图注：这张图展示了用户侧、IoT平台与设备三者间实现设备数据转发的交互流程。用户侧的核心操作是进行订阅数据配置，需设置转发数据、转发目标及激活规则。设备会向IoT平台上报数据，用户侧要先建立AMQP长链接，该操作需要输入AMQP域名、accessKey、accessCode、AMQP队列列名这些信息。之后IoT平台完成相关处理，由用户侧进行数据推送或拉取，该流程对应文档中AMQP转发及官网Java SDK接入的数据转发规则设置的相关内容。
 
 - 订阅（AMQP）： 用户可以通过控制台或调用API创建订阅，以获取设备的变更信息，如设备状态、**数据上报**等。订阅时需要指定具体的AMQP消息通道。
@@ -117,24 +117,24 @@ AMQP协议的实现包括多种消息队列软件，例如RabbitMQ、Apache Acti
 
 1. 找到**规则**->**数据转发**->**创建规则**
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/P3EfbuOxGoscuEx2xObckLBln0d.png)
+![P3EfbuOxGoscuEx2xObckLBln0d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/P3EfbuOxGoscuEx2xObckLBln0d.png)
 > 图注：图片展示的是IOT平台中设备数据转发的界面。左侧导航栏选中“数据转发”选项。右侧“数据来源”处显示当前为“设备属性”，并有“创建规则”“导入规则”“编辑配置”等操作按钮。界面底部有一个“暂无待传数据”的提示框，框内有“创建规则”按钮。该图片与文档中“在IOT平台中创建转发规则，让AMQP客户端接收到数据”的操作步骤相关，直观呈现了创建规则前的界面状态。
 
 1. 创建规则，其中数据来源为：**设备属性**
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/WSPYbKBC0oVjrHxCCqvcvCgFnWd.png)
+![WSPYbKBC0oVjrHxCCqvcvCgFnWd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/WSPYbKBC0oVjrHxCCqvcvCgFnWd.png)
 > 图注：图片展示的是在IOT平台创建数据转发规则时的“数据来源”设置界面。界面中“数据来源”下拉菜单被红色框突出显示，当前选中“设备属性上报”选项。该界面为创建规则的第二步，需选择数据来源，后续还需添加转发目标等操作，最终完成规则创建。此图与文档中“创建规则，其中数据来源为：设备属性”的操作步骤紧密相关，直观呈现了操作中数据来源的选择环节。
 
 配置完成后，点击右下角的 [创建规则]
 
 1. 添加转发目标，转发目标选择：**AMQP推送消息队列**
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/LpfBbl4Hro4VY1xIUZccBQjWntH.png)
+![LpfBbl4Hro4VY1xIUZccBQjWntH](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/LpfBbl4Hro4VY1xIUZccBQjWntH.png)
 > 图注：图片展示的是在IOT平台创建转发规则时添加转发目标的界面。左侧显示“数据转发规则详情”步骤，当前处于“添加转发目标”步骤。右侧弹出“添加转发目标”窗口，目标选择为“AMQP推送消息队列”，点击“选择”按钮后，下方会显示选择的队列名称。该图片与文档中“添加转发目标，转发目标选择：AMQP推送消息队列”的操作步骤对应，直观呈现了操作界面及选择队列的步骤。
 
 1. 上述操作完成后，可以启动规则
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/DmjgbzLhuoK7nWxHEzJcaT0Rnih.png)
+![DmjgbzLhuoK7nWxHEzJcaT0Rnih](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/DmjgbzLhuoK7nWxHEzJcaT0Rnih.png)
 > 图注：图片展示的是IOT平台中数据转发规则详情页面。页面上方有“数据转发规则详情”标题及“取消”“完成”按钮。中间部分有“规则未运行”提示，下方有“开始规则”按钮。页面底部有“上一步”和“完成”按钮。该图片对应文档中“创建规则”步骤完成后，添加转发目标选择“AMQP推送消息队列”操作后的页面展示，是创建规则流程中的一个环节。
 
 
@@ -145,7 +145,7 @@ AMQP协议的实现包括多种消息队列软件，例如RabbitMQ、Apache Acti
 
 下载地址：https://developer.obs.myhuaweicloud.com/manage/amqp/amqp-demo.zip
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/Cw1jbbEACoQQZwxghnmcuWnwnXc.png)
+![Cw1jbbEACoQQZwxghnmcuWnwnXc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Cw1jbbEACoQQZwxghnmcuWnwnXc.png)
 > 图注：图片展示的是一个名为“amqp - demo.zip”的文件图标。图标为一个蓝色的文件夹，文件夹上有橙色和绿色的装饰带，右下角有一个棕色的皮带扣。文件名称“amqp - demo.zip”以白色字体显示在图标下方。该图片对应文档中“下载sdk代码”步骤，下载地址为https://developer.obs.myhuaweicloud.com/manage/amqp/amqp - demo.zip，文件包可在当天资料中找到，用于Java SDK接入示例。
 
 代码包可以在当天资料中找到
@@ -158,7 +158,7 @@ AMQP协议的实现包括多种消息队列软件，例如RabbitMQ、Apache Acti
 
 1. 使用idea打开刚刚下载的amqp-demo中的**amqp-client-examples**代码目录，如下图
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/EQ1Lba2CXoAsS8xG1rGcNrjXnie.png)
+![EQ1Lba2CXoAsS8xG1rGcNrjXnie](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/EQ1Lba2CXoAsS8xG1rGcNrjXnie.png)
 > 图注：图片展示了在Idea中打开的amqp-demo项目下的amqp-client-examples代码目录结构。目录中包含src、.idea、resources等文件夹，src文件夹下有main、java等子文件夹，其中java文件夹内有com.iot.amqp下的examples、model、AmqpClient、AmqpClientOptions、AmqpConstants等文件。该图片对应文档中“使用Idea打开amqp-demo中的amqp-client-examples代码目录”的步骤说明，直观呈现了代码目录的层级与文件分布情况。
 
 1. 修改连接参数
@@ -203,7 +203,7 @@ public interface AmqpConstants {
 
 1. 放开AbstractAmqpExample中的打印消息的代码，如下图：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/PXlObdHVao2181xf5smca1OKn0f.png)
+![PXlObdHVao2181xf5smca1OKn0f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/PXlObdHVao2181xf5smca1OKn0f.png)
 > 图注：这张图片展示了Java IDE的代码编辑界面，用于修改AMQP客户端示例代码。左侧项目目录中，amqp-client-examples目录下的AbstractAmqpExample类被选中，右侧编辑区域的AbstractAmqpExample.java文件里，processMessage方法中的打印消息代码“log.info("Receive a message, content={}", message);”被用红色框标注，旁边还附有红色文字提示“放开”，对应文档中“放开AbstractAmqpExample中的打印消息的代码”的步骤要求，用于实现控制台接收打印设备上报的数据的功能。
 
 1. 启动测试，可以正常在控制台看到设备上报的数据
@@ -246,7 +246,7 @@ SDK提供好的这个工具类，只是官网给提供的参考，我们需要�
 
 让AmqpClient 实现ApplicationRunner接口，重写run方法，然后调用处理数据方法（由main方法改造而来）
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/QxChbafqHoezflxnm1TcRprbnIe.png)
+![QxChbafqHoezflxnm1TcRprbnIe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/QxChbafqHoezflxnm1TcRprbnIe.png)
 > 图注：这张图片展示了代码开发相关的内容，左侧是项目工程的目录结构，在`com.zzyl.nursing`的代码目录下，`mqListener`目录被红色框标注突出显示；右侧是`AmqpClient.java`的代码文件，该文件里的`AmqpClient`类明确实现了`ApplicationRunner`接口，文件中还注入了华为IoT配置属性类`HuaWeiIotConfigProperties`与线程池配置类`ThreadPoolTaskExecutor`，体现了上下文里让AmqpClient实现ApplicationRunner接口的相关开发内容。
 
 
@@ -594,7 +594,7 @@ public class ThreadPoolConfig
 
 当所有都配置完成后，启动模拟设备上报，同时启动后端项目，查看日志中是否打印上报之后的数据
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/XBneb2tHZoF0IFxSGRRcYYHrngd.png)
+![XBneb2tHZoF0IFxSGRRcYYHrngd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/XBneb2tHZoF0IFxSGRRcYYHrngd.png)
 > 图注：这张代码调试界面的图片展示了AmqpClient相关的Java代码与运行日志内容，上方代码区域的AmqpClient类代码实现了连接校验与消息消费者创建的逻辑，Debug面板的控制台区域显示了线程池相关的执行日志，两条日志均记录了接收设备上报的消息，其中消息内容包含device.property、event、report等字段，还带有时间戳、request_id等标识信息，同时日志明确关联了线程池的ThreadPoolTaskExecutor线程，对应上下文的若依项目线程池配置，体现了设备数据上报接收的运行效果。
 
 
@@ -609,7 +609,7 @@ public class ThreadPoolConfig
 
 ### 表结构
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/KdFpbYwMBomRrzx4my5cvcxmnre.png)
+![KdFpbYwMBomRrzx4my5cvcxmnre](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/KdFpbYwMBomRrzx4my5cvcxmnre.png)
 > 图注：这张图展示了device与device_data两张数据表的字段信息，其中device表的iot_id（物联网设备ID）字段被红色箭头突出标注，该字段是两张表关联的关键标识。device表还包含设备秘钥、绑定位置、位置类型等设备相关属性字段；device_data表则涵盖告警规则ID、设备名称、功能名称、数据值、数据上报时间等设备数据相关字段，部分字段的作用也在字段后括号内做了说明。这张图直观呈现了设备及其数据的存储表结构，与文档中接收设备端数据的表结构设计内容相对应。
 
 ### 基础代码生成
@@ -625,12 +625,12 @@ public class ThreadPoolConfig
 
 **只拷贝后端代码到idea中**
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/LBKSb4Qkdo1GUpxERYucil5En8f.png)
+![LBKSb4Qkdo1GUpxERYucil5En8f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/LBKSb4Qkdo1GUpxERYucil5En8f.png)
 > 图注：这是一张系统界面截图，展示了设备数据表相关的管理界面。界面上方有表名称、表描述、创建时间等筛选输入框，以及“搜索”“重置”按钮，还有“生成”“导入”等功能按钮。下方表格区域，用红色框标注出序号为1的条目，该条目显示表名称为“device_data”，表描述为“设备数据表”，实体为“DeviceData”，还包含创建时间、更新时间信息，操作列有多个功能图标，界面底部还显示了分页相关信息，当前页码为1，共1条数据。该界面与文档中设备数据相关的表结构、代码生成等内容对应，是查看和管理设备数据表的界面。
 
 修改DeviceData表，添加三个注解，方便使用**构建者设计模式**来构建对象，如下图：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/RPrGbe61JonNsgxG21GcHpsLnl6.png)
+![RPrGbe61JonNsgxG21GcHpsLnl6](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/RPrGbe61JonNsgxG21GcHpsLnl6.png)
 > 图注：这张图片展示了Java代码中DeviceData类的相关内容，该类是设备数据对象，注释标注了该类的作者和日期，同时显示该类有35处使用。图中重点突出标注了三个注解，分别为@AllArgsConstructor、@NoArgsConstructor、@Builder，这些是用于添加到DeviceData表中的注解，目的是方便使用构建者设计模式来构建该类的对象，和上下文修改DeviceData表添加注解的操作要求相匹配。
 
 
@@ -676,7 +676,7 @@ public class ThreadPoolConfig
 
 上述json的数据结构中，已经标明颜色的是重点要解析的，由于嵌套层级较多，需要定义多个类来进行接收，对应的类可以在当天资料中找到，如下图
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/RqLTbQNcmoWvUyxDIa6cWLAMn6g.png)
+![RqLTbQNcmoWvUyxDIa6cWLAMn6g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/RqLTbQNcmoWvUyxDIa6cWLAMn6g.png)
 > 图注：这张图片展示了四个Java文件，分别是IotMsgBody.java、IotMsgHeader.java、IotMsgNotifyData.java、IotMsgService.java，它们是用于接收设备上报数据的相关类文件，对应文档中所说的需要定义多个类来转换接收的嵌套层级较多的JSON数据，这些类被放在zzyl-nursing-platform\\src\\main\\java\\com\\zzyl\\nursing\\mq\\listener\\vo路径下，是设备数据接收处理中用于解析相关数据的关键文件。
 
 放到zzyl-nursing-platform\src\main\java\com\zzyl\nursing\mq\listener\vo
@@ -1163,14 +1163,14 @@ spring:
 
 我们先打开原型图，如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/Gew4b386xo9QcLxhjZrcWWlIn1d.png)
+![Gew4b386xo9QcLxhjZrcWWlIn1d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Gew4b386xo9QcLxhjZrcWWlIn1d.png)
 > 图注：图片展示的是设备信息页面，包含设备名称、设备Secret、所属产品、智能组播等信息。下方有设备详情和物模型数据两个标签，当前选中“物模型数据”标签。页面显示了10条数据记录，每条记录包含序号、标签、功能名称、最新时间、数据值等信息，如序号1的标签为PowerConsumption，功能名称为用电量，最新时间为2048 - 10 - 15 15:00:00，数据值为10.0kWh。页面底部有分页显示共100条记录，当前显示第51 - 60条。
 
 其中的数据值，是从IOT平台实时获取到的数据值
 
 当点击了某个功能（物模型）的**查看数据**按钮，则会显示这个功能的历史数据，可以按照时间范围进行检索，如下图：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/HoAvbKF7go4WwGxz8xdckQOtnyg.png)
+![HoAvbKF7go4WwGxz8xdckQOtnyg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/HoAvbKF7go4WwGxz8xdckQOtnyg.png)
 > 图注：该图片展示了物模型数据查询结果界面，标题为“查看数据”，时间范围选中为1小时，表格内列出了序号、原始值、时间三列内容，共显示5条数据，原始值均为92.5kW·h，对应的时间均为2048-10-15 15:00:00。界面底部显示共15项数据，分页设置为5条/页，当前处于第2页，分页控件支持页码切换和跳转至指定页码。
 
 时间范围=1小时、24小时、7天
@@ -1322,7 +1322,7 @@ private static TableDataInfo getTableDataInfo(Page<DeviceData> page) {
 
 找到设备详情-->物模型数据-->点击**查看数据**按钮
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/BlrVbw5BXoTKrWxUnfmcIP8Wnqd.png)
+![BlrVbw5BXoTKrWxUnfmcIP8Wnqd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/BlrVbw5BXoTKrWxUnfmcIP8Wnqd.png)
 > 图注：图片展示的是设备物模型数据查看界面。上方有“时间范围”下拉框，当前选中“1小时”。下方表格中显示了5条数据记录，包括序号、原始值和时间，如序号1的原始值为97，时间为2024 - 09 - 21 23:38:20等。底部有分页显示，当前显示第1页，共282条数据，每页显示5条。该图片与文档中“当点击了某个功能（物模型）的查看数据按钮，则会显示这个功能的历史数据，可以按照时间范围进行检索”的内容对应，直观呈现了数据查看界面。
 
 ### 数据清理（作业）

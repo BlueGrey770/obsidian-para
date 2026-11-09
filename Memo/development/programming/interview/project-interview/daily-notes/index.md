@@ -819,7 +819,7 @@ GET /items/_search
 
 - （图 1）(使用term查询品牌为“小米”的商品信息的操作及结果)
 
-  ![图 1](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/SNOKbgYqSoKWeMxJjypcWHncn9b.png)
+  ![snokbgyqsokwemxjjypcwhncn9b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/snokbgyqsokwemxjjypcwhncn9b.png)
 - **range查询** ：范围匹配，支持 `gte`（≥）、 `gt`（>）、 `lte`（≤）、 `lt`（<）
 
 ```JSON
@@ -838,7 +838,7 @@ GET /items/_search
 
 - （图 2）(使用range查询搜索商品价格范围数据的操作及结果)
 
-  ![图 2](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/PaCLbvyN4o5XbDxIvMccf6lPnrd.png)
+  ![paclbvyn4o5xbdxivmccf6lpnrd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/paclbvyn4o5xbdxivmccf6lpnrd.png)
 
 ##### **2. 全文检索（Full text query）**
 
@@ -859,7 +859,7 @@ GET /items/_search
 
 - （图 3）(使用match查询搜索“华为荣耀”商品的操作及结果)
 
-  ![图 3](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/PWazbCV7Ko9DGMxHNJ0civFbnSc.png)
+  ![pwazbcv7ko9dgmxhnj0civfbnsc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pwazbcv7ko9dgmxhnj0civfbnsc.png)
 - **multi_match查询** ：多字段分词匹配
 
 ```JSON
@@ -876,7 +876,7 @@ GET /items/_search
 
 - （图 4）(使用multi_match查询的实际效果)
 
-  ![图 4](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/GletbUAR3oKIkexWkQ9cuGHZnjd.png)
+  ![gletbuar3okikexwkq9cughznjd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gletbuar3okikexwkq9cughznjd.png)
 
 ---
 
@@ -1126,7 +1126,7 @@ private void handleResponse(SearchResponse<ItemDoc> response) {
 
 （图 5）(handleResponse()方法解析响应结果的过程)
 
-![图 5](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/CJ6RboG3HooVYRx79gBcMbgbnQe.png)
+![cj6rbog3hoovyrx79gbcmbgbnqe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cj6rbog3hoovyrx79gbcmbgbnqe.png)
 
 
 
@@ -1624,7 +1624,7 @@ create index idx_a_b_c on t(a,b,c);
 
 #### 1. 联合索引的B+树底层结构
 
-![](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/NiN0bXAMho6zvSx4hTHcHC80nie.png)
+![nin0bxamho6zvsx4hthchc80nie](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nin0bxamho6zvsx4hthchc80nie.png)
 > 图注：图片展示了联合索引`idx_a_b_c(a,b,c)`的B+树底层结构。根节点为`a:1,3`，有分支节点1和分支节点2。分支节点1存储`a:1`和`b:2,5`，其下有叶子节点1和叶子节点2，分别对应`a:1 b:2 c:7`和`a:1 b:5 c:3`，主键分别为101和102。分支节点2存储`a:3`和`b:1,4`，其下有叶子节点3和叶子节点4，分别对应`a:3 b:1 c:9`和`a:3 b:4 c:6`，主键分别为103和104。该图直观呈现了联合索引B+树的结构。
 
 - **叶子节点**：按 `a→b→c` 顺序排序，存储索引列值 + 主键值（回表用）；
@@ -2273,15 +2273,15 @@ public class UserService {
    
      <grid>
      <column width-ratio="0.340000">
-     ![图 1](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/WOzMbxe7uo29BlxNmIfc3HnOn5g.png)
+     ![wozmbxe7uo29blxnmifc3hnon5g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wozmbxe7uo29blxnmifc3hnon5g.png)
      </column>
      <column width-ratio="0.300000">
-     ![](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/G3OibiX7uo1VTlxscWtcBtU7nFf.png)
+     ![g3oibix7uo1vtlxscwtcbtu7nff](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/g3oibix7uo1vtlxscwtcbtu7nff.png)
 > 图注：该图是AT模式的基本流程图，对应文档中提及的AT模式相关内容，主要展示了AT模式的事务处理流程。流程分为两个阶段，阶段一为：从开始节点S出发，依次完成注册分支事务、记录快照、执行业务SQL、提交并报告事务状态；阶段二以菱形“是否可以提交”为判断节点，若结果为“是”则删除快照，若为“否”则读取快照恢复数据，最终汇合至结束节点E。图中还标注了id为1、money为100的示例数据，以及对应的快照内容。
 
      </column>
      <column width-ratio="0.340000">
-     ![图 3](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/I1kQbHIn0ownmWx0vO4czwPvnGb.png)
+     ![i1kqbhin0ownmwx0vo4czwpvngb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/i1kqbhin0ownmwx0vo4czwpvngb.png)
      </column>
      </grid>
 2. **XA模式（数据库原生事务，CP场景）**
@@ -2297,10 +2297,10 @@ public class UserService {
    
      <grid>
      <column width-ratio="0.490000">
-     ![图 4](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/MlPWb2jR8oq8VsxJy9qcg05fnYg.png)
+     ![mlpwb2jr8oq8vsxjy9qcg05fnyg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mlpwb2jr8oq8vsxjy9qcg05fnyg.png)
      </column>
      <column width-ratio="0.490000">
-     ![图 5](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/NfLQbIoOWoQBOZxt2DTcB1UGn2e.png)
+     ![nflqbioowoqbozxt2dtcb1ugn2e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nflqbioowoqbozxt2dtcb1ugn2e.png)
      </column>
      </grid>
 3. **TCC模式（业务层手动控制）**
@@ -2317,10 +2317,10 @@ public class UserService {
    
      <grid>
      <column width-ratio="0.150000">
-     ![图 6](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/XndgbJBlJoIDDfxwP74c9dRun76.png)
+     ![xndgbjbljoiddfxwp74c9drun76](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xndgbjbljoiddfxwp74c9drun76.png)
      </column>
      <column width-ratio="0.840000">
-     ![图 7](../../../../../../Attachments/development/programming/interview/project-interview/daily-notes/RmqTbdYgOoINeKxNKwEcFTW2n9d.png)
+     ![rmqtbdygooinekxnkwecftw2n9d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rmqtbdygooinekxnkwecftw2n9d.png)
      </column>
      </grid>
 4. **SAGA模式（长事务柔性补偿）**

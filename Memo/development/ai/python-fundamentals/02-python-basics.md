@@ -758,7 +758,7 @@ if __name__ == "__main__":
 
 区别于文件夹的是包要求在里面要有一个  \_\_init\_\_.py  文件
 
-![](../../../../Attachments/development/ai/python-fundamentals/NwpnbXlAtov2o1xGANQcbVx4nxf.png)
+![nwpnbxlatov2o1xganqcbvx4nxf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nwpnbxlatov2o1xganqcbvx4nxf.png)
 > 图注：图片展示了PyCharm中一个名为“graphic”的包及其子目录“area”和“perimeter”的内容。包中包含“__init__.py”文件，子目录下各有“circle.py”和“square.py”文件。图片通过红色箭头标注了“目录”和“包”，直观呈现了包的结构，与上文介绍包是Python中管理模块方式，格式类似文件夹，且包需有__init__.py文件等内容相呼应，帮助理解包的概念及在文件系统中的表现形式。
 
 ### 4.1 创建包
@@ -776,7 +776,7 @@ if __name__ == "__main__":
 - 导入语法：import 包名.模块名 [as 别名]
 - 使用语法：包名.模块名.成员名
 
-![](../../../../Attachments/development/ai/python-fundamentals/NhHpb0yWZola1wxEsjTcTCVrnte.png)
+![nhhpb0ywzola1wxesjtctcvrnte](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nhhpb0ywzola1wxesjtctcvrnte.png)
 > 图注：图片展示了在PyCharm中创建的包“d - 包”下的“graphic”文件夹及“01 - 全局导入.py”文件。该图片对应文档中“4.2导入包”部分，用于说明在PyCharm中创建包后，包中会自动生成一个__init__.py文件，内容为空，暂时不用关注。此图直观呈现了包创建后的文件结构，辅助理解导入包的操作环境。
 
 ```Python
@@ -912,7 +912,7 @@ pip默认源的地址为 https://pypi.org/simple/，下载比较慢，可以切�
 
 下面我们使用pip命令来安装mysql的库
 
-![](../../../../Attachments/development/ai/python-fundamentals/OVWIb9APdoOAj4xXkk5cOErNngf.png)
+![ovwib9apdooaj4xxkk5coernngf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ovwib9apdooaj4xxkk5coernngf.png)
 > 图注：图片展示了在Windows系统中使用pip命令安装mysql库的操作过程。首先执行全局切换源命令，将pip默认源地址改为清华大学镜像源；接着在命令行中输入pip install pymysql安装mysql库，显示正在查找、下载、安装等信息，最终成功安装pymysql 1.1.2版本。图片与上下文紧密相关，直观呈现了上下文中介绍的pip安装第三方库的操作步骤。
 
 ## 5 数据库
@@ -999,7 +999,7 @@ INSERT INTO blog_posts (title, content, author, created_at) VALUES
 );
 ````
 
-![](../../../../Attachments/development/ai/python-fundamentals/ODzkbs0tdozBqixmNDLcog06nxA.png)
+![odzkbs0tdozbqixmndlcog06nxa](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/odzkbs0tdozbqixmndlcog06nxa.png)
 > 图注：这张图片展示了一张数据表，表中共有10条记录，每条记录包含id、title、content、author、created_at、updated_at六个字段。id字段的值从1到10依次递增，title字段涵盖Python编程入门、机器学习基础概念、Web开发最佳实践等不同技术相关的内容，content字段是对应title的详细说明，author字段标注了每条内容的作者，created_at和updated_at字段分别记录了每条内容的创建与更新时间，时间均为2024年的8月至11月，对应文档中准备数据步骤提到的数据库内容。
 
 ### 5.2 操作步骤

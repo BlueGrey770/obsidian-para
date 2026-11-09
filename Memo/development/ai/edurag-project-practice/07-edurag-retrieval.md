@@ -513,7 +513,7 @@ if __name__ == '__main__':
 
 BM25（Best Matching 25）是一种信息检索领域的排名算法，用于计算查询（Query）与文档（Document）之间的相关性得分
 
-![](../../../../Attachments/development/ai/edurag-project-practice/W1O2bUX9co1Ojmx4cEGcqKmOnAh.png)
+![w1o2bux9co1ojmx4cegcqkmonah](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/w1o2bux9co1ojmx4cegcqkmonah.png)
 > 图注：这张图片展示了BM25算法的计算公式，该公式用于计算查询（Q）与文档（D）之间的相关性得分。公式的组成部分包括：求和符号下的索引i，k1、b作为调节参数，fi表示术语ti在文档Di中的频率，N为文档集中的文档总数，ni为包含术语ti的文档数，|D|为文档长度，avgdl为文档的平均长度，这些参数共同参与计算，以衡量查询与文档之间的匹配程度，该公式用于该文档介绍的信息检索相关性计算场景中。
 
 ```Markdown
@@ -596,7 +596,7 @@ if __name__ == '__main__':
 
 执行edu_rag_pro\mysql_qa\db\mysql_client.py 即可创建数据表
 
-![](../../../../Attachments/development/ai/edurag-project-practice/FlsIb1tffopohzxvvwtct2M3nlb.png)
+![flsib1tffopohzxvvwtct2m3nlb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/flsib1tffopohzxvvwtct2m3nlb.png)
 > 图注：这张图片是一张数据库表的展示界面，表名为mysql_qa，包含id、subject_name、question、answer这四个字段。表中共有4条数据的subject_name字段均为Python学科，记录了该学科下的相关问题与对应答案。该表是文档中2.2数据初始化环节里，①初始化数据库步骤中提到的mysql_qa目录下的内容，执行指定的mysql_client.py脚本即可创建该数据表。
 
 **② 初始化BM25模型**

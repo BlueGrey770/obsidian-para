@@ -184,7 +184,7 @@ docker stop mq
 
 具体如图所示：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/ZS5hbyq3HoAiqqxore0cCM6KnFc.png)
+![zs5hbyq3hoaiqqxore0ccm6knfc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zs5hbyq3hoaiqqxore0ccm6knfc.png)
 > 图注：这张图展示了MQ生产者（publisher）的两种消息可靠性确认机制的流程。左侧的publisher与exchange、exchange2交互，其中publisher向exchange投递消息时，会收到“ack”确认；当消息投递后路由失败，会触发“return”回调并返回ack。exchange会将消息分发给两个队列：non durable的queue1和durable的queue2，两个队列分别将消息传递给consumer1、consumer2消费；queue2还会落地存储消息。该图配合文档对Producer Confirm、Publisher Return两种生产者确认机制的说明，直观呈现了不同场景下的消息传递流程与交互逻辑。
 
 
@@ -593,14 +593,14 @@ RabbitMQ还提供生产者确认机制保证发送消息到MQ的可靠性。
 
 在控制台的`Exchanges`页面，添加交换机时可以配置交换机的`Durability`参数：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/YzNnbuNYsoKt6Ax0lHOcIo9enpf.png)
+![yznnbunysokt6ax0lhocio9enpf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yznnbunysokt6ax0lhocio9enpf.png)
 > 图注：图片展示了RabbitMQ控制台中添加新交换机的界面。在“Add a new exchange”区域，有多个参数设置项，其中“Durability”参数下拉菜单被红色框突出显示，可选择“Durable”（持久化模式）和“Transient”（临时模式）两种模式。该图片与上下文紧密相关，上下文在介绍设置交换机持久化的方法，即在控制台的“Exchanges”页面添加交换机时，配置交换机的“Durability”参数，设置为“Durable”即为持久化模式，此图直观呈现了参数设置界面及可选模式。
 
 设置为`Durable`就是持久化模式，`Transient`就是临时模式。
 
 设置持久化后在交换机列表会有一个"D"标识
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/BKpDb0L5LoDck1xh2SJc5r6Rnbf.png)
+![bkpdb0l5lodck1xh2sjc5r6rnbf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bkpdb0l5lodck1xh2sjc5r6rnbf.png)
 > 图注：这张图片是RabbitMQ 3.8.19版本控制台的Exchanges页面界面，页面中展示了不同虚拟主机下的交换机列表，列表包含交换机的名称、类型等信息，部分交换机旁标注有字母“D”，这些是设置交换机持久化模式后添加的标识，对应上下文里设置交换机Durability参数为“Durable”（持久化模式）后产生的“D”标识，用于直观区分持久化与临时模式的交换机。
 
 
@@ -615,14 +615,14 @@ RabbitMQ还提供生产者确认机制保证发送消息到MQ的可靠性。
 
 在控制台的Queues页面，添加队列时，同样可以配置队列的`Durability`参数：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/JjpSbhQKroKNWIxEDjcccMz1nPf.png)
+![jjpsbhqkroknwixedjcccmz1npf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jjpsbhqkroknwixedjcccmz1npf.png)
 > 图注：图片展示了RabbitMQ控制台中添加队列时的配置界面。在“Durability”下拉菜单中，有“Durable”和“Transient”两个选项，其中“Durable”被红色框突出显示。该图片与上下文紧密相关，上下文在介绍设置队列持久化以保证队列元数据不丢失，且消息会存储在独立的rdq数据文件中，但不能保证消息数据不丢失的内容，此图直观呈现了设置队列持久化时可选择的参数选项。
 
 除了持久化以外，你可以看到队列还有很多其它参数，有一些我们会在后期学习。
 
 设置持久化后在队列列表会有一个"D"标识
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/QGytbyeoOoJI8pxMNJzcHwwznxb.png)
+![qgytbyeoooji8pxmnjzchwwznxb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qgytbyeoooji8pxmnjzchwwznxb.png)
 > 图注：图片展示的是RabbitMQ控制台Queues页面。页面上方有导航栏，选中“Queues”选项卡。下方表格中列出了多个队列信息，包括虚拟主机、名称、类型、状态、消息数量等。其中，部分队列名称前有蓝色“D”标识，对应“Features”列的“Args”选项，这些标识与上下文提到的设置持久化后队列列表中出现的“D”标识相呼应，直观呈现了队列持久化设置的效果。
 
 
@@ -633,14 +633,14 @@ RabbitMQ还提供生产者确认机制保证发送消息到MQ的可靠性。
 
 在控制台发送消息的时候，可以添加很多参数，而消息的持久化是要配置一个`properties`：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/KpD4bb1NQo7l9fx1Z9CcAX1EnYg.png)
+![kpd4bb1nqo7l9fx1z9ccax1enyg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kpd4bb1nqo7l9fx1z9ccax1enyg.png)
 > 图注：这张图片展示的是RabbitMQ控制台发送消息的页面，用于配置消息的持久化参数。页面里的“Delivery mode”项被红色框标出，该选项的下拉菜单中，选中的内容为“1 - Non-persistent”，菜单内还包含“2 - Persistent”的选项，对应文档中提及的持久化相关配置，用于设置发送消息的持久化属性。页面还显示消息将发布到默认交换机，路由键为simple.queue，下方设有Headers、Properties配置区域和Payload输入框，底部有“Publish message”按钮，用于完成消息发布操作。
 
 查看持久消息的内容：
 
 delivery_mode=2 表示持久化
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/T1FvbphpfowG64x1d4KcJyadnGe.png)
+![t1fvbphpfowg64x1d4kcjyadnge](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/t1fvbphpfowg64x1d4kcjyadnge.png)
 > 图注：图片展示的是在控制台发送消息时查看消息内容的界面。上方显示“Message 1”，并提示服务器剩余0条消息。消息的Exchange为(AMQP default)，Routing Key为object.queue，Properties部分突出显示了delivery_mode=2，表明该消息为持久化消息。Payload部分显示消息内容为JSON格式，包含“name”和“age”两个字段。该图片与上下文紧密相关，直观呈现了消息持久化设置后在控制台查看消息内容时的显示情况。
 
 
@@ -718,14 +718,14 @@ public void listenSimpleQueueMessage2(String msg) throws InterruptedException {
 
 在此方法内第一句打断点，我们向队列“simple.queue”发一条消息，此时进入断点
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/Mn4zbyv1kolp26xjGxfcS4XLnGf.png)
+![mn4zbyv1kolp26xjgxfcs4xlngf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mn4zbyv1kolp26xjgxfcs4xlngf.png)
 > 图注：这张图片展示了一段Java代码，属于consumer服务中SpringRabbitListener类里的listenSimpleQueueMessage方法，该方法对应监听simple.queue队列，是测试auto模式消息确认机制的内容。代码中先通过log.info打印接收到的消息内容，随后设置了true的判断条件，在判断体中抛出故意生成的RuntimeException异常，以此模拟消息处理时的业务异常场景，这一设置正是为了测试异常场景下auto模式的消息确认与重投递逻辑。
 
 
 
 可以发现此时有一条消息状态为`unacked`（未确定状态）：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/VD3mbi3OFoKaO0xzGHHcChYcnPe.png)
+![vd3mbi3ofokao0xzghhcchycnpe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vd3mbi3ofokao0xzghhcchycnpe.png)
 > 图注：这张图是RabbitMQ队列监控的Queues页面，展示了simple.queue的运行状态，其中Virtual host为/hmall，队列类型为classic，当前状态为idle。在Messages栏目下，Ready数值为0，Unacked（未确定状态）的数值被红框标注，为1，Total数值为1，同时该页面的Message rates板块显示incoming、deliver/get、ack的速率均为0.00/s，该内容对应文档中“有一条消息状态为unacked”的测试结果，印证了消费者异常时消息的未确认状态。
 
 放行以后，由于抛出的是业务异常，消息处理失败后，会回到RabbitMQ，并重新投递到消费者。
@@ -811,7 +811,7 @@ channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, false)
 
 极端情况就是消费者一直无法执行成功，那么消息投递就会无限循环，导致mq的消息处理飙升，带来不必要的压力：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/CSwXb8rhyoEIcbxvSqpcyADVnjf.png)
+![cswxb8rhyoeicbxvsqpcyadvnjf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cswxb8rhyoeicbxvsqpcyadvnjf.png)
 > 图注：这张图片展示了一个消息队列的监控面板，其中核心信息是simple.queue队列的消息投递速度指标，被红色框标注出来，数值为3370/s。结合上下文可知，该图片用于说明消费者在缺少合理重试机制时，会出现消息投递无限循环的极端情况，导致消息处理压力飙升，图中的高消息投递速率正是这种异常情况的直观体现。该队列状态为运行中，具备持久化特征（标识为D），未确认消息数量为1，当前的高消息投递速度也直观展现了无限重试带来的负载问题。
 
 
@@ -1156,7 +1156,7 @@ UPDATE `order` SET status = ? , pay_time = ? WHERE id = ? AND status = 1
 
 1. 由用户在页面中主动点击“已完成支付”按钮时去查询最新的支付结果。
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/ZHXjbsUx9ohp8txvm3NcPRhWneh.png)
+![zhxjbsux9ohp8txvm3ncprhwneh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zhxjbsux9ohp8txvm3ncprhwneh.png)
 > 图注：图片展示的是一个支付订单界面。上方显示支付剩余时间为11:58，订单总价1元，待付金额1.00元。中间有一个二维码，下方有“支付成功”提示。底部有一个红色的“支付完成”按钮。该图片与文档中“由用户在页面中主动点击‘已完成支付’按钮时去查询最新的支付结果”这一内容相关，直观呈现了用户在支付成功后点击“已完成支付”按钮的场景。
 
 1. 通过定时任务去定义查询支付结果，比如：对于30分钟内的订单状态为未支付状态时去主动查询支付结果，超过30分钟用户未支付将自动取消订单。
@@ -1225,7 +1225,7 @@ UPDATE `order` SET status = ? , pay_time = ? WHERE id = ? AND status = 1
 
 假设需求是下单后30分钟对未支付订单自动取消订单，通过下图举例说明： 
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/HdXFbA5GPosKWgxeHcAcSm7Ongf.png)
+![hdxfba5gposkwgxehcacsm7ongf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hdxfba5gposkwgxehcacsm7ongf.png)
 > 图注：图片展示了MQ延迟消息技术方案中死信交换机+TTL的流程。左侧“publisher”向“ttl.fanout”交换机发送消息，消息内容记录下单信息，TTL为30分钟。消息经“ttl.fanout”转发至“ttl.queue”队列，但因无消费程序监听，到达30分钟变为死信，自动发给死信交换机“hmall.direct”。列信交换机将消息转发到“direct.queue1”队列。图中“dead-letter - exchange = hmall.direct”标注了死信交换机的标识。
 
 流程如下：
@@ -1269,12 +1269,12 @@ RabbitMQ社区提供了一个延迟消息插件来实现相同的效果。
 
 由于我们安装的MQ是`3.8`版本，因此这里下载`3.8.17`版本：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/O6N0bPj2HoR7Pbxqe9jckZGLnzb.png)
+![o6n0bpj2hor7pbxqe9jckzglnzb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/o6n0bpj2hor7pbxqe9jckzglnzb.png)
 > 图注：这张图片展示了RabbitMQ延迟消息插件的版本相关信息，对应文档中需下载3.8.17版本插件的内容，版本v3.8.17说明该插件适用RabbitMQ 3.8.16及更高版本，要求Erlang 23.2或更高版本。图片还列出该版本的更新内容，提到节点重启时插件用到的schema数据库表会按RabbitMQ核心的规则同步更新，贡献者为@mfridm，关联GitHub issue为rabbitmq/rabbitmq-delayed-message-exchange#163。图片下方的Assets部分提供了可下载的插件包，文件名为rabbitmq_delayed_message_exchange-3.8.17.8f537ac.ez，另有两个源码压缩包，分别为zip和tar.gz格式，标注了对应的文件大小与更新时间。
 
 当然，也可以直接使用课前资料提供好的插件：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/LdLxbYxAxowXORxrGS8cXRSxnBf.png)
+![ldlxbyxaxowxorxrgs8cxrsxnbf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ldlxbyxaxowxorxrgs8cxrsxnbf.png)
 > 图注：图片展示的是一个文件夹内容界面，路径为“新加卷（D:）>课程资料>服务框架>day06 - MQ高级>资料”。界面中显示一个名为“rabbitmq_delayed_message_exchange - 3.8.17.8f537ac.ez”的文件，类型为EZ文件，大小为50KB。该图片与文档中“2.2.1下载”部分内容相关，用于说明在下载延迟消息插件时，找到并展示该插件文件，为后续安装插件做准备。
 
 
@@ -1315,19 +1315,19 @@ docker exec -it mq rabbitmq-plugins enable rabbitmq_delayed_message_exchange
 
 运行结果如下：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/KvF3b0bYUofsCAxMoPNciN8CnBb.png)
+![kvf3b0byuofscaxmopncin8cnbb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kvf3b0byuofscaxmopncin8cnbb.png)
 > 图注：这张图片展示了在服务器终端执行RabbitMQ延迟消息插件安装命令后的运行结果，执行的命令是docker exec -it mq rabbitmq-plugins enable rabbitmq_delayed_message_exchange，结果显示已成功启用rabbitmq_delayed_message_exchange插件，同时还显示了当前已配置的其他插件，包括rabbitmq_management、rabbitmq_management_agent等，最终确认已启用1个插件。该图片对应文档中安装延迟消息插件命令的运行结果说明部分，用于直观展示插件安装成功的状态。
 
 #### 2.2.3 声明延迟交换机
 
 控制台方式：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/Gg8BblFRhoUfU3xZRJdclMVHn5b.png)
+![gg8bblfrhoufu3xzrjdclmvhn5b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gg8bblfrhoufu3xzrjdclmvhn5b.png)
 > 图注：图片展示的是RabbitMQ管理控制台中添加延迟交换机的界面。在“Add a new exchange”区域，Virtual host选择“/hmall”，Name输入“delay.direct”，Type下拉选“x-delayed-message”，Durability选“Durable”，Auto delete选“No”，Internal选“No”，Arguments中“x-delayed-type”设置为“direct”。该图片与文档中“2.2.3声明延迟交换机”部分对应，用于控制台方式声明延迟交换机，创建delay.queue队列并绑定到延迟交换机。
 
 创建delay.queue队列，并绑定到延迟交换机
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/GqZObLJigoH0bjxqc8wcvZalnJh.png)
+![gqzobljigoh0bjxqc8wcvzalnjh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gqzobljigoh0bjxqc8wcvzalnjh.png)
 > 图注：这张图片展示的是RabbitMQ控制台中声明延迟交换机时，将队列绑定到延迟交换机的操作界面，对应文档中“创建delay.queue队列，并绑定到延迟交换机”的步骤。界面中可看到用于选择目标队列的下拉框已选定“To queue”，队列名称输入框内已填写“delay.queue”，路由键输入框内填写了“delay”，参数设置区域显示参数为空，最后有“Bind”绑定按钮，完成相关设置后点击该按钮即可完成延迟队列与延迟交换机的绑定操作。
 
 基于注解方式：
@@ -1400,7 +1400,7 @@ void testPublisherDelayMessage02() {
 
 接下来，我们就在交易服务中利用延迟消息实现订单超时取消功能，假设订单未支付超时时间为30分钟，下单后30内不支付将自动取消订单，其大概思路如下：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/PjMDbdi7HomABkxxNBLcSlFWnAf.png)
+![pjmdbdi7homabkxxnblcslfwnaf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pjmdbdi7homabkxxnblcslfwnaf.png)
 > 图注：这张图对应文档中延迟消息实现超时未支付订单自动取消的业务流程内容，左侧为下单业务流程，从开始到创建订单、发送延迟30分钟的MQ消息后结束；右侧为消息接收和处理流程，接收到MQ消息后会查询支付状态，若订单未支付则执行取消订单并恢复库存，若订单已支付则更新订单状态为已支付，两个流程的处理最终均以结束状态收尾，清晰呈现了该功能的完整逻辑。
 
 理论上我们应该在下单时发送一条延迟消息，延迟时间为30分钟。这样就可以在接收到消息时检验订单支付状态，关闭未支付订单。
@@ -1486,7 +1486,7 @@ spring:
 
 接下来，我们在`trader-service`编写一个监听器，监听延迟消息，查询订单支付状态：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/LlQ5brUXCobOD4xT2hScrtHZn4g.png)
+![llq5bruxcobod4xt2hscrthzn4g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/llq5bruxcobod4xt2hscrthzn4g.png)
 > 图注：这张图片展示了项目`trade-service`的Java代码目录结构，在`com.hmall.trade`包下的`listener`文件夹中，存在两个监听器类，分别是`OrderDelayMessageListener`和`PayStatusListener`，其中`OrderDelayMessageListener`被红色框突出标注。这一目录结构对应文档中接收延迟消息的步骤，文档提到需要在`trader-service`编写监听器监听延迟消息，该监听器正是后续用于监听延迟消息、处理超时未支付订单的关键组件。
 
 
@@ -1687,7 +1687,7 @@ public class PayClientFallbackFactory implements FallbackFactory<PayClient> {
 
 最终在`hm-api`模块定义三个类：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/05-mq-advanced/AOEZbnlhmouAU6xJJaic5B25nVb.png)
+![aoezbnlhmouau6xjjaic5b25nvb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/aoezbnlhmouau6xjjaic5b25nvb.png)
 > 图注：图片展示了`hm-api`模块的目录结构。在`java`目录下，`com.hmall.api`包中包含`cart`、`config`、`item`和`pay`子包。`pay`子包下有`dto`、`payClient`和`payClientFallbackFactory`三个类，其中`PayOrderDTO`以蓝色高亮显示，`PayClient`以绿色高亮显示，`PayClientFallbackFactory`以蓝色高亮显示。该图片与文档中介绍在`hm-api`模块定义三个类的内容相关，直观呈现了类所在位置及标识。
 
 说明：

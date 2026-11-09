@@ -139,7 +139,7 @@ PDF、Word、Excel、音视频、完整JSON/CSV、完整脚本与HTML原件优�
 ### 图片图床化（2026-11-05 起）
 
 - 截图与图片先按上述规则落入 `Attachments/<domain>/<topic>/`；`app.json` 已将默认附件位置配置为 `Attachments`，新粘贴的图片不再落到笔记所在目录。
-- 使用 Image Upload Toolkit 插件的 `Publish page` 命令，将当前笔记中的本地图片批量上传至阿里云 OSS（bucket `notes-images-para`，前缀 `/img`）；插件设置中 `Update original document` 开启后，正文里的本地链接自动替换为公网 URL。完整配置与排查步骤见 [[Memo/development/devops/obsidian-image-host-toolkit.md|图床化教程]]。
+- 使用 Image Upload Toolkit 插件的 `Publish page` 命令，将当前笔记中的本地图片批量上传至阿里云 OSS（bucket `notes-images-para`，前缀 `/img`）；插件设置中 `Update original document` 开启后，正文里的本地链接自动替换为公网 URL。完整配置与排查步骤见 [[Memo/development/devops/obsidian-image-host-toolkit.md|图床化教程]]。**2026-11-09 全库存量图片已批量迁移完毕**：123 篇笔记 2701 条图片链接全部为 OSS 公网 URL，此后笔记正文不再依赖 `Attachments/` 目录，改文件名、挪目录、换机器均不影响图片显示。
 - 上传替换只作用于 `![]( )` 嵌入语法内的链接地址，图片下方的 `> 图注：` 引用行是普通正文，**不受上传影响**；插件的 `Use image name as alt text` 选项会重写 alt，因此任何需要长期保留的文字都不要放在 alt 里。
 - 上传成功后，本地原图按原领域路径移入 `_archive` 保留，不直接删除；此后正文图片依赖网络，断网时阅读视图无法显示，重要图片保留本地副本。
 - OSS bucket 为公共读，只存放笔记配图，不放证件、合同等隐私原件；上传密钥使用 RAM 子账号并限定最小权限，密钥明文存于 `.obsidian/plugins/image-upload-toolkit/data.json`，`.obsidian` 目录不得进入公开仓库。

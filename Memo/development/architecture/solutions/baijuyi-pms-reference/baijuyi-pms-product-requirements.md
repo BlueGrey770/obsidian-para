@@ -92,7 +92,7 @@ aliases:
 
 项目整体技术架构图如（图 1）所示 。
 
-![图 1](../../../../../Attachments/development/architecture/solutions/baijuyi-pms-reference/VUYEb4YMiokb4sx3Ar5csKE7nIc.png)
+![vuyeb4ymiokb4sx3ar5cske7nic](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vuyeb4ymiokb4sx3ar5cske7nic.png)
 
 ### 3.2 核心业务主流程
 
@@ -100,7 +100,7 @@ aliases:
 
 整体业务流程图如（图 2）所示 。
 
-![图 2](../../../../../Attachments/development/architecture/solutions/baijuyi-pms-reference/W8LibrRxmoloPZxEQA6c8vDWnab.png)
+![w8librrxmolopzxeqa6c8vdwnab](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/w8librrxmolopzxeqa6c8vdwnab.png)
 
 ## 四、核心功能需求详情（PRD 核心模块）
 

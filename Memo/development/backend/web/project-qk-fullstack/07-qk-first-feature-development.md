@@ -173,7 +173,7 @@ public String save(@RequestBody User user) {return "success";
 
 ### 确定返回值格式
 
-> ![](../../../../../Attachments/development/backend/web/project-qk-fullstack/ZmcTb85VKoLlYnxNKhVcxhkCnvc.png)
+> ![zmctb85vkollynxnkhvcxhkcnvc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zmctb85vkollynxnkhvcxhkcnvc.png)
 > 图注：该图片展示了对应项目接口返回数据的JSON格式样例的部分内容，是明确返回数据JSON格式阶段的关键内容，为封装返回数据给前端的规范提供了直观示例。样例中包含三个核心字段，分别为标识处理状态的“code”字段，取值为数字1、表示操作结果描述的“msg”字段，取值为字符串“success”，以及用于承载具体业务数据的“data”字段。
 
 ```Java
@@ -318,7 +318,7 @@ public PageData<Dept> finddeptByCollection(DeptDTO deptDTO) { //获取controller
 
 ### 测试结果
 
-![](../../../../../Attachments/development/backend/web/project-qk-fullstack/Y7GJbbxcAo1XflxGENQcgFCVn5c.png)
+![y7gjbbxcao1xflxgenqcgfcvn5c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/y7gjbbxcao1xflxgenqcgfcvn5c.png)
 > 图注：图片展示的是接口测试结果的响应数据样例。在Body部分，以JSON格式呈现，包含code、msg、data等字段。其中data下有total和rows两个子字段，total为1，rows中包含一个对象，id为1，name为“管理员”，label为“admin”，remark为“管理员，用于管理整个系统数据”，createTime和updateTime均为null。该图片与文档中“确定返回数据的json格式”内容相关，用于说明响应数据的结构和示例。
 
 <callout emoji="🎉">
@@ -337,7 +337,7 @@ public PageData<Dept> finddeptByCollection(DeptDTO deptDTO) { //获取controller
 
 <！--xmL约束，限制xmL书写规则-->
 
-![](../../../../../Attachments/development/backend/web/project-qk-fullstack/ND6PbL857oSS3Lxd3GQc8IUGn5c.png)
+![nd6pbl857oss3lxd3gqc8iugn5c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nd6pbl857oss3lxd3gqc8iugn5c.png)
 > 图注：图片展示的是MyBatis配置文件中关于UserMapper的XML代码片段。上方红框内是XML文档类型声明，包含DTD配置信息；下方红框内是delete语句，用于删除user表中id在数组中的记录，使用foreach循环遍历数组。该图片与文档中“SQL插入参数顺序与数据库中顺序不一致”部分内容相关，用于说明在MyBatis中SQL语句的书写规范，强调SQL语句需与数据库表顺序保持一致，否则会报错。
 
 #### SQL插入参数顺序与数据库中顺序不一致
@@ -352,7 +352,7 @@ int addCourse(Course course);
 
 必须与图中顺序一致
 
-![](../../../../../Attachments/development/backend/web/project-qk-fullstack/WqnPbpyLqovL3vx1quBcyZHCnwd.png)
+![wqnpbpylqovl3vx1qubcyzhcnwd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wqnpbpylqovl3vx1qubcyzhcnwd.png)
 > 图注：图片展示了数据库中“course”表的结构，包含8个字段。其中，“id”字段为int类型且自动递增；“subject”为tinyint类型；“name”为varchar类型；“price”为int类型；“target”为tinyint类型；“description”为varchar类型；“create_time”和“update_time”均为datetime类型。图片与上文“SQL插入参数顺序与数据库中顺序不一致”内容相关，强调在插入参数时需与数据库表字段顺序一致，否则会报错。
 
 #### Service层未校验补全数据
@@ -490,7 +490,7 @@ public class UserDTO {
 
 错误输出:
 
-![](../../../../../Attachments/development/backend/web/project-qk-fullstack/MjeHbDbNjo7DlLxrpdHcDaxQnoc.png)
+![mjehbdbnjo7dllxrpdhcdaxqnoc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mjehbdbnjo7dllxrpdhcdaxqnoc.png)
 > 图注：这张是项目开发中SQL语句执行相关的日志截图，核心展示了异常的SQL查询情况：该SQL是对user、dept、role三张表进行关联的查询操作，参数部分标注有两个被红框突出的`0(Integer)`，对应了文档中提到的用int类型定义变量默认值为0的错误写法，这种写法会被SQL语句识别为参数值，最终查询得到1条结果但Row的数量为0，体现了int类型默认值0被SQL误识别后导致的逻辑异常问题，也呼应了文档中int类型易引发类型错误、输出异常的说明。
 
 #### 漏写@PathVariable
@@ -521,7 +521,7 @@ public Result findByDept(int deptId){
 
 漏写少写 引起的空指针异常
 
-![](../../../../../Attachments/development/backend/web/project-qk-fullstack/FvXPbqPpVocjOWxsnOPc6PhcnOc.png)
+![fvxpbqppvocjowxsnopc6phcnoc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fvxpbqppvocjowxsnopc6phcnoc.png)
 > 图注：这张图片展示的是一段Java代码，代码内容为定义一个配置属性类。该类添加了`@Component`和`@Data`注解，类名为`AliProperties`，内部声明了endpoint、bucketName、region、hobby四个私有属性。其中核心标注内容有两处，一是`@ConfigurationProperties`注解，二是该注解内用红色箭头和红框突出显示的`prefix = 'ali.oss'`，这部分用于指定配置属性的前缀，明确该类对应加载ali.oss开头的配置项。
 
 #### 将对象放入容器中 也要从容器中取用对象

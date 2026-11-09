@@ -7,7 +7,7 @@ aliases:
 ---
 # MQ基础
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/JSYnbgcXWomOVPxbVhOcmTggnRh.png)
+![jsynbgcxwomovpxbvhocmtggnrh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jsynbgcxwomovpxbvhocmtggnrh.png)
 > 图注：这张图展示了RabbitMQ Server Broker的工作流程结构，核心模块包含Publisher（消息生产者）、VirtualHost（虚拟主机）、exchange（交换机）、queue（队列）与consumer（消息消费者）。图中清晰呈现了信息传递的逻辑：Publisher作为生产者，将消息传输给VirtualHost内的两台exchange交换机，交换机再将消息分发至对应的queue队列，最终队列里的消息会被对应的consumer消费者处理。该图对应文档中MQ工作模型的相关内容，直观呈现了MQ核心组成部分的运行逻辑。
 
 ## MQ有什么应用场景
@@ -35,7 +35,7 @@ aliases:
 
 ### 普通模型
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/QJpObLkt1o6SHJxk7fmcrLE3ncd.png)
+![qjpoblkt1o6shjxk7fmcrle3ncd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qjpoblkt1o6shjxk7fmcrle3ncd.png)
 > 图注：这张图展示了MQ的普通工作模型，是文档中“普通模型”对应的示意图。图中有三个核心组成部分：蓝色的消息发布方Publisher、橙色的队列Queue、绿色的消息消费方Consumer，箭头标注了流程为Publisher向Queue发送消息，Queue再向Consumer接收消息。该模型的特点是每个队列仅绑定一个消费者，文档提及此模型下消费者处理能力较弱，若生产者消息量远超消费者处理速度，就容易发生消息堆积，这张图直观呈现了普通模型的基础消息流转逻辑。
 
 
@@ -52,7 +52,7 @@ aliases:
 
 ### 工作队列（work queue）
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/T5wxbcxHeorLvSxiu7fcBU9Kn3g.png)
+![t5wxbcxheorlvsxiu7fcbu9kn3g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/t5wxbcxheorlvsxiu7fcbu9kn3g.png)
 > 图注：这张图展示的是MQ的工作队列（work queue）模型，图中P代表消息生产者，其箭头指向名为Queue的队列，表明生产者向该队列发送消息。队列的消息分别输出箭头，连接到两个消费者C₁和C₂，体现了该模型中多个消费者绑定到同一个队列的设计，同一条消息只会被一个消费者处理，也对应了“能者多劳”的消息处理思路，还可通过设置prefetch控制消费者预取消息数量，以此解决普通模型中消费者处理能力不足、易造成消息堆积的问题。
 
 ```Plain Text
@@ -66,7 +66,7 @@ aliases:
 
 ### 发布订阅模型(Publish/Subscribe)
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/R0mibOBCKoy2yFxFsmrclq1rnqg.png)
+![r0mibobckoy2yfxfsmrclq1rnqg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/r0mibobckoy2yfxfsmrclq1rnqg.png)
 > 图注：图片展示了MQ发布订阅模型中消息传递的流程。左侧有一个蓝色圆圈标记的P，代表生产者，向中间的X（交换机）发送消息。X将消息分别路由到右侧的Q1和Q2两个队列，再由C1和C2两个消费者分别从对应的队列获取消息。该图直观呈现了生产者、交换机、队列及消费者之间的消息传递关系，与文档中对发布订阅模型的介绍相契合，帮助理解消息在系统中的流转过程。
 
 ```Plain Text
@@ -89,7 +89,7 @@ aliases:
 
 #### fanout类型（广播模式）
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/TeCgbGCuGo0rRsxmlbpcf41Jnwf.png)
+![tecgbgcugo0rrsxmlbpcf41jnwf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tecgbgcugo0rrsxmlbpcf41jnwf.png)
 > 图注：这张图展示的是MQ中Fanout类型交换机的工作流程，图中带有“publisher”的蓝色矩形代表消息发布者，它将消息发送给标注为“Fanout exchange”的紫色圆形交换机。该交换机按照广播模式，把接收到的消息同时路由绑定的两个队列，分别是“queue1”和“queue2”，随后两个队列又分别将消息传递给对应的消费者“consumer1”和“consumer2”，清晰对应了文档中Fanout类型交换机将消息路由到所有绑定队列的特性，直观解释了该广播模式的运行逻辑。
 
 ```Plain Text
@@ -100,7 +100,7 @@ aliases:
 5. 订阅队列的消费者接收消息，每个队列订阅的消费者只有一个能拿到消息
 ```
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/L2TCbX9TMoYVo8xGNYVczpUDnWD.png)
+![l2tcbx9tmoyvo8xgnyvczpudnwd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/l2tcbx9tmoyvo8xgnyvczpudnwd.png)
 > 图注：这张图是RabbitMQ中Fanout类型交换机（广播模式）的工作示意图。图中展示了消息从publisher发送后，经由Fanout交换机路由，被转发到与之绑定的queue1和queue2两个队列。queue1里的消息会被consumer1和consumer3消费，queue2里的消息会被consumer2和consumer4消费，体现了Fanout交换机将消息路由到所有绑定队列的特性，和文档中对Fanout交换机的说明内容相对应，直观呈现了该交换机的广播工作逻辑。
 
 ```Plain Text
@@ -118,7 +118,7 @@ aliases:
 
 #### Direct类型
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/AFfSbW53boSEDTxw97jcxEQPnmf.png)
+![affsbw53bosedtxw97jcxeqpnmf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/affsbw53bosedtxw97jcxeqpnmf.png)
 > 图注：图片展示了Direct类型交换机的工作流程。publisher向Direct exchange发送消息，消息根据routingKey“red”被路由到queue1和queue2，queue1的bindingKey为“blue”，queue2的bindingKey为“yellow”。consumer1从queue1接收消息，consumer2从queue2接收消息，consumer1接收的消息key有“blue”和“red”，consumer2接收的消息key有“yellow”和“red”。该图直观呈现了Direct交换机根据routingKey判断路由给哪个队列的机制。
 
 ```Plain Text
@@ -139,7 +139,7 @@ Direct交换机与Fanout交换机的差异？
 
 #### Topic交换机
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/OrDEb7lSQoUNXbxeJhucsAmoncd.png)
+![ordeb7lsqounxbxejhucsamoncd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ordeb7lsqounxbxejhucsamoncd.png)
 > 图注：这张图展示了RabbitMQ中Topic交换机的消息路由模型，对应文档中Topic交换机的相关内容。图中的核心组件包括发布者publisher、名称为hmall.topic的交换机exchange，两个绑定在该交换机上的队列topic.queue1和topic.queue2，以及两个消费者consumer1和consumer2。topic.queue1的绑定键为china.#，topic.queue2的绑定键为#.news，发布者发送的消息会根据路由规则，转发给匹配绑定键的队列，再由对应的消费者进行接收处理，直观呈现了Topic交换机根据通配符形式的绑定键实现消息路由的功能。
 
 

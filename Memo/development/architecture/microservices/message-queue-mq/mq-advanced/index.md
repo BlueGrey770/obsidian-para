@@ -8,7 +8,7 @@ aliases:
 
 ## **如何确保MQ消息的可靠性**
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/mq-advanced/AxJKbO1WpohA63xGZJCc8yDmnvd.png)
+![axjkbo1wpoha63xgzjcc8ydmnvd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/axjkbo1wpoha63xgzjcc8ydmnvd.png)
 > 图注：这张图展示了RabbitMQ的消息流转流程，从左到右依次是消息生产者Publisher，它负责向中间的交换机Exchange发布消息；Exchange接收到消息后，会将消息路由分配给两个不同的消息队列Queue，其中下方的Queue还会对应分发给两个消费者Consumer，上方的Queue对应一个消费者Consumer。这个流程和文档中提及的MQ消息可能因未找到合适Exchange或Queue导致丢失的内容相呼应，直观呈现了消息从生产到传递至消费端的路径。
 
 消息从生产者到消费者的每一步都可能导致消息丢失，比如
@@ -53,7 +53,7 @@ spring:
 
 RabbitMQ提供了Publisher Confirm和Publisher Return两种确认机制：
 
-![](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/mq-advanced/TvQJbuu3Wo9R6oxZ2SscR14gnbt.png)
+![tvqjbuu3wo9r6oxz2sscr14gnbt](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tvqjbuu3wo9r6oxz2sscr14gnbt.png)
 > 图注：图片展示了RabbitMQ中Publisher Confirm和Publisher Return两种确认机制的示意图。左侧为publisher，中间有topic exchange和exchange2，右侧有queue1（non durable）和queue2（durable）。当消息投递成功时，通过Publisher Confirm返回ack；若路由失败，通过Publisher Return回调方法返回异常信息。
 
 - Publisher Return：消息投递成功但路由失败时调用回调方法返回异常信息
@@ -218,7 +218,7 @@ UPDATE `order` SET status = ? , pay_time = ? WHERE id = ? AND status = 1
 - 当消息变成死信时，会被发送到死信交换机中，通过死信交换机转发到指定的队列，由应用程序去消费
 - 延迟消息处理流程如（图 1）所示
 
-  ![图 1](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/mq-advanced/WDnlbSPp7oeUOmxGWSrcREzpn0b.png)
+  ![wdnlbspp7oeuomxgwsrcrezpn0b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wdnlbspp7oeuomxgwsrcrezpn0b.png)
 
 ### **延迟消息插件**
 
@@ -233,10 +233,10 @@ UPDATE `order` SET status = ? , pay_time = ? WHERE id = ? AND status = 1
 1. 下载并安装延迟消息插件
 2. 声明延迟交换机，类型为x-delayed-message，如（图 2）所示
 
-   ![图 2](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/mq-advanced/AOLtbFepWox6ImxY5e1cGX5snSg.png)
+   ![aoltbfepwox6imxy5e1cgx5snsg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/aoltbfepwox6imxy5e1cgx5snsg.png)
 3. 创建队列并绑定到延迟交换机，如（图 3）所示
 
-   ![图 3](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/mq-advanced/HNbHbbXOpobXJhxmf6YcDZF2nMc.png)
+   ![hnbhbbxopobxjhxmf6ycdzf2nmc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hnbhbbxopobxjhxmf6ycdzf2nmc.png)
 4. 发送消息时，通过x-delay属性设定延迟时间
 
 ## **RabbitMQ有哪些集群，他们的特点是什么？**
@@ -291,13 +291,13 @@ RabbitMQ主要有以下几种集群模式：
    - 传统镜像队列：需通过 `rabbitmqctl set_policy` 命令手动配置策略（如 `exactly` 模式指定1主1镜像、 `all` 模式全节点镜像），并设置同步模式（如 `automatic` 自动同步旧消息），配置步骤较繁琐 。
    - 仲裁队列：创建时仅需在控制台选择队列类型为 **Quorum** （如图（图 1）），默认镜像数为5（若集群节点数少于5，则镜像数为节点数-1），无需额外策略配置，操作更简单 。
    
-     ![图 1](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/mq-advanced/YqmfbrlrDo5WW8xcCTAc1Z3TnIe.png)
+     ![yqmfbrlrdo5ww8xcctac1z3tnie](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yqmfbrlrdo5ww8xcctac1z3tnie.png)
 3. **默认镜像策略差异**
 
    - 传统镜像队列：默认无镜像，需手动指定镜像数量和分布（如 `nodes` 模式指定镜像节点） 。
    - 仲裁队列：默认镜像数为5，集群节点数不足5时自动调整（如3节点集群会有2个镜像节点，如图（图 2）中“quorum.queue”队列的“+2”标识），镜像管理更自动化 。
    
-     ![图 2](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/mq-advanced/EPGAbCcfHoI8Gcxb8MKcOhAWnwk.png)
+     ![epgabccfhoi8gcxb8mkcohawnwk](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/epgabccfhoi8gcxb8mkcohawnwk.png)
 4. **适用场景差异**
 
    - 传统镜像队列：适用于 **一致性要求一般、需灵活控制镜像数量** 的场景（如非核心业务的消息队列，希望手动指定1主1镜像以平衡性能与高可用） 。

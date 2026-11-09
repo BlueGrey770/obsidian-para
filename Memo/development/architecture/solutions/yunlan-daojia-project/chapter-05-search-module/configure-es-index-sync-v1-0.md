@@ -79,7 +79,7 @@ max_binlog_cache_size = 512m
 
 `SHOW VARIABLES LIKE 'log_bin';`
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/Qa2WbmelAopiD9xPy0CcLRsWnAd.png)
+![qa2wbmelaopid9xpy0cclrswnad](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qa2wbmelaopid9xpy0cclrswnad.png)
 > 图注：图片展示的是MySQL配置文件my.cnf中binlog相关配置信息。其中Variable_name为log_bin，Value为ON，表明binlog日志已开启。该图片与文档中“配置Mysql主从同步”部分上下文相关，用于说明在MySQL配置文件my.cnf设置binlog-format为ROW模式后，重启MySQL查看配置信息时，可通过执行`SHOW VARIABLES LIKE 'log_bin';`命令，查看log_bin值为ON，以确认binlog模式已开启。
 
 ON表示开启binlog模式。
@@ -88,7 +88,7 @@ ON表示开启binlog模式。
 
 `show variables like 'binlog_format';`
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/HP4BblCkaotJwIxh7fUcQFDrnRc.png)
+![hp4bblckaotjwixh7fucqfdrnrc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hp4bblckaotjwixh7fucqfdrnrc.png)
 > 图注：这是配置MySQL数据同步环境相关的配置验证截图，内容显示数据库变量`binlog_format`的值为`ROW`，该设置代表MySQL采用行级别的二进制日志记录，能精准记录数据行的变更，是适配数据同步安全要求的配置，该参数的匹配状态可验证前期对MySQL配置文件的修改是否生效，确保后续基于Canal+MQ的数据同步能获取准确的行级变更数据。
 
 当 `binlog_format` 的值为 `row` 时，表示 MySQL 服务器当前配置为使用行级别的二进制日志记录，这对于数据库复制和数据同步来说更为安全，因为它记录了对数据行的确切更改。
@@ -99,14 +99,14 @@ ON表示开启binlog模式。
 
 `SHOW BINARY LOGS;`
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/VyZ0bLRvJoB75Xxai7IcSMFCnqb.png)
+![vyz0blrvjob75xxai7icsmfcnqb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vyz0blrvjob75xxai7icsmfcnqb.png)
 > 图注：这张图片是MySQL查看binlog日志文件列表的执行结果，包含Log_name、File_size和Encrypted三个字段，显示共有8个未加密的二进制日志文件，名称从mysql-bin.000001到mysql-bin.000008，每个文件的大小有所不同，且Encrypted列均为“No”，表明所有日志文件未经过加密，该结果对应文档中“查看binlog日志文件列表”操作的输出。
 
 - 查看当前正在写入的binlog文件：
 
 `SHOW MASTER STATUS;`
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/C0Hrbw2h8oqBDOxpWQNcJNbTn0g.png)
+![c0hrbw2h8oqbdoxpwqncjnbtn0g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/c0hrbw2h8oqbdoxpwqncjnbtn0g.png)
 > 图注：图片展示了MySQL中查看当前正在写入的binlog文件的执行结果。表格中显示了binlog文件的名称为“mysql-bin.000008”，位置为156。该图片与上文“查看当前正在写入的binlog文件”相关，通过执行`SHOW MASTER STATUS;`命令后，此结果可帮助确认MySQL当前正在写入的binlog文件，为后续配置Canal+MQ数据同步环境中的Mysql主从同步等操作提供关键信息。
 
 ### 1.2 安装Canal（**使用下发虚拟机无需安装**）
@@ -443,40 +443,40 @@ http://192.168.101.68:15672/
 
 密码：czri1234
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/DrXNb4qfLoGLJQxSIuWcQ1aLnlg.png)
+![drxnb4qflogljqxsiuwcq1alnlg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/drxnb4qflogljqxsiuwcq1alnlg.png)
 > 图注：图片展示的是RabbitMQ管理界面的Users页面。页面显示了所有用户信息，包括Name（名称）、Tags（标签）、Can access virtual hosts（可访问虚拟主机）和Has password（有密码）等字段。其中，名称为czri，标签为administrator，可访问虚拟主机，有密码。页面右上角有“Users”“Virtual Hosts”“Feature Flags”“Policies”“Limits”“Cluster”等导航选项。该图片与文档中配置RabbitMQ环境步骤相关，用于展示进入rabbitmq管理界面后，账号和密码设置成功后的用户管理页面情况。
 
 6、创建虚拟主机 /xzb
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/UM6ZbQtBkoTBRVxi35Pcaxygnyd.png)
+![um6zbqtbkotbrvxi35pcaxygnyd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/um6zbqtbkotbrvxi35pcaxygnyd.png)
 > 图注：这是RabbitMQ的管理端界面，对应配置ES索引同步环境文档的RabbitMQ设置步骤，界面顶部显示RabbitMQ版本为3.9.17、Erlang版本为24.3，当前处于“Admin”标签页的“Virtual Hosts”配置区域。界面展示了已有虚拟主机的列表信息，而下方带有红色箭头指向的“Add a new virtual host”区域是设置虚拟主机的操作位置，该区域的“Name”输入框内已填写“/xzb”，与文档中“创建虚拟主机/xzb”的要求一致，用于完成该RabbitMQ虚拟主机的创建操作。
 
 7、创建账号和密码
 
 xzb/xzb
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/UoLKbiYtYosMQPxejzUckTjynvf.png)
+![uolkbiytyosmqpxejzucktjynvf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uolkbiytyosmqpxejzucktjynvf.png)
 > 图注：图片展示的是RabbitMQ管理界面中“Users”页面。页面显示了名为“czri”的用户，其标签为“administrator”，可访问虚拟主机“/”和“/xzb”，且有密码。下方有“Add a user”区域，可输入用户名“xzb”、密码及确认密码，还设有权限设置选项，如“Admin”“Monitoring”等。该图片与文档中安装RabbitMQ并创建账号和密码的操作步骤相关，直观呈现了创建账号后的管理界面情况。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/GjvUbaIgGocFlvxpToecbO4Enyc.png)
+![gjvubaiggocflvxptoecbo4enyc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gjvubaiggocflvxptoecbo4enyc.png)
 > 图注：这张图片是RabbitMQ管理界面的Admin页签下的Users页面，用于展示用户相关配置情况，当前界面的RabbitMQ版本为3.9.17，配套Erlang版本为24.3.4。页面列出了两个用户信息：用户czri的标签为administrator，可访问的虚拟主机为/、/xzb，且设置了密码；用户xzb的标签无对应显示，其可访问的虚拟主机被标注为“No access”，同时也设置了密码。该界面的用户信息和配置，对应了前文配置RabbitMQ步骤中创建账号、设置访问权限的相关操作内容。
 
 设置权限可以访问/   /xzb
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/VoBLbKUfLoN0vrxR2bJcPgo0nsg.png)
+![voblbkuflon0vrxr2bjcpgo0nsg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/voblbkuflon0vrxr2bjcpgo0nsg.png)
 > 图注：这是RabbitMQ的Admin管理界面，当前登录用户为xzb。界面中显示该用户当前没有访问任何虚拟主机的权限，界面中用红色箭头突出标注了“Set permission”按钮，对应上下文里设置该用户访问虚拟主机/xzb权限的操作步骤，可通过该按钮完成权限配置，下方还提供了虚拟主机、配置正则表达式、写入正则表达式、读取正则表达式的设置项，用于给该用户授予对应虚拟主机的访问权限。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/Vv3wbU9uHoyB3Yx3z2ucaAm9n5f.png)
+![vv3wbu9uhoyb3yx3z2ucaam9n5f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vv3wbu9uhoyb3yx3z2ucaam9n5f.png)
 > 图注：图片展示的是RabbitMQ管理界面中用户权限设置页面。页面显示用户为“xzb”，可使用密码登录。在“Permissions”区域，当前权限设置中，虚拟主机为“/”，Configure regexp、Write regexp、Read regexp均为“*”。下方有“Set permission”按钮，以及“Virtual Host”下拉框，当前选中“/xzb”。页面右下角有红色箭头指向“Set permission”按钮和“Virtual Host”下拉框，提示设置权限和选择虚拟主机的操作位置，与上下文介绍的设置权限访问虚拟主机/xzb的操作步骤对应。
 
 设置成功：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/SXwLbLy26o0HgKxEKHBcyS7Dngh.png)
+![sxwlbly26o0hgkxekhbcys7dngh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sxwlbly26o0hgkxekhbcys7dngh.png)
 > 图注：图片展示的是RabbitMQ管理界面中账号设置成功后的权限配置情况。界面上方显示RabbitMQ版本为3.9.17，Erlang版本为24.3.4。在“Admin”标签页下，用户“xzb”的权限设置中，有“Overview”和“Permissions”两个部分。权限部分显示了当前权限，包括虚拟主机“/”和“/xzb”，以及对应的Configure regexp、Write regexp、Read regexp权限均为“*”，且有“Clear”清除按钮。该图与上文设置权限可访问“/xzb”账号成功的内容相呼应。
 
 
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/RA73bmR3NopkrZxgCzqc8QutnDd.png)
+![ra73bmr3nopkrzxgczqc8qutndd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ra73bmr3nopkrzxgczqc8qutndd.png)
 > 图注：图片展示的是RabbitMQ管理界面中“Virtual Hosts”页面。页面显示了所有虚拟主机信息，其中“/”和“/xzb”两个虚拟主机状态均为“running”，且都有用户“czri, xzb”可访问。页面上方有“Overview”“Connections”“Channels”“Exchanges”“Queues”“Admin”等导航选项，当前选中“Admin”。该图片与文档中配置RabbitMQ环境的上下文相关，用于展示在完成创建虚拟主机和账号密码设置后，进入管理界面查看设置是否成功的界面情况。
 
 
@@ -554,22 +554,22 @@ canal.mq.dynamicTopic=canal-mq-jzo2o-foundations:jzo2o-foundations\\.serve_sync
 
 创建exchange.canal-jzo2o交换机：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/HklobWGeKolaIRxIX1HcC2LWnsh.png)
+![hklobwgekolairxix1hcc2lwnsh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hklobwgekolairxix1hcc2lwnsh.png)
 > 图注：这张图片是RabbitMQ中新建交换机的配置界面，用于创建在配置Canal+RabbitMQ时所需的交换机。界面显示已配置的关键参数：Virtual host选择为/xzb，交换机名称为必填项exchange.canal-jzo2o，类型选择为topic，Durability设置为Durable，Auto delete和Internal均设置为No，最后还有Arguments配置栏以及“Add exchange”的提交按钮，该交换机是与后续队列绑定的核心配置项。
 
 创建队列：canal-mq-jzo2o-foundations
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/JW7fbEjcxo9ZVVx4f2bcDZh5n2g.png)
+![jw7fbejcxo9zvvx4f2bcdzh5n2g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jw7fbejcxo9zvvx4f2bcdzh5n2g.png)
 > 图注：该图片展示了RabbitMQ管理界面的Queues页面，处于配置Canal+RabbitMQ的步骤中，用于创建指定名称的队列。页面顶部为RabbitMQ相关信息，当前所有队列数量为0，下方“Add a new queue”模块中，Virtual host选择为Classic，队列名称已被标识，为canal-mq-jzo2o-foundations，Durability选项为Durable，其他配置项包含Auto delete为No，Arguments区域有Message TTL、Auto expire等可配置选项，该页面是完成Canal+RabbitMQ配置中创建队列步骤的界面呈现。
 
 绑定交换机：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/TBRObiehyoki33xChMvcggGZnDb.png)
+![tbrobiehyoki33xchmvcgggzndb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tbrobiehyoki33xchmvcgggzndb.png)
 > 图注：图片展示的是rabbitMQ中exchange.canal-jzo2o的配置界面。在“Bindings”区域，下拉框“To queue”被选中，其右侧显示“canal-mq-jzo2o-foundations”和“canal-mq-jzo2o-...”等队列名称。该图片与上文“配置Canal+RabbitMQ”中“进入rabbitMQ配置交换机和队列”部分相关，是对创建交换机后，进行队列绑定操作的展示，直观呈现了队列名称等关键信息。
 
 绑定成功：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/JdZIbiskso5hJXx6aCkcKxbEnpd.png)
+![jdzibiskso5hjxx6ackckxbenpd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jdzibiskso5hjxx6ackckxbenpd.png)
 > 图注：图片展示了rabbitMQ配置中交换机和队列的绑定成功界面。上方“Bindings”标题下，有“This exchange”按钮，下方“To”栏显示队列名称“canal-mq-jzo2o-foundations”，“Routing key”栏为“canal-mq-jzo2o-foundations”，“Arguments”栏为空，右侧有“Unbind”按钮。该图片与上文配置Canal+RabbitMQ中创建交换机、队列及绑定的内容相关，直观呈现了绑定成功后的状态。
 
 
@@ -580,7 +580,7 @@ canal.mq.dynamicTopic=canal-mq-jzo2o-foundations:jzo2o-foundations\\.serve_sync
 
 修改jzo2o-foundations数据库的serve_sync表的数据，稍等片刻查看canal-mq-jzo2o-foundations队列，如果队列中有的消息说明同步成功，如下 图：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/G2XRb8zhFoniR8xr5H9c4xuun1d.png)
+![g2xrb8zhfonir8xr5h9c4xuun1d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/g2xrb8zhfonir8xr5h9c4xuun1d.png)
 > 图注：这张图片展示了RabbitMQ队列的相关信息界面，具体显示了Virtual host为/xzb、名称为canal-mq-jzo2o-foundations的队列详情。该队列类型为classic，状态为idle，在Messages区域的Ready一栏有数值3，且箭头指向该数值，其余数值中Unacked为0、Total为3，Message rates区域的incoming、deliver / get、ack项数值均为0.00/s。该图片用于配合文档中测试数据同步的内容，是验证Canal与MQ数据同步是否成功的直观参考，当该队列Ready存在有效消息时，即表明同步操作生效。
 
 如果没有同步到 MQ参考常见问题中“数据不同步”进行解决。
@@ -702,12 +702,12 @@ canal-mq-jzo2o-orders-serve-history
 
 
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/WAqVb5oy3oAg8Nxq3iScaWn0nae.png)
+![waqvb5oy3oag8nxq3iscawn0nae](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/waqvb5oy3oag8nxq3iscawn0nae.png)
 > 图注：这张图片展示了配置完成后的消息队列与交换机绑定的相关配置信息，对应文档中配置ES索引同步环境时，按要求完成同步队列创建及绑定的配置结果。图片呈现了表格内容，表格包含三列，分别为“To”“Routing key”“Arguments”，其中“To”列和“Routing key”列的内容完全一致，罗列了多个同步队列的名称，如canal-mq-jzo2o-customer-provider、canal-mq-jzo2o-foundations等，每个队列对应的“Arguments”列均显示为“Unbind”，表明这些队列均已完成与指定交换机的绑定配置，该结果呼应了文档中配置完成相关同步队列绑定的内容要求。
 
 查询队列如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/CbgjbtJXXot2gkxCc6mctju0nJc.png)
+![cbgjbtjxxot2gkxcc6mctju0njc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cbgjbtjxxot2gkxcc6mctju0njc.png)
 > 图注：图片展示的是消息队列RabbitMQ管理控制台中队列列表。表格包含Virtual host、Name、Type、Features、State、Read等列。其中，Name列有多个队列名称，如canal-mq-jzo2o-customer-provider等，Type均为classic，Features列有部分显示“Args”，State均为idle，Read列显示为灰色。
 
 
@@ -777,7 +777,7 @@ docker start canal
 
 进入MQ的管理控制台，进入要清理消息的队列，通过purge功能清理消息：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-05-search-module/OtdMbDz3ioEjUDxUZNNcxSc7nfg.png)
+![otdmbdz3ioejudxuznncxsc7nfg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/otdmbdz3ioejudxuznncxsc7nfg.png)
 > 图注：图片展示的是MQ管理控制台中“Purge”功能下的“Purge Messages”按钮。该图片与文档中“MQ同步消息无法消费”问题的解决方法相关，当出现ES和MySQL数据不同步导致MQ同步消息无法被消费时，可通过进入MQ管理控制台，进入要清理消息的队列，点击此按钮，执行purge功能来清理消息，从而解决此问题。
 
 ---

@@ -59,7 +59,7 @@ aliases:
 
 项目部署时需要对所有模块一起编译、打包，打成一个jar包或war包，如下图：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Xf9YbVFAWoObnzxZHb5c75T1nnh.jpg)
+![xf9ybvfawoobnzxzhb5c75t1nnh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xf9ybvfawoobnzxzhb5c75t1nnh.jpg)
 > 图注：该图片对应文档中单体架构项目部署的相关内容，展示了黑马商城的单体架构：整个项目包含商品管理、用户管理、交易管理、购物车功能四类业务模块，这些模块整体被编译打包成一个JAR包，最终部署到多个服务器上。直观呈现了单体架构的特性，即所有业务模块整合为单一工程，部署时需将全部模块打包为单个文件后统一部署。
 
 
@@ -104,7 +104,7 @@ aliases:
 
 例如，黑马商城项目，我们就可以把商品、用户、购物车、交易等模块拆分，交给不同的团队去开发，并独立部署：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/LX8tbL3b9oaYsgxZBtTcURZEnyd.jpg)
+![lx8tbl3b9oaysgxzbttcurzenyd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lx8tbl3b9oaysgxzbttcurzenyd.jpg)
 > 图注：该图对应微服务架构的示例内容，展示了黑马商城按微服务拆分后的服务架构结构。图中以业务模块为划分，将项目拆分为商品服务、用户服务、交易服务、购物车服务多个独立服务，每个服务开发部署后生成对应的JAR包，再分别部署到服务器，连接各自的MySQL数据库，同时有对应角色指向各服务，体现这些服务可交由不同团队开发并独立部署，符合微服务架构拆分模块的特点。
 
 微服务架构的一些特点：
@@ -177,12 +177,12 @@ AI:分布式架构是什么？
 
 下面分享几个微服务架构图：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/MOnkbn8WXoe7y1xzMBCcAoQ5nOd.png)
+![monkbn8wxoe7y1xzmbccaoq5nod](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/monkbn8wxoe7y1xzmbccaoq5nod.png)
 > 图注：这是一张微服务架构示意图，清晰呈现了微服务架构的分层结构与组件关系。图中最上层是前端，包含Vue、NPM、WebPack、WebSocket等开发工具，经Node.js处理后由Nginx集群转发请求；请求经JWT权限校验后进入网关集群，再通过Ribbon负载均衡与Hystrix失败容错策略连接到微服务集群。微服务集群涵盖商品、订单、用户等业务服务，还有消息服务、配置中心等辅助组件，同时通过Eureka注册中心实现服务注册与发现，最终的服务数据存储在数据库中，还集成了静态资源CDN服务、Thymeleaf模板配置等组件，整体展现了分布式微服务架构的协作逻辑。
 
 
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/NWSsb5OGDos15Bxq1imcqpx5nic.png)
+![nwssb5ogdos15bxq1imcqpx5nic](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nwssb5ogdos15bxq1imcqpx5nic.png)
 > 图注：图片展示了电商项目中微服务架构图。左侧有手机、电脑、平板等终端设备，通过Gateway Gateway将请求转发至服务A、服务B等微服务。服务A、服务B等微服务间有数据交互，部分服务还与Nacos等配置中心交互。右侧有Skywalking、ELK等监控和日志系统，以及Redis、MySQL等数据库。该图直观呈现了微服务架构下各组件的交互关系，与上下文介绍的电商项目微服务架构相契合。
 
 
@@ -253,7 +253,7 @@ AI:云原生架构是什么？
 
 登录入口在`com.hmall.controller.UserController`中的`login`方法：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/WwzQbwgFJouCdSxykO0c56hUnsg.png)
+![wwzqbwgfjoucdsxyko0c56hunsg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wwzqbwgfjoucdsxyko0c56hunsg.png)
 > 图注：图片展示了黑马商城项目中UserController.java代码。该代码位于com.hmall.controller包下，使用了@Api、@RestController、@RequestMapping等注解，定义了用户相关接口。其中，@ApiOperation注解标注了“用户登录接口”，@PostMapping注解标注了“Login”方法，该方法接收@RequestBody @Validated LoginFormDTO类型的loginFormDTO参数，返回UserLoginVO对象。此图与上文介绍登录功能相关，直观呈现了登录接口的代码实现。
 
 
@@ -262,14 +262,14 @@ AI:云原生架构是什么？
 
 在首页搜索框输入关键字，点击搜索即可进入搜索列表页面：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/NHwbb9qtGow76extRJWcOMA9n1f.png)
+![nhwbb9qtgow76extrjwcoma9n1f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nhwbb9qtgow76extrjwcoma9n1f.png)
 > 图注：图片展示的是黑马商城首页搜索商品页面。页面上方有导航栏，中部有“黑马商城”标志及搜索框，搜索框内提示输入商品名称。下方是商品分类、品牌、价格等筛选栏。搜索结果展示多款手机，如华为、OPPO、三星等品牌手机，每款手机图片、价格、评价数及“立即购买”“加入购物车”按钮等信息一应俱全。该页面对应文档中搜索商品功能介绍，是商品搜索结果展示示例。
 
 
 
 该页面会调用接口：`/search/list`，对应的服务端入口在`com.hmall.controller.SearchController`中的`search`方法：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/RhCCbciAXot5gkxDpMScJWdFnSW.png)
+![rhccbciaxot5gkxdpmscjwdfnsw](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rhccbciaxot5gkxdpmscjwdfnsw.png)
 > 图注：这张图片展示了IDEA开发工具中的Java代码编辑界面，内容是hm-service模块下com.hmall.controller包中的SearchController类代码。该类标注了“搜索相关接口”，请求路径为“/search”，类中注入了ItemService实例，其中的search方法是对应搜索接口的服务端入口，该方法使用了@ApiOperation注解标注“搜索商品”，并以@GetMapping注解映射“/list”路径，方法内通过ItemService实现搜索相关的分页查询逻辑，最后将结果封装为PageDTO对象返回，该代码与文档中提到的搜索商品相关接口服务端入口的描述相对应。
 
 这里目前是利用数据库实现了简单的分页查询。
@@ -278,19 +278,19 @@ AI:云原生架构是什么？
 
 在搜索到的商品列表中，点击按钮`加入购物车`，即可将商品加入购物车：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/M5xPbKdSuoTS4nxvKqZcubW9nIc.png)
+![m5xpbkdsuots4nxvkqzcubw9nic](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/m5xpbkdsuots4nxvkqzcubw9nic.png)
 > 图注：该图片展示的是商城的商品列表页，共呈现了5款手机商品，页面顶部有“默认”“销量↑”“价格↑”的排序选项，右上角显示商品总数量为10230件，当前处于第1页。每件商品卡片均标注了名称、售价，底部设有“立刻购买”“加入购物车”按钮，其中售价906元的华为nova4商品下方，还配有红色箭头指向“加入购物车”按钮，这和文档中介绍的“商品加入购物车”功能操作内容相呼应。
 
 加入成功后即可进入购物车列表页，查看自己购物车商品列表：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Oa9pbmRAlo2tHGxAciLcg052n7e.png)
+![oa9pbmralo2thgxacilcg052n7e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oa9pbmralo2thgxacilcg052n7e.png)
 > 图注：这张图片展示的是黑马商城的购物车列表页，页面呈现了三笔已加入的商品信息，包括vivo X23手机、巴布豆纸尿裤、华为nova4手机，每笔信息均标注了商品单价、数量和小计金额。页面右下角显示已选择2件商品，商品总价（不含运费）为1865元，还带有“已付：¥20.00”的标注，同时提供了“全选”“删除选中的商品”“移到我的关注”“清除下装商品”等功能选项，操作列针对每类商品设有“删除”“移到我的关注”的按钮，页面最右侧有“结算”按钮，符合上下文提到的购物车可查看、修改、删除商品的功能描述。
 
 同时这里还可以对购物车实现修改、删除等操作。
 
 相关功能全部在`com.hmall.controller.CartController`中：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/SxjOb3f5SoJvlrxYikxca9UanXe.png)
+![sxjob3f5sojvlrxyikxca9uanxe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sxjob3f5sojvlrxyikxca9uanxe.png)
 > 图注：图片展示了黑马商城微服务工程中`com.hmall.controller`包下的`CartController`代码。该控制器包含四个方法，分别为`addItem2Cart`（添加商品到购物车）、`updateCart`（更新购物车数据）、`deleteCartItem`（删除购物车中商品）和`queryMyCarts`（查询购物车列表）。每个方法都标注了`@ApiOperation`注解，说明了方法功能。这些方法与上下文提到的购物车相关功能对应，是业务入口，用于实现添加、更新、删除购物车商品及查询购物车列表的功能。
 
 
@@ -299,7 +299,7 @@ AI:云原生架构是什么？
 
 在购物车页面点击`结算`按钮，会进入订单结算页面：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/OjMpbyIEroPZnaxFfgTcDdlTnLd.png)
+![ojmpbyieropznaxffgtcddltnld](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ojmpbyieropznaxffgtcddltnld.png)
 > 图注：图片展示的是黑马商城的订单结算页面。页面上方有黑马商城的标志及导航栏。中间部分显示了收货人信息，有姓名、手机号、地址等。下方是商品列表，有商品图片、名称、价格、数量等信息，如vivo X21、华为nova 4等手机。右侧有商品数量调整按钮。底部显示了商品总价、优惠金额、运费等信息，合计金额为1865.00元，还有“提交订单”按钮。该图片与上下文介绍的在购物车页面点击“结算”按钮进入订单结算页面相契合。
 
 点击提交订单，会提交请求到服务端，服务端做3件事情：
@@ -310,7 +310,7 @@ AI:云原生架构是什么？
 
 业务入口在`com.hmall.controller.OrderController`中的`createOrder`方法：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/WFAybgI7LovdVFxIrQ4coXfincd.png)
+![wfaybgi7lovdvfxirq4coxfincd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wfaybgi7lovdvfxirq4coxfincd.png)
 > 图注：该图片展示了IDEA开发工具中的代码界面，内容是hmall项目里OrderController类的代码，该类对应文档中提到的订单功能业务入口。图片中明确标注了两个关键信息：一是类上的注解，二是带有@ApiOperation("创建订单")注解的createOrder方法，该方法接收OrderFormDTO类型参数，返回Long类型结果，正是文档中提及的提交订单的业务入口，对应服务端处理下单请求的核心方法代码。
 
 
@@ -319,7 +319,7 @@ AI:云原生架构是什么？
 
 下单完成后会跳转到支付页面，目前只支持**余额支付**：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/AQKsbaoXyoQl8Ux4tUhcu7oVnBd.png)
+![aqksbaoxyoql8ux4tuhcu7ovnbd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/aqksbaoxyoql8ux4tuhcu7ovnbd.png)
 > 图注：图片展示的是黑马商城的支付页面。页面上方有黑马商城的标志及“收银台”字样。中间显示订单提交成功，订单号为1660918244787093500，提示需及时付款，订单将在29分41秒后取消。下方有支付宝支付、微信支付、余额支付选项，当前选中余额支付。下方还有输入支付密码的输入框及“确认支付”按钮。页面右上角显示应付金额为1865.00元。该图片与文档中介绍余额支付流程的内容相关，直观呈现了余额支付页面的样式及关键信息。
 
 在选择**余额支付**这种方式后，会发起请求到服务端，服务端会立刻创建一个支付流水单，并返回支付流水单号到前端。
@@ -333,17 +333,17 @@ AI:云原生架构是什么？
 
 支付成功：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/DE4hbUmCloFzzTxYXAtcutGtn1d.png)
+![de4hbumclofzztxyxatcutgtn1d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/de4hbumclofzztxyxatcutgtn1d.png)
 > 图注：这张图片展示的是黑马商城的支付结果页面，页面上方有“黑马商城”的标识与“支付结果”字样，页面主体以绿色对勾图标搭配黑色文字，显示“恭喜您，支付成功啦！”，还标注了本次支付的相关信息：支付方式为扣减余额，支付金额为4468.00元，商品预计2024年10月12日到达，页面底部设有“查看订单”和“继续购物”两个功能按钮，该页面是用户完成支付操作后，服务端处理对应的支付流程并返回给用户的结果展示，对应了文档中支付成功的环节。
 
 请求入口在`com.hmall.controller.PayController`中：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Jl5JbloUEoqTGDxWQOacuxv3nSd.png)
+![jl5jbloueoqtgdxwqoacuxv3nsd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jl5jbloueoqtgdxwqoacuxv3nsd.png)
 > 图注：这张图片展示了hmall项目中支付相关的控制器代码，路径为hmall的hm-service模块的src/main/java/com/hmall/controllers目录下的PayController.java文件。文件中定义了PayController类，包含生成支付流水的applyPayOrder方法，以及尝试基于用户余额支付的tryPayOrderByBalance方法，后者通过@PostMapping注解映射了请求，还包含了支付相关的注解标签，对应文档中提及的支付功能的请求入口，即该控制器是处理支付请求的核心代码文件。
 
 支付成功可以查看user表的余额字段是否减少
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Rwxhbgpm6ogeobxpDDRcs2Z5nlc.png)
+![rwxhbgpm6ogeobxpddrcs2z5nlc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rwxhbgpm6ogeobxpddrcs2z5nlc.png)
 > 图注：这张图片展示了家政服务o2o项目的数据库相关内容，左侧的项目列表中，展开了hmall项目下的user表；右侧的表数据编辑区域显示了该用户表的字段信息，在所有字段行中，balance字段被红色方框突出标注，其对应的数据值为775100，该内容用于验证黑马商城支付模块的功能是否正常，与文档中测试发现支付成功后用户表余额未减少的bug直接相关，需核对用户余额字段的数值是否符合支付后的变动逻辑。
 
 
@@ -422,7 +422,7 @@ Bug描述: 在测试中发现支付成功后用户表的余额字段并没有减
 
 每个微服务是一个SpringBoot工程，微服务之间的通信协作、服务保护等各种问题都有对应的解决方案和微服务组件，SpringCloud框架可以说是目前Java领域最全面的微服务组件的集合了，如下图：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/ZA3RbPaQGoFDoAxBLtucCMpWnwe.png)
+![za3rbpaqgofdoaxbltuccmpwnwe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/za3rbpaqgofdoaxbltuccmpwnwe.png)
 > 图注：这张图是微服务架构的组件示意图，核心为“微服务”，由一只手握着放大镜突出显示。围绕微服务，共有六类核心组件，分别属于不同的功能模块：左侧是服务注册发现，包含Eureka、Nacos、Consul；服务远程调用，包含OpenFeign、Dubbo；服务链路监控，包含Zipkin、Sleuth。右侧是统一配置管理，包含SpringCloudConfig、Nacos；统一网关路由，包含SpringCloudGateway、Zuul；流控、降级、保护，包含Hystix、Sentinel。该图对应文档中介绍的Spring Cloud相关内容，直观呈现了Spring Cloud为微服务提供的各类完整解决方案。
 
 Spring Cloud 是一个基于 Spring Boot 的**微服务开发框架**，它依托于SpringBoot的自动装配能力，它提供了**一套完整的微服务解决方案**。Spring Cloud 旨在帮助开发者快速构建分布式系统中的服务，包括服务发现、配置管理、API 网关、断路器、智能路由、负载均衡、消息总线、服务间通信等功能。Spring Cloud 是一个非常强大的工具集，可以帮助开发者快速构建健壮的微服务架构。
@@ -442,7 +442,7 @@ Spring Cloud主要组件包括：
 
 以下是SpringCloud和SpringBoot的版本对应关系，SpringCloud依赖SpringBoot：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/IIYcbbBKboPQpqxIDeDch0Wgnrb.png)
+![iiycbbbkbopqpqxidedch0wgnrb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iiycbbbkbopqpqxidedch0wgnrb.png)
 > 图注：图片展示了Spring Cloud和Spring Boot的版本对应关系。其中，2021.0.x版本的Spring Cloud对应2.6.x、2.7.x（从2021.0.3开始）的Spring Boot版本。该图片与上下文紧密相关，上下文提到当前Spring Boot版本为4.0.x，大部分企业还在使用2.7.x及以下版本，因此课程使用Spring Cloud 2021.0.x及Spring Boot 2.7.x版本重点讲解Spring Cloud Alibaba框架的核心组件，此图直观呈现了对应版本关系。
 
 
@@ -616,29 +616,29 @@ Spring Cloud Alibaba与Spring Cloud区别和联系？
 
 如果pom.xml文件图标不是pom字样需要右键点击
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/O14bbCWeKo4o2QxOKRWc13Oynbb.png)
+![o14bbcweko4o2qxokrwc13oynbb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/o14bbcweko4o2qxokrwc13oynbb.png)
 > 图注：这张图片展示了一个蓝色背景的操作选项栏，其中有带加号的“+”标识，以及文字“Add as Maven Project”。该内容对应文档中“如果pom.xml文件图标不是pom字样需要右键点击”的操作指引，是创建Spring Cloud微服务工程（父工程）过程中，针对pom.xml文件图标的异常状态时的右键操作选项，用于将当前项目作为Maven项目添加，帮助开发者完成基础工程创建的相关操作步骤。
 
 如下图：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/F3Ycb5naJo6L9txC0qfcCD4Jnzh.png)
+![f3ycb5najo6l9txc0qfccd4jnzh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f3ycb5najo6l9txc0qfccd4jnzh.png)
 > 图注：图片展示了IntelliJ IDEA中hmall-micro项目的pom.xml文件。左侧项目结构中，hmall-micro项目下有.idea、pom.xml、External Libraries、Scratches and Consoles等文件夹和文件。pom.xml文件图标为“m”，右侧有红色箭头指向该图标。该图片与上文“在项目根目录创建pom.xml”及“如果pom.xml文件图标不是pom字样需要右键点击”内容对应，直观呈现了pom.xml文件在项目中的位置及图标样式。
 
 选择jdk版本为11：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/ThAmbxBt0o7s7uxWEsZcDQpNnPe.png)
+![thambxbt0o7s7uxweszcdqpnnpe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/thambxbt0o7s7uxweszcdqpnnpe.png)
 > 图注：这张图片展示了项目结构设置界面的Project配置页，核心为配置JDK相关信息。页面左侧是项目设置的功能选项栏，选中了「Project」选项；右侧的项目基本信息区域，明确显示SDK选择为11 Oracle OpenJDK version 11.0.15，对应下方配置的语言级别为18 - No new language features，该设置对应文档中“选择jdk版本为11”的操作要求，用于创建Spring Cloud微服务相关工程，界面还呈现了项目名称、编译输出路径等配套信息。
 
 
 
 在pom.xml中重点定义了Spring Boot、Spring Cloud和Spring Cloud Alibaba的版本号：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/AIt9b5UdyojcxQxlWhScNyl7ndg.png)
+![ait9b5udyojcxqxlwhscnyl7ndg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ait9b5udyojcxqxlwhscnyl7ndg.png)
 > 图注：这张图片展示的是父工程根目录下的pom.xml文件内容，该文件用于管理项目依赖，页面标题显示项目名称为hmall，当前打开的是pom.xml文件的编辑界面。内容里的核心部分围绕依赖管理展开，分别定义了Spring Cloud和Spring Cloud Alibaba的依赖，其中Spring Cloud的依赖指定了group为org.springframework.cloud、artifacts为spring-cloud-dependencies，版本引用了spring-cloud.version属性；Spring Cloud Alibaba的依赖指定了group为com.alibaba.cloud、artifacts为spring-cloud-alibaba-dependencies，版本引用了spring-cloud-alibaba.version属性，这与文档中所述在pom.xml中定义相关组件版本号的内容完全对应。
 
 对应的版本：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Ty9tbzu7UothvCxdfoccrpKOntg.png)
+![ty9tbzu7uothvcxdfoccrpkontg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ty9tbzu7uothvcxdfoccrpkontg.png)
 > 图注：图片展示了在IntelliJ IDEA中编辑pom.xml文件的界面。文件中重点定义了Spring Boot、Spring Cloud和Spring Cloud Alibaba的版本号。其中，Spring Boot的版本号为2.7.12，Spring Cloud版本号为2021.0.3，Spring Cloud Alibaba版本号为2021.0.1。这些版本号被红色框线突出显示，与上下文提到在pom.xml中定义版本号的内容相呼应，直观呈现了具体版本信息。
 
 
@@ -649,12 +649,12 @@ Spring Cloud Alibaba与Spring Cloud区别和联系？
 
 如果pom.xml文件图标不是pom字样需要右键点击
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/MMiwbjKwZoviyUxAg8KctKjmn7B.png)
+![mmiwbjkwzoviyuxag8kctkjmn7b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mmiwbjkwzoviyuxag8kctkjmn7b.png)
 > 图注：图片展示了在Eclipse中将项目添加为Maven项目的操作界面。画面中有一个蓝色的“Add as Maven Project”按钮，按钮上方有一个蓝色的“+”图标。该图片与文档中“2.2.2.2创建common工程”部分内容相关，对应将原项目的hm - common拷贝到新项目目录下后，若pom.xml文件图标不是pom字样需右键点击的操作步骤，用于指导用户在Eclipse中完成将项目添加为Maven项目的操作。
 
 如下图：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/PjlXbUcesoX3ExxEQIHcjf65nYd.png)
+![pjlxbucesox3exxeqihcjf65nyd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pjlxbucesox3exxeqihcjf65nyd.png)
 > 图注：图片展示了IntelliJ IDEA中hmall-micro项目的hmall-common模块的目录结构。左侧目录栏中，hmall-micro项目下有.idea、hmall-common等文件夹，hmall-common文件夹下有src和target文件夹，其中target文件夹被高亮显示。右侧是hmall-common模块的pom.xml文件，其图标为蓝色“m”标识。该图片与上文“将原项目的hm - common拷贝到新项目目录下”内容对应，直观呈现了hmall - common模块在项目中的位置。
 
 
@@ -671,7 +671,7 @@ Spring Cloud Alibaba与Spring Cloud区别和联系？
 
 查看购物车微服务使用的数据库：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/I8XnbWfJCosFXkxB4E2cbYaqnvd.png)
+![i8xnbwfjcosfxkxb4e2cbyaqnvd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/i8xnbwfjcosfxkxb4e2cbyaqnvd.png)
 > 图注：图片展示了商品服务（hm-item）下的tables文件夹内容。其中包含三个文件夹：item、item_sync、undo_log。该图片与文档中“2.2.3.3复制并修改代码”部分内容相关，用于说明在商品服务中，按照模型、持久层、业务层、控制层的顺序拷贝代码后，最终效果中商品服务的tables文件夹下应包含这三个文件夹，与上下文代码复制及结构修改的说明相呼应。
 
 
@@ -682,7 +682,7 @@ Spring Cloud Alibaba与Spring Cloud区别和联系？
 
 选择maven模块，设定JDK版本为11，模块名为：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/SvDZb2QakocqDFxQ9W2ccpYHnzf.png)
+![svdzb2qakocqdfxq9w2ccpyhnzf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/svdzb2qakocqdfxq9w2ccpyhnzf.png)
 > 图注：这张图片展示了创建Maven模块的界面，用于在微服务工程中创建商品服务对应的module。界面中，模块名称设置为“item-service”，项目位置指向名为“hmall-micro”的工程路径，JDK版本选择了Project SDK 11，构建系统指定为Maven，父项目设置为“hmall-parent”，还显示了Advanced Settings里的GroupId为“com.hmall”、ArtifactId为“item-service”，界面右下角有“Create”和“Cancel”两个操作按钮，左侧还能看到该工程已有的其他模块如“hm-common”的项目结构。
 
 
@@ -751,12 +751,12 @@ Spring Cloud Alibaba与Spring Cloud区别和联系？
 
 拷贝`hm-service`中与商品管理有关的代码到`item-service`，按照模型、持久层、业务层、控制层的顺序拷贝代码，最终效果如下图（注意跟hm-service对比，这里多了item这层包）：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/AhhQbrNeloiAwWxXAz0ctNqInNc.png)
+![ahhqbrneloiawwxxaz0ctnqinnc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ahhqbrneloiawwxxaz0ctnqinnc.png)
 > 图注：图片展示了item - service工程的目录结构。在src/main/java目录下，com.hmall.item包中包含controller、domain、po、query、mapper、service等子包，其中domain包下有dto和po子包，po包下有Item类，query包下有ItemPageQuery类，mapper包下有ItemMapper类。resources目录下有mapper文件夹，其中ItemMapper.xml文件被高亮显示。该图与上文“复制并修改代码”内容相关，直观呈现了代码复制后的工程目录及文件分布情况。
 
 在ItemMapper.xml文件中需要修改包路径。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/BzmDbJ9i4o1pRYxReENcpHvVnCg.png)
+![bzmdbj9i4o1pryxreencphvvncg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bzmdbj9i4o1pryxreencphvvncg.png)
 > 图注：图片展示的是一个MyBatis的XML映射文件片段。文件中定义了一个名为`ItemMapper`的映射器，其`namespace`属性值为`com.hmall.item.mapper.ItemMapper`。该图片与上下文紧密相关，上下文提到在ItemMapper.xml文件中需修改包路径，因ItemMapper所在包发生变化，故代码需修改包路径，此图直观呈现了需修改的包路径内容，辅助理解代码修改要求。
 
 
@@ -787,7 +787,7 @@ public class ItemServiceApplication {
 
 接下来是配置文件，可以从`hm-service`中拷贝：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/QDiibsZjJosvzTx6kImcKprInop.png)
+![qdiibszjjosvztx6kimckprinop](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qdiibszjjosvztx6kimckprinop.png)
 > 图注：这张图片展示了商品服务（item-service）工程的项目目录结构。从顶层目录开始，依次包含src文件夹，其下分为main和resources目录。main目录中的java目录下的com.hmall.item包内，设有controller、domain、mapper、service四个子包，还有启动类ItemServiceApplication。resources目录下有mapper文件夹，以及application.yaml、application-dev.yaml、application-local.yaml三个配置文件。该结构对应文档中创建微服务商品服务的相关内容，其中三个配置文件可从hm-service工程拷贝，application.yaml还需按要求设置端口号、服务名、数据库相关信息及Swagger接口包路径。
 
 其中，`application.yaml`内容如下（以下方内容为主，覆盖掉原有的内容）：
@@ -842,12 +842,12 @@ knife4j:
 
 直接运行启动类
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/D4eIb1zTSoc1Xqxl6uYcxnclnHs.png)
+![d4eib1ztsoc1xqxl6uycxnclnhs](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/d4eib1ztsoc1xqxl6uycxnclnhs.png)
 > 图注：这张图片展示了SpringCloud微服务开发工具中的操作界面，左侧是项目结构，可见名为“item-service”的商品服务工程，其src目录下包含main/java/com/hmall/item的controller、domain等代码包，还有ItemService、ItemServiceImpl等相关类，右侧右键菜单中，“Debug 'ItemServiceApplication'”选项被高亮选中，对应上下文里启动微服务的操作，是运行商品服务启动类的调试启动操作界面，用于完成微服务的启动部署步骤。
 
 启动成功：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/OM29bpUwRoHochx313jcT5J6nGe.png)
+![om29bpuwrohochx313jct5j6nge](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/om29bpuwrohochx313jct5j6nge.png)
 > 图注：图片展示的是微服务工程启动成功后的控制台日志。日志中显示Tomcat在8081端口（http）启动成功，带有上下文路径。还记录了Spring嵌入式WebApplicationContext初始化完成、Swagger接口映射、文档插件启动、自定义文档插件发现等信息。该图片与上文“2.2.3.5启动微服务”内容对应，直观呈现了微服务启动后的运行状态，帮助开发者确认服务是否正常运行。
 
 
@@ -858,7 +858,7 @@ knife4j:
 
 然后测试其中的根据id批量查询商品这个接口：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/AdaqbULxGoIvWbxvoS3cRQH2npd.png)
+![adaqbulxgoivwbxvos3crqh2npd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/adaqbulxgoivwbxvos3crqh2npd.png)
 > 图注：这张图片是商品服务接口文档页面，展示了Springcloud微服务中根据id批量查询商品的GET接口相关信息，该接口的请求方式为GET，请求数据类型是application/x-www-form-urlencoded。图中重点标注了该接口的必填参数为ids，请求类型是query，参数类型为array integer。页面还列出了该接口的响应状态，含200、401、403等状态码及对应的说明，与文档中测试商品微服务相关的内容匹配，用于辅助完成微服务的接口测试操作。
 
 我们从hm-item数据库的item表找几条商品的id进行测试
@@ -867,7 +867,7 @@ knife4j:
 
 测试参数：100002672302,100002624500,100002533430，结果如下：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/CazhbZyAeoL2tfxejIJcU1M6nGd.png)
+![cazhbzyaeol2tfxejijcu1m6ngd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cazhbzyaeol2tfxejijcu1m6ngd.png)
 > 图注：图片展示的是商品微服务的接口文档页面。左侧为导航栏，选中“商品管理相关接口”下的“GET 根据id批量查询商品”选项。右侧上方显示“商品服务接口文档”，中部有“GET”“POST”“PUT”“DELETE”等操作按钮，当前选中“GET”。下方有“ids”参数输入框，已输入测试参数“100002672302,100002624500,100002533430”，下方是响应数据区域，显示了商品id、名称、价格等信息。该图与上文测试商品微服务接口文档中根据id批量查询商品接口的内容相关。
 
 说明商品微服务创建成功了。
@@ -892,7 +892,7 @@ knife4j:
 
 查看购物车微服务使用的数据库：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/LV0UbN5YNoRwiCxWe4Ncbotjnbb.png)
+![lv0ubn5ynorwicxwe4ncbotjnbb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lv0ubn5ynorwicxwe4ncbotjnbb.png)
 > 图注：图片展示了在hmall项目下创建的`hm-cart`模块的数据库结构。其中`tables`文件夹下有`1`个文件，即`cart`。该图片与上文“把hm-service中的与购物车有关功能拷贝过来，最终的项目结构如下”的内容相关，直观呈现了项目结构中与购物车功能相关的数据库表情况，帮助理解购物车服务的数据库基础。
 
 ##### 2.2.4.2 创建工程
@@ -965,29 +965,29 @@ knife4j:
 
 把hm-service中的与购物车有关功能拷贝过来，最终的项目结构如下：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/DRombC84mo9cl9xvZJ8cfuYqnSb.png)
+![drombc84mo9cl9xvzj8cfuyqnsb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/drombc84mo9cl9xvzj8cfuyqnsb.png)
 > 图注：这张图片展示了购物车服务工程cart-service的项目目录结构，根目录为cart-service，包含src和resources两个子目录。src目录下的main子目录中，java目录里的包层级依次为com、hmall、cart，cart包内划分了controller、domain、mapper、service等功能子包，每个子包对应了相关代码文件，如controller包下的CartController、domain包下的CartFormDTO和ItemDTO等，service子包的impl文件夹下有CartServiceImpl和ICartService，还有应用启动类CartServiceApplication；resources目录下则设有mapper子目录，用于存放CartMapper.xml等配置文件，该结构与文档中拷贝hm-service相关代码后构建的购物车服务项目结构要求相符。
 
 注意：需要修改CartMapper.xml文件中的包路径。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/M0ssb13CYojAdtxJ2KOcIgl4nSh.png)
+![m0ssb13cyojadtxj2kocigl4nsh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/m0ssb13cyojadtxj2kocigl4nsh.png)
 > 图注：图片展示的是一个MyBatis的Mapper XML文件内容。文件声明了版本、编码等信息，定义了映射器的命名空间为“com.hmall.cart.mapper.CartMapper”。该图片与上下文紧密相关，上下文提到需修改CartMapper.xml文件中的包路径，此图片直观呈现了文件中命名空间的设置情况，帮助理解修改包路径的具体位置和内容。
 
 
 
 特别注意的是`com.hmall.cart.service.impl.CartServiceImpl`，其中有两个地方获取当前的用户id，目前我们还没有创建用户服务所以修改UserContext的getUser()方法固定返回1。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/CYt0bpaDvo95GGxRpJtcJYvQnkc.png)
+![cyt0bpadvo95ggxrpjtcjyvqnkc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cyt0bpadvo95ggxrpjtcjyvqnkc.png)
 > 图注：这张图片展示的是UserContext.java文件的代码内容，对应文档中提到的修改UserContext的getUser()方法的操作。该文件里的getUser方法原本是获取当前登录用户信息的方法，为解决还未创建用户服务的问题，方法内当前已固定返回1L，原本通过tl.get()获取用户id的代码已被注释屏蔽。
 
 
 
 **屏蔽ItemService相关代码**
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/H5pPb53djoxIKqxuu5ackuIwnuh.png)
+![h5ppb53djoxikqxuu5ackuiwnuh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/h5ppb53djoxikqxuu5ackuiwnuh.png)
 > 图注：图片展示了`CartServiceImpl.java`代码片段，其中`@Service`和`@RequiredArgsConstructor`注解被绿色勾选突出显示。`@Service`注解表明该类是Spring框架中的服务类。`@RequiredArgsConstructor`注解用于生成构造方法，自动为所有final的字段生成构造方法。该图片与上下文紧密相关，上下文提到要屏蔽`ItemService`相关代码，此图片展示了购物车服务中`CartServiceImpl`类的部分代码，与上下文中的代码编写内容相呼应。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Amw0bCm3QoNTN0xUWLsczJRrnMr.png)
+![amw0bcm3qontn0xuwlsczjrrnmr](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/amw0bcm3qontn0xuwlsczjrrnmr.png)
 > 图注：该图片展示了`CartServiceImpl`类的`handleCartItems`方法代码，对应文档中“屏蔽ItemService相关代码”的要求。方法被分为两个注释说明的步骤：第一步注释为“1.获取商品id”，通过Stream流操作从CartVO列表提取商品id并收集为Set集合；第二步原注释为“2.toto 查询商品”，原本调用`itemService.queryItemByIds(itemIds)`获取商品DTO列表，该ItemService调用即为需要屏蔽的内容，当前已被注释，且后续新增了初始化空ArrayList的代码，还添加了判断该列表是否为空的条件逻辑。
 
 
@@ -1078,7 +1078,7 @@ knife4j:
 
 下边继续测试接口，无需填写参数，直接访问：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Am3Ub6wdGoeAKoxmclZcosWvn9c.png)
+![am3ub6wdgoeakoxmclzcoswvn9c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/am3ub6wdgoeakoxmclzcoswvn9c.png)
 > 图注：图片展示的是在Postman中测试购物车服务接口的界面。上方显示请求方法为GET，URL为/carts。下方“请求参数”区域有“x-www-form-urlencoded”“form-data”“raw”三个选项，当前选中“x-www-form-urlencoded”。响应内容区域显示了查询购物车列表的JSON数据，其中newPrice、stock、status属性值分别为null、10、0。图片右下角有红色箭头标注，提示这三个属性值都不是最新值（后俩是默认值）。该图片与上下文介绍的测试购物车服务接口内容相关，直观呈现了接口测试结果。
 
 我们注意到，其中与商品newPrice属性值都为空，其他俩stock和status是vo类里属性的默认值！这就是因为刚才我们注释掉了查询购物车时，查询商品信息的相关代码。
@@ -1117,14 +1117,14 @@ knife4j:
 
 我们发现一个问题：在购物车业务中需要查询商品信息，但商品信息查询的逻辑全部迁移到了`item-service`服务，导致我们无法查询，查询端口信息的代码已经屏蔽：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/KSMHbUPyuoq99lxAGepcmtZJnLf.png)
+![ksmhbupyuoq99lxagepcmtzjnlf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ksmhbupyuoq99lxagepcmtzjnlf.png)
 > 图注：图片展示的是`CartServiceImpl`类中`handleCartItems`方法的部分代码。代码中，首先获取商品id，然后调用`itemService.queryItemByIds`查询商品。其中，`itemIds`是通过`vos.stream().map(CartVO::getItemId).collect(Collectors.toSet())`获取的，`items`是通过`itemService.queryItemByIds(itemIds)`查询得到的。若查询结果为空，则返回。该图片与上下文介绍的微服务架构中商品信息查询问题相关，展示了通过远程调用技术查询商品信息的代码实现。
 
 最终结果就是查询到的购物车数据不完整，因此要想解决这个问题就需要通过远程调用技术。
 
 一个微服务架构的项目会包括很多的微服务，一次业务操作会由多个微服务互相协作完成，比如：一次下单操作的执行流程如下：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/XHDubNmsco1UHIxdAlTczvn2n3b.png)
+![xhdubnmsco1uhixdaltczvn2n3b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xhdubnmsco1uhixdaltczvn2n3b.png)
 > 图注：图片展示了订单服务执行流程。用户请求订单服务提交订单后，订单服务在数据库创建订单，接着分别请求账户服务扣减余额、库存服务扣减库存，最后三个服务均在各自数据库操作。该图与上下文紧密相关，直观呈现了提交订单这一业务操作中，订单服务与账户、库存服务协作完成的执行流程，帮助理解微服务架构下一次业务操作的协作关系。
 
 执行流程如下：
@@ -1207,7 +1207,7 @@ AI: RestTemplate远程调用例子
 
 其中提供了大量的方法，方便我们发送Http请求，例如：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/TqgWbmUSwoGFeFxOIj3cSvnGntg.png)
+![tqgwbmuswogfefxoij3csvngntg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tqgwbmuswogfefxoij3csvngntg.png)
 > 图注：图片展示了RestTemplate类的代码界面，其中列出了该类的多个方法。如RestTemplate()构造函数，delete、getForEntity、getForObject等方法用于发送Http请求，postForEntity、put等方法用于发送Post、Put请求，doExecute、exchange等方法用于执行Http操作。这些方法与上下文介绍的RestTemplate不依赖SpringCloud框架，可发送多种Http请求，且可使用exchange方法构造复杂请求的内容相呼应，直观呈现了其方法功能。
 
 可以看到常见的Get、Post、Put、Delete请求都支持，如果请求参数比较复杂，还可以使用exchange方法来构造请求。
@@ -1224,7 +1224,7 @@ AI: RestTemplate远程调用例子
 
 代码中需要变化的就是这一步：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/CKwnbJVUEoGENmxgOxQcSdIcnzc.png)
+![ckwnbjvueogenmxgoxqcsdicnzc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ckwnbjvueogenmxgoxqcsdicnzc.png)
 > 图注：图片展示的是购物车服务中处理购物车项的代码片段。其中，将本地方法调用改为远程跨服务调用的代码部分被红框突出显示，即“List<Item> items = itemService.listByIds(itemIds);”这行代码。上下文提到在购物车中显示商品信息时，需远程调用商品服务获取商品信息，此图片正是对应代码示例，直观呈现了代码中需进行远程调用的部分，帮助理解远程调用在实际代码中的位置和形式。
 
 ##### 2.3.2.2 注入RestTemplate
@@ -1247,7 +1247,7 @@ AI: RestTemplate远程调用例子
 
 我们在`cart-service`服务中定义一个配置类：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Xy2cbygVDoPqXqxaQEOcmvVDnph.png)
+![xy2cbygvdopqxqxaqeocmvvdnph](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xy2cbygvdopqxqxaqeocmvvdnph.png)
 > 图注：这张图片展示的是cart-service微服务工程的源码结构，在com.hmall.cart包下，标注了名为config的目录，该目录里有一个名为RemoteCallConfig的类，这正是文档中提到的用于定义配置类的文件，这个配置类的作用是将RestTemplate注册为Bean，为后续在CartServiceImpl中实现远程调用item-service的操作做准备，符合文档里构建微服务工程中RestTemplate相关配置的内容。
 
 先将RestTemplate注册为一个Bean：
@@ -1307,7 +1307,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
 
 好了，现在重启`cart-service`，再次测试查询我的购物车列表接口：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/KYW5bp4Y6oR0vexFuZ1cvE67nde.png)
+![kyw5bp4y6or0vexfuz1cve67nde](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kyw5bp4y6or0vexfuz1cve67nde.png)
 > 图注：这张图片展示的是网页端的商品服务接口测试页面，对应文档中测试`cart-service`调用`item-service`查询购物车接口的环节。页面左侧选中了“GET 查询购物车列表”接口，右侧页面显示该接口为GET请求，地址为/carts，参数类型为x-www-form-urlencoded，请求响应代码为200，耗时209毫秒，响应数据中包含了商品相关信息，其中商品价格被红色框选中标注，以此体现服务消费者`cart-service`已成功调用服务提供者`item-service`的接口，完成了商品数据的查询获取。
 
 可以发现，所有商品相关数据都已经查询到了。
@@ -1368,7 +1368,7 @@ Java使用Spring提供的RestTemplate向服务端接口发送http请求，基本
 
 试想一下，假如商品微服务被调用较多，为了应对更高的并发，我们进行了多实例部署，如图：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/PddObpISjoOeC2xErbpcPnAKnEe.png)
+![pddobpisjooec2xerbpcpnaknee](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pddobpisjooec2xerbpcpnaknee.png)
 > 图注：这张图对应文档中商品微服务多实例部署的场景，直观呈现了cart-service调用item-service的情况：左侧蓝色模块为cart-service，箭头指向右侧三个绿色模块，分别为端口8081、8082、8083的item-service实例，同时标注出cart-service向其中一个item-service实例发送的请求内容，以此展示多实例部署后，cart-service需调用不同item-service实例地址的问题背景，呼应上下文提出的“多实例部署后cart-service如何确定调用地址”的疑问。
 
 此时，每个`item-service`的实例其IP或端口不同，问题来了：
@@ -1475,12 +1475,12 @@ http {
 
 首先在nginx的nginx.conf配置文件中配置upstream 和虚拟目录
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/FrT0bV7klofn6bxSMDmcfMtQn6b.png)
+![frt0bv7klofn6bxsmdmcfmtqn6b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/frt0bv7klofn6bxsmdmcfmtqn6b.png)
 > 图注：图片展示了Nginx负载均衡配置文件nginx.conf的部分内容。关键部分用红色框标注，包括upstream配置，将127.0.0.1:7080和127.0.0.1:7081分别分配较高权重和中等权重；以及location配置，将请求路径为/items的请求代理到http://item_services，同时设置相关代理头信息。该图片与上下文紧密相关，是进行Nginx负载均衡测试时配置文件中配置内容的示例展示。
 
 cmd进入nginx目录，输入下边的命令加载配置：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/DnQbbyuBjotTbEx0HkXcrFCxnOf.png)
+![dnqbbyubjottbex0hkxcrfcxnof](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dnqbbyubjottbex0hkxcrfcxnof.png)
 > 图注：图片展示的是在nginx目录下执行命令加载配置的操作界面。命令为“nginx.exe -s reload”，执行后显示“hmall-nginx>”，表明命令执行成功。该图片与文档中“cmd进入nginx目录，输入下边的命令加载配置”内容对应，是进行Nginx负载均衡测试前，加载配置文件以进行后续测试操作的步骤展示。
 
 然后在idea中启动多个商品服务：
@@ -1489,34 +1489,34 @@ cmd进入nginx目录，输入下边的命令加载配置：
 
 产生复制一个启动配置
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Pm9ubd9i0oOh8NxtkeccU9sAnpf.png)
+![pm9ubd9i0ooh8nxtkeccu9sanpf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pm9ubd9i0ooh8nxtkeccu9sanpf.png)
 > 图注：这是IDEA的“Run/Debug Configurations”界面截图，展示用于启动微服务的配置界面。左侧列表中，“Spring Boot”分组下已存在“CartServiceApplication”与“ItemServiceApplication”两个服务配置项；红色箭头指向左侧的复制按钮，该操作对应文档中提到的“为避免多个服务端口冲突，复制启动配置”的步骤，用于生成新的服务启动配置，以此实现后续修改端口启动多个商品服务实例的需求。
 
 然后再修改启动参数，添加启动参数
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/EMLPbHgknoR0r6xUTn1c2WMxnEp.png)
+![emlpbhgknor0r6xutn1c2wmxnep](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/emlpbhgknor0r6xutn1c2wmxnep.png)
 > 图注：图片展示了IntelliJ IDEA中ItemServiceApplication的Run/Debug配置界面。在“Build and run”区域，有“Modify options”按钮被红色箭头指向。该图片对应文档中“修改启动参数，添加启动参数”步骤，用于说明在启动参数中传入server.port=7081的操作，即在“Modify options”下进行相关配置，以实现启动多个商品服务实例和购物车服务实例的目的。
 
 
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Jwg2bQXyhor3DLxkpN3cexyvnKc.png)
+![jwg2bqxyhor3dlxkpn3cexyvnkc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jwg2bqxyhor3dlxkpn3cexyvnkc.png)
 > 图注：图片展示了IntelliJ IDEA中运行配置界面。在“Active profiles”部分，有多个配置选项，如“Enable debug output”“Hide banner”等，部分选项右侧有快捷键提示。在“Operating System”部分，有“Allow multiple instances”“Working directory”“Environment variables”等选项，同样有快捷键提示。在“Java”部分，“Use classpath of module”选项被勾选，其右侧也有快捷键提示。图片下方突出显示了“Add VM options”选项，其右侧是快捷键“Alt+V”。该图片与文档中在idea中启动多个商品服务，修改启动参数，添加启动参数的操作步骤相关，用于说明添加VM选项的操作位置。
 
 在启动参数中传入：server.port=7081如下图：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/GpeKbTxqPoxFkhxNCrscPCAZnVd.png)
+![gpekbtxqpoxfkhxncrscpcaznvd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gpekbtxqpoxfkhxncrscpcaznvd.png)
 > 图注：这张图片展示了IntelliJ IDEA的运行/调试配置界面，对应文中修改启动参数指定端口的操作。界面左侧列出了Spring Boot相关的启动配置，其中ItemServiceApplication (1)为当前选中项，右侧“Build and run”区域内，标注出的参数框中填入了启动参数“-Dserver.port=7081”，该参数正是文中提到的用于避免多服务端口冲突的端口设置，以此实现运行多个商品服务实例时的端口区分。
 
 启动成功如下：
 
 两个商品服务实例，一个购物车服务实例。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/PK4kbZLP1om4Yzxyv00cijPynZi.png)
+![pk4kbzlp1om4yzxyv00cijpynzi](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pk4kbzlp1om4yzxyv00cijpynzi.png)
 > 图注：这张图片展示了Spring Boot项目的运行实例情况，明确显示处于运行状态。其中包含一个端口为8082的CartServiceApplication、一个端口为8081的ItemServiceApplication，还有两个ItemServiceApplication实例，另一个实例的端口为7081。该图对应文档中启动多个商品服务的相关内容，呈现了修改启动参数指定端口后，成功启动多个商品服务实例的运行结果，符合文档中为避免端口冲突指定端口启动多个商品服务的操作要求。
 
 然后修改购物车服务中远程调用商品服务地址为nginx虚拟目录的地址
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/RKUlbkN2go2rAwxDyKKc6EPNnkh.png)
+![rkulbkn2go2rawxdykkc6epnnkh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rkulbkn2go2rawxdykkc6epnnkh.png)
 > 图注：这张图片展示了一段Java代码，是购物车服务中远程调用商品服务的相关逻辑，代码里定义了handleCartItems方法用于处理购物车条目，通过@Autowired注解注入了RestTemplate实例，在调用商品服务的代码行中，设置的原访问地址为“http://localhost:80/items?ids=%s”，这一地址为后续需要修改为Nginx虚拟目录地址的内容，体现了将远程调用的商品服务地址配置为本地服务端口地址的原有实现。
 
 重启购物车服务。
@@ -1580,7 +1580,7 @@ nginx作为服务端，客户端请求nginx服务端，通过Nginx负载均衡�
 
 
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/WEDobq2xwoEVrpx4ZpScEZUen5b.jpg)
+![wedobq2xwoevrpx4zpscezuen5b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wedobq2xwoevrpx4zpscezuen5b.jpg)
 > 图注：这张图清晰展示了微服务场景下服务注册与发现的流程，图中包含三类核心角色：注册中心、服务提供者、服务调用者。服务提供者item-service包含localhost:8081、localhost:8082、localhost:8083三个实例，会向注册中心发起注册服务请求，还会定期向注册中心发送心跳检测以维持存活状态。注册中心向服务调用者推送服务实例的变更信息，服务调用者会向注册中心发起服务订阅，获取item-service的实例信息后，通过负载均衡对服务提供者发起远程调用，以此实现微服务间的高效远程交互。
 
 三者的分工如下：
@@ -1639,7 +1639,7 @@ Nacos是国内产品，中文文档比较丰富，而且同时具备**配置管�
 
 [https://nacos.io/zh-cn/docs/v2/what-is-nacos.html](https://nacos.io/zh-cn/docs/v2/what-is-nacos.html)
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/FFTxbxnVMovIrmxw8CecIMYKnId.png)
+![fftxbxnvmovirmxw8cecimyknid](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fftxbxnvmovirmxw8cecimyknid.png)
 > 图注：图片展示的是Nacos文档首页界面。上方有“首页”“文档”“企业版NACOS”“免费试用”“NACOS架构与原理”“博客”“社区”“控制台特例”等导航栏。蓝色背景区域左侧有“Nacos 文档”标识，右侧有“什么是 Nacos”“概览”等内容。左侧侧边栏有“Nacos”“Nacos是什么？”“Nacos简介”“概念”“架构”等选项。该图片与文档中介绍Nacos安装配置上下文相关，直观呈现了Nacos的官方网站界面。
 
 
@@ -1648,7 +1648,7 @@ Nacos是国内产品，中文文档比较丰富，而且同时具备**配置管�
 
 我们基于Docker来部署Nacos的注册中心，首先我们要准备MySQL数据库表，用来存储Nacos的数据。由于是Docker部署，需要用到数据库（虚拟机已经提供）：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/DNH2bvuWWosiwZxtv7IcTho3nPe.png)
+![dnh2bvuwwosiwzxtv7ictho3npe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dnh2bvuwwosiwzxtv7ictho3npe.png)
 > 图注：图片展示了Nacos数据库中tables表下的部分表结构。其中包含12个表，分别为config_info、config_info_aggr、config_info_beta、config_info_tag、config_tags_relation、group_capacity、his_config_info、permissions、roles、tenant_capacity、tenant_info和users。这些表与Nacos服务注册与发现相关，是Nacos数据库中用于存储配置信息、权限、角色等数据的关键表。
 
 
@@ -1659,7 +1659,7 @@ Nacos是国内产品，中文文档比较丰富，而且同时具备**配置管�
 
 nacos.2.4.tar是nacos的镜像文件，nacos文件夹下是nacos配置文件。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/DRHgbtzNIoOUUUxUTF5cDZiFnXf.png)
+![drhgbtznioouuuxutf5cdzifnxf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/drhgbtznioouuuxutf5cdzifnxf.png)
 > 图注：这张图片展示的是一个Windows系统的文件资源管理器窗口，当前路径为“新加卷 (D:) > 课程资料 > 服务框架 > day03-微服务01 > 资料”，窗口内列出了该路径下的文件与文件夹，其中高亮选中的是名为nacos的文件夹，还有hmall-nginx文件夹，以及hm-cart.sql、hm-item.sql等多个SQL源文件，另有一个JMX格式的“黑马商城测试.jmx”文件，该资料路径与微服务学习中Nacos安装配置的课程内容相关，用于对应安装操作中需上传至虚拟机的相关资料文件。
 
 课程资料中的`nacos/custom.env`需要上传到虚拟机/root目录下，在该文件中，注意：有一个MYSQL_SERVICE_HOST也就是mysql地址为虚拟机IP地址：
@@ -1711,12 +1711,12 @@ nacos/nacos-server:v2.4.0.1
 
 进入首页：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/O38yb0dxNouOWqxFvI2chwinnkd.png)
+![o38yb0dxnouowqxfvi2chwinnkd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/o38yb0dxnouowqxfvi2chwinnkd.png)
 > 图注：图片展示的是Nacos 2.4.0配置管理页面。页面左侧有“配置管理”等选项，右侧上方提示当前集群未开启授权。中间区域有“创建配置”按钮，以及Data ID、Group等输入框，还有“查询”“高级查询”“导入配置”按钮。下方显示查询到0条满足要求的配置，且有“操作”列。该页面与文档中Nacos安装配置上下文相关，用于展示Nacos配置管理界面，辅助说明Nacos安装配置操作。
 
 注意：2.4版本开始nacos默认不进行认证直接进入首页，以前的版本首次访问会跳转到登录页，**账号密码都是nacos**
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/KbMcb5663oufEYxHpWSc3ibHn0e.png)
+![kbmcb5663oufeyxhpwsc3ibhn0e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kbmcb5663oufeyxhpwsc3ibhn0e.png)
 > 图注：这张图片是Nacos的登录页面，页面左上角显示Nacos的品牌标识，下方标注了Nacos是用于构建云原生应用的易上手的动态服务发现、配置和服务管理平台。页面右侧为登录区域，标题为“登录”，还标注了提示文字“内部系统，不可暴露到公网”，配有“请输入用户名”“请输入密码”的输入框，以及蓝色的“提交”按钮。页面顶部有“首页”“文档”“博客”“社区”等导航选项，结合上下文可知，该页面是2.4版本之前的Nacos首次访问时需要进入的登录界面，对应文档中关于Nacos安装配置里首次访问的登录说明。
 
 
@@ -1830,7 +1830,7 @@ spring:
 
 启动两个商品服务实例。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/M0jvby5Y7odU6qxPIU5cMkGcnje.png)
+![m0jvby5y7odu6qxpiu5cmkgcnje](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/m0jvby5y7odu6qxpiu5cmkgcnje.png)
 > 图注：图片展示了IntelliJ IDEA中运行的`ItemServiceApplication`服务实例信息。左侧有“Spring Boot”和“Running”分类，右侧显示了两个实例，分别是`ItemServiceApplication:8081/`和`ItemServiceApplication (1):7081/`，其中`ItemServiceApplication:8081/`被蓝色高亮突出显示。该图片与文档中“3.4.4查看服务注册信息”部分对应，用于说明在微服务启动后，通过IntelliJ IDEA可查看到服务注册成功的实例信息，辅助理解服务注册成功后的日志观察结果。
 
 启动过程中观察日志，发现如下日志则表示注册成功
@@ -1843,12 +1843,12 @@ Success to connect to server [192.168.101.68:8848] on start up, connectionId ...
 
 访问nacos控制台，可以发现服务注册成功：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/KBt4b3uL9opUmRx7BObce7HCnnd.png)
+![kbt4b3ul9opumrx7bobce7hcnnd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kbt4b3ul9opumrx7bobce7hcnnd.png)
 > 图注：图片展示的是Nacos控制台的服务列表页面。页面左侧有“服务管理”下的“服务列表”选项被选中。右侧显示了服务列表，其中“item-service”服务被红框突出显示，其分组名称为“DEFAULT_GROUP”，集群数目、实例数、健康实例数均为1，触发保护阈值为false。该图片与上文“查看服务注册信息”内容相关，直观呈现了在Nacos控制台中服务注册成功后的服务注册信息情况。
 
 点击详情，可以查看到`item-service`服务的两个实例信息：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/BTe6bPUu3oQWtLxQJGKcfgLFnLg.png)
+![bte6bpuu3oqwtlxqjgkcfglfnlg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bte6bpuu3oqwtlxqjgkcfglfnlg.png)
 > 图注：这是Nacos控制台的服务详情页面截图，展示了已注册成功的item-service服务信息，该服务隶属于DEFAULT_GROUP，服务路由类型为none。页面下方的实例列表清晰显示了该服务的两个实例信息，两个实例的IP均为192.168.101.1，端口分别为8081和7081，权重均为1，健康状态、临时实例状态均为true，元数据内容为preserved.register.source=SPRING_CLOUD，列表右侧提供了编辑、下线操作选项，直观呈现了服务注册成功后的实例部署情况，与文档中“查看服务注册信息”的内容相呼应，对应文档提及的item-service服务两个注册实例。
 
 
@@ -1941,7 +1941,7 @@ public class RemoteCallConfig {
 
 修改代码，屏蔽使用discoveryClient从注册中心查询服务列表以及随机选择服务实例的代码，RestTemplate在远程调用时指定服务名“item-service”，如下：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/QfXKbbfHJoD96IxvAOScwbqjnag.png)
+![qfxkbbfhjod96ixvaoscwbqjnag](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qfxkbbfhjod96ixvaoscwbqjnag.png)
 > 图注：这张图片展示的是一段Java代码，属于实现服务发现并调用服务的相关内容。代码中定义了handleCartItems方法，方法内先通过流操作获取CartVO列表中的商品ID集合；随后使用带有@LoadBalanced标识的RestTemplate，拼接带有服务名“item-service”的URL，调用getForObject方法查询商品，得到ItemDTO数组后转为列表，最后进行商品列表是否为空的判断并做出对应返回处理。该代码对应文档中修改代码、指定服务名“item-service”完成远程调用的相关操作部分，是实现服务发现与负载均衡调用的具体代码示例。
 
 重启cart-service，测试查询购物车列表接口，功能正常，并且连续请求接口通过观察两个商品服务实例的控制台都输出商品查询的日志，说明实现了负载均衡。
@@ -1976,7 +1976,7 @@ public class RemoteCallConfig {
 
 下边通过跟踪源代码解释整个执行过程。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Zgsob3e3eo94Iaxn4FpcQHVYnnU.png)
+![zgsob3e3eo94iaxn4fpcqhvynnu](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zgsob3e3eo94iaxn4fpcqhvynnu.png)
 > 图注：这张图片展示了Java代码的编辑界面，具体为`LoadBalancerInterceptor`类的实现部分，该类实现了`ClientHttpRequestInterceptor`接口。代码中定义了构造方法和关键的`intercept`方法，`intercept`方法内会获取请求的URI，提取其中的服务ID“item-service”，还包含断言判断语句和调用`this.loadBalancer.execute()`的核心代码，这个方法正是上下文里提到的处理服务ID和用户请求的关键逻辑。
 
 可以看到这里的intercept方法，拦截了用户的HttpRequest请求，然后做了几件事： 
@@ -1989,26 +1989,26 @@ this.loadBalancer.execute() ：处理服务id，和用户请求。
 
 这里的 this.loadBalancer 是 LoadBalancerClient 类型，LoadBalancerClient 会根据负载均衡算法选择一个实例并发起请求，我们继续跟入。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/TnvHbQh1foIBbRxTztCcBHabntb.png)
+![tnvhbqh1foibbrxtztccbhabntb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tnvhbqh1foibbrxtztccbhabntb.png)
 > 图注：这是一段Java源码截图，内容为Spring Cloud相关的服务注册与发现逻辑代码。截图中标记了一行关键代码：`ServiceInstance serviceInstance = this.choose(serviceId, lbRequest);`，这行代码对应上下文里“调用choose方法根据负载均衡算法选择一个服务实例”的操作，是和负载均衡源码跟踪相关的核心代码，代码前的行号为59，该步骤用来通过负载均衡算法选定要访问的服务实例。
 
 调用choose方法根据负载均衡算法选择一个服务实例，继续跟入
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/IlddbdlE2outsSxpEUHcb1x1n9c.png)
+![ilddbdle2outssxpeuhcb1x1n9c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ilddbdle2outssxpeuhcb1x1n9c.png)
 > 图注：这张图片展示了一段Java代码的调试界面，是微服务中服务注册与发现的相关源码。代码中包含两个重载的choose方法，用于根据服务ID获取服务实例，当前传入的服务ID为item-service。右侧的调试弹窗显示了当前的负载均衡器为RoundRobinLoadBalancer对象，还标注了其内部的position属性值，以及服务ID、服务实例列表供应商等相关调试信息，结合上下文可知这是追踪Spring Cloud Loadbalancer源码的过程，体现了默认轮询负载均衡策略对应的实现类相关的调试内容。
 
 默认使用的负载均衡策略是轮询，通过RoundRobinLoadBalancer实现
 
 最终选择一个服务实例
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/OI6fbYT0YopMqWxkTpLczElEnad.png)
+![oi6fbyt0yopmqwxktplczelenad](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oi6fbyt0yopmqwxktplczelenad.png)
 > 图注：这张图片展示了Java源码调试的断点运行状态，显示了Spring Cloud LoadBalancer相关的代码逻辑，当前执行到`choose`方法处，右侧工具窗口弹出`serviceInstance`的调试信息：其`serviceId`为“item-service”，`host`为192.168.101.1，`port`为8083，`metadata`为包含6个元素的Map，同时代码里调用`choose`方法获取服务实例，将其赋值给`serviceInstance`变量，该场景对应文档中Spring Cloud LoadBalancer的客户端负载源码解析部分，体现了从服务实例中选择最终节点的源码逻辑。
 
 放行继续执行。
 
 继续测试该接口，因为是轮询策略，下次会选择另一个服务实例
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/IYt4brjqooHpifxx8MlcpEjanJg.png)
+![iyt4brjqoohpifxx8mlcpejanjg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iyt4brjqoohpifxx8mlcpejanjg.png)
 > 图注：这是一段Spring Cloud Loadbalancer相关的Java代码片段，代码中定义了`execute`方法，在调用`chooseInstance`方法获取服务实例后，通过条件判断处理服务实例为空的情况。选中的服务实例信息面板显示，该服务实例ID为`item-service`，实例ID为空，主机地址为192.168.101.1，端口为8081，未开启安全认证，哈希映射有6项元数据，当前分支逻辑是当服务实例为空时，会进入对应流程抛出异常。
 
 
@@ -2179,7 +2179,7 @@ public interface ItemClient {
 
 最后，我们在`cart-service`的`com.hmall.cart.service.impl.CartServiceImpl`中改造代码，直接调用`ItemClient`的方法：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/EqOpbYJlYoIc1ixrMtCciTpfnId.png)
+![eqopbyjlyoic1ixrmtccitpfnid](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/eqopbyjlyoic1ixrmtccitpfnid.png)
 > 图注：这张图片展示了CartServiceImpl类中引入并使用Feign客户端的代码片段，对应文档中在该类改造代码直接调用ItemClient方法的内容。图片中用红色框标出了两处关键代码，一处是通过@Autowired注解注入ItemClient实例的代码段，另一处是调用itemClient的queryItemByIds方法查询商品的代码行。该代码实现了Feign的远程调用功能，将原本需要通过其他方式实现的远程HTTP调用，转化为调用本地方法般简洁的代码，契合文档中Feign让远程调用更简洁的说明，同时体现了Feign替代RestTemplate完成服务拉取、负载均衡等工作的作用。
 
 feign替我们完成了服务拉取、负载均衡、发送http请求的所有工作，是不是看起来优雅多了。
@@ -2194,7 +2194,7 @@ feign替我们完成了服务拉取、负载均衡、发送http请求的所有�
 
 接下来，我们在`cart-service`的`CartApplication`启动类上添加注解，启动OpenFeign功能：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/NkUTbvdXjoBYE1xZSj0cWiBbnSd.png)
+![nkutbvdxjobye1xzsj0cwibbnsd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nkutbvdxjobye1xzsj0cwibbnsd.png)
 > 图注：图片展示了`cart-service`项目中`CartApplication`启动类的代码。其中，`@EnableFeignClients`注解被红色框突出显示，其作用是在`cart-service`的`CartApplication`启动类上添加注解，启动OpenFeign功能，该注解用于寻找使用`@FeignClient`注解的接口生成Feign客户端（代理对象），并自动配置Feign客户端与Spring Cloud LoadBalancer的集成。此图片与上文介绍`@EnableFeignClients`注解作用的内容紧密相关，直观呈现了其在代码中的位置。
 
 @EnableFeignClients注解的作用寻找使用 `@FeignClient` 注解的接口生成Feign客户端(代理对象)，自动配置 Feign 客户端与 Spring Cloud LoadBalancer 的集成。
@@ -2247,32 +2247,32 @@ OkHttp 是一个高效的 HTTP 客户端库，由 Square Inc. 开发和维护。
 
 首先我们跟踪源代码，查看当前默认的Client底层是HttpURLConnection，请求查询购物车接口，在远程调用商品服务处打断点：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/RSpgbBo7Qo995OxbwN5c2E9Snoh.png)
+![rspgbbo7qo995oxbwn5c2e9snoh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rspgbbo7qo995oxbwn5c2e9snoh.png)
 > 图注：图片展示的是CartServiceImpl.java文件中的一段代码。代码中，当响应状态码为2xx成功时，获取响应体并调用itemClient查询商品信息。接着，通过items.stream().collect(Collectors.toMap(ItemDTO::getId, Function.identity()))将商品信息转为id到item的映射。最后，遍历CartVO列表，将商品信息中的价格、状态、库存等信息赋值给CartVO对象。该图片与上文跟踪源代码查看默认Client底层是HttpURLConnection，请求查询购物车接口等内容相关，展示了具体代码实现。
 
 继续跟入
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Xb4PbJDfaoTAZRxxe3rceELanOc.png)
+![xb4pbjdfaotazrxxe3rceelanoc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xb4pbjdfaotazrxxe3rceelanoc.png)
 > 图注：这张图片是Java代码调试过程中的反编译class文件截图，文件名为ReflectiveFeign.class，字节码版本为52.0（对应Java 8）。代码展示了public修饰的invoke方法的核心逻辑，当调用toString方法时，会返回对应结果，其他分支会通过调用相关类处理逻辑。截图中还能看到代码行号，右侧标注了断点位置，该断点所在的上下文是跟踪OpenFeign默认Client的源代码，结合上下文可知此处是在查看OpenFeign远程调用底层的实现细节。
 
 继续跟入
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/PUyabOuaJoSH0NxInT2c80cqnQb.png)
+![puyabouajosh0nxint2c80cqnqb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/puyabouajosh0nxint2c80cqnqb.png)
 > 图注：图片展示的是SynchronousMethodHandler.class文件的代码片段，位于文档中介绍OkHttp最佳实践时的跟踪源代码部分。代码中，当执行invoke方法时，先构建RequestTemplate，再获取Request.Options，然后创建Retryer实例。接着进入循环，尝试执行executeAndDecode方法，若发生RetryableException则继续或抛出。该图片与上下文紧密相关，直观呈现了使用默认Client客户端请求http时，OkHttp执行请求的代码流程。
 
 继续跟入
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/JA4vb7PWsoFEoKxPWezc4aGOnhe.png)
+![ja4vb7pwsofeokxpwezc4agonhe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ja4vb7pwsofeokxpwezc4agonhe.png)
 > 图注：这是一段Java程序的调试界面，展示的是SynchronousMethodHandler类的executeAndDecode方法的代码。代码中显示当前使用默认的客户端请求，红箭头指向`response = this.client.execute(request, options);`这句代码，在该句的下方弹出了调试时的变量查看窗口，其中`client`变量被查看，展开后可见其`delegate`属性为Client$Default，还有LoadBalancer相关的变量信息。该调试场景对应上下文里的内容，是跟踪源代码过程中查看OpenFeign默认客户端使用情况的环节，此时可以看到Client底层默认使用HttpURLConnection的相关调用细节。
 
 使用的是默认的Client客户端，继续跟入
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/OBONbCDnVo40WjxJH3ZcnYIgnqb.png)
+![obonbcdnvo40wjxjh3zcnyignqb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/obonbcdnvo40wjxjh3zcnyignqb.png)
 > 图注：这张图片展示的是LoadBalancerUtils类的反编译代码内容，字节码版本为52.0（对应Java 8）。图中明确可见代码里的静态方法executeWithLoadBalancerLifecycleProcessing，以及该方法内调用feignClient的execute方法的代码语句，该行代码被蓝色高亮标记，还配有黄色箭头标注调试断点，结合上下文可知，这是跟踪OpenFeign远程调用的源代码时，查看默认Client客户端（HttpURLConnection）的相关底层逻辑的代码位置，用于调试查看远程调用的实现细节。
 
 继续跟入，Client执行使用**HttpURLConnection**请求http。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/FoxNbBmdtoqxHkxZ9LjcuN9ynQb.png)
+![foxnbbmdtoqxhkxz9ljcun9ynqb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/foxnbbmdtoqxhkxz9ljcun9ynqb.png)
 > 图注：图片展示了OpenFeign中Client默认使用HttpURLConnection请求http的代码及调试界面。左侧是项目结构，选中了“Client”目录。右侧代码中，Client类的execute方法被红色框标出，其中调用httpURLConnection请求http的部分被蓝色箭头指向。下方调试界面显示了请求参数、变量等信息，如请求地址为“http://192.168.6.1:7080/...”。该图片与上下文紧密相关，直观呈现了上下文提到的跟踪源代码查看默认Client底层是HttpURLConnection的内容。
 
 ##### 4.2.1.2 更换为okhttp
@@ -2308,14 +2308,14 @@ feign:
 
 重新请求查询购物车接口，跟踪源代码查看Client的代理已变为OkHttpClient。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/R0LibDfJfoXEyRx2UAfcRC8Onic.png)
+![r0libdfjfoxeyrx2uafcrc8onic](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/r0libdfjfoxeyrx2uafcrc8onic.png)
 > 图注：这张图片是开发工具的界面截图，展示了OpenFeign更换为OkHttpClient后的相关代码与项目依赖情况。左侧项目依赖栏中，`okhttp`相关依赖已被引入；中间代码区域的`ChittyClient`类里，箭头标注的`ReactiveHttp`类位置清晰，代码中明确调用了`okhttp3`相关实现，显示远程调用的客户端代理已成功更换为OkHttpClient。该截图是对更换OkHttp操作后的效果验证，能直观呈现配置后的代码与依赖状态。
 
 
 
 继续跟入代码，使用OkHttpClient发起请求并拿到响应结果。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/VyZebBjAwoWW20xCpCbc5StlnNc.png)
+![vyzebbjawoww20xcpcbc5stlnnc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vyzebbjawoww20xcpcbc5stlnnc.png)
 > 图注：图片展示的是OkHttpClient.class文件的execute方法源码。该方法接收feign.Request和feign.Request.Options参数，执行IOException异常处理。关键部分是将feign.Request转换为OkHttpRequest，然后通过requestScoped的OkHttpClient发起新Call并执行，获取OkHttp.Response，最后将Response转换为FeignResponse并返回。此图片与上文更换Client为okhttp后，跟踪源代码查看Client代理已变为OkHttpClient的内容相关，直观呈现了相关代码实现。
 
 
@@ -2341,7 +2341,7 @@ feign:
 
 如图：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/WZJsbvqoPoumGbxKI0ScWwhqnie.jpg)
+![wzjsbvqopoumgbxki0scwwhqnie](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wzjsbvqopoumgbxki0scwwhqnie.jpg)
 > 图注：这张图对应微服务API工程抽取的两种思路，左侧为思路1，是将公共API模块定义在整体工程的hm-api中，该模块用于定义Feign接口，属于抽取到微服务之外的公共工程的方案；右侧为思路2，是为每个微服务单独设置API模块，每个微服务对应自身的dto、api、service相关模块，属于各微服务自己抽取模块的方案，该图清晰呈现了两种抽取思路的工程结构差异，与上下文中描述的两种抽取思路内容相呼应。
 
 <whiteboard token="EWaZwPuS3hpNunbkkDicQtu2nHe"></whiteboard>
@@ -2429,7 +2429,7 @@ feign:
 
 下图中：com.hmall.api.item包为商品服务接口包，后期还会创建与com.hmall.api.item包平级的其它服务的接口包。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/NIBEbHhyHofRXIxeWMmcYL5enBb.png)
+![nibebhhyhofrxixewmmcyl5enbb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nibebhhyhofrxixewmmcyl5enbb.png)
 > 图注：图片展示了`hm-api`模块的目录结构。在`src/main/java`下，`com.hmall.api.item`包中包含`dto`和`client`两个子包，`dto`包下有`ItemDTO`文件，`client`包下有`ItemClient`文件。该图片与文档中抽取API工程部分内容相关，直观呈现了`hm-api`模块中抽取的API相关代码存放位置，为后续在`cart-service`中引入`hm-api`模块依赖，删除原有`ItemDTO`和`ItemClient`，重启项目后报错等问题的解决提供参考。
 
 现在，任何微服务要调用`item-service`中的接口，只需要引入`hm-api`模块依赖即可，无需自己编写Feign客户端了。
@@ -2449,7 +2449,7 @@ feign:
 
 删除`cart-service`中原来的ItemDTO和ItemClient，重启项目发现报错了：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/VyGabzyAdoaYBjxibx7cR8K7nlf.png)
+![vygabzyadoaybjxibx7cr8k7nlf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vygabzyadoaybjxibx7cr8k7nlf.png)
 > 图注：图片展示了IntelliJ IDEA中`CartServiceApplication`运行失败的界面。左侧导航栏显示`ItemServiceApplication2`已运行，`CartServiceApplication`处于失败状态。右侧Console标签页中，红框突出显示了错误信息，内容为`Field itemClient in com.hmall.cart.service.impl.CartServiceImpl required a bean of type 'com.hmall.api.item.ItemClient' that could not be found.`，表明`CartServiceImpl`中所需的`ItemClient`类型bean未找到。该图片与上下文紧密相关，直观呈现了因`ItemClient`定义位置变化导致扫描不到而报错的情况。
 
 这里因为`ItemClient`现在定义到了`com.hmall.api.item`包下，而cart-service的启动类定义在`com.hmall.cart`包下，扫描不到`ItemClient`，所以报错了。
@@ -2460,12 +2460,12 @@ feign:
 
 - 方式1：声明扫描包：(推荐此方式)
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/WAa8bWoVSo7f8MxxHBecGF1jnJh.png)
+![waa8bwovso7f8mxxhbecgf1jnjh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/waa8bwovso7f8mxxhbecgf1jnjh.png)
 > 图注：图片展示了`CartServiceApplication`类的部分代码。关键部分是第10行的`@EnableFeignClients`注解，其参数`basePackages`被红框突出显示，值为`{"com.hmall.api"}`。这与上下文介绍的在`cart-service`的启动类上添加声明解决扫描不到`ItemClient`报错问题相呼应，推荐使用方式1即在启动类上声明扫描包来解决此问题。
 
 - 方式2：声明要用的FeignClient
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/Gz9SbuDdZohutIx690pcGxwenTQ.png)
+![gz9sbuddzohutix690pcgxwentq](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gz9sbuddzohutix690pcgxwentq.png)
 > 图注：图片展示了`CartServiceApplication`类的部分代码。关键信息是第11行的`@EnableFeignClients`{clients = { {ItemClient.class}}`注解，其中`ItemClient.class`被红色箭头突出显示。这与上下文介绍的在`cart-service`的启动类上添加声明解决扫描不到`ItemClient`报错问题相呼应，推荐使用方式1：在启动类上声明扫描包，此方式被标注为推荐方式。
 
 推荐方式一。
@@ -2692,7 +2692,7 @@ hm:
 
 项目结构
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/SGGxbdxcio1nKdxWDN3cVNHenwf.png)
+![sggxbdxcio1nkdxwdn3cvnhenwf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sggxbdxcio1nkdxwdn3cvnhenwf.png)
 > 图注：图片展示了user - service项目的项目结构。在src目录下，main文件夹内有java、domain、mapper、service、utils、resources等子文件夹。其中，java文件夹下有config、controller、domain、enums、interceptor、mapper、service、utils等子文件夹，如config文件夹下有AuthProperties、JwtProperties、MvcConfig、SecurityConfig等配置类；domain文件夹下有dto、po、vo等子文件夹，如dto文件夹下有AddressDTO、LoginFormDTO等数据传输对象类；utils文件夹下有JwtTool、UserServiceApplication等工具类。
 
 
@@ -2701,26 +2701,26 @@ hm:
 
 当业务代码中需要知道当前登录用户是谁，目前暂未实现，先将用户id写死，修改UserContext如下：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/F2V6boRIIo3K3Sxo6JGcGqbFnxb.png)
+![f2v6boriio3k3sxo6jgcgqbfnxb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f2v6boriio3k3sxo6jgcgqbfnxb.png)
 > 图注：这张图片展示的是UserContext.java文件的代码内容，是作业中要求修改的用户相关上下文工具类。代码里的getUser方法原本的逻辑是返回tl.get()，被注释暂不启用，同时添加了“//todo 暂是返回固定的用户id”的注释，当前该方法会返回固定值1L，以此实现文档中所说的暂未完成登录用户识别时，将用户id写死的要求。
 
 user-service也需要自己的独立的database，向MySQL中导入课前资料提供的SQL：
 
 注意：即使虚拟机已存在hm-user数据库也需要运行此脚本。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/CmiRb2qJ3o10Brxs63kcuKNBnse.png)
+![cmirb2qj3o10brxs63kcuknbnse](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cmirb2qj3o10brxs63kcuknbnse.png)
 > 图注：这张图片展示了Windows系统的文件资源管理器界面，路径为“新加卷(D:) > 课程资料 > 服务框架 > day02-微服务01 > 资料”。界面中列出了该路径下的各类文件与文件夹，包含hmall-nginx、nacos两个文件夹，以及hm-cart.sql、hm-item.sql等多个SQL源文件，还有“黑马商城测试.jmx”的JMX文件。其中hm-user.sql文件被蓝色高亮选中，结合上下文来看，该文件应为创建用户微服务作业中导入的用户相关SQL文件，用于后续的用户服务开发。
 
 导入结果如下：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/NV6rbEeQbomZLpxUqvPcc9Q3ntg.png)
+![nv6rbeeqbomzlpxuqvpcc9q3ntg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nv6rbeeqbomzlpxuqvpcc9q3ntg.png)
 > 图注：图片展示的是CentOS系统中数据库表结构。画面中以树状结构呈现，根节点为“centos”，下有“hm-cart”“hm-item”“hm-user”等分支，其中“hm-user”被高亮显示。其下有“address”“user”两个子节点，分别显示大小为32.0 KiB。
 
 #### 测试
 
 启动UserApplication，访问[http://localhost:8084/doc.html#/default/用户相关接口/loginUsingPOST](http://localhost:8084/doc.html#/default/%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/loginUsingPOST)，测试登录接口：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/B2lqbFL5eoZ5xfxqErjccg1Fnrd.png)
+![b2lqbfl5eoz5xfxqerjccg1fnrd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/b2lqbfl5eoz5xfxqerjccg1fnrd.png)
 > 图注：图片展示的是Postman测试登录接口的界面。在“POST /users/login”请求地址下，请求参数为JSON格式，包含“password”“rememberMe”“username”等字段，其中“password”值为“123456”等。下方显示响应内容，包含“token”“userId”“username”“balance”等字段，如“token”值为“eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJ1c2VybmFtZSI6IkJhYyIsImlhdCI6MTY4NjY4NjY0NiwibmJmIjoxNjg2Njg2NjQ2LCJpYXQiOjE2ODY2ODY2NDYsImV4cCI6MTY4NjY4NjY0NiwidXNlciI6MSwiaWF0IjoxNjg2Njg2NjQ2LCJ1c2VybmFtZSI6IkFjayIsImJhY2tldCI6IjIwMjAtMDMtMjMgMjAwLTAyOjIwIiwibGFuZyI6IjIwMjAtMDMtMjMgMjAwLTAyOjIwIiwibmFtZSI6IkFhayIsImlkIjoxLCJiYWxhbHlzaCI6IjIwMjAtMDMtMjMgMjAwLTAyOjIwIn0.5QdYy881...”。该图片与上文测试登录接口的内容相关，直观呈现了测试时的请求与响应数据。
 
 用户服务测试通过。
@@ -2855,7 +2855,7 @@ feign:
 
 项目结构如下
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/FroqbCHh0ob6EmxvrITcxfeGnEb.png)
+![froqbchh0ob6emxvritcxfegneb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/froqbchh0ob6emxvritcxfegneb.png)
 > 图注：这张图片展示了trade-service项目的结构，该项目是交易微服务相关的项目。项目下包含src与resources两大目录，src目录里的main文件夹中设有java目录，java目录内的com.hmall.trade包下，划分了controller、domain、mapper、service等功能模块，其中controller模块下有OrderController，domain模块下又细分出dto、po、vo子包，分别存放对应数据类，mapper模块对应多个数据库操作接口，service模块及子impl包存放业务逻辑相关内容，还有TradeServiceApplication启动类；resources目录下存放了配置文件，包括application.yaml及不同环境的配置文件。
 
 
@@ -2925,7 +2925,7 @@ paymentType：支付方式，1：支付宝、2：微信，3：余额支付。
 
 测试效果如下：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/MIBibkDqSoQiFOxdEiecYlKkn9g.png)
+![mibibkdqsoqifoxdeiecylkkn9g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mibibkdqsoqifoxdeiecylkkn9g.png)
 > 图注：这张图片展示了交易服务接口文档的界面，左侧菜单栏选中了“创建订单”的POST请求选项，右侧测试区域可选择请求参数格式，当前选中raw、JSON格式，请求参数包含addressId、itemId、num、paymentType字段，其中paymentType的值为3，符合上下文提及的余额支付规则。该图片用于呈现交易微服务创建订单接口的测试页面，对应文档中创建交易微服务后测试创建订单的相关内容，下方还显示了返回的订单ID，验证了创建订单成功的测试效果。
 
 创建订单成功返回订单ID。
@@ -2936,7 +2936,7 @@ paymentType：支付方式，1：支付宝、2：微信，3：余额支付。
 
 使用上个测试返回的订单ID测试查询订单信息接口。
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/DWTAbKGN5oQ2joxZucCcrsGAnAU.png)
+![dwtabkgn5oq2joxzucccrsganau](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dwtabkgn5oq2joxzucccrsganau.png)
 > 图注：这张图片展示的是交易服务接口文档的页面，用于测试查询订单信息的接口。该接口采用GET请求方式，请求地址为/orders/{id}，请求参数为订单ID，具体值为1844193420193566369，输入参数为form-data类型。下方的响应区域清晰显示了订单的详细信息，包括订单总价、支付方式、订单状态、创建时间等内容，这对应了文档中提及的“使用上个测试返回的订单ID测试查询订单信息接口”的要求，呈现出该接口测试成功的效果。
 
 
@@ -3075,7 +3075,7 @@ feign:
 
 项目结构如下：
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/OTyHb40OIoN9doxCc90cqELUnSh.png)
+![otyhb40oion9doxcc90cqelunsh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/otyhb40oion9doxcc90cqelunsh.png)
 > 图注：这是创建完成的支付微服务项目结构，结构根目录为pay-service，内部包含src和resources两个目录。src目录下的main目录中，java目录下的com.hmall.pay包内划分了多个子包，包括存放控制器类的controller包，其中有PayController；存放数据传输对象的domain包，包含PayApplyDTO、PayOrderFormDTO等类；存放枚举类的enums包，有PayChannel、PayStatus等枚举项；存放持久化对象的po包；存放值对象的vo包；存放数据访问接口的mapper包，其中有PayOrderMapper；存放业务逻辑相关的service包，包含IPayOrderService接口和PayOrderServiceImpl实现类；还有启动类PayServiceApplication。resources目录下有mapper目录，以及application.yaml、application-dev.yaml、application-local.yaml三个配置文件。
 
 
@@ -3116,7 +3116,7 @@ orderInfo：订单信息字符串。
 
 
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/RZcobqYGNosx5Qxgpu8cvr3tn1c.png)
+![rzcobqygnosx5qxgpu8cvr3tn1c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rzcobqygnosx5qxgpu8cvr3tn1c.png)
 > 图注：这张图片展示了支付服务接口测试的页面，是支付服务接口文档中的测试模块区域，对应余额支付接口的参数测试环节。页面选中的是POST请求方式，目标地址为pay-orders，请求数据格式选择raw的JSON格式，参数内容里指定了payType为余额支付类型（数值为5），当前已填入测试用的amount、orderInfo等参数，下方的响应内容区域显示了测试成功后返回的支付单ID，符合支付测试后返回对应pay-order表ID的要求。
 
 测试成功返回支付单ID，对应hm-pay数据库中的pay-order表的ID。
@@ -3131,7 +3131,7 @@ Id: 支付单ID
 
 pw：支付密码，即用户的登录密码，账号为1的用户密码为123.
 
-![](../../../../../../Attachments/development/architecture/microservices/service-registration-and-discovery/01-microservice-registration-and-discovery/OL36bGXAyop58TxASlKcq8NmnEg.png)
+![ol36bgxayop58txaslkcq8nmneg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ol36bgxayop58txaslkcq8nmneg.png)
 > 图注：图片展示的是一个API测试界面，用于测试余额支付接口。请求方法为POST，URL为/pay-orders/(id)。在“请求参数”选项卡下，参数名称为id，参数值为1933927193215852545。下方示例代码中，id、payType、bizOrderNo、pw等参数值与上文提到的测试参数对应，其中pw为支付密码123。该图片与上文测试余额支付接口的内容相关，直观呈现了测试时的请求参数设置情况。
 
 支付成功可以从hm-pay数据库中的pay-order表找到对应的记录，查看status字段值是否为3(表示支付成功)

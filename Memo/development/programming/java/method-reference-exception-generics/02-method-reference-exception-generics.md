@@ -357,7 +357,7 @@ boolean Boolean.parseBoolean(String b); 将"true"转成true, 其他都转成fals
 
 包装类型有自动拆装箱的能力
 
-![](../../../../../Attachments/development/programming/java/method-reference-exception-generics/COXEbNuhwoLrsAxWw6bcs6lxnud.png)
+![coxebnuhwolrsaxww6bcs6lxnud](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/coxebnuhwolrsaxww6bcs6lxnud.png)
 > 图注：图片展示了一个名为sum的函数代码，该函数接收一个泛型参数list，类型为ArrayList<? extends Number>。代码中，变量sum被初始化为0，接着通过for循环遍历list中的元素，将每个元素转换为Number类型后调用doubleValue()方法，将结果累加到sum中。其中，sum += num.doubleValue()部分被红色框突出显示，表明这是手动拆箱操作，用于解决Number类型不能自动拆箱的问题，与上下文提到的类型报错 - 集合相关。
 
 因为Number不是包装类 不能自动拆装箱！！！！！

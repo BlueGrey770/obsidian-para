@@ -102,7 +102,7 @@ XXL-JOB是一个轻量级分布式任务调度平台，其核心设计目标是�
 
 XXL-JOB主要有调度中心、执行器、任务：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/YrrPbQ5KgoSnGexgpUBc9a1Qn4A.png)
+![yrrpbq5kgosngexgpubc9a1qn4a](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yrrpbq5kgosngexgpubc9a1qn4a.png)
 > 图注：这张图展示了XXL-JOB分布式任务调度平台的核心架构，调度中心通过名为AppName的标识，同时连接管理着两个执行器。执行器1和执行器2中都部署了多项任务，包括任务1、任务2等。该架构体现了XXL-JOB调度中心与执行器的分层结构，调度中心负责调度管控，执行器负责具体的任务执行，这种架构正是该框架用于解决多JVM进程重复执行任务问题的直观体现。
 
 **调度中心：**
@@ -184,7 +184,7 @@ XXL-JOB由两部分组成：
 负责接收调度请求并执行任务逻辑。任务模块专注于任务的执行等操作，开发和维护更加简单和高效；  
 接收“调度中心”的执行请求、终止请求和日志请求等。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/J4m7bAzpmoH1yhx4HDrcuFwOnsc.png)
+![j4m7bazpmoh1yhx4hdrcufwonsc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/j4m7bazpmoh1yhx4hdrcufwonsc.png)
 > 图注：图片为XXL-JOB架构图，展示了调度中心和执行器的组成结构。调度中心包括任务管理、执行器管理、日志管理、数据中心等模块，如任务管理有执行器、任务模式等，日志管理有调度日志、Rolling日志等。执行器部分有执行器服务、日志服务、回调服务等，还涉及调度请求、执行日志、调度结果等。该图直观呈现了XXL-JOB v2.4.0架构，与上下文介绍的执行模块（执行器）职责相呼应。
 
 
@@ -205,7 +205,7 @@ GitHub：[https://github.com/xuxueli/xxl-job](https://github.com/xuxueli/xxl-job
 
 使用IDEA打开解压后的目录
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/SMfJbpJp4oOlJHxCqHJc88ZenOf.png)
+![smfjbpjp4ooljhxcqhjc88zenof](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/smfjbpjp4ooljhxcqhjc88zenof.png)
 > 图注：这张图片展示了在IDEA开发工具中打开的xxl-job-2.3.1项目目录结构，其中核心内容与上下文提及的XXL-JOB部署调度中心相关。目录内明确标注了关键模块，包括作为调度中心的xxl-job-admin、公共依赖xxl-job-core，以及执行器示例模块xxl-job-executor-samples，该示例下还细分了Springboot版本的执行器示例，这正是上下文推荐的使用形式。目录还包含了.idea、doc、pom.xml等项目常规文件，doc目录对应上下文提到的包含数据库脚本的文档资料，与部署调度中心的操作步骤直接呼应。
 
 xxl-job-admin：调度中心
@@ -224,7 +224,7 @@ doc :文档资料，包含数据库脚本
 
 如下图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/F9aabmgkhokqFFx5wlgcec8Kngd.png)
+![f9aabmgkhokqffx5wlgcec8kngd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f9aabmgkhokqffx5wlgcec8kngd.png)
 > 图注：这张图片展示了编号为2.3.1版本的xxl_job数据库中的表结构，该数据库是搭建XXL-JOB调度中心时需用到的目标数据库。图中清晰列出了该数据库包含的核心表，包括分组信息表xxl_job_group、任务信息表xxl_job_info、锁表xxl_job_lock、日志相关的xxl_job_log、xxl_job_log_report、xxl_job_logglue，执行器注册表xxl_job_registry以及用户表xxl_job_user，这些表为XXL-JOB的任务调度功能提供了数据存储支持。
 
 ##### 安装xxl-job
@@ -239,7 +239,7 @@ docker pull xuxueli/xxl-job-admin:2.3.1
 
 导入xxl_job_2.3.1.sql,如下：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/C1xqblE36os1SExe3hpczJkwnys.png)
+![c1xqble36os1sexe3hpczjkwnys](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/c1xqble36os1sexe3hpczjkwnys.png)
 > 图注：图片展示了数据库中xxl_job_2.3.1的tables表结构。其中包含xxl_job_group、xxl_job_info、xxl_job_lock、xxl_job_log、xxl_job_log_report、xxl_job_logglue、xxl_job_registry、xxl_job_user等8个表。该图片与文档中“创建数据库：xxl_job_2.3.1”及“导入xxl_job_2.3.1.sql”上下文相关，直观呈现了导入后的数据库表结构，帮助理解数据库中各表的作用及关系。
 
 创建目录：
@@ -373,7 +373,7 @@ http://192.168.101.68:8088/xxl-job-admin/toLogin
 
 参考源代码中的XxlJobConfig去编写xxl-job的配置类，此配置类已提供，将课程资料中xxl-job下的配置类和模型类拷贝到商品服务的config包下：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/G2jKbsiOKoQay8xsz4uc3gbEnfc.png)
+![g2jkbsiokoqay8xsz4uc3gbenfc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/g2jkbsiokoqay8xsz4uc3gbenfc.png)
 > 图注：这张图片展示了商品服务项目的结构与对应的配置类代码，左侧项目面板中，item-service项目的main目录下的com.hmall.item.config包内，包含了需要导入的xxl-job相关配置类：XxlJobConfiguration与XxlJobProperties，另有RedisConfig类在同目录中；右侧编辑区域打开了XxlJobConfiguration.java文件，该文件正是文档中提及的参考编写的xxl-job配置类，代码中使用@EnableConfigurationProperties注解引入配置属性，通过@Bean注解定义XxlJobSpringExecutor实例，实现调度中心地址、执行器端口等核心参数的设置逻辑，对应文档中搭建XXL-JOB时拷贝配置类到商品服务的相关说明。
 
 
@@ -415,12 +415,12 @@ port：执行器端口号,通过xxl-job.port配置，执行器通过此端口与
 
 进入调度中心，进入执行器管理界面，如下图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/UNFsb3dvOoauIgxw6SxcrDPLnab.png)
+![unfsb3dvooauigxw6sxcrdplnab](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/unfsb3dvooauigxw6sxcrdplnab.png)
 > 图注：图片展示的是任务调度中心的执行器管理界面。左侧导航栏中“执行器管理”被红色箭头突出显示。右侧显示执行器列表，包含AppName、名称、注册方式、OnLine机器地址等信息，当前显示1条记录，每页显示10条。界面右上角有“新增”按钮，用于添加执行器，其也被红色箭头指向。该图片与文档中“进入调度中心，进入执行器管理界面”及后续配置xxl-job、填写执行器信息等内容相关，直观呈现了操作入口。
 
 点击新增，填写执行器信息
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/X6c1b5ZZcoGYP9xKlWncWXgSnMd.png)
+![x6c1b5zzcogyp9xklwncwxgsnmd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/x6c1b5zzcogyp9xklwncwxgsnmd.png)
 > 图注：这张图片展示的是XXL-JOB调度中心新增执行器的表单页面，页面标题为“新增执行器”。表单中，AppName填写的是“item-service”，名称填写的是“商品服务”，注册方式已选中“自动注册”选项，机器地址栏显示提示内容“请输入执行器地址列表，多地址逗号分隔”，表单底部设有“保存”和“取消”两个操作按钮。该页面对应文档中调度中心添加执行器的步骤，是在完成商品服务与XXL-JOB的配置后，在调度端创建执行器的操作界面。
 
 **AppName**：执行名称， appName: \${spring.application.name}表示指定执行器名称就是微服务的应用名。
@@ -435,7 +435,7 @@ port：执行器端口号,通过xxl-job.port配置，执行器通过此端口与
 
 添加成功：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/WZfDbTqIuoYhp3x2w0EcIAAInrc.png)
+![wzfdbtqiuoyhp3x2w0eciaainrc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wzfdbtqiuoyhp3x2w0eciaainrc.png)
 > 图注：这是XXL-JOB执行器注册成功后的相关页面，展示了注册后的执行器信息，其中对应项的名称为“jzo2o-foundations”，名称右侧标注其所属类型为“运营基础管理”，该执行器的注册状态为自动注册，额外备注信息为“无”，页面右侧设有“操作”按钮，可进行相关操作，该页面对应文档中进入XXL-JOB调度中心执行器管理界面、查看执行器地址的步骤，是执行器注册成功后的呈现内容。
 
 启动item-service，查看item-service的控制台：
@@ -444,12 +444,12 @@ port：执行器端口号,通过xxl-job.port配置，执行器通过此端口与
 
 稍等片刻进入 xxl-job调度中心，进入执行器管理界面，执行器注册成功：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/IfcUbPvS9oloSjxnumccMs1Dn4b.png)
+![ifcubpvs9olosjxnumccms1dn4b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ifcubpvs9olosjxnumccms1dn4b.png)
 > 图注：图片展示的是XXL-JOB调度中心执行器管理界面。界面上方有AppName、名称等搜索栏及搜索、新增按钮。下方列表显示AppName、名称、注册方式、OnLine机器地址等信息，其中“item-service”执行器名称为“商品服务”，注册方式为自动注册，OnLine机器地址处有“查看（1）”按钮，该按钮被红色框突出显示。此图与上文介绍执行器注册成功后，点击“查看（1）”查看执行器地址的内容相呼应。
 
 点击“查看（1）”，查看执行器的地址，如下图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/Bu91bWQ87oJPFcxnPF6cxQOvnRp.png)
+![bu91bwq87ojpfcxnpf6cxqovnrp](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bu91bwq87ojpfcxnpf6cxqovnrp.png)
 > 图注：这是XXL-JOB调度中心执行器管理界面的注册节点弹窗，弹窗内清晰显示了注册的执行器地址为“http://192.168.101.1:11603”，该地址正是执行器启动后在控制台中提示的成功启动端口对应的地址。弹窗带有编号“1.”标识，还有一个蓝色的“确定”按钮，对应上下文里点击“查看（1）”后所呈现的执行器地址信息，用于确认该注册节点的地址配置。
 
 #### 1.2.4 小结
@@ -472,7 +472,7 @@ port：执行器端口号,通过xxl-job.port配置，执行器通过此端口与
 
 xxl-job-2.3.1\xxl-job-executor-samples\xxl-job-executor-sample-springboot\src\main\java\com\xxl\job\executor\service\jobhandler\SampleXxlJob.java
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/C0R0bmAVqoUljgxCOiUc4q0gnVc.png)
+![c0r0bmavqouljgxcoiuc4q0gnvc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/c0r0bmavqouljgxcoiuc4q0gnvc.png)
 > 图注：图片展示了xxl-job-executor-samples中的xxl-job-executor-sample-springboot项目的目录结构。在src/main/java目录下，有com.xxl.job.executor、core.config、mvc.controller、service.jobhandler等子目录，其中service.jobhandler目录下有一个SampleXxlJob.java文件被蓝色框突出显示。该图片与上文提到的“可以参考xxl-job源码去编写任务方法，从源码目录中找到执行器示例代码”相呼应，直观呈现了示例代码所在位置。
 
 部分示例代码如下：下边代码中demoJobHandler()就是一个任务方法，需要使用@XxlJob注解标识，所在类需要由spring去管理，所以加了@Component注解。
@@ -524,19 +524,19 @@ public class SampleXxlJob {
 
 进入任务管理，新增任务：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/RoDybJobIooql8xFHIjcgIo8nCh.png)
+![rodybjobiooql8xfhijcgio8nch](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rodybjobiooql8xfhijcgio8nch.png)
 > 图注：图片展示的是XXL-JOB任务管理界面。界面上方有“任务管理”标题，下方有“执行器”下拉框，当前选中“商品服务”，还有“全部”下拉框、任务描述、JobHandler、负责人输入框及搜索、新增按钮。下方有每页显示条数选择框，以及任务ID、任务描述、调度类型、运行模式、负责人、状态、操作等列。界面底部提示“表中数据为空”。图片与上下文关系为，上下文提到进入任务管理新增任务，此图展示了任务管理界面，为新增任务操作提供参考。
 
 填写任务信息：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/G7fCbrJ0holfW5xtXzqcbIbZnUm.png)
+![g7fcbrj0holfw5xtxzqcbibznum](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/g7fcbrj0holfw5xtxzqcbibznum.png)
 > 图注：图片展示的是XXL-JOB任务管理中新增任务的界面。基础配置部分，执行器为“商品服务”，负责人是“xxl-job”，任务描述为“示例任务”，报警邮件需填写。调度配置中，调度类型为CRON，Cron表达式为“0/3 * * * * ?”。任务配置里，运行模式为BEAN，JobHandler为“demoJobHandler”，任务参数为空。高级配置中，路由策略为“第一个”，调度过期策略为“忽略”，任务超时时间为“任务超时时间为0时，大于零时生效”，阻塞处理策略为“单机串行”，失败重试次数为“失败重试次数，大于零时生效”。
 
 说明：
 
 **调度类型**：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/QYnrbbBZ2oUQBexKhVwc0L1dn4c.png)
+![qynrbbbz2ouqbexkhvwc0l1dn4c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qynrbbbz2ouqbexkhvwc0l1dn4c.png)
 > 图注：这是XXL-JOB配置任务时的调度类型选择界面，用于任务调度类型的设置。界面上标注有“调度类型”的选项，对应的下拉选择框中，当前高亮选中的选项为“CRON”，下拉列表中还包含“无”和“固定速度”两个可选选项，其中“固定速度”选项位于“CRON”选项的下方。该界面用于在任务配置中选择合适的调度类型，对应文档中关于XXL-JOB任务配置里调度类型选择的相关内容，明确了“调度类型”的可选值，帮助用户选择符合需求的定时调度策略。
 
 **固定速度**指按固定的间隔定时调度。
@@ -549,14 +549,14 @@ Cron表达式是一个字符串，通过它可以定义调度策略，格式如�
 
 **Cron** 的各个域的定义如下表格所示：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/R4nebqsPOoKbgvxZG82cdmeKnub.png)
+![r4nebqspookbgvxzg82cdmeknub](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/r4nebqspookbgvxzg82cdmeknub.png)
 > 图注：这是一张Cron表达式各域定义的表格，表格分为四列，分别为“域”“是否必填”“值以及范围”“通配符”，清晰展示Cron表达式的组成规则。其中秒、分、时、日、月、周六个域均为必填，年为选填；各域对应有明确的数值或取值范围，例如秒、分的范围为0-59，时为0-23，日为1-31，月为1-12或JAN-DEC，周为1-7或SUN-SAT，年为1970-2099；通配符列则标注了可使用的符号，如逗号、短横线、星号、斜杠，日和周的通配符还包含问号、L、W、井号等特殊符号，该表格用于辅助理解Cron表达式的格式规范，为XXL-JOB任务配置提供基础规则参考。
 
 
 
 xxl-job提供图形界面去配置：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/VsjVbJEK0oHgNlxUM3FcxPAJnpe.png)
+![vsjvbjek0ohgnlxum3fcxpajnpe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vsjvbjek0ohgnlxum3fcxpajnpe.png)
 > 图注：这张图是XXL-JOB配置任务时的Cron表达式秒数域配置界面，顶部标注了Cron的时间域选项，包含秒、分钟、小时、日、月、周、年。该界面针对秒域提供了多种配置方式，包括通配符规则说明、周期范围设置、指定间隔执行设置，还提供了00到59的秒数选项。当前选中“指定”模式，且勾选了“00”秒数，用于配置任务每整点的第0秒执行。
 
 一些例子如下：
@@ -598,26 +598,26 @@ xxl-job提供图形界面去配置：
 
 详细说明xxl-job源码中的doc目录下的文档：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/X7WRbXlIZoqZNGxRYlWc6rG1n9c.png)
+![x7wrbxlizoqzngxrylwc6rg1n9c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/x7wrbxlizoqzngxrylwc6rg1n9c.png)
 > 图注：这张图片展示了XXL-JOB相关的文档列表，其中被红色框标注的文件是“XXL-JOB官方文档.md”，该文件对应文档中提及的“xxl-job源码中的doc目录下的文档”，是微服务面试中介绍XXL-JOB相关配置内容时所指向的官方说明文档文件，用于补充XXL-JOB的相关说明信息。
 
 #### 1.3.3 启动任务并测试
 
 任务配置完成，下边启动任务
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/ZGBSby14Ko2e8wxaMzYcaHCLnyb.png)
+![zgbsby14ko2e8wxamzycahclnyb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zgbsby14ko2e8wxamzycahclnyb.png)
 > 图注：这是XXL-JOB任务管理界面的截图，展示的是启动任务的操作步骤相关内容。界面里有一条任务记录，其任务ID为25，任务描述为“示例任务”，调度类型是CRON，值为0/3 * * * * ? *，运行模式为BEAN，对应JobHandler为demoJobHandler，负责人为xxl-job。该任务状态为STOP，操作列的下拉菜单被展开，菜单中有执行一次、查看日志等选项，红色箭头明确指向菜单中的“启动”选项，这和文档中启动任务的操作要求相呼应，直观呈现了XXL-JOB中启动任务的具体操作界面内容。
 
 启动成功：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/TkI4bMlgbouh32xvmTRc8kMQnJc.png)
+![tki4bmlgbouh32xvmtrc8kmqnjc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tki4bmlgbouh32xvmtrc8kmqnjc.png)
 > 图注：图片展示的是XXL-JOB任务管理界面。界面上方有执行器、商品服务等筛选框，下方显示任务ID、任务描述、调度类型、运行模式、负责人、状态、操作等信息，其中任务ID为25，任务描述为“示例任务”，调度类型为CRON，运行模式为BEAN，负责人是xxl - job，状态为RUNNING。界面底部有“启动成功”按钮。该图片与上文“启动任务并测试”内容相关，直观呈现了任务配置完成后的任务管理界面情况。
 
 
 
 我们在任务方法上打断点跟踪，任务方法被执行，如下图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/YCfxbShY3o2yZQxaL62cAqs8n6b.png)
+![ycfxbshy3o2yzqxal62caqs8n6b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ycfxbshy3o2yzqxal62caqs8n6b.png)
 > 图注：图片展示的是SampleXxlJob.java代码，用于示例XXL-JOB任务。代码中定义了名为demoJobHandler的任务方法，方法内使用XxlJobHelper.log记录日志，显示“XXL-JOB, Hello World.”。接着通过for循环，每2秒打印一次“beat at:”及循环次数，共执行5次。该图片与上文“启动任务并测试”内容相关，展示了任务方法的代码实现，帮助理解任务执行过程。
 
 
@@ -628,7 +628,7 @@ xxl-job提供图形界面去配置：
 
 掌握了xxl-job的基本使用，下边思考如何进行分布式任务处理呢？如下图，我们会启动多个执行器组成一个集群，去执行任务。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/TFMbbvRr8ommcVx7oricBXtUnCb.png)
+![tfmbbvrr8ommcvx7oricbxtuncb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tfmbbvrr8ommcvx7oricbxtuncb.png)
 > 图注：图片展示了分片广播任务的架构。调度中心位于上方，通过三条箭头分别指向执行器1、执行器2和执行器3。执行器1、执行器2和执行器3被蓝色椭圆框包围，代表它们属于同一分片。
 
 
@@ -659,7 +659,7 @@ xxl-job提供图形界面去配置：
 
 如下图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/PTp7bqqx0o3Dygxo2XOcDI6nntb.png)
+![ptp7bqqx0o3dygxo2xocdi6nntb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ptp7bqqx0o3dygxo2xocdi6nntb.png)
 > 图注：该图对应微服务面试内容里的分片广播任务说明，展示了xxl-job分片广播任务的执行逻辑：上方为调度中心，下方有三个分片序号分别为0、1、2的执行器，三者被蓝色椭圆圈住构成执行器集群。调度中心向下发送带有分片参数的任务调度请求，左侧执行器（序号0）收到的分片参数为0、3，中间执行器（序号1）收到的分片参数为1、3，右侧执行器（序号2）收到的分片参数为2、3，直观体现了分片广播任务中，调度中心向所有集群执行器同时发送携带分片参数的调度请求的逻辑。
 
 
@@ -774,14 +774,14 @@ public void shardingJobHandler() throws Exception {
 
 2、在调度中心添加任务
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/JzSwbjxzEorJNhx78fecILHinSg.png)
+![jzswbjxzeorjnhx78fecilhinsg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jzswbjxzeorjnhx78fecilhinsg.png)
 > 图注：图片展示的是在调度中心添加任务时的新增界面。关键信息有：执行器选择“视频处理任务”，任务描述为“测试分片任务”，调度类型为CRON，Cron为“0/3 * * * * ?”，运行模式为BEAN，JobHandler为“sharding.JobHandler”，任务参数为空，路由策略为分片广播，调度过期策略为忽略，阻塞处理策略为单机串行，失败重试次数大于零时生效。该图片与上下文“在调度中心添加任务”对应，直观呈现了添加任务时的配置界面及关键参数设置。
 
 
 
 添加成功：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/DUTebqsoko4JzIxZwsycc9a0nOe.png)
+![dutebqsoko4jzixzwsycc9a0noe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dutebqsoko4jzixzwsycc9a0noe.png)
 > 图注：这张图片是任务调度中心的任务管理页面，页面左侧有运行报表、任务管理、调度日志、执行器管理等功能选项，顶部显示登录用户为admin。当前页面的任务列表中，存在一条ID为27、任务描述为分片任务的记录，其调度类型为CRON表达式“0/3 * * * * ? *”，运行模式为BEAN类型，对应JobHandler为shardingJobHandler，负责人为xxljob，状态显示为STOP，操作列有操作按钮；页面上方的执行器选择了“商品服务”，还设有任务描述、JobHandler、负责人的搜索输入框，以及搜索、新增按钮，底部可调整每页显示的记录数。
 
 下边启动两个商品服务实例
@@ -794,19 +794,19 @@ public void shardingJobHandler() throws Exception {
 
 启动成功观察执行器
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/QJMMbxEbrolB4Vx0YBacNvkJn8f.png)
+![qjmmbxebrolb4vx0ybacnvkjn8f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qjmmbxebrolb4vx0ybacnvkjn8f.png)
 > 图注：这张图片展示的是微服务面试中分片广播任务测试环节的执行器管理界面，界面内的“item-service”执行器名称被红色框标注，其对应的Online机器地址栏有红色箭头指向“查看(2)”按钮，点击该按钮弹出注册节点窗口，窗口内列出了两个自动注册的节点地址，分别为http://192.168.101.1:11603和http://192.168.101.1:11604，对应测试步骤中启动的两个商品服务实例，用于确认分片广播任务的执行器实例注册情况，和文档中启动两个服务实例的操作内容相呼应，用于观察任务在各实例的执行状态。
 
 启动任务，观察日志
 
 实例1:
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/NuaXb2GW7oIuRcxZtSSciIQPn5c.png)
+![nuaxb2gw7oiurcxztssciiqpn5c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nuaxb2gw7oiurcxztssciiqpn5c.png)
 > 图注：这是测试分片广播任务时实例1的执行日志内容，核心展示了分片任务的处理结果。日志对应com.hmall.item.job.SampleXxlJob任务，明确标注第0片命中分片并开始处理，第1片被忽略；同时给出了任务的分片参数，当前分片序号为0，总分片数为2。该内容记录了该分片广播任务在指定实例中的实际执行状态，是完成该测试流程中观察实例执行情况的关键内容，用于验证分片广播任务的分配与执行逻辑。
 
 实例2：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/JKjobQWOqoPip5xYGgYcKCUwnmd.png)
+![jkjobqwoqopip5xyggyckcuwnmd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jkjobqwoqopip5xyggyckcuwnmd.png)
 > 图注：这是测试分片广播任务过程中的执行日志截图，内容展示了实例执行分片任务的情况，对应上下文中启动两个执行器实例后观察执行情况的环节。截图显示两个相同的job任务类com.hmall.item.job.SampleXxlJob的执行日志，第一个日志条目标注“第 0 片，忽略”，第二个日志条目标注“第 1 片，命中分片开始处理”，并附带分片参数：当前分片序号为1，总分片数为2，清晰体现了分片广播任务的分片命中与参数情况。
 
 下边启动两个执行器实例，观察每个实例的执行情况。
@@ -928,14 +928,14 @@ public void hotItemCacheJobHandler() throws Exception {
 
 进入任务管理，新增任务：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/ZYoObKrnkoFM9CxCpu1ctep6neD.png)
+![zyoobkrnkofm9cxcpu1ctep6ned](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zyoobkrnkofm9cxcpu1ctep6ned.png)
 > 图注：这张图片是调度中心新增任务的配置界面，对应文档里“进入任务管理，新增任务”的操作步骤，用于配置热点商品定时预热任务。界面的基础配置部分，执行器选择“商品服务”，任务描述为“热点商品定时预热”；调度配置里，调度类型为CRON，CRON表达式设置为“0/5 * * * * ? *”；任务配置部分，运行模式为BEAN，JobHandler指定为“hottemCacheJobHandler”，任务参数暂未填写；高级配置里，路由策略为“第一个”，调度过期策略为“忽略”，子任务ID、报警邮件、任务超时时长等内容按提示未输入，完成配置后可点击“保存”或“取消”按钮。
 
 ####  1.5.3 启动任务并测试
 
 任务配置完成，下边启动任务
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/Z3UQbkJXGoWHLfxlCNKcHIfxnTh.png)
+![z3uqbkjxgowhlfxlcnkchifxnth](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/z3uqbkjxgowhlfxlcnkchifxnth.png)
 > 图注：图片展示的是任务管理界面。界面中显示了两条任务记录，任务ID分别为26和25，任务描述分别为“热点商品定时预 addCriterion图片
 
 下边重启商品服务，观察热点商品是否在redis更新缓存。
@@ -998,19 +998,19 @@ dir ./
 
 执行save命令可以立即执行一次RDB,在执行完该命令之前阻塞客户端请求.
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/QaEvbQ3jQotIW5xWtStcj0Urnib.png)
+![qaevbq3jqotiw5xwtstcj0urnib](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qaevbq3jqotiw5xwtstcj0urnib.png)
 > 图注：图片展示的是在Redis容器中执行save命令的界面。命令“save”执行后，Redis返回“OK”提示，表明操作成功。该图片与文档中介绍Redis持久化RDB部分的save命令内容相关，直观呈现了执行save命令的界面效果，帮助读者理解save命令的执行结果及Redis的响应情况。
 
 进入redis容器：docker exec -it redis /bin/bash
 
 在执行命令前我查看rdb文件
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/Vbmbb0an2oRllex3etwc6oo9nqg.png)
+![vbmbb0an2orllex3etwc6oo9nqg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vbmbb0an2orllex3etwc6oo9nqg.png)
 > 图注：这张图片展示的是进入Redis容器后执行的命令结果，先执行了`ls`命令查看容器内目录文件，可见`dump.rdb`文件，接着执行`ls -l`命令查看该文件的详细信息，其中`dump.rdb`文件的权限、所属用户、所属组、大小、修改时间等信息清晰显示，该内容对应文档中执行save命令前查看rdb文件的操作，直观呈现了此时Redis容器内dump.rdb文件的状态，为后续执行save命令后对比文件更新提供了参照。
 
 执行save命令后从文件更新时间上看发现rdb文件有更新
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/PIELbNrwBojuBqxOXG4ciCKnned.png)
+![pielbnrwbojubqxoxg4cicknned](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pielbnrwbojubqxoxg4cicknned.png)
 > 图注：图片展示了在redis容器中执行ls -l命令后的目录列表。其中，红色框突出显示了名为“dump.rdb”的文件，其权限为-rw-r--r--，属主为root，属组也为root，文件大小为3572字节，创建时间为2022年8月23日06:53。该图片与上文介绍在redis.conf文件中配置rdb文件名称和保存路径的内容相关，通过查看rdb文件更新时间，可发现执行save命令后rdb文件有更新。
 
 
@@ -1019,7 +1019,7 @@ dir ./
 
 下面的命令可以异步执行RDB：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/JPklbZY6To46dDxseVwcVHk4nZc.png)
+![jpklbzy6to46ddxsevwcvhk4nzc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jpklbzy6to46ddxsevwcvhk4nzc.png)
 > 图注：该图片展示了执行Redis异步生成RDB文件的bgsave命令后的输出结果，具体内容为：IP地址为192.168.101.68.0的Redis节点成功执行了bgsave命令，返回提示信息“Background saving started”，表明后台已开始异步生成RDB文件。这一输出对应文档中介绍的2.2 RDB部分里的bgsave命令相关内容，该命令的作用是开启独立进程完成RDB生成，不会阻塞主进程处理客户端请求，图片中的提示信息直观体现了该命令的执行状态。
 
 这个命令执行后会开启独立进程完成RDB，主进程可以持续处理用户请求，不受影响。
@@ -1044,7 +1044,7 @@ copy on write
 
 RDB 的工作流程如下图所示：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/EBsybu2xCosCG5xZq8lcaBmmnff.png)
+![ebsybu2xcoscg5xzq8lcabmmnff](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ebsybu2xcoscg5xzq8lcabmmnff.png)
 > 图注：图片展示了Redis RDB持久化的工作流程。主进程和子进程共享内存页，当任一进程对内存页进行修改时，系统分配新内存页并复制。子进程读取内存数据生成RDB文件，写入磁盘后替换旧RDB文件。主进程在子进程生成RDB文件时进行读操作，子进程在生成RDB文件时进行写操作。该图与上下文紧密相关，直观呈现了RDB持久化中主进程与子进程的内存操作及RDB文件生成、替换过程。
 
 1. 启动子进程：当Redis服务器接收到`BGSAVE`命令时，它会先检查是否有正在运行的子进程。如果没有，则创建一个新的子进程（fork操作）。
@@ -1095,7 +1095,7 @@ RDB的缺点？
 
 AOF全称为Append Only File（追加文件）是Redis提供的另一种持久化机制，与RDB相比，AOF持久化通过记录每次写操作的命令到一个单独的日志文件中，使得即使Redis服务重启，也可以通过重放这些命令来恢复数据。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/VsbwbA3bTocNPBxwEFFcrZT7njc.png)
+![vsbwba3btocnpbxweffcrzt7njc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vsbwba3btocnpbxweffcrzt7njc.png)
 > 图注：图片展示了Redis AOF持久化原理。左侧是命令行界面，输入“redis-cli 127.0.0.1:6379> set num 123”后，返回“OK”。右侧是一个红色的Redis图标，图标右侧有黑色箭头指向右侧的AOF文件，文件内容为“$3 set $3 num $3 123”。该图与上下文紧密相关，直观呈现了AOF记录每次写操作命令到单独日志文件，即使Redis服务重启也能通过重放这些命令恢复数据的原理。
 
 
@@ -1125,15 +1125,15 @@ appendfsync no
 
 三种策略对比：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/NG8RbaRSBonmHMxkpFNcaebvnUf.png)
+![ng8rbarsbonmhmxkpfncaebvnuf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ng8rbarsbonmhmxkpfncaebvnuf.png)
 > 图注：图片是一张表格，对比了Redis AOF配置中三种策略的配置项、刷盘时机、优点及缺点。Always为同步刷盘，优点是可靠性高、几乎不丢数据，但性能影响大；everysec为每秒刷盘，性能适中，最多丢失1秒数据；no为操作系统控制，性能最好，但可靠性较差，可能丢失大量数据。该表与上下文介绍的AOF配置内容相关，直观呈现了三种策略的优缺点。
 
 打开aof重启redis，写入数据查看aof文件的内容，aof内容是若干redis命令的集合。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/ODgJbgPYwoyIGVxvzvLcAqAcngd.png)
+![odgjbgpywoyigvxvzvlcaqacngd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/odgjbgpywoyigvxvzvlcaqacngd.png)
 > 图注：这张图片展示了在Linux命令行环境下执行`ls -l`指令后的输出结果，显示了文件`appendonly.aof`的详细信息。该文件权限为`-rw-r--r--`，所属用户和用户组均为root，文件大小为52字节，修改时间为10月15日08:07。这一内容对应上下文里“打开aof重启redis，写入数据查看aof文件的内容”的操作，直观呈现了生成的AOF文件的具体属性，符合AOF持久化相关配置后的实际文件状态。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/Rmrmb97NjoHdCTxPGNucDX5JnEh.png)
+![rmrmb97njohdctxpgnucdx5jneh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rmrmb97njohdctxpgnucdx5jneh.png)
 > 图注：图片展示了在Linux系统下使用`cat`命令查看`appendonly.aof`文件的内容。文件内容以`*2`开头，接着是`$6`，后为`SELECT`命令，再是`$1`和`0`，然后是`*3`，之后是`$3`，以及`set`命令，最后是`$2`、`$2`和`aa`。该图片与文档中介绍AOF配置及打开AOF后写入数据查看AOF文件内容的上下文相关，直观呈现了AOF文件的命令记录形式。
 
 
@@ -1142,7 +1142,7 @@ appendfsync no
 
 因为是记录命令，AOF文件会比RDB文件大的多。而且AOF会记录对同一个key的多次写操作，但只有最后一次写操作才有意义。通过执行bgrewriteaof命令，可以让AOF文件执行重写功能，用最少的命令达到相同效果。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/PgLqbTzRQo837FxPbXScjnMvnSc.png)
+![pglqbtzrqo837fxpbxscjnmvnsc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pglqbtzrqo837fxpbxscjnmvnsc.png)
 > 图注：图片展示了Redis AOF重写前后的命令记录情况。左侧为AOF原本的命令记录，包含`set num 123`、`set name jack`、`set num 666`三条命令。中间箭头指向“bgrewirteaof”操作。右侧为重写后的命令记录，仅记录了`mset name jack num 666`。该图片与上下文紧密相关，直观呈现了通过bgrewriteaof命令重写AOF文件后，命令记录简化的情况，帮助理解AOF重写原理。
 
 如图，AOF原本有三个命令，但是`set num 123 和 set num 666`都是对num的操作，第二次会覆盖第一次的值，因此第一个命令记录下来没有意义。
@@ -1166,7 +1166,7 @@ auto-aof-rewrite-min-size 64mb
 
 RDB与AOF对比，RDB和AOF各有自己的优缺点，如下图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/NFqibJjSBorFvtxHwcUc0wxtnPh.png)
+![nfqibjjsborfvtxhwcuc0wxtnph](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nfqibjjsborfvtxhwcuc0wxtnph.png)
 > 图注：这张图是Redis两种持久化方式RDB与AOF的对比表格，清晰呈现了二者在多维度的差异。在持久化方式上，RDB是定时对整个内存做快照，AOF则记录每一次执行的命令。二者在数据完整性、文件大小、宕机恢复速度等方面区别明显：RDB的数据完整性不完整、文件体积小、恢复速度快；AOF数据完整性相对完整但取决于刷盘策略、文件体积大、恢复速度慢。系统资源占用与使用场景上，RDB高耗CPU和内存，适用于可容忍少量数据丢失、追求更快启动速度的场景；AOF低占CPU内存，重写时会占用大量IO与内存，适用于对数据安全性要求较高的场景。
 
 
@@ -1270,7 +1270,7 @@ Redis集群就是多个Redis实例组成一个集群共同对外提供Redis服�
 
 首先说说Redis 的主从结构，下图就是一个简单的Redis主从集群结构：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/ZZj2bjX77opzV7xkyE4c6uXunQf.png)
+![zzj2bjx77opzv7xkye4c6uxunqf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zzj2bjx77opzv7xkye4c6uxunqf.png)
 > 图注：这张图展示了简单的Redis主从集群结构，由Redis客户端、1个master节点以及2个slave/replica节点构成。Redis客户端的写操作仅指向master节点，而读操作可分别指向两个从节点；同时，图中以虚线箭头标注了数据同步方向，master节点会将数据自动同步给两个slave/replica节点，这一结构实现了读写分离，可通过访问多个从节点来分担并发压力。
 
 如图所示，主从集群中有一个master节点、多个slave节点（现在叫replica）组成。
@@ -1296,7 +1296,7 @@ Redis集群就是多个Redis实例组成一个集群共同对外提供Redis服�
 
 主从第一次建立连接时，会执行**全量同步**，将master节点的所有数据都拷贝给slave节点，流程如下：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/U6wzbH5I4oDdqNxLEdCciIIXnBc.png)
+![u6wzbh5i4oddqnxledcciiixnbc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/u6wzbh5i4oddqnxledcciiixnbc.png)
 > 图注：这张图是Redis主从结构全量同步的流程示意图，清晰呈现了主从节点间同步的三个阶段内容：第一阶段，从节点执行replicaof命令建立连接，向主节点请求数据同步，主节点判断为第一次同步后，向从节点返回自身的数据版本信息，从节点保存该版本信息；第二阶段，主节点执行bgsave生成RDB文件，同时将生成RDB期间记录在repl_baklog中的命令一并处理，向从节点发送RDB文件，从节点清空本地数据后加载该RDB文件；第三阶段，主节点向从节点发送repl_baklog中记录的命令，从节点执行接收到的这些命令，完成全量同步流程。
 
 完整流程描述：
@@ -1318,7 +1318,7 @@ Redis集群就是多个Redis实例组成一个集群共同对外提供Redis服�
 
 什么是增量同步？就是只更新slave与master存在差异的部分数据。如图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/WAbKbhHZGoNGtYxuILscyG3Yndp.png)
+![wabkbhhzgongtyxuilscyg3yndp](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wabkbhhzgongtyxuilscyg3yndp.png)
 > 图注：该图展示了Redis主从结构中增量同步的完整流程，分为两个阶段。第一阶段是同步初始交互：slave节点重启后（步骤1.0），向master节点发送psync指令及自身的replication ID和偏移量（步骤1.1）；master判断该replication ID是否与自身一致（步骤1.2），若不是首次同步，则向slave返回continue指令（步骤1.3）。第二阶段是数据传输阶段：master从环形的repl_baklog文件中，获取slave所需偏移量之后的数据（步骤2.1），将对应偏移量后的命令发送给slave（步骤2.2）；slave接收后执行这些命令（步骤2.3），完成增量同步。
 
 
@@ -1333,7 +1333,7 @@ Redis集群就是多个Redis实例组成一个集群共同对外提供Redis服�
 
 `repl_baklog`中会记录Redis处理过的命令及`offset`，包括master当前的`offset`，和slave已经拷贝到的`offset`：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/VdfhbA1VDoAVl9xbU41cr8TSnKe.png)
+![vdfhba1vdoavl9xbu41cr8tsnke](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vdfhba1vdoavl9xbu41cr8tsnke.png)
 > 图注：图片展示了Redis主从结构中增量同步的原理。图中有一个圆环，左侧绿色部分代表slave，右侧红色部分代表master。slave从master处获取增量数据，slave与master的offset之间的差异即slave需要增量拷贝的数据。随着不断有数据写入，master的offset逐渐变大，slave也不断追赶，直到数组被填满，此时新数据写入会覆盖数组中的旧数据。
 
 slave与master的offset之间的差异，就是salve需要增量拷贝的数据了。
@@ -1342,27 +1342,27 @@ slave与master的offset之间的差异，就是salve需要增量拷贝的数据�
 
 随着不断有数据写入，master的offset逐渐变大，slave也不断的拷贝，追赶master的offset：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/AYf8bpMFNoULlhxGutAc58FHnzg.png)
+![ayf8bpmfnoullhxgutac58fhnzg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ayf8bpmfnoullhxgutac58fhnzg.png)
 > 图注：图片展示了Redis主从结构中主从同步原理的增量同步示意图。图中左侧为slave，右侧为master，两者间用绿色箭头连接。master和slave的同步状态用绿色和红色环形图表示，绿色部分代表已同步数据，红色部分代表未同步数据。随着数据写入，master的offset逐渐变大，slave不断追赶，直到数组被填满，此时新数据写入会覆盖旧数据。该图直观呈现了slave与master的offset差异及增量拷贝数据的追赶过程。
 
 直到数组被填满：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/LD8NbswfHo8TKwxEOtVcSP5inPd.png)
+![ld8nbswfho8tkwxeotvcsp5inpd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ld8nbswfho8tkwxeotvcsp5inpd.png)
 > 图注：图片展示了Redis主从结构中增量同步的原理。图中以绿色圆环表示`repl_baklog`，其中红色部分代表master当前的`offset`，绿色部分是slave已经拷贝到的`offset`。slave与master的offset之间的差异，即slave需要增量拷贝的数据。随着不断有数据写入，master的offset逐渐变大，slave不断追赶，直到数组被填满，此时若有新数据写入，会覆盖数组中的旧数据。
 
 此时，如果有新的数据写入，就会覆盖数组中的旧数据。不过，旧的数据只要是绿色的，说明是已经被同步到slave的数据，即便被覆盖了也没什么影响。因为未同步的仅仅是红色部分：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/LhVFb8qh8oFVlVxtBDzctOpBnhe.png)
+![lhvfb8qh8ofvlvxtbdzctopbnhe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lhvfb8qh8ofvlvxtbdzctopbnhe.png)
 > 图注：图片展示了Redis主从结构中增量同步的原理示意图。图中左侧为slave，右侧为master，master指向slave。slave部分被绿色和红色区域覆盖，绿色区域代表已同步数据，红色区域代表未同步数据。该图与上下文紧密相关，直观呈现了旧数据被绿色覆盖，即便被覆盖也没影响，以及master继续写入新数据导致master的`offset`覆盖`repl_baklog`中旧数据，直到将slave现在的`offset`覆盖的同步原理。
 
 但是，如果slave出现网络阻塞，导致master的`offset`远远超过了slave的`offset`： 
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/NQP5bAYnaot6Gfx2lGcc3OnLnjQ.png)
+![nqp5baynaot6gfx2lgcc3onlnjq](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nqp5baynaot6gfx2lgcc3onlnjq.png)
 > 图注：图片展示了Redis主从结构中增量同步的原理。图中红色部分代表master端的数据，绿色部分代表slave端的数据。slave端的数据被标注为“slave”，master端的数据被标注为“master”。该图与上下文紧密相关，用于直观呈现master和slave端数据的同步情况，帮助理解当slave出现网络阻塞导致master的`offset`远超slave的`offset`时，master继续写入新数据会覆盖`repl_baklog`中旧数据，直到覆盖slave当前`offset`的现象。
 
 如果master继续写入新数据，master的`offset`就会覆盖`repl_baklog`中旧的数据，直到将slave现在的`offset`也覆盖：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/FqyCbJADqo5Zh5xIT5bcuBjznWh.png)
+![fqycbjadqo5zh5xit5bcubjznwh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fqycbjadqo5zh5xit5bcubjznwh.png)
 > 图注：图片展示了Redis主从结构中增量同步的原理。图中以红色和绿色线条分别表示master和slave的`offset`，绿色部分代表已同步数据，红色部分为未同步数据。当slave出现网络阻塞时，master的`offset`会远远超过slave的`offset`，若master继续写入新数据，master的`offset`会覆盖`repl_baklog`中旧的数据，直至将slave现在的`offset`也覆盖。此图直观呈现了增量同步中master与slave数据同步关系及未同步数据位置。
 
 棕色框中的红色部分，就是尚未同步，但是却已经被覆盖的数据。此时如果slave恢复，需要同步，却发现自己的`offset`都没有了，无法完成增量同步了。只能做**全量同步**。
@@ -1403,7 +1403,7 @@ Redis提供了`哨兵`（`Sentinel`）机制来监控主从集群监控状态，
 
 下图是哨兵集群作用原理图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/CNYzbbOg8oPbvixC2LgcHabNnre.png)
+![cnyzbbog8opbvixc2lgchabnnre](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cnyzbbog8opbvixc2lgchabnnre.png)
 > 图注：图片展示了Redis哨兵集群作用原理图。图中有三个Sentinel（哨兵）节点，分别位于上方，它们通过“监控集群状态”箭头指向下方的Redis集群。Redis集群包含master（主节点）和两个slave（从节点），master与slave间有“数据同步”箭头。master还与RedisClient（客户端）有“服务状态变更通知”箭头。该图直观呈现了哨兵监控集群状态、RedisClient接收服务状态变更通知及数据同步等关键环节，与上下文对哨兵状态监控等作用的介绍相契合。
 
 哨兵的作用如下：
@@ -1433,7 +1433,7 @@ Redis提供了`哨兵`（`Sentinel`）机制来监控主从集群监控状态，
 
 如图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/MkSkbBa3AozP9wxLPMkczbI5nff.png)
+![mkskbba3aozp9wxlpmkczbi5nff](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mkskbba3aozp9wxlpmkczbi5nff.png)
 > 图注：图片展示了Redis哨兵工作原理中状态监控的示意图。上方有三个Sentinel（哨兵）节点，下方有master（主节点）和两个slave（从节点）。master与两个slave间有数据同步箭头。当master出现故障时，两个Sentinel会判断slave与master断开时间，若超过`down-after-milliseconds*10`则排除该slave，再依据slave的`slave-priority`值选择新的master。该图直观呈现了哨兵发现master故障后的判断流程，与上下文对哨兵选择新master依据的描述相呼应。
 
 
@@ -1494,28 +1494,28 @@ OK，`sentinel`找到`leader`以后，该如何完成`failover`呢？
 
 我们举个例子，有一个集群，初始状态下7001为`master`，7002和7003为`slave`：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/VGpLbsyc3oMfiqxbqntcIGJinoh.png)
+![vgplbsyc3omfiqxbqntcigjinoh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vgplbsyc3omfiqxbqntcigjinoh.png)
 > 图注：图片展示了Redis哨兵工作原理中master发生故障时的集群状态。上方为Sentinel哨兵，下方有三个节点，7001为master，7002和7003为slave。7002和7003节点上分别有“slave”标识和星星图案。该图与上下文紧密相关，直观呈现了集群初始状态，为后续master发生故障，slave1当选，以及故障转移流程的介绍提供可视化参考。
 
 假如master发生故障，slave1当选。则故障转移的流程如下：
 
 1）`sentinel`给备选的`slave1`节点发送`slaveof no one`命令，让该节点成为`master`
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/H6A6bCOPwoQBBbxdJ1Zcg5hVnif.png)
+![h6a6bcopwoqbbbxdj1zcg5hvnif](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/h6a6bcopwoqbbbxdj1zcg5hvnif.png)
 > 图注：图片展示了Redis哨兵执行故障转移流程中的第一步。上方为Sentinel哨兵，下方有三个节点，分别为master 7002、master 7001和slave2 7003。Sentinel向master 7002发送“执行slaveof no one”命令，让其成为master，同时向master 7001和slave2 7003发送“slaveof 192.168.150.101 7002”命令，让它们隶属于新master。该图直观呈现了故障转移流程中Sentinel执行命令的场景。
 
 
 
 2）`sentinel`给所有其它`slave`发送`slaveof 192.168.150.101 7002` 命令，让这些节点隶属于新`master`，也就是`7002`的`slave`节点，开始从新的`master`上同步数据。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/Vd4ubDhSgo7OiJxj7ZccCOGMniv.png)
+![vd4ubdhsgo7oijxj7zcccogmniv](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vd4ubdhsgo7oijxj7zcccogmniv.png)
 > 图注：这张图展示了Redis哨兵故障转移（failover）流程的中间步骤，与上下文中的故障转移操作对应。图中橙色的Sentinel节点通过绿色箭头指向三个被红框标注的Redis节点：编号7002和7001的节点被标为master，编号7003的节点被标为slave2。左侧箭头旁标注步骤1“执行slaveof no one”，对应将备选的原从节点转为新主节点的操作，右侧箭头旁标注步骤2“slaveof 192.168.150.101 7002”，对应将其余原从节点改为新主节点的从节点的操作，清晰呈现了故障转移阶段的节点角色与对应命令。
 
 
 
 3）最后，当故障节点恢复后会接收到哨兵信号，执行`slaveof 192.168.150.101 7002`命令，成为`slave`：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/VR7ob4g8No4unex9VWPcPNaHnTk.png)
+![vr7ob4g8no4unex9vwpcpnahntk](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vr7ob4g8no4unex9vwpcpnahntk.png)
 > 图注：图片展示了Redis哨兵故障转移流程。上方为Sentinel，下方有三个节点，分别为master 7002、master 7001和slave2 7003。Sentinel执行slaveof no one命令，slave2执行slaveof 192.168.150.101 7002命令，master 7001执行slaveof 192.168.150.101 7002命令。该图与上文介绍的故障转移流程内容相呼应，直观呈现了各节点执行命令的顺序及对应关系。
 
 
@@ -1588,7 +1588,7 @@ Redis哨兵从slave中选取master的依据是什么？
 
 Redis分片集群的结构如图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/IsLIbCI3doL7hBx8yOXcpESqnqd.jpg)
+![islibci3dol7hbx8yoxcpesqnqd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/islibci3dol7hbx8yoxcpesqnqd.jpg)
 > 图注：图片展示了Redis分片集群的结构。图中有多个master节点，每个master节点下有slave节点，master节点间通过绿色箭头表示的心跳进行健康状态监测，slave节点间通过绿色箭头表示的数据同步。每个master节点保存不同分片数据，master节点间及master与slave节点间均存在数据同步关系。该图与上下文紧密相关，直观呈现了分片集群中master和slave节点的分布及数据同步、心跳监测等关键信息。
 
 分片集群特征：
@@ -1626,7 +1626,7 @@ Redis分片集群的结构如图：
 
 当我们读写数据时，Redis基于`CRC16` 算法对`key`做`hash`运算，得到的结果与`16384`取余，就计算出了这个`key`的`slot`值。然后到`slot`所在的Redis节点执行读写操作。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/YPgtbe9Oaov7Zjxz7HicZvL6nVf.png)
+![ypgtbe9oaov7zjxz7hiczvl6nvf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ypgtbe9oaov7zjxz7hiczvl6nvf.png)
 > 图注：图片展示了Redis散列插槽的计算原理。上方是CRC16运算，其结果指向下方的16384个槽位，分为三个Redis Group，每个Group负责一部分槽位。其中5460 - 5461槽位由第一个Group负责，10922 - 10923槽位由第二个Group负责，16383槽位由第三个Group负责。该图与上下文紧密相关，直观呈现了Redis散列插槽的分片机制，帮助理解`hash slot`的计算情况。
 
 不过`hash slot`的计算也分两种情况：
@@ -1656,7 +1656,7 @@ set user jack
 
 结果如下：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/DJZMb0J8BoEBybxONJ4c2YDdnwg.png)
+![djzmb0j8boebybxonj4c2yddnwg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/djzmb0j8boebybxonj4c2yddnwg.png)
 > 图注：这张图片展示了Redis客户端测试哈希插槽跳转的运行结果：在7001端口的Redis节点执行`redis-cli -c -p 7001`并输入`set user jack`命令后，控制台明确显示被重定向到了编号为5474的哈希插槽，对应的节点是192.168.150.101:7002，印证了前文提到的“当key不含{}时，根据整个key计算哈希插槽，客户端会自动跳转至对应插槽所在节点”的内容，红框重点突出了跳转的插槽编号与目标节点信息。
 
 可以看到，客户端自动跳转到了`5474`这个`slot`所在的`7002`节点。
@@ -1754,7 +1754,7 @@ Redis分片集群如何判断某个key应该在哪个实例？
 
 - 哈希(hash)：适合存储对象
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/OJ03b4LUdoZRHUxn3nncvBXRnhh.png)
+![oj03b4ludozrhuxn3nncvbxrnhh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oj03b4ludozrhuxn3nncvbxrnhh.png)
 > 图注：图片展示了Redis哈希数据类型的基本结构。左侧有一个key，右侧是一个哈希表，包含两个字段field1和field2，分别对应value1和value2。
 
 **HSET** key field value             将哈希表 key 中的字段 field 的值设为 value
@@ -1771,7 +1771,7 @@ Redis分片集群如何判断某个key应该在哪个实例？
 
 - 列表(list)：按照插入顺序排序，可以有重复元素
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/ZQ2Zb1BR2oYs9zxIaBQcaoFEnwc.png)
+![zq2zb1br2oys9zxiabqcaofenwc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zq2zb1br2oys9zxiabqcaofenwc.png)
 > 图注：图片展示了Redis列表列表（list）数据类型 addCriterion类型的关键信息。图中左侧为key，右侧是一个有序列表，包含a、b、c、d四个元素，a位于列表头部，d位于尾部。
 
 **LPUSH** key value1 [value2]         将一个或多个值插入到列表头部
@@ -1786,7 +1786,7 @@ Redis分片集群如何判断某个key应该在哪个实例？
 
 - 集合(set)：无序集合，没有重复元素
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/RNEIbzf9BoVA60xZOutcBZILnee.png)
+![rneibzf9bova60xzoutcbzilnee](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rneibzf9bova60xzoutcbzilnee.png)
 > 图注：图片展示了Redis集合（set）数据类型的基本概念。左侧是一个矩形框，标注为“key”，右侧是一个椭圆形区域，标注为“value”，椭圆内有三个矩形框，分别标注为“a”“b”“e”。箭头从“key”指向“value”区域，表明key与value之间的关联。
 
 **SADD** key member1 [member2]            向集合添加一个或多个成员
@@ -1805,7 +1805,7 @@ Redis分片集群如何判断某个key应该在哪个实例？
 
 - 有序集合(sorted set / zset)：集合中每个元素关联一个分数（score），根据分数升序排序，没有重复元素
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/U2Y6blFCJokV1pxLbtIc5t1jnuN.png)
+![u2y6blfcjokv1pxlbtic5t1jnun](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/u2y6blfcjokv1pxlbtic5t1jnun.png)
 > 图注：图片展示了Redis有序集合（sorted set/zset）的数据结构示例。左侧有一个矩形框，标注为“key”，右侧是一个椭圆形区域，标注为“value”。椭圆内有三个矩形框，分别标注“a: 0.1”“b: 3.0”“e: 2.5”，其中“b”和“e”被红色箭头指向。
 
 **ZADD** key score1 member1 [score2 member2]     向有序集合添加一个或多个成员，或者更新已存在成员的 分数
@@ -1830,7 +1830,7 @@ Redis分片集群如何判断某个key应该在哪个实例？
 
 说一下Redis的常用数据类型？
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/Kx2WbxVfZottHqxwYAkcNLWwn4b.png)
+![kx2wbxvfzotthqxwyakcnlwwn4b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kx2wbxvfzotthqxwyakcnlwwn4b.png)
 > 图注：这张图片是Redis五种数据类型的对应说明表格，表格分为数据类型、特征、适用场景、常用命令四列，涵盖String、List、Set、Hash、Sorted Set这五种类型。其中String的特征是存储单个值，适用于缓存等场景，常用命令为SET、GET；List是有序可重复的字符串集合，适配消息队列等场景，常用LPUSH、LRANGE；Set是无序不可重复的集合，用于标签系统等，常用SADD、SMEMBERS；Hash是字段-值对的无序散列，适合存储对象等，常用HSET、HGETALL；Sorted Set是有序的字符串集合且成员关联分数，用于排行榜场景，常用ZADD、ZRANGE、ZREVRANGE。
 
 - **String：**存储单个值，适用于缓存和键值存储，常用命令：SET用于设置值，GET用于获取值。
@@ -1852,21 +1852,21 @@ SkipList（跳表）首先是链表，但与传统链表相比有几点差异：
 
 传统链表只有指向前后元素的指针，因此只能顺序依次访问。如果查找的元素在链表中间，查询的效率会比较低。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/KHLqby8ZLom6KIxz4BecgVXXnbK.png)
+![khlqby8zlom6kixz4becgvxxnbk](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/khlqby8zlom6kixz4becgvxxnbk.png)
 > 图注：这张图展示了三种常见的链表结构，用于辅助理解与Redis的SkipList相关的链表基础内容。图上方标注的“单链表”是仅有指向后继节点的next指针，末端指向NULL的链式结构；中间标注的“循环链表”是在单链表基础上，末端节点的next指针指向首部，形成首尾相接的闭环；下方标注的“双向链表”则在每个节点增设了pre指针，可同时指向前后节点，末端同样指向NULL。这些基础链表结构，是理解SkipList多级跳跃指针特性的前提。
 
 而SkipList则不同，它内部包含跨度不同的多级指针，可以让我们跳跃查找链表中间的元素，效率非常高。
 
 其结构如图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/MhZObPmeSox0XLx5sVscfRmIn1d.png)
+![mhzobpmesox0xlx5svscfrmin1d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mhzobpmesox0xlx5svscfrmin1d.png)
 > 图注：该图片展示了Redis中SkipList的结构，最上方的1号节点拥有跨度为9的4级指针，指向数值为10的节点。图中设置了多级指针，同一层级的指针会连接特定数值的节点，指针旁标注了对应的跨度，而最下方是按数值从1到20依次排列的底层链表，各级间的节点也通过虚线对应关联，直观呈现出SkipList可通过多级指针实现跳跃查找的结构特点，与上下文介绍的SkipList的跳跃查找机制相呼应，能帮助理解其高效查找的原理。
 
 我们可以看到1号元素就有指向3、5、10的多个指针，查询时就可以跳跃查找。例如我们要找大小为14的元素，查找的流程是这样的：
 
 
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-2/FV33bsekfo8ioLxlrglclnOdnOg.png)
+![fv33bsekfo8iolxlrglclnodnog](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fv33bsekfo8iolxlrglclnodnog.png)
 > 图注：该图为Redis中SkipList的结构示意图，展示了其包含跨度不同的多级指针的特征。图中最顶部，大小为1的节点有指向大小为10的指针，跨度为9；从上往下第二层，大小1的节点经跨度为4的指针指向大小5的节点，大小5的节点经跨度为5的指针指向大小10的节点；第三层的大小10节点经绿色指针指向大小13的节点，大小13的节点向下指向最底层的大小13节点，再经指向大小14的指针。最底层为按1到20顺序排列的单链表，与上下文描述的SkipList跳跃查找特性相契合，能通过多级指针实现快速定位目标元素。
 
 - 首先找元素1节点最高级指针，也就是4级指针，起始元素大小为1，指针跨度为9，可以判断出目标元素大小为10。由于14比10大，肯定要从10这个元素向下接着找。

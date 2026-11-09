@@ -39,7 +39,7 @@ BM25 是一种基于概率检索模型的算法，相比 TF-IDF 有以下改进�
 
 \_score：文档与用户搜索的关键字的相关度得分
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/KISobyoeWo43mHxHiDqcvBkJn0b.png)
+![kisobyoewo43mhxhidqcvbkjn0b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kisobyoewo43mhxhidqcvbkjn0b.png)
 > 图注：图片展示了Elasticsearch中使用BM25算法搜索“手机”时的搜索结果及算分情况。左侧为搜索请求代码，右侧是搜索结果JSON数据。搜索结果中“score”字段值均为16.338163，对应文档包含“手机”关键词。该图片与上下文紧密相关，直观呈现了BM25算法在实际搜索中的应用效果，帮助理解BM25算法在文档与用户搜索关键字相关度得分方面的表现。
 
 
@@ -48,7 +48,7 @@ BM25 是一种基于概率检索模型的算法，相比 TF-IDF 有以下改进�
 
 例如在百度中搜索Java培训，排名靠前的就是广告推广：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/MDiJbYkeAoXrsixT2W3c0i29nVe.png)
+![mdijbykeaoxrsixt2w3c0i29nve](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mdijbykeaoxrsixt2w3c0i29nve.png)
 > 图注：图片展示了百度搜索“java培训”结果页面。搜索框内显示“java培训”，下方有“网页”“资讯”“视频”等分类选项。搜索结果中，一个红色背景的广告推广内容被突出显示，其下方有“广告”“推荐”标识。该图片与上下文关系紧密，用于说明在百度搜索中搜索Java培训时，排名靠前的广告推广情况，引出人为控制相关性算分需利用Elasticsearch中function score查询的背景。
 
 要想人为控制相关性算分，就需要利用elasticsearch中的function score 查询了。
@@ -216,7 +216,7 @@ GET /items/_search
 
 如图：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/ZK0Gb3OinovEC6xGebAcy5KGnhc.png)
+![zk0gb3oinovec6xgebacy5kgnhc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zk0gb3oinovec6xgebacy5kgnhc.png)
 > 图注：这张图展示了Elasticsearch深度分页的核心逻辑，上方虚线框内为ES集群，包含shard1、shard2、shard3、shard3四个分片，每个分片各存储1000条文档。下方通过向下的箭头标注了关键步骤：聚合所有分片的结果，重新排序后选取前1000个文档，这一流程对应文档中深度分页的解决逻辑，即因各分片数据顺序独立，需先获取所有分片的前N条数据汇总排序，再截取目标位置数据，该图直观呈现了这一操作的具体过程。
 
 试想一下，假如我们现在要查询的是第1000页数据呢，是不是要找第9990\~10000的数据，那岂不是需要把每个分片中的前10000名数据都查询出来，汇总在一起，在内存中排序？如果查询的分页深度更深呢，需要一次检索的数据岂不是更多？
@@ -279,7 +279,7 @@ GET /items/_search
 
 查询第二页：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/D9YJbagdKoL0dOx6q2tcxqQnnbd.png)
+![d9yjbagdkol0dox6q2tcxqqnnbd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/d9yjbagdkol0dox6q2tcxqqnnbd.png)
 > 图注：图片展示了使用Elasticsearch搜索API实现深度分页的示例代码及响应结果。代码中使用了`search_after`参数，其值为上一页最后记录的排序值，即`1000000003145`。响应结果中，`search_after`值为`1000000004580`，在第三页使用。该图片与上下文紧密相关，直观呈现了`search_after`参数在实现深度分页时的应用场景，帮助理解其在Elasticsearch搜索中的具体操作。
 
 
@@ -368,12 +368,12 @@ public void searchAfterQuery() throws IOException {
 
 找附近的酒店：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/S9MrbkKkfomyZ6xtHOXcqeShn2g.png)
+![s9mrbkkkfomyz6xthoxcqeshn2g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/s9mrbkkkfomyz6xthoxcqeshn2g.png)
 > 图注：图片展示的是地图预览界面，标注了“黑马程序员上海校区”“上海宝华喜来登酒店”“上海中优城市万豪酒店”等地点。该图片与文档中介绍地理坐标查询的内容相关，用于直观呈现常见的使用场景，如携程搜索附近的酒店、滴滴打车等，通过地图展示这些地点的位置，帮助理解地理坐标查询在实际应用中的应用。
 
 打车：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/BOWybR6vboWdCBxgj5UcaYvEn1e.png)
+![bowybr6vbowdcbxgj5ucayven1e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bowybr6vbowdcbxgj5ucayven1e.png)
 > 图注：图片展示的是滴滴出行打车界面，显示了“黑马程序员训练营(上海校区)”为推荐的上车点。界面中还标注了航头路/航都路(路口)东南侧等地点信息，以及上海市今日天气情况。图片与上下文的关系是，通过滴滴打车场景举例说明地理坐标查询在打车场景中的应用，即根据用户当前位置附近的位置信息进行查询。
 
 #### 1.3.2. 矩形范围查询
@@ -382,7 +382,7 @@ public void searchAfterQuery() throws IOException {
 
 矩形范围查询，也就是geo_bounding_box查询，查询坐标落在某个矩形范围的所有文档：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/QpHNbW7GaoFsI4xZxIBcTf2DnMd.png)
+![qphnbw7gaofsi4xzxibctf2dnmd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qphnbw7gaofsi4xzxibctf2dnmd.png)
 > 图注：这是用于说明Elasticsearch矩形范围查询的示意图，图中以红色矩形标识了查询指定的矩形范围，该范围覆盖了道路S32、S122、S123等区域。图中的蓝色标记代表待查询的坐标点，直观呈现了geo_bounding_box查询的逻辑：通过指定的左上、右下两点坐标确定查询矩形，落在该矩形内的坐标点即为符合查询条件的目标，对应搜索附近地点这类地理查询场景的可视化示例。
 
 查询时，需要指定矩形的**左上**、**右下**两个点的坐标，然后画出一个矩形，落在该矩形内的都是符合条件的点。
@@ -437,7 +437,7 @@ PUT /items/_mapping
 
 输入关键，查找坐标
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/XlEJboS6voWz8ixHt8BcpxPfnKc.png)
+![xlejbos6vowz8ixht8bcpxpfnkc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xlejbos6vowz8ixht8bcpxpfnkc.png)
 > 图注：图片展示的是高德地图坐标拾取器界面。上方有“按关键字搜索”和“按坐标搜索”选项，当前选中“按关键字搜索”。输入框内显示“郑州黑马程序员”，点击“搜索”按钮后，右侧“坐标获取结果”框显示经纬度为113.84,34.57。界面底部有地图显示区域，标注有“新孟路”等地名。该图片用于辅助说明文档中向索引添加坐标值时，使用高德地图取坐标点的操作，直观呈现了坐标拾取结果。
 
 
@@ -495,7 +495,7 @@ GET /items/_search
 
 结果：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Ofk0baFOTolHwex3d9BcA51anyb.png)
+![ofk0bafotolhwex3d9bca51anyb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ofk0bafotolhwex3d9bca51anyb.png)
 > 图注：图片展示了在Elasticsearch中进行地理坐标搜索的代码及结果。左侧代码部分使用`geo_bounding_box`查询语法，设置左上角和右下角的经纬度坐标，用于搜索指定地理范围内的物品。右侧结果部分显示了搜索到的物品信息，包括物品ID、名称、图片链接、品牌等，其中物品的地理坐标与查询条件相匹配。该图片与上下文紧密相关，直观呈现了地理坐标查询的实际操作及结果。
 
 
@@ -508,7 +508,7 @@ GET /items/_search
 
 换句话来说，在地图上找一个点作为圆心，以指定距离为半径，画一个圆，落在圆内的坐标都算符合条件：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/CgaIbshDho3jhOxYrD4cU3fwnPh.png)
+![cgaibshdho3jhoxyrd4cu3fwnph](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cgaibshdho3jhoxyrd4cu3fwnph.png)
 > 图注：这张图片是一张上海市区域的地图，展示了附近搜索的圆形范围查询原理。地图以上海市的核心位置为圆心，用红色圆圈勾勒出半径15km的圆形查询范围，该区域内部及周边分布着多个蓝色标记点，对应符合查询条件的坐标位置。这张图直观呈现了地理坐标查询中“以指定距离为半径画圆，圆内坐标即为符合条件结果”的核心逻辑，与文档中附近搜索（圆形范围查询）的介绍内容相对应。
 
 > 这种查询方式比矩形范围查询更加常用，常见的附近搜索都是这种方式
@@ -650,7 +650,7 @@ heima,黑马=>黑马程序员,黑马、传智播客
 
 首先在同义词加到synonyms.txt文件中，synonyms.txt文件在es的config目录下。
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/F9qabVIIbou4rfxEeVEc7OAInyg.png)
+![f9qabviibou4rfxeevec7oainyg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f9qabviibou4rfxeevec7oainyg.png)
 > 图注：图片展示了在Linux系统下，使用`ll`命令查看`/data/soft/es7.17.7/xzb/config/synonyms.txt`文件权限和大小的界面。文件权限为`-rw-r--r--`，属主为root，属组为root，大小为82字节，修改时间为8月20日20:44。该图片与文档中介绍如何设置Elasticsearch同义词的内容相关，直观呈现了同义词文件所在位置及文件信息，辅助说明同义词文件的存储位置和状态。
 
 ```Java
@@ -869,14 +869,14 @@ GET /test_index/_search
 
 当用户在搜索框输入字符时提示出与该字符有关的搜索项，这个效果就是自动补全，如下图输入拼音可以补全拼音对应的中文：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/WaD7b05CwoUqMTxEn4McxX75nkM.png)
+![wad7b05cwouqmtxen4mcxx75nkm](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wad7b05cwouqmtxen4mcxx75nkm.png)
 > 图注：图片展示了淘宝首页搜索框的自动补全效果。在搜索框输入“dian”后，下方弹出多个与“dian”相关的搜索项，如“电动车”“电风扇”“电脑包”等，其中“电影票”被红色框线突出显示。该图片与文档中介绍自动补全功能的内容相关，直观呈现了输入拼音可补全对应中文的效果，与文档中提到的自动补全功能相呼应。
 
 
 
 输入中文也可以自动补全：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Erf0bKJ6wogXhFxVtFqcGAxvnjd.png)
+![erf0bkj6wogxhfxvtfqcgaxvnjd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/erf0bkj6wogxhfxvtfqcgaxvnjd.png)
 > 图注：这张图展示了淘宝的搜索界面，作为自动补全功能的示例。在搜索栏输入了拼音“电”后，界面下方立刻弹出对应候选项，包含电动车、电风扇、电脑包、电视柜、电脑桌、电饭锅等以“电”开头的相关结果，直观呈现了拼音输入时的自动补全效果。该图片对应文档中关于“输入拼音可以补全拼音对应的中文”的说明，清晰体现了自动补全功能的实际表现。
 
 Elasticsearch如何实现自动补全？
@@ -898,7 +898,7 @@ Elasticsearch如何实现自动补全？
 
 效果如下图：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Joy1b1yB1oOpYyxoI1GcHVp2nGg.png)
+![joy1b1yb1oopyyxoi1gchvp2ngg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/joy1b1yb1oopyyxoi1gchvp2ngg.png)
 > 图注：这张图片是拼音分词器实现自动补全效果的示例界面，呈现的是淘宝的搜索页面。在搜索框中输入拼音“dian”后，下方自动列出了带有“dian”相关汉字的词条选项，包括电动车、电风扇、电脑包、电视柜、电脑桌、电饭锅、电动牙刷、电影票等。该效果符合拼音分词器的作用，也就是将中文词条生成对应拼音存入索引，让输入拼音就能匹配出含对应汉字的相关词条，以此实现拼音搜索补全的功能。
 
 输入拼音"dian"提示“电动车”、“电风扇”等，根据搜索的原理，输入的关键字去匹配索引中的词，所以索引中必须有“dian”这个词条，而"dian"拼音来源于中文汉字，所以首先要解决的是中文在分词后将每个词条生成拼音，也就是在索引的词条中既有中文汉字又有拼音，这样就可以实现输入拼音可以搜索出匹配的词条。
@@ -911,12 +911,12 @@ Elasticsearch如何实现自动补全？
 
 找到与Elasticsearch版本一致的插件下载包。
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/AZB3b2LAsoPjHdx8K90cCp6mngf.png)
+![azb3b2lasopjhdx8k90ccp6mngf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/azb3b2lasopjhdx8k90ccp6mngf.png)
 > 图注：这张图片是GitHub页面展示的infinilabs/analysis-pinyin仓库v7.17.7版本的Release界面，界面的Assets区域中，名为elasticsearch-analysis-pinyin-7.17.7.zip的压缩包被红色框线标注，还有红色箭头指向该压缩包，这个压缩包正是拼音分词器的安装包，对应文档中安装拼音分词器步骤里需要解压的文件，是安装拼音分词器流程里的关键下载资源。
 
 可自行下载也可从课程资料目录获取
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/Ff1vbcL4BoQYYNxXTMpcttBAnJb.png)
+![ff1vbcl4boqyynxxtmpcttbanjb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ff1vbcl4boqyynxxtmpcttbanjb.png)
 > 图注：这张图片展示了安装拼音分词器所需的相关文件列表，包含两个文件夹和两个压缩包文件。其中，名称为“elasticsearch-analysis-pinyin-7.17.7.zip”的文件被灰色高亮选中，对应文档中提及的安装步骤里需要解压的核心安装包文件，该文件与IK分词器的安装步骤相匹配，是安装拼音分词器时需要获取的关键文件。
 
 安装方式与IK分词器一样，分三步：
@@ -1014,7 +1014,7 @@ elasticsearch中分词器（analyzer）的组成包含三部分：
 
 文档分词时会依次由这三部分来处理文档：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/O8PAbycsFomD3vxkSFdcs3kwnld.png)
+![o8pabycsfomd3vxksfdcs3kwnld](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/o8pabycsfomd3vxksfdcs3kwnld.png)
 > 图注：这张图展示了Elasticsearch自定义分词器的工作流程示例，对应“3.2.2自定义分词器”部分的内容。流程从左侧输入文本“四级考试通过了:)”开始，首先经过character filter，将文本中的表情符号“:)”转换为“开心”，“:(”转换为“伤心”，得到处理后的文本“四级考试通过了开心”。接着该文本经过tokenizer，选用ik_smart分词器，切分出“四级”“考试”“通过”“开心”四个词条。最后这些词条经过tokenizer filter，由pinyin分词器处理，输出对应拼音siji、kaoshi、tongguo、kaixin，直观呈现了自定义分词器依次处理文档的完整过程。
 
 声明自定义分词器的语法如下：
@@ -1288,7 +1288,7 @@ GET /items/_search
 
 搜索结果：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/DFLpb83Lso8TMNxjMa1cAhNqnCf.png)
+![dflpb83lso8tmnxjma1cahnqncf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dflpb83lso8tmnxjma1cahnqncf.png)
 > 图注：这张图片展示了Elasticsearch的前缀搜索相关的代码与返回结果界面，左侧是构造的查询请求，为GET /items/search，通过query.prefix指定category字段的前缀为“手”；右侧是返回的匹配文档内容，其中有两处被红色框标注，一处是请求内容里的category值为“手机”，另一处是匹配文档的category字段，该条内容是Apple iPhone 6s Plus的商品信息，说明前缀搜索成功匹配了category前缀为“手”的相关词条。
 
 对于前缀查询：
@@ -1511,14 +1511,14 @@ GET /test_index2/_search
 
 输入拼音可以补全拼音对应的中文：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/OwZGbNLqAoBQKpxoEhncqpD7nbh.png)
+![owzgbnlqaobqkpxoehncqpd7nbh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/owzgbnlqaobqkpxoehncqpd7nbh.png)
 > 图注：图片展示了淘宝搜索页面的自动补全效果。在搜索框输入“dian”后，下方弹出多个商品类别选项，如电动车、电风扇、电脑包等，其中“电动牙刷”被红色框突出显示。该图片与文档中关于电商项目搜索输入框实现自动补全功能的需求分析上下文对应，直观呈现了输入拼音可补全对应中文商品类别的效果，辅助说明了自动补全功能的实现效果。
 
 
 
 输入中文也可以自动补全：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/WKzqbdYrRoI27pxVFzlcR8unnFb.png)
+![wkzqbdyrroi27pxvfzlcr8unnfb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wkzqbdyrroi27pxvfzlcr8unnfb.png)
 > 图注：图片展示了淘宝网站搜索页面，搜索框内输入“电”，下方自动补全显示了多个与“电”相关的商品类别，如电动车、电风扇、电脑包等。该图片与文档中关于电商项目搜索输入框实现自动补全功能的需求分析上下文对应，直观呈现了自动补全效果，帮助理解在商品索引映射中添加suggestion字段后，输入拼音或中文可自动补全对应内容的功能。
 
 
@@ -1645,7 +1645,7 @@ GET /test_index3/_search
 
 结果：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/LLuybQ7QsoQOMmxRsHMcuJLFnic.png)
+![lluybq7qsoqommxrshmcujlfnic](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lluybq7qsoqommxrshmcujlfnic.png)
 > 图注：这张图片是Elasticsearch拼音自动补全的测试结果界面，展示了向test_index3索引发送查询请求后返回的两条结果。左侧是查询语句，通过“suggest”指定了“suggestion_suggest”的补全设置，包含“completion”类型、“field”指定字段和查询文本“la”；右侧为返回结果，“text”字段分别是“拉杆箱”和“拉蒂斯汀”，包含对应索引类型、得分、文档来源等信息，体现输入拼音“la”时自动补全出的相关内容。
 
 
@@ -1658,7 +1658,7 @@ GET /test_index3/_search
 
 搜索框实现自动补全功能，效果如下图：
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/KM0gbPnZYoSVp7xlTebcQ8spnxh.png)
+![km0gbpnzyosvp7xltebcq8spnxh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/km0gbpnzyosvp7xltebcq8spnxh.png)
 > 图注：这是黑马商城的搜索界面，呈现了Elasticsearch自动补全功能的实战效果。界面顶部是“黑马商城”标识及导航栏，搜索框内输入了“拉”，下方自动补全下拉框同步显示匹配联想词，包含“LATIT”“兰雀”“拉拉裤”“拉杆箱”等选项。界面下方展示了全部结果的分类、品牌、价格维度，还标注了商品总数共320件，当前为1/1600的分页状态，该效果和文档中自动补全功能的实现内容相呼应，能直观体现功能的运行状态。
 
 
@@ -1924,7 +1924,7 @@ GET /items/_search
 
 1. 定义自动补全接口，前端通过此接口获取补全关键字
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/PYATb0tT5ozsAlxiTHecxoAQnhc.png)
+![pyatb0tt5ozsalxithecxoaqnhc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pyatb0tt5ozsalxithecxoaqnhc.png)
 > 图注：该图片为搜索服务接口文档页面，展示的是Elasticsearch自动补全功能相关的补全接口定义，接口名称为searchsuggestion，请求方式为GET。页面包含该接口的详细参数信息，请求参数仅有作为查询参数的key，数据类型为string，无需必填；同时标注了该接口的响应状态码，包括200（成功）、401（未授权）、403（禁止访问）、404（未找到），响应数据类型为字符串数组，用于为前端提供自动补全的关键字。
 
 响应结果：字符串数组。
@@ -1935,7 +1935,7 @@ GET /items/_search
 
 测试效果
 
-![](../../../../../Attachments/development/architecture/microservices/elasticsearch/JthWbxBIVovL8CxzRTZc464OnNe.png)
+![jthwbxbivovl8cxzrtzc464onne](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jthwbxbivovl8cxzrtzc464onne.png)
 > 图注：这张图片展示了黑马商城系统的自动补全效果测试界面，上方是商城搜索区域，输入拼音“la”后，搜索框下拉区域显示出对应补全的商品品牌、分类相关候选内容；下方是开发者工具的网络请求面板，呈现出输入“la”关键字后，接口返回的响应数据，为包含“lagogo”“兰博军刀”等内容的字符串数组，验证了自动补全接口的实际效果。
 
 ---

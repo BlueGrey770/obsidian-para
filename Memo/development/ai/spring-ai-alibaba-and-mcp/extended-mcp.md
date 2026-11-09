@@ -74,7 +74,7 @@ aliases:
 > 
 > 在最新的SpringAI里程碑版本中，已经新增了很多不同的会话记忆实现：
 > 
-> ![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/IavibMRLSobvnwxTq1jciDAInEe.png)
+> ![iavibmrlsobvnwxtq1jcidainee](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iavibmrlsobvnwxtq1jcidainee.png)
 > 图注：图片介绍了Chat Memory接口，其代表聊天会话历史的存储，提供添加消息、检索消息及清空会话历史的方法。目前有四种实现：InMemoryChatMemory内存存储，CassandraChatMemory在Cassandra中持久化并设置过期时间，Neo4jChatMemory在Neo4j中持久化但不设置过期时间，JdbcChatMemory在JDBC中持久化。该图片与上下文紧密相关，上下文提到在最新SpringAI里程碑版本中新增了多种会话记忆实现，此图是对其中一种实现形式的说明。
 
 
@@ -95,7 +95,7 @@ aliases:
 
 > 并不是所有的聊天记忆都会发送到大模型，通常是可以自己选择聊天记忆大小的，SpringAI中默认的最多允许传输最近的100次Message，可以通过参数调整：
 > 
-> ![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/AtKNbyfKOogoUrx90zfcMsX0nTd.png)
+> ![atknbyfkoogourx90zfcmsx0ntd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/atknbyfkoogourx90zfcmsx0ntd.png)
 > 图注：图片展示的是一个代码片段，用于调用chatClient的prompt方法。关键部分是用红框突出显示的代码，调用chatClient.prompt().param(CHAT_MEMORY_RETRIEVE_SIZE_KEY, 100)。这表明在调用chatClient.prompt()方法时，会将CHAT_MEMORY_RETRIEVE_SIZE_KEY参数设置为100。该图片与上下文讨论的聊天记忆功能相关，上下文提到聊天记忆默认最多允许传输最近100次Message，此代码片段体现了这一默认设置。
 
 
@@ -151,7 +151,7 @@ Functioncalling 怎么获取 security中的用户
 
 > SpringAI支持在tool调用时传递上下文参数：
 > 
-> ![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/SZ7bbclVToAeAtx15s1c4Vign4g.png)
+> ![sz7bbclvtoaeatx15s1c4vign4g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sz7bbclvtoaeatx15s1c4vign4g.png)
 > 图注：这张图展示了Spring AI借助ToolContext在工具调用中传递上下文信息的流程：图中首先将工具定义和上下文信息填入Chat Request，由Spring AI的Dispatch Tool Call Requests模块进行分发，随后AI模型会完成相关处理。流程分为多个环节：Dispatch Tool Call Requests会分别对接Tool和AI Model，最终生成Chat Response完成交互；该图对应文档中提到的Spring AI支持在tool调用时传递上下文参数，可通过ToolContext获取上下文中信息的内容。
 
 > 
@@ -292,12 +292,12 @@ Functioncalling 怎么获取 security中的用户
 
   <grid>
   <column width-ratio="0.500000">
-  ![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/TEvVbUjTsoUvJ5xlw1Kc7Kggn2e.png)
+  ![tevvbujtsouvj5xlw1kc7kggn2e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tevvbujtsouvj5xlw1kc7kggn2e.png)
 > 图注：图片展示了SpringAI中两个ChatClient的配置代码。上方是gameChatClient配置，使用OpenAiChatModel模型，设置默认系统为GAME_SYSTEM_PROMPT，添加SimpleLoggerAdvisor和MessageChatMemoryAdvisor（redisChatMemory）。下方是serviceChatClient配置，使用AlibabaOpenAiChatModel模型，设置默认系统为CUSTOMER_SERVICE_SYSTEM，添加MessageChatMemoryAdvisor（redisChatMemory）和SimpleLoggerAdvisor，还添加了defaultTools参数。该图片与文档中介绍SpringAI版本及升级时需注意改动的内容相关，直观呈现了配置代码。
 
   </column>
   <column width-ratio="0.500000">
-  ![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/E5bmbF1spofCSyxUm6KcegXYnOb.png)
+  ![e5bmbf1spofcsyxum6kcegxynob](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/e5bmbf1spofcsyxum6kcegxynob.png)
 > 图注：这张图片展示的是一段Java代码，内容是定义一个名为pdfChatClient的Bean，用于配置ChatClient实例。代码以OpenAiChatModel等作为参数传入ChatClient的构造，设置了系统提示文本。重点配置了三个Advisor，分别对应聊天记忆、日志记录以及问答建议功能，其中向量检索相关的配置被特别标注：向量检索请求参数构建时设置了相似度阈值为0.5，返回的文档片段数量为2，该部分用红色框线重点标识，是代码中用于向量检索相关参数配置的核心内容。
 
   </column>
@@ -470,7 +470,7 @@ Functioncalling 怎么获取 security中的用户
 
 MCP（Model Context Protocol ）叫作模型上下文协议，是一种标准化协议，它能够使 AI 大模型以结构化的方式与外部工具和资源进行交互。它支持多种传输机制，以在不同环境中提供灵活性。
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/IpbYbdR6woNpdexF719cwRLknnf.png)
+![ipbybdr6wonpdexf719cwrlknnf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ipbybdr6wonpdexf719cwrlknnf.png)
 > 图注：图片展示了有无MCP（多语言模型协议）时的交互情况。左侧“Without MCP”中，各图标（如PostgreSQL、Google Drive等）间有直接连线，无统一协议；右侧“With MCP”中，各图标间连线通过“MCP Protocol”节点，统一了交互方式。这与上下文介绍的MCP是增强AI大模型能力、更通用的协议相呼应，直观呈现了MCP在多语言模型交互中的统一作用。
 
 由上图，可以看出，在Java应用程序中，通过MCP Client可以与各种的MCP Server进行交互，增强了AI大模型的能力。
@@ -490,7 +490,7 @@ SpringAI对MCP做了支持，简化了Java项目中的MCP开发。参考文档�
 
 #### 1.2.1. MCP Client
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/BLPfbPVWLoU4QYxmztTcVHrOnId.jpg)
+![blpfbpvwlou4qyxmzttcvhronid](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/blpfbpvwlou4qyxmzttcvhronid.jpg)
 > 图注：这张图展示了Spring AI中MCP的技术架构，核心位于上方的Java Gen AI Application，其下方连接了多个Java MCP Client实例，这些客户端支持MCP Protocol（stdio、sse），部分客户端对接了Web APIs及对应的远程MCP服务器（remote 1、remote N）。图中还包含三类MCP服务器，分别是基于Brave的MCP Server、对接本地文件夹的MCP Server、对接SQLite Server的MCP Server，这些服务器既支持Stdio传输，也可与外部互联网的搜索能力交互。
 
 MCP Client 负责建立和管理与 MCP 服务器之间的连接，以及管理：
@@ -514,7 +514,7 @@ MCP Client 负责建立和管理与 MCP 服务器之间的连接，以及管理�
 
 #### 1.2.2. MCP Server
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/F4tjbQ8S9oPUjSxF0jUcecWInGd.jpg)
+![f4tjbq8s9opujsxf0jucecwingd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f4tjbq8s9opujsxf0jucecwingd.jpg)
 > 图注：图片展示了MCP Server的两种架构。左侧为基于SSE（服务器发送事件）的架构，包含Client Process（Java LLM应用、Python MCP客户端、JavaScript MCP客户端）、MCP Client API、MCP Protocol（SSE）、Server Process（Web容器、Java MCP Server）、DBs等组件。右侧为基于STD IO（标准输入输出）的架构，同样有Client Process（Java LLM应用、Python MCP客户端、JavaScript MCP客户端）、MCP Client API、MCP Protocol（STDIO）、Server Process（Web容器、Java MCP Server）、DBs等组件。
 
 - 服务器端协议操作实现
@@ -554,7 +554,7 @@ MCP Client 负责建立和管理与 MCP 服务器之间的连接，以及管理�
 
 使用git拉取代码，地址：[https://gitee.com/zhijun.zhang/my-spring-ai-mcp.git](https://gitee.com/zhijun.zhang/my-spring-ai-mcp.git)
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/C85dbgItFodgM4xThoScEu0GnOc.png)
+![c85dbgitfodgm4xthosceu0gnoc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/c85dbgitfodgm4xthosceu0gnoc.png)
 > 图注：图片展示了my - spring - ai - mcp项目中my - spring - ai - mcp - client模块的文件结构。在src目录下，main文件夹内有java文件夹，其中包含cn文件夹，里面有itcast、config、controller、dto、service等子文件夹，最下方是MCPClientApplication.java文件。此外，还有resources、test文件夹，以及pom.xml和.gitignore文件。该图片与文档中“拉取代码”部分相关，直观呈现了代码拉取后的项目结构。
 
 拉取完成后，启动服务，已经实现了基本的大模型对话功能，进行测试。（确保系统环境变量中存在`ALIYUN_API_KEY`信息）
@@ -565,14 +565,14 @@ MCP Client 负责建立和管理与 MCP 服务器之间的连接，以及管理�
 
 我们的需求是，给大模型提问：`打开网站：https://www.itcast.cn/，总结下这个网站的内容`，就会进行相应的操作。
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/QHtMbFCftobzaexhgDMc8XMinbf.png)
+![qhtmbfcftobzaexhgdmc8xminbf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qhtmbfcftobzaexhgdmc8xminbf.png)
 > 图注：这是一张接口测试工具的截图，展示了请求及响应的相关内容。上方的请求设置中，请求方法为POST，目标地址是http://localhost:8100/chat/stream，请求体的JSON包含question和sessionId两个参数。下方的响应时间线区域里，有红色标注的文字“默认情况下，是无法打开的”，箭头指向请求中提及的网址“https://www.itcast.cn/”，体现出该网址在默认状态下无法被访问打开的情况，这段内容和前文介绍的MCP Client实战流程相关，对应了通过MCP相关操作无法正常访问指定网站的场景。
 
 下面我们来增强下大模型。
 
 **第一步**，先在本机通过npm安装`@executeautomation/playwright-mcp-server`，如下：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/F1IRbcyE1oJwnlx0gybc7asrnBc.png)
+![f1irbcye1ojwnlx0gybc7asrnbc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f1irbcye1ojwnlx0gybc7asrnbc.png)
 > 图注：图片展示了在命令行中执行npm操作的界面。首先输入“npm -v”命令，显示npm版本为10.9.0；接着输入“npm install -g @executeautomation/playwright-mcp-server”命令，安装@executeautomation/playwright-mcp-server包，结果显示更改了83个包，耗时7秒。该图片对应文档中“第一步”内容，即在本机通过npm安装`@executeautomation/playwright-mcp-server`，直观呈现了操作及结果。
 
 ```Shell
@@ -608,7 +608,7 @@ npm install -g @executeautomation/playwright-mcp-server --registry=https://regis
 
 🚨 这一步，一定要确定在cmd命令行中，能够执行npx命令，如果不能执行，重新安装nodejs：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/JK0Ib5l2koMezpxbiezcgdcWnOS.png)
+![jk0ib5l2komezpxbiezcgdcwnos](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jk0ib5l2komezpxbiezcgdcwnos.png)
 > 图注：这张图片展示了在Windows命令行中执行`npx -v`命令后的结果，命令行路径为`C:\\Users\\42084`，执行该命令成功输出了npx的版本号10.9.0。该图片用于验证步骤中的关键检查项，即确认在cmd命令行中可以正常执行npx命令，是MCP Client实战流程里提醒用户需完成的验证环节，用于确保后续操作能正常开展。
 
 **第四步**，在`application.yml`中增加`MCP`的配置内容：
@@ -677,10 +677,10 @@ public class SpringAIConfig {
 
 **第六步**，重启服务，进行测试：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/VhVsbFFE0oyOD4x30KecSy7vnuH.png)
+![vhvsbffe0oyod4x30kecsy7vnuh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vhvsbffe0oyod4x30kecsy7vnuh.png)
 > 图注：图片展示的是Postman中对`http://localhost:8100/chat/stream`接口的POST请求界面。请求体为JSON格式，包含`question`和`sessionId`字段。下方时间线显示了请求成功及网站内容获取的相关信息，如“网站已经成功”“打开，现在”“我将获取该页面的可见文本”等，还列出了部分可见文本内容。该图片与文档中“第六步，重启服务，进行测试”内容对应，直观呈现了测试过程中的请求与响应情况。
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/CeoxbWq9cotmmWxXLYRci64znja.png)
+![ceoxbwq9cotmmwxxlyrci64znja](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ceoxbwq9cotmmwxxlyrci64znja.png)
 > 图注：这张图片展示了一个浏览器界面，访问的是传智教育的官方网站（域名itcast.cn），页面中包含该机构的教育课程信息，如JavaEE、Python+大数据开发等众多课程类别。页面核心区域有醒目的红色宣传横幅，内容是针对大学生就业难的相关培训推广信息，右侧还弹出了传智教育的咨询会话窗口，显示了客服的问候及介绍内容，这张图片的场景与上下文里的MCP Client实战技术部署内容无关，更贴合传智教育相关的推广与咨询界面。
 
 #### 1.3.4. 原理分析
@@ -689,7 +689,7 @@ public class SpringAIConfig {
 
 实际上，底层的实现也是基于Tool Calling实现的，由于配置了mcpServers，就拥有了好多的工具，注册到SpringAI中。
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/FG5zb75qZoN0qbxcpCtcCqoHnee.png)
+![fg5zb75qzon0qbxcpctccqohnee](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fg5zb75qzon0qbxcpctccqohnee.png)
 > 图注：该图片展示了Spring AI MCP相关的工具调用原理分析的代码运行结果，左侧的Evaluate面板中，代码片段tools.getToolCallbacks()执行后，返回了包含8个元素的工具集合result，每个元素为一个SyncMcpToolCallback实例，说明配置mcpServers后，相关工具成功注册到SpringAI中，这些工具遵循MCP协议开发，可被调用以实现控制浏览器的功能，对应上下文介绍的基于Tool Calling的底层实现逻辑。
 
 而这些工具的开发，并不是我们自己做的，也不是用java开发的，是别人开发好的，遵循了MCP协议，所以就可以集成到SpringAI中使用了，而这工具就是用来控制浏览器的，所以就实现了上面的效果。
@@ -702,22 +702,22 @@ public class SpringAIConfig {
 
 首先，需要解决一个问题，就是MCP服务从哪里能找到呢？我们可以通过这个网站来查找：[https://mcp.so/zh/](https://mcp.so/zh/)
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/Bdm4bPLjWoDtPdxStCwchQPmnxf.png)
+![bdm4bpljwodtpdxstcwchqpmnxf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bdm4bpljwodtpdxstcwchqpmnxf.png)
 > 图注：这张图片是mcp.so网站的页面，属于MCP（模型上下文协议）相关的服务平台界面，对应文档中提及的可查找MCP服务的网站。页面顶部展示了该平台的核心定位，标注为最大的MCP服务器聚合平台，可发现各类MCP服务；页面内的搜索框中输入了“amap”关键词，搜索结果区域展示了多个与高德地图相关的MCP服务，包括高德地图官方MCP服务，以及基于高德地图的天气服务等关联服务，可用于查找相关MCP资源。
 
 用法：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/Ed8LbTccdoYchRxYFGGcSK0bnNG.png)
+![ed8lbtccdoychrxyfggcsk0bnng](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ed8lbtccdoychrxyfggcsk0bnng.png)
 > 图注：这张图片是MCP Client实战环节里的配置参考内容，展示的是Cursor平台接入高德地图MCP服务的配置方法。内容包含接入配置的相关说明，提示需要复制配置的key，配置代码区域的箭头标注了“用法”，配置代码里明确标注要将AMAP_MAPS_API_KEY替换成用户在高德服务申请的Web服务密钥，同时说明支持MCP协议的客户端如Cursor、Claude、Cline均可使用高德地图MCP server。
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/H6esb9fxSoOChzxxnlacArLXnWb.png)
+![h6esb9fxsoochzxxnlacarlxnwb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/h6esb9fxsoochzxxnlacarlxnwb.png)
 > 图注：图片展示的是MCP平台中“工具”页面。页面上方有“概览”“内容”“工具”三个选项卡，当前选中“工具”。在“工具”下，有maps_regeocode、maps_geo两个选项，其中maps_ip_location选项被红色箭头指向，其下方有“有提供IP查询的工具”的提示，且有“ip”输入框，提示输入IP地址，下方还有“运行”按钮。该图片与文档中介绍MCP Client集成到项目时增加配置的内容相关，展示了其中提供IP查询功能的工具。
 
 ##### 1.3.5.2. 集成到项目
 
 首先通过npm安装：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/ZO6GbwOJnoYunuxvgnKcscbsnYf.png)
+![zo6gbwojnoyunuxvgnkcscbsnyf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zo6gbwojnoyunuxvgnkcscbsnyf.png)
 > 图注：这张图片展示了在Windows系统命令行中执行npm安装命令的结果，具体为在路径C:\\Users\\42084>下，输入命令npm install -g @amap/amap-maps-mcp-server，执行后显示3秒内变更了44个安装包，完成安装后回到了C:\\Users\\42084>的命令行提示符。该命令对应文档中“首先通过npm安装”的步骤，与MCP集成项目的操作要求相关，完成此步后可进行后续的配置操作。
 
 ```Shell
@@ -758,14 +758,14 @@ npm install -g @amap/amap-maps-mcp-server --registry=https://registry.npmmirror.
 
 申请时注意【服务平台】选项，需要申请【Web服务】的key。
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/Cg5FbVerfoctJNxHwHuct8eVnQh.png)
+![cg5fbverfoctjnxhwhuct8evnqh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cg5fbverfoctjnxhwhuct8evnqh.png)
 > 图注：这张图片展示的是高德地图开放平台申请密钥时的配置页面，明确标注了需填写的“服务平台”相关选项，其中“Web服务”选项被红色箭头指向并选中，符合文档中提醒申请AMAP_MAPS_API_KEY时服务平台需选择Web服务的要求。页面还设有Key名称输入项，提示其支持的字符规则，以及可使用服务列表、IP白名单配置区域，同时在底部有相关服务协议的阅读提示，页面来源标注为黑马程序员-花和尚。
 
 ##### 1.3.5.3. 测试
 
 重启服务，进行测试：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/T6nVbluZMoCmDoxPEXscoSsOngc.png)
+![t6nvbluzmocmdoxpexscossongc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/t6nvbluzmocmdoxpexscossongc.png)
 > 图注：这张图片展示了测试MCP相关功能的操作结果，界面为POST请求页面及下方的时间线响应信息。上方Body区域的动态值中，带有“question”“sessionId”参数，question值为“查询ip所在地:223.11.151.238”。时间线区域的响应内容里，明确显示已成功查询到该IP的所在地信息，具体包含IP前缀22、3.11、.151、.238，以及对应的所在地为中国山西省太原市，还提示有更详细的地理位置信息，右侧配有红色箭头标注“已经查询到所在地信息了”，体现测试功能的正常运行结果。
 
 #### 1.3.6. 练习：MCP操作Redis
@@ -782,7 +782,7 @@ npm install -g @amap/amap-maps-mcp-server --registry=https://registry.npmmirror.
 
 #### 1.4.1. 创建my-spring-ai-mcp-server
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/D0vAbtC5RorbNhxDG9ZcJ6L3nsb.png)
+![d0vabtc5rorbnhxdg9zcj6l3nsb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/d0vabtc5rorbnhxdg9zcj6l3nsb.png)
 > 图注：这张图片展示的是创建新项目模块的配置界面，界面左侧选中了Java选项，顶部对应“New Module”窗口，界面右侧将项目名称设置为“my-spring-ai-mcp-server”，项目构建系统为Maven，JDK选择Project JDK 17，Parent模块关联“my-spring-ai-mcp”，此界面对应文档中“1.4.1.创建my-spring-ai-mcp-server”的实操步骤，是搭建Spring AI MCP Server过程里的模块创建操作界面，用于完成天气查询服务所封装的MCP Server的项目创建初始配置。
 
 #### 1.4.2. 导入依赖
@@ -989,7 +989,7 @@ public class McpConfig {
 
 浏览器访问地址：[http://localhost:8101/sse](http://localhost:8101/sse)
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/AwDmb4Tsko4zlWxV0ONcAJtlnTc.png)
+![awdmb4tsko4zlwxv0oncajtlntc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/awdmb4tsko4zlwxv0oncajtlntc.png)
 > 图注：图片展示的是浏览器访问地址为http://localhost:8101/sse的页面内容。页面显示“event: endpoint”和“data:/mcp/message?sessionId=91cc44d7-1e90-4433-a41b-def9bc1e11c3”两行信息。该图片与文档中“1.4.7.启动测试”部分内容相关，说明MCPServer已启动成功，通过浏览器访问指定地址可查看相关信息，体现了MCP Server实战中启动测试的成果展示。
 
 说明，MCPServer已经启动成功。
@@ -1031,12 +1031,12 @@ spring:
 
 启动服务，打断点可以看到，已经有天气的工具了：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/BTuOb59MUo5bkYxfOTscabQ4nvb.png)
+![btuob59muo5bkyxfotscabq4nvb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/btuob59muo5bkyxfotscabq4nvb.png)
 > 图注：图片展示了在MCPClient中集成服务后的调试界面。上方代码片段为“tools.getToolCallbacks()”，下方结果中显示了多个ToolCallback对象，其中第0个对象的“tool”属性值为“getWeather”，其“name”为“getWeather”，“description”为“根据城市id查询天气信息”，“inputSchema”为“JsonSchema@8337”等信息。该图片与上下文紧密相关，直观呈现了在MCPClient中集成服务后，通过工具获取到的天气查询工具相关信息，验证了服务集成的正确性。
 
 #### 1.4.9. 功能测试
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/JsnCbmoQCoqUbMx2YmzcZiMtnRh.png)
+![jsncbmoqcoqubmx2ymzczimtnrh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jsncbmoqcoqubmx2ymzczimtnrh.png)
 > 图注：这张图展示了在开发测试工具中，通过指定参数向服务发送请求后，成功获取了对应天气信息的结果。图中POST请求的Body里包含"question"与"sessionId"参数，下方的响应内容清晰显示了查询到的北京天气相关信息，包括温度为16.3℃、最低温度1℃等具体数据，还配有红色箭头标注“查询到天气信息了”，对应了文档中在MCPClient集成服务后查看天气工具效果的相关说明，验证了MCP Server与Client交互的天气查询功能可以正常运行。
 
 
@@ -1069,7 +1069,7 @@ MCP（Model Context Protocol)，模型上下文协议，由Claude的母公司，
 
 MCP采用的是CS架构，分为Client和Server端：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/WxHkbrmR8oCu00xS5uHcv2zIn9c.png)
+![wxhkbrmr8ocu00xs5uhcv2zin9c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wxhkbrmr8ocu00xs5uhcv2zin9c.png)
 > 图注：图片展示了MCP架构示意图。左侧为带有MCP客户端的主机（Claude、IDEs、Tools），通过MCP协议与MCP Server A、B、C连接。MCP Server A、B可访问本地数据源A、B，C通过Web APIs连接远程服务C。右侧是你的电脑，MCP Server A、B、C与之相连。该图直观呈现了MCP架构中Client、Server端及与本地数据源、远程服务的交互关系，与上下文介绍的MCP架构相呼应。
 
 - MCP Hosts：希望通过 MCP 访问数据的 Claude Desktop、IDE 或 AI 工具等程序
@@ -1086,7 +1086,7 @@ MCP采用的是CS架构，分为Client和Server端：
 
 以高德地图提供的MCP为例，其工作流程如图：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/WkgTbjZjAo1gCXxryPkclyO6nxb.png)
+![wkgtbjzjao1gcxxrypkclyo6nxb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wkgtbjzjao1gcxxrypkclyo6nxb.png)
 > 图注：图片展示了高德域MCP服务的工作流程。用户输入经Client传递给LLM，LLM通过SSE与MCP Server A、MCP Server B交互，MCP Server A连接基础REST服务，MCP Server B连接高阶REST服务。
 
 
@@ -1133,22 +1133,22 @@ mcp.so，收录了10000+MCP服务：
 
 在Trae聊天界面中，点击右上角的齿轮：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/SnNKbk3Erone16xl0AzcKwxhntc.png)
+![snnkbk3erone16xl0azckwxhntc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/snnkbk3erone16xl0azckwxhntc.png)
 > 图注：图片展示了在Trae聊天界面中添加MCP服务的操作步骤。在聊天界面右上角点击齿轮图标，弹出菜单中选择MCP，进入MCP管理页面后点击添加MCP服务。接着点击手动配置按钮，在弹出的菜单中填写高德MCP的服务信息，如服务名称、服务ID、服务密钥等，点击确认后，高德MCP就添加成功了。此图直观呈现了添加MCP服务的操作流程，与上下文介绍的添加MCP服务步骤相呼应。
 
 然后在弹出的菜单中选择MCP：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/IwBDbudJFoO4Kcxm00dcRZTNnJf.png)
+![iwbdbudjfoo4kcxm00dcrztnnjf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iwbdbudjfoo4kcxm00dcrztnnjf.png)
 > 图注：图片展示了在Trae聊天界面中点击右上角齿轮后弹出的菜单。菜单中“智能体”“上下文”“规则”“模型”选项下方，有“MCP”选项，其被红色框线突出显示。该图片与文档中“添加MCP服务”部分内容相关，对应在Trae聊天界面中点击右上角齿轮后，在弹出菜单中选择“MCP”这一步骤，直观呈现了操作位置。
 
 进入MCP管理页面，点击添加MCP服务：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/UeFhbAZE6op03Cxha4fcBSfBnud.png)
+![uefhbaze6op03cxha4fcbsfbnud](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uefhbaze6op03cxha4fcbsfbnud.png)
 > 图注：图片展示的是Trae集成的MCP管理页面。页面上方有“MCP”字样，右上角有齿轮状图标和“x”关闭按钮。下方介绍MCP Servers，即支持Model Context Protocol的服务，可提供工具和功能扩展智能体能力。关键信息是页面中部的“+ 添加MCP Servers”按钮，该按钮以红色框突出显示，是手动添加MCP服务的入口，与上下文介绍的添加MCP服务操作紧密相关。
 
 Trae集成了一个MCP市场，其中有大量优质MCP：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/Zu2MbZqGgooAZbxf00Mc0bw8nrf.png)
+![zu2mbzqggooazbxf00mc0bw8nrf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zu2mbzqggooazbxf00mc0bw8nrf.png)
 > 图注：图片展示的是Trae集成的MCP市场页面。页面上方有“MCP”搜索框，右上角有齿轮状图标。下方标题为“MCP / 市场”，并有“如何配置MCP Servers”提示。页面中部有“搜索”框，下方列出多个MCP服务，如Puppeteer、PostgreSQL、GitHub、Figma AI Bridge等，每个服务右侧都有蓝色的“+”按钮。页面底部提示“想要添加市场以外的MCP Servers？手动配置”。
 
 当然，我们也可以自己手动添加MCP服务，接下来我们以高德服务为例，来看看如何手动添加。
@@ -1161,7 +1161,7 @@ Trae集成了一个MCP市场，其中有大量优质MCP：
 
 点击上图中的手动配置按钮，在弹出的菜单中填写高德MCP的服务信息：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/Hi2ibszA5oC5bAxLmy5cUlaVnRh.png)
+![hi2ibsza5oc5baxlmy5culavnrh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hi2ibsza5oc5baxlmy5culavnrh.png)
 > 图注：这张图片展示的是在Trae中手动添加MCP服务时的配置界面，属于“手动配置”的操作页面。页面内标注了配置高德MCP服务的示例代码，代码中定义了`amap-maps`服务的相关配置，包括使用`npx`执行的命令、对应的参数，还在注释提示行中说明，需要将`AMAP_MAPS_API_KEY`替换为用户在高德官网上申请的密钥。界面右上角设有“原始配置（JSON）”选项，底部配有“取消”和“确认”按钮，用于完成配置或取消操作，整体是手动添加高德MCP服务的关键配置区域。
 
 高德MCP服务信息如下：
@@ -1184,7 +1184,7 @@ Trae集成了一个MCP市场，其中有大量优质MCP：
 
 点击确认后，高德MCP就添加成功了。其中包含十几个不同的tool：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/Lp3abd4AsoS72ZxjURTcGhofnBb.png)
+![lp3abd4asos72zxjurtcghofnbb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lp3abd4asos72zxjurtcghofnbb.png)
 > 图注：这是Trae平台中MCP服务的管理界面，当前展示的是MCP Servers列表，其中标记为黄色的amap-maps服务状态为可使用，且已完成添加。界面右侧设有“添加”按钮，列表区域列出了amap-maps包含的十余种工具，每个工具对应明确的功能说明，比如maps.regeocode可完成高德坐标与地址信息的互相转换，maps.geo能将结构化地址转换为经纬度等，该界面对应文档中“添加高德MCP服务”的操作环节。
 
 
@@ -1193,22 +1193,22 @@ Trae集成了一个MCP市场，其中有大量优质MCP：
 
 接下来，我们在Trae中创建一个智能体：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/H0hKbBJnXoFLe6xCYYHcrM70nbf.png)
+![h0hkbbjnxofle6xcyyhcrm70nbf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/h0hkbbjnxofle6xcyyhcrm70nbf.png)
 > 图注：这是Trae的操作界面截图，右上角带有齿轮样式的设置按钮，点击该按钮后弹出的下拉菜单中，“智能体”选项被红框标注突出显示，菜单内还包含MCP、上下文、规则、模型等选项。界面下方设有代表智能体的图标，结合上下文可知，这是在Trae中创建智能体前，点击设置按钮后选择进入智能体功能页面的操作步骤界面。
 
 进入智能体管理页面：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/XN8Lb9N2JoWTkCxxGQgcWdFsnDf.png)
+![xn8lb9n2jowtkcxxgqgcwdfsndf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xn8lb9n2jowtkcxxgqgcwdfsndf.png)
 > 图注：图片展示了Trae平台中智能体管理页面。页面上方有“智能体”标签，右侧有“了解更多”按钮。下方“智能体列表”区域显示“自定义智能体”暂无自定义智能体创建，内置智能体有“Builder”和“Builder with MCP”。底部“自动运行”区域有“自动运行命令和MCP工具”开关，当前处于开启状态，下方有“rm”“kill”“chmod”等黑名单选项。图片中“创建智能体”按钮和“自动运行”开关被红色框突出显示，与上下文介绍的创建智能体操作和自动运行设置内容对应。
 
 点击创建智能体：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/HSH4bRKTSoIIhBxhEtycCi3vnkf.png)
+![hsh4brktsoiihbxhetycci3vnkf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hsh4brktsoiihbxhetycci3vnkf.png)
 > 图注：这张图片是Trae的“创建智能体”操作界面，用于配置高德MCP工具与智能体关联。界面上方有红色标注的区域，用于指定智能体名称，当前输入的名称为“旅行规划师”；中间区域为工具配置区，红色标注说明可勾选智能体能使用的工具，其中MCP工具里的“amap-maps”已被勾选，内置工具里的“联网搜索”也已勾选，其余如文件系统、终端等工具未被勾选；界面底部设有“创建”与“取消”按钮，完成配置后点击“创建”，选择立即使用即可与该智能体对话。
 
 点击创建，选择立即使用：
 
-![](../../../../Attachments/development/ai/spring-ai-alibaba-and-mcp/EnTmbLbEQo2OAyxjU8JcqfGuncE.png)
+![entmblbeqo2oayxju8jcqfgunce](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/entmblbeqo2oayxju8jcqfgunce.png)
 > 图注：该界面是Trae平台创建智能体流程的完成页面，页面上方显示绿色对勾图标，搭配“创建成功”的提示文字，说明智能体已成功创建，下方配有两行提示内容，第一行提示“在对话中@智能体即可调用它”。界面设有两个核心操作按钮，上方为蓝色的“立即使用”按钮，用于直接启动与该智能体的对话，下方为浅灰色的“查看智能体列表”按钮，可用于查看当前创建的所有智能体。该页面出现在创建智能体的“点击创建，选择立即使用”步骤之后，是完成创建后的操作选择环节。
 
 即可与智能体对话了：

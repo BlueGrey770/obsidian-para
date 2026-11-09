@@ -100,7 +100,7 @@ jzo2o-foundations：dev_01
 
 通常按不同的端进行分析，例如下表是云岚到家项目消费端的功能列表（部分功能）：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/O6VSbi0G3o7Q8AxZUqBcs96qnnd.png)
+![o6vsbi0g3o7q8axzuqbcs96qnnd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/o6vsbi0g3o7q8axzuqbcs96qnnd.png)
 > 图注：这张图片是云岚到家项目消费端部分功能列表表格，包含模块、子模块、功能描述、优先项四列内容，按不同模块分类展示相关功能。模块涵盖登录、定位、搜索、消息、全部服务、个人中心、地址管理等类别，各模块下设有对应子模块，如定位模块包含自动定位、重新定位、热门城市等子模块，消息模块包含一键清空、消息列表等子模块，全部服务模块包含服务分类、热门列表等子模块。表格对每个子模块的功能进行了具体描述，还标注了对应的优先项，方便明确各项功能的优先级，该表格用于辅助开展项目需求分析的功能列表分析工作。
 
 
@@ -119,12 +119,12 @@ jzo2o-foundations：dev_01
 
 产品经理根据需求梳理模块清单：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/LMvCbntIpoTbSixs4eFc8OAKnpc.png)
+![lmvcbntipotbsixs4efc8oaknpc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lmvcbntipotbsixs4efc8oaknpc.png)
 > 图注：图片是一张功能模块表，展示了运营服务管理模块下各子模块的对应功能点及优先级。功能点包括登录、服务管理、服务人员管理、业务设置、机构管理、订单管理、售后管理、财务管理、通知沟通、客户中心等，如登录模块有账号密码登录、验证码登录、手机号登录等功能，优先级从P0到P3不等。该表与上下文紧密相关，是对上文提到的运营服务管理模块下各子模块功能的详细说明，为后续需求分析提供依据。
 
 根据每个端去细化模块，项目业务模块图如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/YgjebLaLEor3tYxMwWYcI1uGnpd.png)
+![ygjeblaleor3tyxmwwyci1ugnpd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ygjeblaleor3tyxmwwyci1ugnpd.png)
 > 图注：图片展示了运营服务管理项目业务模块图。图中以不同颜色区分端口，包括小程序端、APP端、PC端及管理后台PC端。各端口下有登录、基础配置、订单管理、服务管理、服务人员管理、企业管理、客户管理、营销管理等模块，如小程序端有服务搜索、城市定位、三方支付等，APP端有实名认证、服务功能配置等。该图与上下文紧密相关，直观呈现了各端口的业务模块及对应功能，为后续需求分析提供参考。
 
 
@@ -137,19 +137,19 @@ jzo2o-foundations：dev_01
 
 举例：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/PxxDb1SpAohYTqxa0Z6c7NCbnPg.png)
+![pxxdb1spaohytqxa0z6c7ncbnpg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pxxdb1spaohytqxa0z6c7ncbnpg.png)
 > 图注：该图片是运营服务管理模块中需求分析环节里，用于完善界面原型的表单示例图，展示了需完成的界面字段内容，包括带红色星号的必填项，分别为服务名称（需输入）、服务类型（需选择）、服务单位（需选择）、排序（需输入并可选序号调整）、服务图标（需上传jpg或png格式、200K以内的图片），还有参考服务单价（需输入）以及服务图片的上传区域，这些字段用于细化原型中的各项设置参数。
 
 
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/WWvubMCzoo2KSyxeQg4chL8ZnYb.png)
+![wwvubmczoo2ksyxeqg4chl8znyb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wwvubmczoo2ksyxeqg4chl8znyb.png)
 > 图注：图片为服务管理模块中服务详情的规则说明表。表中列出了服务名、服务类型、参考服务单价、单位、排序、图标、服务图片、服务描述、服务详情长图等字段的必填/选填、唯一、限制要求及提示内容。如服务名必填且唯一，限制要求为字数2 - 5个汉字，超出无法输入，提示内容为字段名称格式错误，需重新输入。该表与上文提到的对界面原型进行完善，细化原型中的参数说明等内容相呼应，是对服务详情规则的详细说明。
 
 ##### 用户操作流程
 
 还需要细化用户的操作流程。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/HBl3b1qfzoNwDGx9aJsc4MCxnCd.png)
+![hbl3b1qfzonwdgx9ajsc4mcxncd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hbl3b1qfzonwdgx9ajsc4mcxncd.png)
 > 图注：图片展示了添加服务的界面及操作说明。界面上方提示点击添加服务弹出添加服务弹窗，添加服务为按核销样式，选择服务类型添加服务，搜索服务仅对该服务类型下进行搜索。下方有维修、保洁等服务类别，如维修类别下有日常维修、深度维修等服务，保洁类别下有日常保洁、深度保洁等服务，每项服务后有价格。下方还有“添加”和“取消”按钮。图片下方对应步骤1的说明，详细介绍了添加服务的操作及服务项显示规则。
 
 
@@ -192,7 +192,7 @@ AI: 给我一份需求规格说明书的例子，内容要足够详细
 
 功能：服务类型列表：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EZLbbhO29ocL6qxG8RtcDtmznig.png)
+![ezlbbho29ocl6qxg8rtcdtmznig](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ezlbbho29ocl6qxg8rtcdtmznig.png)
 > 图注：图片展示的是区域服务管理子模块中服务类型列表界面。列表包含服务类型编号、服务类型、服务类型图标、服务类型图片、排序、状态、更新时间等字段，如服务类型编号为FWLX001的服务类型是家政服务，状态为已启用，更新时间为2053年5月30日21:50。界面右上角有“新建”按钮，下方有分页导航栏，当前显示第2页，共15条记录。该图与上文需求分析中列出功能列表、分析操作流程及对象属性等内容相关，直观呈现了服务类型列表界面情况。
 
 操作流程：
@@ -213,7 +213,7 @@ AI: 给我一份需求规格说明书的例子，内容要足够详细
 
 功能：新建服务类型
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/IhLBbAH3EozgfsxmMmKcWrjKnUh.png)
+![ihlbbah3eozgfsxmmmkcwrjknuh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ihlbbah3eozgfsxmmmkcwrjknuh.png)
 > 图注：这张图片展示的是新建服务类型的操作界面，该界面属于运营服务管理模块区域服务管理子模块的需求分析相关示例内容。界面标题为“新建服务类型”，设有多个必填项，包括用于填写服务类型名称的“服务类型”输入框、用于输入数字的“排序”输入框，还提供了服务类型图标和服务类型图片的上传入口，其中图标上传要求为jpg/png格式文件且大小在200K以内，图片上传要求为jpg/png格式文件且大小在5M以内，界面底部配有“取消”和“保存”两个操作按钮。
 
 操作流程：
@@ -313,7 +313,7 @@ AI:
 
 单独设立第三方集成模块，用于和外部平台进行接口对接。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/HXaIbM91rotGjLxl54wcKlknnvc.png)
+![hxaibm91rotgjlxl54wcklknnvc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hxaibm91rotgjlxl54wcklknnvc.png)
 > 图注：图片展示了云岚到家项目的系统架构。用户层有PC、APP、小程序，负载层是Nginx。接入层为Spring Cloud Gateway，业务服务包括运营基础管理等，基础服务有服务注册等。服务层有MySQL数据库，数据层有服务、区域等表。右侧有第三方集成模块，包括微信、第三方支付等。该图与上下文紧密相关，直观呈现了项目架构，为后续设计内外部接口、技术选型等提供参考。
 
 
@@ -331,12 +331,12 @@ AI:
 
 云岚到家是微服务项目，每个模块有自己独立的数据库
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/UA9ZbKPEBoBitkxMcw9cv3v0ncf.png)
+![ua9zbkpebobitkxmcw9cv3v0ncf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ua9zbkpebobitkxmcw9cv3v0ncf.png)
 > 图注：图片展示了云岚到家运营服务管理模块的数据库设计中部分表结构。其中，“jzo2o-order”表下有“jzo2o-order-0”“jzo2o-order-1”“jzo2o-order-2”等子表，还包含“jzo2o-order-history”“jzo2o-trade”等表。图片中用红色框突出显示了“运营管理”“营销管理”“订单管理”三个类别，与上下文提到的运营服务管理模块核心表相呼应，直观呈现了相关表的分类情况。
 
 运营服务管理模块核心表如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/E8qJblXHYonSu0xjEcwcVQfSntc.png)
+![e8qjblxhyonsu0xjecwcvqfsntc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/e8qjblxhyonsu0xjecwcvqfsntc.png)
 > 图注：图片展示了运营服务管理模块核心表的数据库设计。包含serve_type（服务类型表）、serve_item（服务项表）、region（区域表）和serve（服务表）四个表。serve_type表有服务类型代码、名称、图标等字段；serve_item表存储服务项目信息，如服务类型ID、名称、图标等；region表记录运营地区信息，有城市代码、名称、负责人等字段；serve表关联服务项和区域，记录服务价格、是否热门等信息。该图与上下文介绍的运营服务管理模块核心表设计内容相契合。
 
 **serve_type**：服务类型表
@@ -367,7 +367,7 @@ region与serve_item是什么关系？
 
 举例：在上传服务项图片时涉及外部接口，下图上传图片功能如果将图片保存到云平台则需要调用云平台的上传图片接口。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Y5CibvJ8dorJWxxTQrYctgsZnPf.png)
+![y5cibvj8dorjwxxtqryctgsznpf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/y5cibvj8dorjwxxtqryctgsznpf.png)
 > 图注：图片展示的是系统中服务管理模块的新增服务界面。界面上方有“服务名称”“服务类型”“参考服务单价”“服务单位”“排序”“服务图标”“服务图片”等输入框或下拉选择框，部分框内有提示文字。其中“服务图标”和“服务图片”下方各有一个“上传图片”按钮，提示上传jpg/png文件且大小在200K或5M以内。该图片与上下文介绍的系统设计中接口设计相关，用于说明在详细设计阶段对内部接口进行分析、细化时，服务管理模块新增服务的填写界面情况。
 
 **内部接口：是本项目模块与模块之间的接口定义**
@@ -386,7 +386,7 @@ region与serve_item是什么关系？
 
 举例：根据新建服务类型的需求设计接口如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Evu0b4vPnoXXehxZsGYcDf2Jnmh.png)
+![evu0b4vpnoxxehxzsgycdf2jnmh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/evu0b4vpnoxxehxzsgycdf2jnmh.png)
 > 图注：这是家政服务运营基础服务接口文档中的服务类型新增接口页面，展示了RESTful API的具体设计内容，契合文档中根据新建服务类型需求设计接口的说明。该接口的HTTP方法为POST，接口URL为“/foundations/operation/serve-type”，请求数据类型为application/json。页面标注了该接口的请求参数，包括serviceTypeUpperServeRDTO、img、name、sortNum，这些参数分别对应服务类型更新请求DTO、服务类型图片、服务类型名称、排序字段，且所有参数的请求类型均为body，是否必填均为true，同时明确了各参数的数据类型。
 
 
@@ -425,7 +425,7 @@ region与serve_item是什么关系？
 
 数据表如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/FE7tbCACaonei0xeJcEcqPjWnnh.png)
+![fe7tbcacaonei0xejcecqpjwnnh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fe7tbcacaonei0xejcecqpjwnnh.png)
 > 图注：这张图呈现了区域服务管理子模块的核心数据表结构，展示了四个数据表的字段与关联关系。图中的serve_type表是服务类型表，包含服务类型编码、名称、状态等字段；serve_item表为服务项表，存储平台家政服务项目，含名称、状态、价格等字段；region表是区域表，包含区域编码、状态、排序等字段；serve表为区域与服务项的关系表，用于关联区域与对应的服务项。其中serve_type表与serve_item表通过serve_type_id关联，serve表通过region_id关联region表，通过serve_item_id关联serve_item表，对应了区域内家政服务项目的存储逻辑。
 
 **serve_type**：服务类型表
@@ -458,12 +458,12 @@ region与serve_item是什么关系？
 
 **1、安装插件**
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/NG63bat8yo6d7PxscOhc5Alfnxg.png)
+![ng63bat8yo6d7pxscohc5alfnxg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ng63bat8yo6d7pxscohc5alfnxg.png)
 > 图注：图片展示了在IntelliJ IDEA中安装MyBatisPlus插件的界面。左侧导航栏选中“Plugins”，右侧显示搜索结果，MyBatisPlus插件被选中，版本为1.7.2，右侧有“Disable”“Overview”“What's New”“Reviews”“Additional Info”等选项。该图片与文档中“安装插件”步骤相关，直观呈现了在IDEA中搜索并选中MyBatisPlus插件的操作界面，是完成插件安装前的准备步骤。
 
 **2.重启IDEA，连接mysql**
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/HIVXbmLWQoysGgxbZqZc9MqDnlc.png)
+![hivxbmlwqoysggxbzqzc9mqdnlc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hivxbmlwqoysggxbzqzc9mqdnlc.png)
 > 图注：图片展示了IntelliJ IDEA软件界面中Tools菜单下的部分选项。其中，“Config Database”选项被红色框和箭头突出显示。该图片与文档中“2.1区域服务管理子模块设计”章节下“3、配置代码生成规则”步骤相关，用于指导用户在IDEA中配置数据库连接，输入连接字符串“jdbc:mysql://192.168.101.68:3306/jzo2o-foundations?useSSL=false&serverTimezone=UTC”后，通过此菜单选项进行数据库配置，以完成代码生成规则的配置。
 
 配置连接的数据库
@@ -472,19 +472,19 @@ region与serve_item是什么关系？
 
 账号和密码
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EhYmbtYLios8ZWxCoBecIRPunQb.png)
+![ehymbtylios8zwxcobecirpunqb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ehymbtylios8zwxcobecirpunqb.png)
 > 图注：图片展示的是配置连接数据库的界面。界面上方显示“配置连接的数据库”，下方有dbUrl、jdbcDriver、user、password等输入框，其中dbUrl输入了数据库连接地址，user为root，password被遮挡。下方有“test connect”按钮和“ok”按钮。界面底部弹出“test successful!”提示框，表明Mybatis Plus测试连接成功。该图片与文档中配置代码生成规则时选择表、设置生成代码根目录、设置包路径等内容相关，用于展示数据库连接配置情况。
 
 
 
 3、配置代码生成规则
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/JAmibZXTroih4exz81gcYPdpnRc.png)
+![jamibzxtroih4exz81gcypdpnrc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jamibzxtroih4exz81gcypdpnrc.png)
 > 图注：图片展示了IntelliJ IDEA软件中Tools菜单下的Code Generator选项。菜单栏中“Tools”选项被红色箭头指向，其下拉菜单中“Code Generator”选项被红色框突出显示。该图片与文档中“配置代码生成规则”部分内容相关，用于说明在IntelliJ IDEA中选择Code Generator选项以进行代码生成配置的操作步骤，是代码生成规则配置操作的指引图示。
 
 
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/TCVMbFwjTonfbtxhTkmc2xPynve.png)
+![tcvmbfwjtonfbtxhtkmc2xpynve](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tcvmbfwjtonfbtxhtkmc2xpynve.png)
 > 图注：图片展示的是代码生成器界面，用于配置代码生成规则。界面中列出了多个表信息，如city_directory、config_region等，各表的create time、engine、coding等字段均有显示。下方有module、author、package等配置项，如generator设置为com.jzo2o.foundations，entity、service等选项被勾选。此外，还有lombok、restController等选项，以及code generator、check field等操作按钮。该图与上下文介绍的配置代码生成规则内容相关，直观呈现了配置界面及部分设置。
 
 1）选择表：上图选择serve_type表。
@@ -495,7 +495,7 @@ region与serve_item是什么关系？
 
 4）主键生成策略：根据表中主键的生成策略进行选择，支持的主键生成策略如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/XzOjbFOTToCol4x1ifJc9f0yn9d.png)
+![xzojbfottocol4x1ifjc9f0yn9d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xzojbfottocol4x1ifjc9f0yn9d.png)
 > 图注：图片展示了主键生成策略的选择界面，适用于主键类型为number或string的情况。界面中有“分配ID（主键类型为number或string）”和“分配UUID（主键类型为string）”两个选项卡。在“分配ID”选项卡下，有AUTO（ID自增）、NONE、INPUT（用户输入ID）三种策略；在“分配UUID”选项卡下，有ID_WORKER（全局唯一ID）、UUID（全局唯一ID）、ID_WORKER_STR（字符串全局唯一ID）三种策略。该图片与上下文介绍的主键生成策略选择内容相关，直观呈现了可选策略。
 
 本项目使用的MyBatisPlus版本支持前5个，对应MyBatisPlus源码如下：
@@ -529,7 +529,7 @@ public enum IdType {
 
 生成成功在项目工程根目录有一个generator目录，里边为生成的代码，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/GR83bbAvYoHM98xiJdbczkzUnld.png)
+![gr83bbavyohm98xijdbczkzunld](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gr83bbavyohm98xijdbczkzunld.png)
 > 图注：图片展示了在IDEA中生成代码后，项目工程根目录下generator文件夹内的结构。其中，src文件夹下有main文件夹，其下依次包含java、resources文件夹，java文件夹内有com、mapper、model、service等子文件夹，各子文件夹下有对应代码文件，如controller下的ServeTypeController.java、mapper下的ServeTypeMapper.java等。该图与上文提到的生成代码成功后在项目工程根目录生成代码的内容相关，直观呈现了生成代码后的文件结构。
 
 对生成的代码根据自己的需求稍加修改，修改后拷贝到工程相应的包下即可。
@@ -540,7 +540,7 @@ public enum IdType {
 
 在上传服务项图片时涉及外部接口，下图上传图片功能如果将图片保存到云平台则需要调用云平台的上传图片接口。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/NIEbbawdMokVxVx39HJchUR2nrh.png)
+![niebbawdmokvxvx39hjchur2nrh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/niebbawdmokvxvx39hjchur2nrh.png)
 > 图注：这张图片展示的是添加服务项的界面，对应文档中“在添加服务项界面中，上传服务项的图片会通过通用模块jzo2o-publics上传到OSS”的相关内容。界面内包含多项需填写或选择的内容：标有*的必填项有服务名称、服务类型、参考服务单价、服务单位、排序、服务图标、服务图片；其中服务图标上传按钮旁标注需上传jpg/png格式文件，大小在200K以内，服务图片上传按钮旁标注需上传jpg/png格式文件，大小在5M以内。
 
 #### 5）内部接口
@@ -896,7 +896,7 @@ HTTP状态码是服务器返回给客户端的数字代码（三位数字），�
 
 数据列表中需要分析显示的具体字段，根据界面原型进行分析：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/WRrVbLzcaoGsrAxsh7Wcg51Wnoc.png)
+![wrrvblzcaogsraxsh7wcg51wnoc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wrrvblzcaogsraxsh7wcg51wnoc.png)
 > 图注：图片展示的是区域服务查询的响应结果内容界面。表格中包含服务名称、服务类型、参考价格、区域价格、是否热门、状态、操作等列。如“日常保洁”服务类型为保洁，参考价格44.00，区域价格44，状态为已下架，操作有设置热门、删除、上架等。该图片与上下文紧密相关，是对分页查询通用响应内容中数据列表中需分析显示的具体字段进行界面原型分析的直观呈现。
 
 分页查询通用的响应内容如下：
@@ -1080,7 +1080,7 @@ public class ServeController {
 
 我们通过swagger根据controller类最终生成接口文档，接口设计信息如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EtPFb0PX8okPbfxGScrcAos0n6e.png)
+![etpfb0px8okpbfxgscrcaos0n6e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/etpfb0px8okpbfxgscrcaos0n6e.png)
 > 图注：图片展示的是“区域服务部分查询”接口文档页面。左侧为导航栏，可选择不同接口文档。右侧上方显示接口名称及请求方式，下方有请求参数列表，如regionId、isAsc1、isAsc2等，部分参数有默认值提示。底部有响应状态码说明。该图片与文档中“生成接口文档”部分内容相关，用于说明Java程序员可通过此文档测试接口，展示接口设计信息及请求参数等关键内容。
 
 
@@ -1091,27 +1091,27 @@ Java程序员可以使用接口文档测试接口，下边说明测试方法。
 
 首先在controller方法打断点：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/WCKtbYU2Jol2Rcxwb7hcylkOnhh.png)
+![wcktbyu2jol2rcxwb7hcylkonhh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wcktbyu2jol2rcxwb7hcylkonhh.png)
 > 图注：图片展示的是controller方法代码，方法名为page，参数为ServePageQueryReqDTO类型的servePageQueryReqDTO。方法中仅有一行代码，即return null。该图片与文档中“首先在controller方法打断点”内容对应，是文档中提到的在controller方法打断点时的代码界面，用于后续跟踪断点请求参数是否正确及跟踪响应内容的操作。
 
 进入接口调试界面
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/G3kPbJY7CoqAl8xuCltcWR4Enqb.png)
+![g3kpbjy7coqal8xucltcwr4enqb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/g3kpbjy7coqal8xucltcwr4enqb.png)
 > 图注：这张图片是家政服务运营基础服务的接口文档界面，呈现的是“区域服务分页查询”的调试界面，用于支撑接口调试相关的操作。界面左侧有“调试”选项被红色箭头标注，右侧展示了该接口的请求方式为GET，对应的接口路径为/foundations/operation/serve/page，文档当前处于该接口的调试页面，与文档中提及的“进入接口调试界面”的操作内容相呼应。
 
 输入请求参数：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/SNRvbyqlAojz2nxzL97c587Fn8g.png)
+![snrvbyqlaojz2nxzl97c587fn8g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/snrvbyqlaojz2nxzl97c587fn8g.png)
 > 图注：图片展示的是接口调试界面，用于输入请求参数。界面显示GET请求，目标URL为/foundations/operation/serve/page。参数部分，x-www-form-urlencoded选项被选中，有多个参数，如isAsc1、isAsc2、orderBy1、orderBy2、pageNo、pageSize、regionId等，其中regionId参数值为100。该图片与文档中“进入接口调试界面，输入请求参数”内容对应，是进行接口调试操作时的参数输入界面展示。
 
 点击“发送”，跟踪断点请求参数是否正确
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/KPDebh2bkoydrqxIhmdcxjCYnse.png)
+![kpdebh2bkoydrqxihmdcxjcynse](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kpdebh2bkoydrqxihmdcxjcynse.png)
 > 图注：图片展示的是ServeController类中page方法的代码及接口调试界面。代码中page方法接收ServePageQueryReqDTO参数，返回PageRoute<ServeResDTO>类型结果，但此处返回null。调试界面显示请求参数，包括regionId、no、pageSize、isAsc1、isAsc2等，其中regionId为100，no为1，pageSize为10。该图片与上文提到的在controller方法打断点、进入接口调试界面、输入请求参数等内容相关，直观呈现了调试时的代码及参数情况。
 
 跟踪响应内容
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/LNyFboGtjolZN5xgESfc6gHBnih.png)
+![lnyfbogtjolzn5xgesfc6ghbnih](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lnyfbogtjolzn5xgesfc6ghbnih.png)
 > 图注：图片展示的是接口调试界面中响应内容的JSON格式数据。数据包含“code”为200、“message”和“msg”均为“OK”、“success”为true、“result”和“data”均为null。该图片与上文提到的在controller方法打断点后进入接口调试界面，输入请求参数、点击“发送”跟踪断点请求参数是否正确，以及跟踪响应内容的操作相关，直观呈现了响应结果内容，帮助理解明明page(ServePageQueryReqDTO servePageQueryReqDTO)方法返回了null，却响应了特定内容的原因。
 
 明明page(ServePageQueryReqDTO servePageQueryReqDTO)方法返回了null， 这里为什么会响应如下内容呢？
@@ -1129,7 +1129,7 @@ Java程序员可以使用接口文档测试接口，下边说明测试方法。
 
 在jzo2o-mvc工程中有一个过滤器负责对接口的响应结构进行封装
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/HphpbKy56o8sHPxnVsjcc5NgnNe.png)
+![hphpbky56o8shpxnvsjcc5ngnne](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hphpbky56o8shpxnvsjcc5ngnne.png)
 > 图注：图片展示了jzo2o-mvc工程的目录结构。在src/main/java/com/jzo2o/mvc目录下，有advice、config、constants、filter、handler、interceptor、model、serialize、utils、wrapper等多个子目录。其中，filter目录被蓝色框线突出显示。该图片与文档中“在jzo2o-mvc工程中有一个过滤器负责对接口的响应结构进行封装”的内容相关，直观呈现了工程中负责此功能的filter目录位置。
 
 封装的方法是在原有响应内容基础上加上msg、code、result、success等固定属性。
@@ -1266,7 +1266,7 @@ class ServeMapperTest {
 
 断点调试：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Uz5Gbjs1uoC2IaxFJ4McELgcnFd.png)
+![uz5gbjs1uoc2iaxfj4mcelgcnfd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uz5gbjs1uoc2iaxfj4mcelgcnfd.png)
 > 图注：这是一张Java单元测试的代码运行截图，展示的是ServeMapper接口的测试用例代码。测试方法为test_queryServeListByRegionId，调用参数为区域ID（1686303222843662337L）的serveMapper对象的queryServeListByRegionId方法，返回类型为ServeResDTO集合。代码中断点调试停留在Assert.notEmpty语句处，右侧显示该方法返回的ServeResDTO集合已实例化（ArrayList），包含5条结果，每条结果标注了唯一ID、服务状态等信息，该图片对应文档中针对mapper接口的断点调试操作说明。
 
 
@@ -1469,20 +1469,20 @@ class IServeServiceTest {
 
 PageHelperUtils是项目封装的一个工具类，进入selectPage方法，调用PageHelper.startPage方法设置分页参数，通过一层一层进入源码，最终将分页参数设置到ThreadLocal<Page>*LOCAL_PAGE*=newThreadLocal(); 中。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/FHxnbQ7nToyMDKxL7AVcFxoJnJc.png)
+![fhxnbq7ntoymdkxl7avcfxojnjc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fhxnbq7ntoymdkxl7avcfxojnjc.png)
 > 图注：图片展示了PageMethod.class文件中PageHelperUtils类的源码代码。在代码第72行，有红色箭头指向的代码行“setLocalPage(page);”，其下方有红色文字标注“设置到ThreadLocal中”。该图片与上文介绍的分页原理相关，上文提到PageHelperUtils进入selectPage方法调用PageHelper.startPage设置分页参数，最终将分页参数设置到ThreadLocal中，此图直观呈现了这一设置过程。
 
 通过PageInterceptor拦截器拦截 MyBatis的Executor 的 query() 方法得到原始的sql语句，首先得到count总数，然后从newThreadLocal中取出分页参数，在原始sql语句中添加分页参数查询分页数据。
 
 部分源码截图如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/DYI2bvwaeoFWJzxAGrMcdDKsnmc.png)
+![dyi2bvwaeofwjzxagrmcddksnmc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dyi2bvwaeofwjzxagrmcddksnmc.png)
 > 图注：这张图片是PageInterceptor类的反编译源码截图，展示了其intercept方法的部分实现代码。截图里的代码中，明确标注出了“原始SQL语句”对应的BoundSql对象，代码通过Invocation相关入参获取了MappedStatement、参数、分页参数、结果处理器、执行器、缓存等对象，该源码是对前文分页原理的直观代码佐证，体现了分页功能借助PageInterceptor处理SQL、加载分页参数的代码细节。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/JjiWbxg0so8P3Sxt5X7c0t3onzc.png)
+![jjiwbxg0so8p3sxt5x7c0t3onzc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jjiwbxg0so8p3sxt5x7c0t3onzc.png)
 > 图注：这张图片是分页功能实现相关的源码截图，展示了PageInterceptor类的部分代码。图中第70行通过this.count方法获取总记录数，对应标注的“总记录数”说明，第69行判断当前dialect是否需要先执行count查询，后续代码逻辑涉及根据结果判断是否执行后续的分页处理步骤，和前文提到的通过PageInterceptor拦截器实现分页查询的技术原理相呼应，直观呈现了分页实现过程中获取总记录数的核心代码片段。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/FYWrblEZ0oUpDDxOa6EclGzjnf1.png)
+![fywrblez0oupddxoa6eclgzjnf1](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fywrblez0oupddxoa6eclgzjnf1.png)
 > 图注：这张图片是MyBatis分页查询相关的源码截图，展示了`ExecutorUtil.class`文件中`pageQuery`静态方法的部分代码内容。截图中可以清晰看到代码逻辑：当不满足`if (dialect.beforePage(...))`条件时，会进入else分支，其中有标注为“分页查询SQL”的关键代码段，该代码通过`dialect.getPageSql()`方法获取分页查询SQL，将分页参数融入原始SQL语句中，结合上下文可知，这段代码正是前文提到的基于MyBatis实现分页查询的核心源码片段，对应了分页原理中获取分页数据的代码实现部分。
 
 
@@ -1550,30 +1550,30 @@ public class ServeController {
 
 测试时注意请求参数填写是否正确，下边是测试结果
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/HiXPbo2WmoPspRxedHacBF42n5g.png)
+![hixpbo2wmopsprxedhacbf42n5g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hixpbo2wmopsprxedhacbf42n5g.png)
 > 图注：图片展示的是区域服务分页查询的测试界面。左侧有“主页”“文档”“调试”“Open”等选项卡，当前选中“调试”。中间部分显示GET请求，URL为“/foundations/operation/serve/page”，下方有“请求参数”“AfterScript”选项卡，当前选中“请求参数”。参数列表中，isAsc1、isAsc2、orderBy1、orderBy2、pageNo、pageSize、regionId等参数均有勾选，其中pageNo值为1，pageSize值为10，regionId值为1686303222843682337。右侧有“发送”按钮。
 
 返回结果：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/JNa6bP4lPoxvVFxJVqBcpJtXnDg.png)
+![jna6bp4lpoxvvfxjvqbcpjtxndg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jna6bp4lpoxvvfxjvqbcpjtxndg.png)
 > 图注：图片展示的是Controller开发中分页查询服务区域数据的测试结果。上方显示响应内容，包含code、msg、data等信息，如code为200、msg为“OK”、data中包含page、total、list等字段。下方有Raw、Headers、Curl等选项卡，Raw中呈现JSON格式数据，显示了两条服务区域记录，如id、saleStatus、servetId、servetName等字段信息。该图片与上文测试分页查询结果的内容对应，直观呈现了测试结果。
 
 通过修改分页条件测试分页查询结果：
 
 修改为一页显示2条记录，下边查询第一页：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/SbEUbBE43oYdB2xNPppcpJdynZb.png)
+![sbeubbe43oydb2xnpppcpjdynzb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sbeubbe43oydb2xnpppcpjdynzb.png)
 > 图注：这张图是对应查询区域服务功能测试的分页参数设置界面，界面中有两个被勾选的参数项，分别为pageNo和pageSize，其中pageNo的值设置为1，代表要查询第一页数据，pageSize的值设置为2，代表每页显示2条记录，界面右侧还设有“删除”按钮，用于删除对应的参数项，该设置是文档中提到的修改分页条件后，用于测试分页查询结果的参数配置。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/L0gPb767RoOmR5xWiFPcfnFgnce.png)
+![l0gpb767roomr5xwifpcfnfgnce](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/l0gpb767roomr5xwifpcfnfgnce.png)
 > 图注：图片展示的是区域服务查询的测试结果。响应内容中，code为200，msg为“OK”，data部分包含pages、total、list等信息。其中，pages为2，total为4，list中包含两条记录，每条记录有id、saleStatus、serverType、serverTypeName、serverTypePname、regionId、referencePrice、isHot、createTime、updateTime等字段，如第一条记录的id为1699354106233835521，saleStatus为2等。该图片与上文提到的通过修改分页条件测试分页查询结果相呼应，展示了查询结果的具体内容。
 
 再查询第二页：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/I9X1bpRBKoN2jLxGWCScmUxbnod.png)
+![i9x1bprbkon2jlxgwcscmuxbnod](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/i9x1bprbkon2jlxgwcscmuxbnod.png)
 > 图注：这张图片展示了分页查询测试中的参数设置界面，共包含两组待配置项，分别是设置为2的“pageNo”（页码参数）和设置为2的“pageSize”（每页记录数参数），每组参数前都带有勾选框，右侧配有“删除”操作选项。该图片对应文档中分页查询测试的操作场景，显示的参数设置符合前文描述的“一页显示2条记录，查询第一页”的测试要求，用于验证分页查询功能的参数配置逻辑。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/JrtSb22WfoTZHOxO8yuchrNanie.png)
+![jrtsb22wfotzhoxo8yuchrnanie](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jrtsb22wfotzhoxo8yuchrnanie.png)
 > 图注：图片展示的是查询区域服务时的返回结果界面。上方有“响应内容”“Raw”“Headers”“Curl”等选项卡，当前选中“响应内容”。下方代码区域显示了JSON格式的响应数据，包含code、msg、data等字段，其中data部分呈现了多条记录信息，如id、saleStatus、servletpId、servletpName等字段的具体值，还显示了创建和更新时间等。该图片与上文提到的查询区域服务及测试结果相关，直观呈现了查询结果内容。
 
 
@@ -1645,12 +1645,12 @@ public class ServeControllerTest {
 
 启动foundations服务。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EDKTbkcoooj50Uxk03LcUAX8nEh.png)
+![edktbkcoooj50uxk03lcuax8neh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/edktbkcoooj50uxk03lcuax8neh.png)
 > 图注：图片展示了Spring Boot运行状态界面。左侧有“Spring Boot”和“Running”图标，右侧显示“FoundationsApplication”及数字“11509/”，表明当前运行的Spring Boot应用为“FoundationsApplication”，端口号为11509。该图片与文档中“启动前端工程，在项目开发环境配置中我们已经将前端环境配置完成”及“前后端联调”内容相关，直观呈现了前端工程启动后Spring Boot的运行状态，为前后端联调提供了技术支撑。
 
 启动前端工程，在项目开发环境配置中我们已经将前端环境配置完成。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Yg44bjp9BoYpLNx2Kgkc98finQg.png)
+![yg44bjp9boyplnx2kgkc98finqg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yg44bjp9boyplnx2kgkc98finqg.png)
 > 图注：图片展示的是Windows PowerShell界面，显示了vite v2.9.15开发服务器运行信息。界面上方有“Windows PowerShell”标题，下方内容以绿色字体呈现，显示开发服务器运行在多个网络地址，包括http://172.16.43.194:3000/、http://192.168.27.1:3000/、http://192.168.101.1:3000/等，以及http://localhost:3000/的本地地址，最后以“ready in 1184ms.”结束。该图片与文档中前后端联调内容相关，用于说明前后端测试时可从浏览器网络记录跟踪请求参数和响应结果。
 
 ##### 2）前后端联调
@@ -1659,12 +1659,12 @@ public class ServeControllerTest {
 
 进入运营管理端，点击“区域管理”菜单，点击“设置服务”
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EUcKbI6iKoVijLxozlPcVVIfnNe.png)
+![euckbi6ikovijlxozlpcvvifnne](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/euckbi6ikovijlxozlpcvvifnne.png)
 > 图注：图片展示的是运营管理端区域管理页面。页面左侧有“服务管理”“服务类型管理”“服务项管理”等菜单栏，其中“区域管理”被红色箭头突出显示。右侧是区域服务列表，包含区域编号、区域名称、区域负责人、手机号码、状态及操作等信息，如010区域编号对应北京市，状态为启用，操作有删除、编辑、调度配置、设置服务、禁用、缓存刷新等。该图与上下文介绍的进入运营管理端点击“区域管理”菜单，点击“设置服务”相呼应，直观呈现了操作后的页面情况。
 
 区域服务列表如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/XkGcbse1AoT4XNxffQIcwWg2n8e.png)
+![xkgcbse1aot4xnxffqicwwg2n8e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xkgcbse1aot4xnxffqicwwg2n8e.png)
 > 图注：图片展示的是运营管理端区域服务列表界面。区域名称为北京市，列表中包含服务名称、服务类型、参考价格、区域价格、是否热门等信息，如安装窗帘、厨卫维修等服务。右侧有操作栏，可对服务进行取消热门、下架、设置热门、删除、上架等操作。该图与上下文紧密相关，直观呈现了区域服务的管理情况，为程序员在前后端测试时跟踪前后端交互数据、判断测试结果及测试问题提供了数据参考。
 
 程序员在前后端测试时需要跟踪前后端交互数据判断精确判断测试结果及测试问题。
@@ -1673,12 +1673,12 @@ public class ServeControllerTest {
 
 请求参数：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/RgPfbymfQoMkMOxkcLicUty5nqf.png)
+![rgpfbymfqomkmoxkclicuty5nqf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rgpfbymfqomkmoxkclicuty5nqf.png)
 > 图注：图片展示了浏览器开发者工具中网络请求的参数信息。画面中箭头指向“参数”区域，显示了多个参数，如isAct、pageAsc1、pageAsc2、orderBy1、orderBy2、pageNum、pageSize、regionId等，其中pageAsc1、pageAsc2、orderBy1、orderBy2、pageNum、pageSize、regionId参数值分别为true、false、updateTime、sortNum、1、10、1686302228436623737。该图片与文档中“通过浏览器网络记录进行跟踪”部分内容相关，用于说明请求参数的查看方式。
 
 响应结果：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/UqdqbMQDmoTXfmxdEuicx83Cnid.png)
+![uqdqbmqdmotxfmxdeuicx83cnid](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uqdqbmqdmotxfmxdeuicx83cnid.png)
 > 图注：这张图片是浏览器开发者工具的网络请求记录界面，展示了前后端联调时需要跟踪的相关交互数据。左侧标注了请求的相关标识，右侧用红框标出了对应请求的响应内容，响应中包含code、message、success等状态信息，以及pages的总数量和list列表等数据，还包含不同服务实例的相关信息，这正是程序员进行前后端测试时，通过跟踪浏览器网络记录来判断测试结果、排查测试问题的关键交互数据。
 
 
@@ -1703,12 +1703,12 @@ public class ServeControllerTest {
 
 首先进入某个区域的服务列表:
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/GNeGbLZcdoFeiPxLQOyclypPneb.png)
+![gnegblzcdofeipxlqoyclyppneb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gnegblzcdofeipxlqoyclyppneb.png)
 > 图注：图片展示的是区域管理中设置服务的界面。界面上方显示“服务管理 > 区域管理 > 设置服务”。下方有“区域名称”输入框，内有“北京市”字样，右侧有红色箭头指向的“添加服务”按钮。该图片与上下文紧密相关，上下文提到首先进入某个区域的服务列表，点击添加服务，此图即为点击“添加服务”按钮前的界面展示，直观呈现了操作流程中的一个环节。
 
 点击添加服务,如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Hk6ObLMD6oeNvaxumMacSRbznTg.png)
+![hk6oblmd6oenvaxummacsrbzntg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hk6oblmd6oenvaxummacsrbzntg.png)
 > 图注：图片展示的是添加 addCriterion添加服务界面。左侧有保洁清、日常维修、家居服务等分类，当前选中“日常维修”。右侧有“请输入服务关键字”搜索框，下方显示“空调维修”和“日常维修”服务，价格分别为198.00元和5.00元，均有蓝色勾选框。右侧“已选服务（2）”区域显示“日常维修”和“空调维修”已选服务。底部有“取消”和“添加”按钮，其中“添加”按钮被红色箭头指向。该图与上下文介绍的添加区域服务操作流程相关，是选择要添加服务的界面示例。
 
 选择要添加到区域中的服务，点击“添加”按钮。
@@ -1765,10 +1765,10 @@ serve表存储了区域中开通的服务，根据字段信息思考数据来源
 
 **请求数据类型**  application/json
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Xc03br1SaoVoNexDv51ctNMunHb.png)
+![xc03br1saovonexdv51ctnmunhb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xc03br1saovonexdv51ctnmunhb.png)
 > 图注：图片展示了添加区域服务接口的请求参数信息。参数名称有serveUpsertReqDTOList、serveltemId、regionId，其中serveUpsertReqDTOList为必填，数据类型为array，schema为服务新增更新；serveltemId和regionId也为必填，数据类型均为integer(int64)。该图片与上文接口设计内容相关，直观呈现了接口请求参数的具体要求，帮助理解传入参数内容为数组，使用json格式，包含服务项id、区域id等信息。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/IAGzbgZReoG6p0xJJS9cwEBMne1.png)
+![iagzbgzreog6p0xjjs9cwebmne1](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iagzbgzreog6p0xjjs9cwebmne1.png)
 > 图注：这张图片呈现的是添加区域服务接口的响应参数信息，与文档中该接口设计的内容相对应。图片里的响应参数包含两类，一是名称为msg的参数，参数说明为响应消息，类型为string；二是名称为code的参数，参数说明为状态码，200代表成功，其他值代表失败，类型为integer(int32)，schema属性也对应该类型。这些内容明确了该接口响应的具体参数要求，方便开发人员理解接口返回的数据格式。
 
 
@@ -1831,7 +1831,7 @@ public class ServeController {
 
 1. 重启服务，查看swagger文档如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Nk0xb8eKIoqNWTxPidhcXLx2nnf.png)
+![nk0xb8ekioqnwtxpidhcxlx2nnf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nk0xb8ekioqnwtxpidhcxlx2nnf.png)
 > 图注：图片展示的是家政服务 - 运营基础服务接口文档中“区域服务批量新增”的接口定义。HTTP方法为POST，请求数据类型为application/json，响应数据类型为“*” 。请求示例为JSON格式，包含serveItemId、regionId、price三个字段。请求参数中，serveUserReqDTOList为必填的body类型数组，包含serveitemid、regionid、price字段，serveitemid、regionid、price均为必填的参数。该图片与上文介绍的添加区域服务接口设计相关，直观呈现了接口的请求示例和参数信息。
 
 ##### 3）小结
@@ -1906,7 +1906,7 @@ public void batchAdd(List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 异常处理器的源码在jzo2o-framework中，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/ITGrbVlTpomWo1xrt1CcsBXdnPh.png)
+![itgrbvltpomwo1xrt1ccsbxdnph](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/itgrbvltpomwo1xrt1ccsbxdnph.png)
 > 图注：图片展示了jzo2o-mvc项目的目录结构。在src/main/java/com/jzo2o/mvc/advice目录下，有一个名为CommonExceptionAdvice的文件。该图片与上文提到的异常处理器源码在jzo2o-framework中的内容相关，直观呈现了异常处理器所在的具体位置，帮助理解自定义异常类型在项目中的位置关系。
 
 通过@RestControllerAdvice注解加@ExceptionHandler注解实现，具体的原理是当controller抛出异常由DispatcherServlet统一拦截处理，再根据异常类型找到@ExceptionHandler标识方法去执行该方法进行异常处理。
@@ -1945,12 +1945,12 @@ public void add(@RequestBody List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 启动foundations服务。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/CIDrbEEMqoZQUkxdOIgcRhjenYe.png)
+![cidrbeemqozqukxdoigcrhjenye](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cidrbeemqozqukxdoigcrhjenye.png)
 > 图注：图片展示了Spring Boot运行状态界面。左侧有“Spring Boot”和“Running”图标，右侧显示“FoundationsApplication”及数字“11509/”，表明该应用正在运行，端口号为11509。
 
 启动前端工程，在项目开发环境配置中我们已经将前端环境配置完成。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/PkOdbGfmboFKLaxvzsxcE8ibngc.png)
+![pkodbgfmbofklaxvzsxce8ibngc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pkodbgfmbofklaxvzsxce8ibngc.png)
 > 图注：这是一张显示Windows PowerShell窗口的截图，内容为vite开发服务器的运行信息。页面显示v2.9.15版本的开发服务器已启动，当前处于就绪状态，就绪耗时1184毫秒。窗口中列出了多个可访问地址，包含对应Network、Local的访问路径，涵盖局域网内不同IP地址的访问链接及本地localhost访问链接，所有链接的端口号均为3000，这些链接用于提供当前开发环境下的服务访问入口。
 
 ##### 2）前后端联调
@@ -1961,24 +1961,24 @@ public void add(@RequestBody List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 进入运营管理端，点击“区域管理”菜单，点击“设置服务”
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/X2W7bXTgRomIz7xO1XncfrMmnQf.png)
+![x2w7bxtgromiz7xo1xncfrmmnqf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/x2w7bxtgromiz7xo1xncfrmmnqf.png)
 > 图注：图片展示的是运营管理端区域管理页面。页面左侧有“服务管理”下拉菜单，其中“区域管理”被红色箭头指向突出显示。右侧是区域服务列表，包含区域编号、区域名称、区域负责人、手机号码、状态及操作等信息，如010北京市老孙等。页面右上角有“新建”按钮。该图片与上文“进入运营管理端，点击‘区域管理’菜单，点击‘设置服务’”的操作步骤对应，直观呈现了操作后的页面情况。
 
 区域服务列表如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/J57sb388TobbHWxij68cf7dCnfe.png)
+![j57sb388tobbhwxij68cf7dcnfe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/j57sb388tobbhwxij68cf7dcnfe.png)
 > 图注：这张图片为运营管理端的区域服务列表界面，对应文档中添加区域服务测试的正常流程环节。界面显示区域名称为“北京市”，列表中包含安装窗饰、厨卫维修、开荒保洁、日常保洁四类服务，每类服务对应展示了服务类型、参考价格、区域价格、是否热门的信息，每类服务的操作栏提供了取消热门、设置热门、删除、上下架的功能选项，界面右上角有“添加服务”按钮，该界面是添加区域服务流程中，用于查看已添加的区域服务列表的页面，符合文档中添加服务后需查询区域服务列表的测试环节内容。
 
 点击添加服务
 
 
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/AccDbimEvoXRyFxFyFYcWR3rnsg.png)
+![accdbimevoxryfxfyfycwr3rnsg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/accdbimevoxryfxfyfycwr3rnsg.png)
 > 图注：图片展示的是运营管理端“区域管理”下的“设置服务”页面。页面上方显示导航路径“服务管理 > 区域管理 > 设置服务”。下方有“区域名称”输入框，已输入“北京市”，右侧有红色框突出显示的“添加服务”按钮。该图片与上下文关系紧密，是“添加区域服务”测试流程中，点击“添加服务”按钮前的页面展示，直观呈现了操作前的页面状态。
 
 点击添加服务,如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/XSR4b4upFoNfdax0dd0cxgZ4ndg.png)
+![xsr4b4upfonfdax0dd0cxgz4ndg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xsr4b4upfonfdax0dd0cxgz4ndg.png)
 > 图注：图片展示的是运营管理端添加服务的界面。左侧有保洁清、日常维修、家居服务等分类，右侧有“请输入服务关键字”搜索框。下方显示已选服务“日常维修”和“空调维修”，右侧有“取消”和“添加”按钮。图片中“选择要添加的服务”文字及红色箭头指向“日常维修”选项，表明操作步骤是选择要添加的服务，此图与上文“点击添加服务”及“添加成功查询区域服务列表是否存在已添加的服务”等内容相关，是添加服务操作流程中的关键步骤展示。
 
 添加成功查询区域服务列表是否存在已添加的服务。
@@ -1989,7 +1989,7 @@ public void add(@RequestBody List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 我们测试服务重复添加的异常，由于前端控制无法选择已经添加的服务，我们可以开两个窗口，都停留在添加服务页面：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/WzNdb0i68olKWcxtpmWcNAg5nJu.png)
+![wzndb0i68olkwcxtpmwcnag5nju](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wzndb0i68olkwcxtpmwcnag5nju.png)
 > 图注：这张图片是系统“添加服务”的操作界面，左侧显示保洁清、日常维修、家居服务三类服务选项，当前定位在“日常维修”类别；中间区域可搜索服务关键字，其中“空调维修 ￥198.00”已被勾选，“日常维修 ￥5.00”为未勾选状态；右侧“已选服务（1）”栏显示已选项目为“空调维修”；界面底部设有“取消”和“添加”按钮，该界面对应操作文档中提及的，为测试服务重复添加异常流程所使用的待填写的服务添加页面。
 
 其中一个窗口添加成功后，另一个窗口也进行提交，此时跟踪前端拿到的响应如下：
@@ -2014,12 +2014,12 @@ public void add(@RequestBody List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 进入修改界面
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/KIYFbXxKpohGthxP7E9ciSkrnWc.png)
+![kiyfbxxkpohgthxp7e9ciskrnwc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kiyfbxxkpohgthxp7e9ciskrnwc.png)
 > 图注：图片展示的是区域服务管理模块中修改价格的界面。上方显示区域名称为北京市。下方表格中列出服务名称为安装窗帘，服务类型为家居服务，参考价格和区域价格均为10.00。表格右侧有“取消热门”“删除”“下架”等操作选项，其中“下架”选项旁有红色箭头指向，标注“点击修改”。该图片与文档中“进入修改界面”内容对应，直观呈现了修改价格操作的界面情况。
 
 输入价格进行修改
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EVAQbw4jPoDhA2xrubpcAJ3gn5y.png)
+![evaqbw4jpodha2xrubpcaj3gn5y](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/evaqbw4jpodha2xrubpcaj3gn5y.png)
 > 图注：图片展示的是区域服务管理模块中修改价格的界面。上方显示区域名称为北京市。下方表格中，服务名称为安装窗帘，服务类型为家居服务，参考价格为10.00，区域价格框内显示10.00，是否热门为是。红色箭头指向区域价格框，旁边有文字“输入价格进行修改”，表明此处用于输入价格进行修改操作。该图片与文档中“输入价格进行修改”内容对应，直观呈现了操作界面。
 
 传入参数内容：价格、区域服务ID（serve表主键）  ，区域服务ID简称为服务ID
@@ -2036,10 +2036,10 @@ public void add(@RequestBody List<ServeUpsertReqDTO> serveUpsertReqDTOList) {
 
 **请求数据类型** application/x-www-form-urlencoded
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/TG8KbEIuboz8fqxGWJjcAa4YnPh.png)
+![tg8kbeiuboz8fqxgwjjcaa4ynph](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tg8kbeiuboz8fqxgwjjcaa4ynph.png)
 > 图注：图片展示了修改价格接口的请求参数信息。表格包含参数名称、参数说明、请求类型、是否必须、数据类型、schema六列。关键参数有id，服务id，请求类型为path，是否必须为true，数据类型为integer(int64)；price，价格，请求类型为query，是否必须为true，数据类型为number(double)。该图片与文档中接口设计部分相关，是对接口请求参数的详细说明，帮助理解接口参数配置情况。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/F0WDbSM8XotoI0xMjF4cL7ICn79.png)
+![f0wdbsm8xotoi0xmjf4cl7icn79](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f0wdbsm8xotoi0xmjf4cl7icn79.png)
 > 图注：图片展示了“响应参数”相关的信息。表格包含参数名称、参数说明、类型、schema四列。其中，参数名称有msg、code；参数说明分别为响应消息、状态码，200 - 成功，其它 - 失败；类型均为string、integer(int32)；schema均为integer(int32)。该图片与上文接口设计中“响应参数”部分对应，是对响应参数的具体说明。
 
 
@@ -2067,7 +2067,7 @@ public void update( @PathVariable("id") Long id,
 
 重启服务，查看swagger文档如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/F4g9bheKXofUx9xw00Vc8ocZn9e.png)
+![f4g9bhekxofux9xw00vc8oczn9e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f4g9bhekxofux9xw00vc8oczn9e.png)
 > 图注：图片展示的是家政服务 - 运营基础服务接口文档中“区域服务价格修改”的接口定义。HTTP方法为PUT，接口路径为/foundations/operation/serve/{id}，请求数据类型为application/x-www-form-urlencoded，响应数据类型为“*/*”。请求参数包括id（服务id，path类型，必填，数据类型为integer(int64)）、price（价格，query类型，必填，数据类型为number(double)）。该图片与上文接口设计中接口定义部分对应，直观呈现了接口相关参数信息。
 
 ##### 3）mapper
@@ -2157,7 +2157,7 @@ public void update(@PathVariable("id") Long id,
 
 在区域服务列表中点击“上架”，此服务在该区域将生效，用户即可对该服务进行下单。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/D6Mfbnp0GonLtrxKqtucqTZjnad.png)
+![d6mfbnp0gonltrxkqtucqtzjnad](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/d6mfbnp0gonltrxkqtucqtzjnad.png)
 > 图注：这张图片呈现的是区域服务列表中的一条服务项内容，服务名称为开荒保洁，保洁清对应其相关属性，价格与实付价格均为49.00，当前该服务的上架状态标注为“否”。图片右侧设有“设置热门”“删除”“上架”三个操作按钮，结合上下文可知，点击此处的“上架”按钮后，该服务会在对应区域生效，用户便可对该服务进行下单操作，同时服务在serve表的售卖状态也会被更改为代码为2的“上架”状态。
 
 业务流程如下：
@@ -2184,10 +2184,10 @@ public void update(@PathVariable("id") Long id,
 
 **请求数据类型**  application/x-www-form-urlencoded
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/XoIybaLpao3dmZx1DBhcA2MUnbf.png)
+![xoiybalpao3dmzx1dbhca2munbf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xoiybalpao3dmzx1dbhca2munbf.png)
 > 图注：图片展示了服务上架接口的请求参数信息。表格包含参数名称、参数说明、请求类型、是否必须、数据类型、schema六列。其中，id为服务id，请求类型为path，是必须参数，数据类型为integer(int64)。该图片与上文接口分析部分相关，是对接口信息中请求数据类型为application/x-www-form-urlencoded的接口参数说明，直观呈现了参数的具体内容。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EmIibJCXYovVxRxCSQycOeRInEe.png)
+![emiibjcxyovvxrxcsqycoerinee](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/emiibjcxyovvxrxcsqycoerinee.png)
 > 图注：图片展示的是服务上架接口的响应参数。表格包含参数名称、参数说明、类型、schema四列。其中，msg为响应消息，类型为string；code为状态码，200表示成功，其它表示失败，类型为integer(int32)。该图片与上文接口定义部分相关，是对接口响应参数的说明，为后续接口开发提供参数信息参考。
 
 
@@ -2211,7 +2211,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 重启服务，查看swagger文档如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/OSG0b1PJboYKnVxczOocNIeSn1p.png)
+![osg0b1pjboyknvxczoocniesn1p](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/osg0b1pjboyknvxczoocniesn1p.png)
 > 图注：这张图片是服务上架接口的Swagger文档，位于接口开发相关内容之后，呈现了PUT方式的服务上架接口详情。该接口的路径为/foundations/operation/serve/onSale/{id}，请求数据类型为application/x-www-form-urlencoded。请求参数为id，属于路径参数，是必填的整数类型。响应状态包含200（成功）、201（已创建）、401（未授权）、403（禁止访问）、404（未找到）等状态码，响应参数有表示响应结果信息的msg，以及表示状态码的code，code为200时代表成功，其他值则为失败。
 
 
@@ -2312,7 +2312,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 接口文档如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Bj3db37cso71eYxyTMkcYEttnvc.png)
+![bj3db37cso71eyxytmkcyettnvc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bj3db37cso71eyxytmkcyettnvc.png)
 > 图注：这张图片展示的是删除区域服务开发接口的相关信息，接口类型为DELETE，访问路径为/foundations/operation/serve/{id}。请求数据类型为application/x-www-form-urlencoded，核心请求参数是id，参数说明为服务id，请求类型为path，为必填项，数据类型是integer(int64)。该接口的响应状态包含200（对应OK）、204（对应No Content）、401（对应Unauthorized）、403（对应Forbidden）四种情况，还设有响应参数，包含msg（响应消息，类型为string）和code（状态码，200成功、其他为失败，类型为integer(int32)）。这张图片是删除区域服务开发接口的文档内容，对应文档中1.5.1删除区域服务开发的接口文档部分。
 
 
@@ -2331,7 +2331,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 接口文档：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/D8AKbnhY5oUFsPx4m4icgkxhnW4.png)
+![d8akbnhy5oufspx4m4icgkxhnw4](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/d8akbnhy5oufspx4m4icgkxhnw4.png)
 > 图注：这张图片是区域服务设置热门的接口文档信息。该接口采用PUT请求方式，请求地址为/foundations/operations/serveronhot/(id)，请求数据类型为application/x-www-form-urlencoded。其请求参数中，id为服务id，参数类型为path，属于必填的integer(int64)类型。该接口的响应状态包含状态码200（说明为OK）、201（说明为Created）、401（说明为Unauthorized）、403（说明为Forbidden）、404（说明为Not Found）；响应参数包含msg（响应消息，string类型）、code（状态码，integer(int32)类型），响应数据类型为“*/*”。该接口对应的需求是更新serve表的是否热门字段。
 
 
@@ -2342,14 +2342,14 @@ public void onSale(@PathVariable("id") Long id) {
 
 接口文档：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/ECnvbhV48olaOTxzdCbcgeyonMe.png)
+![ecnvbhv48olaotxzdcbcgeyonme](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ecnvbhv48olaotxzdcbcgeyonme.png)
 > 图注：这张图是“区域服务取消热门”的接口文档内容，属于第二章运营服务管理模块下的删除区域服务开发相关接口。图中明确了该接口的请求方式为PUT，接口路径为/foundations-operation/server-offici/{id}，请求数据类型为application/x-www-form-urlencoded；请求参数包含路径参数id，其为服务id，请求类型为path，是必填项，数据类型为integer(int64)。同时还展示了响应状态，包括状态码200对应OK、201对应Created，以及401、403、404等异常状态，也列明了响应参数，包含返回消息msg（string类型）和返回码code（integer(int32)类型），code为200代表成功，其他值代表失败。
 
 #### 1.5.5 启用区域功能完善
 
 参考业务流程图进行功能完善，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/QdDPbs19doHXJLxY0SbcvYWbnmj.png)
+![qddpbs19dohxjlxy0sbcvywbnmj](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qddpbs19dohxjlxy0sbcvywbnmj.png)
 > 图注：图片是一张业务流程图，用于说明区域功能启用的流程。流程从确定一个区域开始，接着点击启用，判断当前状态是否为单租或禁用，若否则启用失败。若当前状态为单租或禁用，再判断区域下是否存在上架的服务，若存在则启用成功，若不存在则启用失败。
 
 增加校验：区域下存在上架的服务方可启用。
@@ -2360,7 +2360,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 参考业务流程图进行功能完善，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Mwbzbkwero6aXmxXHYHcNVItnJd.png)
+![mwbzbkwero6axmxxhyhcnvitnjd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mwbzbkwero6axmxxhyhcnvitnjd.png)
 > 图注：该图是禁用区域功能的业务流程图，位于文档“1.5.6禁用区域功能完善”的内容处，是对应功能的执行逻辑图示。流程从“确定一个区域”开始，经“点击禁用”后进入判断环节，首先判断“当前状态是否启用”，若判断结果为“否”则直接指向“禁用失败”；若判断结果为“是”，则进入关键校验步骤，即判断“区域下是否存在上架的服务”，该步骤有红色箭头标注突出显示；若判断区域存在上架服务，同样指向“禁用失败”；若区域不存在上架服务，则最终判定为“禁用成功”，至此流程结束，且该流程的校验规则与上下文标注的“区域下不存在上架的服务方可禁用”要求一致。
 
 增加校验：区域下不存在上架的服务方可禁用。
@@ -2371,7 +2371,7 @@ public void onSale(@PathVariable("id") Long id) {
 
 参考业务流程图进行功能完善，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Rvp3bR0tAoIJkxxU8wlcedOanBh.png)
+![rvp3br0taoijkxxu8wlcedoanbh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rvp3br0taoijkxxu8wlcedoanbh.png)
 > 图注：图片 addCriterion图片是一张业务流程图，用于说明禁用服务项功能完善流程。流程从“确定一个服务项”开始，接着点击禁用，判断当前状态是否启用，若启用则判断该服务是否在区域上架，若存在关联的区域服务且状态为上架则禁用失败，若不存在则禁用成功；若当前状态不启用，则直接禁用成功。
 
 增加校验：该服务没有在任何区域上架方可禁用。

@@ -171,10 +171,10 @@ AI:消息队列的应用场景
    - 场景：在许多互联网应用和服务中，尤其是那些具有明显周期性流量特征的应用（如电商平台、社交网络等），常常会遇到流量突增的情况。例如，在电商促销期间，大量的用户会在短时间内访问网站并提交订单，这种短时间内产生的巨大流量可能会导致服务器过载，影响用户体验甚至导致服务不可用。
    - 好处：当流量激增时接收到请求会被暂时存储在消息队列中，而不是直接发送到后端服务进行处理。这样做可以避免后端服务因为短时间内处理大量请求而过载。后端服务可以从消息队列中按需拉取消息进行处理。这种异步处理机制可以有效地分散流量峰值，确保后端服务的稳定运行。如下图：
 
-   ![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/NbBFbSJWvoBpPjxJHCocXstpnld.png)
+   ![nbbfbsjwvobppjxjhcocxstpnld](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nbbfbsjwvobppjxjhcocxstpnld.png)
 > 图注：图片展示了流量削峰的场景。上方图中，用户向系统A发送大量请求，数据写入数据库，但瞬间请求量过大，会造成数据库异常。下方图中，用户同样向系统A发送大量请求，但系统A将数据写入消息队列，消费者1和消费者2分别订阅消息队列，再将数据写入数据库。该图与上下文紧密相关，直观呈现了流量削峰前后的系统架构差异，帮助理解流量削峰在系统设计中的作用。
 
-   ![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/I9V8bWjOqorZqQxPfmDcbzWtn0f.png)
+   ![i9v8bwjoqorzqqxpfmdcbzwtn0f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/i9v8bwjoqorzqqxpfmdcbzwtn0f.png)
 > 图注：图片展示了秒杀系统中消息队列的应用场景。上方有多个用户图标，分别有“秒杀成功”和“队列已满，秒杀失败”的箭头指向消息队列。消息队列右侧有订单处理图标，箭头指向其，标注“根据规则读取消杀消息”。该图与上下文介绍的秒杀系统中消息队列的应用相呼应，直观呈现了用户秒杀成功或失败时消息队列的处理情况。
 
 
@@ -216,7 +216,7 @@ RabbitMQ是基于Erlang语言开发的开源消息通信中间件，官网地址
 
 RabbitMQ的架构如图：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/MtA3bpQqyoL71uxxuBHczYwYn0t.png)
+![mta3bpqqyol71uxxubhczywyn0t](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mta3bpqqyol71uxxubhczywyn0t.png)
 > 图注：这张图展示了RabbitMQ的核心架构，最外侧标注有“RabbitMQ Server Broker”，内部划分出“VirtualHost”虚拟主机区域。图中左侧的“Publisher”作为生产者，通过连接指向区域内的“exchange（交换机）”；交换机作为消息路由组件，可将消息转发至区域内的多个“queue（队列）”；队列作为存储消息的缓冲区，最终将消息传递给右侧的“consumer（消费者）”。该图直观呈现了RabbitMQ中生产者、交换机、队列、消费者各角色的关联关系，对应了文档中提到的RabbitMQ核心概念架构。
 
 其中包含几个概念：
@@ -272,7 +272,7 @@ docker run \
 
 登录后即可看到管理控制台总览页面：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/YlstbpbvZo0uprxgJHycUHEGnGb.png)
+![ylstbpbvzo0uprxgjhycuhegngb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ylstbpbvzo0uprxgjhycuhegngb.png)
 > 图注：图片展示的是RabbitMQ管理控制台的总览页面。页面上方显示RabbitMQ版本为3.8.26，Erlang版本为24.2。总览部分有队列消息、当前队列、消息速率、当前消费者等数据。节点信息区域列出节点名称、文件描述符、Erlang进程、内存、磁盘空间等数据，如rabbit@img节点的文件描述符为102等。页面还包含Churn图表、端口和上下文、导出定义、导入定义等内容。该页面是安装完成后访问http://192.168.101.68:15672后登录默认用户名和密码看到的管理控制台总览页面。
 
 
@@ -309,12 +309,12 @@ SpringAMQP提供了三个功能：
 
 在课前资料给大家提供了一个Demo工程，方便我们学习SpringAMQP的使用：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/F6n9bVFhKoVeaKxYYBTc4L3Snfb.png)
+![f6n9bvfhkoveakxyybtc4l3snfb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f6n9bvfhkoveakxyybtc4l3snfb.png)
 > 图注：图片展示了课前资料中提供的Demo工程文件夹内容。文件夹名为“mq-demo”，类型为文件夹，大小为247,988 KB。该图片位于介绍课前资料中Demo工程位置的上下文之后，用于直观呈现课前资料提供的Demo工程文件夹结构，帮助学习者了解在工作空间中打开此工程后能看到的项目结构，辅助理解后续关于消息发送者和消费者的内容。
 
 将其复制到你的工作空间，然后用Idea打开，项目结构如图：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/TUfTbHImsoKsIYxmrP9ckroin0b.png)
+![tuftbhimsoksiyxmrp9ckroin0b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tuftbhimsoksiyxmrp9ckroin0b.png)
 > 图注：这张图展示了Idea中打开的mq-demo项目目录结构，路径为D:\\code\\mq-demo。该项目包含三个核心子模块，分别是用于管理项目依赖的父工程mq-demo、消息发送者publisher以及消息消费者consumer，此外目录中还包含.idea配置文件夹、src源码文件夹、项目配置文件mq-demo.iml、Maven配置文件pom.xml，以及External Libraries和Scratches and Consoles等辅助目录，清晰对应了文档中提到的Demo工程结构，是学习者学习SpringAMQP时的基础项目结构展示。
 
 包括三部分：
@@ -376,16 +376,16 @@ SpringAMQP提供了三个功能：
 
 设置java版本
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/Mv2cbGtGcoRsztxswuIcXLnqnke.png)
+![mv2cbgtgcorsztxswuicxlnqnke](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mv2cbgtgcorsztxswuicxlnqnke.png)
 > 图注：这张图片展示的是Idea中Settings里Java Compiler的配置页面。该页面可设置编译相关参数，其中在“Per-module bytecode version”区域，显示了consumer、mq-demo、publisher三个子工程模块对应的目标字节码版本均为11，且该配置属于mq-demo父工程中已配置的内容，可让子工程直接使用SpringAMQP相关依赖，同时页面还显示Use compiler选项为Javac，且勾选了“Use ‘--release’ option for cross-compilation (Java 9 and later)”等相关选项，项目整体的目标字节码版本也设置为与语言级别相同。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/A6WnbGqiZoYhEuxtKEncWkRknHd.png)
+![a6wnbgqizoyheuxtkencwkrknhd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/a6wnbgqizoyheuxtkencwkrknhd.png)
 > 图注：这张图片展示了IDEA中Project Structure的配置界面，对应文档里搭建RabbitMQ Demo环境的项目配置环节。界面左侧选中的是Project设置项，右侧显示父工程名为mq-demo，核心内容为被红框高亮标注的SDK配置，当前SDK为11版本的Oracle OpenJDK version 11.0.15，该配置对应文档中提到的父工程已设置好Java版本的内容，确认了项目的Java开发环境配置。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/KoeVbUjPIo2sHtxNLmUcU3jRnyh.png)
+![koevbujpio2shtxnlmucu3jrnyh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/koevbujpio2shtxnlmucu3jrnyh.png)
 > 图注：这是IDEA的项目结构设置界面，展示了mq-demo父工程下包含的publisher、consumer两个子工程模块。界面左侧选中了Modules设置项，中间选中了consumer子模块，该模块的语言级别被标注要求设置为11，对应选项为“11 - Local variable syntax for lambda parameters”，每个子模块都需要按要求完成该语言级别的设置，以此确保项目使用的Java版本等环境配置符合要求，便于后续SpringAMQP相关功能的使用。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/OiLqb6dYPol1V6x5UCdcv0Pdnof.png)
+![oilqb6dypol1v6x5ucdcv0pdnof](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oilqb6dypol1v6x5ucdcv0pdnof.png)
 > 图注：图片展示了IDEA中settings.xml文件的部分内容。其中突出显示了设置Java版本的代码区域，包含<profile>标签，id为jdk - 11，激活默认为true，<properties>标签下有maven . compiler . source、maven . compiler . target、maven . compiler . compilerVersion等属性，均设置为11。该图片与文档中介绍在mq - demo父工程中已配置好SpringAMQP相关依赖，子工程可直接使用SpringAMQP的内容相关，直观呈现了Java版本设置的部分代码。
 
 因此，子工程中就可以直接使用SpringAMQP了。
@@ -396,12 +396,12 @@ SpringAMQP提供了三个功能：
 
 首先进入RabbitMQ控制台创建队列，新建一个队列：simple.queue
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/DvfWbGVOJoICNFxhHfScennznqe.png)
+![dvfwbgvojoicnfxhhfscennznqe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dvfwbgvojoicnfxhhfscennznqe.png)
 > 图注：图片展示的是RabbitMQ控制台中“Queues”页面。页面显示当前队列数量为0，可添加新队列。添加队列时，需选择虚拟主机、类型（此处为Classic）、队列名称（已输入“simple.queue”）、持久性（Durability，已选中）、自动删除（Auto delete，未选中）等参数。页面还提供了分页、过滤、正则表达式搜索等功能，以及每页显示数量上限设置。该图与上文“创建队列”内容相关，直观呈现了创建队列时的界面及参数设置情况。
 
 添加成功：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/I2gTbL7oJouPnxxE8HWcKk6mnVg.png)
+![i2gtbl7ojoupnxxe8hwckk6mnvg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/i2gtbl7ojoupnxxe8hwckk6mnvg.png)
 > 图注：图片展示的是RabbitMQ控制台中队列（Queues）页面。页面显示了所有队列信息，当前显示1个队列，即simple.queue，其类型为classic，状态为D。页面上方有刷新频率设置，当前设置为每5秒刷新一次。页面右侧有刷新频率、虚拟主机、用户等下拉选择项。该图片与上文“首先进入RabbitMQ控制台创建队列，新建一个队列：simple.queue”内容对应，直观呈现了队列创建后的页面情况。
 
 接下来，我们就可以利用Java代码收发消息了。
@@ -452,21 +452,21 @@ public class SpringAmqpTest {
 }
 ```
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/TTcXbOUURoW500xBMjVcPLAnnKd.png)
+![ttcxbouurow500xbmjvcplannkd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ttcxbouurow500xbmjvcplannkd.png)
 > 图注：这张图片展示的是`publisher`服务的项目目录结构，该目录是MQ消息发送操作对应的代码工程结构。在src目录下包含main和test两个子目录，main目录中存储了运行程序的核心代码，其中有存放业务代码的java目录及application.yml配置文件；test目录用于存放测试代码，在test/java/com/itheima/publisher/amqp路径下，存在着用于实现消息发送的`SpringAmqpTest`测试类，这正好对应文档中提到的“在publisher服务的test下编写测试类`SpringAmqpTest`，并利用`RabbitTemplate`实现消息发送”的相关内容。
 
 
 
 打开控制台，可以看到消息已经发送到队列中：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/NjcobSE7GoyKayxnVK8cHsxunGe.png)
+![njcobse7goykayxnvk8chsxunge](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/njcobse7goykayxnvk8chsxunge.png)
 > 图注：这张图片展示了RabbitMQ管理控制台的Queues页面，页面中选中了Queues栏目，当前共存在1个名为simple.queue的classic类型队列，所属虚拟主机为/hall，该队列当前处于idle空闲状态。在队列的消息统计区域，Ready项被红色方框标注，数值为1，Unacked项数值为0，Total项数值为1，其余Message rates区域无相关统计数据，此界面可直观体现发送到该队列的消息就绪待消费的状态。
 
 接下来，我们再来实现消息接收。
 
 我们可以在RabbitMQ的控制台去查看消息
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/TcN8bPvnBokZhcxpvsucnR3gnDb.png)
+![tcn8bpvnbokzhcxpvsucnr3gndb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tcn8bpvnbokzhcxpvsucnr3gndb.png)
 > 图注：图片展示的是RabbitMQ控制台中“Get messages”页面。页面提示从队列获取消息是破坏性操作。Ack Mode下拉框选中“Nack message requeue true”，Encoding为“Auto string / base64”，Messages输入框显示1。下方有“Get Message(s)”按钮，下方区域显示获取到的消息信息，包括Exchange、Routing Key、Redelivered等属性，以及Payload内容为“hello, spring amqp!”。
 
 
@@ -509,7 +509,7 @@ public class SpringRabbitListener {
 
 
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/SiJ6bqva9og8Tux6VCScpFz3nDg.png)
+![sij6bqva9og8tux6vcscpfz3ndg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sij6bqva9og8tux6vcscpfz3ndg.png)
 > 图注：这张图片展示了consumer服务的项目结构目录树，清晰呈现了该服务下各目录与文件的层级关系。项目以consumer为根目录，包含src、test、target等子目录及pom.xml文件；其中src目录下的main子目录里，有java和resources两个子目录，java目录下按com.itheima.consumer.listova的层级结构，包含SpringRabbitListener类，resources目录下则有application.yml配置文件，该结构对应文中在consumer服务的对应包中新建SpringRabbitListener类的要求，直观展示了代码与配置文件的存放位置。
 
 
@@ -524,7 +524,7 @@ public class SpringRabbitListener {
 
 观察consumer控制台日志收到消息：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/JwFsbBLwso3x64xer09cfhVxnrb.png)
+![jwfsbblwso3x64xer09cfhvxnrb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jwfsbblwso3x64xer09cfhvxnrb.png)
 > 图注：这张图片展示了consumer服务启动后，RabbitMQ消费者接收消息的控制台日志内容。其中有红色框线标注的关键内容，显示成功创建了连接，且明确标注出“spring 消费者接收到消息：【hello，spring amqp!】”，清晰呈现了测试环节里消费者成功获取消息的结果，对应文档中2.3.5测试部分的消费者控制台日志观察内容。
 
 
@@ -559,7 +559,7 @@ RabbitMQ支持多租户，多个系统可以同时使用一个RabbitMQ。
 
 点击`Admin`选项卡，首先会看到RabbitMQ控制台的用户管理界面：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/CcHCby8bmocavBx2lUKcFSHun6f.png)
+![cchcby8bmocavbx2lukcfshun6f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cchcby8bmocavbx2lukcfshun6f.png)
 > 图注：图片展示了RabbitMQ控制台的用户管理界面。界面上方有RabbitMQ标志及版本信息。左侧导航栏有Overview、Connections等选项，当前选中Admin。右侧主区域显示“Users”标签，下方有“Name”“Tags”“Can access virtual host”“Has password”等字段，其中“itheima”用户被红框突出显示，其“Tags”为“administrator”，“Can access virtual host”为“/”，“Has password”有星号。该图与上下文介绍的RabbitMQ控制台用户管理界面内容相关，直观呈现了用户信息。
 
 这里的用户都是RabbitMQ的管理或运维人员。目前只有安装RabbitMQ时添加的`itheima`这个用户。仔细观察用户表格中的字段，如下：
@@ -572,12 +572,12 @@ RabbitMQ支持多租户，多个系统可以同时使用一个RabbitMQ。
 
 下边我们给黑马商城创建一个新的用户，命名为`hmall`,密码123，注意选择adminstrator
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/TsZzbvlL8oeFwFxNiUPcfhdinpg.png)
+![tszzbvll8oefwfxniupcfhdinpg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tszzbvll8oefwfxniupcfhdinpg.png)
 > 图注：图片展示的是RabbitMQ管理界面中“Users”页面，处于“Admin”标签下。页面中“Add a user”区域被红色框突出显示，可添加新用户。其中“Username”输入框已输入“hmall”，“Password”输入框显示“123”，“Tags”下拉框选中“administrator”。该图片与上下文紧密相关，上下文提到接下来要给名为“hmall”的用户授权，此图直观呈现了添加新用户的操作界面及所需填写的信息。
 
 你会发现此时hmall用户没有任何`virtual host`的访问权限：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/SwGmb7FOkocIhixkyI6cTo7snOf.png)
+![swgmb7fokocihixkyi6cto7snof](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/swgmb7fokocihixkyi6cto7snof.png)
 > 图注：图片展示的是RabbitMQ管理界面中“Users”用户的管理页面。页面显示了所有用户信息，包括用户名、标签、可访问虚拟主机、是否有密码等字段。其中，用户名为“hmall”的用户，其“Can access virtual hosts”字段显示为“No access”，即无访问权限；“itheima”用户则有访问权限。该图片与上下文紧密相关，直观呈现了上下文中提到的hmall用户在创建后无任何虚拟主机访问权限的情况。
 
 接下来我们来给hmall用户授权。
@@ -590,41 +590,41 @@ RabbitMQ支持多租户，多个系统可以同时使用一个RabbitMQ。
 
 我们先退出登录：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/Nb1VbiPuuotxBHxJzJicf5mzn3g.png)
+![nb1vbipuuotxbhxjzjicf5mzn3g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nb1vbipuuotxbhxjzjicf5mzn3g.png)
 > 图注：图片展示的是RabbitMQ管理界面中“Users”选项卡下的用户管理页面。页面显示了两个用户，分别为“hmall”和“itheima”，其中“itheima”用户被高亮显示。该图片与上下文紧密相关，上下文提到在登录hmall账户后创建了“/hmall”虚拟主机，回到“users”菜单后，当前用户已具备对“/hmall”虚拟主机的访问权限，此图直观呈现了用户管理界面中“itheima”用户的状态，与上下文介绍的用户权限相关联。
 
 切换到刚刚创建的hmall用户登录，然后点击`Virtual Hosts`菜单，进入`virtual host`管理页：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/VDpHb79UhoIO2Ix9E1kcyHmxnSf.png)
+![vdphb79uhoio2ix9e1kcyhmxnsf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vdphb79uhoio2ix9e1kcyhmxnsf.png)
 > 图注：图片展示的是RabbitMQ管理界面中`Virtual Hosts`管理页。界面上方显示RabbitMQ版本为3.8.26，右上角有`Virtual host`下拉菜单，当前选中`All`。页面左侧有`Overview`、`Connections`等选项卡，右侧是`Virtual Hosts`区域，显示了`/`虚拟主机的相关信息，如状态为`running`，有1个用户，1条消息等。右下角有`Add a new virtual host`按钮。该图与上下文紧密相关，直观呈现了登录`hmall`账户后进入`virtual host`管理页的界面情况。
 
 可以看到目前只有一个默认的`virtual host`，名字为 `/`。
 
  我们可以给黑马商城项目创建一个单独的`virtual host`，而不是使用默认的`/`。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/C6pVb2mKQoEjSAxmoUwcLNRwnv1.png)
+![c6pvb2mkqoejsaxmouwclnrwnv1](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/c6pvb2mkqoejsaxmouwclnrwnv1.png)
 > 图注：这是RabbitMQ管理后台的虚拟主机创建页面，页面顶部显示RabbitMQ版本为3.8.26、Erlang版本24.2，右上角可查看当前登录用户为hmall，且已具备对/hmall虚拟主机的访问权限。页面核心区域的红色框标注了虚拟主机创建模块，模块内的“Name”输入框填写了“hmall”，“Description”输入框标注内容为“黑马商城项目专用”，下方设有“Add virtual host”按钮，用于完成指定虚拟主机的创建。
 
 创建完成后如图：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/TPBcbxdBeorF0nxlUNYcdpC1n2e.png)
+![tpbcbxdbeorf0nxlunycdpc1n2e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tpbcbxdbeorf0nxlunycdpc1n2e.png)
 > 图注：图片展示了RabbitMQ管理界面中“Virtual Hosts”页面。页面显示了所有虚拟主机信息，包括Name（名称）、Users（用户）、State（状态）、Messages（消息）等列。其中，“/”虚拟主机由“itheima”用户管理，状态为“running”，消息部分显示Ready为1，Unacked为0，Total为1；“/hmall”虚拟主机由“hmall”用户管理，状态也为“running”，但其消息部分各项数据均为NaN。该图与上下文介绍的基于虚拟主机的数据隔离效果相关，直观呈现了不同虚拟主机的管理及消息状态情况。
 
 由于我们是登录`hmall`账户后创建的`virtual host`，因此回到`users`菜单，你会发现当前用户已经具备了对`/hmall`这个`virtual host`的访问权限了：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/KR3TbFo54opK7cx4FpOc2o2onRg.png)
+![kr3tbfo54opk7cx4fpoc2o2onrg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kr3tbfo54opk7cx4fpoc2o2onrg.png)
 > 图注：图片展示的是RabbitMQ管理界面中“Users”页面。页面显示了所有用户信息，包括Name（用户名）、Tags（标签）、Can access virtual hosts（可访问虚拟主机）和Has password（是否有密码）等字段。其中，“hmall”用户被红色框突出显示，其Tags为“administrator”，Can access virtual hosts为“/hmall”，Has password为“·”。该图片与上文内容相关，用于说明登录“hmall”账户后创建的“virtual host”在“users”菜单中的访问权限情况。
 
 
 
 此时，点击页面右上角的`virtual host`下拉菜单，切换`virtual host`为 `/hmall`：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/GRtbb5NoYokjeMxEvuFcyU8jnCc.png)
+![grtbb5noyokjemxevufcyu8jncc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/grtbb5noyokjemxevufcyu8jncc.png)
 > 图注：图片展示了RabbitMQ管理界面中queues选项卡下的内容。页面上方显示RabbitMQ版本为3.8.26，Erlang版本为24.2，刷新时间为2023年6月19日13:39:20。右上角有“Refresh every 5 seconds”下拉菜单，当前选中“Virtual host: All”。下方“Virtual host”下拉菜单被红色框突出显示，选中“/hmall”。该图片与上文介绍基于虚拟主机的隔离效果相关，展示了切换虚拟主机后的界面情况。
 
 然后再次查看queues选项卡，会发现之前的队列已经看不到了：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/Tk1EbFfTZoGJXQxsUqccaZKrn00.png)
+![tk1ebfftzogjxqxsuqccazkrn00](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tk1ebfftzogjxqxsuqccazkrn00.png)
 > 图注：图片展示了RabbitMQ管理界面中“Queues”选项卡下的内容。页面显示“Queues”选项被选中，上方有“Virtual host”下拉菜单，当前选中“/hmall”。页面中部有“Pagination”和“Filter”等设置项，下方显示“... no queues ...”，表明当前没有队列。该图片与上文介绍基于虚拟主机的隔离效果相关，用于说明切换虚拟主机后，之前创建的队列在该界面中已不可见。
 
 这就是基于`virtual host `的隔离效果。
@@ -649,7 +649,7 @@ spring:
 
 在/hmall中新建simple.queue队列，重新进行收发消息的测试，发现消息发发放到了virtual-host: /hmall 下的队列，如下图：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/SGPLbAyhQos5ezxdrS5cXn5DnSe.png)
+![sgplbayhqos5ezxdrs5cxn5dnse](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sgplbayhqos5ezxdrs5cxn5dnse.png)
 > 图注：图片展示的是RabbitMQ管理界面中queues选项卡下的队列信息。页面显示了所有队列，共2个，其中/hmall下的simple.queue队列为经典类型，状态为idle，有1条消息，消息发送速率为0.20/s。该图片与上文测试内容相关，用于直观呈现基于虚拟主机隔离效果下，hmall用户在/hmall虚拟主机下创建的队列及消息状态情况，辅助说明消息发放在虚拟主机下的效果。
 
 再启动consumer服务接收消息。
@@ -664,7 +664,7 @@ spring:
 
 在入门程序中实现的是一种最简单的工作队列模型,消费者直接绑定到队列上，如下图: 
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/R8EybbKv2o1UXpx0GW0cBkPYnsg.png)
+![r8eybbkv2o1uxpx0gw0cbkpynsg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/r8eybbkv2o1uxpx0gw0cbkpynsg.png)
 > 图注：该图片对应文档中介绍的RabbitMQ基础工作队列模型的入门实现示意图，展现了最简单的工作队列通信结构：画面左侧的“P”代表生产者，它发出箭头指向标有“Queue”的队列模块，随后队列通过箭头指向画面右侧的“C”，“C”代表消费者。该图直观呈现了文档中描述的基础异步通信流程，即一个生产者将消息发送至队列，仅由一个消费者从队列接收消息的工作形式，也解释了此模型因仅单个消费者处理消息，处理能力较弱的特点。
 
 这种方式实现最基本的异步通信，一个生产者，一个队列，一个消费者，生产者将消息发到队列，消费者从队列接收消息。
@@ -676,7 +676,7 @@ spring:
 
 为了解决上边的问题可以使用到下边的方式，**让多个消费者绑定到一个队列，共同消费队列中的消息**。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/AcmCbWeCIoH7QBx4Lywc2BqhnSc.png)
+![acmcbwecioh7qbx4lywc2bqhnsc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/acmcbwecioh7qbx4lywc2bqhnsc.png)
 > 图注：这张图展示了RabbitMQ工作队列模型的改进结构，生产者P将消息发送至名为Queue的队列，该队列同时绑定了两个消费者C₁与C₂，符合文档中提到的“多个消费者绑定到一个队列，共同消费队列中的消息”的解决方案，用于应对任务量大或生产者发送消息速度快导致的消息堆积问题，相比入门程序中单个消费者的工作队列模型，该结构可提升消息处理能力，避免消息堆积的情况。
 
 #### 3.1.2 测试
@@ -687,7 +687,7 @@ spring:
 
 首先，我们在控制台创建一个新的队列，命名为`work.queue`：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/E1kJb2Z2gotsv0xxIn3cJp1Cnnf.png)
+![e1kjb2z2gotsv0xxin3cjp1cnnf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/e1kjb2z2gotsv0xxin3cjp1cnnf.png)
 > 图注：这张图片是RabbitMQ管理控制台的队列页面，展示了两个队列的信息，分别是名为simple.queue和work.queue，均处于idle状态，在Message区域中，两个队列的Ready、Unacked、Total消息数目前均为0，Message rates区域的各数值也均为0。该页面的Queues标签被高亮选中，work.queue还被红色框线重点标注，对应了文档中“创建新的队列，命名为work.queue”的操作步骤，呈现了创建后的队列在控制台的显示状态。
 
 ##### 3.1.2.2 发送消息程序
@@ -752,7 +752,7 @@ public void listenWorkQueue2(String msg) throws InterruptedException {
 
 观察mq控制台点击“work.queue”发现消费者程序和mq建立了两个通道（连接），在监听队列。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/TO5tbdN2EoLz3JxzYXccW5pwnzN.png)
+![to5tbdn2eolz3jxzyxccw5pwnzn](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/to5tbdn2eolz3jxzyxccw5pwnzn.png)
 > 图注：图片展示了RabbitMQ控制台中“Queues”标签页下的队列信息。关键信息有：消费者数量为2，消费者容量100%；消费者1和消费者2的Consumer tag分别为“amq.tag-n074m12sVsfGmlwqQ5R0jg”和“amq.tag-KPWyKw7n8Cn37p950mUQ”；Ack required、Exclusive、Prefetch count、Active等字段均为250；Activity status均为up。该图与上文测试工作队列模型中消费者程序和mq建立通道、监听队列的内容相关，直观呈现了消费者相关信息。
 
 
@@ -920,7 +920,7 @@ Work模型的使用：
 
 使用发布订阅模型可以实现上图的需求，**发布订阅模型可以实现一条消息发给多个队列**，每个队列绑定到同一个交换机，最终实现了向多个消费者发送一条消息,这种模式称为“发布/订阅”模型。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/J78fbFFpboSnAix6jmmclBtZnuh.png)
+![j78fbffpbosnaix6jmmclbtznuh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/j78fbffpbosnaix6jmmclbtznuh.png)
 > 图注：图片展示了发布订阅模型的组成部分。左侧有一个标记为“P”的生产者（Publisher），向中间的交换机（Exchange，用六边形表示）发送消息。交换机将消息推送到两个队列（Q1、Q2，用矩形表示），每个队列又对应一个消费者（C1、C2，用圆形表示）。该图直观呈现了生产者、交换机、队列和消费者在发布订阅模型中的关系，与上下文对发布订阅模型组成部分的介绍相契合。
 
 发布订阅模型里，生产者只能将消息发送到交换机，由交换机将消息推送到队列，交换机可以将消息推送给绑定它的所有队列，也可以有针对性的将消息推送给某几个队列，这就相当于有一批消费者订阅了消息，交换机根据各自的订阅去推送消息，组成部分如下：
@@ -957,7 +957,7 @@ Fanout，英文翻译是扇出，我觉得在MQ中叫广播更合适。
 
 在广播模式下，消息发送流程是这样的：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/GuJQbjWWnoFqAXxFhL7cgIZXnCh.png)
+![gujqbjwwnofqaxxfhl7cgizxnch](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gujqbjwwnofqaxxfhl7cgizxnch.png)
 > 图注：这张图直观呈现了RabbitMQ的fanout（扇出）工作模型。图中从左至右依次为发送消息的生产者publisher，之后是Fanout交换机，交换机向下分支连接了两个队列，分别为queue1和queue2。其中queue1连接对应的消费者consumer1，queue2连接对应的消费者consumer2，所有消费者均会接收到队列传递的消息，完整展示了广播模式下消息从生产者到交换机，再分发至所有绑定队列、最终传递给消费者的流程，和文档中介绍的fanout交换机工作步骤完全对应。
 
 - 1）  可以有多个队列
@@ -972,7 +972,7 @@ Fanout，英文翻译是扇出，我觉得在MQ中叫广播更合适。
 
 我们的计划是这样的：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/EcidbWDuYoYlF6xL6hxcqaJSnte.png)
+![ecidbwduyoylf6xl6hxcqajsnte](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ecidbwduyoylf6xl6hxcqajsnte.png)
 > 图注：图片展示了RabbitMQ中fanout交换机的工作模型。左侧为publisher，中间是名为“hmall.fanout”的交换机，右侧分别有“fanout.queue1”和“fanout.queue2”两个队列，每个队列对应一个consumer，分别为“consumer1”和“consumer2”。箭头从publisher指向交换机，再分别从交换机指向两个队列，最后从队列指向对应的consumer。该图直观呈现了消息从publisher经交换机分发到队列，再由队列传递给consumer的流程。
 
 - 创建一个名为` hmall.fanout`的交换机，类型是`Fanout`
@@ -982,29 +982,29 @@ Fanout，英文翻译是扇出，我觉得在MQ中叫广播更合适。
 
 在控制台创建队列`fanout.queue1`:
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/C0WybfDIkobtEXxhiZVcAm90nsf.png)
+![c0wybfdikobtexxhizvcam90nsf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/c0wybfdikobtexxhizvcam90nsf.png)
 > 图注：图片展示了RabbitMQ控制台中创建队列的界面。界面中“Type”下拉菜单被红色框突出显示，当前选中“Classic”类型。其他可填写的字段有“Name”（队列名称，已输入“fanout.queue1”）、“Durability”（持久性，已选“Durable”）、“Auto delete”（自动删除，已选“No”）等。下方还有“Arguments”参数设置区域，以及“Add queue”按钮。该图片与上下文关系紧密，是创建队列操作中设置队列类型等参数的展示，与上下文提到的在控制台创建队列`fanout.queue1`相呼应。
 
 在创建一个队列`fanout.queue2`：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/ZhQWbiCIdoaPzMxteMJcBcQDn6d.png)
+![zhqwbicidoapzmxtemjcbcqdn6d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zhqwbicidoapzmxtemjcbcqdn6d.png)
 > 图注：图片展示了RabbitMQ控制台中创建队列的界面。在“Add a new queue”区域，Name字段被红框突出显示，其值为“fanout.queue2”，表明正在创建名为“fanout.queue2”的队列。下方还有Durability、Auto delete等设置项，以及Arguments、Add queue等按钮。该图片与文档中“3.3.2.1创建队列”部分内容相关，用于指导在RabbitMQ控制台创建队列的操作，是创建队列步骤中的关键展示界面。
 
 ##### 3.3.2.2 创建交换机
 
 然后再创建一个交换机hmall.fanout：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/OrBjbjWGfotYl8x3TS9c2rrWnBc.png)
+![orbjbjwgfotyl8x3ts9c2rrwnbc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/orbjbjwgfotyl8x3ts9c2rrwnbc.png)
 > 图注：图片展示了RabbitMQ管理界面中创建交换机的设置界面。在“Add a new exchange”区域，Name处输入“hmall.fanout”，Type下拉选择“fanout”，Virtual host为“/hmall”。该图片与文档中“3.3.2.2创建交换机”内容相关，用于说明在RabbitMQ控制台创建名为“hmall.fanout”、类型为“fanout”的交换机的操作步骤，是测试创建队列、绑定队列等后续操作的基础。
 
 ##### 3.3.2.3 绑定队列到交换机
 
 然后绑定两个队列到交换机：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/XgB1b09ERoCpsJxleM6cwxLonWf.png)
+![xgb1b09erocpsjxlem6cwxlonwf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xgb1b09erocpsjxlem6cwxlonwf.png)
 > 图注：图片展示的是RabbitMQ管理界面中fanout交换机的绑定设置页面。页面上方有Overview、Connections等选项卡，当前选中“Exchanges”。在“Bindings”区域，有“Add binding from this exchange”输入框，其中“To queue”下拉框选中“fanout.queue1”，下方有“Bind”按钮。该图片与上下文关系紧密，是3.3.2.3节“绑定队列到交换机”内容的示例，用于说明将队列fanout.queue1绑定到交换机hmall.fanout的操作步骤。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/EWMqbIkMDoXjAaxbDx5caRbBn4b.png)
+![ewmqbikmdoxjaaxbdx5carbbn4b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ewmqbikmdoxjaaxbdx5carbbn4b.png)
 > 图注：图片展示的是RabbitMQ管理界面中fanout交换机的绑定设置页面。页面上方有Overview、Connections等选项卡，当前选中“Exchanges”。在“Bindings”区域，有“Add binding from this exchange”输入框，其中“To queue”下拉框被红色框突出显示，其右侧输入框内显示“fanout.queue2”，下方还有“Routing key”和“Arguments”输入框，最下方有“Bind”按钮。该图片与文档中“3.3.2.3绑定队列到交换机”内容相关，用于说明将队列与交换机进行绑定的操作步骤。
 
 ##### 3.3.2.4 发送消息
@@ -1026,7 +1026,7 @@ public void testFanoutExchange() {
 
 发送成功查看mq控制台消息转发到了绑定此交换机的两个队列
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/C03PbFZAFo8sPYxMUnpcpouRnth.png)
+![c03pbfzafo8spyxmunpcpournth](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/c03pbfzafo8spyxmunpcpournth.png)
 > 图注：图片展示的是RabbitMQ控制台中队列界面的“Overview”视图。界面中列出了两个队列信息，分别为“/hmall168 fanout.queue1 classic”和“/hmall168 fanout.queue2 classic”，其Type均为classic，Features均为D Args，State均为idle，Ready、Unacked、Total均为1。该图片与上下文关系紧密，是在介绍在RabbitMQ中测试fanout交换机时，进入队列界面查看队列监听者情况的操作步骤，直观呈现了队列状态等关键信息。
 
 
@@ -1053,12 +1053,12 @@ public void listenFanoutQueue2(String msg) {
 
 进入队列界面，点击fanout.queue1：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/BfTybxH78oQG7qx8bPyc3U06n3g.png)
+![bftybxh78oqg7qx8bpyc3u06n3g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bftybxh78oqg7qx8bpyc3u06n3g.png)
 > 图注：图片展示的是RabbitMQ管理控制台中队列界面。界面显示了所有队列信息，包括虚拟主机、名称、类型、状态等。其中，名为“fanout.queue1”的队列被红色箭头指向，其类型为classic，状态为idle，Ready、Unacked、Total等消息相关数据均为0，incoming、deliver / get、ack等速率数据也为0。该图片与上下文关系紧密，用于说明在测试RabbitMQ工作模型时，进入队列界面查看队列监听情况的操作结果。
 
 进入队列界面，查看consumers，下图表示fanout.queue1队列有一个监听者。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/Ba8mbDxriog8hxx9pW3cBGTYnbb.png)
+![ba8mbdxriog8hxx9pw3cbgtynbb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ba8mbdxriog8hxx9pw3cbgtynbb.png)
 > 图注：图片展示的是rabbitmq控制台中fanout.queue1队列的消费者信息界面。界面中有Channel、Consumer tag、Ack required、Exclusive、Prefetch count、Active、Activity status、Arguments等列。其中，Channel列显示为192.168.101.1:59958 (3)；Consumer tag列显示为amq.ctag-YvtsHhYVWowIyc09HChueQ；Active列显示为up。该图片与上下文关系紧密，用于说明在rabbitmq控制台查看消费者监听情况时，fanout.queue1队列有一个监听者这一内容。
 
 同样的方法可以查看fanout.queue2队列的监听情况。
@@ -1076,17 +1076,17 @@ fanout.queue1和fanout.queue2每个队列都有一个监听者。
 
 下边我们把consumer服务启动两个实例
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/EKNrbn4T3oJRe8xh3DPcyCfRnlb.png)
+![eknrbn4t3ojre8xh3dpcycfrnlb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/eknrbn4t3ojre8xh3dpcycfrnlb.png)
 > 图注：图片展示了RabbitMQ管理界面中ConsumerApplication服务的运行状态。界面左侧为导航栏，选中“Running”选项。右侧显示“ConsumerApplication (1)”和“ConsumerApplication”两个服务图标，其中“ConsumerApplication (1)”图标旁有数字“1”，表明该服务有1个实例运行。该图与上文测试启动多个消费者实例的内容相关，直观呈现了服务运行情况，辅助理解消费者实例的启动状态。
 
 此时再观察fanout.queue1和fanout.queue2的监听者，发现每个队列有两个监听者
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/DVJPbbtTVoaQ8Mxta2Ycf84Dnj4.png)
+![dvjpbbttvoaq8mxta2ycf84dnj4](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dvjpbbttvoaq8mxta2ycf84dnj4.png)
 > 图注：图片展示了RabbitMQ管理控制台中“Consumers”（消费者）的界面。列标题包括Channel（通道）、Consumer tag（消费者标签）、Ack required（确认要求）、Exclusive（排他）、Prefetch count（预取计数）、Active（活动）、Activity status（活动状态）和Arguments（参数）。界面中有两条记录，分别对应两个消费者实例，其Channel、Consumer tag、Ack required、Exclusive、Prefetch count、Active、Activity status等信息均有显示。该图片与上下文介绍的RabbitMQ工作模型中fanout交换机测试内容相关，展示了消费者实例的配置情况。
 
 此时的结果相当于下图：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/Fikabj5RkoGeL3xAHYncjsY1n0f.png)
+![fikabj5rkogel3xahyncjsy1n0f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fikabj5rkogel3xahyncjsy1n0f.png)
 > 图注：图片展示了RabbitMQ中fanout交换机的工作模型。左侧为publisher，中间是fanout交换机，右侧有两个队列，分别为queue1和queue2，每个队列对应两个消费者，分别为consumer1、consumer3和consumer2、consumer4。箭头表示消息传递方向，如publisher向fanout交换机发送消息，fanout交换机将消息分别发送到queue1和queue2，再由对应的消费者接收。该图与上下文内容对应，直观呈现了fanout交换机的分发机制。
 
 此时执行发送消息程序后四个消息者都可以收到消息吗？
@@ -1118,7 +1118,7 @@ fanout.queue1和fanout.queue2每个队列都有一个监听者。
 
 在Fanout模式中，一条消息，会被所有订阅的队列都消费。但是，在某些场景下，我们希望不同的消息被不同的队列消费。这时就要用到Direct类型的Exchange。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/DbpEbmbzUolAaTxdiIYctT5Anje.png)
+![dbpebmbzuolaatxdiiyctt5anje](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dbpebmbzuolaatxdiiyctt5anje.png)
 > 图注：这张图是Direct交换机工作模型的示意图，展示了RabbitMQ中Direct模式的消息流转逻辑。图中左侧的publisher作为消息发送方，向中间的Direct exchange（Direct交换机）发送消息。Direct交换机分别绑定了queue1和queue2两个队列，其中queue1的bindingKey为blue和red，对应的消费者consumer1监听key为blue和red的消息；queue2的bindingKey为yellow和red，对应的消费者consumer2监听key为yellow和red的消息。当publisher发送消息时，会携带指定的RoutingKey，Direct交换机会根据消息的RoutingKey与队列绑定的bindingKey是否完全匹配，将消息路由到对应的队列，仅匹配的队列对应的消费者会接收到消息。
 
 在Direct模型下：
@@ -1131,7 +1131,7 @@ fanout.queue1和fanout.queue2每个队列都有一个监听者。
 
 **案例需求如图**：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/IK9tbnjTLocp0IxUSjNcEM5Jnod.png)
+![ik9tbnjtlocp0ixusjncem5jnod](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ik9tbnjtlocp0ixusjncem5jnod.png)
 > 图注：这张图展示了Direct交换机模式下RabbitMQ的工作模型，对应文档中Direct交换机的案例需求。图中左侧的publisher向名为hmall.direct的exchange发送消息，该exchange的消息仅会转发到绑定了对应bindingKey的队列中。上方的direct.queue1绑定了hmall.direct，其bindingKey为blue和red，关联的consumer1负责接收队列消息；下方的direct.queue2同样绑定hmall.direct，bindingKey为yellow和red，关联的consumer2负责接收该队列的消息，清晰呈现了案例里交换机、队列与消费者的绑定和消息接收关系。
 
 1.  声明一个名为`hmall.direct`的交换机
@@ -1148,27 +1148,27 @@ fanout.queue1和fanout.queue2每个队列都有一个监听者。
 
 首先在控制台声明两个队列`direct.queue1`和`direct.queue2`，这里不再展示过程：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/ZN4fbPB2qoNV8Wxh7kXcp0uUnij.png)
+![zn4fbpb2qonv8wxh7kxcp0uunij](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zn4fbpb2qonv8wxh7kxcp0uunij.png)
 > 图注：图片展示的是RabbitMQ管理界面中Queues（队列）页面。页面上方有Overview、Connections、Channels、Exchanges、Queues、Admin等选项卡，当前选中Queues。表格中列出了多个队列信息，如虚拟主机（Virtual host）、名称（Name）、类型（Type）、状态（State）、消息状态（Messages）等。其中，`direct.queue1`和`direct.queue2`被红色框突出显示，其类型为classic，状态为idle，消息状态中Ready、Unacked、Total均为0。该图与上下文介绍Direct交换机相关，展示了已创建的队列信息。
 
 然后声明一个direct类型的交换机，命名为`hmall.direct`:
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/XiOfb1eiUozrKmxUoaDc3WdGnSb.png)
+![xiofb1eiuozrkmxuoadc3wdgnsb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xiofb1eiuozrkmxuoadc3wdgnsb.png)
 > 图注：这张图片展示了RabbitMQ管理控制台中创建交换机的界面，对应上下文里声明direct类型交换机的操作。界面内红色框选中的核心部分显示，要创建的交换机名称为“hmall.direct”，类型选择为“direct”，符合Direct交换机的配置要求；界面中还包含虚拟主机选择、持久化、自动删除等其他交换机配置选项，底部设有“Add exchange”按钮用于完成创建操作，该配置正是上下文提及的绑定队列操作的基础前提。
 
 然后使用`red`和`blue`作为key，绑定`direct.queue1`到`hmall.direct`：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/O06sbZQBPoBe8Vx6ey9cA4Qxnye.png)
+![o06sbzqbpobe8vx6ey9ca4qxnye](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/o06sbzqbpobe8vx6ey9ca4qxnye.png)
 > 图注：图片展示了RabbitMQ管理界面中Direct交换机`hmall.direct`的配置页面。在“Bindings”区域，显示了从该交换机添加的绑定信息，包括将`direct.queue1`队列与`hmall.direct`交换机绑定，以及使用`red`作为路由键。下方有“Add binding from this exchange”区域，可选择绑定到队列或交换机，当前选中队列`direct.queue1`，并输入了`red`作为路由键，右下角有“Bind”按钮。该图片与上文“使用`red`和`blue`作为key，绑定`direct.queue1`到`hmall.direct`”的内容对应，直观呈现了操作步骤。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/EgYfb4gLkoxs3NxdfM5c8OR9ntb.png)
+![egyfb4glkoxs3nxdfm5c8or9ntb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/egyfb4glkoxs3nxdfm5c8or9ntb.png)
 > 图注：这张图片展示的是RabbitMQ控制台中“hmall.direct”交换机的绑定操作界面，该交换机位于虚拟主机“/hmall”。界面中核心操作区域为“Add binding from this exchange”模块，“To queue”下拉选项已选择队列“direct.queue1”，“Routing key”输入框已填入值“blue”，该操作是将direct.queue1队列通过路由键blue绑定至hmall.direct交换机，是文档中Direct交换机测试流程里绑定队列与交换机步骤的具体操作界面。
 
 
 
 同理，使用`red`和`yellow`作为key，绑定`direct.queue2`到`hmall.direct`，步骤略，最终结果：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/WzF1byY8io2FIAxSPgEcLxbVnCd.png)
+![wzf1byy8io2fiaxspgeclxbvncd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wzf1byy8io2fiaxspgeclxbvncd.png)
 > 图注：这张图片展示的是RabbitMQ的web管理界面，处于“Exchanges”页面，显示虚拟主机为`/hmall`的`hmall.direct`交换机的绑定关系。页面的“Bindings”区域列出了该交换机与队列的绑定条目：`direct.queue1`分别通过`blue`和`red`两个路由键绑定到该交换机，`direct.queue2`分别通过`red`和`yellow`两个路由键绑定到该交换机，每个绑定条目右侧都配有“Unbind”解绑按钮，对应文档中Direct交换机绑定队列和路由键的配置结果。
 
 ##### 3.4.2.2 监听队列
@@ -1209,7 +1209,7 @@ public void testSendDirectExchange() {
 
 由于使用的red这个key，所以两个消费者都收到了消息：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/CwrCbNC8Qo4fqnx2qVocwYgYnJg.png)
+![cwrcbnc8qo4fqnx2qvocwygynjg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cwrcbnc8qo4fqnx2qvocwygynjg.png)
 > 图注：图片展示了在使用Direct交换机时，consumer服务的ConsumerApplication启动成功及两个消费者接收到消息的情况。时间戳为2021年6月19日21:51:17:303，显示ConsumerApplication启动耗时0.971秒。下方有两条消息，分别显示消费者1和消费者2接收到direct.queue1和direct.queue2的消息，内容均为“【红色警报！日本乱排核废水，导致海洋生物变异，惊现哥斯拉！】”。该图片与上下文紧密相关，直观呈现了Direct交换机工作时消费者接收到消息的场景。
 
 我们再切换为blue这个key：
@@ -1228,7 +1228,7 @@ public void testSendDirectExchange() {
 
 你会发现，只有消费者1收到了消息：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/SkXubPR6Po4pQfxm4hAc2Bmjnac.png)
+![skxubpr6po4pqfxm4hac2bmjnac](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/skxubpr6po4pqfxm4hac2bmjnac.png)
 > 图注：这张图片是RabbitMQ Direct交换机测试的日志输出，对应上下文里切换为blue这个key的操作结果。图片显示了消费者收到消息的情况，其中消费者2收到了匹配red routing key的第一条消息，而消费者1除了收到该red消息外，还收到了匹配blue routing key的消息，该消息被红色框标注，内容为"最新报道，哥斯拉是居民自治巨型气球，虚惊一场！"，这验证了Direct交换机按绑定的routing key精准转发消息的特性，即仅绑定对应routing key的队列能收到消息。
 
 
@@ -1275,7 +1275,7 @@ public void testSendDirectExchange() {
 
 图示：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/OMyPb2PC5ouPt2xYpSYc5AcZnlg.png)
+![omypb2pc5oupt2xypsyc5acznlg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/omypb2pc5oupt2xypsyc5acznlg.png)
 > 图注：这张图展示了RabbitMQ Topic交换机的工作示例模型，核心内容围绕Topic交换机的BindingKey匹配规则与消息路由逻辑。图中publisher向名为hmall.topic的exchange发送消息，exchange通过不同的绑定规则将消息路由至对应的队列；topic.queue1的绑定规则为“china.#”，可匹配所有以“china.”开头的RoutingKey，topic.queue2的绑定规则为“#.news”，可匹配所有以“.news”结尾的RoutingKey，最终两条队列分别将消息转发给consumer1与consumer2，直观呈现了Topic交换机通过通配符BindingKey实现消息定向路由的机制。
 
 假如此时publisher发送的消息使用的`RoutingKey`共有四种：
@@ -1324,7 +1324,7 @@ public void testSendDirectExchange() {
 
 最终结果如下：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/Mph5bWukRoJiWOxn349cjnJ1nJd.png)
+![mph5bwukrojiwoxn349cjnj1njd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mph5bwukrojiwoxn349cjnj1njd.png)
 > 图注：图片展示了RabbitMQ管理界面中Topic交换机“hmall.topic”的绑定信息。在“Bindings”区域，显示了两个绑定关系，分别是“topic.queue1”绑定“china.#”，“topic.queue2”绑定“#.news”。每个绑定关系右侧都有“Unbind”按钮。该图与上文“3.5.2测试”中创建队列和交换机、绑定队列的内容相关，直观呈现了上文提到的绑定配置情况。
 
 ##### 3.5.2.2 消息接收
@@ -1404,24 +1404,24 @@ public void testSendTopicExchange() {
 
 SpringAMQP提供了一个Queue类，用来创建队列：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/BaRtbx49CoL8ncxqrj5cO9eRnGe.png)
+![bartbx49col8ncxqrj5co9ernge](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bartbx49col8ncxqrj5co9ernge.png)
 > 图注：图片展示了SpringAMQP中Queue类的相关信息。Queue类是一个简单的容器，用于收集描述队列的信息，常与AmqpAdmin配合使用。作者为Mark Pollack和Gary Russell。该类继承了AbstractDeclarable并实现了Cloneable接口。此图片与文档中介绍SpringAMQP提供Queue类用来创建队列的内容相关，是对Queue类的定义和基本信息的直观呈现。
 
 
 
 SpringAMQP还提供了一个Exchange接口，来表示所有不同类型的交换机：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/UkFabxNT6oGWAUxuzARc38T4noh.png)
+![ukfabxnt6ogwauxuzarc38t4noh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ukfabxnt6ogwauxuzarc38t4noh.png)
 > 图注：图片展示了RabbitMQ中Exchange的继承关系。Exchange类是所有不同类型的交换机的基类，其下有AbstractExchange抽象类。AbstractExchange类下有TopicExchange、CustomExchange、FanoutExchange、DirectExchange、HeadersExchange等具体类型。其中，FanoutExchange被红色框突出显示。该图与上下文紧密相关，上下文在介绍SpringAMQP提供的Exchange接口时，提到可通过ExchangeBuilder简化创建过程，此图直观呈现了不同Exchange类型及其继承关系，帮助理解相关内容。
 
 我们可以自己创建队列和交换机，不过SpringAMQP还提供了ExchangeBuilder来简化这个过程：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/XAaHb9RifouZ6jxPEEicdPiNn4f.png)
+![xaahb9rifouz6jxpeeicdpinn4f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xaahb9rifouz6jxpeeicdpinn4f.png)
 > 图注：这张图片展示了SpringAMQP中用于简化交换机创建的ExchangeBuilder相关的API方法列表，包含多个核心方法。其中，用于创建不同类型交换机的方法被重点突出显示，分别有构建直连交换机的directExchange、主题交换机的topicExchange、广播交换机的fanoutExchange、头交换机的headersExchange，以及用于设置交换机特性的autoDelete、durable、withArgument等方法，构造方法ExchangeBuilder可指定交换机名称与类型，这些方法能简化RabbitMQ交换机的声明流程，对应文档中提及的用ExchangeBuilder简化交换机创建的内容。
 
 而在绑定队列和交换机时，则需要使用BindingBuilder来创建Binding对象：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/Jh90bDCB8oRF54xo1A0cDCF7nch.png)
+![jh90bdcb8orf54xo1a0cdcf7nch](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jh90bdcb8orf54xo1a0cdcf7nch.png)
 > 图注：这张图片是名为BindingBuilder的工具类相关内容，展示了该类的结构与可用方法，其上方的蓝色标题栏标注了类名“BindingBuilder”。图片中包含BindingBuilder的构造方法“BindingBuilder()”，以及两个核心方法：一个是绑定队列的方法“bind(Queue): DestinationConfigurer”，另一个是绑定交换机的方法“bind(Exchange): DestinationConfigurer”。这些内容对应了RabbitMQ中绑定队列与交换机时创建Binding对象的相关工具，是文档中介绍的SpringAMQP用于构建Binding对象的核心类及方法的具象展示，能够辅助理解文档中关于BindingBuilder的功能说明。
 
 ##### 3.8.1.2 API方式声明举例
@@ -1620,7 +1620,7 @@ public void listenTopicQueue2(String msg){
 
 Spring的消息发送代码接收的消息体是一个Object：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/IILhbq3WqoCAXVxngaxc7dkankc.png)
+![iilhbq3wqocaxvxngaxc7dkankc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iilhbq3wqocaxvxngaxc7dkankc.png)
 > 图注：这张图片展示了AmqpTemplate.java文件的部分代码内容，具体是convertAndSend方法的定义，该方法的作用是将Java对象转换为AMQP消息并发送到指定的交换机。方法的参数列表中明确包含名为object message的参数，这个参数对应上下文所述的、Spring消息发送代码接收的消息体，正是后续要通过消息转换器进行序列化处理的对象，也直观呈现了JDK序列化特性所处理的目标对象类型。
 
 而在数据传输时，它会把你发送的消息序列化为字节发送给MQ，接收消息的时候，还会把字节反序列化为Java对象。
@@ -1639,7 +1639,7 @@ Spring的消息发送代码接收的消息体是一个Object：
 
 1）创建测试队列:object.queue
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/HA0RbhS8xo9kXpxXTO7cDgfcnTg.png)
+![ha0rbhs8xo9kxpxxto7cdgfcntg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ha0rbhs8xo9kxpxxto7cdgfcntg.png)
 > 图注：这是RabbitMQ管理界面的Queues页面，版本为RabbitMQ 3.8.26，当前展示了所有队列的信息，本次测试中创建的队列“object.queue”被红色框标注出来，该队列所属虚拟主机为“/hmall”，类型为classic，功能标识为D，状态为idle，当前无待处理消息，符合测试默认消息转换器时需要创建该测试队列的操作需求，用于后续观察发送Map对象时的消息体格式。
 
 
@@ -1666,7 +1666,7 @@ public void testSendMap() throws InterruptedException {
 
 发送消息后查看控制台：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/JyVebsqJGoJnjHxBuU7cy7bJnOd.png)
+![jyvebsqjgojnjhxbuu7cy7bjnod](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jyvebsqjgojnjhxbuu7cy7bjnod.png)
 > 图注：图片展示的是RabbitMQ管理控制台中Get messages界面。在Encoding下拉菜单中选择“Auto string / base64”，Payload部分以base64编码显示了消息内容，其中“content_type: application/x-java-serialized-object”以红色框突出显示。该图片与文档中测试默认转换器的内容相关，用于直观呈现发送Map对象消息后，控制台中消息体的格式情况，以验证JDK序列化存在的问题。
 
 可以看到消息格式非常不友好。
@@ -1731,7 +1731,7 @@ public class MesaageConfig {
 
 此时，我们到MQ控制台**删除**`object.queue`中的旧的消息。然后再次执行刚才的消息发送的代码，到MQ的控制台查看消息结构：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/TAqabw3lLoASL1xhuWMcAkMBntg.png)
+![taqabw3lloasl1xhuwmcakmbntg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/taqabw3lloasl1xhuwmcakmbntg.png)
 > 图注：图片展示的是MQ控制台中获取消息的界面。上方显示“Get Message(s)”，下方“Message 1”处，Exchange为(AMQP default)，Routing Key为object.queue，Properties部分有message_id、priority等信息，content_encoding为UTF - 8，content_type为application/json。Payload部分显示了JSON格式的数据，包含name、age等字段。该图片与上下文关系为：在配置消息转换器并测试后，通过此界面查看消息结构，以验证消息转换器配置是否正确。
 
 #### 3.9.3 消费者接收Object
@@ -1799,7 +1799,7 @@ Lazy Queue 通过将大部分消息存储在磁盘上而不是内存中来减少
 
 在添加队列的时候，添加`x-queue-mod=lazy`参数即可设置队列为Lazy模式：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/GDLSbFXP2onHVKx0600cd0rxn1c.png)
+![gdlsbfxp2onhvkx0600cd0rxn1c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gdlsbfxp2onhvkx0600cd0rxn1c.png)
 > 图注：这张图片展示了RabbitMQ控制台添加新队列的配置界面，对应文档中通过控制台配置Lazy模式队列的内容。界面中已经设置了虚拟主机为/hmall，队列类型为Classic，队列名称为lazy.queue，持久化属性为Durable；在参数区域，红框标注了`x-queue-mode`参数，其值被设为lazy，且数据类型选择为String，鼠标光标正指向下方的Lazy mode选项，说明通过该界面的参数配置即可完成Lazy模式队列的创建，契合文档中“添加队列时配置`x-queue-mod=lazy`参数设置Lazy模式”的说明。
 
 
@@ -1847,7 +1847,7 @@ public void testLazyQueue() {
 
 写入成功观察队列信息：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/FJjabAD7Wo6VsGxoVaNcVcsbnMh.png)
+![fjjabad7wo6vsgxovancvcsbnmh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fjjabad7wo6vsgxovancvcsbnmh.png)
 > 图注：这张图片展示了惰性队列测试后的控制台详情信息，该队列的Features部分已配置`x-queue-mode: lazy`参数，符合惰性队列的设置要求。消息统计区域明确标注“In memory”对应数值为0，“Persistent”对应数值为100，结合上下文说明这100条消息全部存储在磁盘，内存中无消息，与测试流程里惰性队列的存储结果完全对应。该队列处于idle状态，无消费者，消息总数、就绪数均为100，未确认数为0，消息总大小为2.2KiB，符合惰性队列的存储特性。
 
 100条消息全部在磁盘，内存消息个数为0.
@@ -1856,7 +1856,7 @@ public void testLazyQueue() {
 
 再向非惰性队列写入100条消息观察消息存储情况
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/EG3hbznK8oIvBQxYdCScbsrQnme.png)
+![eg3hbznk8oivbqxydcscbsrqnme](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/eg3hbznk8oivbqxydcscbsrqnme.png)
 > 图注：图片展示的是RabbitMQ管理控制台中队列的详细信息页面。页面显示队列状态为idle，消费者数量为0，消费者容量为0%。消息总数为100，其中内存消息100条，持久性消息100条，消息体大小均为2.7 kiB，处理内存为144 kiB。该图片与文档中“测试流程”部分相关，用于说明在创建惰性队列并写入100条消息后，观察到100条消息全部在磁盘，内存消息个数为0的情况。
 
 100条消息分别在内存和磁盘存储。
@@ -1909,7 +1909,7 @@ Lazy Queue 惰性队列将大部分消息存储在磁盘上而不是内存中来
 
 设置x-max-priority ，定义优先级的最大值
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/Qrf6bWXixoLk9IxmGxpcEePBnOf.png)
+![qrf6bwxixolk9ixmgxpceepbnof](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qrf6bwxixolk9ixmgxpceepbnof.png)
 > 图注：图片展示了RabbitMQ管理界面中创建优先级队列时设置参数的界面。在Arguments区域，x - max - priority参数被突出显示，其值为10，类型为Number。该图片与文档中“创建优先级队列：priority.queue”部分内容相关，用于说明设置x - max - priority，定义优先级最大值的操作，是创建优先级队列时设置参数的示例。
 
 #### 4.6.3 测试
@@ -1941,7 +1941,7 @@ public void testPriorityQueue() {
 
 发送成功观察控制台：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/LRHRbAqQRoflTAxtVAOctoF4nBh.png)
+![lrhrbaqqrofltaxtvaoctof4nbh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lrhrbaqqrofltaxtvaoctof4nbh.png)
 > 图注：该图片是MQ测试优先级队列时的控制台界面内容，核心显示了优先级队列的相关信息。其中明确标注了队列名称为priority.queue，类型为classic，还存在“D”“Pri”等标识，同时能看到队列的idle状态，以及100、0、100等相关数值，这些数值对应消息的相关统计数据，直观呈现了测试优先级队列运行时的控制台状态，和文档中测试优先级队列、观察控制台的内容相呼应，体现了该队列的运行情况。
 
 运行消费程序
@@ -1969,7 +1969,7 @@ public void listenPriorityQueue(String msg) throws InterruptedException {
 
 如图：
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/RPUzbA0cHoQVUZxVQLKc1E4QnZg.png)
+![rpuzba0choqvuzxvqlkc1e4qnzg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rpuzba0choqvuzxvqlkc1e4qnzg.png)
 > 图注：这张图展示了业务改造后的消息队列（MQ）交易流程，结合交易服务的改造需求：支付服务完成后发送含订单ID的消息，通过`pay.direct`类型的交换机，携带`pay.success`的路由键，将消息投递到绑定的`pay.success.queue`队列，交易服务监听该队列获取消息后，将订单状态更新为已支付。其余关联服务中，用户服务会扣减余额，通知服务向用户发送短信，积分服务增加用户积分，各服务操作后均对应更新自身的数据库。
 
 说明：目前没有通知服务和积分服务，因此我们只关注交易服务，步骤如下：
@@ -2085,7 +2085,7 @@ public void tryPayOrderByBalance(PayOrderFormDTO payOrderDTO) {
 
 在trade-service服务中定义一个消息监听类，接收到消息，调用方法更新订单状态为已支付。
 
-![](../../../../../Attachments/development/architecture/microservices/message-queue-mq/JFxJbDmx8oSqkOx6EgscI8a3nlh.png)
+![jfxjbdmx8osqkox6egsci8a3nlh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jfxjbdmx8osqkox6egsci8a3nlh.png)
 > 图注：这张图片展示了IDEA开发工具中trade-service服务的项目目录结构，目录层级从外层到内层依次展开，可见该服务包含logs、src等子目录。在src/main/java/com.hmall.trade路径下，有多个功能子目录，其中被红框标注的listener目录中，存在名为PayStatusListener的类，这正是文档中提及的在trade-service服务里定义的消息监听类，该类用于接收支付成功的消息，进而调用方法更新订单状态为已支付。
 
 其代码如下：

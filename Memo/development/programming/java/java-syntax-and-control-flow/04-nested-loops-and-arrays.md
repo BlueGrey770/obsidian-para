@@ -260,7 +260,7 @@ private static void matrixPrint2() {
 
 **题目: 请使用嵌套循环在控制输出九九乘法口诀表，如下图所示：**
 
-![](../../../../../Attachments/development/programming/java/java-syntax-and-control-flow/Lz3BbZsQzonMTox46JHc2cjankg.png)
+![lz3bbzsqzonmtox46jhc2cjankg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lz3bbzsqzonmtox46jhc2cjankg.png)
 > 图注：图片展示的是九九乘法口诀表，从1×1=1到9×9=81，每行每列数字相乘的结果依次排列。该图片与文档中“请使用嵌套循环在控制输出九九乘法口诀表，如下图所示”的题目相关，是该题目答案的示例，直观呈现了九九乘法口诀表的结构，帮助学习者理解题目要求，即使用嵌套循环在控制台输出类似格式的九九乘法口诀表。
 
 > 温馨提示: **\t**可以实现制表符的书写, 也就是键盘中tab键的效果

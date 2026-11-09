@@ -393,7 +393,7 @@ public class Test {
 
 **题目: 下面程序编译是否会报错并说明原因？**
 
-![](../../../../../Attachments/development/programming/java/oop/AI4pbcmhZoMzjbxSNmZc5x3Oncf.png)
+![ai4pbcmhzomzjbxsnmzc5x3oncf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ai4pbcmhzomzjbxsnmzc5x3oncf.png)
 > 图注：图片展示了一段Java代码，定义了两个类。`Fu`类有一个带参数的构造方法，用于输出“Fu有参数的构造方法”；`Zi`类继承自`Fu`类，其构造方法无参数，用于输出“Zi无参数的构造方法”。该代码用于说明继承之后子类和父类构造函数的特点，是课堂问答中关于程序编译是否会报错并说明原因的示例代码。
 
 **目标: 掌握继承之后子类和父类构造函数的特点**

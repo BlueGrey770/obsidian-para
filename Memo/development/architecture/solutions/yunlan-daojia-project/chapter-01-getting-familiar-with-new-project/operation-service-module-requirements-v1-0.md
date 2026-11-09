@@ -27,14 +27,14 @@ aliases:
 
 **1、进入服务类型列表**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/SxrAbyRx3ovAyxxsT7FckLi9neg.png)
+![sxrabyrx3ovayxxst7fckli9neg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sxrabyrx3ovayxxst7fckli9neg.png)
 > 图注：该图片是服务类型管理的列表页面，属于运营服务管理模块的服务类型列表界面，是操作流程中第一步“进入服务类型列表”对应的页面内容。页面以表格形式呈现服务类型相关信息，包含服务类型编号、服务类型、服务类型图标、服务类型图片、排序、状态、更新时间、操作等列；当前列表内有2条已启用的服务类型数据，分别为家政服务（排序1）和家电维修（排序2），每条数据的操作栏设有删除、查看服务项、编辑、禁用（或启用）的功能按钮，页面右上角有“新建”按钮，底部带有分页控件，当前处于第2页，可切换页码或调整分页条数。
 
 
 
 **2、新建一个服务类型**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/XueBb84NgoZKqyxf2CTcoR6En4d.png)
+![xuebb84ngozkqyxf2ctcor6en4d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xuebb84ngozkqyxf2ctcor6en4d.png)
 > 图注：这张图片是运营服务类型管理流程里“新建一个服务类型”对应的操作界面，标题为“新建服务类型”，是用于创建新服务类型的表单页面。页面内设有多个必填项，分别为带星号的“服务类型”输入框，提示输入类型名称；带星号的“排序”输入框，提示输入数字，旁配有调整顺序的上下箭头控件；另外还有带星号的“服务类型图标”和“服务类型图片”的上传区域，分别提示上传符合格式及大小要求的对应文件，页面底部设有“取消”和“保存”两个功能按钮，用于放弃或完成本次服务类型的新建操作。
 
 内容如下：
@@ -51,24 +51,24 @@ aliases:
 
 **3、新建的服务类型启用后才可以在其下边添加服务项。**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/Lkhdb9dxOoNBHyxRNgBcQFvIn5g.png)
+![lkhdb9dxoonbhyxrngbcqfvin5g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lkhdb9dxoonbhyxrngbcqfvin5g.png)
 > 图注：该图片展示了运营服务管理模块中服务类型的管理列表页面，呈现了“家政服务”“家电维修”两类服务类型的编号、名称、图标、图片、排序、状态及更新时间信息，其中两类服务类型均处于已启用状态，每类服务类型右侧的操作栏均提供了删除、查看服务项、编辑的功能选项，“家电维修”对应的操作栏中，“启用”按钮被红色箭头标识突出显示，直观体现了服务类型启用后相关的可操作状态，和文档中说明的服务类型启用后的操作规则相呼应。
 
 **4、只有新建的服务类型方可删除，服务类型一旦启用将不可删除。**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/F5C6b7rsBo16Z4xMmMdcfxR6nSh.png)
+![f5c6b7rsbo16z4xmmmdcfxr6nsh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f5c6b7rsbo16z4xmmmdcfxr6nsh.png)
 > 图注：这是运营服务管理模块服务类型管理的相关页面，展示了两条已启用的服务类型数据，分别为服务类型编号FWLX001、名称为家政服务，编号FWLX002、名称为家电维修，还附带服务类型图标、图片、排序、更新时间等信息。页面右侧是对应服务类型的操作栏，其中FWLX001服务类型的“删除”选项被红色箭头重点标注，用于提示该服务类型不可删除，符合文档中“只有新建的服务类型方可删除，服务类型一旦启用将不可删除”的规则说明，操作栏还设有“查看服务项”“编辑”“禁用”等功能选项，满足服务类型的管理需求。
 
 **5、启用后的服务类型可以禁用。**
 
 注意：只有当服务类型下的服务项全部禁用才可以禁用服务类型。（禁用服务项的内容请参考服务项管理章节）
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/DrXVbe8EboxNj3xLywHcFb0Cn2c.png)
+![drxvbe8eboxnj3xlywhcfb0cn2c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/drxvbe8eboxnj3xlywhcfb0cn2c.png)
 > 图注：该图片为服务项列表页面，对应运营服务管理模块的服务类型相关操作场景。页面展示了两条服务类型信息，分别为编号FWLX001的家政服务、FWLX002的家电维修，二者状态均为已启用。操作栏内，针对家政服务的“禁用”按钮被红色箭头重点标注，该服务类型当前为启用状态，对应文档中“服务类型当前状态为启用状态方可禁用”的业务规则，同时可看到服务类型的图标、图片等字段信息，还有删除、查看服务项、编辑等可执行操作选项。
 
 **6、查看服务项将查看该服务类型下的所有服务项，此时进入服务项列表。**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/V7JQbPwkvod5pExgUoycyCLKnbd.png)
+![v7jqbpwkvod5pexguoycyclknbd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/v7jqbpwkvod5pexguoycyclknbd.png)
 > 图注：图片展示的是运营服务管理模块中服务项列表界面。列表包含服务编号、服务名称、服务图标、服务图片、服务单价、服务类型、服务描述、排序、状态、更新时间等字段。其中，服务名称有“日常保洁”“电视维修”“深度保洁”等，服务类型有“家政服务”“家电维修”等，状态有“已启用”“已禁用”“草稿”等，更新时间为2053年5月30日21:50。列表右侧有“新建”按钮，下方有“操作”列，显示“删除”“编辑”“禁用”等操作选项。
 
 ### 2.2 业务流程
@@ -129,14 +129,14 @@ aliases:
 
 **1、进入服务项管理列表**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/DGmqb3NlYo6OEPxFJC7cAFl8nHg.png)
+![dgmqb3nlyo6oepxfjc7cafl8nhg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dgmqb3nlyo6oepxfjc7cafl8nhg.png)
 > 图注：该图片是服务项管理的列表界面，对应文档中进入服务项管理列表的步骤，界面上方设有服务名称输入框、服务类型下拉选择框、状态下拉选择框，以及“重置”和“搜索”按钮，右侧还有“新建”按钮。下方的列表区域展示了服务编号、服务名称、服务图标、服务图片、服务单价、服务类型等信息，包含日常保洁、电视维修等具体服务项，每条服务项的操作栏设有“删除”“编辑”“禁用”功能按钮，部分服务项还显示有“草稿”等状态。
 
 **2、新建服务项**
 
 **填写服务项的基本信息**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/OWz1bY0HHolyATxSNChcobs1nMe.png)
+![owz1by0hholyatxsnchcobs1nme](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/owz1by0hholyatxsnchcobs1nme.png)
 > 图注：这张图是新建服务项时填写基本信息的界面，界面带有多个必填项标识，对应文档中新建服务项需填写的内容要求。界面里标有*的必填项包括服务名称（带请输入的文本框）、服务类型（带请选择的下拉框）、参考服务单价（带请输入的文本框）、服务单位（带请选择的下拉框）、排序（带请输入的文本框）；还有两项可选上传内容，分别是服务图标（需上传200K以内的jpg或png文件）、服务图片（需上传5M以内的jpg或png文件），完全契合文档中新建服务项需填写基本信息的相关要求。
 
 内容如下：
@@ -169,7 +169,7 @@ aliases:
 
 **填写服务项的描述、上传服务详情长图**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/VFpoblmO3omeKBx9dP9cq3Q0nfe.png)
+![vfpoblmo3omekbx9dp9cq3q0nfe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vfpoblmo3omekbx9dp9cq3q0nfe.png)
 > 图注：该图片是运营服务管理模块服务项管理的界面原型，对应填写服务项描述、上传服务详情长图的操作环节。界面上方设有“服务描述”输入框，右下角标注可输入字符上限为200。中间是带有星号标识的“服务详情长图”上传区域，包含“上传图片”按钮，提示需上传jpg或png格式、大小在20M以内的文件。界面底部设有“取消”“预览”“保存”三个操作按钮，其中预览按钮用于查看服务项详情的实际展示效果。
 
 内容如下：
@@ -182,7 +182,7 @@ aliases:
 
 类似如下样式的图片
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/UrFfbJIHXoZ30RxMXiicYjHWnTq.png)
+![urffbjihxoz30rxmxiicyjhwntq](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/urffbjihxoz30rxmxiicyjhwntq.png)
 > 图注：这是一张关于空调清洗服务的宣传类图片，上方文字说明空调长期不清理会带来多种问题，如灰尘堆积污染空气、蒸发器积灰致制冷效果差、内壁发霉发出异味、滤网积灰增加耗电量。中间部分通过对比呈现清洁前后的效果，左侧为清洁前的状态，标注了滤网积灰耗电增加、内壁发霉有异味；右侧为清洁后的状态，标注了灰尘清洁空气更清新、高温清洗后焕然一新。下方介绍了空调清洗的标准化服务流程，共四个步骤，依次为在线预约支付费用、服务人员快速接单、电话沟通上门服务、服务完成线上确认，整体清晰展示了空调清洁的必要性与对应服务内容。
 
 **3）预览**
@@ -201,7 +201,7 @@ aliases:
 
 新建的服务项目可以删除，服务项启用后无法删除。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/BaUMb6IehoMD9txjtb6cMUx7nMf.png)
+![baumb6iehomd9txjtb6cmux7nmf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/baumb6iehomd9txjtb6cmux7nmf.png)
 > 图注：图片展示的是运营服务管理模块中服务项管理界面。界面显示了服务类型编号、服务类型、服务类型图标、服务类型图片、排序、状态、更新时间及操作等列信息。其中，服务类型编号为FWLX001的服务类型是家政服务，状态为已启用，操作有删除、查看服务项、编辑、禁用；服务类型编号为FWLX002的服务类型是家电维修，状态也为已启用，操作有删除、查看服务项、编辑、启用。图片与上下文介绍的服务项管理相关，直观呈现了服务项管理界面及部分操作选项。
 
 
@@ -210,7 +210,7 @@ aliases:
 
 新创建的服务项启用后方可正式使用。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/XXg7bxA5goMPSbxltBHc8cojnmi.png)
+![xxg7bxa5gompsbxltbhc8cojnmi](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xxg7bxa5gompsbxltbhc8cojnmi.png)
 > 图注：图片展示的是服务项管理界面。界面中列出了服务类型编号、服务类型、服务类型图标、服务类型图片、排序、状态、更新时间及操作等信息。其中，操作列有“删除”“查看服务项”“编辑”“禁用”等选项，箭头指向“编辑”按钮，对应文档中“3.2业务流程”部分的“2、服务项启用”操作，说明在服务项管理界面可对服务项进行编辑操作。
 
 **5、禁用服务项**
@@ -219,7 +219,7 @@ aliases:
 
 注意：当服务项没有在任何地区上架才可以禁用（在地区上架服务项的内容请参考区域服务管理章节）。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/NoPtbCCSGoS2DFxigXMcQpEFnZf.png)
+![noptbccsgos2dfxigxmcqpefnzf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/noptbccsgos2dfxigxmcqpefnzf.png)
 > 图注：图片展示的是服务项管理界面。左侧显示服务类型编号、服务类型、服务类型图标、服务类型图片、排序、状态、更新时间等信息，如服务类型编号FWLX001对应的服务类型为家政服务，状态为已启用，更新时间为2053年5月30日21:50。右侧有“新建”按钮，下方“操作”列有“删除”“查看服务项”“编辑”“禁用”选项，其中“禁用”选项被红色箭头指向突出显示。
 
 ### 3.2 业务流程
@@ -270,14 +270,14 @@ aliases:
 
 **1、进入区域管理列表**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/Xb0Fbfvg9o4PBTxiJT4cSXILnDh.png)
+![xb0fbfvg9o4pbtxijt4csxilndh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xb0fbfvg9o4pbtxijt4csxilndh.png)
 > 图注：图片展示的是运营服务管理模块中区域管理列表界面。上方有“新建”按钮，下方表格列出了区域编号、区域名称、区域负责人、手机号码、状态、更新时间等信息，如区域编号QY0001对应区域名称为北京，负责人张三，电话12345678901，状态为已禁用，更新时间为2053年5月30日21:50。表格底部有分页导航和每页显示条数选择。该图与上下文介绍的进入区域管理列表操作相关，直观呈现了列表界面。
 
 
 
 **2、新建区域**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/ITCcbOm83oyiIfxYJzycdj44nEc.png)
+![itccbom83oyiifxyjzycdj44nec](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/itccbom83oyiifxyjzycdj44nec.png)
 > 图注：图片展示的是运营服务管理模块中新建区域的界面。界面上方标题为“新建区域”，下方有三个必填项，分别是“地区选择”（显示“请选择”并有箭头指向）、“区域负责人”（输入框）和“手机号码”（输入框）。底部有“取消”和“保存”两个蓝色按钮。该图片与上下文紧密相关，直观呈现了新建区域时所需填写的信息及操作按钮，是对“新建区域”功能操作步骤的视觉说明。
 
 内容如下：
@@ -290,14 +290,14 @@ aliases:
 
 **3、新创建的区域可以删除，区域启用后不允许删除**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/VZRbb0U4vo5IfjxS5fBcFuOGnOf.png)
+![vzrbb0u4vo5ifjxs5fbcfuognof](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vzrbb0u4vo5ifjxs5fbcfuognof.png)
 > 图注：这是一张区域管理模块的界面原型图，展示了编号为QY0001的北京区域信息，包括区域负责人为张三、联系电话12345678901，状态为已禁用，更新时间为2053年5月30日21:50。界面操作栏内有“删除”“编辑”“调度配置”“设置服务”“启用”选项，红色箭头指向“删除”选项，这对应文档中“新创建的区域可以删除，区域启用后不允许删除”的规则。界面下方有分页控件，当前处于第2页，共多页可切换，还可设置每页显示条数，支持跳转到指定页码。
 
 **4、区域启用后表示该区域正式开始运营**
 
 区域存在上架的服务方可启用区域。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/T0ZLbIwGuoKNbcx1h7dcg9AEnLg.png)
+![t0zlbiwguoknbcx1h7dcg9aenlg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/t0zlbiwguoknbcx1h7dcg9aenlg.png)
 > 图注：图片展示的是区域管理界面中区域列表部分。上方有“新建”按钮，下方表格列有区域编号、区域名称、区域负责人、手机号码、状态、更新时间、操作等信息。其中，区域名称为北京，区域负责人是张三，手机号码为12345678901，状态为已禁用，更新时间为2053年5月30日21:50，操作栏有删除、编辑、调度配置、设置服务、启用等选项，启用选项被红色箭头指向。该图与上下文介绍的区域管理功能相关，直观呈现了区域管理界面及部分操作选项。
 
 
@@ -354,21 +354,21 @@ aliases:
 
 1、进入区域列表，点击“设置服务”
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/YQnsbipF0oq4kLxXByZcWdivnzd.png)
+![yqnsbipf0oq4klxxbyzcwdivnzd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yqnsbipf0oq4klxxbyzcwdivnzd.png)
 > 图注：图片展示的是区域列表页面，呈现了区域编号、区域名称、区域负责人、手机号码、状态、更新时间等信息。其中，区域编号为QY0001，区域名称是北京，区域负责人是张三，手机号码为12345678901，状态为已禁用，更新时间为2053年5月30日21:50。页面右侧有“删除”“编辑”“调度配置”“设置服务”“启用”等操作选项，其中“设置服务”选项被红色箭头突出指向。该图片与文档中“进入区域列表，点击‘设置服务’”的操作步骤对应，直观呈现了操作位置。
 
 2、进入设置服务页面
 
 本页面展示了该区域当前正在运营及停止未运营的服务信息。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/FDVCbCkBtoMJ7hx4faMc1sY5n4f.png)
+![fdvcbckbtomj7hx4famc1sy5n4f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fdvcbckbtomj7hx4famc1sy5n4f.png)
 > 图注：这张图片是运营服务管理模块的区域服务管理界面原型，区域名称为北京。界面内有蓝色的“添加服务”按钮，下方列出了三条服务相关信息，分别是日常保洁、深度保洁、马桶清洁，对应服务类型均为保洁。其中参考价格为服务项管理模块的设置内容，本模块的区域价格是服务在该区域的实际运营价格，每条服务旁还标注了是否热门、状态等信息，以及设置热门、删除、上架下架等操作选项，界面底部还有分页功能，当前处于第2页。
 
 3、添加服务
 
 进入添加服务界面，选择要添加的服务，点击“添加”
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/XlLVb4W0zoOgh1x5oYYco6zsnqf.png)
+![xllvb4w0zoogh1x5oyyco6zsnqf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xllvb4w0zoogh1x5oyyco6zsnqf.png)
 > 图注：图片展示的是运营服务管理模块中添加服务界面。左侧有“维修”和“保洁”分类，其中“保洁”下有“日常保洁”和“深度保洁”服务，每项服务前有勾选框，右侧显示“日常保洁”已选。右侧“已选服务（1）”区域也显示“日常保洁”。界面底部有“添加”和“取消”按钮。
 
 
@@ -377,14 +377,14 @@ aliases:
 
 区域价格即该服务在该区域的运营价格，输入修改后的价格。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/AlIYb9iy7obdWnxoOovcsKjnnDd.png)
+![aliyb9iy7obdwnxooovcskjnndd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/aliyb9iy7obdwnxooovcskjnndd.png)
 > 图注：这张图片是区域服务管理的界面原型，顶部显示区域名称为北京，左上方有蓝色的“添加服务”按钮，表格第1行标注数字“1”，表格内包含服务名称、服务类型、参考价格、区域价格、是否热门、状态、操作这些列项。其中箭头指向“区域价格”列下的输入框，该列的数值均为44，表格中还显示服务的状态，包括已下架、已上架、草稿，底部有页码切换控件，当前处于第2页，同时该界面的“区域价格”设置功能，与文档中“设置区域价格是该服务在该区域的实际运营价格”的内容相对应，明确区分于服务项管理模块设置的参考价格。
 
 区别服务的参考价格和运营价格：
 
 服务的参考价格：在服务项管理模块进行设置，如下图：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/LFVWb2mtuoUYNrx5ahHcbkppnng.png)
+![lfvwb2mtuouynrx5ahhcbkppnng](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lfvwb2mtuouynrx5ahhcbkppnng.png)
 > 图注：图片展示了服务项管理模块中服务项设置界面。界面中有多个必填项，如服务名称、服务类型、参考服务单价、服务单位等。其中，红色框突出显示的“参考服务单价”输入框尤为关键，提示用户在此处输入服务的参考价格。该图片与上下文紧密相关，上下文提到区别服务的参考价格和运营价格，而本图直观呈现了在服务项管理模块设置参考价格的操作界面，帮助用户了解如何在该模块设置服务的参考价格。
 
 本模块设置的价格是服务在某区域实际运营的价格。
@@ -399,7 +399,7 @@ aliases:
 
 当区域服务的状态为草稿状态或下架状态时方可上架。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/PgfvbqekBocEjoxLmkgcivffnKg.png)
+![pgfvbqekbocejoxlmkgcivffnkg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pgfvbqekbocejoxlmkgcivffnkg.png)
 > 图注：这张图片是区域服务管理模块的界面原型，区域名称显示为北京。界面内有“添加服务”按钮，下方服务列表展示了日常保洁、深度保洁、马桶清洁三类服务的信息，包含服务名称、服务类型、参考价格、区域价格、是否热门、状态等内容。其中服务状态有已下架、已上架、草稿三种，操作列有设置热门、删除等选项，日常保洁的上架按钮被红色箭头标注，代表该操作触发点，底部还有页码切换控件。
 
 
@@ -410,24 +410,24 @@ aliases:
 
 当区域服务的状态为上架状态方可下架。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/ERNlbx837ownjvxXlBNcMXhjnVb.png)
+![ernlbx837ownjvxxlbncmxhjnvb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ernlbx837ownjvxxlbncmxhjnvb.png)
 > 图注：该图片是区域名称为北京的区域服务管理界面，界面左上角设有蓝色的“添加服务”按钮，下方的列表展示了日常保洁、深度保洁、马桶清洁三类保洁服务的相关信息，包括服务名称、服务类型、参考价格、区域价格、是否热门、状态等内容。在服务操作列，针对状态为草稿的马桶清洁服务，设有取消热门、删除、上架按钮，同时在状态为已上架的深度保洁服务的操作列中，“下架”按钮被红色箭头标注，当前界面处于分页的第2页，共15条数据。
 
 **7、删除**
 
 当状态为草稿状态方可删除。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/P1NJbrx39oQ9a6xpPYocSY70nyg.png)
+![p1njbrx39oq9a6xppyocsy70nyg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/p1njbrx39oq9a6xppyocsy70nyg.png)
 > 图注：这张图片是运营服务管理模块的服务列表界面原型，属于区域服务管理下的界面原型内容。表格内包含服务名称、服务类型、参考价格、区域价格、是否热门、状态和操作等列，其中“状态”列标记了“已下架”“已上架”“草稿”三种状态，“操作”列对应不同状态的服务提供了设置热门、取消热门、删除、上架或下架的功能选项。红色箭头指向“马桶清洁”服务的“删除”操作选项，该服务的状态为草稿。结合上下文可知，该图关联删除功能的说明，即只有草稿状态的服务才可执行删除操作。
 
 **8、设置热门/取消热门**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/I4vUbvtj3oqdAax0b1XcaxBjnQf.png)
+![i4vubvtj3oqdaax0b1xcaxbjnqf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/i4vubvtj3oqdaax0b1xcaxbjnqf.png)
 > 图注：图片展示的是区域服务管理界面中服务列表部分。列表包含服务名称、服务类型、参考价格、区域价格、是否热门、状态及操作等列。其中，“设置热门”和“取消热门”操作以红色箭头突出显示，对应“已下架”和“已上架”状态的服务，如“日常保洁”和“深度保洁”“马桶清洁”服务。该图片与上下文“设置热门/取消热门”功能说明相关，直观呈现了操作对应的服务状态。
 
 服务设置为热门将在首页显示，下图红框内显示的就是热门服务：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/P8LWbPW4kogCAJx6pYecU0SbnHc.png)
+![p8lwbpw4kogcajx6pyecu0sbnhc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/p8lwbpw4kogcajx6pyecu0sbnhc.png)
 > 图注：这张图片是运营服务管理模块中区域服务管理的界面原型图，核心展示了可操作的服务选项区域。界面顶部标注定位为北京，设有搜索栏和“新人优惠”推广内容，红框内清晰呈现了8类服务选项，分别为保洁清洁类的日常保洁、家电清洁、家居清洗、开荒保洁，以及日常维修类的空调维修、房屋维修、厨卫维修、手机维修，对应了服务设置相关的业务功能场景。
 
 

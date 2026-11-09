@@ -723,7 +723,7 @@ https://www.baidu.com
     请求体 ---> 携带post或者put等请求参数部分
 ```
 
-![](../../../../../Attachments/development/backend/web/spring-and-springboot/AHNEbmjjwo2pcZxHYtFciw7fndf.png)
+![ahnebmjjwo2pczxhytfciw7fndf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ahnebmjjwo2pczxhytfciw7fndf.png)
 > 图注：这张图是HTTP请求的具体示例，清晰标注了HTTP请求的三大核心组成部分：①请求方法为POST，②请求URL为/chapter17/user.html，③HTTP协议及版本为HTTP/1.1。图中还划分了④报文头和⑤报文体两大区域，报文头包含Accept、Referer、Cookie等各类请求相关的头部字段，详细记录了请求的来源、身份标识等信息，报文体则展示了POST请求特有的传输数据，具体为name、password等用户相关参数。该图直观对应了文档中关于HTTP请求结构的说明，帮助理解HTTP请求各部分的具体构成。
 
 <callout emoji="🏝️">
@@ -776,7 +776,7 @@ https://www.baidu.com
         响应体  ---> 响应的主体内容
 ```
 
-![](../../../../../Attachments/development/backend/web/spring-and-springboot/ImStbBxllo1CoHxAKoDcxmPnnde.png)
+![imstbbxllo1cohxakodcxmpnnde](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/imstbbxllo1cohxakodcxmpnnde.png)
 > 图注：图片展示了HTTP响应的结构示例。上方是状态行，显示报文协议及版本为HTTP/1.1，状态码及状态描述为200 OK。下方是响应头，包含Server、Content-Type、Transfer-Encoding、Date等属性。最下方是响应体，以JSON格式呈现用户信息，如password、userName、birthday、salary等字段。该图片与文档中介绍HTTP响应结构的内容相关，直观呈现了HTTP响应的组成部分。
 
 <callout emoji="🚅"><p>①报文协议及版本；<br/>②状态码及状态描述；<br/>状态码详解<cite doc-id="Eh9OwCm5ZiqLyjkvR7lc6VCUn7e" file-type="wiki" title="day03 SpringBoot基础开发_三层架构_反射分层解耦" type="doc"></cite><br/>③响应报文头，也是由多个属性组成；</p></callout>
@@ -841,7 +841,7 @@ public class TestServlet extends HttpServlet {
 
 ### Servlet 执行流程
 
-![](../../../../../Attachments/development/backend/web/spring-and-springboot/WviXbsJm3oO0xtx3Dlpcy7EGnZf.png)
+![wvixbsjm3oo0xtx3dlpcy7egnzf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wvixbsjm3oo0xtx3dlpcy7egnzf.png)
 > 图注：这张图展示了Tomcat处理请求并通过DispatcherServlet调度的流程：左侧为浏览器，通过HTTP协议向Tomcat发送请求、接收响应。进入Tomcat后，DispatcherServlet会先解析所有带@RestController注解的类，将对应的方法存入映射集合以对接路径与方法；再从service中获取前端访问的资源，通过映射集合找到对应方法；最后反射执行该功能并将结果返回给浏览器。同时，DispatcherServlet会将Http协议分装成对应的请求对象与响应对象，调用Servlet的service方法将对象传入，右侧还关联了Controller模块，体现了请求在框架内的调度逻辑。
 
 <callout emoji="💡">

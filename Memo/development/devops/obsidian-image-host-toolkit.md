@@ -114,6 +114,9 @@ Bucket 名称全局唯一，地域创建后不可更改。存储类型选标准�
 
 1. 打开含本地图片的笔记。
 2. `Ctrl+P` 打开命令面板，输入 **publish**，执行 **Image Upload Toolkit: Publish page**（插件只有这一个命令）。
+
+> [!note] 全库已完成批量迁移（2026-11-09）
+> 插件本身没有批量命令，2585 张存量图片由外部脚本按插件同一套签名与命名规则（`img/<原文件名>`）一次性上传并重写链接（123 篇笔记、2701 条链接，抽查全部可访问）。此后新插入的本地图片用 Publish page 单篇上传即可，两种方式产出的 URL 格式完全一致。
 ![](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Pasted%20image%2020261105114000.png)
 > 图注：Pasted image 20261105114000
 

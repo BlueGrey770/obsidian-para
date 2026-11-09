@@ -95,7 +95,7 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 如下图所示，通过CDN用户访问就近节点，提高访问速度。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Ykf3bx9CpogShmx2ibMcdE9WnDb.png)
+![ykf3bx9cpogshmx2ibmcde9wndb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ykf3bx9cpogshmx2ibmcde9wndb.png)
 > 图注：这张图是CDN内容分发网络的架构示意图，清晰展示了CDN的工作逻辑。左侧是提供内容的源站，中间为CDN平台，该平台设置了新疆、成都、广州等不同地域的节点，右侧则对应新疆、四川、广东等地的终端用户。用户访问时，会先连接到就近的CDN节点，由这些节点直接为用户提供服务，无需从源站获取内容，以此实现静态资源的就近访问，从而提升用户的访问速度，这也与上下文中CDN用于加速静态资源访问的介绍相呼应。
 
 1. **安全性处理**
@@ -126,7 +126,7 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 “即将开始”界面是展示待发放的优惠券活动，按照开始时间升序排列，不进行分页。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/AQA0buXNiolqqlxtTRucDZjNnFg.png)
+![aqa0buxniolqqlxttrucdzjnnfg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/aqa0buxniolqqlxttrucdzjnnfg.png)
 > 图注：这张抢券界面的图片展示了两个页面内容，左侧为“疯抢中” tab 页（标注为1），该页按照开始时间升序排列了正在进行的优惠券活动：包含“618大促活动”（满200元立减20元，活动时间2023.8.16-2023.8.25），其右侧有红色的“立即领取”按钮（标注为2），还有“平台促销活动”满200元立享5折且已抢光的活动信息；右侧为“即将开始” tab 页（标注为3），展示待发放的优惠券活动，同样列出了和左侧一致的两款活动，但该页面没有“立即领取”按钮，呈现对应活动的内容与状态。
 
 在抢券界面显示如下信息：
@@ -159,7 +159,7 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 优惠券到达发放时间后，用户点击“立即领取”进行抢券。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/JPpqbLszwo952CxwRFJcyNu5n14.png)
+![jppqblszwo952cxwrfjcynu5n14](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jppqblszwo952cxwrfjcynu5n14.png)
 > 图注：图片展示的是618大促活动的抢券界面。上方显示“抢券”字样，左侧有“即将开始”的文字，右侧有“...”和“@”图标。下方有两张优惠券信息。上方优惠券为“618大促活动”，满200元立减20元，发放时间为2023.8.16 - 2023.8.25，有“立即领取”按钮，按钮上标注“2”；下方优惠券为“平台促销活动”，满200元立享5折，发放时间为2023.8.16 - 2023.8.25，其“已抢光”按钮上标注“1”。该图与上下文介绍的用户点击“立即领取”进行抢券，以及“已抢光”表示活动发放的总数量已领取完等内容相关。
 
 抢券成功提示“领取成功”，如果领取失败会提示失败信息。
@@ -172,14 +172,14 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 用户进入【我的】-【优惠券】查看已抢到的优惠券，按抢券时间降序显示当前用户抢到的优惠券。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Y956bds07oRZX9xfpaTcFT6Enwh.png)
+![y956bds07orzx9xfpatcft6enwh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/y956bds07orzx9xfpatcft6enwh.png)
 > 图注：这是微信端应用的“我的”页面截图，页面顶部显示微信用户头像与昵称，底部导航栏的“我的”选项被红色高亮标识，当前该页面的核心功能入口处，有红色箭头指向“我的优惠券”选项。页面还设有我的订单模块，包含待支付、待服务、服务中、待评价四个功能入口，另有我的地址、我的评价模块，底部标注客服电话400-000-4000。该图片对应文档中用户进入【我的】-【优惠券】查看已抢优惠券的操作指引示例。
 
 本查询为滚动查询，向上拖屏幕查询下一屏，一屏显示10条。
 
 如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/R6gibdbpjoc1PfxdNzUcFwW7nsf.png)
+![r6gibdbpjoc1pfxdnzucfww7nsf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/r6gibdbpjoc1pfxdnzucfww7nsf.png)
 > 图注：图片展示了用户在“我的”-“优惠券”页面查看已抢到的优惠券情况。左侧显示“未使用”状态，有20元和5折优惠券；中间为“已使用”状态，有20元优惠券；右侧为“已过期”状态，也有20元和5折优惠券。每种状态下的优惠券信息包括面额、活动名称、使用条件及有效期。该图与上下文对应，直观呈现了用户查看优惠券时的三种状态及对应优惠券信息。
 
 对优惠券的三个状态说明如下：
@@ -220,7 +220,7 @@ CDN（Content DeliveryNetwork）即内容分发网络，CDN用于加速静态资
 
 下边根据需求分析对抢券界面的活动查询功能进行分析与设计，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/T2hoblWrRoELSLxVXkUcXJjfnNg.png)
+![t2hoblwrroelslxvxkucxjjfnng](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/t2hoblwrroelslxvxkucxjjfnng.png)
 > 图注：这张抢券页面的对比图，左图为当前活动状态页面，顶部标注①“疯抢中”的活动状态，展示了两个活动：一是618大促活动，售价20元、满200元立减20元，活动时间为2023.8.16-2023.8.25，标注有②“立即领取”按钮；二是平台促销活动，标注“已抢光”。右图为切换后的页面，顶部切换为标注③“即将开始”的活动状态，仅展示了和左图一致的两个活动的信息。
 
 1. **活动查询界面显示了哪些数据？**
@@ -542,7 +542,7 @@ public class XxlJobHandler {
 
 通常生产中会提前一周去策划活动并在系统中创建活动，所以在生产中每小时执行一次预热程序，开发中为了测试方便5秒执行一次。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/GBH0bUvXcoPnXzxmQKlcONINnWb.png)
+![gbh0buvxcopnxzxmqklconinnwb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gbh0buvxcopnxzxmqklconinnwb.png)
 > 图注：这是一个定时预热任务的配置界面，包含基础配置、调度配置、任务配置、高级配置四大模块内容。基础配置中，执行器为“营销中心”，负责人为“xxjob”，任务描述为“活动定时预热任务”，报警邮件栏提示需输入多个用逗号分隔的报警邮件地址。调度配置中，调度类型选择“CRON”，Cron表达式为“0/5 * * * * ?”。任务配置里，运行模式选“BEAN”，JobHandler为“activityPreheat”，任务参数栏提示输入对应参数。高级配置中，路由策略设为“第一个”，子任务ID栏提示输入子任务ID，调度过期策略为“忽略”，阻塞处理策略为“单机串行”，任务超时时间、失败重试次数均设为0。该界面的配置内容，对应文档中修改活动开始时间后通过程序自动更新活动状态的操作。
 
 
@@ -553,29 +553,29 @@ public class XxlJobHandler {
 
 首先在运营端创建优惠券活动，创建即将开始的活动
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/RqZ8bkpopoQFyXxns95cRxuNnus.png)
+![rqz8bkpopoqfyxxns95crxunnus](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rqz8bkpopoqfyxxns95crxunnus.png)
 > 图注：这张图片展示的是运营端新建优惠券的页面，属于第十章秒杀抢购中抢券模块的2.2.2定时预热程序环节。页面呈现了优惠券创建的基本信息与发放规则，其中“优惠券类型”选中了“满减”选项，活动名称为“双12大促”，满减金额设置为100元，折扣金额为10元，发放时间范围是2023年12月17日至12月24日，发放数量为100，使用期限为10天，页面下方设有“返回”和“提交”按钮，该页面对应上下文里在运营端创建即将生效优惠券活动的操作步骤。
 
 创建成功，活动为待生效
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/MCMNb9yPhoocb5xUqSFcZs0qneg.png)
+![mcmnb9yphoocb5xuqsfczs0qneg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mcmnb9yphoocb5xuqsfczs0qneg.png)
 > 图注：这张图片展示的是优惠券管理页面的内容，页面左上角标注属于营销管理板块的优惠券管理功能区，上方设有活动编号输入框、活动名称输入框、优惠类型下拉框、发放状态下拉框，还有重置和搜索按钮。页面右侧有新增优惠券的红色按钮，下方列表呈现出“双12大促”优惠券的相关信息，包括适用对象为全部用户，发放时间是2023-12-17 00:00至2023-12-24 00:00，使用期限为10天，发放数量100张，每人限领1张，当前发放状态为待生效，创建时间为2023-12-16 17:05，操作栏有撤销、编辑、领取记录选项。该图片对应文档中提到的创建成功、待生效活动的页面展示，用于直观显示运营端创建出的待生效优惠券活动的详情。
 
 再创建一个活动：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/GCyBbDOYZoA6LWxFxN1cjJmHnNh.png)
+![gcybbdoyzoa6lwxfxn1cjjmhnnh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gcybbdoyzoa6lwxfxn1cjjmhnnh.png)
 > 图注：这是在云岗到家系统新建优惠券的页面截图，页面处于“营销管理”下的“优惠券管理”板块，左侧为系统功能导航栏。页面分为“基本信息”和“发放规则”两个区域：基本信息区填写了活动名称为“平台二周年庆”，优惠券类型选择“折扣”，折扣比例设为90%，满减限制为0元；发放规则区设置了活动发放时间为2023年12月17日至2023年12月24日，可领取天数为20天，发放数量为100张。该页面是定时预热程序测试流程中的“再创建一个活动”步骤的操作界面。
 
 创建成功，进入jzo2o-market数据库，找到活动表activity中该记录，修改活动开始时间为昨天，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/S3pMbgsYYoIqT2xGdZScsKMGnnf.png)
+![s3pmbgsyyoiqt2xgdzscskmgnnf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/s3pmbgsyyoiqt2xgdzscskmgnnf.png)
 > 图注：图片展示的是jzo2o-market数据库中活动表activity中一条记录的数据。关键信息包括活动名称为“平台二周年庆”，类型为2，开始分发时间为2023 - 12 - 15 00:00:00，结束分发时间为2023 - 12 - 24 00:00:00，状态为2，总数量和库存数量均为100，创建和更新时间为2023 - 12 - 16 17:08:56和17:12:10。该图片与上文提到的在jzo2o - market数据库中找到活动表activity中记录，修改活动开始时间为昨天的内容相关，直观呈现了修改后的活动记录数据。
 
 通过活动状态自动更新程序，自动将“平台二周年庆”活动状态改为进行中。
 
 测试通过如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/N4oWbIRXdokqkfxivOXcwKtun1g.png)
+![n4owbirxdokqkfxivoxcwktun1g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/n4owbirxdokqkfxivoxcwktun1g.png)
 > 图注：这张图是优惠券管理页面的界面，页面顶部显示路径为“营销管理 > 优惠券管理”。页面上方的搜索栏中，活动名称输入框填写了“平台二周年”，活动状态选择了“进行中”。下方的列表区域展示了对应活动的详细信息：适用对象为全部用户，发放时间为2023年12月15日00:00至2023年12月24日00:00，使用期限为20天，发放数量100张，每人限领1张，发放状态为进行中，创建时间为2023年12月16日17:08，操作栏包含撤销、编辑和领取记录选项，该界面对应文档中预热程序测试的通过环节，用于验证活动状态自动更新后的实际展示效果。
 
 通过定时预热程序即将开始的活动及进行中的活动写入redis：
@@ -584,7 +584,7 @@ public class XxlJobHandler {
 
 预热成功在redis成功存储上边添加的两个活动：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/YhfYbMaHsoK5UrxU3A7cBSlGnbe.png)
+![yhfybmahsok5urxu3a7cbslgnbe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yhfybmahsok5urxu3a7cbslgnbe.png)
 > 图注：该图片展示的是jzo2o-market数据库ACTIVITY:LIST键的相关内容，界面显示了服务器地址，键值大小为489字节，当前处于JSON查看状态，其中以键值对形式存储了两条活动数据，分别是“平台二周年庆”和“双12大促”的活动信息，涵盖折扣率、类型、分发结束与开始时间、总数量、名称、库存、金额条件、活动ID及状态等内容，对应预热测试中成功存入redis的两个活动的相关信息，用于验证预热程序的执行结果。
 
 
@@ -604,7 +604,7 @@ public class XxlJobHandler {
 
 根据界面原型分析接口：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/OCG6boWnboqsvpxXFvicBr6anSg.png)
+![ocg6bownboqsvpxxfvicbr6ansg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ocg6bownboqsvpxxfvicbr6ansg.png)
 > 图注：这张图片是抢券功能的活动查询界面，分为左右两个部分，对应活动查询的两个tab选项。左侧界面突出显示“疯抢中”（标注序号1）tab，展示了两类可查询的活动信息，第一类是618大促满减活动，标注了价格20元，带有红色的“立即领取”按钮（标注序号2），第二类是平台促销折扣活动，标注了“已抢光”；右侧界面突出显示“即将开始”（标注序号3）tab，未展示额外的功能按钮，两组界面的活动信息内容一致，分别对应了前端传入参数为查询进行中或即将开始活动的两种场景。
 
 界面有两个tab，疯抢中和即将开始，前端传入后端一个参数标记是查询进行中的活动还是即将开始的活动。
@@ -652,10 +652,10 @@ public class XxlJobHandler {
 
 **请求数据类型** application/x-www-form-urlencoded
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/NE4Gb1gaHo3HxxxMTrLcDZ74n5b.png)
+![ne4gb1gaho3hxxxmtrlcdz74n5b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ne4gb1gaho3hxxxmtrlcdz74n5b.png)
 > 图注：该图片展示了用户端抢券列表分页接口的请求参数信息，对应文档中活动查询接口的相关内容。图片呈现了表格形式的参数说明，其中涉及的核心参数为tabType，该参数是页面tab类型，1代表疯抢中，2代表即将开始。该参数的请求类型为query，是请求接口时必须填写的内容，数据类型为integer类型下的int32。此图片补充说明了该活动查询接口所需的请求参数详情，是文档中接口定义部分的具体参数示例。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/K3QSbg6VJo1Rvwxi9OycFrhcnpk.png)
+![k3qsbg6vjo1rvwxi9oycfrhcnpk](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/k3qsbg6vjo1rvwxi9oycfrhcnpk.png)
 > 图注：图片展示了用户端抢券列表分页接口的响应参数。参数包括msg（响应消息）、code（状态码）、data（响应数据，包含discountRate、remainNum、discountAmount、type、distributeEndTime、name、amountCondition、id、distributeStartTime、status等信息）。其中，type为优惠券类型，1代表满减，2代表折扣；status为优惠券配置状态，1为待生效，2为进行中，3为已失效。该图片与上文接口定义部分对应，直观呈现了接口响应数据的结构及各参数含义。
 
 
@@ -794,18 +794,18 @@ public List<SeizeCouponInfoResDTO> queryForPage(@RequestParam(value = "tabType",
 
 打开小程序，点击优惠券图标。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/STvNbouIcoHWVmxj1b7c6vzQntk.png)
+![stvnbouicohwvmxj1b7c6vzqntk](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/stvnbouicohwvmxj1b7c6vzqntk.png)
 > 图注：这是云岚到家的家政服务界面，顶部显示定位为北京市，搜索栏内输入了“日常保洁”，界面中部展示了“全屋除菌保洁3次低至459元”的新人优惠活动，还标注有对应服务说明与立即抢购按钮；界面下方排列了保洁清、日常保洁、厨卫维修、日常维修、空调维修等服务入口，右下角有一个礼盒样式的图标，被红色箭头指向。该图片对应抢券查询相关的界面，可用于在该平台查询各类家政服务相关的活动与优惠信息。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/TmjcbPIjNosVm9xzhnRcPnZ9nRb.png)
+![tmjcbpijnosvm9xzhnrcpnz9nrb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tmjcbpijnosvm9xzhnrcpnz9nrb.png)
 > 图注：图片展示的是云岚到家平台的抢券界面。界面顶部显示“云岚到家”，并有定位为北京市的图标及搜索框。中间部分有新人优惠活动宣传，如全屋除菌保洁3次低至459元等。下方有一个红色的优惠券图标，券面显示“10元”，并有“立即前往领取优惠卷”的红色按钮。该图片与文档中抢券查询接口测试状态实时性的上下文相关，用于展示抢券活动的界面情况。
 
 进入抢券查询界面，通过选择不同的类型查询活动信息，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/XTdTbprN5op5RZxTwnAcxTewnjg.png)
+![xtdtbprn5op5rzxtwnacxtewnjg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xtdtbprn5op5rzxtwnacxtewnjg.png)
 > 图注：图片展示的是抢券界面，上方显示“抢券”标题，右侧有三个点和一个放大镜图标。界面中有“疯抢中”和“即将开始”两个选项卡，“疯抢中”被红色线条突出显示。下方有一个橙色背景的促销区域，显示“9.0折”及“立即领取”，并注明“平台二周年庆 无门槛立享9折 2023-12-15~2023-12-24”。该图片与上文介绍的抢券查询界面相关，展示了抢券活动的具体信息。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/QfwQbR4bgos7DXxN4TqcwK0Ynzc.png)
+![qfwqbr4bgos7dxxn4tqcwk0ynzc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qfwqbr4bgos7dxxn4tqcwk0ynzc.png)
 > 图注：图片展示的是抢券查询界面。上方显示“抢券”标题，左侧有返回箭头，右侧有三个点和一个圆圈图标。中间有“疯抢中”和“即将开始”两个状态，其中“即将开始”被红色线条突出显示。下方有一个橙色券状图案，显示“¥10”，并有“双12大促 满100元立减10元 2023-12-17~2023-12-24”的文字说明。该图片与上下文关系为：在介绍抢券查询接口定义时，通过此图展示进入抢券查询界面后可看到的活动信息示例。
 
 下边测试状态实时性：
@@ -825,12 +825,12 @@ public List<SeizeCouponInfoResDTO> queryForPage(@RequestParam(value = "tabType",
 
 “ 双12大促” 活动在界面上显示“疯抢中”
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/T4RGbFwmsoM2QTxyzzhcX881nvc.png)
+![t4rgbfwmsom2qtxyzzhcx881nvc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/t4rgbfwmsom2qtxyzzhcx881nvc.png)
 > 图注：这张图片是抢券页面，属于第十章秒杀抢购中活动查询相关的测试效果展示，页面顶部标注了“抢券”，下方有“疯抢中”“即将开始”两个选项，其中“疯抢中”为选中状态。页面展示了两项可领取的活动：一项是“双12大促”，满100元立减10元，时间为2023年12月15日至2023年12月24日，其活动标签显示为“疯抢中”，与修改活动开始时间后的测试预期效果一致；另一项是“平台二周年庆”，提供无门槛9折优惠，时间同样为2023年12月15日至2023年12月24日，两项活动均配有“立即领取”按钮。
 
 下边再修改数据库中的库存，设置为0，预期测试效果为“已抢光”，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/AcDMbbIJMocXElxmw4aczxQMnrg.png)
+![acdmbbijmocxelxmw4aczxqmnrg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/acdmbbijmocxelxmw4aczxqmnrg.png)
 > 图注：图片展示的是抢券页面，上方显示“抢券”标题，右侧有三个点和一个放大镜图标。页面中部有“已抢光”和“即将开始”两个选项卡，当前选中“已抢光”。下方展示了两个活动信息，分别是“双12大促”和“平台二周年庆”，均显示为“已抢光”，活动时间为2023 - 12 - 15 - 2023 - 12 - 24。该图片与上文测试效果示例相关，直观呈现了修改数据库中库存为0后，活动在界面上显示“已抢光”的情况。
 
 ##### 5) 小结
@@ -1138,15 +1138,15 @@ EXEC
 
 测试如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/S0B9bsLpMo8O24x2dVickoXMnSG.png)
+![s0b9bslpmo8o24x2dvickoxmnsg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/s0b9bslpmo8o24x2dvickoxmnsg.png)
 > 图注：图片展示了Redis原子操作方案的测试结果。首先执行“MULTI”命令，返回“OK”；接着执行“HSET test_key01 field1 aa field2 bb”命令，返回“QUEUED”；再执行“INCR test_key02”命令，同样返回“QUEUED”；最后执行“EXEC”命令，依次返回“OK”“2”“OK”“1”“OK”。这与上下文提到的将命令加入队列后运行EXEC命令按顺序执行，整体保证原子性的内容相呼应，直观呈现了测试过程及结果。
 
 测试结果：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/W7TMbl0MWo4nVtxFVfaciVLUnYd.png)
+![w7tmbl0mwo4nvtxfvfacivlunyd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/w7tmbl0mwo4nvtxfvfacivlunyd.png)
 > 图注：图片展示的是Redis操作界面中关于键test_key01的hash数据结构内容。界面显示键为test_key01，包含两个字段及对应值，分别为field1和aa，field2和bb。该图片与上文Redis原子操作方案相关，是对将“HSET key1 field1 value2 field2 value2”命令放入队列后，向key1中写入两个hashkey操作的测试结果展示，直观呈现了操作后的hash数据结构状态。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/CRlKbXLVQovTknxN5GFc29MNn2e.png)
+![crlkbxlvqovtknxn5gfc29mnn2e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/crlkbxlvqovtknxn5gfc29mnn2e.png)
 > 图注：图片展示的是Redis操作界面中关于键值对的显示结果。上方“STRING:”后显示键名为“test_key02”，下方“键值: 大小: 1 字节”后显示值为“1”。该图片与上下文紧密相关，上下文提到将“HSET key1 field1 value2 field2 value2”命令放入队列，表示向key1中写入两个hashkey，而此图片正是展示了key1写入后的值为1，体现了Redis键值对操作的结果呈现。
 
 ##### 2）了解Pipeline与**MULTI 的区别**
@@ -1271,7 +1271,7 @@ return ret..'';
 
 如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/JUvsbZfjNoSSFCxjsp3cMFR0nlc.png)
+![juvsbzfjnossfcxjsp3cmfr0nlc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/juvsbzfjnossfcxjsp3cmfr0nlc.png)
 > 图注：图片展示了在Idea中创建的lua脚本文件lua_test01.lua内容。文件位于jzo2o - market项目src/main/resources/scripts目录下。代码中，第1行定义变量ret，通过redis.call函数执行hset操作；第2行执行incr操作；第3行返回ret值。该图片与文档中介绍Redis+Lua实现抢券方案的内容相关，是对在classpath的script下创建lua脚本的示例展示。
 
 
@@ -1410,7 +1410,7 @@ public void test_Luafirst2() {
 
 执行测试成功，观察redis多了两个key："test_key01{111}"和"test_key02{111}"
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Ir6wba2wbobXKPx0uxBcc3eXnxd.png)
+![ir6wba2wbobxkpx0uxbcc3exnxd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ir6wba2wbobxkpx0uxbcc3exnxd.png)
 > 图注：图片展示了Redis数据库中部分键值对。在192.168.101.68的db0下，有COUPON、JZ_CACHE、ORDERS等键值对，其中test_key01、test_key02键值对被红色框突出显示。test_key01对应的值为“test_key01{111}”，test_key02对应的值为“test_key02{111}”。该图片与上文提到的在key名称后边添加{}，大括号中写一个固定的值，执行测试成功后观察redis新增两个key的内容相关，直观呈现了测试结果。
 
 
@@ -1630,7 +1630,7 @@ COUPON:RESOURCE:STOCK:{活动id%10}。
 
 示例：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/PYsWbdjfAoSZD6xZpS2cK9j9npd.png)
+![pyswbdjfaoszd6xzps2ck9j9npd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pyswbdjfaoszd6xzps2ck9j9npd.png)
 > 图注：这张图片展示的是redis数据库的查询结果界面，左侧树状菜单显示IP地址为192.168.101.68的数据库下，存在名为COUPON、RESOURCE、STOCK的文件夹，当前选中的是STOCK文件夹下的键{0}。右侧对应HASH类型的存储内容，键为“COUPON:RESOURCE:STOCK:{0}”，其中包含一条记录，key的值是“1735949163390156800”，对应的value值为100，该内容正是测试库存同步时，redis中存储的库存信息，对应了库存同步到redis的操作结果示例。
 
 
@@ -1781,17 +1781,17 @@ void test_seizeCouponScriptLua() {
 
 库存是否减少：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/ZAdlbCHFboLxtEx9Ac5cuJoMnzK.png)
+![zadlbchfbolxtex9ac5cujomnzk](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zadlbchfbolxtex9ac5cujomnzk.png)
 > 图注：图片展示的是库存减少情况，属于抢券Lua脚本测试内容。表格中“key”列显示库存编号“1706183021040336896”，“value”列显示库存数量为8。这与上下文提到的“库存是否减少”相关，用于验证抢券操作后库存是否按预期减少，是测试抢券Lua脚本效果的重要依据。
 
 抢券成功队列是否存在相应记录：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/NQe9b24cxozH8xxiBmUcp6E4nTg.png)
+![nqe9b24cxozh8xxibmucp6e4ntg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nqe9b24cxozh8xxibmucp6e4ntg.png)
 > 图注：图片展示的是抢券成功队列的Redis数据结构示例。上方显示HASH类型，键名为COUPON:SEIZE:LIST:1706183021040336896_{6} 。下方表格中，key列包含三个数字，value列对应均为1。该图片与上文测试抢券Lua脚本时观察redis的内容相关，用于说明抢券成功队列是否存在相应记录这一测试结果。
 
 抢券同步队列是否存在相应记录：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/POKmbu1ZKoqvU4xiWiAcdqZ1nof.png)
+![pokmbu1zkoqvu4xiwiacdqz1nof](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pokmbu1zkoqvu4xiwiacdqz1nof.png)
 > 图注：这张图片展示了抢券场景下Redis哈希（HASH）类型的存储记录，哈希的键为“QUEUE:COUPON:SEIZE:SYNC:{6}”。该哈希结构包含两条核心数据，序号为1的key是“1694250327664218113”，对应的value为“1706183021040336896”，这正是测试抢券Lua脚本时，需要检查的抢券同步队列的相关记录，是验证Lua脚本执行是否成功的关键观测项之一。
 
 ##### 3) 小结
@@ -1814,7 +1814,7 @@ void test_seizeCouponScriptLua() {
 
 在下边的界面中点击“立即领取”即开始抢券。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/STjjbvzhkorlNGxcL11cfpWDndh.png)
+![stjjbvzhkorlngxcl11cfpwdndh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/stjjbvzhkorlngxcl11cfpwdndh.png)
 > 图注：图片展示的是抢券界面。上方显示“抢券”及“即将开始”字样。中间有“20”元优惠券，标注“立即领取”，并有“2”号黄色圆圈标识。下方有“5折”优惠券，标注“已抢光”，并有“1”号黄色圆圈标识。该图片与上下文关系紧密，上下文提到在该界面点击“立即领取”即开始抢券，图片直观呈现了抢券操作的界面情况，帮助理解抢券操作的场景。
 
 请求哪些参数？
@@ -1835,10 +1835,10 @@ void test_seizeCouponScriptLua() {
 
 接口路径：**POST**/market/consumer/coupon/seize
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/R04IbTwJFo33Z5xPgDeccQVrndh.png)
+![r04ibtwjfo33z5xpgdeccqvrndh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/r04ibtwjfo33z5xpgdeccqvrndh.png)
 > 图注：这张图片是抢券接口的请求示例与请求参数说明，对应文档中抢券接口定义的相关内容。上方的请求示例为一个包含"id"字段的JSON结构，值为0。下方的请求参数表格显示，入参为seizeCouponReqDTO，请求类型为body，是必填项，数据类型为SeizeCouponReqDTO，该DTO下包含id参数，说明为活动id，请求类型非必填，数据类型为int64整数。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/RfjdbVtyZos1Zkx3QHJcA5qQnah.png)
+![rfjdbvtyzos1zkx3qhjca5qqnah](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rfjdbvtyzos1zkx3qhjca5qqnah.png)
 > 图注：这张图片展示的是抢券接口的响应参数说明表，表格中列出了该接口的两个响应参数，分别是msg和code。其中，msg为字符串类型，用于表示响应消息；code为int32类型，对应schema为integer(int32)，该参数是状态码，规则为200代表请求成功，其他数值则代表请求失败。这一响应参数说明与文档中介绍的“抢券接口”相关，是对该接口定义的补充说明，明确了该接口返回的具体响应内容及对应含义，可辅助开发者理解该接口的输出格式与返回结果的判断依据。
 
 编写controller方法：
@@ -2021,7 +2021,7 @@ public void seizeCoupon(@RequestBody SeizeCouponReqDTO seizeCouponReqDTO) {
 
 打开小程序，进入抢券页面
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/QockbsVY1opmZ9x14ffcRl6snnb.png)
+![qockbsvy1opmz9x14ffcrl6snnb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qockbsvy1opmz9x14ffcrl6snnb.png)
 > 图注：图片展示的是小程序抢券页面。上方显示“抢券”标题，左侧有返回箭头，右侧有三个点和放大镜图标。中间有“疯抢中”和“即将开始”两个状态选项。下方有一个红色背景的优惠券图标，显示“8.0折”及“立即领取”按钮，下方文字说明“双12来啦 满100元立享8折 2023-11-06~2023-11-09”。该图片与上文“打开小程序，进入抢券页面”对应，直观呈现了抢券页面的样式及信息。
 
 点击领取，观察写入redis的数据是否正确：
@@ -2030,26 +2030,26 @@ public void seizeCoupon(@RequestBody SeizeCouponReqDTO seizeCouponReqDTO) {
 
 抢券成功存入redis抢券成功队列：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/GOfbbMFDjoLqpzxdbq5cxBbDnOd.png)
+![gofbbmfdjolqpzxdbq5cxbbdnod](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gofbbmfdjolqpzxdbq5cxbbdnod.png)
 > 图注：图片展示的是Redis界面中关于抢券成功存入redis抢券成功队列的数据。键值对为“COUPON:SEIZE:LIST:1721415300848590848_{8}”和“1716346406098296832”，对应的value分别为“1”和“1”。该图片与上文“点击领取，观察写入redis的数据是否正确”内容相关，用于直观呈现抢券成功存入redis抢券成功队列时的数据存储情况。
 
 存入redis抢券同步队列：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/NYuRbGjzbo2X9pxCgd5cE5LNnUe.png)
+![nyurbgjzbo2x9pxcgd5ce5lnnue](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nyurbgjzbo2x9pxcgd5ce5lnnue.png)
 > 图注：这是抢券测试环节中相关Redis数据的展示界面，界面的HASH标识标注键为“QUEUE:COUPON:SEIZE:SYNC:{8}”，对应抢券同步队列的信息。界面内的表格区域显示编号为1的条目，其key为数值串1716346406098296832，value为数值串1721415300848590848，该数据为测试抢券功能时，存入Redis的抢券成功相关同步队列数据，用于验证抢券流程的数据存储是否符合预期。
 
 抢券失败情况测试：
 
 限领一张提示：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/KwkqbCMgCo8So2xJdmTcDlmOnVf.png)
+![kwkqbcmgco8so2xjdmtcdlmonvf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kwkqbcmgco8so2xjdmtcdlmonvf.png)
 > 图注：图片展示的是抢券页面。上方显示“抢券”标题，左侧有“疯抢中”“即将开始”选项，当前选中“疯抢中”。中间区域有“双12来啦 满100元立享8折 2023-11-06~2023-11-09”字样，下方有一个橙色的“立即领取”按钮。底部有一个灰色的“限领一张”按钮。该图片与文档中“抢券测试”部分相关，用于展示抢券页面的样式及部分功能按钮。
 
 已抢光：
 
 手动修改redis库存为0，进行测试，示例如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/KbVPbZ9d4olOJtxT4sacdMl6nnc.png)
+![kbvpbz9d4olojtxt4sacdml6nnc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kbvpbz9d4olojtxt4sacdml6nnc.png)
 > 图注：图片展示的是一个抢券页面。上方显示“抢券”标题，左侧有“即将开始”字样，右侧有三个点和一个圆圈图标。下方有两张券，上方券为“双12大促”券，面额10元，满100元立减10元，有效期2023 - 12 - 15 - 2023 - 12 - 24，可立即领取；下方券为“平台二周年庆”券，9折，有效期2023 - 12 - 5 - 2023 - 12 - 24，已抢光。该图片与文档中抢券测试中已抢光情况的测试内容相关，用于展示已抢光券的状态。
 
 
@@ -2090,14 +2090,14 @@ public void seizeCoupon(@RequestBody SeizeCouponReqDTO seizeCouponReqDTO) {
 
 下图是存储抢券结果同步数据的Hash表。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EeJEbZ35voLJ1yxxYLychHQSntf.png)
+![eejebz35volj1yxxylychhqsntf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/eejebz35volj1yxxylychhqsntf.png)
 > 图注：图片展示的是Redis中一个名为QUEUE:COUPON:SEIZE:SYNC:8的Hash表内容。其中，key为1716346406098296832，value为1721415300848590848。图片与上下文紧密相关，上下文在分析Redis到MySQL同步方案时提到，可从Hash表中拿一批数据，每个元素包括用户id和活动id，根据这两个参数插入coupon表，此图直观呈现了Hash表中存储的用户id和活动id数据，辅助说明同步操作的数据来源。
 
 我们可以一次从Hash表中拿一批数据，每个元素包括了用户id和活动id，根据这两个参数插入coupon表。
 
 从下图可以看出，只要拿到用户id和活动id即可向优惠券表插入一条记录。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/OHNybrtouoiSGDxtnJnc3kDvn8f.png)
+![ohnybrtouoisgdxtnjnc3kdvn8f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ohnybrtouoisgdxtnjnc3kdvn8f.png)
 > 图注：图片展示了jz020 - market数据库中coupon表的结构。表包含id、name、user_id、user_name、user_phone、activity_id、type、discount_rate、discount_amount、amount_condition、validity_time、use_time、status、orders_id、create_time、update_time、is_deleted等字段。其中，user_id、user_name、user_phone、activity_id、type、discount_rate、discount_amount、amount_condition、validity_time、use_time、status、orders_id等字段被红色框突出显示，这些字段与用户信息及优惠券活动信息相关，是根据上下文提到的Redis到MySQL同步方案中从Hash表拿数据后插入coupon表时所需的关键字段。
 
 基本思路清楚，现在需要考虑：系统有多个活动，如何提高同步程序的处理性能呢？
@@ -2528,12 +2528,12 @@ public class XxlJobHandler {
 
 下边在xxl-job配置定时任务
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/IUatbDijHoIpmqxGQeYc2W7xnUe.png)
+![iuatbdijhoipmqxgqeyc2w7xnue](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iuatbdijhoipmqxgqeyc2w7xnue.png)
 > 图注：这是一张xxl-job的定时任务新增配置页面，属于抢券结果同步任务的配置界面。页面包含基础配置、调度配置、任务配置、高级配置四个区域，其中执行器设置为“营销中心”，负责人填写“xxljob”，任务描述为“抢券结果同步任务”；调度类型选择“CRON”，Cron表达式设置为“0/10 * * * * ?”；运行模式设为“BEAN”，对应的JobHandler为“seizeCouponSyncJob”，路由策略为“第一个”，调度过期策略设为“忽略”，阻塞处理策略为“单机串行”，界面底部设有“保存”和“取消”操作按钮。
 
 启动任务：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/NIjTbVsU9ond1ZxLyzDciIYqnOf.png)
+![nijtbvsu9ond1zxlyzdciiyqnof](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nijtbvsu9ond1zxlyzdciiyqnof.png)
 > 图注：该图片展示了xxl-job配置的抢券结果同步任务信息，任务ID为18，任务描述为抢券结果同步任务。该任务采用CRON调度，表达式为0/10 * * * * ?，运行模式为BEAN模式，绑定的任务Bean是seizeCouponSyncJob，负责人为xxljob，任务当前状态为RUNNING，可通过对应操作按钮进行相关操作。这一配置对应文档中抢券结果同步环节里启动xxl-job抢券结果同步任务的要求，用于执行抢券结果的数据同步操作。
 
 测试流程：
@@ -2544,7 +2544,7 @@ public class XxlJobHandler {
 
 示例：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Xqg0bEXKvosqxNxe6Obc2m87ncb.png)
+![xqg0bexkvosqxnxe6obc2m87ncb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xqg0bexkvosqxnxe6obc2m87ncb.png)
 > 图注：图片展示的是Redis操作界面，显示了名为“QUEUE:Coupon:SEIZE:SYNC:{4}”的Hash键，其下有一个key为1716346406098296832的键，对应的value为1721427028349067264。该图片与文档中“抢券结果同步开发”部分的“编写多线程任务方法”内容相关，可能是用于展示抢券结果同步过程中Redis中相关数据的存储情况，辅助说明数据同步操作。
 
 
@@ -2563,17 +2563,17 @@ public class XxlJobHandler {
 
 查询coupon表，发现用户抢券结果已成功写入优惠券表：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/YE8NbuYA0ooYm3xMeXOc8cc4n3f.png)
+![ye8nbuya0ooym3xmexoc8cc4n3f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ye8nbuya0ooym3xmexoc8cc4n3f.png)
 > 图注：图片展示了一条优惠券数据信息，包含用户ID、用户名、活动ID等字段。其中，用户ID为1716346406098296832，用户名是“普通用户72135”，活动ID为1721427028349067264。该图片与文档中抢券结果同步测试内容相关，用于示例说明抢券成功后在Redis同步队列写入的数据情况，以及最终写入优惠券表并扣减库存后，查询coupon表发现用户抢券结果已成功写入优惠券表的情况。
 
 活动的库存数据正常扣除。
 
 抢券结果同步完成，redis中记录的活动的库存与数据库活动表的库存一致：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/HmoIb7qUsoovkBxjRTAcGN7knCc.png)
+![hmoib7qusoovkbxjrtacgn7kncc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hmoib7qusoovkbxjrtacgn7kncc.png)
 > 图注：图片展示的是Redis中“COUPON:RESOURCE:STOCK:4”键对应的Hash数据结构内容。其中包含两条记录，key分别为1720700051954622464和1721427028349067264，对应的value分别为100和0。该图片与文档中“抢券结果同步完成，redis中记录的活动的库存与数据库活动表的库存一致”的上下文对应，直观呈现了Redis中库存数据的存储情况，辅助说明库存数据同步的正确性。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/AYyGbccnpox5ttx1OU5c9asGnhb.png)
+![ayygbccnpox5ttx1ou5c9asgnhb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ayygbccnpox5ttx1ou5c9asgnhb.png)
 > 图注：这张图片展示了与第十章秒杀抢购相关的抢券结果数据，是抢券流程完成后的查询结果信息。图片中显示了优惠券活动的相关字段，其中"total_num"对应活动总库存为10000，"stock_num"即当前剩余库存，被红色箭头突出标注，数值为0，结合上下文可知这是抢券结果同步完成后，数据已正确写入优惠券表并成功扣减对应库存的验证内容，该结果也符合抢券后Redis同步队列数据正常、活动库存与数据库一致的预期要求。
 
 
@@ -2631,7 +2631,7 @@ public class XxlJobHandler {
 
 服务技能即服务人员服务范围，比如：服务人员A提供日常保洁、日常维修服务。设置服务技能后服务人员可以抢与自己的技能匹配的订单，比如：服务人员A提供日常保洁、日常维修服务，所以它只能抢日常保洁、日常维修服务的订单。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/F9RRbCRbEoQEjXxwAA9cy7oCnKe.png)
+![f9rrbcrbeoqejxxwaa9cy7ocnke](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/f9rrbcrbeoqejxxwaa9cy7ocnke.png)
 > 图注：这张图展示的是服务技能设置的操作界面，对应文档中抢单功能里的服务技能设置内容。图中呈现了两个状态的界面，左侧界面是“选择服务技能”页面，标注了编辑状态，包含保洁清洗（下分日常保洁、深度保洁、开荒保洁、周期保洁）、日常维修两类服务选项；右侧界面为设置完成状态，“日常保洁”和“深度保洁”选项被标红选中，顶部右上角显示“保存”字样，清晰呈现了选择服务技能的操作过程，直观体现了服务技能设置中挑选对应服务项的操作逻辑。
 
 
@@ -2640,7 +2640,7 @@ public class XxlJobHandler {
 
 设置服务范围后能抢服务范围内的订单，下图中的服务城市是北京，接单范围是朱辛庄地铁站，在抢单查询时以接单范围为中心点查询方圆几公里的用户创建的订单，具体方圆公里数在查询条件中选择。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EnWqbezsQoEFKbx2L3ycxKbvnIc.png)
+![enwqbezsqoefkbx2l3ycxkbvnic](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/enwqbezsqoefkbx2l3ycxkbvnic.png)
 > 图注：这是服务范围设置相关的工作地点选择页面截图，页面顶部显示“请选择工作地点”，地图上标注了当前定位的可修改地址，下方明确显示服务城市为北京，意向接单范围为朱辛庄地铁站，还设有“重新定位”按钮与“保存”按钮，该页面对应文档中服务范围设置的相关说明，设置完成后接单时会以该接单范围为中心点，结合用户所选的查询距离获取对应订单。
 
 
@@ -2651,7 +2651,7 @@ public class XxlJobHandler {
 
 开启接单后方可抢单。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/RidjbdqvyoheovxwkH5ccrxmnNe.png)
+![ridjbdqvyoheovxwkh5ccrxmnne](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ridjbdqvyoheovxwkh5ccrxmnne.png)
 > 图注：这是接单设置页面的界面截图，页面顶部显示“接单设置”标题，左侧带有返回箭头。页面设有“开启接单”的开关选项，当前该开关呈灰色关闭状态，表明接单功能尚未开启，这与文档中“开启接单后方可抢单”的说明内容相对应。
 
 1. **开始抢单**
@@ -2662,14 +2662,14 @@ public class XxlJobHandler {
 
 服务类型：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/UWG8b0iuKo49A6xPWQnc9ypinGE.png)
+![uwg8b0iuko49a6xpwqnc9ypinge](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uwg8b0iuko49a6xpwqnc9ypinge.png)
 > 图注：这是云岚到家服务人员抢单页面的相关界面，顶部区域标注为北京，设有服务技能、接单设置、服务范围选项，能设置接单的服务城市与具体范围。页面中部标注“抢单大厅”，包含服务距离与服务类型选项；服务距离选择区域被标注，提供全部、3公里内、5公里内等不同范围选项，可筛选出对应接单范围内的订单。页面下方展示了日常保洁、空调维修两类订单，均标注有预约时间、服务地址、费用，还设有“立即抢单”按钮，点击即可参与对应订单的抢单操作。
 
 1. 抢单成功查询订单
 
 服务人员抢单成功在我的订单中查询
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/UUQ9baiDmoUyAhxH6accStaBn5d.png)
+![uuq9baidmouyahxh6accstabn5d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uuq9baidmouyahxh6accstabn5d.png)
 > 图注：图片展示的是抢单成功后在“我的订单”中查询到的订单信息页面。页面显示时间为9:41，有“订单”“历史订单”选项。订单状态为“待上门”，有“开始服务”按钮。订单内容为冰箱维修，预约时间为2023年5月30日19:00，地址是北京市昌平区金彦龙写字楼*单元。页面左上角有红色数字“2”，右上角有红色数字“99+”。该图片与抢单成功后在“我的订单”中查询订单的上下文对应，直观呈现了订单查询结果。
 
 
@@ -2698,17 +2698,17 @@ public class XxlJobHandler {
 
 **1、服务技能与服务范围设置**
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/HXfubBlNFooDjxxLKXjcASJnncK.png)
+![hxfubblnfoodjxxlkxjcasjnnck](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hxfubblnfoodjxxlkxjcasjnnck.png)
 > 图注：图片展示了机构端抢单中服务技能与服务范围设置的界面。左侧为服务技能设置，有“保洁”分类，可选择“日常保洁”“深度保洁”；右侧是服务范围设置，有“城市选择”“服务地址”输入框，下方是地图，显示了服务范围区域。该图片与上下文“服务技能与服务范围设置”内容对应，直观呈现了设置操作界面，帮助理解机构端抢单时对服务技能和服务范围的配置方式。
 
 **2、开启接单**
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/S4Dob2RIJoyBfPxrE95cfStbnab.png)
+![s4dob2rijoybfpxre95cfstbnab](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/s4dob2rijoybfpxre95cfstbnab.png)
 > 图注：这张图片展示的是秒杀抢购模块里机构端抢单的相关设置界面，界面包含四项设置内容，分别为实名认证、服务技能设置、服务范围设置和接单设置，每项设置旁配有对应的功能按钮，实名认证、服务技能设置、服务范围设置的右侧分别设有“去认证”“去设置”按钮，接单设置右侧的开关为开启状态，红色箭头明确指向该开启的开关，表明此为开启接单的状态，界面底部设有“进入首页”和“进入首页”两个操作按钮，该界面对应机构端抢单原型中的服务技能与服务范围设置、开启接单环节。
 
 **3、抢单页面**
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/RMf9bG7oQoq1R5xVG8ac55NHn8d.png)
+![rmf9bg7oqoq1r5xvg8ac55nhn8d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rmf9bg7oqoq1r5xvg8ac55nhn8d.png)
 > 图注：图片展示的是抢单页面。页面上方有搜索框，可输入关键词搜索服务技能、服务范围等。下方是抢单列表，包含序号、服务类型、服务名称、服务数量、预计时间、服务费用、服务地址等信息，每条记录右侧有“抢单”按钮。页面右下角有“下一页”按钮。该图与上下文介绍的抢单需求分析中抢单页面内容对应，直观呈现了抢单页面的样式及信息展示情况。
 
 上图中除了服务费用以外其它字段均为订单表中的信息，服务费是订单金额的30%（可设置）。
@@ -2950,19 +2950,19 @@ public class XxlJobHandler {
 
 服务人员新注册账号后进入下边的界面：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/HS8lbfk2bo6rdVxvWeNcTNY4nwe.png)
+![hs8lbfk2bo6rdvxvwenctny4nwe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hs8lbfk2bo6rdvxvwenctny4nwe.png)
 > 图注：图片展示的是服务人员新注册账号后进入的界面。界面上方有“亲，完成以下设置，方可接单哦~”的提示，下方列出需设置的项目：实名认证、服务技能设置、服务范围设置、接单设置，每个项目右侧对应有“去认证”“去设置”按钮。最下方有一个“进入首页”的粉色按钮。该图片与上下文紧密相关，上下文提到通过此界面进行服务技能设置、服务范围设置、接单设置，且点击“去设置”可进入服务技能设置界面，点击“去认证”“去设置”可进行相应设置。
 
 通过此界面进行服务技能设置、服务范围设置、接单设置。
 
 点击上图中的“去设置”进入服务技能设置界面：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/NAuKbCfDPosc7AxxNrycaK4jnrf.png)
+![naukbcfdposc7axxnrycak4jnrf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/naukbcfdposc7axxnrycak4jnrf.png)
 > 图注：图片展示的是抢单服务技能设置界面中的“选择服务技能”部分。界面上方有“编辑”按钮，右侧有“保洁清”“日常维修”“家居服务”等服务技能选项，其中“保洁清”有红色边框突出显示，且有数字“2”标注。该图片与上文“点击编辑开始设置服务技能”及“选择服务技能，点击保存”的操作说明相关，直观呈现了服务技能选择界面，帮助用户了解操作位置及技能选项。
 
 点击编辑开始设置服务技能：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/UJXJb98KToXMNRxAIi4cuyl2nxf.png)
+![ujxjb98ktoxmnrxaii4cuyl2nxf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ujxjb98ktoxmnrxaii4cuyl2nxf.png)
 > 图注：图片展示的是抢单设置中服务技能设置界面。界面上方显示“选择服务技能”，左侧有“保洁清”“日常维修”“家居服务”等服务类别，其中“保洁清”类别下有“日常保洁”“厨卫维修”两个选项，且“日常保洁”被红色框线突出显示。下方有“取消”和“保存”按钮。该图片与上文抢单设置中服务技能设置的操作流程相关，直观呈现了服务技能选择界面及关键选项。
 
 选择服务技能，点击保存。
@@ -2971,7 +2971,7 @@ public class XxlJobHandler {
 
 进入服务范围设置界面：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/XmgxbCKi3oP0lbxlpVica0h7nHb.png)
+![xmgxbcki3op0lbxlpvica0h7nhb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xmgxbcki3op0lbxlpvica0h7nhb.png)
 > 图注：图片展示的是抢单服务范围设置界面。界面上方显示“请选择工作地点”，下方有两个设置项，分别是“服务城市”和“意向接单范围”，当前分别显示为“北京市”和“北京黑马程序员”，右侧均有向右的箭头标识。界面底部有一个红色的“保存”按钮。该图片与抢单设置上下文相关，是进入服务范围设置界面后的呈现，用于设置抢单时的服务城市和意向接单范围。
 
 
@@ -3219,29 +3219,29 @@ public class ServeProviderSettingsController {
 
 在下边的配置文件上配置坐标及相关信息实现定位：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Mrz8bX69MoXX31xy4irc8TgCnpd.png)
+![mrz8bx69moxx31xy4irc8tgcnpd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mrz8bx69moxx31xy4irc8tgcnpd.png)
 > 图注：这是一段代码配置的图片，对应抢单设置中配置坐标模拟手机定位的步骤。左侧是项目文件夹结构，选中的是address文件夹下的h5Data.js文件；右侧是该文件的代码内容，文件注释说明是h5情况下的运行环境配置，代码中export的data对象包含了经度116.4343、纬度40.008，以及对应北京市的城市信息。这些配置内容为测试使用浏览器模拟手机定位提供了参数支撑，与文档中通过配置文件坐标模拟手机定位的内容完全对应。
 
 坐标及信息使用高德地图的坐标拾取工具(https://lbs.amap.com/tools/picker)获取。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/LDV2bLDCdo2gJ8xtyg8cKm0OnLd.png)
+![ldv2bldcdo2gj8xtyg8ckm0onld](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ldv2bldcdo2gj8xtyg8ckm0onld.png)
 > 图注：这张图片展示的是高德地图坐标拾取工具的页面，该工具可用于获取坐标信息，对应文档中提及的“坐标及信息使用高德地图的坐标拾取工具”的内容。页面上有“按关键字搜索”“按坐标搜索”两个选项，下方的搜索框中填写了“北京黑马程序员”，点击“搜索”按钮后，在“坐标获取结果”区域显示出对应的坐标数值，该坐标被红框标注，且右侧设有“复制”按钮，页面还呈现了包含相关地点的电子地图，用于直观展示对应位置。
 
 citycode从数据库的city_directory获取。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/MElwb262xo9Y3gxTJ5AcpE6HnOh.png)
+![melwb262xo9y3gxtj5acpe6hnoh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/melwb262xo9y3gxtj5acpe6hnoh.png)
 > 图注：图片展示了数据库查询结果，表名为jzo2o-foundations的city_directory。其中，parent_code为11，type为2，city_name为北京市，city_code为010。图片与上文提到的抢单设置中代码阅读内容相关，用于说明在jzo2o-customer.serve_provider_settings表中找到服务人员对应接单范围信息时，可从jzo2o-customer-all.serve_provider表根据手机号找到主键，再根据主键从jzo2o-customer-all.serve_provider_settings表找到具体记录，此图展示了其中的字段信息。
 
 进入服务范围设置界面：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EShWbtYUHoty55x7v0pcAEpcnoh.png)
+![eshwbtyuhoty55x7v0pcaepcnoh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/eshwbtyuhoty55x7v0pcaepcnoh.png)
 > 图注：这是一个用于设置工作地点的界面，属于抢单设置流程中的服务范围设置环节。界面顶部显示标题“请选择工作地点”，下方有两个可配置项，分别为服务城市（当前显示为北京市）和意向接单范围（当前显示为北京黑马程序员），底部设有一个醒目的红色“保存”按钮。该界面的作用是供相关人员调整接单对应的工作地点信息，若需修改原有接单范围的设置，需先清理对应数据库中的相关字段值后，再进入此界面完成修改操作。
 
 如果要修改原来设置的接单范围需要进入数据库清理接单范围设置后再进入此界面。
 
 进入jzo2o-customer.serve_provider_settings表，找到服务人员对应的接单范围信息，清理下边红框内的字段值
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/HZHdbwg8poWHP2xdks8cVzilnwd.png)
+![hzhdbwg8powhp2xdks8cvzilnwd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hzhdbwg8powhp2xdks8cvzilnwd.png)
 > 图注：这张图片展示了一段JSON格式的数据，其中红框标注了多个字段内容。红框内包含的字段及对应值分别为：“city_code”字段值为“010”，“city_name”字段值为“北京市”，“lon”字段值为116.4343，“lat”字段值为40.008，“intention_scope”字段值为“北京黑马程序员”。该图片对应文档中提到的，需要清理的jzo2o-customer.serve_provider_settings表中的红框内字段，结合上下文，这些是修改服务人员接单范围时需清理的相关数据信息。
 
 如何找到服务人员对应的接单范围信息**？**
@@ -3475,10 +3475,10 @@ public void paySuccess(TradeStatusMsg tradeStatusMsg) {
 
 登录运营端，进入区域配置，针对运营区域进行调度配置
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Bzh9bxFjco4euBxLREkcHlMqnOd.png)
+![bzh9bxfjco4eubxlrekchlmqnod](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bzh9bxfjco4eubxlrekchlmqnod.png)
 > 图注：图片展示的是运营端区域管理界面。界面中列出了区域编号、区域名称、区域负责人、手机号码、状态、更新时间及操作等信息。其中，区域编号023对应重庆市，负责人猪八戒，手机号码13231221212，状态为禁用；区域编号0594对应莆田市，负责人李四，手机号码17812345678，状态为禁用；区域编号0371对应郑州市，负责人小红，手机号码13333333333，状态为启用。操作栏有编辑、调度配置、设置服务、启用、缓存刷新等选项，其中郑州区域的“调度配置”操作被红色箭头突出显示。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/XO7Hb0pn2ogUYdxwcAscEprcnCe.png)
+![xo7hb0pn2oguydxwcasceprcnce](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xo7hb0pn2oguydxwcasceprcnce.png)
 > 图注：这张图片是运营端的调度配置界面，对应订单分流的调度配置环节，用于完成运营区域的调度设置。界面包含区域名称栏，以及全局策略、抢单策略、派单策略三类配置项，每类配置项均设有“个体”“公众”相关的服务范围半径输入框，其中部分输入框内显示数值；抢单策略还包含“抢单超时时间”的分钟输入项，派单策略则有“派单规则”“抢单等待时间”的相关配置，界面底部设置“取消”与“确定”操作按钮，完成配置后点击确定即可保存至config_region表。
 
 此操作向config_region表保存配置，config_region表的数据是在添加区域时同时写入的。
@@ -3549,17 +3549,17 @@ public PlaceOrderResDTO placeOrder(Long userId, PlaceOrderReqDTO placeOrderReqDT
 
 新下单：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/SCl5bBxVRoIChWxhvwPcmYumnce.png)
+![scl5bbxvroichwxhvwpcmyumnce](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/scl5bbxvroichwxhvwpcmyumnce.png)
 > 图注：这是一张日常保洁服务的预约界面截图，界面顶部标注服务类型为“日常保洁”且默认勾选“日常上门保洁”选项，下方设有填写预约信息的区域，已自动填充服务地址为北京市昌平区回龙观街道的某中心，联系人与联系电话也已预设，同时显示需选择上门时间，当前预选时段为2023年11月15日20:30，优惠券区域标注暂无可用优惠券，界面底部显示该服务售价为1元，右下角设有红色的“立即预约”按钮，用于提交预约申请，该界面对应文档中测试下单功能时的支付及预约环节。
 
 下单成功进入支付页面，
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/NbCRb0CAmoG5GZxPrqYcB3K3nSf.png)
+![nbcrb0camog5gzxprqycb3k3nsf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nbcrb0camog5gzxprqycb3k3nsf.png)
 > 图注：图片展示的是“支付订单”页面。页面显示订单总价1元，待付金额1.00元，支付剩余时间为14:55。页面中有微信支付和支付宝支付两种支付方式，微信支付右侧有红色勾选标志。页面底部有“还需支付：1.00元”的提示，以及一个红色的“确认支付”按钮。该图片与文档中“下单成功进入支付页面”的内容对应，直观呈现了支付页面的样式及关键信息。
 
 因为我们为了测试方便设置了自动支付成功，上边的支付界面 不用管，直接进入我的订单列表查看此订单状态为派单中，这说明订单支付成功。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/CwUGbIpyzouktpxghTPcHWFKnnH.png)
+![cwugbipyzouktpxghtpchwfknnh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cwugbipyzouktpxghtpchwfknnh.png)
 > 图注：该图片展示的是手机端“我的订单”页面，顶部设有“待支付”“待服务”“服务中”“待评价”“全部”的订单分类标签，当前选中“全部”标签。页面中列有一条订单，对应的服务内容为“日常保洁”，下单时间是2023年11月15日20:30，订单状态标注为“派单中”，还显示了该订单的服务地址为北京市昌平区回龙观街道的相关地址。该图片对应文档中订单测试成功的环节，直观呈现了测试流程完成后订单的状态，符合测试说明中支付成功后订单进入派单中的结论。
 
 检查抢单池表，成功向抢单池添加成功。
@@ -3829,7 +3829,7 @@ public class OrdersSeizeSyncHandler extends AbstractCanalRabbitMqMsgListener<Ord
 
 在Canal中配置order_seize为同步表。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/QWvXbuIs3o8fcVxDROAcWZY0nAu.png)
+![qwvxbuis3o8fcvxdroacwzy0nau](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qwvxbuis3o8fcvxdroacwzy0nau.png)
 > 图注：图片展示了Canal配置代码，重点突出“canal-mq-jzo2o-orders-seize:jzo2o-orders-0\\\\\\.orders_seize”这一内容。上下文提到在Canal中配置order_seize为同步表，图片中的代码配置了多个同步表，其中“canal-mq-jzo2o-orders-seize:jzo2o-orders-0\\\\\\.orders_seize”即为配置的同步表之一，表明在Canal配置中，仅配置了jzo2o-orders-0下的order_seize为同步表，这与上下文提到的配置原因相呼应。
 
 上边的配置中为什么只配置了jzo2o-orders-0下的order_seize为同步表？jzo2o-orders-1和jzo2o-orders-2需要配置吗？
@@ -3878,7 +3878,7 @@ order_seize为广播表，jzo2o-orders-0、jzo2o-orders-1、jzo2o-orders-2三个
 
 下单成功，执行到断点位置
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/TTEnbXwg8oyoOXxxsrgcVWPqnlc.png)
+![ttenbxwg8oyooxxxsrgcvwpqnlc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ttenbxwg8oyooxxxsrgcvwpqnlc.png)
 > 图注：这张图片是开发调试时的代码界面，展示了OrdersSeizeSyncHandler.java文件中的业务代码，对应上下文里“同步类中打断点”的调试场景。界面中，红色箭头指向代码行`List<OrdersSeizeInfo> ordersSeizeInfos = order...`，该行代码被标记为断点；界面右侧显示调试信息，标注变量`ordersSeizes`为大小等于1的集合，其第一个元素是订单信息，包含订单号、城市编码等具体内容，还提供了“Set value”“Create renderer”的操作选项，该调试状态表明程序已进入抢单池同步流程的断点，符合上下文里同步数据接收后的调试验证操作。
 
 程序进入断点说明收到抢单池同步数据
@@ -3942,7 +3942,7 @@ hashkey: 订单id
 
 hashvalue：库存数量
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/AWL8bbyzUodB4ixVvg9cpEStnxh.png)
+![awl8bbyzuodb4ixvvg9cpestnxh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/awl8bbyzuodb4ixvvg9cpestnxh.png)
 > 图注：图片展示的是抢单库存同步到Redis的情况。在Redis界面中，哈希键为“ORDERS:RESOURCE:STOCK:{0}”，哈希值为“2311150000000000038”，其对应的value值为1。该图片与上文抢单池同步内容相关，用于说明在抢单池同步后，抢单库存是否同步成功，通过查看Redis中订单id对应的库存数量来验证。
 
 
@@ -3976,12 +3976,12 @@ hashvalue：库存数量
 
 请求参数：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/T2xabg9S1ofayVx6s9acyZwcnIc.png)
+![t2xabg9s1ofayvx6s9acyzwcnic](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/t2xabg9s1ofayvx6s9acyzwcnic.png)
 > 图注：图片展示了抢单查询接口的请求参数信息。表格包含参数名称、参数说明、请求类型、是否必须、数据类型、schema六列。关键参数有keyWord（关键字）、lastRealDistance（上一页最后一条数据的距离字段）、maxServeStartTime（预约时间查询上限）、minServeStartTime（预约时间查询下限）、serveDistance（服务距离）、serveTypeId（服务类型id）。其中，serveTypeId的数据类型为integer(int64)，且为必填项。该图片与上文接口开发中根据服务人员服务范围、技能筛选抢单池，通过Java代码查询ES的内容相关，用于说明接口请求参数。
 
 响应参数：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/YzAIbwPOPo0RAOxaxV7cCt1Qnre.png)
+![yzaibwpopo0raoxaxv7cct1qnre](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yzaibwpopo0raoxaxv7cct1qnre.png)
 > 图注：图片展示了抢单查询接口的响应参数。包含msg、code、data等字段，其中data下的ordersSeizes为抢单列表，包含serveTypeId、realDistance、serveItemName等信息。如serveTypeId为服务分类id，realDistance为实际距离，serveItemName为服务项名称等。此图与上文接口功能介绍相呼应，详细说明了接口响应参数的具体内容，为接口开发和测试提供参数依据。
 
 定义controller
@@ -4263,7 +4263,7 @@ public OrdersSeizeListResDTO queryForList(OrdersSerizeListReqDTO ordersSerizeLis
 
 首先修改抢单服务的配置文件，使用shardingsphere的驱动
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/WJhXbY8HSoyEvMx4PzTc9rjtnyg.png)
+![wjhxby8hsoyevmx4pztc9rjtnyg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wjhxby8hsoyevmx4pztc9rjtnyg.png)
 > 图注：该图片展示的是抢单服务配置文件的设置界面，配置格式选择为YAML，配置内容区域被红色框标注，框内显示spring配置项，其中datasource的驱动类设置为org.apache.shardingsphere.driver.ShardingSphereDriver，连接URL配置为jdbc:shardingsphere:classpath:shardingsphere-jdbc-${spring.profiles.active}.yml，同时还包含mybatis-plus相关配置内容，这对应文档中修改抢单服务配置文件、使用shardingsphere驱动的测试步骤。
 
 下边进行测试：
@@ -4300,17 +4300,17 @@ public OrdersSeizeListResDTO queryForList(OrdersSerizeListReqDTO ordersSerizeLis
 
 北京的家政服务人员成功查询到符合条件抢单信息。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/ZRf6bv5bQoY2QnxfIc9cUYZinjg.png)
+![zrf6bv5bqoy2qnxfic9cuyzinjg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zrf6bv5bqoy2qnxfic9cuyzinjg.png)
 > 图注：图片展示的是北京家政服务抢单界面。上方有服务技能、接单设置、服务范围等选项。中间大图是一位正在清洁的女性，下方文字为“更好的家政上门服务体验”。下方有抢单大厅、距离筛选、服务类型等筛选项。显示一条抢单信息，服务类型为日常保洁，预约时间为2023年11月15日20:30，地点在北京市昌平区回龙观街道弘文恒瑞文化传播公司正泽商务中心，服务费用为0.30元，右侧有“立即抢单”按钮。该图与抢单查询相关，展示了抢单信息的展示界面。
 
 具体查询语句在service方法中打断点跟踪
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Mi92b4bl7oGHhzxSSm9cPbhjn4V.png)
+![mi92b4bl7oghhzxssm9cpbhjn4v](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mi92b4bl7oghhzxssm9cpbhjn4v.png)
 > 图注：图片展示了OrdersSeizeServiceImpl.java文件中searchResponse.isSuccess()为true时的代码执行情况。代码中使用了elasticsearchTemplate.opsForDoc().search()方法查询抢单池订单信息，若查询成功，通过searchResponse.hits().stream().map()获取抢单信息。图片右侧有代码断点标识，下方弹出的代码信息框中，query部分被红色箭头指向，显示为“Query{“bool”:{“must”:\[{“term”:{“city_code”:{“value”:“010”}}},{“terms”:{“service_type”:\[“00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 
 复制query语句，在kibana中调试。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/WrTvb8ppVoUULoxTu44cPavQnzb.png)
+![wrtvb8ppvouuloxtu44cpavqnzb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wrtvb8ppvouuloxtu44cpavqnzb.png)
 > 图注：这是Elastic的Kibana控制台界面截图，左侧是编写的查询语句，发送GET请求至“/orders_seize/_search”，搜索条件包含对“city_code”“serve_type_id”“serve_time”“geo_distance”的筛选，用于按服务人员的服务范围、服务技能筛选抢单池订单；右侧是返回的匹配结果，显示两条符合条件的订单，其中一条为“依洁清日常保洁”服务，关联地址为北京市昌平区的对应场所，包含订单ID、服务类型、时间等抢单相关信息，该截图对应文档中“在Kibana中测试查询抢单语句”的操作环节，用于验证抢单池订单的查询逻辑。
 
 
@@ -4402,12 +4402,12 @@ HashValue: 库存，为1
 
 请求参数：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/ZrP5b9w0EomnXmxpxj1catPenEg.png)
+![zrp5b9w0eomnxmxpxj1catpeneg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zrp5b9w0eomnxmxpxj1catpeneg.png)
 > 图注：图片展示了抢单接口的请求参数信息。参数名称为ordersSeizeReqDTO，参数说明是ordersSeizeReqDTO，请求类型为body，是否必须为true，数据类型为抢单模型，schema也为抢单模型。此外，还有id参数，参数说明为抢单id，请求类型为false，数据类型为integer(int64)。该图片与抢单接口定义上下文相关，直观呈现了接口请求参数的具体内容。
 
 响应参数：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/NuSibylxPo1E96xkR1FcextRn8g.png)
+![nusibylxpo1e96xkr1fcextrn8g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nusibylxpo1e96xkr1fcextrn8g.png)
 > 图注：图片展示了抢单接口的响应参数。包含两个参数：msg，类型为string，参数说明为响应消息；code，类型为integer(int32)，参数说明为状态码，200表示成功，其它表示失败。该图片与抢单接口定义上下文相关，是对接口响应参数的具体说明，帮助理解接口返回数据的结构和含义。
 
 *抢单结果 大于0抢单成功，-1/-2：库存数量不足，-3：抢单失败*
@@ -4551,7 +4551,7 @@ public void seize(Long id, Long serveProviderId, Integer serveProviderType, Bool
 
 抢单界面提示：抢单成功
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/UFBxbVfZuoL5qJxO00rcKU6Pn1e.png)
+![ufbxbvfzuol5qjxo00rcku6pn1e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ufbxbvfzuol5qjxo00rcku6pn1e.png)
 > 图注：这张图片呈现的是抢单操作后的结果弹窗界面，弹窗顶部配有一个表情夸张的黄色大笑表情，主体文字为黑色加粗的“抢单成功”，下方设有红色的“确定”按钮，该弹窗属于测试流程中抢单成功后的预期结果展示，对应服务人员完成抢单操作后界面的提示内容。
 
 在redis成功写入抢单同步记录
@@ -4560,7 +4560,7 @@ public void seize(Long id, Long serveProviderId, Integer serveProviderType, Bool
 
 在redis成功扣除库存
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/GLpVbMNO1oCKL8xydQ8c6kUNnbc.png)
+![glpvbmno1ockl8xydq8c6kunnbc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/glpvbmno1ockl8xydq8c6kunnbc.png)
 > 图注：图片展示的是Redis中关于抢单库存记录的界面。上方显示键名为“ORDERS:RESOURCE:STOCK:{0}”，TTL为-1。下方表格中，key为“23111500000000000038”，value为0。该图片与抢单测试流程相关，用于说明在Redis成功扣除库存后，抢单同步记录的情况，是抢单测试中对抢单成功后Redis库存记录状态的展示。
 
 
@@ -4569,12 +4569,12 @@ public void seize(Long id, Long serveProviderId, Integer serveProviderType, Bool
 
 如果抢单失败报下边的提示：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Up7MbF7M0onGyrx9MGdcKboFnyf.png)
+![up7mbf7m0ongyrx9mgdckbofnyf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/up7mbf7m0ongyrx9mgdckbofnyf.png)
 > 图注：图片展示的是抢单失败时的提示界面。界面背景为抢单大厅界面，弹出窗口中有一个黄色的哭脸表情，下方文字显示“抢单失败”，并说明“单子已经被抢走了”，底部有一个红色的“确定”按钮。该图片与文档中抢单失败的预期结果部分对应，直观呈现了抢单失败时系统给出的提示信息，帮助用户了解抢单失败的具体情况。
 
 或
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/UYx8b3vproamWvxgUgzcGi6rnOc.png)
+![uyx8b3vproamwvxgugzcgi6rnoc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uyx8b3vproamwvxgugzcgi6rnoc.png)
 > 图注：该图片展示了抢单业务的失败场景，呈现了抢单大厅的界面内容，包括保洁服务项目“日常保洁a”的信息、预约时间为2023年11月15日20:30的服务地址，以及0.30元的服务费用。界面中间弹出“接单失败！”的提示框，右下角有标注为“立即抢单”的红色按钮，该内容对应测试环节中抢单失败的预期结果展示，符合抢单测试流程里抢单失败的场景呈现。
 
 首先排查 jzo2o-orders-seize是否启动
@@ -4817,7 +4817,7 @@ public void seizeSyncJob() {
 
 启动xxl-job: docker start xxl-job-admin
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/DKcubZD7poOGrFxJgYtcQteWn2f.png)
+![dkcubzd7poogrfxjgytcqtewn2f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dkcubzd7poogrfxjgytcqtewn2f.png)
 > 图注：这张图片是xxl-job任务配置页面，对应文档中抢单结果异步处理的测试环节里的任务配置步骤。页面分为基础配置、调度配置、任务配置、高级配置四个区域，其中基础配置里执行器设为抢单调度器、负责人为xxl job，任务描述为抢单结果同步；调度配置中调度类型选择CRON，Cron表达式填0 10 * * * ?；任务配置里运行模式为BEAN，JobHandler为seizeSyncJob；高级配置里路由策略为第一个、子任务ID为空、调度过期策略为忽略，其余配置多为默认值，底部有保存和取消按钮，该页面用于配置测试所需的seizeSyncJob任务。
 
 1. 在seizeOrdersSuccess方法的断点
@@ -4967,60 +4967,60 @@ orders_serve服务单数据添加成功，状态为1（待服务）
 
 设置一周的秒杀活动
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Fk8zbrqF1o4rShxSUcJcZUaBnRd.png)
+![fk8zbrqf1o4rshxsucjczuabnrd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fk8zbrqf1o4rshxsucjczuabnrd.png)
 > 图注：图片展示的是电商限时抢购中运营端创建秒杀活动后的秒杀活动列表界面。列表包含活动名称、开始时间、申请截止时间、活动状态、申请规则、操作等信息。如2024 - 11 - 23秒杀活动，开始时间为2024 - 11 - 23 00:00:00，申请截止时间同，活动状态为未开始，操作有编辑、管理、关闭。该图与上下文介绍的运营端创建秒杀活动后，可查看秒杀活动列表的内容相契合。
 
 设置每天的秒杀时间段
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/D1a4beUyKoXN5cxexYXc35oInUf.png)
+![d1a4beuykoxn5cxexyxc35oinuf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/d1a4beuykoxn5cxexyxc35oinuf.png)
 > 图注：这是电商限时抢购业务中运营端设置秒杀活动时的界面，页面顶部设有“秒杀活动列表”“秒杀活动设置”两个选项卡，当前处于“秒杀活动设置”界面。界面核心区域为每日场次设置，以橙色方块标识可选的秒杀时段，覆盖0:00至23:00的整点钟点时段。页面下方设有“秒杀规则”输入框，底部还有“返回”和“提交”按钮，右上角则有“创建一周秒杀活动”的操作按钮，该界面用于完成前文所述的运营端秒杀活动的时段配置等设置工作。
 
 #### 2）店铺端添加秒杀商品
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/W8OjbUOdhoRuncxxWnWcfmORnVk.png)
+![w8ojbuodhoruncxxwnwcfmornvk](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/w8ojbuodhoruncxxwnwcfmornvk.png)
 > 图注：这张图片是电商秒杀抢购业务中运营端的秒杀活动管理页面，页面顶部有活动名称搜索框、活动状态下拉选择框、活动时间选择区域，还有橙色的“搜索”按钮和“重置”按钮。页面下方展示了两条秒杀活动信息，分别为2024-11-23秒杀活动、2024-11-22秒杀活动，两条活动的状态均为“未开始”，每条活动信息对应列有活动名称、活动开始时间、报名截止时间，还有时间场次明细，每条信息后配有蓝色的“管理”操作按钮。
 
 点击“管理”进入添加商品界面
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Exsqbh0iioVqfjxLPi2cv14vnib.png)
+![exsqbh0iiovqfjxlpi2cv14vnib](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/exsqbh0iiovqfjxlpi2cv14vnib.png)
 > 图注：这是电商限时抢购活动中店铺端添加秒杀商品环节的操作界面，界面顶部显示已设置的活动信息，活动名称为2024-11-23秒杀活动，活动开始时间、报名截止时间均为2024-11-23 00:00:00，右侧还标注了对应可选的时间场次。界面中间有“选择商品”选项，下方的时间刻度条可选择时段，商品信息表格中目前暂无数据，底部设有“返回”和“提交”按钮，用于完成后续的提交申请操作。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/TtD7bQMzUoydivxjVOicO0tonDg.png)
+![ttd7bqmzuoydivxjvoico0tondg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ttd7bqmzuoydivxjvoico0tondg.png)
 > 图注：图片展示的是电商限时抢购中店铺端添加秒杀商品时的界面。界面上方有“搜索范围”和“商品名称”输入框，中间有“请选择商品分类”下拉框及“搜索”按钮。下方列出多款商品，如荣耀80、小米802等，每款商品有图片、名称、库存类型、价格及已选中状态标识。底部有“取消”和“确定”按钮。该图与上下文关系紧密，是店铺端添加秒杀商品操作流程中设置商品的界面展示。
 
 添加成功下一步设置活动价格
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/VMeFbr300oKLebxj8GbcBw7knQe.png)
+![vmefbr300oklebxj8gbcbw7knqe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vmefbr300oklebxj8gbcbw7knqe.png)
 > 图注：这张图是店铺端添加秒杀商品流程中的提交申请环节页面，上方显示2024-11-23秒杀活动的信息，包括活动开始时间、报名截止时间，以及设置的秒杀时间场次；下方是商品列表，共4款待申请的商品，包含荣耀80黑色128G、荣耀80红色256G、小米802绿色256G、荣耀80红色256G，分别标注了商品价格、库存、活动价格、状态，操作栏带有“删除”按钮，页面还有橙色的“选择商品”按钮与“返回”按钮，此时商品状态均为“未申请”，对应流程中提交后系统自动审核通过的前置页面。
 
 点击提交申请秒杀商品，系统设置为自动审核，提交后自动审核通过，如下图
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/C3GTbAdIZo7DGSxxuUrcihXzndf.png)
+![c3gtbadizo7dgsxxuurcihxzndf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/c3gtbadizo7dgsxxuurcihxzndf.png)
 > 图注：这张图是电商秒杀系统的后台操作界面，对应店铺端添加秒杀商品流程的提交申请环节。界面上方显示活动名称为“2024-11-23 秒杀活动”，活动开始时间与报名截止时间均为2024年11月23日00:00:00，右侧列有当日可设置的时间场次；中间区域显示了四款待添加为秒杀商品的信息，包括商品名称、原价格、库存，以及对应的活动价格，当前选中了时间场次中的11:00档；所有商品的活动状态均标注为“通过”，每个商品右侧设有删除按钮，界面左下角设有“返回”与“提交”按钮，完成设置后提交即可完成秒杀商品的申请，系统将自动审核通过。
 
 #### 3）用户端进行秒杀
 
 进入小程序首页，
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/E7I4bWvgFomPRvxXogbczxEwnOb.png)
+![e7i4bwvgfomprvxxogbczxewnob](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/e7i4bwvgfomprvxxogbczxewnob.png)
 > 图注：图片展示的是青橙电商小程序首页界面。上方有“青橙电商”标识及“精品零食抢先购”搜索框。中间大图宣传“约会女王 第二件半价 女王节限时促销”，并有皇冠装饰。下方有多个功能图标，其中“秒杀活动”图标被红色箭头指向。最下方是“300元 满1200元可用 新人专享 立即领取”的优惠券区域。该图片与上下文关系紧密，直观呈现了用户端进入小程序首页后可看到的界面及“秒杀活动”入口位置。
 
 点击“秒杀活动”进入秒杀界面 
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/GxmpbBs9PocKvIxzmjIcsNN3nxd.png)
+![gxmpbbs9pockvixzmjicsnn3nxd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gxmpbbs9pockvixzmjicsnn3nxd.png)
 > 图注：这是青橙秒杀的小程序秒杀界面，顶部标注了“秒杀”主题，还显示了10:00正处于抢购中，11:00、12:00、13:00为即将开始的秒杀时段。界面内展示了三款秒杀商品，分别是售价900元的荣耀80白色256G款、售价900元的荣耀80白色128G款，以及售价1元的荣耀80黑色128G款，每款商品旁均标注原价为900元，已抢0%，并设有“抢”的操作按钮，对应文档中用户端点击“秒杀活动”进入秒杀界面后的页面内容。
 
 点击具体的商品进入商品详情页面。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Xudxbo5tEo0MunxqpJKc2FKxn3Y.png)
+![xudxbo5teo0munxqpjkc2fkxn3y](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xudxbo5teo0munxqpjkc2fkxn3y.png)
 > 图注：这是电商限时抢购活动中的商品秒杀界面，展示的是秒杀商品荣耀80黑色128G版。该商品标注价格为1.00元，原价为1.00元，处于限时抢购状态，页面显示“距离活动结束”的00:00:00倒计时，标识该秒杀活动处于倒计时结束的临近或已结束状态。界面底部设有“立即购买”按钮，还显示商品备注为“荣耀80非常好”，页面左下方有“店铺”“客服”“购物车”的功能图标，右上角标注当前是活动轮次的1/2。
 
 点击“立即购买”
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EhiNbHbgeoliFDxhmMycIKB0nRg.png)
+![ehinbhbgeolifdxhmmycikb0nrg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ehinbhbgeolifdxhmmycikb0nrg.png)
 > 图注：这张图片是电商小程序的秒杀商品详情界面，对应文档中用户端进行秒杀的环节，呈现的是一款标价为1.00元（标注原价为1.00元）的手机商品。界面显示该商品已选配置为128G内存、黑色款，剩余库存为89件。界面设有颜色、内存的选择选项，其中黑色、128G的选项被标红突出显示，底部还有橙色的“立即购买”按钮，与文档中用户端秒杀流程里点击商品详情后点击“立即购买”的操作步骤相呼应。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/Qj4kbQz3BoTNCCxCrDkcmw5LnFh.png)
+![qj4kbqz3botnccxcrdkcmw5lnfh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qj4kbqz3botnccxcrdkcmw5lnfh.png)
 > 图注：图片展示的是电商限时抢购中用户端进行秒杀时的支付页面。页面上方显示“填写订单”，右上角有三个点和一个放大镜图标。中间部分呈现了商品信息，为“家家乐 荣耀80 黑色 128G”，价格为¥1.00，有“不开发票”选项。下方有“备注信息”输入框，以及“商品合计”“优惠券”“优惠金额”“活动优惠”等信息栏，当前优惠券、优惠金额、活动优惠均为0.00。页面底部有“提交订单”按钮。该图与上下文介绍的用户端进行秒杀流程中点击“提交订单”进入支付页面的内容相契合。
 
 点击“提交订单”，进入支付页面，支付成功商品购买成功。
@@ -5031,7 +5031,7 @@ orders_serve服务单数据添加成功，状态为1（待服务）
 
 #### 1）表结构
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/ZoksbeIm7oBM8kxDKVpcUOuknsb.png)
+![zoksbeim7obm8kxdkvpcuouknsb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zoksbeim7obm8kxdkvpcuouknsb.png)
 > 图注：图片展示了电商限时抢购系统中商品秒杀活动申请表、商品秒杀活动表、秒杀商品信息表的表结构。商品秒杀活动申请表包含id、create by、create time、delete flag、update by、update time、promotion apply status、promotion id、promotion name、promotion type、quantity、sales num、sku id、store id、store name、start time、end time、seckill rule、goods num、scope id、scope type等字段。商品秒杀活动表有id、create by、create time、delete flag、update by、update time、promotion name、store id、store name、start time、end time、seckill rule、goods num、scope type等字段。秒杀商品信息表包含id、create by、create time、delete flag、update by、update time、promotion id、promotion type、store id、store name、sku id、start time、thumbnail、title、category_path、goods type、limit num、num、promotion、point、goods id等字段。
 
 商品秒杀活动表：记录商品秒杀活动的起止时间、店铺信息等。
@@ -5718,7 +5718,7 @@ Kye: {SeckillOrder}\_17975285565543543
 
 value：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/V9NCbb7ADoMdkhx7ZmrcShllnLz.png)
+![v9ncbb7adomdkhx7zmrcshllnlz](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/v9ncbb7adomdkhx7zmrcshllnlz.png)
 > 图注：图片展示的是秒杀交易信息的示例，其结构为String类型，Key为SeckillOrder_订单ID，Value为交易信息（json）。图片中呈现了部分交易信息，包括TradeDTO、CartDTO、PriceDetailDTO等对象的类名、序列化名、storeID、storeName等字段内容。该图片与文档中秒杀交易信息的表结构描述对应，直观呈现了其存储形式和部分数据内容。
 
 

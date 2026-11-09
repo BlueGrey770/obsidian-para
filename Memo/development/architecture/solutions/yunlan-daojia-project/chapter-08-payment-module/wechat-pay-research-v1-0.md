@@ -17,7 +17,7 @@ aliases:
 
 打开微信小程序支付的产品文档：https://pay.weixin.qq.com/docs/merchant/products/mini-program-payment/introduction.html
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-08-payment-module/FprYbpZeFocUIUxjhPGcliacnIb.png)
+![fprybpzefocuiuxjhpgcliacnib](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fprybpzefocuiuxjhpgcliacnib.png)
 > 图注：图片展示的是微信支付商户平台的产品介绍页面。页面左侧有产品文档、API字典、通用规则、SDK及开发工具等分类，其中“小程序支付”分类下有产品介绍、接入前准备、开发指引、API列表等选项，其中“产品介绍”被红色框突出显示。右侧是产品介绍内容，提到商户已有微信小程序，用户通过好友分享或扫描二维码在微信内打开小程序时，可调用微信支付完成下单购买流程，还标注了小程序支付的注意事项。该图片与文档中前期准备中注册商户部分内容相关，辅助说明小程序支付的背景信息。
 
 ## 2 **前期准备**
@@ -30,7 +30,7 @@ aliases:
 
 本项目作为公司的自研项目并进行运营需要申请成为普通商户，地址：https://pay.weixin.qq.com/index.php/core/home/login?return_url=%2F 
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-08-payment-module/GOmJb3YZToEebwxcrgJcKSEnnDd.png)
+![gomjb3yztoeebwxcrgjcksenndd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gomjb3yztoeebwxcrgjcksenndd.png)
 > 图注：图片展示的是微信支付商家助手页面。页面上方有微信支付标志及导航栏，包括首页、接入指引、产品中心、解决方案、文档中心等选项，当前选中“首页”。页面中部有“微信支付商家助手”标题，下方文字介绍其可即刻扫码移动办公，随时随地助力经营。左侧有一个二维码，右侧也有二维码及“微信扫一扫”字样。该图片与文档中申请成为微信支付普通商户的上下文相关，展示了微信支付商家助手的界面。
 
 步骤：
@@ -60,7 +60,7 @@ AppID和mchid全部申请完毕后，需要建立两者之间的绑定关系。
 - 申请小程序开发者账号，进行微信认证，获取AppID登录[《微信公众平台》 (opens new window)](https://mp.weixin.qq.com/)，注册一个小程序的开发者账号。[小程序账号申请指引(opens new window)](https://developers.weixin.qq.com/miniprogram/introduction/)
 - 小程序开通微信支付，即申请或复用微信支付商户号，申请完小程序后，登录[小程序后台 (opens new window)](https://mp.weixin.qq.com/)。点击左侧导航栏的微信支付，在页面中进行开通。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-08-payment-module/JBeEbzeRGoivJxxUvG7czB4AnOe.png)
+![jbeebzergoivjxxuvg7czb4anoe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jbeebzergoivjxxuvg7czb4anoe.png)
 > 图注：该图片是微信公众平台小程序后台的微信支付页面，页面左上角标注当前处于“微信支付”功能板块，在页面上方的微信支付区域，清晰显示“微信支付 未开通”的状态，右侧有一个绿色的“开通”按钮，页面还展示了申请微信支付的相关条件、功能介绍，以及申请所需的额外材料说明，与文档中关于小程序开通微信支付需通过小程序后台操作的指引内容相呼应，直观呈现了小程序后台微信支付开通入口及相关说明的界面。
 
 点击开通按钮后，有2种方式可以获取微信支付能力，新申请微信支付商户号或绑定一个已有的微信支付商户号，请根据你的业务需要和具体情况选择，只能二选一。
@@ -447,7 +447,7 @@ Query**查询参数**
 
 https://pay.weixin.qq.com/docs/merchant/apis/native-payment/direct-jsons/native-prepay.html
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-08-payment-module/VaiQb3sKbo3b5Jxnajdc1Rgxnlb.png)
+![vaiqb3skbo3b5jxnajdc1rgxnlb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vaiqb3skbo3b5jxnajdc1rgxnlb.png)
 > 图注：图片展示的是微信支付API字典中Native下单的页面。页面上方有微信支付标志及“商户平台”等导航栏。左侧有支付产品分类，其中Native支付下的“native下单”被选中。右侧是Native下单的介绍，说明通过本接口生成支付链接参数code_url，用户在微信客户端扫描二维码后可完成支付。下方有接口说明，支持商户为普通商户，还列出了Header和Body的必填参数，如appid、mchid、description等。该图片与文档中Native支付接口下单部分上下文对应，直观呈现了Native下单的相关信息。
 
 ### 4.1 总体流程

@@ -144,7 +144,7 @@ aliases:
 
 1. **设置断点：**找到接口实现的具体类，在具体类的方法中设置断点，点击编辑器左侧的行号区域，断点将显示为红色圆圈。如果要测试多线程需要勾选Thread
 
-   ![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/YNTvbk1feoZkNax19vfccdFrnRf.png)
+   ![yntvbk1feozknax19vfccdfrnrf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yntvbk1feozknax19vfccdfrnrf.png)
 > 图注：该图片对应文档中介绍代码断点调试的相关内容，展示了调试操作中的设置选项界面，包含两个处于勾选状态的选项：“Enabled”选项已被勾选，另有“Suspend”选项，该选项下包含“All”和“Thread”两个子选项，其中“Thread”选项已被选中，这与文档中“如果要测试多线程需要勾选Thread”的说明内容相呼应，是代码断点调试设置步骤里的关键勾选界面内容。
 
 2. **执行代码：**触发调用接口方法的操作，例如运行应用程序或调用接口方法的测试用例。
@@ -362,7 +362,7 @@ mapper异常及service异常都抛给controller，controller方法的异常由�
 
 异常处理器的源码在framework中，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/GJsIbbnJLoqI02x6pgacKrJgndf.png)
+![gjsibbnjloqi02x6pgackrjgndf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gjsibbnjloqi02x6pgackrjgndf.png)
 > 图注：图片展示了jzo2o-mvc项目的目录结构。在src/main/java/com/jzo2o/mvc/advice目录下，有一个名为CommonExceptionAdvice的文件。该图片与文档中介绍异常处理器源码在framework中的内容相关，直观呈现了异常处理器所在的具体位置，帮助理解异常处理器在项目中的文件层级关系。
 
 
@@ -397,7 +397,7 @@ mapper异常及service异常都抛给controller，controller方法的异常由�
 
 **前端的storage中:**
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/FUusb4LCyoLvLXxG9uacp80jnEe.png)
+![fuusb4lcyolvlxxg9uacp80jnee](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fuusb4lcyolvlxxg9uacp80jnee.png)
 > 图注：这是云岚到家项目用户认证相关的前端Storage存储信息截图，展示了Wxapp调试器的Storage面板内容。面板中列出了4项存储的用户相关信息，分别为键名为_DC_STAT_UUID的字符串类型数据、键名为token的字符串类型token值、键名为nickName的字符串类型用户名称，以及键名为city的Object类型城市相关信息，面板还显示当前Storage总大小为483B。该图对应文档中提到的“前端的storage中”的用户信息存储部分，直观呈现了前端Storage保存的用户相关数据内容。
 
 **后端的ThreadLocal中。**
@@ -823,7 +823,7 @@ Canal解析binlog日志信息按顺序发到MQ的队列中。
 
 在监听队列的java代码中指定消费线程为1，如下图：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/UoANb0wr4oNDDixPSPXceOaVn3S.png)
+![uoanb0wr4onddixpspxceoavn3s](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uoanb0wr4onddixpspxceoavn3s.png)
 > 图注：图片展示了一段Java代码，定义了一个名为`onMessage`的方法。代码中`@RabbitListener`注解的`concurrency`属性被设置为“1”，箭头指向该属性。这与文档中关于保证Canal+MQ同步消息顺序性的解决方法相关，即在监听队列的java代码中指定消费线程为1，以确保消费队列中的数据使用单线程，从而保证消息按顺序消费。
 
 ## 第五章优惠券模块

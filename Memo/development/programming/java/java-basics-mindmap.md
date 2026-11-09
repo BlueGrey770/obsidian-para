@@ -88,7 +88,7 @@ mindmap-node: rounded
 
 注意：安装文件夹路径必须为全英文不带空格和特殊字符（且不要安装在C盘）
 
-![示意图](../../../../Attachments/development/programming/java/JmZ1bQ0hEoLdVdxo5ASc9rgXnOx.png)
+![jmz1bq0heoldvdxo5asc9rgxnox](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jmz1bq0heoldvdxo5asc9rgxnox.png)
 
 ##### 大模型支持的最低JDK版本为17
 
@@ -514,7 +514,7 @@ int sum = addNumbers(5, 3);
 
 ​
 
-![示意图](../../../../Attachments/development/programming/java/Ht03bCV5horpUPxXbqwcW5W6nxh.png)
+![ht03bcv5horpupxxbqwcw5w6nxh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ht03bcv5horpupxxbqwcw5w6nxh.png)
 
 #### int
 
@@ -574,7 +574,7 @@ int sum = addNumbers(5, 3);
 
 在Java中，表达式的自动类型提升是指在涉及多种数据类型的算术运算时，Java会自动将较小的数据类型提升为较大的数据类型，以确保运算的精确性和一致性。
 
-![示意图](../../../../Attachments/development/programming/java/SlDvbh6jboTM4Vx2hFQcStOUn4c.png)
+![sldvbh6jbotm4vx2hfqcstoun4c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sldvbh6jbotm4vx2hfqcstoun4c.png)
 
 #### 表达式的最终结果类型由表达式中的最高类型决定。
 
@@ -586,7 +586,7 @@ int sum = addNumbers(5, 3);
 
 是一组预先编写好的代码集合，包含了大量的类、方法和常量。
 
-![示意图](../../../../Attachments/development/programming/java/DH2wbLn8OopUoixUM2sc9RncnWh.png)
+![dh2wbln8oopuoixum2sc9rncnwh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dh2wbln8oopuoixum2sc9rncnwh.png)
 
 ### 简化开发
 

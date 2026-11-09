@@ -18,7 +18,7 @@ aliases:
 
   > 对象序列化是将对象转换为可存储或传输的字节序列的过程，方便在需要时可以重新创建对象。这种序列化后的字节序列可以保存在文件，数据库或通过网络进行传输。
   > 
-  > ![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-02-checkin-and-ai-capability/JsnCbK1wPoL6rDxkBD7ccILsnmd.png)
+  > ![jsncbk1wpol6rdxkbd7ccilsnmd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jsncbk1wpol6rdxkbd7ccilsnmd.png)
 > 图注：图片展示了若依框架中Redis缓存操作流程。从获取User对象开始，经序列化对象后，字节序列被存储在Redis中。随后，通过反序列化对象，可重新获取User对象。图中以箭头和文字说明各步骤，还用红圈标注了Redis，直观呈现了对象从获取到存储再到获取的完整流程，与上下文介绍的若依框架中使用Redis作为缓存，以及对象序列化和反序列化等内容相契合。
 
   > 
@@ -27,7 +27,7 @@ aliases:
 
   - 封装了常见的操作Redis的方法，在业务开发中，可以直接使用这个类的方法来操作Redis
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-02-checkin-and-ai-capability/ArSob3hbboCu2Mxz3m3c1Be8naf.png)
+![arsob3hbbocu2mxz3m3c1be8naf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/arsob3hbbocu2mxz3m3c1be8naf.png)
 > 图注：图片展示了若依框架中RedisCache类的部分方法。其中，setCacheObject、setCacheObject、expire、getExpire、hasKey、getCacheObject、deleteObject、deleteObject等方法用于对缓存进行操作，如设置缓存对象、设置缓存过期时间、获取缓存过期时间、判断缓存是否存在等；getCacheList、getCacheSet、getCacheMap等方法用于获取缓存集合、集合中的元素、映射中的值；setCacheList、setCacheSet、setCacheMap等方法用于设置缓存集合、集合中的元素、映射；getMultiCacheMapValue、deleteCacheMapValue等方法用于获取映射中的多个值、删除映射中的值；keys方法用于获取所有键。这些方法体现了RedisCache类在若依框架中对Redis缓存操作的封装。
 
 ## 功能接口添加缓存
@@ -228,7 +228,7 @@ public class NursingLevelServiceImpl implements INursingLevelService
 
 - 比如key=nursingLevel:all  对应的存储目录如下：
 
-  ![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-02-checkin-and-ai-capability/P7pBbzEOTomk4uxhHD0cXmMfnDg.png)
+  ![p7pbbzeotomk4uxhhd0cxmmfndg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/p7pbbzeotomk4uxhhd0cxmmfndg.png)
 > 图注：图片展示了Redis中存储目录结构。其中“nursingLevel”目录被红色框突出显示，其下有“nursingLevel:all”键。该图片与文档中“护理等级添加缓存”部分内容相关，用于说明在Redis中，冒号通常用作键的命名约定，可以创建层次结构，类似于文件系统中的路径结构，提升查找效率，此处以“nursingLevel:all”为例进行示例。
 
 

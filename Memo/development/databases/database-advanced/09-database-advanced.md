@@ -32,7 +32,7 @@ aliases:
 
 多表查询可以分为：
 
-![](../../../../Attachments/development/databases/database-advanced/ErsUb8EVGo9EdFxwTqQcjzXbn8c.png)
+![ersub8evgo9edfxwtqqcjzxbn8c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ersub8evgo9edfxwtqqcjzxbn8c.png)
 > 图注：图片是一个Venn图，展示了两个集合A和B的关系。图中A和B分别用蓝色和绿色椭圆表示，A与B的交集部分用绿色填充，标注为AnB。
 
 1. 连接查询

@@ -12,7 +12,7 @@ aliases:
 
 从今天开始，我们开始一个新的模块开发，叫做**智能监测**，我们可以先来看一张图
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/BxL4bficLoo0hqx0cjgcwed4nSd.png)
+![bxl4bficloo0hqx0cjgcwed4nsd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bxl4bficloo0hqx0cjgcwed4nsd.png)
 > 图注：图片展示了老人入住养老院时配备的智能硬件设备。画面中老人坐在椅子上，周围有多种设备，如定位报警胸牌、健康定位报警手表、跌倒报警器、门磁报警器、烟雾报警器、滞留/跌倒报警器、紧急呼叫报警器、睡眠监测带等，每种设备旁配有文字说明其功能。
 
 老人入住养老院之后，可以通过选择的配置来配备智能硬件设备，它有两类场景：安全场景和健康场景
@@ -66,7 +66,7 @@ aliases:
 
 我们作为一个开发者，基本的设备与后台调度思路，如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/IyHDbhFvQo9Jxxxu2eccF2BLnZf.png)
+![iyhdbhfvqo9jxxxu2eccf2blnzf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iyhdbhfvqo9jxxxu2eccf2blnzf.png)
 > 图注：图片展示了设备与业务应用通过华为云IoT平台的连接关系。左侧为设备，通过MQTT等协议接入华为云IoT平台；右侧为业务应用，通过HTTP/AMQP等协议接入。中间的华为云IoT平台是物联网平台，提供设备连接上云、双向消息通信等能力。右侧业务应用包括智慧城市、智慧园区等，体现了设备与业务应用通过平台进行数据交互。
 
 
@@ -92,32 +92,32 @@ aliases:
 
 登录账号以后，进入控制台，我们可以在产品中搜索**设备接入IoTDA**
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/KHfhbAkXWoFXiixFCz6cmIjMnre.png)
+![khfhbakxwofxiixfcz6cmijmnre](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/khfhbakxwofxiixfcz6cmijmnre.png)
 > 图注：图片展示了华为云IoTDA服务的开通步骤中，搜索设备接入IoTDA后的界面。在控制台左侧菜单栏中，点击“设备接入”下的“IoTDA实例”后，搜索框内显示“设备接入IoTDA”被红色箭头指向。该图片与上文“登录账号后进入控制台，在产品中搜索设备接入IoTDA”相呼应，直观呈现了搜索操作后的结果，为后续开通IoTDA服务做准备。
 
 打开之后，点击**开通免费单元**
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/OhbgbGVJGoJjL4xXYeQcsTAEnUd.png)
+![ohbgbgvjgojjl4xxyeqcstaenud](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ohbgbgvjgojjl4xxyeqcstaenud.png)
 > 图注：这张图片是华为云控制台中设备接入IoTDA的开通页面，页面左上角显示当前为华为云的设备接入服务界面，核心内容为带有红色箭头指向的“开通免费单元”按钮，该按钮是开通IoT平台的关键操作选项。页面还清晰列出了IoTDA的“标准版”和“企业版”两种服务版本，分别介绍了适用场景及核心特性，比如标准版适用于业务规模适中的企业客户，企业版面向中大型企业客户并具备更完善的安全与运维能力，页面左侧还有IoTDA实例管理相关的功能入口，整体呈现出开通IoTDA服务的操作界面及服务版本说明信息。
 
 然后直接创建就可以了
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/TNSvbWzfsoxSXfxhgSucClPlnub.png)
+![tnsvbwzfsoxsxfxhgsucclplnub](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tnsvbwzfsoxsxfxhgsucclplnub.png)
 > 图注：图片展示的是华为云控制台中“设备接入服务标准版”的创建页面。页面上方有区域、计算模式等设置选项，下方是规格配置区域，显示免费标准版的单位类型、网络连接数上限、每日消息数上限、上下行消息TPS等信息。页面底部有“免费创建”按钮，以及“立即创建”按钮，后者被红色箭头指向。该图片与上文开通物联网平台后创建IoTDA服务的内容相关，直观呈现了创建操作的页面界面。
 
 创建成功之后的效果：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/N2ajbVoovolQvvxNtjzc63i3nmc.png)
+![n2ajbvoovolqvvxntjzc63i3nmc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/n2ajbvoovolqvvxntjzc63i3nmc.png)
 > 图注：这张图片展示的是华为云IoTDA（设备接入）服务的管理页面，核心区域用红色框标注了创建成功的实例信息：该实例名称为freeStandardInstance，状态为运行中，下方标注了实例规格为标准版50°1；页面显示该实例的消息上下行QPS为10、每日消息上限为1万、同时在线设备上限为1000，还标注了“按需计费”的计费模式，以及实例的创建时间为2025/02/13 14:36:21、时区为GMT+08:00；页面旁设有“详情”“变更”等操作选项，完整呈现了按指引完成IoTDA服务开通后生成的具体实例效果。
 
 服务的基本信息，可以点击服务查看
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/HJJhbqZ9CoyekZx5Ms2cQlDrnhc.png)
+![hjjhbqz9coyekzx5ms2cqldrnhc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hjjhbqz9coyekzx5ms2cqldrnhc.png)
 > 图注：这张图片展示了华为云IoTDA开通成功后的实例管理界面，界面中清晰显示了一个名为freeStandardInstance的标准规格实例，其状态为“运行中”，实例ID为defc23a-2a0c-496f-86b5-050d6f1aa336。界面还标注了该实例的相关性能数据，包括消息上下行TPS为10、每日消息数上限为1万、同时在线设备数上限为1000，以及创建时间为2025年02月13日14:36:21 GMT+08:00。图中用红色箭头指向该实例的“freeStandardInstance”标识，并标注“点击”字样，提示用户可点击该实例进行后续操作，符合文档中“创建成功之后的效果”的描述，说明此时IoTDA服务已成功开通并进入可操作状态。
 
 
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/KGWLbOwNkoLrlSx4Onlcrf6Hnwb.png)
+![kgwlbownkolrlsx4onlcrf6hnwb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kgwlbownkolrlsx4onlcrf6hnwb.png)
 > 图注：这张图片展示了华为云IoTDA服务开通成功后的控制台界面，界面顶部显示实例名称为freeStandardInstance，运行状态为“运行中”。页面内容分为设备接入服务的相关板块，涵盖快速体验、使用和设备体验、基于示例代码开发三个引导选项，以及实例基本信息、数据统计等核心信息模块。其中实例基本信息明确了实例ID、地域、运行时长等内容，数据统计板块显示在线设备数、消息收发数等多项指标，且有箭头标识的注册设备数、同时在线设备数区域。界面左侧还设有功能导航栏，可查看产品、资源等相关内容。
 
 到此，IoTDA服务就正式开通了。
@@ -132,17 +132,17 @@ aliases:
 
 现在我们可以创建产品，找到产品-->创建产品
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/PAv8bolimouSKrxpHOOc9KDUnuh.png)
+![pav8bolimouskrxphooc9kdunuh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pav8bolimouskrxphooc9kdunuh.png)
 > 图注：图片展示的是华为云IOT平台中产品页面。页面左侧有“产品”“设备”“规则”等导航栏，右侧上方有“产品”“设备”“规则”等选项卡。页面中部有“创建产品”按钮，下方有“默认以创建产品ID进行搜索”输入框，以及“产品名称”“产品ID”“产品密码”“设备类型”“销货国家”“维修联系”等输入框。页面底部有“操作”按钮。该图片与上文“找到产品-->创建产品”及创建智能定位报警手表产品的内容相关，直观呈现了创建产品的操作界面。
 
 如下图，我们先创建**智能定位报警手表**的产品，输入信息如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/LJnibui0AodexGxl6iSccWRWnog.png)
+![ljnibui0aodexgxl6isccwrwnog](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ljnibui0aodexgxl6isccwrwnog.png)
 > 图注：这张图是华为云物联网平台创建产品的操作界面，展示了创建智能定位报警手表产品时的信息填写页面。页面中，产品名称栏已输入“智能定位报警手表”，协议类型选MQTT、数据格式选JSON，设备类型选标准类型，所属行业选智能生活，所属子行业选智慧健康，设备类型选城轨检测设备。页面底部有“取消”和“确定”两个按钮，红色箭头重点指向黑色的“确定”按钮，用于提交已填写的产品信息以完成创建。
 
 创建成功之后，在产品列表中也可以查看，刚刚创建的产品
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/ROJkbVlP3oXScWxWzixc25olnre.png)
+![rojkbvlp3oxscwxwzixc25olnre](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rojkbvlp3oxscwxwzixc25olnre.png)
 > 图注：图片展示的是华为云IOT平台中产品管理页面。页面左侧有产品、设备、监控运维等选项，当前选中“产品”。右侧上方有“产品”“设备”“监控运维”等标签，下方有“创建产品”“默认应用产品名称搜索”等输入框，还列出了已创建的产品，如“智能定位报警手表”，其产品ID、需用空间、设备类型、协议类型、创建时间等信息均显示。该图与上文创建产品后在产品列表中查看的内容相关，直观呈现了产品创建成功后的状态。
 
 
@@ -164,17 +164,17 @@ aliases:
 
 进入产品的详情，我们选择自定义模型
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/PmpEbMjN4opVZYxGSmNcasYunjf.png)
+![pmpebmjn4opvzyxgsmncasyunjf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pmpebmjn4opvzyxgsmncasyunjf.png)
 > 图注：图片展示了华为云IOT平台中智能水表产品的物模型创建成功后的效果。上方显示产品名称、类型、协议、产品网络等基本信息。下方是模型定义部分，有基础服务、电量管理服务等分类，其中“设置水压读取周期”被选中。画面底部有“自定义模型”“上传模型文件”“Excel导入”“导入类模型”等操作按钮。该图与上文创建手表产品物模型的内容相关，直观呈现了创建成功后的界面情况。
 
 创建服务信息
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/CNf8bbxi7oWfczxxRdMcXGG9nie.png)
+![cnf8bbxi7owfczxxrdmcxgg9nie](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cnf8bbxi7owfczxxrdmcxgg9nie.png)
 > 图注：这张图片展示的是在华为云IoT平台创建智能手表产品物模型过程中，添加服务的操作弹窗界面。弹窗标题为“添加服务”，包含三项需填写的内容：带红色星号标记的“服务ID”已填写为“watch_services”，“服务类型”也填写为“watch_services”，“服务描述”则填写了“报警定位手表的服务”，描述字数显示为9/128。弹窗底部设有“取消”和“确定”两个操作按钮，完成填写后点击“确定”即可提交该服务的创建，是创建智能手表产品物模型流程里添加服务信息的关键操作环节。
 
 然后可以给这个服务添加具体的物模型
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/VmvzbtmDDof16lxwTZccgz4knSe.png)
+![vmvzbtmddof16lxwtzccgz4knse](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vmvzbtmddof16lxwtzccgz4knse.png)
 > 图注：图片展示的是华为云IOT平台中智能手表产品的服务信息页面。页面上方有产品详情、插件开发、在线调试、Topic管理等标签。在服务信息部分，有watch_services服务，其描述为“智能定位手表服务”。下方“属性列表”区域有“新增属性”按钮，箭头指向该按钮。该图片与上下文关系紧密，上下文提到在创建智能手表产品的物模型时，可给服务添加物模型，此图直观呈现了添加属性的操作位置。
 
 我们目前创建的智能手表产品的物模型，目前可以定义四个，如下：
@@ -188,12 +188,12 @@ aliases:
 
 下面是创建了一个**体温**的物模型，其他物模型创建类似
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/HTBGb02QRoi7AZxvtAkcwQvin9d.png)
+![htbgb02qroi7azxvtakcwqvin9d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/htbgb02qroi7azxvtakcwqvin9d.png)
 > 图注：图片展示的是华为云IOT平台中创建智能手表产品物模型时，新增体温属性的界面。界面上方显示“新增属性”，下方有必填项“属性名称”“属性描述”“数据类型”“访问权限”“取值范围”，其中“属性名称”为BodyTemp，“属性描述”为体温，“数据类型”为int（整型），“访问权限”为可读可写，“取值范围”为0 - 50。界面底部有“取消”和“确定”按钮。该图片与上文创建体温物模型的内容对应，直观呈现了创建过程中的属性设置界面。
 
 创建成功之后的效果：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/HNQybVxfvoiQmFxIqWRceKarnBJ.png)
+![hnqybvxfvoiqmfxiqwrcekarnbj](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hnqybvxfvoiqmfxiqwrcekarnbj.png)
 > 图注：图片展示了华为云IOT平台中智能手表产品创建成功后的物模型界面。界面上方显示“模型定义”及“添加服务”等选项。中间部分有“watch_services”服务列表，其描述为“智能定位手表的服务”。下方是属性列表，包括BodyTemp、xueyang、HeartRate、BatteryPercentage四个属性，分别对应体温、血氧、心率、用电量，数据类型均为int型，访问权限为可读可写，操作有复制、修改、删除。该图与上文创建手表产品物模型的内容对应，直观呈现了创建成功后的效果。
 
 
@@ -212,22 +212,22 @@ aliases:
 
 如下图：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/YxGdbyBPSooaP6xEx7IckN4Unzh.png)
+![yxgdbybpsooap6xex7ickn4unzh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yxgdbybpsooap6xex7ickn4unzh.png)
 > 图注：这是华为云IOT平台的单设备注册对话框界面，用于添加设备的相关操作。对话框内的关键信息有：所属资源空间为默认的DefaultApp_67adppsm（标注为可选），所属产品选择了智能定位报警手表；设备标识名称由用户自定义为watch01，设备ID自定生成，设备名称和描述分别为手表1号、定位报警手表1号，大小为82048；设备认证类型默认选中“密钥”选项。对话框右下方有“取消”和“确定”两个按钮，红色箭头指向了黑色的“确定”按钮，完成设备信息输入后点击该按钮即可完成设备注册。
 
 创建成功之后，会分配一个设备的信息，非常重要，需要保存下来，方便后面调试链接
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/E62ebzPtqobKQexCAQAcn7fxnNb.png)
+![e62ebzptqobkqexcaqacn7fxnnb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/e62ebzptqobkqexcaqacn7fxnnb.png)
 > 图注：图片展示的是华为云IOT平台设备创建成功后的提示界面。界面显示设备ID为67ad95860c504e29c72b2436_watch01，设备密钥不可见，下方有“查看SDK使用指南”链接。界面右上角有“X”关闭按钮，下方有一个红色箭头指向的“保存并关闭”按钮。该图片与上文设备创建成功后需保存设备信息的内容相关，直观呈现了设备创建成功后的提示及操作指引。
 
 设备中可以查看，创建好的设备
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/QipJbmupioxfDaxeXINcYEOCnNe.png)
+![qipjbmupioxfdaxexincyeocnne](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qipjbmupioxfdaxexincyeocnne.png)
 > 图注：图片展示的是华为云IOT平台“所有设备”页面。页面上方显示设备总数为1，包括数据设备0、在线设备0、离线设备1。下方设备列表中，有“注册设备”“删除”“新增”“连接”等操作按钮，以及“状态”“设备名称”“设备标识”“设备类型”“所属资源名称”“所属产品”“节点类型”等列，其中“未激活”状态的设备名称为“宇星1号”，设备标识为67a85580c354ec9c7，所属产品为DefaultApp_5745psum。该图与上文介绍的设备管理操作步骤相关，展示了创建成功后设备的查看界面。
 
 设备详情
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/OhffbNmBtoSqYdxAO18cNx5Jnrd.png)
+![ohffbnmbtosqydxao18cnx5jnrd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ohffbnmbtosqydxao18cnx5jnrd.png)
 > 图注：这张图是华为云IOT平台的设备详情页面，分为上下两个核心区域。上方红框标注的是设备基本信息区域，清晰展示了设备名称为“手表1号”，以及设备的唯一标识、所属产品、认证类型、创建时间等关键信息，提示这些信息需妥善保存。下方红框为物模型区域，呈现了该设备关联的属性数据，包括体温、血压、心率、用电量等可采集的物模型数据，体现设备的功能参数配置。
 
 
@@ -242,7 +242,7 @@ aliases:
 
 官方案例-设备接入：[基于NB-IoT小熊派的智慧烟感](https://support.huaweicloud.com/bestpractice-iothub/iot_bp_0024.html)
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/TXrwbYlDsoFkFAxHJOjc2cuKnCg.png)
+![txrwbyldsofkfaxhjojc2cukncg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/txrwbyldsofkfaxhjojc2cukncg.png)
 > 图注：图片展示了基于NB - IoT小熊派的智慧烟感设备接入流程。前期准备包括购买Bear - Pi开发套件、安装VScode、安装IoT Link、编译/烧录；控制台开发有创建产品、定义产品模型、开发编解码插件、注册设备；业务实现为数据上报、命令下发。
 
 我们在开发阶段可以使用联网的电脑，来模拟设备的数据上报，官方[sdk](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/releases)下载
@@ -254,12 +254,12 @@ aliases:
 
 `项目一：中州养老\中州养老-智能检测系统-华为云\资料\华为SDK\huaweicloud-iot-device-sdk-java-master.zip`
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/E8zkb2TyPo2LUzxLWF4cvrAKnwg.png)
+![e8zkb2typo2luzxlwf4cvraknwg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/e8zkb2typo2luzxlwf4cvraknwg.png)
 > 图注：这张图片展示的是一个名为“huaweicloud-iot-device-sdk-java-master.zip”的压缩包，该压缩包是华为云物联网设备端Java SDK的相关文件，对应文档中提到的供开发使用的华为SDK，存放于指定资料路径下。该压缩包文件位于项目资料的华为SDK目录中，开发者可将其解压后，通过IDEA打开对应项目模块，用于后续设备数据上报的相关操作，是Java SDK使用示例中需要用到的重要文件资源。
 
 解压之后，使用idea打开，找到`iot-device-demo`模块中的`PropertySample`类，如下图
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/FWnvbUnZlo909sxx67jcYXxJnhb.png)
+![fwnvbunzlo909sxx67jcyxxjnhb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fwnvbunzlo909sxx67jcyxxjnhb.png)
 > 图注：图片展示了华为云IoT平台Java SDK中iot - device - demo模块下的src文件夹内容。其中，main文件夹下的java文件夹中包含多个示例类，如CommandSample、CustomDeviceRuleSample等。红色框突出显示了PropertySample类。该图片与文档中介绍Java SDK使用示例的内容相关，用于说明 自动生成图片中PropertySample类在项目结构中的位置，帮助理解后续在该类中进行设备数据上报操作的上下文。
 
 
@@ -356,12 +356,12 @@ public class PropertySample {
 
 右键启动之后的效果：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/AgMBbDBZXoblPJxRtEYc2bTonwh.png)
+![agmbbdbzxoblpjxrteyc2btonwh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/agmbbdbzxoblpjxrteyc2btonwh.png)
 > 图注：图片展示了Java SDK使用示例中PropertySample类的代码及运行效果。代码中包含初始化日志、获取CA证书等操作。运行效果部分，显示了设备创建、连接、发布消息等日志信息，如“create device, the DeviceId is 67a05b60d50e5a...”“connect success, the url is ssl://33e7abe...”“publish message topic is $oc/devices/67a05b60d50e5a...”等，最后“pubMessage success”表明消息发送成功。该图片与上文介绍的Java SDK使用示例内容相关，直观呈现了代码运行结果。
 
 消息发送成功后，可以在华为云IoTDA平台中查看该设备上报的数据
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/M6Jxb6D2voiZkxxGKQ6cLNTUnke.png)
+![m6jxb6d2voizkxxgkq6clntunke](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/m6jxb6d2voizkxxgkq6clntunke.png)
 > 图注：图片展示的是华为云IoTDA平台中设备详情页面。页面上方有“设备管理”“设备详情”等导航栏，当前选中“设备详情”。下方设备信息区域显示设备名称为watch08，设备ID为67a4b5508c42c9c72b24，节点类型为离线设备，连接时间是2025/02/14 20:42:42 GMT+08:00。页面中部有“数据列表”区域，显示了BodyTemp、xinyang、HeartRate、BatteryPercentage等数据项及其对应数值，如BodyTemp为1，xinyang为67.246284等。该图与上文介绍的设备接入数据上报内容相关，展示了数据上报后的平台查看界面。
 
 
@@ -415,7 +415,7 @@ public class PropertySample {
 
 找到智能监测->设备管理
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/JnYYbcsIcoSdwpxdx9fcxYhEncg.png)
+![jnyybcsicosdwpxdx9fcxyhencg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jnyybcsicosdwpxdx9fcxyhencg.png)
 > 图注：这张图是IOT产品设备管理的设备管理列表页，左侧目录栏红框标注了设备管理的相关子项，包括设备管理列表页、设备详情页等内容；右侧区域的设备列表清晰展示了设备名称、备注名称、所属产品、接入位置等信息，还设有设备名称搜索框、所属产品下拉选项、设备类型下拉选项，具备搜索功能，同时设有“同步数据”和“新增设备”按钮，设备列表每一行的操作栏还包含查看、编辑、删除等功能按钮，契合上下文提及的设备管理搜索、同步数据、新增设备等操作相关内容。
 
 - 搜索：可以根据设备名称模块插叙，根据产品和设备类型精确查询
@@ -425,7 +425,7 @@ public class PropertySample {
 - 同步数据：点击【同步数据】后，获取华为云产品数据
 - 新增设备：
 
-  ![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/Fjg0bEiXZoOpV4xCIEgcYgOynuf.png)
+  ![fjg0beixzoopv4xciegcygoynuf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fjg0beixzoopv4xciegcygoynuf.png)
 > 图注：这张图片是IOT产品设备管理模块中新增设备的操作弹窗，界面标题为“新增设备”。弹窗内有多个带红色星号标记的必填项，包括设备名称、备注名称、所属产品、设备类型、接入位置，其中设备类型已默认选中“随身设备”单选按钮，固定设备选项为未选中状态。每个名称输入框右侧标注了可输入字符的上限，设备名称和备注名称的上限均为15个字符。弹窗底部设有“取消”和“确定”两个操作按钮，点击可完成新增设备的取消或提交操作。
 
   - 随身设备：表示绑定在老人身上的设备，如手表；
@@ -433,7 +433,7 @@ public class PropertySample {
   - 接入位置为随身设备=入退管理->入住管理->入住办理->老人姓名->当前已入住的老人；
   - 接入位置为固定设备=楼层、房间、床位 = 在住管理->床位管理->床位房型；
 
-  ![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/LxWubJak7oerfvxQdoecMYZ9nyh.png)
+  ![lxwubjak7oerfvxqdoecmyz9nyh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lxwubjak7oerfvxqdoecmyz9nyh.png)
 > 图注：图片展示的是设备管理列表页中“楼层名称”“房间名称”“床位名称”选项。左侧“楼层名称”下有“楼层名称”选项，右侧“房间名称”下无选项，右侧“床位名称”下无选项。该图片与上下文“设备管理列表页”相关，是对列表页中设备接入位置的展示，直观呈现了楼层、房间、床位等接入位置的选项情况。
 
 - 删除：该条设备从列表中移除。老人与设备自动解绑
@@ -448,7 +448,7 @@ public class PropertySample {
 
 当在列表点击**查看**按钮之后，可以查看设备详情页，如下效果
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/Ipf2bxMcJoKIe3xBJz0cYfFpnKd.png)
+![ipf2bxmcjokie3xbjz0cyffpnkd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ipf2bxmcjokie3xbjz0cyffpnkd.png)
 > 图注：这张图片展示的是IOT产品设备管理中的设备详情页，具体显示了“smoke alarm-01”烟雾报警器的相关设备信息。页面顶部标注“设备信息”，明确了设备名称、所属产品（智能烟感）、DeviceSecret、ProductKey、设备状态（在线）、接入位置等核心内容，下方设有“设备详情”和“物模型数据”两个切换标签。在设备详情区域，还展示了该设备的备注名称、设备类型、地域、节点类型、认证方式、创建人、创建时间、激活时间等详细信息。
 
 
@@ -457,12 +457,12 @@ public class PropertySample {
 
 点击【物模型数据】，查询物模型运行状态，列表中的数据为上行指令数据；
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/FOT2bWznloI0uyx8umwcLTe4nKg.png)
+![fot2bwznloi0uyx8umwclte4nkg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fot2bwznloi0uyx8umwclte4nkg.png)
 > 图注：图片展示的是设备详情页中物模型数据部分。页面上方有“运行状态”和“服务调用”两个选项卡，其中“运行状态”被红色箭头指向突出显示。下方列表显示了10条物模型运行状态数据，包括序号、标识符、功能名称、最新时间及数据值等信息，如序号1的标识符为PowerConsumption，功能名称是用电量，最新时间为2048 - 10 - 15 15:00:00，数据值为10.0kWh。该图片与文档中介绍设备详情页物模型数据 - 运行状态的内容相关，直观呈现了数据展示效果。
 
 当点击了【查看数据】，出【查看数据】弹窗；
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/QaWWbug1GoXTImx12bkcAsgYnob.png)
+![qawwbug1goxtimx12bkcasgynob](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qawwbug1goxtimx12bkcasgynob.png)
 > 图注：这是“查看数据”的弹窗界面，用于展示物模型的上行指令数据。界面上方设有“时间范围”下拉选项，当前选择的是“1小时”；下方以列表形式呈现了序号、原始值、时间三类信息，共5条数据的原始值均为92.5kW·h，对应时间均为2048-10-15 15:00:00。界面底部标注总数据量为15项，当前分页设置为每页5条，处于第2页，支持切换页码与跳页操作，该弹窗是点击“查看数据”后弹出的。
 
 
@@ -471,7 +471,7 @@ public class PropertySample {
 
 点击【物模型数据】，查询物模型服务调用
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/SEMkbdK0noVXhJxr49ScVWVZnaf.png)
+![semkbdk0novxhjxr49scvwvznaf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/semkbdk0novxhjxr49scvwvznaf.png)
 > 图注：这张图是IOT设备管理的物模型数据-服务调用相关页面，页面顶部有“设备详情”和“物模型数据”两个选项卡，“物模型数据”选项卡已被选中；在该选项卡下方，“运行状态”和“服务调用”两个子选项中，“服务调用”处于选中状态。页面左侧的默认模块为“模块1-远程开门”，其标识符为“DoorOpen”。页面右侧的表格区域，时间范围默认设置为1小时，表格内展示了序号、时间、标识符、服务名称、输入参数、输出参数等信息，且有多条“远程开门”的服务调用记录，输入参数均为“开门”，输出参数包含code、data、id等内容。
 
 - 列表中的数据为下行指令数据；
@@ -485,7 +485,7 @@ public class PropertySample {
 
 详细表字段说明：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/XxupbSlsToTI57xHtYQcZ7Cbnfc.png)
+![xxupbslstoti57xhtyqcz7cbnfc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xxupbslstoti57xhtyqcz7cbnfc.png)
 > 图注：图片展示了设备管理中device和device_data表的字段说明。device表中，iot_id为物联网设备ID，secret为设备秘钥等；device_data表中，id为告警规则ID，device_name为设备名称等。图片与上文“详细表字段说明”内容对应，直观呈现了设备表和设备数据表的字段信息，为后续开发接口提供字段参考。
 
 sql表结构：**导入当天资料中的sql脚本，里面包含了智能检测模块的所有需要的表**
@@ -572,27 +572,27 @@ IOT平台目前已经给提供了完整的**SDK**，我们可以快速集成到�
 
 - ak和sk是华为云身份凭证，需要新增一个访问密钥，操作如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/EeEYbkvDEoshMWxzB3scWNEJnQq.png)
+![eeeybkvdeoshmwxzb3scwnejnqq](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/eeeybkvdeoshmwxzb3scwnejnqq.png)
 > 图注：图片展示了华为云控制台中新增访问密钥的操作界面。界面左侧为“我的凭证”选项卡，右侧是“访问密钥”相关设置区域。图中红色框突出显示了“新增访问密钥”按钮（①处），以及“访问密钥”区域（②处）。该图片与文档中“在zzyl-admin模块中的application-dev.yml文件中添加关于IOT的配置”上下文相关，用于说明在华为云控制台新增访问密钥的操作步骤，是获取ak和sk操作的辅助说明。
 
 - endpoint  请在控制台的"总览"界面的"平台接入地址"中查看“应用侧”的https接入地址。
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/XGSjbNsjaoy2MuxumElc2GBCnwf.png)
+![xgsjbnsjaoy2muxumelc2gbcnwf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xgsjbnsjaoy2muxumelc2gbcnwf.png)
 > 图注：图片展示的是IOT产品设备管理中设备管理的接入信息界面。左侧为实例基本信息，如实例ID、实例名称、实例类型等。右侧接入信息部分，接入类型有HTTPS、AMQP、MQTT等，其中HTTPS（443）的接入协议为HTTPS，接入地址为38e7ab...if.s1.xtda-app.cn-east-3.myhuaweicloud.com，还有应用接入、设备接入等信息。该图与上下文介绍的IOT接口对接相关，直观呈现了接入信息的具体内容。
 
 - projectId项目ID，[获取项目ID](https://support.huaweicloud.com/api-iothub/iot_06_v5_1001.html)
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/NbVWbV1YkoQBfix0W9XceiaynVc.png)
+![nbvwbv1ykoqbfix0w9xceiaynvc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nbvwbv1ykoqbfix0w9xceiaynvc.png)
 > 图注：图片展示的是华为云IoT平台的API凭证页面。页面左侧有“API凭证”和“访问密钥”两个选项卡，当前选中“API凭证”。右侧显示了IAAS用户名、账号名、IAAS用户ID、账号ID等信息。下方项目列表中，有一个项目ID为57ee64c527a44319a077f0e7cb，项目名为CH - e88 - 3，所属区域为华北 - 上海一，该区域被红色框突出显示。此图与文档中获取项目ID及后续操作配置相关，用于展示获取项目ID时在平台的呈现位置。
 
 - host是AMQP访问的地址，获取方式如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/WKEnbjVBnoXsnUxhVykcldvunmb.png)
+![wkenbjvbnoxsnuxhvykcldvunmb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wkenbjvbnoxsnuxhvykcldvunmb.png)
 > 图注：该页面为IOT接口对接中获取AMQP访问地址的相关内容，表格展示了不同接入类型对应的接入协议、端口号和接入地址，其中应用接入类的AMQP协议对应接入地址为“3s67aevdtf.s1.iota-app.cn-east-3.myhuaweicloud.com”，该地址被红色方框重点标注，页面顶部标注有“属于安全考虑，CoAP/CAPS的接入地址禁PING”的提示，部分接入行还设有“访问需凭证”“详情”的操作选项。
 
 - accessKey和accessCode从**预置接入凭证**获取
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/H7skbfDOuo8cFVxAaY1cMcuxn7c.png)
+![h7skbfdouo8cfvxaay1cmcuxn7c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/h7skbfdouo8cfvxaay1cmcuxn7c.png)
 > 图注：图片展示了华为云IoT平台的接入地址配置界面。其中，应用接入的AMQP5 (5671)接入地址被红色框和箭头突出显示，其对应的接入网址为38e7abedbf st1 iotsta - app cn - east - 3 . myhuaweicloud . com 。该图片与文档中IOT接口对接部分内容相关，用于说明在zzyl - framework中新增HuaWeiIotConfigProperties来读取配置文件时，获取AMQP5接入地址的途径，即从该界面获取。
 
 
@@ -831,7 +831,7 @@ public class IoTDeviceTest {
 
 测试结果如下
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/LQTwbPKciounRlxb8wjcaLgonad.png)
+![lqtwbpkciounrlxb8wjcalgonad](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lqtwbpkciounrlxb8wjcalgonad.png)
 > 图注：这张图片展示了IOT接口对接调试后的单元测试结果，是在zzyl-admin模块下执行selectProductList接口测试后的返回信息。图片呈现了一条查询到的产品详情数据，包含appId、appName、productId等关键参数，其中deviceType标注该产品为皮肤检测设备，protocolType为MQTT，dataFormat为json，createTime为20250213T064734Z。这段测试结果对应文档中查询产品列表的接口说明，验证了IOT接口对接后查询产品列表的功能有效，成功获取到指定产品的相关配置与属性信息。
 
 ### 功能实现
@@ -846,7 +846,7 @@ public class IoTDeviceTest {
 
 **只拷贝后端代码到idea中**
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/SVdJbnwIaojEMXxrBlhcZiZKn9b.png)
+![svdjbnwiaojemxxrblhczizkn9b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/svdjbnwiaojemxxrblhczizkn9b.png)
 > 图注：图片展示的是代码生成界面，其中“device”表被选中。该表序号为1，表名称为“device”，表描述为“设备表”，实体为“Device”，创建时间为2024 - 09 - 20 04:41:56，更新时间为2024 - 09 - 20 04:42:49。界面下方有分页显示，当前显示第1页，每页10条记录，共1条记录。此图与上下文关系为：在基础代码准备阶段，按照代码生成功能生成代码时，需将物联网平台的“device”表相关代码拷贝到idea中，此图展示了该表信息，辅助理解代码生成操作。
 
 **同时删除DeviceController中除了list方法之外的其他方法，如下代码**
@@ -962,7 +962,7 @@ public void syncProductList() {
 
 点击了【同步数据】按钮之后，可以查看redis客户端，是否保存数据成功
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/D1zWb4ozAo8k2KxR9BMckt3OnRf.png)
+![d1zwb4ozao8k2kxr9bmckt3onrf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/d1zwb4ozao8k2kxr9bmckt3onrf.png)
 > 图注：这张图片展示了Redis客户端的界面内容，界面左侧的目录中显示存在key为iot:all_product的存储项，这一存储项的名称正是上下文里提到的缓存常量ALL_PRODUCT_KEY对应的键值。界面右侧红框内展示了该key对应存储的具体数据，是两条产品信息的JSON格式内容，每条信息包含apikey、产品名称、产品ID、设备类型等字段，其中两条产品的设备类型都为RACIT，创建时间均为20250215125175452，这一界面正好对应文档中点击【同步数据】按钮后，验证物联网平台产品数据同步到后台并保存到Redis的测试场景。
 
 #### 查询所有产品列表
@@ -1052,7 +1052,7 @@ public List<ProductVo> allProduct() {
 
 在前端页面中的所属产品中可以正常查看同步之后的产品列表数据
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/E9vBbYhKXo85xvxpwsocwmS2nNd.png)
+![e9vbbyhkxo85xvxpwsocwms2nnd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/e9vbbyhkxo85xvxpwsocwms2nnd.png)
 > 图注：图片展示的是设备管理页面中所属产品选择的弹窗界面。弹窗内有“请选择”下拉框，可选择“智能小音响”“智能电视”“睡眠监测带”“烟雾报警器”“智能定位报警手表”等产品。下方列表显示序号、设备名称、设备标识码、接入位置、设备类型、创建时间及操作选项。该弹窗与文档中“当新增设备时，选择随身设备会弹窗选择已经入住的老人”需求说明相关，用于辅助用户选择设备产品。
 
 #### 查询已经入住的老人列表
@@ -1061,7 +1061,7 @@ public List<ProductVo> allProduct() {
 
 当新增设备的时候，如果选择的的**随身设备**，则会弹窗选择已经入住的老人，如下图
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/PmtYbmwuSopGfNxiUclcvW3jnNi.png)
+![pmtybmwusopgfnxiuclcvw3jnni](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pmtybmwusopgfnxiuclcvw3jnni.png)
 > 图注：这张图展示了物联网设备管理业务中“新增设备”功能的操作流程，左侧是“添加设备”弹窗，用户需依次输入设备标识码、设备名称，选择所属产品，将设备类型设为“随身设备”后点击“接入位置”选择框；点击该选择框后，会唤起右侧的“查看数据”弹窗，该弹窗包含老人姓名、身份证号的搜索栏，以及已入住老人的列表信息，列表展示了序号、老人姓名、身份证号与床位号，底部还可切换分页，体现了添加随身设备时选择已入住老人的操作逻辑，与上下文中新增随身设备时弹窗选老人的需求说明相对应。
 
 该接口已经在之前的代码生成中完成
@@ -1237,12 +1237,12 @@ public void register(DeviceDto deviceDto) {
 
 其中的搜索条件，需要在后台添加数据字典：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/LJdZbPVkGoVUQ6xzT3kcVHOAn5b.png)
+![ljdzbpvkgovuq6xzt3kcvhoan5b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ljdzbpvkgovuq6xzt3kcvhoan5b.png)
 > 图注：图片展示的是设备管理页面，上方有搜索、新增、修改、删除、导出操作按钮。下方表格中，设备类型为“随身设备”的编号为109，编号为110的设备类型为“固定设备”。表格还列有编号、设备类型、设备名称、设备标识、设备排序、状态、备注、创建时间、操作等信息。其中，编号104的设备位置被红色框突出显示，其编号为104，设备位置为“device_location_type”。该图片与文档中分页查询设备列表的上下文相关，展示了设备管理页面中设备类型及编号等关键信息。
 
 最终的效果：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/SGbubhzlJojqTxxsuxgc4MNTnsd.png)
+![sgbubhzljojqtxxsuxgc4mntnsd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sgbubhzljojqtxxsuxgc4mntnsd.png)
 > 图注：图片展示的是设备管理页面，上方有设备名称、产品名称等搜索框，下方是设备列表。列表中包含序号、设备名称、设备标识码、产品名称、入住大区、设备类型、创建时间等信息 addCriterion()函数
 
 
@@ -1462,7 +1462,7 @@ public DeviceDetailVo queryDeviceDetail(String iotId) {
 
 测试效果如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/KZmSbIZptomVxGxyGr0c4WP2nHb.png)
+![kzmsbizptomvxgxygr0c4wp2nhb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kzmsbizptomvxgxygr0c4wp2nhb.png)
 > 图注：这张图展示的是01-IOT产品设备管理模块中，查询设备详细数据功能里的设备详情页面。页面顶部有“首页”“设备管理”“设备详情”三个标签，当前选中“设备详情”标签。页面主体呈现了该设备的全部详细信息，包含左侧的设备名称、设备ID、密钥、接入位置、节点类型、创建时间，右侧的设备标识码、所属产品、设备状态、设备类型、认证类型、激活时间等内容，其中设备状态显示为离线，设备是名称为手表98号的智能定位预警手表。
 
 #### 查看设备上报的数据(设备影子数据)
@@ -1555,7 +1555,7 @@ public AjaxResult queryServiceProperties(String iotId) {
 
 在本地的后台系统中新增一个设备，并绑定老人或位置，开启设备数据上报
 
-![](../../../../../../Attachments/development/architecture/solutions/zhongzhou-eldercare-ruoyi-ai/chapter-04-smart-monitoring-huawei-cloud/Vsp4b9w3goG0PexXSRDcHsisn3e.png)
+![vsp4b9w3gog0pexxsrdchsisn3e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vsp4b9w3gog0pexxsrdchsisn3e.png)
 > 图注：图片展示的是设备管理中查看设备上报数据（设备影子数据）的测试效果。上方为设备信息，包括设备名称、设备ID、密钥、所属产品、设备类型等。下方是物联网模型数据，以表格形式呈现，包含序号、标题、更新时间、数据值等信息，如HeartRate、BedTime、SleepPhaseState等数据项及其对应时间与数值。该图片与文档中“查看设备上报的数据(设备影子数据)”部分对应，直观呈现了设备上报数据的展示样式。
 
 

@@ -40,7 +40,7 @@ aliases:
    - 当消息变成死信时，会被发送到死信交换机中，通过死信交换机转发到指定的队列，由应用程序去消费
    - 延迟消息处理流程如（图 1）所示
    
-     ![图 1](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/mq-advanced/UXnXb9CXzoRUnwx9w7JcM4VMnW4.png)
+     ![uxnxb9cxzorunwx9w7jcm4vmnw4](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uxnxb9cxzorunwx9w7jcm4vmnw4.png)
 2. **延迟消息插件**
 
    - RabbitMQ社区提供了一个延迟消息插件来实现相同的效果
@@ -54,10 +54,10 @@ aliases:
 1. 下载并安装延迟消息插件
 2. 声明延迟交换机，类型为x-delayed-message，如（图 2）所示
 
-   ![图 2](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/mq-advanced/ZMtBb1Sqwo1VtjxU9gPcpkDJnxe.png)
+   ![zmtbb1sqwo1vtjxu9gpcpkdjnxe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zmtbb1sqwo1vtjxu9gpcpkdjnxe.png)
 3. 创建队列并绑定到延迟交换机，如（图 3）所示
 
-   ![图 3](../../../../../../Attachments/development/architecture/microservices/message-queue-mq/mq-advanced/WY1lbZ0nxoou9mxUJLScMJ5lnnh.png)
+   ![wy1lbz0nxoou9mxujlscmj5lnnh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wy1lbz0nxoou9mxujlscmj5lnnh.png)
 4. 发送消息时，通过x-delay属性设定延迟时间
 
 ## **RabbitMQ有哪些集群，它们的特点是什么？**

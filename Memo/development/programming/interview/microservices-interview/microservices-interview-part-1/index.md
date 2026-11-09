@@ -102,7 +102,7 @@ public void insert(Item item){
 
 从图中可以看出，商品管理的CRUD方式仅仅包括对商品表的CRUD业务操作（下图红色框内部分），不再有操作MQ的相关逻辑。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/Lp62bp3SmojdalxLSW9c1Q3snrZ.png)
+![lp62bp3smojdalxlsw9c1q3snrz](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lp62bp3smojdalxlsw9c1q3snrz.png)
 > 图注：图片展示了商品管理的CRUD方式流程。运营人员管理端对商品进行管理，商品服务执行CRUD操作，MySQL记录binlog并读取binlog，Canal解析binlog，CUD写入MQ，MQ接收消息，商品信息同步程序创建索引，Elasticsearch返回搜索结果。此图与上下文紧密相关，直观呈现了借助Canal和MQ实现商品管理CRUD操作及索引同步的流程。
 
 Canal是和MySQL存在联系，并且Canal负责和MQ交互，这种方案就是借助了Canal和MQ实现的。
@@ -123,7 +123,7 @@ Canal是和MySQL存在联系，并且Canal负责和MQ交互，这种方案就是
 
 
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/GpXXbqdvEoXWPXx1g4AcbCrTnOb.png)
+![gpxxbqdveoxwpxx1g4acbcrtnob](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gpxxbqdveoxwpxx1g4acbcrtnob.png)
 > 图注：图片展示了MySQL主从集群架构。上方为业务服务器，下方有主机、从机和从机，主机和从机之间有“复制”标识。业务服务器对主机写入数据，对从机读取数据；主机对从机进行复制。该图与上下文紧密相关，直观呈现了MySQL主从集群中主机、从机及业务服务器之间的数据流向和复制关系，帮助理解MySQL主从集群的数据同步机制。
 
 MySQL主从之间是如何同步的呢？
@@ -132,7 +132,7 @@ MySQL主从数据同步是一种数据库复制技术，进行写数据会先向
 
 具体流程如下图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/VDexbu6ukofxZ3xja7Wc6aAGnCg.png)
+![vdexbu6ukofxz3xja7wc6aagncg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vdexbu6ukofxz3xja7wc6aagncg.png)
 > 图注：图片展示了MySQL主从数据同步流程。左侧为master db，主服务器将写操作以二进制日志形式记录，有sql dump thread读取bin log。右侧为slave db，有IO thread从master db读取bin log，再通过relay log和sql thread在slave db进行write、replay、read操作，实现数据同步。该图与上文介绍的MySQL主从数据同步流程相呼应，直观呈现了主从服务器间数据复制的机制。
 
 1、主服务器将所有写操作（INSERT、UPDATE、DELETE）以二进制日志（binlog）的形式记录下来。
@@ -155,7 +155,7 @@ binlog长什么样？
 
 类似下边这样：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/L1JsbAfuZoeDo6xODe8c0n9Hn9e.png)
+![l1jsbafuzoedo6xode8c0n9hn9e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/l1jsbafuzoedo6xode8c0n9hn9e.png)
 > 图注：该图片展示了多个MySQL二进制日志文件的名称，分别为mysql-bin.000049、mysql-bin.000050、mysql-bin.000051、mysql-bin.000052，这些是MySQL主从复制中的binlog文件，用于记录数据库的数据变更操作。这一内容对应的文档正介绍binlog的相关特点，该图片呈现的正是binlog对应的具体日志文件实例，辅助说明binlog的实际形式。
 
 binlog的主要特点如下：
@@ -196,7 +196,7 @@ binlog的主要特点如下：
 
 举例：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/SkshbUvUpobRPNxI2e6cMH7Pnxh.png)
+![skshbuvupobrpnxi2e6cmh7pnxh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/skshbuvupobrpnxi2e6cmh7pnxh.png)
 > 图注：图片展示了MySQL配置文件my.cnf中与binlog相关的配置内容。其中，`log-bin=mysql-bin`用于打开binlog，`binlog-format=ROW`选择ROW模式，`server_id=1`配置MySQL replication，`expire_logs_days=3`设置Binlog文件保留3天，`max_binlog_size=100m`设定单个Binlog文件最大大小为100MB，`max_binlog_cache_size=512m`配置最大缓存大小为512MB。这些配置与文档中介绍的MySQL主从复制中binlog相关参数设置内容紧密相关。
 
 **注意事项：**
@@ -212,21 +212,21 @@ binlog常用命令：
 
 `show variables like 'log_bin';`
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/CIZubeSL7oneWxxs6AMcZC6tnQd.png)
+![cizubesl7onewxxs6amczc6tnqd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/cizubesl7onewxxs6amczc6tnqd.png)
 > 图注：这张图片展示了MySQL中用于查看binlog日志是否开启的命令执行结果，呈现了Variable_name和Value两个字段的对应数据。其中Variable_name为log_bin，对应Value为ON，该结果对应文档中“查看是否开启binlog日志”的操作，验证了执行`show variables like'log_bin';`命令后，MySQL的binlog日志功能已处于开启状态，是MySQL主从复制及Canal+MQ数据同步方案中相关配置验证的直观体现。
 
 使用以下命令查看所有binlog日志列表：
 
 `SHOW MASTER LOGS;`
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/JuxLbt7RUoN1SwxBmmxcdW0Jndf.png)
+![juxlbt7ruon1swxbmmxcdw0jndf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/juxlbt7ruon1swxbmmxcdw0jndf.png)
 > 图注：图片展示的是MySQL查看binlog日志列表的查询结果。表格包含Log_name、File_size、Encrypted三列，Log_name列显示了多个binlog文件名，如mysql-bin.000059等，File_size列显示了各文件大小，Encrypted列显示文件是否加密，均为No。该图片与文档中介绍MySQL主从复制时查看binlog日志列表的内容相关，直观呈现了binlog日志文件的名称、大小等信息。
 
 要查看MySQL服务器上的binlog状态，可以使用以下命令：
 
 `SHOW MASTER STATUS;`
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/XY7GbUoUmo2xtSxQQ45cYFewnBg.png)
+![xy7gbuoumo2xtsxqq45cyfewnbg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xy7gbuoumo2xtsxqq45cyfewnbg.png)
 > 图注：这张图片展示了MySQL的binlog相关信息列表，表格包含三列，分别为File、Position和Binlog_Do_DB。表格中第一行记录显示，对应的binlog日志文件名为mysql-bin.000065，该条目的位置编号为156，Binlog_Do_DB列未显示内容。该表格内容与文档中关于查看binlog日志的命令说明相呼应，是执行相关命令后得到的具体binlog日志文件信息示例。
 
 要查看所有的binlog文件列表，可以使用以下命令：
@@ -259,7 +259,7 @@ Canal的意思是水道/管道/沟渠，它相当于一个数据管道，通过�
 
 官方文档：[https://github.com/alibaba/canal/wiki](https://github.com/alibaba/canal/wiki)
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/TyvUbkhjDodcpXxWC3LccT7ancd.png)
+![tyvubkhjdodcpxxwc3lcct7ancd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tyvubkhjdodcpxxwc3lcct7ancd.png)
 > 图注：图片展示了Canal数据同步的工作流程。左侧为MySQL Master，其二进制日志通过dump协议发送给Canal，Canal伪装成MySQL slave，向MySQL master发送dump协议。右侧展示了Canal可同步至的多种系统，包括MySQL、Kafka、Elasticsearch、HBase、RocketMQ、Pulsar等。
 
 Canal数据同步的工作流程如下：
@@ -537,17 +537,17 @@ public class ItemCanalDataSyncHandler extends AbstractCanalRabbitMqMsgListener<I
 
 队列需要增加x-single-active-consumer参数，表示否启用单一活动消费者模式。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/Uu0pbUjSpohlALx4KJicnI11njg.png)
+![uu0pbujspohlalx4kjicni11njg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uu0pbujspohlalx4kjicni11njg.png)
 > 图注：该图片展示了添加消息队列的配置界面，核心突出标识为两处红色框选内容：一处是Arguments区域里的参数设置，配置了“x-single-active-consumer = true”，参数类型为Boolean；另一处是界面下方标注的“Single active consumer”。结合上下文来看，该图是用于说明配置保证消息顺序性时，使用x-single-active-consumer参数的具体设置方式，直观呈现了修改队列相关配置的操作界面。
 
 配置完成查保证队列上存在SAC标识，如下图：
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/G2QmbfQ4Doq5DZx85EgcggJTnfh.png)
+![g2qmbfq4doq5dzx85egcggjtnfh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/g2qmbfq4doq5dzx85egcggjtnfh.png)
 > 图注：这张图展示了RabbitMQ的队列信息页面，红色框标注了一个位于虚拟主机“/hmall”下名为“canal-mq-hmall-item-”的队列，该队列类型为classic。队列的Features列中带有蓝色的“SAC”标识，也就是上下文提及的SAC标识，同时带有“D”与“Args”标识；虚拟主机根路径下另有一个名为“simple.queue”的队列，其Features列也带有“D”和“Args”标识，该队列状态为idle，就绪、未确认、总消息数均为0。
 
 当有多个jvm进程都去监听该队列时，只有一个为活跃状态
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/SWrrbO8cLoXceixParxcuIsDnue.png)
+![swrrbo8cloxceixparxcuisdnue](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/swrrbo8cloxceixparxcuisdnue.png)
 > 图注：该图片展示了RabbitMQ的消费者配置页面，页面中“Consumers (2)”栏下列出了两个消费者的相关信息。第一个消费者的Channel为192.168.101.1:54474 (2)，其Active状态为激活状态（对应标识为实心圆点），Arguments栏被红色框标注，内容为“single active”，这对应了保证消息顺序性所使用的x-single-active-consumer参数设置。另一个消费者的Channel为192.168.101.1:59772 (2)，Active状态为非激活状态（对应标识为空心圆点），Activity status为“waiting”。该图片与前文提及的队列配置要求相呼应，直观呈现了单消费者活跃的配置效果。
 
 如果使用x-single-active-consumer参数需要修改为如下代码：
@@ -672,7 +672,7 @@ Canal数据同步异常了怎么处理？
 
 下图是购物车的界面，购物车中的商品信息来源于商品服务，为了提高访问速度减少对数据库的访问，购物车请求商品服务查询商品信息，商品服务的商品查询接口正是使用缓存去实现。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/JA8fblaHEomvCYxJdGNciTimnKd.png)
+![ja8fblaheomvcyxjdgncitimnkd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ja8fblaheomvcyxjdgncitimnkd.png)
 > 图注：图片展示的是黑马商城购物车商品页面。页面上方有黑马商城的导航栏。商品列表中显示了三件商品，包括vivo X21、巴布豆、华为nova 4，每件商品有图片、名称、单价、数量、小计及操作选项。底部有全选、删除选中的商品、移到我的关注、清除下架商品等操作按钮，以及结算按钮，显示总价为1865.00元，含税省420.00元。
 
 商品服务的商品信息查询接口使用缓存实现流程，如下图：
@@ -698,7 +698,7 @@ Canal数据同步异常了怎么处理？
 
 从课程资料的“redis”目录拷贝RedisConfig.java到商品服务的com.hmall.item.config包下。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/PWkvb1C81oHDE1xAKhbcGgfCnxe.png)
+![pwkvb1c81ohde1xakhbcggfcnxe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pwkvb1c81ohde1xakhbcggfcnxe.png)
 > 图注：这张图片展示了微服务项目item-service的文件目录层级结构，其中src文件夹下的main子文件夹内，依次展开到java/com/hmall/item路径，最终在config文件夹下标注了RedisConfig文件。这张图对应的是缓存案例中，需要将课程资料redis目录下的RedisConfig.java拷贝到商品服务com.hmall.item.config包下的操作，用于辅助说明该配置文件在项目中的具体存放路径。
 
 在RedisConfig.java中定义了RedisTemplate，使用RedisTemplate去操作Redis。
@@ -735,7 +735,7 @@ spring:
 
 在IItemService.java类中增加缓存方法
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/SuULbzHuDoq79FxFhpQc1Wp2nNg.png)
+![suulbzhudoq79fxfhpqc1wp2nng](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/suulbzhudoq79fxfhpqc1wp2nng.png)
 > 图注：图片展示了IItemService接口代码，其中queryItemByIdsCache方法被红色框突出显示。该方法接收一个Long类型的ids集合参数，返回List<ItemDTO>类型。这与上下文紧密相关，上下文提到在IItemService.java类中增加缓存方法，此图片正是展示了新增的缓存方法queryItemByIdsCache，是实现缓存功能的关键代码部分。
 
 ```JavaScript
@@ -770,7 +770,7 @@ public List<ItemDTO> queryItemByIdsCache(Collection<Long> ids) {
 
 修改“根据id批量查询商品” 接口，调用queryItemByIdsCache 方法查询商品信息
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/PdAUbsQ3noCTI3xe0Vhc2sr9ndh.png)
+![pdaubsq3nocti3xe0vhc2sr9ndh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pdaubsq3nocti3xe0vhc2sr9ndh.png)
 > 图注：这张图片展示了ItemController.java文件中的代码片段，核心是“根据id批量查询商品”的接口修改部分。原代码中该接口的实现逻辑包含休眠500毫秒的设置，原本调用itemService.queryItemByIds方法查询商品信息；修改后新增了一行调用itemService.queryItemByIdsCache方法的代码，并用红色边框对这行新代码做了突出标注，这对应了上下文里“修改根据id批量查询商品接口，调用queryItemByIdsCache方法查询商品信息”的内容，是缓存案例中缓存方法编写环节的代码示例。
 
 
@@ -779,12 +779,12 @@ public List<ItemDTO> queryItemByIdsCache(Collection<Long> ids) {
 
 通过swagger文档进行测试，请求查询商品信息
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/HCe0b95lpobFsQxbHqscSiKEnch.png)
+![hce0b95lpobfsqxbhqscsikench](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/hce0b95lpobfsqxbhqscsikench.png)
 > 图注：图片展示的是商品服务服务接口文档中“根据id批量查询商品”接口的测试界面。左侧为接口文档导航栏，选中“根据id批量查询商品”。右侧是接口测试区域，方法为GET，URL为items，参数有ids，其值为1000002672302,1000002624500,1000002533430。下方是JSON格式的响应数据，显示了商品ID、名称、价格、图片等信息。
 
 查询成功观察redis是否存储了商品信息
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/ZEhsbd5AtoPEVGxEm5Hcknqvn8d.png)
+![zehsbd5atopevgxem5hcknqvn8d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zehsbd5atopevgxem5hcknqvn8d.png)
 > 图注：图片展示的是Redis数据可视化界面。左侧是Redis数据库结构，显示了item、test_sorted等数据库及其中的键值对。右侧是STRING类型键值对详情，键值为“100002533430”，其值为商品信息JSON，如商品ID、名称、价格、图片等。该图片与文档中“查询成功观察redis是否存储了商品信息”内容对应，直观呈现了redis存储的商品信息情况。
 
 
@@ -1188,7 +1188,7 @@ public void updateItem(@RequestBody ItemDTO item) {
 
 同时开两个测试窗口，每个窗口的请求都会开一个新线程，开两个窗口来模拟两个线程请求接口。
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/FB8LbEhhHo9lN7xZPPCci2yhn2c.png)
+![fb8lbehhho9ln7xzppcci2yhn2c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/fb8lbehhho9ln7xzppcci2yhn2c.png)
 > 图注：图片展示的是商品服务服务接口文档中“更新商品”接口的测试界面。左侧为文档管理菜单，选中“更新商品”接口。右侧是测试界面，方法为PUT，请求地址为/items，请求参数为JSON格式，内容为“{“id”:675581,“name”:“德国原装进口 多美鲜（SUKI）全脂牛奶1L*12盒 棒极了”}”。该图片与上下文介绍的使用redisTemplate写一个例子用SETNX实现分布式锁的测试内容相关，用于展示更新商品接口的测试场景。
 
 第一个窗口更新商品信息获取锁成功，更新商品信息未完成时锁未释放，另一个窗口无法获取锁导致更新失败。
@@ -1344,7 +1344,7 @@ false：未获取到锁
 
 1. 将资料目录“redis”下的RedissonConfiguration.java 拷贝到商品服务的com.hmall.item.config包下
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/AHVLb2fpCodjrqxOoKpcR24Mni1.png)
+![ahvlb2fpcodjrqxookpcr24mni1](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ahvlb2fpcodjrqxookpcr24mni1.png)
 > 图注：该图片展示了商品服务（item-service）的项目目录结构，对应文档中Redisson使用步骤里的配置文件拷贝操作。目录层级从item-service开始，包含logs、src等文件夹，src下的main文件夹中的java目录，依次展开为com.hmall.item包，最终在该包的config文件夹中，存在指定的两个配置文件，分别为RedisConfig和RedissonConfiguration，与文档中要求将Redisson配置类拷贝到对应路径的内容完全匹配。
 
 
@@ -1455,7 +1455,7 @@ boolean isLock = lock.tryLock(３, -1, TimeUnit.SECONDS);//开启看门狗
 
 重启商品服务，调用更新商品信息接口，获取锁成功，通过redis客户端观察分布式锁的自动续期功能
 
-![](../../../../../../Attachments/development/programming/interview/microservices-interview/microservices-interview-part-1/EZpHbOgYKo8PiAxNhaucVMwsnGX.png)
+![ezphbogyko8piaxnhaucvmwsngx](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ezphbogyko8piaxnhaucvmwsngx.png)
 > 图注：图片展示了Redis客户端界面，左侧为数据库列表，选中“item”数据库。右侧是“lock:675581”键的详情，显示key为48a602d8 - 98cc - 462c - bd0a - 3e7105e69520:234，value为1，TTL为29。右下角有“插入行”“删除行”“重载键值”等操作选项。该图与上文测试Redisson实现分布式锁时，重启商品服务、调用更新商品信息接口获取锁成功后，通过redis客户端观察分布式锁自动续期功能的内容相关，直观呈现了锁的存储状态。
 
 锁的过期时间到20秒时会自动续期到30秒。

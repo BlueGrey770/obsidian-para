@@ -26,7 +26,7 @@ aliases:
 
 表关系图清晰展示了服务类型、服务项、区域与服务之间的关联，如（图 1）所示 。
 
-![图 1](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/module-descriptions-and-solutions/BLjkbLoTcoK62kxANpAc3VMUn8e.png)
+![bljkblotcok62kxanpac3vmun8e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bljkblotcok62kxanpac3vmun8e.png)
 
 **1.3 接口设计**  
 该模块提供了一系列RESTful接口，支持服务的CRUD及运营操作：
@@ -92,7 +92,7 @@ aliases:
    - 后端生成JWT令牌返回前端，前端存储在 `storage` 中，如（图 2）所示 。
    - 后续请求携带令牌，网关校验后解析用户信息存入 `ThreadLocal`，供微服务使用。
    
-     ![图 2](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/module-descriptions-and-solutions/OG94bnj8HoCMnaxMVdVcmwa3nlb.png)
+     ![og94bnj8hocmnaxmvdvcmwa3nlb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/og94bnj8hocmnaxmvdvcmwa3nlb.png)
 2. **手机验证码服务** ：
 
    - 抽取为公共服务，提供发送与校验接口。

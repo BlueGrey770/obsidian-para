@@ -188,14 +188,14 @@ PUT /serve_provider_info
 
 派单池表的结构如下：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/UQvTbJYKooYKsxxzTZicGZi5nSb.png)
+![uqvtbjykooyksxxztzicgzi5nsb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uqvtbjykooyksxxztzicgzi5nsb.png)
 > 图注：图片展示了orders_dispatch表结构，即派单池表结构。表中包含订单id、城市编码、服务分类id、服务名称等字段，如serve_type_id为bigint类型，serve_item_name为varchar(50)等。此外，还有订单金额、服务开始时间、经度、纬度、服务数量、是否转人工、创建时间、更新时间等字段，其中订单id为派单池表主键。该表结构与文档中对派单池表的介绍相呼应，直观呈现了表中字段及其类型。
 
 120分钟的配置在foundations数据库的config_region表中，如下图：
 
 此表配置了一些业务参数。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/SlSrbavYPoKxmSxsl5TclcuAnF7.png)
+![slsrbavypokxmsxsl5tclcuanf7](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/slsrbavypokxmsxsl5tclcuanf7.png)
 > 图注：图片展示了foundations数据库中config_region表的部分字段信息。其中，diversion_interval字段被红色框突出显示，其含义为分流间隔（单位分钟），即下单时间与服务预计开始时间的间隔。该表还包含城市编码、个体接单量限制、企业接单量限制等业务参数。此表配置了业务参数，与文档中提到的120分钟配置在该表中相呼应，用于说明120分钟配置在config_region表中的情况。
 
 根据设计第二条将orders数据库的派单池表数据同步到Redis的派单池中。
@@ -1443,7 +1443,7 @@ public class OrdersDispatchSyncHandler extends AbstractCanalRabbitMqMsgListener<
 
 查看redis派单池：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/WjRsbXE06omnwOxYd66c31YGnGc.png)
+![wjrsbxe06omnwoxyd66c31ygngc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wjrsbxe06omnwoxyd66c31ygngc.png)
 > 图注：这张图片展示了Redis派单池“ORDERS:DISPATCH:LIST”的ZSET类型键值数据，对应文档中测试流程里“向redis派单池同步成功”的预期结果。该ZSET结构包含一个元素，其value字段值为“2311240000000000042”，score字段值为“1700811093”，显示该派单池已成功写入符合要求的订单数据，与测试流程的预期结果一致。
 
 
@@ -1621,7 +1621,7 @@ public void dispatch(Long id) {
 
 在xxl-job中添加派单任务
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/UAyWbEIrfoBNcoxm8bEcujdBnie.png)
+![uaywbeirfobncoxm8becujdbnie](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uaywbeirfobncoxm8becujdbnie.png)
 > 图注：图片展示的是xxl-job中添加派单任务的界面。基础配置部分，执行器为“派单调度器”，负责人是“xxljob”，任务描述为“派单调度任务”，并有多个邮件地址。调度配置中，调度类型为CRON，Cron为“0/10 * * * * ?”。任务配置里，运行模式为BEAN，JobHandler为“dispatch”，任务参数为空。高级配置中，路由策略为“第一个”，调度过期策略为“忽略”，任务超时时间为0，阻塞处理策略为“单机串行”，失败重试次数为0。该图片与文档中测试流程里在xxl-job中添加派单任务的内容相关。
 
 
@@ -1632,47 +1632,47 @@ public void dispatch(Long id) {
 
 1. 从redis派单池查询订单
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/MZpSbNLJqoEoiCxQ5dhctg2CnZd.png)
+![mzpsbnljqoeoicxq5dhctg2cnzd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mzpsbnljqoeoicxq5dhctg2cnzd.png)
 > 图注：图片展示的是在xxl-job中添加派单任务时，从redis派单池查询订单的代码断点跟踪示例。代码中使用redisTemplate.opsForZSet().rangeByScore方法从redis派单池查询订单，获取到的ordersDispatchIds为一个包含订单ID的Set对象，大小为1，订单ID为2311240000000000042。该图片与上文测试流程中“从redis派单池查询订单”步骤对应，直观呈现了代码运行时的查询结果。
 
 1. 将派单任务放入线程池
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/CzoobGkNNolsBfxnsVgcT6pznih.png)
+![czoobgknnolsbfxnsvgct6pznih](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/czoobgknnolsbfxnsvgct6pznih.png)
 > 图注：这是一张Java代码调试界面截图，对应的是派单功能的代码实现。界面中，一段被蓝色高亮显示的代码为`ordersDispatchService.dispatch(id);`，该行代码是方法调用语句，传入的参数id为2311240000000000042，所属的`ordersDispatchService`实例的部分内容为"co"。代码所在的外层逻辑是在`dispatch`方法内，通过`dispatchExecutor`线程池（ThreadPoolTaskExecutor@18278）来执行异步任务，该`dispatch`方法还添加了`@Lock`注解，用于设置Redis格式化器为`JSONDISPATCHLIST`，锁超时时间为180。截图左侧带有红色圆点的标记，是调试时添加的断点，用于跟踪该派单相关方法的运行。
 
 
 
 1. 执行派单任务
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/NnIqbSxA4oRzH9xPy1ocJUj9n7d.png)
+![nniqbsxa4orzh9xpy1ocjuj9n7d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nniqbsxa4orzh9xpy1ocjuj9n7d.png)
 > 图注：图片展示的是订单派单系统中订单派单方法dispatch的代码片段。代码中，通过ordersDispatchService.getbyId(id)获取订单信息，若订单为空则从redis派单池删除订单。图片中红色框突出显示了“redisTemplate.opsForZSet().remove(DISPATCH_LIST, id)”这一关键代码，该代码用于从redis派单池中删除订单。此图片与上文测试流程中“从redis派单池查询订单”步骤相呼应，直观呈现了该步骤的代码实现。
 
 从服务提供者池找到符合条件的服务人员
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/EB3JbJW1soVuxYxwQb3c3AZpnkb.png)
+![eb3jbjw1sovuxyxwqb3c3azpnkb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/eb3jbjw1sovuxyxwqb3c3azpnkb.png)
 > 图注：图片展示的是OrdersDispatchServiceImpl.java代码中从服务提供者池找到符合条件的服务人员的代码片段。代码中使用了searchDispatchInfo方法获取服务人员列表，列表包含id、region等信息。列表大小为2，id分别为124666、1716431678554046338等。该图片与上文测试流程中“从服务提供者池找到符合条件的服务人员”步骤对应，直观呈现了代码实现情况。
 
 获取派单策略：距离优先策略
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/I5a5bEZwQojE9Hxzd1kchHAfnRg.png)
+![i5a5bezwqoje9hxzd1kchhafnrg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/i5a5bezwqoje9hxzd1kchhafnrg.png)
 > 图注：图片展示了OrdersDispatchServiceImpl.java代码中关于派单规则策略的部分代码及调试信息。代码中获取了派单策略，为DistanceDispatchStrategyImpl，还获取了派单规则，为DistanceDispatchRule。下方弹出的调试信息显示了dispatchStrategy和dispatchRule的内存地址。该图片与文档中测试流程中“执行派单任务”步骤相关，直观呈现了从代码层面获取派单策略和规则的运行情况。
 
 通过责任链模式匹配规则，匹配一个服务人员：
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/AV5Hb38SpoRtyExT7DFcanIrnbb.png)
+![av5hb38sportyext7dfcanirnbb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/av5hb38sportyext7dfcanirnbb.png)
 > 图注：图片展示的是OrdersDispatchServiceImpl.java代码中关于派单流程的部分代码。代码中，通过dispatchStrategyManager获取派单策略，再通过该策略获取precedenceServeProvider。代码还调用了log_info方法，输出了id、serveProvider等信息，其中serveProvider的id为1716431678555406338，serveProviderType为2，evaluationScore为50，acceptanceNum为0，acceptanceDistance为9。该图片与上文介绍的派单流程中“通过责任链模式匹配规则，匹配一个服务人员”这一步骤对应，展示了匹配成功后的服务人员信息。
 
 匹配成功调用抢单接口进行机器抢单
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/TY0DbJiuxoSxx2xLAeIcQL8gnzb.png)
+![ty0dbjiuxosxx2xlaeicql8gnzb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ty0dbjiuxosxx2xlaeicql8gnzb.png)
 > 图注：这张图片展示了OrdersDispatchServiceImpl.java的代码编辑界面，内容为派单功能的Java实现代码。其中，核心代码部分通过蓝色高亮，对应文档中派单流程里“匹配成功调用抢单接口进行机器抢单”的操作；代码中可见距离优先策略（DISPATCH_STRATEGY_ENUM = "DISTANCE"）的配置，以及通过OrderSeizeReqDTO构造抢单请求参数、调用orderSeizeApi.machineSeize方法执行机器抢单的代码逻辑，与文档中派单测试流程的最终步骤相呼应。
 
 派单成功，相应的服务人员登录查看订单，并自动删除redis派单池中的订单。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/M3wkb6rrTos2RSxLTP6cHDPynjb.png)
+![m3wkb6rrtos2rsxltp6chdpynjb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/m3wkb6rrtos2rsxltp6chdpynjb.png)
 > 图注：图片展示的是一个订单界面。界面上方有 addCriterion图片展示的是一个订单界面。界面上方有“image_id`的占位符代表这张图在上下文中对应的位置。如，图片id为`image7`，则这张图片应该位于图片所在文档上下文中`image7`对应的位置。
 
-![](../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/OpdabtbRnojVYMx6p3ycQhdGnc8.png)
+![opdabtbrnojvymx6p3ycqhdgnc8](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/opdabtbrnojvymx6p3ycqhdgnc8.png)
 > 图注：这张图片是订单详情界面，顶部显示客户为苗先生，联系电话为13333333333，所在地址为北京市昌平区回龙观街道相关商务中心。服务信息栏显示服务项目为保洁清，具体是1小时日常保洁，服务费用为0.30元。订单信息栏标注了订单编号为23112400000000000042，预约时间为2023年11月24日17:00。界面底部设有“取消订单”和“开始服务”两个功能按钮，该订单是派单调度测试流程中，派单成功后对应服务人员可查看的订单内容。
 
 

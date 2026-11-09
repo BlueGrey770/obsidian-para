@@ -42,7 +42,7 @@ aliases:
 
 2015年国家就提出了"互联网+"的行动计划，什么是"互联网+"?
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/JVNpbon1WoNW2RxDuWacXadUn5c.png)
+![jvnpbon1wonw2rxduwacxadun5c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jvnpbon1wonw2rxduwacxadun5c.png)
 > 图注：图片以蓝色背景和电路线条为设计元素，突出显示“互联网+”字样。该图片位于介绍“互联网+”行动计划的上下文之后，用以直观呈现“互联网+”这一概念，与上下文对“互联网+”的定义相呼应，即“互联网+传统行业”，互联网为传统行业赋能，利用互联网优势对传统行业进行优化升级转型，推动社会发展。
 
 “互联网+”简单的说就是“互联网+传统行业”，互联网为传统行业赋能,利用互联网具备的优势特点对传统行业进行优化升级转型，最终推动社会不断地向前发展。
@@ -55,14 +55,14 @@ aliases:
 
 **中国家政服务业从业人员数量规模逐年稳步增长**
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/Eu8QbRJI6oBZr7xdOwoc7vNCnzc.png)
+![eu8qbrji6obzr7xdowoc7vncnzc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/eu8qbrji6obzr7xdowoc7vncnzc.png)
 > 图注：图片为2015 - 2021年中国家政服务从业人员数量及其增长率柱状折线图。2015年从业人员数量为2326万人，2021年为3760万人，期间呈逐年增长趋势。2017年增长率最高，达10.15%，2019年最低，为6.48%。该图与上下文紧密相关，直观呈现了中国家政服务业从业人员数量逐年稳步增长的情况，与文档中提及的家政服务o2o市场前景好、从业人员数量规模逐年增长等内容相呼应。
 
 #### **2）运营模式**
 
 我们调研了家政服务O2O平台的运营模式，如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/LtSYbPEiIomWDmx8nMOcRw1vnWd.png)
+![ltsybpeiiomwdmx8nmocrw1vnwd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ltsybpeiiomwdmx8nmocrw1vnwd.png)
 > 图注：这张图展示了家政服务O2O领域的两种运营模式，上方为C2B2C模式，流程为家政服务人员入驻受平台管理后，家政需求方可在平台注册找服务，服务人员为需求方提供服务；下方为B2B2C模式，流程是家政服务公司作为中介入驻受平台管理，家政需求方在平台注册找服务，平台将任务派发给中介公司，中介再将任务派发给旗下的服务人员。这张图与前文调研家政服务O2O平台运营模式的内容相呼应，直观呈现了两种模式的运作流程。
 
 C2B2C:
@@ -101,19 +101,19 @@ B2B2C与C2B2C的区别是：B2B2C中服务提供者是家政服务中介公司�
 
 平台方：通过管理端完成服务人员管理、机构管理、订单管理、财务管理等操作，一笔完成的订单，结算时按照分成比例平台进行抽成。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/SdkFbCQYCo7vHFxFfCFcgqWXnRb.png)
+![sdkfbcqyco7vhfxffcfcgqwxnrb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sdkfbcqyco7vhfxffcfcgqwxnrb.png)
 > 图注：这张图展示了该家政项目的运营模式，明确了各角色间的运作关系：家政需求方通过注册找家政服务，向家政服务人员或家政服务公司（中介）提出需求；家政服务人员和家政服务公司（中介）均需入驻并受平台管理，家政平台方向两者派任务，服务方向需求方提供服务，同时对应了文档中提及的四个端及四类用户角色的业务逻辑，清晰呈现了家政服务从需求发起、服务提供到平台管理的完整链路。
 
 #### 3) 项目模块
 
 项目模块列表：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/VSFjbtINaomcMWxY9KIckbVVntc.png)
+![vsfjbtinaomcmwxy9kickbvvntc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/vsfjbtinaomcmwxy9kickbvvntc.png)
 > 图注：这张项目业务模块表格，对应文档中说明的家政服务项目业务模块，详细梳理了该项目的各类业务模块、子模块及对应功能点，并标注了优先级P0至P3。表格涵盖登录、服务管理、服务人员管理、业务规则、机构管理、订单管理等多个模块，每个模块下细分对应子功能，比如服务人员管理包含服务人员信息管理、服务人员认证管理，订单管理包含订单查询、订单派单、订单审核等，各功能点补充了对应操作说明，如服务人员需经实名认证才可接单，订单处理需及时响应异常问题等，完整呈现了该家政服务项目的功能框架。
 
 根据每个端去细化模块，项目业务模块图如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/Byxmb973aoyXo3xwyP0cotjOnNd.png)
+![byxmb973aoyxo3xwyp0cotjonnd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/byxmb973aoyxo3xwyp0cotjonnd.png)
 > 图注：图片展示了家政服务项目各端业务模块的业务流程图。左侧为用户端（小程序）、服务端（APP）、机构端（PC）、管理后台（PC）等登录入口，右侧有三方系统、外呼系统、存管服务、评价系统、支付系统、财务系统、地图服务等系统。各端业务模块包括基础配置、抢单、订单管理、我的、服务人员管理、企业管理、客户管理、营销管理等，如用户端有服务搜索、服务下单、城市定位、三方支付等，服务端有服务技能配置、接单配置等。该图与上文介绍的项目业务模块相呼应，直观呈现各端业务流程。
 
 核心模块说明：
@@ -169,12 +169,12 @@ B2B2C与C2B2C的区别是：B2B2C中服务提供者是家政服务中介公司�
 
 运营人员通过运营端管理平台的服务项，设置运营城市开通的服务项。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/QdBGbZEyWoUoxrxhq7pcHPrBntb.png)
+![qdbgbzeywouoxrxhq7pchprbntb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qdbgbzeywouoxrxhq7pchprbntb.png)
 > 图注：图片展示的是“云岚到家”平台的服务管理 - 服务项管理界面。左侧为功能导航栏，当前选中“服务管理”下的“服务项管理”。右侧上方有“服务管理 - 服务项管理”标题及“刷新”按钮。中部是服务项列表，包含服务编号、服务名称、服务图标、服务图片、服务单价、服务类型、服务描述、操作等列，如173412743276231904的阳光汽车服务等。下方有“搜索”按钮。该图与上文介绍的项目业务模块中服务管理相关，直观呈现了服务项管理界面。
 
 设置城市开通的服务：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/PeztbG9MUogMlOxKIwKcKwXXnEf.png)
+![peztbg9muogmloxkiwkckwxxnef](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/peztbg9muogmloxkiwkckwxxnef.png)
 > 图注：该图片展示的是设置城市开通服务的界面，页面顶部标注区域名称为北京，设有“添加服务”按钮。界面内以表格形式呈现已录入的保洁类服务信息，包含服务名称、服务类型、参考价格、区域价格、是否热门、状态、操作选项，其中当前的区域价格均设置为44。表格内的服务有日常保洁、深度保洁、马桶清洁三类，部分服务状态为已上架、已下架或草稿，各服务对应有设置热门、删除、上架或下架等操作选项。页面底部带有分页控件，支持跳转至指定页码查看服务列表。
 
 
@@ -183,17 +183,17 @@ B2B2C与C2B2C的区别是：B2B2C中服务提供者是家政服务中介公司�
 
 用户端通过小程序预约家政服务。
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/GnKCb9LrpoY2shxtRjocGHtGn0b.png)
+![gnkcb9lrpoy2shxtrjocghtgn0b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gnkcb9lrpoy2shxtrjocghtgn0b.png)
 > 图注：这是一个服务类APP的界面，顶部显示定位为北京，搜索框内有“日常保洁”的搜索词，设有全屋除菌保洁3次低至459元的新人优惠广告，还标注了“小智帮平台，给您贴心的专业的上门服务”等服务承诺。界面中部整齐排列着保洁清洗、日常保洁、家电清洗等12项业务分类图标；下方设有“精选推荐”板块，展示了空调上门检修的服务宣传，标注有“维修不限品牌”“专业极速达”的特点，以及198元的油烟机清洗服务选项，右下角设有“立即预约”按钮。
 
 
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/JgIfbdlZLoSIavxw20eclXg8nPy.png)
+![jgifbdlzlosiavxw20eclxg8npy](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jgifbdlzlosiavxw20eclxg8npy.png)
 > 图注：图片展示的是一个预约信息填写界面。上方提示“请填写您的预约信息”，并有“×”关闭按钮。中间显示预约地址为“北京市朝阳区大望路是那块区域很久以后更好路上走”，下方有电话号码“阿圈 12409956322”。下方有“上门时间”显示为2026 - 06 - 10 12:00，以及“优惠券信息”显示可使用优惠券抵扣10元。最下方显示预约价格为198元，有红色“立即预约”按钮。该图片与上下文介绍的预约服务流程相关，是预约环节中填写信息的展示。
 
 
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/T2vVbWfhDonJS3xse4DcoeZGnFe.png)
+![t2vvbwfhdonjs3xse4dcoezgnfe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/t2vvbwfhdonjs3xse4dcoezgnfe.png)
 > 图注：这张图片展示了服务类相关小程序的两个操作界面，左侧是支付订单界面，显示订单总价30元、优惠金额10元，待付金额20元，还显示了支付剩余时间为08:40，提供微信支付和支付宝支付两种支付方式，底部标注还需支付30元，还有确认支付的按钮。右侧是下单成功界面，配有绿色对勾图标，显示“下单成功”字样，提示服务人员正在抢单，设有“返回首页”和“查看订单”两个功能按钮，该界面对应文档中服务人员上门服务相关流程的内容展示。
 
 
@@ -202,39 +202,39 @@ B2B2C与C2B2C的区别是：B2B2C中服务提供者是家政服务中介公司�
 
 服务人员进入app开启接单
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/YKlNbsRyco9eQhxgUl0cj3mUnoc.png)
+![yklnbsryco9eqhxgul0cj3munoc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yklnbsryco9eqhxgul0cj3munoc.png)
 > 图注：图片展示的是服务人员进入app开启接单的界面。界面上方显示时间为9:41，右上角有信号、Wi - Fi和电池图标。中间标题为“接单设置”，下方有一个“开启接单”的开关，当前处于关闭状态。该图片与上文“服务人员进入app开启接单”内容对应，直观呈现了开启接单操作前的界面状态。
 
 选择接单范围
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/YPufbIdu3oB9VSx4tkNcQa6znfc.png)
+![ypufbidu3ob9vsx4tkncqa6znfc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ypufbidu3ob9vsx4tkncqa6znfc.png)
 > 图注：这张图片展示的是服务人员接单相关流程里选择工作地点的页面，页面顶部标注“请选择工作地点”。地图区域里有沙河水庫、中关村公园等地理标识，还有G6、G7等道路标识，地图上设有可拖动修改的当前定位地址，右下角有“重新定位”按钮，页面下方显示当前服务城市为北京，意向接单范围为朱辛庄地铁站，最下方有红色的“保存”按钮，该页面用于服务人员选择接单的工作地点，对应文档中服务人员上门服务流程里选择接单范围的环节。
 
 立即抢单：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/LSddbU5Pqo7EDuxWiuMcQEO8nWh.png)
+![lsddbu5pqo7eduxwiumcqeo8nwh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/lsddbu5pqo7eduxwiumcqeo8nwh.png)
 > 图注：图片展示的是云岚到家app界面，用于说明服务人员上门服务时选择接单范围的操作。界面左上角显示“北京”，下方有“服务技能”“接单设置”“服务范围”三个选项，其中“服务范围”被红色框突出显示。下方是“抢单大厅”，有“全部”“3公里内”等服务范围选项，其中“5公里内”被红色框突出显示。该图片与上文“选择接单范围”内容对应，直观呈现了选择服务范围的操作界面。
 
 
 
 抢单成功在规定时间上门服务
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/S2Y2buq30osWQ5xPYjKcgPuDnWe.png)
+![s2y2buq30oswq5xpyjkcgpudnwe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/s2y2buq30oswq5xpyjkcgpudnwe.png)
 > 图注：图片展示的是服务人员在app中查看订单界面。界面上方显示时间为9:41，有信号、Wi - Fi和电池图标。中间有“订单”“历史订单”选项，当前选中“订单”。下方有“待上门”“待完工”“已完成”三个标签，其中“待上门”标签上有红色圆圈标识的“99+”数字。下方显示两条待上门订单，每条订单包含商品图、服务内容、预约时间和地址，右侧有“开始服务”按钮。该图与上文介绍的服务人员上门服务流程中查看订单的内容相关。
 
 开始服务前上传照片
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/OPlSbZYkxoAasXxheHQcnNlUnje.png)
+![oplsbzykxoaasxxhehqcnnlunje](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oplsbzykxoaasxxhehqcnnlunje.png)
 > 图注：图片展示的是服务人员在app中开始服务前的界面。界面上方显示“开始服务”，下方有“服务前照片”区域，左侧有一张服务前的照片，右侧有“上传图片”按钮。再下方是“补充说明”区域，有输入框供补充说明本次服务前的其他情况。最下方是“确认提交”按钮。该图片与文档中“服务人员上门服务”流程中“开始服务前上传照片”步骤对应，直观呈现了上传照片的操作界面。
 
 服务完成上传服务后的照片
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/K32MbwIxUopXsixtUygcvAp5nee.png)
+![k32mbwixuopxsixtuygcvap5nee](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/k32mbwixuopxsixtuygcvap5nee.png)
 > 图注：这张图片是项目服务相关界面的“完成服务”页面，对应文档中服务人员完成服务后的操作步骤，核心展示服务人员提交服务结果的相关操作区域。页面上方标注“完成服务”，设有“服务后照片”区域，左侧展示了已上传的服务后人员工作照片，右侧配有带相机图标的“上传图片”按钮，用于补充上传服务后的照片；下方是“补充说明”输入框，提示可输入相关说明补充内容，右下角标注剩余可输入字符为0/50，最底部是用于确认提交操作的“确认提交”按钮。
 
 ##### 服务完成，用户进行评价
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/AHcqbX0spopfwhxbV3yc4zcOnwe.png)
+![ahcqbx0spopfwhxbv3yc4zconwe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ahcqbx0spopfwhxbv3yc4zconwe.png)
 > 图注：图片展示的是服务完成用户进行评价的界面。上方显示时间为9:41，有信号、Wi - Fi和电池图标。中间标题为“我的评价”，下方有“全部”“好评”“中评”“差评”四个选项卡，当前选中“全部”。评价内容显示用户头像、用户名、评价时间及评分3.7分，评价文字为“按时上门，干净麻利，价格实惠，态度极佳，不错不错~”。下方有订单编号、预约时间及地址信息。该图与上文“服务完成，用户进行评价”内容对应，直观呈现了评价界面样式及信息展示情况。
 
 
@@ -277,7 +277,7 @@ B2B2C与C2B2C的区别是：B2B2C中服务提供者是家政服务中介公司�
 
 项目是基于Spring Cloud Alibaba框架构建的微服务项目，采用前后端分离模式进行开发，系统架构图如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/RvMWbxGd8owdu5x5CbRc9rrhnAc.png)
+![rvmwbxgd8owdu5x5cbrc9rrhnac](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rvmwbxgd8owdu5x5cbrc9rrhnac.png)
 > 图注：这张图是云医到家的项目架构图，对应文档中介绍的基于Spring Cloud Alibaba的前后端分离微服务项目。图中明确划分出用户层、负载层、服务层、数据源层及第三方模块：用户层包含运营端（PC）、服务端（APP）、用户端（小程序）；负载层为Nginx；服务层的接入层采用Spring Cloud Gateway，其下分为业务服务与基础服务两大模块，业务服务涵盖运营基础管理、客户管理等功能，基础服务包含服务注册、配置中心等组件；数据源层以MySQL为核心，搭配分库分表的历史订单、消息队列等模块；右侧第三方模块则包含微信、第三方支付等服务。
 
 用户层：
@@ -416,14 +416,14 @@ MySQL数据库存储：服务信息、区域信息、客户信息、订单信息
 
 使用客户端连接数据库，根据需求去理解本模块的每一张表，
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/RP60bGfspoXO9QxtyD8cxo10nad.png)
+![rp60bgfspoxo9qxtyd8cxo10nad](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rp60bgfspoxo9qxtyd8cxo10nad.png)
 > 图注：图片展示了数据库中“jzo2o-foundations”下的“tables”文件夹内容。文件夹内有8个表，分别为city_directory、config_region、operator、region、serve、serve_item、serve_sync、serve_type。其中，serve_item、serve_sync、serve_type表被红色框线突出显示。该图片与上文“使用客户端连接数据库，根据需求去理解本模块的每一张表，然后尝试梳理表之间的关系”的内容相关，直观呈现了数据库中表的结构，辅助理解表之间的关系。
 
 然后尝试梳理表之间的关系。
 
 如下图：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/Sfy0bmTMloXuc9x9GuIcDkbQnDd.png)
+![sfy0bmtmloxuc9x9guicdkbqndd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sfy0bmtmloxuc9x9guicdkbqndd.png)
 > 图注：这张图展示了项目中四个数据表的结构，清晰呈现了表间的关联关系。其中serve_type是服务类型表，serve_item是服务项表，二者通过serve_type_id建立一对多关系（一个服务类型对应多个服务项）；region是区域表，serve表分别通过region_id与region表、serve_item_id与serve_item表建立关联。每个表都标注了字段名称、数据类型，以及字段对应的说明，直观呈现了各表的字段设计和相互关系，与上下文介绍的表结构内容相呼应。
 
 **serve_type**：服务类型表
@@ -452,12 +452,12 @@ region与serve_item是什么关系？
 
 首先熟悉jzo2o-foundations运营基础服务工程的结构，jzo2o-foundations工程结构如下图： 
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/RcEgbDl6VoskJFxHms7ceiuLnLl.png)
+![rcegbdl6voskjfxhms7ceiulnll](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rcegbdl6voskjfxhms7ceiulnll.png)
 > 图注：图片展示了jzo2o-foundations项目的工程目录结构。在src目录下，main文件夹内有java文件夹，其下包含com文件夹，com文件夹中又有jzo2o文件夹，该文件夹下有多个子文件夹，如controller、handler、mapper、model、pagehelper、service等，其中service文件夹下有FoundationsApplication文件。此外，还有resources和test文件夹，以及target文件夹下的.gitignore、Dockerfile和pom.xml文件。该图与上文介绍的jzo2o-foundations工程结构内容相呼应。
 
 工程目录结构如下：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/HO2ebhvjtoQ6skxzScRcFs11nof.png)
+![ho2ebhvjtoq6skxzscrcfs11nof](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ho2ebhvjtoq6skxzscrcfs11nof.png)
 > 图注：这是jzo2o-foundations运营基础服务工程的目录结构，整体分为main和resources两大模块。main模块下包含java包，以com.jzo2o.foundations为基础，划分为constants（工程用常量类）、controller（含agency机构端、consumer用户端、inner内部端、operation运营端、worker服务端等细分接口类）、handler（处理器类）、mapper（持久层mapper接口）、model（含domain持久化模型类、dto数据传输模型类）、service（业务服务接口与类），还有FoundationsApplication启动类；resources模块包含mapper（mapper接口的映射文件）、总配置文件bootstrap.yml，以及对应开发、生产、测试环境的bootstrap-dev.yml、bootstrap-prod.yml、bootstrap-test.yml。
 
 项目依赖：
@@ -560,17 +560,17 @@ web容器：undertow（Undertow 是一个采用 Java 开发的灵活的高性能
 
 打开接口文档：http://localhost:11509/foundations/doc.html
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/A64sbM6gGoFHwoxOltGcvPyDnOh.png)
+![a64sbm6ggofhwoxoltgcvpydnoh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/a64sbm6ggofhwoxoltgcvpydnoh.png)
 > 图注：这张图展示了本地运行的家政服务-运营基础服务接口文档页面，打开的网址为localhost:11509/foundations/doc.html#/home。页面左侧是导航菜单，包含“Swagger Models”“文件管理”等选项，其中“内部接口-服务类型相关接口”的选项被高亮显示；页面右侧为文档详情区域，显示文档名称为家政服务-运营基础服务接口文档，还标注了简介、作者、版本、host、basePath等接口相关信息，左侧菜单是查找“运营端-服务类型相关接口”的入口，对应文档中通过接口文档查找目标接口的操作步骤。
 
 通过左侧菜单找到“运营端-服务类型相关接口”，如下图：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/LiVhbmacJoKwOyxUaKXc1fSdnzd.png)
+![livhbmacjokwoyxuakxc1fsdnzd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/livhbmacjokwoyxuakxc1fsdnzd.png)
 > 图注：这张图片展示的是“家政服务-运营基础服务接口文档”的页面，当前页面显示的是“服务类型分页查询”接口的信息，属于接口测试流程中查看指定接口文档的环节。图片左侧的菜单中，“运营端-服务类型相关接口”下的“GET 服务类型分页查询”选项为选中状态，页面右侧则清晰呈现了该接口的请求方式为GET，接口地址为/foundations/operation/serve-type/page，同时还展示了该接口的请求参数、参数说明、是否必选等相关信息，以及响应状态等内容。
 
 点击“服务类型分页查询”打开接口文档，如下图：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/ZWi6bjjHKoD5OaxmTJOco98Pn1R.png)
+![zwi6bjjhkod5oaxmtjoco98pn1r](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zwi6bjjhkod5oaxmtjoco98pn1r.png)
 > 图注：该图片展示的是“家政服务-运营基础服务接口文档”中的“服务类型分页查询”接口页面，接口的请求方式为GET，接口地址是/foundations/operation/serve-type/page。页面呈现了该接口的请求参数、响应数据类型及响应状态等内容，其中请求参数包含isAsc1、isAsc2、orderBy1、orderBy2、pageNo、pageSize等，各参数标注了对应参数说明、请求类型、是否必填、数据类型等信息，响应状态则列出了200、401、403、404等状态码及对应的说明。该图片与上下文内容匹配，是打开“服务类型分页查询”接口文档后显示的具体内容，对应文档中点击“服务类型分页查询”后的图示环节。
 
 找到接口地址：/foundations/operation/serve-type/page
@@ -583,24 +583,24 @@ web容器：undertow（Undertow 是一个采用 Java 开发的灵活的高性能
 
 在jzo2o-foundations工程搜索“/serve-type”关键字
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/UgCOb3ABLoIap5xItvoctB0hncc.png)
+![ugcob3abloiap5xitvoctb0hncc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ugcob3abloiap5xitvoctb0hncc.png)
 > 图注：图片展示了在IntelliJ IDEA中对“jzo2o-foundations”项目进行操作的界面。左侧是项目结构，选中“jzo2o-foundations”后，右侧弹出快捷菜单，其中“Find in Files...”选项被高亮显示，对应快捷键Ctrl+H。该图片与文档中“在jzo2o-foundations工程搜索‘/serve-type’关键字”内容相关，用于说明在项目中搜索关键字的操作步骤，即通过快捷菜单的“Find in Files...”功能进行搜索。
 
 输入关键字如下图，找到了具体的接口类：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/XuGvbMAakorOwsxCpV7cVP1cncW.png)
+![xugvbmaakorowsxcpv7cvp1cncw](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xugvbmaakorowsxcpv7cvp1cncw.png)
 > 图注：图片展示了在jzo2o-foundations工程中搜索“/serve-type”关键字的结果。搜索范围为D:\\course\\jzo2o\\code\\jzo2o-foundations目录，共找到3个匹配项，分别在worker、inner、operation目录下的ServeTypeController.java文件中。其中，operation目录下的ServeTypeController.java文件中，@RequestMapping注解标注的“/operation/serve-type”接口地址被红色箭头指向突出显示。该图片与上文在jzo2o-foundations工程搜索“/serve-type”关键字的内容相关，直观呈现了搜索结果及关键接口地址。
 
 继续在ServeTypeController.java类中找/page接口，如下图：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/RtDDb0nrnorFrfx3yZGcoWoenHh.png)
+![rtddb0nrnorfrfx3yzgcowoenhh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rtddb0nrnorfrfx3yzgcowoenhh.png)
 > 图注：这张图片展示了在ServeTypeController.java类中的Java代码片段，对应文档中需查找的“服务类型分页查询”接口相关内容。代码的关键部分包括带有路径的@GetMapping注解，注解中明确路径为"/page"；还有@ApiOperation注解，注释说明该接口的功能是“服务类型分页查询”；方法签名定义了返回类型为PageResult<ServeTypeResDTO>，方法名为page，入参为ServeTypePageQueryReqDTO类型参数；方法内部仅调用了serveTypeService的page方法，并将入参作为参数传入，该内容对应文档中继续在ServeTypeController.java类中查找/page接口的操作结果。
 
 下边debug运行工程，跟踪接口执行的流程：
 
 首先打上断点，如下图：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/G65RbGkNMoqqZOxrUIecOljznId.png)
+![g65rbgknmoqqzoxruiecoljznid](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/g65rbgknmoqqzoxruiecoljznid.png)
 > 图注：这张图片展示了Java代码中的服务类型分页查询接口的方法内容，是ServeTypeController.java类的一部分，用于服务类型分页查询功能。代码中，该方法标注了`@GetMapping("/page")`的映射路径，以及`@ApiOperation("服务类型分页查询")`的接口说明，方法接收`ServeTypePageQueryReqDTO`类型的请求参数，返回封装分页结果的`PageResult`对象，方法内调用`serveTypeService`的`page`方法来实现业务逻辑，红色圆点为断点标识，对应文档中要求在该位置打上断点进行调试的操作。
 
 debug运行jzo2o-foundations工程。
@@ -609,32 +609,32 @@ debug运行jzo2o-foundations工程。
 
 进入“调试”窗口，点击“发送”
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/GkJnbCQ0DoxgWPxIauNc6Qr5nqe.png)
+![gkjnbcq0doxgwpxiaunc6qr5nqe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gkjnbcq0doxgwpxiaunc6qr5nqe.png)
 > 图注：图片展示的是家政服务运营基础服务接口文档中“服务类型分页查询”接口的调试窗口。窗口中显示了GET请求的参数，如isAct1、isAct2等，部分参数有默认值。右上角有“发送”按钮，图片中红色箭头指向该按钮。该图片与上下文紧密相关，上下文提到“下边通过swagger接口文档测试该接口，进入‘调试’窗口，点击‘发送’”，此图直观呈现了点击“发送”按钮的操作位置，是接口测试流程中的关键步骤示例。
 
 此时代码执行到断点处
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/GfrAbr4b4ov5dCxWpHpcM6sBnHd.png)
+![gfrabr4b4ov5dcxwphpcm6sbnhd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gfrabr4b4ov5dcxwphpcm6sbnhd.png)
 > 图注：这张图片展示了IDEA开发工具中的Java代码界面，对应服务类型分页查询的接口方法实现代码。图中蓝色高亮选中的代码行，是名为page的公共方法，该方法接收ServeTypePageQueryReqDTO类型的请求参数，返回PageResult<ServeTypeResDTO>类型的结果，方法内部调用了serveTypeService的page方法完成业务逻辑处理，代码上方还标注了对应的GetMapping注解与ApiOperation注解，分别对应接口路径为"/page"、接口功能为服务类型分页查询。
 
 进入service方法继续打断点跟踪：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/DTvtbYpNxoiE9KxQmm2cYUrAnWg.png)
+![dtvtbypnxoie9kxqmm2cyuranwg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/dtvtbypnxoie9kxqmm2cyuranwg.png)
 > 图注：图片展示的是“ServeTypeServiceImpl.java”代码文件内容。其中，关键代码部分被红色框线突出显示，代码为“Page<ServerType> page = PageUtils.parsePageQuery(serveTypePageQueryReqDTO, ServerType.class);”。该图片与上文“进入service方法继续打断点跟踪”相关，是对上文提到的在“ServeTypeServiceImpl.java”文件中跟踪请求参数这一操作的代码示例呈现，帮助理解代码执行情况。
 
 跟踪请求参数：
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/YgUabc8iDoQCAFxzSiMc4Vw0n4f.png)
+![yguabc8idoqcafxzsimc4vw0n4f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yguabc8idoqcafxzsimc4vw0n4f.png)
 > 图注：图片展示的是一个Java代码片段，其中`page`方法接收`ServeTypePageQueryReqDTO`参数。代码中有一个断点，箭头指向`serveTypePageQueryReqDTO`参数。下方弹出的参数信息显示了`pageNo`、`pageSize`等属性值，如`pageNo`为1，`pageSize`为10。该图片与上文“进入service方法继续打断点跟踪，跟踪请求参数”的内容相关，直观呈现了请求参数的显示情况。
 
 放行继续执行，测试结束，观察响应结果
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/GKG3bIl1doxycyxr3Kzciz3Tnme.png)
+![gkg3bil1doxycyxr3kzciz3tnme](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gkg3bil1doxycyxr3kzciz3tnme.png)
 > 图注：图片展示的是家政服务 - 运营基础服务接口文档中“调试”窗口的请求参数及响应结果界面。上方有“请求参数”和“AfterScript”选项卡，下方显示了多个参数，如isAsc1、isAsc2等。下方“Raw”区域以JSON格式呈现了响应结果，包括code、msg、data等字段，data下有多个对象，如id、name、status等，还显示了响应时间、响应码、耗时等信息。该图与上下文介绍的通过swagger接口文档测试接口，进入“调试”窗口并观察响应结果等内容相关。
 
 观察idea控制台输出的SQL执行语句
 
-![](../../../../../../Attachments/development/architecture/solutions/yunlan-daojia-project/chapter-01-getting-familiar-with-new-project/JxmwbtlgBojPGJxIh7xcJX2mnfh.png)
+![jxmwbtlgbojpgjxih7xcjx2mnfh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jxmwbtlgbojpgjxih7xcjx2mnfh.png)
 > 图注：这张图片是项目测试过程中Idea控制台的输出内容，清晰展示了两次SQL执行语句：第一次是查询serve_type表数据总数的语句，第二次是分页查询该表指定字段数据的语句，同时包含对应参数信息。最后还呈现了接口测试的响应结果，其中状态码为200，消息为OK，数据分页信息显示总共有3条数据，对应接口测试放行后的最终结果，和文档中提及的观察Idea控制台SQL执行语句的要求相契合。
 
 
