@@ -6,8 +6,8 @@ aliases:
   - "05 面向对象编程·笔记"
 ---
 
-# 05 面向对象编程·笔记
-> 系统详解：[[Memo/development/programming/java/java-basics/oop-programming.md|面向对象编程]]
+# 面向对象编程·问答
+> 系统详解：[[Memo/development/programming/java/java-basics/05-oop-programming.md|面向对象编程]]
 
 ## 问答：类、对象与封装
 

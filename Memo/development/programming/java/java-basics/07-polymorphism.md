@@ -516,7 +516,7 @@ public class Test {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/oop/07-oop-advanced-polymorphism.md|07 多态·笔记]]
+- [[Memo/development/programming/java/java-basics/07-polymorphism-quiz.md|07 多态·问答]]
 - [[Memo/development/programming/java/oop/10-polymorphism-abstract-final-singleton-enum.md|多态、抽象类、final、单例与枚举精讲]]
 
 ---

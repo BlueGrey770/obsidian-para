@@ -961,7 +961,7 @@ public class Test {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/oop/06-oop-advanced-static-and-inheritance.md|06 static与继承·笔记]]
+- [[Memo/development/programming/java/java-basics/06-static-and-inheritance-quiz.md|06 static与继承·问答]]
 - [[Memo/development/programming/java/oop/09-static-and-inheritance.md|static 关键字与继承机制精讲]]
 
 ---

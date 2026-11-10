@@ -6,8 +6,8 @@ aliases:
   - "04 嵌套循环、数组、二维数组·笔记"
 ---
 
-# 04 嵌套循环、数组、二维数组·笔记
-> 系统详解：[[Memo/development/programming/java/java-basics/nested-loops-and-arrays.md|嵌套循环与数组]]
+# 嵌套循环与数组·问答
+> 系统详解：[[Memo/development/programming/java/java-basics/04-nested-loops-and-arrays.md|嵌套循环与数组]]
 
 
 

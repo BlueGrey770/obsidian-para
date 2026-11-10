@@ -6,8 +6,8 @@ aliases:
   - "02 java基础语法·笔记"
 ---
 
-# 02 java基础语法·笔记
-> 系统详解：[[Memo/development/programming/java/java-basics/java-syntax-basics.md|Java 基础语法]]
+# Java 基础语法·问答
+> 系统详解：[[Memo/development/programming/java/java-basics/02-java-syntax-basics.md|Java 基础语法]]
 
 
 

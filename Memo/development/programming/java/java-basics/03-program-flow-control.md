@@ -905,7 +905,7 @@ public class Test3 {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/java-syntax-and-control-flow/03-program-flow-control.md|03 流程控制·笔记]]
+- [[Memo/development/programming/java/java-basics/03-program-flow-control-quiz.md|03 流程控制·问答]]
 - [[Memo/development/programming/java/java-syntax-and-control-flow/08-loops-and-control-flow-practice.md|循环结构与流程控制综合实战]]
 
 ---

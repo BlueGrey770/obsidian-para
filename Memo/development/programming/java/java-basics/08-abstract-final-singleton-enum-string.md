@@ -951,7 +951,7 @@ public class Test1 {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/oop/07-oop-advanced-polymorphism.md|07 多态·课堂问答（含抽象类与 String）]]
+- [[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string-quiz.md|08 抽象类与 String·问答]]
 - [[Memo/development/programming/java/oop/10-polymorphism-abstract-final-singleton-enum.md|多态、抽象类、final、单例与枚举精讲]]
 - [[Memo/development/programming/java/java-syntax-and-control-flow/09-java-string-class.md|String 类精讲]]
 

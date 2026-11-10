@@ -3,30 +3,32 @@ type: memo
 date: 2026-11-09
 aliases:
   - "Java基础"
+  - "Java基础课程"
 ---
 
 # Java 基础知识体系
 
-Java 基础的系统性知识梳理，从入门语法到面向对象、集合与 ATM 综合实战。每篇均配有同主题的问答笔记与精讲笔记，三层互补：**教程**打基础、**问答**记疑点、**精讲**补深度。
+Java 基础九章的系统梳理，从入门语法到面向对象、集合与 ATM 综合实战。每章采用「教程 + 问答」双件套：教程讲透原理与案例，问答检验考点与易错点；跨章对比、难点与坑位收在各域文件夹的「主题精讲」里。
 
-| 篇章 | 主题 | 笔记 |
-| --- | --- | --- |
-| 01 | 入门：Java 介绍、JDK 与 IDEA、基本语法 | [[Memo/development/programming/java/java-basics/getting-started.md|Java 快速入门]] |
-| 02 | 方法、类型转换、输入输出、运算符 | [[Memo/development/programming/java/java-basics/java-syntax-basics.md|Java 基础语法]] |
-| 03 | 分支结构、循环结构、break/continue | [[Memo/development/programming/java/java-basics/program-flow-control.md|程序流程控制]] |
-| 04 | 嵌套循环、数组、二维数组 | [[Memo/development/programming/java/java-basics/nested-loops-and-arrays.md|嵌套循环与数组]] |
-| 05 | 类与对象、封装、构造器、JavaBean | [[Memo/development/programming/java/java-basics/oop-programming.md|面向对象编程]] |
-| 06 | static、继承、权限修饰符、Object | [[Memo/development/programming/java/java-basics/static-and-inheritance.md|static 与继承]] |
-| 07 | 多态、类型转换、加油站支付案例 | [[Memo/development/programming/java/java-basics/polymorphism.md|多态]] |
-| 08 | 抽象类、模板方法、final、单例、枚举、String | [[Memo/development/programming/java/java-basics/abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]] |
-| 09 | ArrayList、泛型入门、ATM 综合项目实战 | [[Memo/development/programming/java/java-basics/arraylist-and-atm-project.md|ArrayList 与 ATM 综合实战]] |
+| 章 | 主题 | 教程 | 自测问答 |
+| --- | --- | --- | --- |
+| 01 | 入门：Java 介绍、JDK 与 IDEA、基本语法 | [[Memo/development/programming/java/java-basics/01-getting-started.md|Java 快速入门]] | [[Memo/development/programming/java/java-basics/01-getting-started-quiz.md|01 入门·问答]] |
+| 02 | 方法、类型转换、输入输出、运算符 | [[Memo/development/programming/java/java-basics/02-java-syntax-basics.md|Java 基础语法]] | [[Memo/development/programming/java/java-basics/02-java-syntax-basics-quiz.md|02 基础语法·问答]] |
+| 03 | 分支结构、循环结构、break/continue | [[Memo/development/programming/java/java-basics/03-program-flow-control.md|程序流程控制]] | [[Memo/development/programming/java/java-basics/03-program-flow-control-quiz.md|03 流程控制·问答]] |
+| 04 | 嵌套循环、数组、二维数组 | [[Memo/development/programming/java/java-basics/04-nested-loops-and-arrays.md|嵌套循环与数组]] | [[Memo/development/programming/java/java-basics/04-nested-loops-and-arrays-quiz.md|04 循环与数组·问答]] |
+| 05 | 类与对象、封装、构造器、JavaBean | [[Memo/development/programming/java/java-basics/05-oop-programming.md|面向对象编程]] | [[Memo/development/programming/java/java-basics/05-oop-programming-quiz.md|05 面向对象·问答]] |
+| 06 | static、继承、权限修饰符、Object | [[Memo/development/programming/java/java-basics/06-static-and-inheritance.md|static 与继承]] | [[Memo/development/programming/java/java-basics/06-static-and-inheritance-quiz.md|06 static 与继承·问答]] |
+| 07 | 多态、类型转换、加油站支付案例 | [[Memo/development/programming/java/java-basics/07-polymorphism.md|多态]] | [[Memo/development/programming/java/java-basics/07-polymorphism-quiz.md|07 多态·问答]] |
+| 08 | 抽象类、模板方法、final、单例、枚举、String | [[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]] | [[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string-quiz.md|08 抽象类与 String·问答]] |
+| 09 | ArrayList、泛型入门、ATM 综合项目实战 | [[Memo/development/programming/java/java-basics/09-arraylist-and-atm-project.md|ArrayList 与 ATM 综合实战]] | [[Memo/development/programming/java/java-basics/09-arraylist-and-atm-project-quiz.md|09 ArrayList 与 ATM·问答]] |
 
-## 学习路径建议
+## 使用建议
 
-- **系统过一遍**：按 01→09 顺序阅读，每篇末尾的「相关笔记」里有对应的问答与精讲入口；
-- **查漏补缺**：直接进对应主题文件夹（基础语法与流程控制 / 面向对象 / 集合框架），那里有按主题沉淀的精讲笔记；
-- **面试冲刺**：结合 [[Memo/development/programming/java/java-basics-mindmap.md|Java 基础思维导图]] 与 [[Memo/development/programming/java/comprehensive-review.md|综合复习]] 做整体回顾。
+- **顺序读**：01 → 09，每章先看教程、再做该章问答，错题回到教程对应小节；
+- **只刷题**：直接进各章问答，答不上来再顺藤摸瓜回教程；
+- **串知识**：跨章对比、易错点与技术要点在 [[Memo/development/programming/java/java-syntax-and-control-flow/index.md|基础语法与流程控制]] 与 [[Memo/development/programming/java/oop/index.md|面向对象]] 的「主题精讲」里；
+- **面试冲刺**：配合 [[Memo/development/programming/java/java-basics-mindmap.md|Java 基础思维导图]] 与 [[Memo/development/programming/java/comprehensive-review.md|综合复习]] 整体回顾。
 
 ---
 
-> 来源：飞书《讲义》知识库 · 9 篇 · 2026-11-09 迁入
+> 来源：飞书《讲义》知识库 · 9 篇 · 2026-11-09 迁入；2026-11-10 按章合并教程与问答

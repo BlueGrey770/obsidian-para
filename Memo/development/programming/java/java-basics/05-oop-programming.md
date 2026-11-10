@@ -856,7 +856,7 @@ public class Test {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/oop/05-oop-programming.md|05 面向对象编程·笔记]]
+- [[Memo/development/programming/java/java-basics/05-oop-programming-quiz.md|05 面向对象编程·问答]]
 - [[Memo/development/programming/java/oop/08-class-object-encapsulation-constructors.md|类、对象、封装与构造器精讲]]
 
 ---

@@ -6,8 +6,8 @@ aliases:
   - "03 程序流程控制·笔记"
 ---
 
-# 03 程序流程控制·笔记
-> 系统详解：[[Memo/development/programming/java/java-basics/program-flow-control.md|程序流程控制]]
+# 程序流程控制·问答
+> 系统详解：[[Memo/development/programming/java/java-basics/03-program-flow-control.md|程序流程控制]]
 
 
 

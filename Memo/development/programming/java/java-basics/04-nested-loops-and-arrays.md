@@ -701,7 +701,7 @@ public class Shuffle2DArray {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/java-syntax-and-control-flow/04-nested-loops-and-arrays.md|04 嵌套循环与数组·笔记]]
+- [[Memo/development/programming/java/java-basics/04-nested-loops-and-arrays-quiz.md|04 嵌套循环与数组·问答]]
 
 ---
 

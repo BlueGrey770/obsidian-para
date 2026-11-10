@@ -6,8 +6,8 @@ aliases:
   - "01 入门·笔记"
 ---
 
-# 01 入门·笔记
-> 系统详解：[[Memo/development/programming/java/java-basics/getting-started.md|Java 快速入门]]
+# Java 快速入门·问答
+> 系统详解：[[Memo/development/programming/java/java-basics/01-getting-started.md|Java 快速入门]]
 
 
 

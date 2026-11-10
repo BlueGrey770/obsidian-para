@@ -8,28 +8,24 @@ Java 语言从入门语法到集合、IO、多线程、网络编程的系统知�
 
 ## Java 基础知识体系
 
-- 导读：[[Memo/development/programming/java/java-basics/index.md|Java 基础课程]]——从入门语法到 ATM 综合实战的系统知识梳理，每篇附问答与精讲笔记入口
-- [[Memo/development/programming/java/java-basics/getting-started.md|Java 快速入门]]
-- [[Memo/development/programming/java/java-basics/java-syntax-basics.md|Java 基础语法]]
-- [[Memo/development/programming/java/java-basics/program-flow-control.md|程序流程控制]]
-- [[Memo/development/programming/java/java-basics/nested-loops-and-arrays.md|嵌套循环与数组]]
-- [[Memo/development/programming/java/java-basics/oop-programming.md|面向对象编程]]
-- [[Memo/development/programming/java/java-basics/static-and-inheritance.md|static 与继承]]
-- [[Memo/development/programming/java/java-basics/polymorphism.md|多态]]
-- [[Memo/development/programming/java/java-basics/abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]]
-- [[Memo/development/programming/java/java-basics/arraylist-and-atm-project.md|ArrayList 与 ATM 综合实战]]
+- 导读：[[Memo/development/programming/java/java-basics/index.md|Java 基础知识体系]]——九章教程 + 九章自测问答（01–09）统一入口，从入门语法到 ATM 综合实战
+- [[Memo/development/programming/java/java-basics/01-getting-started.md|Java 快速入门]]
+- [[Memo/development/programming/java/java-basics/02-java-syntax-basics.md|Java 基础语法]]
+- [[Memo/development/programming/java/java-basics/03-program-flow-control.md|程序流程控制]]
+- [[Memo/development/programming/java/java-basics/04-nested-loops-and-arrays.md|嵌套循环与数组]]
+- [[Memo/development/programming/java/java-basics/05-oop-programming.md|面向对象编程]]
+- [[Memo/development/programming/java/java-basics/06-static-and-inheritance.md|static 与继承]]
+- [[Memo/development/programming/java/java-basics/07-polymorphism.md|多态]]
+- [[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]]
+- [[Memo/development/programming/java/java-basics/09-arraylist-and-atm-project.md|ArrayList 与 ATM 综合实战]]
 
 ## 方法引用、异常与泛型
 - 导读：[[Memo/development/programming/java/method-reference-exception-generics/index.md|方法引用、异常与泛型]]
 - [[Memo/development/programming/java/method-reference-exception-generics/02-method-reference-exception-generics.md|02 方法引用,异常,泛型]]
 - [[Memo/development/programming/java/method-reference-exception-generics/02-method-reference-exception-generics-key-points.md|02 方法引用、异常与泛型技术要点]]
 
-## 基础语法与流程控制
-- 导读：[[Memo/development/programming/java/java-syntax-and-control-flow/index.md|基础语法与流程控制]]
-- [[Memo/development/programming/java/java-syntax-and-control-flow/01-getting-started.md|01 入门·笔记]]
-- [[Memo/development/programming/java/java-syntax-and-control-flow/02-java-syntax-basics.md|02 java基础语法·笔记]]
-- [[Memo/development/programming/java/java-syntax-and-control-flow/03-program-flow-control.md|03 程序流程控制·笔记]]
-- [[Memo/development/programming/java/java-syntax-and-control-flow/04-nested-loops-and-arrays.md|04 嵌套循环、数组、二维数组·笔记]]
+## 基础语法与流程控制（精讲）
+- 导读：[[Memo/development/programming/java/java-syntax-and-control-flow/index.md|基础语法与流程控制]]——对应 java-basics 01–04 章，目录只收精讲
 - [[Memo/development/programming/java/java-syntax-and-control-flow/05-variables-data-types-and-conversion.md|Java 变量、数据类型与类型转换精讲]]
 - [[Memo/development/programming/java/java-syntax-and-control-flow/06-operators-and-common-pitfalls.md|Java 运算符精讲与常见坑]]
 - [[Memo/development/programming/java/java-syntax-and-control-flow/07-methods-and-branching.md|Java 方法详解与分支结构]]
@@ -48,11 +44,8 @@ Java 语言从入门语法到集合、IO、多线程、网络编程的系统知�
 - [[Memo/development/programming/java/interface-inner-class-lambda/01-interface-inner-class-lambda.md|01 接口,内部类,lambda]]
 - [[Memo/development/programming/java/interface-inner-class-lambda/01-interface-inner-class-lambda-key-points.md|01 接口、内部类与 Lambda 技术要点]]
 
-## 面向对象
-- 导读：[[Memo/development/programming/java/oop/index.md|面向对象]]
-- [[Memo/development/programming/java/oop/05-oop-programming.md|05 面向对象编程·笔记]]
-- [[Memo/development/programming/java/oop/06-oop-advanced-static-and-inheritance.md|06 面向对象高级(static , 继承)·笔记]]
-- [[Memo/development/programming/java/oop/07-oop-advanced-polymorphism.md|07 面向对象高级(多态)·笔记]]
+## 面向对象（精讲）
+- 导读：[[Memo/development/programming/java/oop/index.md|面向对象]]——对应 java-basics 05–08 章，目录只收精讲
 - [[Memo/development/programming/java/oop/08-class-object-encapsulation-constructors.md|Java 类、对象、封装与构造器精讲]]
 - [[Memo/development/programming/java/oop/09-static-and-inheritance.md|Java static 关键字与继承机制精讲]]
 - [[Memo/development/programming/java/oop/10-polymorphism-abstract-final-singleton-enum.md|Java 多态、抽象类、final、单例与枚举精讲]]

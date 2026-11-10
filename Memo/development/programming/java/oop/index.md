@@ -7,22 +7,18 @@ aliases:
 
 # 面向对象
 
-面向对象从类与对象基础到 static、继承、多态、抽象类、单例与枚举的系统笔记，含系统教程与精讲两个层次。
+面向对象从类与对象基础到 static、继承、多态、抽象类、单例与枚举。**章节教程与自测问答已统一收进 [[Memo/development/programming/java/java-basics/index.md|Java 基础知识体系]]（05–08 章）**，本文件夹只保留跨章梳理与难点精讲。
 
-## 系统详解（面向对象）
+## 对应章节（05–08）
 
-- [[Memo/development/programming/java/java-basics/oop-programming.md|面向对象编程]]
-- [[Memo/development/programming/java/java-basics/static-and-inheritance.md|static 与继承]]
-- [[Memo/development/programming/java/java-basics/polymorphism.md|多态]]
-- [[Memo/development/programming/java/java-basics/abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]]
-
-## 问答笔记
-
-- [[Memo/development/programming/java/oop/05-oop-programming.md|05 面向对象编程·笔记]]
-- [[Memo/development/programming/java/oop/06-oop-advanced-static-and-inheritance.md|06 面向对象高级(static , 继承)·笔记]]
-- [[Memo/development/programming/java/oop/07-oop-advanced-polymorphism.md|07 面向对象高级(多态)·笔记]]
+- 05 [[Memo/development/programming/java/java-basics/05-oop-programming.md|面向对象编程]] ・ [[Memo/development/programming/java/java-basics/05-oop-programming-quiz.md|自测]]
+- 06 [[Memo/development/programming/java/java-basics/06-static-and-inheritance.md|static 与继承]] ・ [[Memo/development/programming/java/java-basics/06-static-and-inheritance-quiz.md|自测]]
+- 07 [[Memo/development/programming/java/java-basics/07-polymorphism.md|多态]] ・ [[Memo/development/programming/java/java-basics/07-polymorphism-quiz.md|自测]]
+- 08 [[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]] ・ [[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string-quiz.md|自测]]
 
 ## 主题精讲
+
+跨章对比、难点与技术要点，与教程不重复：
 
 - [[Memo/development/programming/java/oop/08-class-object-encapsulation-constructors.md|Java 类、对象、封装与构造器精讲]]
 - [[Memo/development/programming/java/oop/09-static-and-inheritance.md|Java static 关键字与继承机制精讲]]

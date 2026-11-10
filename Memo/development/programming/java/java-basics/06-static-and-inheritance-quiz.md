@@ -6,8 +6,8 @@ aliases:
   - "06 面向对象高级(static , 继承)·笔记"
 ---
 
-# 06 面向对象高级(static , 继承)·笔记
-> 系统详解：[[Memo/development/programming/java/java-basics/static-and-inheritance.md|static 与继承]]
+# static 与继承·问答
+> 系统详解：[[Memo/development/programming/java/java-basics/06-static-and-inheritance.md|static 与继承]]
 
 ## 问答：static 与继承
 

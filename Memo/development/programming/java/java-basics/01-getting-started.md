@@ -466,7 +466,7 @@ cls             //清空屏幕
 
 #### IDEA的下载和安装
 
-要安装idea，可以直接去IDEA官网下载**：** [**https://www.jetbrains.com/zh-cn/idea/download**](https://www.jetbrains.com/zh-cn/idea/download)
+要安装idea，可以直接去IDEA官网下载：[**https://www.jetbrains.com/zh-cn/idea/download**](https://www.jetbrains.com/zh-cn/idea/download)
 
 > **注意：下载对应操作系统的安装包，傻瓜式安装(建议修改安装路径，不带中文)**
 
@@ -1127,7 +1127,7 @@ int age =10;    //一看这个变量就知道表示年龄
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/java-syntax-and-control-flow/01-getting-started.md|01 入门·笔记]]
+- [[Memo/development/programming/java/java-basics/01-getting-started-quiz.md|01 入门·问答]]
 - [[Memo/development/programming/java/java-syntax-and-control-flow/05-variables-data-types-and-conversion.md|变量、数据类型与类型转换精讲]]
 
 ---
