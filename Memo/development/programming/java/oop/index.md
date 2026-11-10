@@ -11,10 +11,10 @@ aliases:
 
 ## 对应章节（05–08）
 
-- 05 [[Memo/development/programming/java/java-basics/05-oop-programming.md|面向对象编程]] ・ [[Memo/development/programming/java/java-basics/05-oop-programming-quiz.md|自测]]
-- 06 [[Memo/development/programming/java/java-basics/06-static-and-inheritance.md|static 与继承]] ・ [[Memo/development/programming/java/java-basics/06-static-and-inheritance-quiz.md|自测]]
-- 07 [[Memo/development/programming/java/java-basics/07-polymorphism.md|多态]] ・ [[Memo/development/programming/java/java-basics/07-polymorphism-quiz.md|自测]]
-- 08 [[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]] ・ [[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string-quiz.md|自测]]
+- 05 [[Memo/development/programming/java/java-basics/05-oop-programming.md|面向对象编程]]（含自测问答）
+- 06 [[Memo/development/programming/java/java-basics/06-static-and-inheritance.md|static 与继承]]（含自测问答）
+- 07 [[Memo/development/programming/java/java-basics/07-polymorphism.md|多态]]（含自测问答）
+- 08 [[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]]（含自测问答）
 
 ## 主题精讲
 

@@ -50,5 +50,4 @@ aliases:
 
 ## 相关
 
-- 教程：[[Memo/development/programming/java/java-basics/05-oop-programming.md|面向对象编程]]
-- 自测：[[Memo/development/programming/java/java-basics/05-oop-programming-quiz.md|05 面向对象·问答]]
+- 教程：[[Memo/development/programming/java/java-basics/05-oop-programming.md|面向对象编程]]（文末含自测问答）

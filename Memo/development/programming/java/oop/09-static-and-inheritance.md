@@ -50,5 +50,4 @@ this 代表"当前对象"，而静态方法属于类、可能在没有创建任�
 
 ## 相关
 
-- 教程：[[Memo/development/programming/java/java-basics/06-static-and-inheritance.md|static 与继承]]
-- 自测：[[Memo/development/programming/java/java-basics/06-static-and-inheritance-quiz.md|06 static 与继承·问答]]
+- 教程：[[Memo/development/programming/java/java-basics/06-static-and-inheritance.md|static 与继承]]（文末含自测问答）

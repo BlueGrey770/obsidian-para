@@ -54,5 +54,4 @@ while 循环忘记写 `i++`，条件永远为真。排查死循环的第一反�
 
 ## 相关
 
-- 教程：[[Memo/development/programming/java/java-basics/03-program-flow-control.md|程序流程控制]]
-- 自测：[[Memo/development/programming/java/java-basics/03-program-flow-control-quiz.md|03 流程控制·问答]]
+- 教程：[[Memo/development/programming/java/java-basics/03-program-flow-control.md|程序流程控制]]（文末含自测问答）

@@ -47,7 +47,5 @@ aliases:
 
 ## 相关
 
-- 教程：[[Memo/development/programming/java/java-basics/02-java-syntax-basics.md|Java 基础语法]]
-- 教程：[[Memo/development/programming/java/java-basics/03-program-flow-control.md|程序流程控制]]
-- 自测：[[Memo/development/programming/java/java-basics/02-java-syntax-basics-quiz.md|02 基础语法·问答]]
-- 自测：[[Memo/development/programming/java/java-basics/03-program-flow-control-quiz.md|03 流程控制·问答]]
+- 教程：[[Memo/development/programming/java/java-basics/02-java-syntax-basics.md|Java 基础语法]]（文末含自测问答）
+- 教程：[[Memo/development/programming/java/java-basics/03-program-flow-control.md|程序流程控制]]（文末含自测问答）

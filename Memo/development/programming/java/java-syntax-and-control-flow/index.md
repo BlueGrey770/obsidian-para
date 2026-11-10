@@ -11,10 +11,10 @@ aliases:
 
 ## 对应章节（01–04）
 
-- 01 [[Memo/development/programming/java/java-basics/01-getting-started.md|Java 快速入门]] ・ [[Memo/development/programming/java/java-basics/01-getting-started-quiz.md|自测]]
-- 02 [[Memo/development/programming/java/java-basics/02-java-syntax-basics.md|Java 基础语法]] ・ [[Memo/development/programming/java/java-basics/02-java-syntax-basics-quiz.md|自测]]
-- 03 [[Memo/development/programming/java/java-basics/03-program-flow-control.md|程序流程控制]] ・ [[Memo/development/programming/java/java-basics/03-program-flow-control-quiz.md|自测]]
-- 04 [[Memo/development/programming/java/java-basics/04-nested-loops-and-arrays.md|嵌套循环与数组]] ・ [[Memo/development/programming/java/java-basics/04-nested-loops-and-arrays-quiz.md|自测]]
+- 01 [[Memo/development/programming/java/java-basics/01-getting-started.md|Java 快速入门]]（含自测问答）
+- 02 [[Memo/development/programming/java/java-basics/02-java-syntax-basics.md|Java 基础语法]]（含自测问答）
+- 03 [[Memo/development/programming/java/java-basics/03-program-flow-control.md|程序流程控制]]（含自测问答）
+- 04 [[Memo/development/programming/java/java-basics/04-nested-loops-and-arrays.md|嵌套循环与数组]]（含自测问答）
 
 ## 主题精讲
 

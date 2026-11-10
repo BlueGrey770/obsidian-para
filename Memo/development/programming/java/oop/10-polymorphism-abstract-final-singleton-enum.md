@@ -49,7 +49,5 @@ aliases:
 
 ## 相关
 
-- 教程：[[Memo/development/programming/java/java-basics/07-polymorphism.md|多态]]
-- 教程：[[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]]
-- 自测：[[Memo/development/programming/java/java-basics/07-polymorphism-quiz.md|07 多态·问答]]
-- 自测：[[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string-quiz.md|08 抽象类与 String·问答]]
+- 教程：[[Memo/development/programming/java/java-basics/07-polymorphism.md|多态]]（文末含自测问答）
+- 教程：[[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]]（文末含自测问答）

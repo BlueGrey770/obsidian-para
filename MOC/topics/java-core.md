@@ -8,16 +8,7 @@ Java 语言从入门语法到集合、IO、多线程、网络编程的系统知�
 
 ## Java 基础知识体系
 
-- 导读：[[Memo/development/programming/java/java-basics/index.md|Java 基础知识体系]]——九章教程 + 九章自测问答（01–09）统一入口，从入门语法到 ATM 综合实战
-- [[Memo/development/programming/java/java-basics/01-getting-started.md|Java 快速入门]]
-- [[Memo/development/programming/java/java-basics/02-java-syntax-basics.md|Java 基础语法]]
-- [[Memo/development/programming/java/java-basics/03-program-flow-control.md|程序流程控制]]
-- [[Memo/development/programming/java/java-basics/04-nested-loops-and-arrays.md|嵌套循环与数组]]
-- [[Memo/development/programming/java/java-basics/05-oop-programming.md|面向对象编程]]
-- [[Memo/development/programming/java/java-basics/06-static-and-inheritance.md|static 与继承]]
-- [[Memo/development/programming/java/java-basics/07-polymorphism.md|多态]]
-- [[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]]
-- [[Memo/development/programming/java/java-basics/09-arraylist-and-atm-project.md|ArrayList 与 ATM 综合实战]]
+- 导读：[[Memo/development/programming/java/java-basics/index.md|Java 基础知识体系]]——01–09 九章，每章正文 + 文末自测问答，从入门语法到 ATM 综合实战，完整总表见该页
 
 ## 方法引用、异常与泛型
 - 导读：[[Memo/development/programming/java/method-reference-exception-generics/index.md|方法引用、异常与泛型]]

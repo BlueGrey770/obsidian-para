@@ -53,5 +53,4 @@ if ("admin".equals(input)) {   // 正确；字面量写前面还能防空指针
 
 ## 相关
 
-- 教程：[[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]]
-- 自测：[[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string-quiz.md|08 抽象类与 String·问答]]
+- 教程：[[Memo/development/programming/java/java-basics/08-abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]]（文末含自测问答）
