@@ -7,11 +7,11 @@ aliases:
 ---
 
 # 02 java基础语法·笔记
-> 讲义全文：[[Memo/development/programming/java/basics-course/day02-java-syntax-basics.md|Day02 基础语法讲义]]
+> 系统详解：[[Memo/development/programming/java/java-basics/java-syntax-basics.md|Java 基础语法]]
 
 
 
-## 课堂问答：类型转换与基础语法
+## 问答：类型转换与基础语法
 
 **题目: 请书写强制类型的语法格式**
 

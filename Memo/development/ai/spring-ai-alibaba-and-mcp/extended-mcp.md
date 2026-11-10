@@ -290,18 +290,12 @@ Functioncalling 怎么获取 security中的用户
 - springAI目前用哪个版本好些呀，我没找到m6和m7版本，我看官网只有1.0.0-SNAPSHOT和1.0.0-RC1
 - 从M7升级到RC1好多爆红，哪些地方要改，怎么改
 
-  <grid>
-  <column width-ratio="0.500000">
   ![tevvbujtsouvj5xlw1kc7kggn2e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tevvbujtsouvj5xlw1kc7kggn2e.png)
 > 图注：图片展示了SpringAI中两个ChatClient的配置代码。上方是gameChatClient配置，使用OpenAiChatModel模型，设置默认系统为GAME_SYSTEM_PROMPT，添加SimpleLoggerAdvisor和MessageChatMemoryAdvisor（redisChatMemory）。下方是serviceChatClient配置，使用AlibabaOpenAiChatModel模型，设置默认系统为CUSTOMER_SERVICE_SYSTEM，添加MessageChatMemoryAdvisor（redisChatMemory）和SimpleLoggerAdvisor，还添加了defaultTools参数。该图片与文档中介绍SpringAI版本及升级时需注意改动的内容相关，直观呈现了配置代码。
 
-  </column>
-  <column width-ratio="0.500000">
   ![e5bmbf1spofcsyxum6kcegxynob](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/e5bmbf1spofcsyxum6kcegxynob.png)
 > 图注：这张图片展示的是一段Java代码，内容是定义一个名为pdfChatClient的Bean，用于配置ChatClient实例。代码以OpenAiChatModel等作为参数传入ChatClient的构造，设置了系统提示文本。重点配置了三个Advisor，分别对应聊天记忆、日志记录以及问答建议功能，其中向量检索相关的配置被特别标注：向量检索请求参数构建时设置了相似度阈值为0.5，返回的文档片段数量为2，该部分用红色框线重点标识，是代码中用于向量检索相关参数配置的核心内容。
 
-  </column>
-  </grid>
 - 介绍一下RC1和课程中的版本的区别吧，还有升级版本的时候需要注意改动什么
 
 

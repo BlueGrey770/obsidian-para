@@ -97,35 +97,23 @@ AI:开源全文搜索引擎，按使用用户量降序排序
 
 Elasticsearch是一款非常强大的开源搜索引擎，支持的功能非常多，例如：
 
-<grid>
-<column width-ratio="0.500000">
 ![c7zfbevpwoxocqxzebscabddn6e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/c7zfbevpwoxocqxzebscabddn6e.png)
 > 图注：图片展示了Elasticsearch代码搜索功能的界面。左侧为过滤选项，包括Code、Repositories、Issues等，其中Code选项被选中，显示6.1M条代码。右侧是代码搜索结果，上方代码行204处有红色箭头指向，标注“Version tmp = new Version(id, TransportVersion.CURRENT, org.apache.lucene.util.Version.LATEST);”，下方代码行70处也有红色箭头，标注“Collections.sort(digits);”。该图片直观呈现了Elasticsearch代码搜索功能，与文档中介绍其支持代码搜索功能的内容相契合。
 
 **代码搜索**
-</column>
-<column width-ratio="0.500000">
 ![gh1xbeu44ooaacxrn4lcejqenrh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gh1xbeu44ooaacxrn4lcejqenrh.png)
 > 图注：图片展示的是一个商品搜索界面，搜索框内输入“iphone”，下方显示了多款iPhone手机及相关配件的图片、价格、评价等信息。其中，iPhone 12（A2412）128GB紫色、iPhone 11（A2223）128GB白色、iPhone 12 5G全网通双卡手机（A2412）128GB等商品被红色框突出显示。该图片与文档中介绍Elasticsearch支持的商品搜索功能上下文对应，直观呈现了Elasticsearch在商品搜索方面的应用效果。
 
 **商品搜索**
-</column>
-</grid>
 
-<grid>
-<column width-ratio="0.500000">
 ![m5rzbxx0foiizyxumtmclvgknch](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/m5rzbxx0foiizyxumtmclvgknch.png)
 > 图注：这张图片展示的是谷歌搜索结果页面，搜索关键词为“illegalargumentexception”。页面中显示了多个与Java的IllegalArgumentException异常相关的搜索结果条目，包括来自stackoverflow.com的问答内容，以及airbrake.io的相关博客内容。这些搜索结果对应了文档中所列举的Elasticsearch支持的代码搜索、解决方案搜索等功能，说明搜索类工具可以实现这类与技术问题、技术方案相关的内容检索。
 
 **解决方案搜索**
-</column>
-<column width-ratio="0.500000">
 ![m4e3bx8tvoubtmx6v1hckxg1njf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/m4e3bx8tvoubtmx6v1hckxg1njf.png)
 > 图注：图片展示的是高德打车界面，显示从“黑马程序员训练营(上海校区)”出发，目的地为“航头路/航都路(路口)东南侧”，并推荐了附近适合的上车点。界面下方有“五一出行必看知识点！点我”提示，还显示上海市今日天气为阴，17℃~23℃。图片与上下文的关系是，通过展示实际打车场景，形象地说明了Elasticsearch支持的“地图搜索”功能，即在地图上进行搜索操作。
 
 **地图搜索**
-</column>
-</grid>
 
 
 
@@ -200,8 +188,6 @@ select * from tb_goods where title like '%手机%';
 
 此时形成的这张以词条为索引的表，就是倒排索引表，两者对比如下：
 
-<grid>
-<column width-ratio="0.500000">
 **正向索引**
 | **id（索引）** | **title** | **price** |
 |-|-|-|
@@ -210,8 +196,6 @@ select * from tb_goods where title like '%手机%';
 | 3 | 华为小米充电器 | 49 |
 | 4 | 小米手环 | 49 |
 | ... | ... | ... |
-</column>
-<column width-ratio="0.500000">
 **倒排索引**
 | **词条（索引）** | **文档id** |
 |-|-|
@@ -220,8 +204,6 @@ select * from tb_goods where title like '%手机%';
 | 华为 | 2，3 |
 | 充电器 | 3 |
 | 手环 | 4 |
-</column>
-</grid>
 
 
 
@@ -406,13 +388,9 @@ elasticsearch中有很多独有的概念，与mysql中略有差别，但也有�
 
 elasticsearch是面向**文档（Document）**存储的，可以是数据库中的一条商品数据，一个订单信息。文档数据会被序列化为`json`格式后存储在`elasticsearch`中：
 
-<grid>
-<column width-ratio="0.500000">
 ![nhaybwhmpo8tcwxrxxycfuvhnih](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nhaybwhmpo8tcwxrxxycfuvhnih.png)
 > 图注：图片展示了一张表格，用于说明Elasticsearch中文档存储的JSON格式。表格包含id（索引）、title、price三列，分别对应商品的编号、名称和价格。其中，id列以1、2、3、4等递增，title列有小米手机、华为手机、华为小米充电器、小米手环等商品名称，price列对应商品价格。该图与上下文紧密相关，直观呈现了文档数据被序列化为JSON格式后存储在Elasticsearch中的情况，帮助理解文档数据在ES中的存储形式。
 
-</column>
-<column width-ratio="0.500000">
 ```JSON
 {
     "id": 1,
@@ -436,8 +414,6 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 }
 
 ```
-</column>
-</grid>
 
 因此，原本数据库中的一行数据就是ES中的一个JSON文档；而数据库中每行数据都包含很多列，这些列就转换为JSON文档中的**字段（Field）**。
 
@@ -452,8 +428,6 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 
 所有文档都散乱存放显然非常混乱，也不方便管理，因此，我们要将相同类型的文档集中在一起管理，称为**索引（Index）**。例如：
 
-<grid>
-<column width-ratio="0.333333">
 **商品索引**
 ```JSON
 {
@@ -474,8 +448,6 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
     "price": 3999
 }
 ```
-</column>
-<column width-ratio="0.333333">
 **用户索引**
 ```JSON
 {
@@ -496,8 +468,6 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
     "age": 18
 }
 ```
-</column>
-<column width-ratio="0.333333">
 **订单索引**
 ```JSON
 {
@@ -515,8 +485,6 @@ elasticsearch是面向**文档（Document）**存储的，可以是数据库中�
 }
 
 ```
-</column>
-</grid>
 
 - 所有用户文档，就可以组织在一起，称为用户的索引；
 - 所有商品的文档，可以组织在一起，称为商品的索引；

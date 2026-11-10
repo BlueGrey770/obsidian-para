@@ -121,18 +121,12 @@ RAGFlow是一款基于 **深度文档理解** （deepdoc）构建的开源RAG引
 
 #### 创建知识库
 
-<grid>
-<column width-ratio="0.739165">
 ![sbbfbm3rqoqzcyxxvkmc9vxmnkg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/sbbfbm3rqoqzcyxxvkmc9vxmnkg.png)
 > 图注：图片展示了Dify平台的界面。界面上方有“知识库”“聊天”“搜索”“智能体”“文件管理”等导航栏选项，其中“知识库”选项被红色框线突出显示。右下角有“+创建知识库”按钮，同样被红色框线突出。该图片与上下文“创建知识库”相关，直观呈现了在Dify平台中创建知识库的操作入口位置，帮助用户快速找到创建知识库的功能。
 
-</column>
-<column width-ratio="0.260835">
 ![shd1bigxfoeu1pxh23kcw8hznih](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/shd1bigxfoeu1pxh23kcw8hznih.png)
 > 图注：这是Dify接入外部知识库（RAGFlow）流程里的创建知识库界面，界面标题为“创建知识库”，设有名称输入框，输入框内已填入内容“大模型入门测试”，界面右下角有一个深色的“保存”按钮，用户可填写知识库名称后点击该按钮完成知识库的创建操作，此界面对应文档中创建知识库的相关步骤。
 
-</column>
-</grid>
 
 点击保存
 
@@ -212,18 +206,12 @@ RAGFlow是一款基于 **深度文档理解** （deepdoc）构建的开源RAG引
 
 创建聊天
 
-<grid>
-<column width-ratio="0.536829">
 ![t1gib6lgwo79fux74zgcnw32n0a](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/t1gib6lgwo79fux74zgcnw32n0a.png)
 > 图注：图片展示的是Dify系统中创建聊天的界面。界面上方显示“创建聊天”标题，下方有“名称”输入框，内有“聊天测试”字样，输入框右侧有一个“保存”按钮。该图片对应文档中“创建聊天”步骤，是点击聊天菜单后，点击新建聊天操作后的界面展示，用于后续在聊天设置中加入知识库的操作。
 
-</column>
-<column width-ratio="0.463171">
 ![o1cqbdoc2obdqvxjae2c7zatnkg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/o1cqbdoc2obdqvxjae2c7zatnkg.png)
 > 图注：这张图展示的是Dify聊天功能界面的局部内容，画面左侧以红框标注了名为“聊天测试”的聊天选项，该选项旁显示了时间“17/09/2025 19:28:21”，画面右侧有标注为“新建聊天”的选项。结合文档上下文，这张图是对应“创建聊天”步骤的界面内容，展示的正是点击新建聊天后生成的“聊天测试”聊天选项，与文档中提及的“点击新建的聊天”这一操作内容相关。
 
-</column>
-</grid>
 
 **点击新建的聊天**
 

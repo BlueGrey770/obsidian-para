@@ -59,18 +59,12 @@ LangGraph主要可以应用在下面场景中：
 - **Node（节点）：**表示流程中的某一个步骤，主要体现为函数，它的输入和输出一般都是状态对象
 - **Edge（边）：**定义节点之间的连接关系和执行顺序
 
-<grid>
-<column width-ratio="0.266973">
 ![m2pqbt9vpo3urcxtsgqcgjg4nqo](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/m2pqbt9vpo3urcxtsgqcgjg4nqo.png)
 > 图注：图片展示了基于LangGraph实现的简单两位数计算图。图中“__start__”为起始节点，有两条分支，分别指向“得到热水子图”和“磨咖啡豆”节点。这两个节点的输出再共同指向“冲咖啡”节点。之后，“冲咖啡”节点的输出指向“加糖子图1”节点，最后“加糖子图1”的输出到达“__end__”节点。该图直观呈现了图中节点的连接关系和执行顺序，与上下文介绍的图由状态、节点、边组成，以及后续的代码编写步骤相呼应。
 
-</column>
-<column width-ratio="0.733027">
 ![bf33brl48ojivcxkjcgcigvcnbg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bf33brl48ojivcxkjcgcigvcnbg.png)
 > 图注：图片展示了基于LangGraph实现的两位数计算图示。图中包含“__start__”起始节点，“询问是否加糖1”节点，以及“加糖”和“__end__”节点。其中，“询问是否加糖1”节点有“是”和“否”两个分支，分别指向“加糖”和“__end__”节点。
 
-</column>
-</grid>
 
 ### 1.3 入门案例
 

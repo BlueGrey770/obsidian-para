@@ -7,11 +7,11 @@ aliases:
 ---
 
 # 03 程序流程控制·笔记
-> 讲义全文：[[Memo/development/programming/java/basics-course/day03-program-flow-control.md|Day03 流程控制讲义]]
+> 系统详解：[[Memo/development/programming/java/java-basics/program-flow-control.md|程序流程控制]]
 
 
 
-## 课堂问答：键盘录入与流程控制
+## 问答：键盘录入与流程控制
 
 **题目: 根据你的成绩给予奖励或是惩罚。(标注: 成绩请输入键盘录入接受)**
 

@@ -7,11 +7,11 @@ aliases:
 
 # 集合框架与 Map
 
-集合框架从 ArrayList 入门到 Collection、Map 的使用与原理笔记，含课程讲义与技术要点两个层次。
+集合框架从 ArrayList 入门到 Collection、Map 的使用与原理笔记，含系统教程与技术要点两个层次。
 
-## 课程讲义
+## 系统教程
 
-- [[Memo/development/programming/java/basics-course/day09-arraylist-and-atm-project.md|Day09 综合项目实战：ArrayList 与 ATM（讲义）]]——ArrayList 与泛型入门、ATM 银行系统完整实战（开户/登录/存取款/转账/改密/销户）
+- [[Memo/development/programming/java/java-basics/arraylist-and-atm-project.md|ArrayList 与 ATM 综合实战]]——ArrayList 与泛型入门、ATM 银行系统完整实战（开户/登录/存取款/转账/改密/销户）
 
 ## 笔记与要点
 

@@ -399,15 +399,11 @@ print(f"我的名字是{name},我的年龄是{age},我的零花钱有{money:.2f}
 
 #### 3.5.1 if条件判断
 
-<grid>
-<column width-ratio="0.500000">
 if...else
     if 条件:
         满足条件时要做的事情
     else:
         不满足条件时要做的事情
-</column>
-<column width-ratio="0.500000">
 if...elif...else
     if xxx1:
         满足条件时要做的事情
@@ -415,8 +411,6 @@ if...elif...else
         满足条件时要做的事情
     else:
         其他
-</column>
-</grid>
 
 ```Python
 """

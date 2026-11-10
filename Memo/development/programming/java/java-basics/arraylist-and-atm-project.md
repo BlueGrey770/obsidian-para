@@ -2,12 +2,10 @@
 type: memo
 date: 2026-11-09
 aliases:
-  - "day09-综合项目实战-ATM"
-  - "ATM项目讲义"
   - "ArrayList入门"
 ---
 
-# Day09 综合项目实战：ArrayList 与 ATM（讲义）
+# ArrayList 与 ATM 综合实战
 
 ## 认识集合
 

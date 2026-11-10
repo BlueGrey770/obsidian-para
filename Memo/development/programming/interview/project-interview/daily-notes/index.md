@@ -2271,19 +2271,11 @@ public class UserService {
    - **核心优势** ：无侵入、开发成本极低、性能接近本地事务、并发能力强 。
    - 相关示意图：（图 1）(AT模式RM执行流程) 、（图 2）(AT模式第二阶段回滚/清理流程) 、（图 3）(AT模式基本流程图)
    
-     <grid>
-     <column width-ratio="0.340000">
      ![wozmbxe7uo29blxnmifc3hnon5g](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wozmbxe7uo29blxnmifc3hnon5g.png)
-     </column>
-     <column width-ratio="0.300000">
      ![g3oibix7uo1vtlxscwtcbtu7nff](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/g3oibix7uo1vtlxscwtcbtu7nff.png)
 > 图注：该图是AT模式的基本流程图，对应文档中提及的AT模式相关内容，主要展示了AT模式的事务处理流程。流程分为两个阶段，阶段一为：从开始节点S出发，依次完成注册分支事务、记录快照、执行业务SQL、提交并报告事务状态；阶段二以菱形“是否可以提交”为判断节点，若结果为“是”则删除快照，若为“否”则读取快照恢复数据，最终汇合至结束节点E。图中还标注了id为1、money为100的示例数据，以及对应的快照内容。
 
-     </column>
-     <column width-ratio="0.340000">
      ![i1kqbhin0ownmwx0vo4czwpvngb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/i1kqbhin0ownmwx0vo4czwpvngb.png)
-     </column>
-     </grid>
 2. **XA模式（数据库原生事务，CP场景）**
 
    - **核心定位** ：基于数据库XA协议的 **强一致性方案** ，满足CP需求，是数据强一致的终极保障 。
@@ -2295,14 +2287,8 @@ public class UserService {
    - **核心优势与痛点** ：数据库原生强一致性保障，无应用层补偿逻辑；但性能低、并发瓶颈大，一阶段持锁阻塞业务 。
    - 相关示意图：（图 4）(XA模式流程) 、（图 5）(XA模式正常执行流程)
    
-     <grid>
-     <column width-ratio="0.490000">
      ![mlpwb2jr8oq8vsxjy9qcg05fnyg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/mlpwb2jr8oq8vsxjy9qcg05fnyg.png)
-     </column>
-     <column width-ratio="0.490000">
      ![nflqbioowoqbozxt2dtcb1ugn2e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nflqbioowoqbozxt2dtcb1ugn2e.png)
-     </column>
-     </grid>
 3. **TCC模式（业务层手动控制）**
 
    - **核心定位** ： **强侵入的定制化方案** ，支持任意资源类型，可实现最终或强一致性（业务可控） 。
@@ -2315,14 +2301,8 @@ public class UserService {
    - **核心优势与痛点** ：定制化能力极强，支持任意资源类型；但开发成本极高，需处理幂等、重试、空回滚等问题 。
    - 相关示意图：（图 6）(TCC模式流程) 、（图 7）(TCC Confirm阶段示例)
    
-     <grid>
-     <column width-ratio="0.150000">
      ![xndgbjbljoiddfxwp74c9drun76](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/xndgbjbljoiddfxwp74c9drun76.png)
-     </column>
-     <column width-ratio="0.840000">
      ![rmqtbdygooinekxnkwecftw2n9d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rmqtbdygooinekxnkwecftw2n9d.png)
-     </column>
-     </grid>
 4. **SAGA模式（长事务柔性补偿）**
 
    - **核心定位** ： **长流程柔性事务方案** ，实现最终一致性，适配长流程、多步骤、含异步/人工操作的业务 。

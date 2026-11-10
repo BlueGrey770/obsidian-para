@@ -826,18 +826,12 @@ InnoDB储存引擎中的主键默认就会创建一个聚集索引,每张表只�
 
 9, wangwu, f B
 
-<grid>
-<column width-ratio="0.468303">
 ![petzblixpo9i6mxfyf2c48fbnne](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/petzblixpo9i6mxfyf2c48fbnne.png)
 > 图注：图片展示了InnoDB聚集索引的B+树结构示例。图中以1 - 9为根节点，分为1 - 3和5 - 9两个子节点，再分别对应1、3、5、9等具体记录。每个记录包含id、name、sex、grade等字段信息。该图与上下文紧密相关，直观呈现了聚集索引中数据存储与索引结构的关系，帮助理解聚集索引将所有数据存储在索引上，叶子节点直接对应数据，从中间级索引页的索引行直接对应数据页的特点。
 
-</column>
-<column width-ratio="0.531697">
 ![ku5wby7tfoldzdxxua2cp3mynag](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ku5wby7tfoldzdxxua2cp3mynag.png)
 > 图注：图片展示了非聚集索引的B+树结构。图中“l-z”为根节点，下分“l-s”和“w-z”两个子节点，再分别有“l”“s”“w”“z”等子节点，最底层为“5”“1”“9”“3”等叶子节点。该图与上下文介绍的非聚集索引内容相关，说明非聚集索引的叶子节点不存放具体的整行数据，而是存储这一行的主键值，如图中叶子节点存储的id值。
 
-</column>
-</grid>
 
 
 

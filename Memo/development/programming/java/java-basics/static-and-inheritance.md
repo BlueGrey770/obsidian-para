@@ -1,12 +1,9 @@
 ---
 type: memo
 date: 2026-11-09
-aliases:
-  - "day06-面向对象高级(static , 继承)"
-  - "static与继承讲义"
 ---
 
-# Day06 面向对象高级：static 与继承（讲义）
+# static 与继承
 
 static也称为静态，可以修饰成员变量、成员方法。下面分别讲解static的各种使用方式。
 
@@ -964,7 +961,7 @@ public class Test {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/oop/06-oop-advanced-static-and-inheritance.md|06 static与继承·课堂问答]]
+- [[Memo/development/programming/java/oop/06-oop-advanced-static-and-inheritance.md|06 static与继承·笔记]]
 - [[Memo/development/programming/java/oop/09-static-and-inheritance.md|static 关键字与继承机制精讲]]
 
 ---

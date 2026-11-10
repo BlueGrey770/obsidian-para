@@ -1,12 +1,9 @@
 ---
 type: memo
 date: 2026-11-09
-aliases:
-  - "day04-嵌套循环、数组、二维数组"
-  - "数组讲义"
 ---
 
-# Day04 嵌套循环、数组与二维数组（讲义）
+# 嵌套循环与数组
 
 1.3.5 嵌套循环
 
@@ -704,7 +701,7 @@ public class Shuffle2DArray {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/java-syntax-and-control-flow/04-nested-loops-and-arrays.md|04 嵌套循环与数组·课堂问答]]
+- [[Memo/development/programming/java/java-syntax-and-control-flow/04-nested-loops-and-arrays.md|04 嵌套循环与数组·笔记]]
 
 ---
 

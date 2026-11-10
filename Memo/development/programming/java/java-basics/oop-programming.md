@@ -2,12 +2,10 @@
 type: memo
 date: 2026-11-09
 aliases:
-  - "day05-面向对象编程"
-  - "面向对象讲义"
   - "封装与构造器"
 ---
 
-# Day05 面向对象编程（讲义）
+# 面向对象编程
 
 ## 使用对象存储数据
 
@@ -858,7 +856,7 @@ public class Test {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/oop/05-oop-programming.md|05 面向对象编程·课堂问答]]
+- [[Memo/development/programming/java/oop/05-oop-programming.md|05 面向对象编程·笔记]]
 - [[Memo/development/programming/java/oop/08-class-object-encapsulation-constructors.md|类、对象、封装与构造器精讲]]
 
 ---

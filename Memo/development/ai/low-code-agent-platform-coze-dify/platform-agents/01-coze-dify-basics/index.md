@@ -547,15 +547,11 @@ Coze平台支持的节点类型非常丰富：大模型、工作流、插件、�
 
 第二步，创建知识库并导入知识库文件
 
-<grid>
-<column width-ratio="0.323042">
 ![husebsa1zotmioxyayncqviwn2b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/husebsa1zotmioxyayncqviwn2b.png)
 > 图注：该图片是创建知识库的操作界面，对应文档中第二步创建知识库并导入知识库文件的内容。界面中突出显示了“创建扣子知识库”的选项，同时重点明确了知识库类型选择“文本格式”，导入类型选择“本地文档”，这两处为文档中提及的核心设置。界面还包含名称、描述输入栏，“飞书”“公众号”等其他导入类型选项，以及“取消”“完成创建”“创建并导入”等操作按钮。
 
 1、在知识库页面中，知识库类型选择文本格式，导入类型选择本地文档，创建并导入
 2、分段策略中，选择自定义分段方式，分段标识符设置为###，长度设置为2000。
-</column>
-<column width-ratio="0.676958">
 ![wpj1b7xjuovv4mxfjyec1zsende](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/wpj1b7xjuovv4mxfjyec1zsende.png)
 > 图注：该图片展示的是新增知识库的上传页面，页面顶部的流程步骤显示当前处于第1步“上传”，下方有提示可点击上传或将拖曳文文件至指定区域，已上传的本地文件为“知识库.pdf”，页面右下角有一个红色边框突出显示的“下一步”按钮。此页面对应文档中第二步创建知识库并导入知识库文件的操作环节，是完成知识库创建上传流程的初始操作界面。
 
@@ -568,8 +564,6 @@ Coze平台支持的节点类型非常丰富：大模型、工作流、插件、�
 ![gvyxbwyn8ofccbxvahqc8zh1npb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gvyxbwyn8ofccbxvahqc8zh1npb.png)
 > 图注：图片展示的是在知识库页面中创建知识库并导入知识库文件的操作界面。界面显示“新增知识库”标题，有“上传”“创建设置”“分段预览”“数据处理”四个步骤，当前处于“数据处理”步骤。下方提示“知识库正在处理中”，并显示文件名为“知识库.pdf”，上传者为“lark”。右下角有“确认”按钮，旁边有“点击上传文件后自动触发”的提示。该图片与上文创建知识库并导入文件的操作步骤相关，直观呈现了操作界面及当前状态。
 
-</column>
-</grid>
 
 点击确定后
 
@@ -678,18 +672,12 @@ Coze平台支持的节点类型非常丰富：大模型、工作流、插件、�
 
 ##### 试运行结果
 
-<grid>
-<column width-ratio="0.242765">
 ![prs2b6q2woaisfxtbtocynlxnid](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/prs2b6q2woaisfxtbtocynlxnid.png)
 > 图注：图片展示的是智能问答助手试运行界面。界面上方有“可用测试集”下拉框，当前选中“测试集”。试运行输入部分，“user_input”输入框内显示“大模型是什么”，“doc”和“image”上传区域均未选择文件。下方有“将本次运行输入保存为测试集或手动创建”选项，最下方是绿色的“试运行”按钮。该图片与文档中“试运行结果”部分相关，用于展示试运行时的输入界面情况。
 
-</column>
-<column width-ratio="0.757235">
 ![tysybdmgwowtvmxbvh3cso3qnc9](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tysybdmgwowtvmxbvh3cso3qnc9.png)
 > 图注：图片展示了智能问答助手工作流设计中回答整合节点的试运行结果。知识库输出、大模型输出及回答整合节点均显示运行成功，回答整合节点输出内容为“知识库输出”和“AI大模型”节点输出的拼接结果，即“知识库输出”后接“AI大模型”输出，形成完整回答。该图直观呈现了回答整合节点在工作流中的运行状态及输出情况，与上下文介绍的回答整合节点功能相契合。
 
-</column>
-</grid>
 
 
 
@@ -708,18 +696,12 @@ Coze平台支持的节点类型非常丰富：大模型、工作流、插件、�
 
 #### 构建智能体
 
-<grid>
-<column width-ratio="0.600000">
 ![jb1zbqnf1olkjuxvpwncotsxnob](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jb1zbqnf1olkjuxvpwncotsxnob.png)
 > 图注：图片展示的是飞书项目开发界面及创建智能体弹窗。左侧导航栏中“项目开发”被红色框标出。右侧主界面显示“项目开发”下“智能体”相关设置，有“智能体助手”“智能体”“应用”选项，其中“智能体”被红色框标出。弹窗中“创建”按钮被红色框标出，下方有“创建智能体”“创建应用”选项，前者被红色框标出。
 
-</column>
-<column width-ratio="0.400000">
 ![zniabq3eto3c3pxq4aicgmngnmd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zniabq3eto3c3pxq4aicgmngnmd.png)
 > 图注：图片展示的是飞书智能体创建界面。界面上方有“标准创建”和“AI创建”选项，当前选中“标准创建”。下方有“智能体名称”输入框，示例填写为“AI智能问答助手”，还有“智能体功能介绍”区域，提示介绍智能体功能，字数限制为500字。底部有“图标”区域，显示两个图标，左侧为黄色图标，右侧为紫色图标。右下角有“取消”和“确认”按钮。此图与文档中“构建智能体”部分上下文对应，用于指导用户创建智能体时填写相关信息。
 
-</column>
-</grid>
 
 #### 人设与回复逻辑
 
@@ -997,18 +979,12 @@ Dify 中提供了五种应用类型：
 
 **第一个参数设置**                                                           **第二个参数设置**
 
-<grid>
-<column width-ratio="0.480206">
 ![pbypbisbvondajxkrrcc9z4an9f](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/pbypbisbvondajxkrrcc9z4an9f.png)
 > 图注：图片展示的是Dify工作流中开始节点的设置界面。界面中“字段类型”下“文件列表”被红色框突出显示，变量名称为“attachments”，显示名称为“语料附件”，支持的文件类型包括TXT、MD、MARKDOWN等文档格式，还支持图片、音频、视频等多种类型，上传文件类型可选择本地上传、URL或两者，最大上传数为10，且“必填”选项被红色框突出显示。该图片与上下文介绍的开始节点接收用户输入、控制文件类型和核心参数输入的内容相契合。
 
-</column>
-<column width-ratio="0.519794">
 ![bjcjbfqt4oatocxqjvbcsspwnrf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bjcjbfqt4oatocxqjvbcsspwnrf.png)
 > 图注：这张图是工作流创建中「开始节点」的变量设置界面，对应系统要求添加的第二个参数设置项。界面为添加变量的配置页面，字段类型设为文本，变量名称为systemprompt，显示名称为系统提示词，设置的最大长度为48，且勾选了「必填」选项，页面底部还有“取消”和“保存”两个操作按钮，符合文档中对systemprompt必填、48字符限制的要求。
 
-</column>
-</grid>
 
 **完整版开始节点设置**
 
@@ -1019,16 +995,10 @@ Dify 中提供了五种应用类型：
 
 该节点解析上传文档内容。
 
-<grid>
-<column width-ratio="0.373218">
 ![drytbpewfo7lbtxcyxxcmu7pnye](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/drytbpewfo7lbtxcyxxcmu7pnye.png)
 > 图注：这张图展示了Dify工作流构建界面的部分内容，左侧是“开始”节点，已设置两个必填参数：attachments（支持本地/远程URL上传文档，限制10MB）和systemprompt（必填，有48个字符限制）；右侧的节点列表中，“文档提取器”被红框突出标注，界面上还有一处红色箭头指向“开始”节点旁的添加组件按钮，该界面与文档中“构建大语言模型微调语料”的工作流搭建内容对应。
 
-</column>
-<column width-ratio="0.626782">
 ![](https://feishu.cn/file/XcG7bh5MDo2MIqxl3wGcp1zBnGb)
-</column>
-</grid>
 
 完整版节点
 
@@ -1039,16 +1009,10 @@ Dify 中提供了五种应用类型：
 
 该节点进行文本预处理，解决 Dify 平台处理长文本的性能限制，但可能造成信息丢失。
 
-<grid>
-<column width-ratio="0.400000">
 ![rlyxbnnp0ojupix00zqcdkxxnjb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/rlyxbnnp0ojupix00zqcdkxxnjb.png)
 > 图注：图片展示了Coze平台中构建工作流时的节点选择界面。左侧为“文档提取器”节点，其输入变量为“开始 {x}attachments”，并有“小龙人”说明。右侧是节点列表，包括LLM、知识检索、结束、Agent、问题理解、逻辑、条件分支、迭代、循环、转换、代码执行、模板转换、变量聚合器、文档提取器、变量赋值、参数提取器等。其中，“代码执行”节点被红色框和箭头突出显示，表明其为当前操作或关注的重点节点。
 
-</column>
-<column width-ratio="0.600000">
 ![](https://feishu.cn/file/HwSxbAXtLovgUsxaxVFcbmb0nkb)
-</column>
-</grid>
 
 python代码片段：
 
@@ -1082,21 +1046,15 @@ def main(articleSections: list) -> dict:
 - 动态插入截断后的文本和用户提示词
 - 通过示例强制约束 JSONL 输出格式
 
-<grid>
-<column width-ratio="0.511060">
 ![axn5bocavosn4zx9hgbcibgqnvb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/axn5bocavosn4zx9hgbcibgqnvb.png)
 > 图注：图片展示了Coze平台中构建工作流的节点选择界面。左侧为“代码执行”节点，下方有“合并数据，并进行截取（由于dify的空间所限）”的说明及“小龙人”标识。右侧是节点工具栏，有“节点”“工具”选项卡，搜索框内可输入搜索内容。节点工具栏中“LLM”节点被红色框突出显示，其下方还有“知识检索”“结束”“Agent”等节点选项。该图与上下文介绍的构建工作流中节点选择相关，直观呈现了LLM节点在平台中的位置。
 
-</column>
-<column width-ratio="0.488940">
 ![kvnqbfz5vo2g6yxwjlucu1i4nxc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/kvnqbfz5vo2g6yxwjlucu1i4nxc.png)
 > 图注：这是智普AI的LLM节点配置界面，左侧模型栏显示当前使用的模型为glm-4.5 CHAT；右侧LLM设置区域明确标注模型为glm-4.5 CHAT，下方红色框内展示了系统提示词的具体内容，该提示词定义LLM为大语言模型科学家，明确任务是对给定内容生成JSONL格式的语料，要求每条语料包含question、answer字段，整体内容贴合大语言模型微调语料构建的工作流需求，是该工作流中LLM节点的核心配置内容。
 
 ![iqxnbjyccox0ypxbki6cu2iinie](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iqxnbjyccox0ypxbki6cu2iinie.png)
 > 图注：这张图展示的是Dify工作流中构建微调语料时的节点配置界面。上方的USER区域内，内容栏通过代码执行的{x}变量插入result数据，系统提示词栏插入了开始的{x}systemprompt变量，右上角标注了变量标识{x}。下方的输出变量区域，明确标注生成的输出为text类型字符串，对应生成内容，同时还有usage类型的模型用量信息。该界面用于配置大语言模型节点的输入变量与输出规则，是构建微调语料过程中节点设置的直观呈现。
 
-</column>
-</grid>
 
 **system提示词**
 
@@ -1138,36 +1096,24 @@ def main(articleSections: list) -> dict:
 
 输出最终生成的JSONL文本
 
-<grid>
-<column width-ratio="0.433441">
 ![yxoab8e5goggwexagqwchdnxnsb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/yxoab8e5goggwexagqwchdnxnsb.png)
 > 图注：这张图片展示的是Dify工作流构建界面的部分内容，用于构建大语言模型微调语料的工作流。左侧为已添加的LLM节点，搭载glm-4.5 CHAT模型，节点右侧的蓝色加号按钮被重点标注，对应上下文里提到的操作，点击或拖拽连接该按钮可添加新节点；右侧的节点列表中，“结束”节点被橙色框和红色箭头突出标注，该节点是工作流的输出节点，对应上下文里提到的输出最终JSONL文本的结束节点，是构建工作流的关键节点之一。
 
-</column>
-<column width-ratio="0.566559">
 ![jhjhblf73om1g6xwvomctjxmn7y](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/jhjhblf73om1g6xwvomctjxmn7y.png)
 > 图注：图片展示了Dify构建工作流中“结束”节点的设置界面。左侧是“结束”节点的图标及名称，右侧是设置区域，输出变量“text”被红色框突出显示。在“LLM”下拉菜单中，“text”也被红色框突出显示。该图片与上下文紧密相关，上下文提到“结束节点”用于输出最终生成的JSONL文本，此图直观呈现了“结束”节点的设置情况，帮助理解其在工作流中的输出变量配置。
 
-</column>
-</grid>
 
 ### 运行工作流
 
 ![bnmjbf6fzoxs1jxkwrhcqjpinzf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bnmjbf6fzoxs1jxkwrhcqjpinzf.png)
 > 图注：这是大语言模型微调语料构建的工作流运行界面，属于Coze Dify平台的工作室页面，顶部标注了“dify-微调语料”的主题。工作流节点从左到右依次为“开始”“文档提取器”“代码执行”“LLM”和“结果”，各节点清晰标注了对应模块的类型与配置，节点间以箭头衔接，呈现出连贯的工作逻辑，且部分节点配有功能说明文本。界面右上角有红框标注的核心功能按钮“运行”，用于触发该工作流执行，整体界面直观展现了构建微调语料的工作流程架构。
 
-<grid>
-<column width-ratio="0.560352">
 ![nebmbfgkbocd23x8tcwchxjnn2e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/nebmbfgkbocd23x8tcwchxjnn2e.png)
 > 图注：图片展示了Dify工作流运行界面。上方有“运行”按钮，下方“语料附件”处有“从本地上传”选项，已上传“00 Magic Tree House The Musical (lyrics).pdf”文件，大小124.15KB。系统提示词为“你是一个科普专家”。界面底部有“开始运行”蓝色按钮。该图与上下文“运行工作流”相关，直观呈现了运行工作流时的界面及操作选项。
 
-</column>
-<column width-ratio="0.439648">
 ![ipi8bscynomwmqxro2mcoetjnhd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ipi8bscynomwmqxro2mcoetjnhd.png)
 > 图注：这是Dify工作流运行中的测试界面截图，当前处于运行状态，界面上方显示“Test Run (Running)”，运行耗时显示为23.7秒，状态提示为“深度思考中...”。界面包含输入、结果、追踪三个选项卡，当前显示的是结果选项卡的内容，展示了针对“神奇树屋音乐剧《How Far Can You See》的歌词”相关内容的处理任务，即根据指定内容创建10个通俗问题并按JSON格式整理，同时列出了生成问题的具体要求，如不直接引用内容、贴近现实生活、通俗白话避空泛等，还展示了正在创建的第一个问题：“孩子们在探索自然时应该注意什么？”
 
-</column>
-</grid>
 
 结果输出
 
@@ -1539,18 +1485,12 @@ Dify提供“ **高质量”** 与” **经济“** 两种索引方法。
 
 #### 文本分段与清洗（实践）
 
-<grid>
-<column width-ratio="0.484630">
 ![oqppbxliiopah5xdxezcihnjnlm](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/oqppbxliiopah5xdxezcihnjnlm.png)
 > 图注：这张图片展示的是Dify中RAG知识库的“文本分段与清洗”设置界面。界面上方为分段设置区域，包含分段标识符设为“\\n\\n”、分段最大长度为500字符、分段重叠长度为50字符的参数；文本预处理规则勾选了“替换掉连续的空格、换行符和制表符”，还有“删除所有URL和电子邮件地址”“使用Q&A分段”两个可选设置，以及“预览块”“重置”按钮。界面下方设有父子分段说明，同时明确了检索方式选择“高质量”，该方式是调用嵌入模型处理文档以实现更精准的检索，而经济检索方式会用每个数据块10个关键词进行检索，虽不会消耗额外tokens但会降低检索准确性。
 
-</column>
-<column width-ratio="0.515370">
 ![ffv4bgh4mog4orxzvh8cfsxqnfg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ffv4bgh4mog4orxzvh8cfsxqnfg.png)
 > 图注：这张图片展示了Dify中RAG知识库的检索设置界面，核心突出了混合检索功能。混合检索可同时执行全文检索与向量检索，再通过重排步骤从两类检索结果中选取匹配用户问题的最优结果，用户可在此处设置权重或配置重排模型。界面内权重设置项明确，重排模型对语义与关键词的权重分别设为0.7和0.3，下方还提供了Top K数值调整功能，当前设置为3，同时可调整Score阈值，当前值为0.5，整体用于配置RAG知识库的检索匹配规则，是构建RAG知识库中文本分段后检索环节的关键设置内容。
 
-</column>
-</grid>
 
 保存并完成
 
@@ -1670,18 +1610,12 @@ Dify提供“ **高质量”** 与” **经济“** 两种索引方法。
 
 进入工作流创造面板中，我们可以在大语言模型中间节点中添加“知识检索”
 
-<grid>
-<column width-ratio="0.501261">
 ![tom4bmtbxof0ipx5jmxcjtcdnrd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/tom4bmtbxof0ipx5jmxcjtcdnrd.png)
 > 图注：图片展示的是Chatflow知识库创建工作流应用时添加知识库节点的操作界面。左侧是工作流创建面板，右上角搜索框内显示“搜索节点”，下方有多个节点选项，其中“知识检索”节点被红色框突出显示。左侧工作流面板中“开始”节点右侧有一个红色加号。该图片与上下文紧密相关，上下文提到在大语言模型中间节点中添加“知识检索”，此图直观呈现了添加知识检索节点的操作位置，辅助理解操作步骤。
 
-</column>
-<column width-ratio="0.498739">
 ![ipudbx4wkok55dxsrxgcprjunuf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ipudbx4wkok55dxsrxgcprjunuf.png)
 > 图注：这张图片展示了Dify工作流创建过程中的“添加知识库节点”步骤相关界面，左侧是工作流面板，显示了已添加的“知识检索”节点，该节点关联的知识库文件为“大模型入门pdf...”，其右侧依次是对接ollama大模型的“LLM”节点；右侧为“知识检索”节点的设置面板，明确显示“知识库”选项下选中了“大模型入门pdf...”的知识库内容，与左侧的知识库文件形成对应，直观呈现了在工作流的大语言模型中间节点添加知识检索节点，并关联指定知识库的操作状态。
 
-</column>
-</grid>
 
 #### 修改LLM节点
 
@@ -1712,18 +1646,12 @@ Dify提供“ **高质量”** 与” **经济“** 两种索引方法。
 
 #### 工作流发布测试
 
-<grid>
-<column width-ratio="0.390388">
 ![ukvgbfqocohhooxuogicwu5gnbc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ukvgbfqocohhooxuogicwu5gnbc.png)
 > 图注：图片展示了Chatflow工作流发布测试后的界面。上方有“发布”按钮，下方显示“最新发布，发布于26分钟前”，并有“发布更新”选项。下方有“运行”“嵌入网站”“在‘探索’中打开”“访问API”等操作选项。图片中“发布”按钮和“在‘探索’中打开”选项被红色框突出显示，与上下文“工作流发布测试”内容相关，直观呈现了发布后的操作界面及重点操作选项。
 
-</column>
-<column width-ratio="0.609612">
 ![s7y6b95dvohm5wxkj4oc2imwntv](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/s7y6b95dvohm5wxkj4oc2imwntv.png)
 > 图注：图片展示的是Dify平台中chatflow知识库应用的对话界面。左侧为工作台，有chatflow知识库、dify一词百科、AI Agent测试等应用选项。右侧是chatflow知识库应用界面，显示“chatflow知识库”标题及“开始新对话”按钮，下方有“大模型是什么”等节点。右侧对话框中，用户提问“大模型是什么”，系统给出详细回答，包括大模型定义、核心特征、技术基础及分类等内容。该图与上下文介绍的在Dify平台创建chatflow知识库应用的工作流程相关，展示了应用的使用场景。
 
-</column>
-</grid>
 
 
 

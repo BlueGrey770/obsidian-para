@@ -2,12 +2,10 @@
 type: memo
 date: 2026-11-09
 aliases:
-  - "day01-入门"
-  - "入门讲义"
   - "Java快速入门"
 ---
 
-# Day01 入门：Java 快速入门（讲义）
+# Java 快速入门
 
 Hello，各位小伙伴，今天我们开始正式学习Java的入门知识，第一天主要带着大家了解一下Java是什么、Java的常用开发工具以及Java的基本语法。
 
@@ -121,14 +119,8 @@ Java小型版，它为开发移动设备的应用提供了一套解决方案。*
 
 ![CGtvb7r61oMVsHx1AgmcPcaNnBg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/CGtvb7r61oMVsHx1AgmcPcaNnBg.png)
 
-<grid>
-<column width-ratio="0.489736">
 ![A4A7b6zrUoF2YkxdcU9c3CGvnBe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/A4A7b6zrUoF2YkxdcU9c3CGvnBe.png)
-</column>
-<column width-ratio="0.510264">
 ![ReV8bNZifoE6M5xXYnBcV5z4nTh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ReV8bNZifoE6M5xXYnBcV5z4nTh.png)
-</column>
-</grid>
 
 接下来我们逐个步骤进行学习。
 
@@ -168,32 +160,14 @@ JDK（全称是Java Develop Kit），翻译过来意思就是Java开发工具包
 
 ![BfhhbOkS6oRATWxPa3PcJqP9nAg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/BfhhbOkS6oRATWxPa3PcJqP9nAg.png)
 
-<grid>
-<column width-ratio="0.500000">
 ![Ayz0bMSRnoiqLqxscNvcqcB3nbe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Ayz0bMSRnoiqLqxscNvcqcB3nbe.png)
-</column>
-<column width-ratio="0.500000">
 ![TxyMbJS9toJFb0x6si6cMmp7nPh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/TxyMbJS9toJFb0x6si6cMmp7nPh.png)
-</column>
-</grid>
 
-<grid>
-<column width-ratio="0.500000">
 ![EqQVb5ymPoInD9x0FcLc8h0wnQh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/EqQVb5ymPoInD9x0FcLc8h0wnQh.png)
-</column>
-<column width-ratio="0.500000">
 ![IorDbMlBPoXYnSxT0locYKA8nhh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/IorDbMlBPoXYnSxT0locYKA8nhh.png)
-</column>
-</grid>
 
-<grid>
-<column width-ratio="0.500000">
 ![UhphbTYKwolVBLxBMKzcOKR4nKf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/UhphbTYKwolVBLxBMKzcOKR4nKf.png)
-</column>
-<column width-ratio="0.500000">
 ![KBSLbm4KFo4Bo2xu5W5culaXnOe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/KBSLbm4KFo4Bo2xu5W5culaXnOe.png)
-</column>
-</grid>
 
 #### JDK的验证
 
@@ -220,14 +194,8 @@ JDK安装后，还要验证其是否可以使用，主要是看你安装的JDK�
 
 **2、在左下角启动窗口中输入 cmd 回车，就打开了命令行窗口了**
 
-<grid>
-<column width-ratio="0.560256">
 ![SMRRbyDX8oFl8rxt86IcXfqEnzg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/SMRRbyDX8oFl8rxt86IcXfqEnzg.png)
-</column>
-<column width-ratio="0.439744">
 ![VseBbqHoRohxcLxh3lmcqAcHnQd](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/VseBbqHoRohxcLxh3lmcqAcHnQd.png)
-</column>
-</grid>
 
 **3、在命令行窗口中输入 “java -version”，以及“javac -version”，看提示的版本号是否与安装的JDK 21版本一致**
 
@@ -266,14 +234,8 @@ Java程序员写好源代码之后，需要编译成字节码，这里会提供�
 
 - JDK安装完成了，按照AI开发入门程序的步骤，我们还需要Path和JAVA_HOME**配置环境变量。**
 
-<grid>
-<column width-ratio="0.489736">
 ![DA0YbT66toZxN3xVoLic5cl6nPl](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/DA0YbT66toZxN3xVoLic5cl6nPl.png)
-</column>
-<column width-ratio="0.510264">
 ![H7rSb480koz3g6x6Eprci9Nbnob](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/H7rSb480koz3g6x6Eprci9Nbnob.png)
-</column>
-</grid>
 
 首先来学习Path环境变量，我们先来看**什么是Path环境变量？再看为什么要配置环境变量?**
 
@@ -298,23 +260,11 @@ Java程序员写好源代码之后，需要编译成字节码，这里会提供�
 
 双击Path后，点击新建，把QQ启动目录粘贴进来，不要忘记点确定哦^\_^
 
-<grid>
-<column width-ratio="0.395463">
 ![XEQmbaD2WogbaqxFggTcUZoinae](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/XEQmbaD2WogbaqxFggTcUZoinae.png)
-</column>
-<column width-ratio="0.604537">
 ![VLUYbOrCyolGsTxG2rHcFVkPnQe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/VLUYbOrCyolGsTxG2rHcFVkPnQe.png)
-</column>
-</grid>
 
-<grid>
-<column width-ratio="0.457773">
 ![NfUqb7zh4otbjzxLJiBc79bfnaf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/NfUqb7zh4otbjzxLJiBc79bfnaf.png)
-</column>
-<column width-ratio="0.542227">
 ![CoPFbTDi1oQoYTxdIGDcCHORnug](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/CoPFbTDi1oQoYTxdIGDcCHORnug.png)
-</column>
-</grid>
 
 ![OFyjbJGvIoRXs0x4WqbcZDYNnLm](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/OFyjbJGvIoRXs0x4WqbcZDYNnLm.png)
 
@@ -526,41 +476,17 @@ cls             //清空屏幕
 
 ![JXPRbOQetoBSVsxjetUckKI0n6e](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/JXPRbOQetoBSVsxjetUckKI0n6e.png)
 
-<grid>
-<column width-ratio="0.500000">
 ![GTQ5bmvK6op7I2xixP5c835en7d](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/GTQ5bmvK6op7I2xixP5c835en7d.png)
-</column>
-<column width-ratio="0.500000">
 ![XzVrbmR8NotHZfxxqwxc2WvAnKg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/XzVrbmR8NotHZfxxqwxc2WvAnKg.png)
-</column>
-</grid>
 
-<grid>
-<column width-ratio="0.500000">
 ![XzKnblWptoMxRqxKm6YclGaDnQg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/XzKnblWptoMxRqxKm6YclGaDnQg.png)
-</column>
-<column width-ratio="0.500000">
 ![Qs1vbJ2qnoy7Jrx8BWYcGQ6xnLc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/Qs1vbJ2qnoy7Jrx8BWYcGQ6xnLc.png)
-</column>
-</grid>
 
-<grid>
-<column width-ratio="0.500000">
 ![SUZ6bZ8JqowPbYxYJcWcv4wTncg](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/SUZ6bZ8JqowPbYxYJcWcv4wTncg.png)
-</column>
-<column width-ratio="0.500000">
 ![YgdKbgB4MoWXyXx8ZAFcqYQBn2b](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/YgdKbgB4MoWXyXx8ZAFcqYQBn2b.png)
-</column>
-</grid>
 
-<grid>
-<column width-ratio="0.507833">
 ![MNr2bvc6LoFPdNxClCRcde7wnee](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/MNr2bvc6LoFPdNxClCRcde7wnee.png)
-</column>
-<column width-ratio="0.492167">
 ![VpONb4sCJoZR9AxQDt2c1PP1nqh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/VpONb4sCJoZR9AxQDt2c1PP1nqh.png)
-</column>
-</grid>
 
 ### 使用IDEA开发第一个Java程序
 
@@ -594,14 +520,8 @@ cls             //清空屏幕
 
 首次启动，新建工程的界面如下（注意：工程本质是一个文件夹路径）
 
-<grid>
-<column width-ratio="0.527370">
 ![TbVpbM6wToacqvx9JQrcnVPZnLb](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/TbVpbM6wToacqvx9JQrcnVPZnLb.png)
-</column>
-<column width-ratio="0.472630">
 ![O5GSblHWNokJIxxVGrPcIJ7tnIf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/O5GSblHWNokJIxxVGrPcIJ7tnIf.png)
-</column>
-</grid>
 
 ![LE2ObSnxporrm3xyTQAcNfWPnec](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/LE2ObSnxporrm3xyTQAcNfWPnec.png)
 
@@ -1207,7 +1127,7 @@ int age =10;    //一看这个变量就知道表示年龄
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/java-syntax-and-control-flow/01-getting-started.md|01 入门·课堂问答]]
+- [[Memo/development/programming/java/java-syntax-and-control-flow/01-getting-started.md|01 入门·笔记]]
 - [[Memo/development/programming/java/java-syntax-and-control-flow/05-variables-data-types-and-conversion.md|变量、数据类型与类型转换精讲]]
 
 ---

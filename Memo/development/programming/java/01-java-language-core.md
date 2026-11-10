@@ -10,7 +10,7 @@ aliases:
 
 # 01 Java 语言核心
 
-> 聚合自 Java 基础（day01-08）与 Java 进阶（接口/集合/Stream/IO/线程/网络编程）的全部笔记、Blog 与 QA，按知识域重新组织。
+> 聚合自 Java 基础教程与 Java 进阶（接口/集合/Stream/IO/线程/网络编程）的全部笔记、Blog 与 QA，按知识域重新组织。
 
 ## 一、基础语法与流程控制
 

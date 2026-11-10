@@ -1,12 +1,9 @@
 ---
 type: memo
 date: 2026-11-09
-aliases:
-  - "day07-面相对象高级(多态)"
-  - "多态讲义"
 ---
 
-# Day07 面向对象高级：多态（讲义）
+# 多态
 
 ## 认识多态
 
@@ -519,7 +516,7 @@ public class Test {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/oop/07-oop-advanced-polymorphism.md|07 多态·课堂问答]]
+- [[Memo/development/programming/java/oop/07-oop-advanced-polymorphism.md|07 多态·笔记]]
 - [[Memo/development/programming/java/oop/10-polymorphism-abstract-final-singleton-enum.md|多态、抽象类、final、单例与枚举精讲]]
 
 ---

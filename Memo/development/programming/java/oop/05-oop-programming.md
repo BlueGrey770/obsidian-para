@@ -7,9 +7,9 @@ aliases:
 ---
 
 # 05 面向对象编程·笔记
-> 讲义全文：[[Memo/development/programming/java/basics-course/day05-oop-programming.md|Day05 面向对象讲义]]
+> 系统详解：[[Memo/development/programming/java/java-basics/oop-programming.md|面向对象编程]]
 
-## 课堂问答：类、对象与封装
+## 问答：类、对象与封装
 
 **题目: 请简述什么是类?什么是对象?以及二者的关系?**
 

@@ -750,20 +750,14 @@ const options = ref([
 
 这个很显然不太符合我们的需求
 
-<grid>
-<column width-ratio="0.500000">
 目前生成好的效果
 ![v4yjbboiiorpfoxkenyculvanbe](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/v4yjbboiiorpfoxkenyculvanbe.png)
 > 图注：这是基于若依框架的护理项目新增弹窗的原始界面，界面顶部标注有“添加护理项目”，包含名称、排序号、单位、价格、图片、护理要求等输入项，各输入项均配有提示文字，其中排序号输入框为普通文本输入框，价格输入框也为普通文本输入框，界面底部有“确定”与“取消”两个操作按钮，图片上传区域明确提示可上传大小不超过5MB的png、jpg、jpeg格式文件，该界面是文档中提到的与需求不符的原始弹窗效果，后续需要按要求将排序号和价格的文本输入框修改为Element Plus的数字输入框，同时新增状态单选字段来优化该弹窗。
 
-</column>
-<column width-ratio="0.500000">
 期望达到的效果
 ![ffambqtjwonzs3xm2ymczutongc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ffambqtjwonzs3xm2ymczutongc.png)
 > 图注：这是护理项目新增弹窗的实际效果，是对原有若依框架提供的弹窗效果改造后的成果，符合项目期望效果。弹窗的表单包含多个字段，其中排序号、价格字段旁带有加减按钮，为数字输入控件，状态字段设置了“启用”“禁用”两个单选框，此外还有名称、单位、图片、护理要求等输入项，底部设有确定和取消按钮。
 
-</column>
-</grid>
 
 经过对比，需要修复的内容如下：
 

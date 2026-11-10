@@ -2,12 +2,10 @@
 type: memo
 date: 2026-11-09
 aliases:
-  - "day02-Java基础语法"
-  - "基础语法讲义"
   - "方法与类型转换与运算符"
 ---
 
-# Day02 Java 基础语法（讲义）
+# Java 基础语法
 
 ## 方法
 
@@ -883,7 +881,7 @@ public class AllTest {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/java-syntax-and-control-flow/02-java-syntax-basics.md|02 基础语法·课堂问答]]
+- [[Memo/development/programming/java/java-syntax-and-control-flow/02-java-syntax-basics.md|02 基础语法·笔记]]
 - [[Memo/development/programming/java/java-syntax-and-control-flow/06-operators-and-common-pitfalls.md|运算符精讲与常见坑]]
 - [[Memo/development/programming/java/java-syntax-and-control-flow/07-methods-and-branching.md|方法详解与分支结构]]
 

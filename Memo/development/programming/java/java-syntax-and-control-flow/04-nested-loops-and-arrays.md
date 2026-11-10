@@ -7,11 +7,11 @@ aliases:
 ---
 
 # 04 嵌套循环、数组、二维数组·笔记
-> 讲义全文：[[Memo/development/programming/java/basics-course/day04-nested-loops-and-arrays.md|Day04 循环与数组讲义]]
+> 系统详解：[[Memo/development/programming/java/java-basics/nested-loops-and-arrays.md|嵌套循环与数组]]
 
 
 
-## 课堂问答：嵌套循环与数组
+## 问答：嵌套循环与数组
 
 **题目: 请选择正确的静态初始化数组方式**
 

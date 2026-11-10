@@ -7,9 +7,9 @@ aliases:
 ---
 
 # 06 面向对象高级(static , 继承)·笔记
-> 讲义全文：[[Memo/development/programming/java/basics-course/day06-static-and-inheritance.md|Day06 static与继承讲义]]
+> 系统详解：[[Memo/development/programming/java/java-basics/static-and-inheritance.md|static 与继承]]
 
-## 课堂问答：static 与继承
+## 问答：static 与继承
 
 **题目: 为什么类中的实例变量(普通的成员变量)需要创建对象才能使用?**
 

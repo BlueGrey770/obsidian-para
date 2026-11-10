@@ -7,11 +7,11 @@ aliases:
 ---
 
 # 01 入门·笔记
-> 讲义全文：[[Memo/development/programming/java/basics-course/day01-getting-started.md|Day01 入门讲义]]
+> 系统详解：[[Memo/development/programming/java/java-basics/getting-started.md|Java 快速入门]]
 
 
 
-## 课堂问答：IDEA 使用与入门案例
+## 问答：IDEA 使用与入门案例
 
 **题目: 请简述使用idea编写入门案例时, 首先先创建哪些东西?**
 

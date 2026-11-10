@@ -59,18 +59,12 @@ unzip ragflow-main.zip
 
 **原来的**                                                                                    **修改后的**
 
-<grid>
-<column width-ratio="0.500836">
 ![gwr3bmhdmo1xdkxk2taczmuenbc](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/gwr3bmhdmo1xdkxk2taczmuenbc.png)
 > 图注：图片展示的是`ragflow-main/docker/docker-compose.yml`文件中关于`ports`配置的部分内容。其中，`5678:5678`这一行被高亮显示，表明其为关键修改点。上下文提到在修改web访问默认端口时，需在该文件中修改此端口配置，此图片直观呈现了修改前的端口配置情况，为后续修改操作提供了参考，帮助用户准确找到修改位置。
 
-</column>
-<column width-ratio="0.499164">
 ![ksa0bsusookz2cxt7mzcmpt9nhh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ksa0bsusookz2cxt7mzcmpt9nhh.png)
 > 图注：图片展示了`ragflow-main/docker/docker-compose.yml`文件中`ports`配置部分。其中，8880端口被红色框突出显示，原端口为8880，修改后端口为80。该图片与文档中“修改web访问默认端口”内容相关，对应修改文件位置`ragflow-main/docker/docker-compose.yml`，是修改web访问默认端口操作的示例展示，直观呈现了端口修改前后的对比情况。
 
-</column>
-</grid>
 
 ### 修改redis配置
 
@@ -78,35 +72,23 @@ unzip ragflow-main.zip
 
 **原来的**                                                                          **修改后的**
 
-<grid>
-<column width-ratio="0.466161">
 ![iwkdbnmhlovo9rxwrehc1qamnid](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/iwkdbnmhlovo9rxwrehc1qamnid.png)
 > 图注：这张图片是RAGFlow安装流程中修改Redis配置的对应内容，显示的是`ragflow-main/docker/.env`文件里的Redis相关配置项。其中，原来的配置内容清晰可见，标注出的关键内容分别是`REDIS_HOST=redis`、`REDIS_PORT=6379`，这些参数为Redis的主机地址与端口号，图片对应了文档中“修改redis配置”的操作环节，是该步骤里需要调整的配置参数相关内容。
 
-</column>
-<column width-ratio="0.533839">
 ![zrgjbk3wbotkouxbjcbcxpennn8](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/zrgjbk3wbotkouxbjcbcxpennn8.png)
 > 图注：图片展示了`ragflow-main/docker/.env``文件中83行至89行的内容。其中，`REDIS_HOST`变量值为`ragflow_redis`，`REDIS_PORT`变量值为`7379`。该图片与文档中“修改redis配置”部分相关，对应修改`ragflow-main/docker/.env`文件的操作，直观呈现了redis配置中主机名和端口的修改内容。
 
-</column>
-</grid>
 
 修改 `ragflow-main/docker/docker-compose-base.yml` 文件
 
 **原来的**                                                                                    **修改后的**
 
-<grid>
-<column width-ratio="0.516146">
 ![uh6ubqfdmoqeowx47sxcx4zwnce](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/uh6ubqfdmoqeowx47sxcx4zwnce.png)
 > 图注：图片展示了`ragflow-main/docker/docker-compose-base.yml`文件中关于redis的配置内容。其中，`redis:`部分以红色框突出显示，包含redis相关配置项，如image为`valkey/valkey:8`，container_name为`ragflow-redis`，command为`redis-server --requirepass ${REDIS_PASSWORD}`，env_file为`.env`，ports为`${REDIS_PORT}:6379`，volumes为`redis_data:/data`，networks为`ragflow`，restart为`on-failure`。该图片与文档中“修改redis配置”部分对应，是修改redis配置时需参考的配置示例。
 
-</column>
-<column width-ratio="0.483854">
 ![qvi5bxf6ko05kjx3gxucoql8ndh](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/qvi5bxf6ko05kjx3gxucoql8ndh.png)
 > 图注：图片展示了`ragflow-main/docker/docker-compose-base.yml`文件中关于`ragflow_redis`的配置内容。其中，`container_name`为`ragflow-redis`，`command`为`redis-server --requirepass ${REDIS_PASSWORD}`，`env_file`为`.env`，`ports`包含`6379`端口，`volumes`包含`redis_data:/data`，`networks`为`ragflow`，`restart`为`on-failure`。该图片与文档中“修改redis配置”部分对应，是修改`ragflow_redis`配置的示例。
 
-</column>
-</grid>
 
 ## 启动服务
 
@@ -144,18 +126,12 @@ docker-compose up -d
 
 
 
-<grid>
-<column width-ratio="0.219095">
 ![ehhlbidxuokcutxyon3cfmqcn4c](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/ehhlbidxuokcutxyon3cfmqcn4c.png)
 > 图注：这张图片展示的是RAGFlow接入大模型流程中的API-Key修改界面。界面左侧标注了必填项“* API-Key”，输入框内已填入部分API密钥内容，开头显示的“57754e”清晰可见，剩余字符被模糊处理，输入框下方有红色波浪线提示格式异常，界面右下角设有“取消”和“确定”两个操作按钮，用于确认或取消当前的API密钥修改操作，该界面是接入大模型配置环节的关键操作入口。
 
-</column>
-<column width-ratio="0.780905">
 ![bvdmbu0a0on2doxigwfcn2hynqf](https://notes-images-para.oss-cn-hongkong.aliyuncs.com/img/bvdmbu0a0on2doxigwfcn2hynqf.png)
 > 图注：这张图片展示的是接入大模型环节中，智谱AI（ZHIPU-AI）的相关功能模块界面，左侧标注了智谱AI的标识，同时列出了其提供的LLM、TEXT EMBEDDING、SPEECH2TEXT、MODERATION这些不同类型的AI功能选项，界面右侧设置了“API-Key”按钮和“展示更多模型”按钮，与文档中接入大模型的内容直接对应，体现了接入该大模型时可选择的功能及相关操作入口。
 
-</column>
-</grid>
 
 ---
 > 来源：飞书技术知识库（脱敏版） · 06 AI 应用开发 / 低代码智能体平台（Coze / Dify） / 平台智能体 / 02-Dify综合案例 / RAGFlow安装 · [原文](https://ccn8v2zngwsm.feishu.cn/wiki/CIVpwEkM4iObtNkugtPcINu3ntb)

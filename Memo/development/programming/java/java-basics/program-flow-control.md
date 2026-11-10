@@ -2,12 +2,10 @@
 type: memo
 date: 2026-11-09
 aliases:
-  - "day03-程序流程控制"
-  - "流程控制讲义"
   - "分支与循环"
 ---
 
-# Day03 程序流程控制（讲义）
+# 程序流程控制
 
 我们前面写的程序，都是按顺序一行行向下执行的，但在实际业务处理中，大多数据场景下，需要根据不同的条件执行不同的代码。比如：在手机银行app中，如果用户登录成功了，则显示个人帐户信息，如果登录失败了，则给予错误提示。要实现这种根据不同情况执行不同代码的效果，就需要对程序的执行流程进行控制，这需要通过专门的语法来实现。本小节我们来学习java中的流程控制语法。
 
@@ -907,7 +905,7 @@ public class Test3 {
 
 ## 相关笔记
 
-- [[Memo/development/programming/java/java-syntax-and-control-flow/03-program-flow-control.md|03 流程控制·课堂问答]]
+- [[Memo/development/programming/java/java-syntax-and-control-flow/03-program-flow-control.md|03 流程控制·笔记]]
 - [[Memo/development/programming/java/java-syntax-and-control-flow/08-loops-and-control-flow-practice.md|循环结构与流程控制综合实战]]
 
 ---

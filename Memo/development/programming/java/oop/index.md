@@ -7,16 +7,16 @@ aliases:
 
 # 面向对象
 
-面向对象从类与对象基础到 static、继承、多态、抽象类、单例与枚举的系统笔记，含课程讲义与精讲两个层次。
+面向对象从类与对象基础到 static、继承、多态、抽象类、单例与枚举的系统笔记，含系统教程与精讲两个层次。
 
-## 课程讲义（day05-day08）
+## 系统详解（面向对象）
 
-- [[Memo/development/programming/java/basics-course/day05-oop-programming.md|Day05 面向对象编程（讲义）]]
-- [[Memo/development/programming/java/basics-course/day06-static-and-inheritance.md|Day06 面向对象高级：static 与继承（讲义）]]
-- [[Memo/development/programming/java/basics-course/day07-polymorphism.md|Day07 面向对象高级：多态（讲义）]]
-- [[Memo/development/programming/java/basics-course/day08-abstract-final-singleton-enum-string.md|Day08 面向对象高级：抽象类、final、单例、枚举与 String（讲义）]]
+- [[Memo/development/programming/java/java-basics/oop-programming.md|面向对象编程]]
+- [[Memo/development/programming/java/java-basics/static-and-inheritance.md|static 与继承]]
+- [[Memo/development/programming/java/java-basics/polymorphism.md|多态]]
+- [[Memo/development/programming/java/java-basics/abstract-final-singleton-enum-string.md|抽象类、final、单例、枚举与 String]]
 
-## 课堂问答笔记
+## 问答笔记
 
 - [[Memo/development/programming/java/oop/05-oop-programming.md|05 面向对象编程·笔记]]
 - [[Memo/development/programming/java/oop/06-oop-advanced-static-and-inheritance.md|06 面向对象高级(static , 继承)·笔记]]

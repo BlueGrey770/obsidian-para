@@ -7,9 +7,9 @@ aliases:
 ---
 
 # 07 面向对象高级(多态)·笔记
-> 讲义全文：[[Memo/development/programming/java/basics-course/day07-polymorphism.md|Day07 多态讲义]]
+> 系统详解：[[Memo/development/programming/java/java-basics/polymorphism.md|多态]]
 
-## 课堂问答：多态
+## 问答：多态
 
 题目: 多态的前提有哪些? 格式是什么?
 
@@ -476,7 +476,7 @@ public class Test {
 
 ```
 
-## 课堂问答：抽象类与 String
+## 问答：抽象类与 String
 
 **题目: 请描述抽象方法的特点**
 
